@@ -4,6 +4,8 @@ on:
     branches:
       - main
       - Fall22
+    paths-ignore:
+      - "website/**"
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -42,4 +44,4 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: __site
+        FOLDER: website/__site

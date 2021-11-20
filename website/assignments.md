@@ -41,7 +41,7 @@ The standardized environment is important because we know that those versions of
 ### Basic Git Usage
 
 After your repository is created, you can get its address by navigating to it on Github. Click the green "Code" button, which will you a URL or a Github Desktop link. If you're using the command line, copy the URL. Go to your terminal, navigate your master homework folder (say, `bee-4750/homework`), and type
-```bash
+```shell
 git clone <repository-link>
 ```
 to create the local repository and download the files.

@@ -1,6 +1,4 @@
-@def Environmental Systems Analysis, Fall 2022 Assignments
-@def mintoclevel=2
-@def maxtoclevel=3
+@def hascode = true
 
 @@banner
 # Assignments

@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - master
+      - Fall22
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

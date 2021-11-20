@@ -4,8 +4,6 @@ on:
     branches:
       - main
       - Fall22
-    paths-ignore:
-      - "website/**"
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

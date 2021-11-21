@@ -98,3 +98,8 @@ h2 { color: #222222; }
 	outline: 0;
 	background-color: #eee9e6;
 }
+
+.no-number .katex-display::after {
+    counter-increment: nothing;
+    content: "";
+  }

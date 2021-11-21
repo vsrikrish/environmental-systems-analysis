@@ -35,3 +35,12 @@ Add here global latex commands to use throughout your pages.
 \newcommand{\goto}[1]{~~~✓→~~~}
 
 \newcommand{\smindent}[1]{\span{width:45px;text-align:right;color:slategray;}{#1}} \newcommand{\smnote}[1]{\style{font-size:85%;line-height:0em;}{#1}}
+
+\newcommand{\figenv}[3]{
+~~~
+<figure style="text-align:center;">
+<img src="!#2" style="padding:0;#3" alt="#1"/>
+<figcaption>#1</figcaption>
+</figure>
+~~~
+}

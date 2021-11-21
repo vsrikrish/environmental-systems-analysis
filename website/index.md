@@ -14,7 +14,6 @@ Environmental processes can have complicated dynamics and conflicting objectives
 * make decisions under uncertainty with stochastic and dynamic programming; and
 * explore trade-offs across competing objectives.
 
-@@colbox-red
-This course will use the [Julia](https://julialang.org) programming language. No prior knowledge of Julia is required.
-@@
+\note{This course will use the [Julia](https://julialang.org) programming language. No prior knowledge of Julia is required.
+}
 

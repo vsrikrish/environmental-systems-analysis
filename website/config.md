@@ -24,7 +24,21 @@ Add here global latex commands to use throughout your pages.
 -->
 \newcommand{\R}{\mathbb R}
 \newcommand{\scal}[1]{\langle #1 \rangle}
-\newcommand{\blurb}[1]{ ~~~ !#1 ~~~ } \newcommand{\refblank}[2]{ ~~~ #1 ~~~ } \newcommand{\lineskip}{@@blank@@} \newcommand{\skipline}{\lineskip} \newcommand{\note}[1]{@@note @@title ⚠ Note@@ @@content #1 @@ @@} \newcommand{\warn}[1]{@@warning @@title ⚠ Warning!@@ @@content #1 @@ @@}
+\newcommand{\blurb}[1]{ ~~~ !#1 ~~~ } 
+\newcommand{\refblank}[2]{ ~~~ #1 ~~~ } 
+\newcommand{\lineskip}{@@blank@@} 
+\newcommand{\skipline}{\lineskip} 
+\newcommand{\note}[1]{
+@@note 
+@@title 
+⚠ Note@@ 
+
+@@substance
+#1 
+@@ 
+
+@@} 
+\newcommand{\warn}[1]{@@warning @@title ⚠ Warning!@@ @@content #1 @@ @@}
 
 \newcommand{\esc}[2]{ julia:esc__!#1 #hideall using Markdown println("\`\`\`\`\`plaintext $(Markdown.htmlesc(raw"""#2""")) \`\`\`\`\`") \textoutput{esc__!#1} }
 

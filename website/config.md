@@ -58,3 +58,17 @@ Add here global latex commands to use throughout your pages.
 </figure>
 ~~~
 }
+
+\newcommand{\nblink}[1]{
+
+<a href="https://raw.githubusercontent.com/juliaai/DataScienceTutorials.jl/gh-pages/__generated/!#1/tutorial.ipynb" target="_blank"><em>notebook</em></a>
+} \newcommand{\sclink}[1]{
+
+<a href="https://raw.githubusercontent.com/juliaai/DataScienceTutorials.jl/gh-pages/__generated/!#1/tutorial.jl" target="_blank"><em>annotated script</em></a>
+} \newcommand{\rawlink}[1]{
+
+<a href="https://raw.githubusercontent.com/juliaai/DataScienceTutorials.jl/gh-pages/__generated/!#1/tutorial-raw.jl" target="_blank"><em>raw script</em></a>
+} \newcommand{\proj}[1]{https://raw.githubusercontent.com/juliaai/DataScienceTutorials.jl/gh-pages/__generated/!#1/Project.toml} \newcommand{\mani}[1]{https://raw.githubusercontent.com/juliaai/DataScienceTutorials.jl/gh-pages/__generated/!#1/Manifest.toml} \newcommand{\tgz}[1]{https://raw.githubusercontent.com/juliaai/DataScienceTutorials.jl/gh-pages/__generated/!#1.tar.gz}
+
+\newcommand{\tutorial}[1]{ 
+\toc\literate{/_literate/!#1/tutorial.jl} }

@@ -20,7 +20,9 @@ jobs:
         cd ..
         git submodule update --remote --recursive
     - name: Copy Notes
-      run: cp -r website/lecture-notes website/__site/lecture-notes
+      run: |
+        cd website
+        rsync -R lecture-notes/lecture*/*.html __site/
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:

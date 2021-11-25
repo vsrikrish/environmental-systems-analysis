@@ -23,6 +23,7 @@ jobs:
       run: |
         cd website
         rsync -R lecture-notes/lecture*/*.html __site/
+        rsync -R lecture-notes/lecture*/figures/*.* __site/
         rsync -R lecture-notes/javascript/* __site/
         rsync -R lecture-notes/stylesheets/* __site/
     - name: Deploy

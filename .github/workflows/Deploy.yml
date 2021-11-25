@@ -1,6 +1,5 @@
 name: Build and Deploy
 on:
-  repository_dispatch:
   push:
     branches:
       - main
@@ -17,7 +16,7 @@ jobs:
         persist-credentials: false
         submodules: true
         fetch-depth: 0
-    - name: Update bibliography
+    - name: Update notes
       run: |
         cd lecture-notes
         git branch -u origin/Fall22 Fall22
@@ -43,12 +42,15 @@ jobs:
     #   Julia packages which may be required to successfully build your site.
     #   The last line should be `optimize()` though you may want to give it
     #   specific arguments, see the documentation or ?optimize in the REPL.
-    - run: julia -e '
+    - name: Build Site
+      run: julia -e '
             using Pkg; Pkg.activate("website"); Pkg.instantiate();
             cd("website");
             using NodeJS; run(`$(npm_cmd()) install highlight.js`);
             using Franklin;
             optimize()'
+    - name: Copy Notes
+      run: cp -r website/lecture-notes website/__site/lecture-notes
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:

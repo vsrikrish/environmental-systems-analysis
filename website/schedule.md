@@ -8,4 +8,4 @@ The following table gives a schedule of topics we will cover in lecture, as well
 
 | Lecture | Topic | Notes | Resources |
 |---------|-------|-------|-----------|
-| 1 | Course Overview | [html](lecture-notes/lecture01/lecture01.html) | |
+| 1 | Course Overview | [html](/lecture-notes/lecture01/lecture01.html) | |

@@ -8,6 +8,7 @@ Add here global page variables to use throughout your website.
 @def prepath = "environmental-systems-analysis"
 @def hasmath = false
 @def generate_rss = false
+@def ignore = ["lecture-notes/"]
 
 
 +++

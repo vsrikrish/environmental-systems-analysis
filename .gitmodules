@@ -1,0 +1,3 @@
+[submodule "website/lecture-notes"]
+	path = website/lecture-notes
+	url = https://github.com/vsrikrish/systems-lecture-notes

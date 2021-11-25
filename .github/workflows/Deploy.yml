@@ -53,6 +53,8 @@ jobs:
       run: |
         cd website
         rsync -R lecture-notes/lecture*/*.html __site/
+        rsync -R lecture-notes/javascript/* __site/
+        rsync -R lecture-notes/stylesheets/* __site/
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:

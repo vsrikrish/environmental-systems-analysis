@@ -4,6 +4,8 @@ on:
     branches:
       - main
       - Fall22
+    paths-ignore:
+      - lecture-notes/**
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

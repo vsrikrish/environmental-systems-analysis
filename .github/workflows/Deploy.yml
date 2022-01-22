@@ -5,7 +5,8 @@ on:
       - main
       - Fall22
     paths-ignore:
-      - lecture-notes/**
+      - 'lecture-notes/**'
+      - 'syllabus/**'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

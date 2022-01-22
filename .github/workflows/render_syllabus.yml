@@ -27,25 +27,18 @@ jobs:
         run: |
           cd syllabus
           Rscript -e 'rmarkdown::render("syllabus.Rmd", output_format = "pdf_document")'
+          mkdir ../assets
+          mv syllabus.pdf ../assets/
       - name: Commit
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -f syllabus/syllabus.pdf
+          git checkout -b gh-pages
+          git add -f assets/syllabus.pdf
           git commit -m "update syllabus"
       - name: Push
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          branch: gh-pages
           force: True
-      - name: Copy
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git fetch
-          git checkout gh-pages
-          git checkout ${GITHUB_REF##*/} -- 'syllabus/syllabus.pdf'
-          git add -A
-          git commit -am "deploy syllabus"
-          git push origin gh-pages

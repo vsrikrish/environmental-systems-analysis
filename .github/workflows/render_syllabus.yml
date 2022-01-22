@@ -6,6 +6,8 @@ on:
       - Fall22
     paths:
       - 'syllabus/**'
+  workflow_dispatch:
+  
 jobs:
   render:
     name: Render Syllabus

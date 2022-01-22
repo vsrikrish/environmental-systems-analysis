@@ -24,7 +24,9 @@ jobs:
       - name: Install rmarkdown
         run: Rscript -e 'install.packages(c("rmarkdown", "kableExtra"))'
       - name: Render
-        run: Rscript -e 'rmarkdown::render("syllabus.Rmd", output_format = "pdf_document")'
+        run: |
+          cd syllabus
+          Rscript -e 'rmarkdown::render("syllabus.Rmd", output_format = "pdf_document")'
       - name: Commit
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"

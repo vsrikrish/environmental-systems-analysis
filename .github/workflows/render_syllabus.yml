@@ -22,7 +22,7 @@ jobs:
           # install full prebuilt version
           TINYTEX_INSTALLER: TinyTeX      
       - name: Install rmarkdown
-        run: Rscript -e 'install.packages(c("rmarkdown", "kableExtra")'
+        run: Rscript -e 'install.packages(c("rmarkdown", "kableExtra"))'
       - name: Render
         run: Rscript -e 'rmarkdown::render("syllabus.Rmd", output_format = "pdf_document")'
       - name: Commit

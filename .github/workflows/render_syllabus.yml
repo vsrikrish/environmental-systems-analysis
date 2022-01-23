@@ -7,6 +7,10 @@ on:
     paths:
       - 'syllabus/**'
   workflow_dispatch:
+  workflow_run:
+    workflows: [Build and Deploy]
+    types:
+      - completed
 
 jobs:
   render:
@@ -19,7 +23,6 @@ jobs:
       - name: Install TinyTeX
         uses: r-lib/actions/setup-tinytex@v1
         env:
-          # install full prebuilt version
           TINYTEX_INSTALLER: TinyTeX      
       - name: Install rmarkdown
         run: Rscript -e 'install.packages(c("rmarkdown", "kableExtra"))'
@@ -28,7 +31,7 @@ jobs:
           cd syllabus
           Rscript -e 'rmarkdown::render("syllabus.Rmd", output_format = "pdf_document")'
           mkdir ../assets
-          mv syllabus.pdf ../assets/
+          mv syllabus.pdf
       - name: Commit
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"

@@ -6,7 +6,7 @@ Here is [information on solving, accessing, and submitting assignments](/assignm
 
 ## Schedule
 
-| Assignment | Due Date | Submission | Rubric |
-|------------|----------|------------|--------|
-| HW0 | | | |
+| Assignment | Due Date | Submission | Notes |
+|------------|----------|------------|-------|
+| HW0 | Aug 31, 2022 | | HW0 is only graded for completion |
 

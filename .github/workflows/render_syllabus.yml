@@ -27,11 +27,12 @@ jobs:
           cd syllabus
           Rscript -e 'rmarkdown::render("syllabus.Rmd", output_format = "pdf_document")'
           mv syllabus.pdf ../website/_assets/
+          cd ..
       - name: Commit
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -f ../website/_assets/syllabus.pdf
+          git add -f website/_assets/syllabus.pdf
           git commit -m "update syllabus"
           git_branch=${GITHUB_REF#refs/heads/}
           git push origin git_branch

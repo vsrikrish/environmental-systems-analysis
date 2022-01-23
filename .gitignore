@@ -1,7 +1,0 @@
-syllabus/_cache
-syllabus/*.bib
-syllabus/syllabus.pdf
-syllabus/*.log
-syllabus/*.csl
-syllabus/syllabus.tex
-.DS_Store

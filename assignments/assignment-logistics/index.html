@@ -1,0 +1,154 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/environmental-systems-analysis/libs/katex/katex.min.css"> <link rel=stylesheet  href="/environmental-systems-analysis/libs/highlight/github.min.css"> <script src="/environmental-systems-analysis/libs/clipboard.min.js"></script> <link rel=stylesheet  href="/environmental-systems-analysis/css/franklin.css"> <link rel=stylesheet  href="/environmental-systems-analysis/css/poole_hyde.css"> <link rel=stylesheet  href="/environmental-systems-analysis/css/custom.css"> <style> html {font-size: 17px;} .franklin-content {position: relative; padding-left: 8%; padding-right: 5%; line-height: 1.35em;} @media (min-width: 940px) { .franklin-content {width: 100%; margin-left: auto; margin-right: auto;} } @media (max-width: 768px) { .franklin-content {padding-left: 6%; padding-right: 6%;} } </style> <title>Environmental Systems Analysis</title> <div class=sidebar > <div class=container > <div class=sidebar-about > <a href="https://cornell.edu"><img src="/environmental-systems-analysis/assets/cornell_logo_simple_white.svg" style="width: 300px; height: auto; display: inline"></a> <div style="opacity: 0.8; font-weight: bold; margin-bottom: 0.5em">BEE 4750/5750</div> <h1><a href="/environmental-systems-analysis/">Environmental Systems Analysis</a></h1> <p class=lead >Fall 2022</p> </div> <nav class=sidebar-nav > <a class="sidebar-nav-item " href="/environmental-systems-analysis/">Welcome</a> <a class="sidebar-nav-item " href="/environmental-systems-analysis/syllabus/">Syllabus</a> <a class="sidebar-nav-item " href="/environmental-systems-analysis/schedule/">Schedule</a> <a class="sidebar-nav-item " href="/environmental-systems-analysis/logistics/">Class Logistics</a> <a class="sidebar-nav-item " href="/environmental-systems-analysis/assignments/">Assignments</a> <a class="sidebar-nav-item " href="/environmental-systems-analysis/software/">Software Installation</a> <a class="sidebar-nav-item " href="/environmental-systems-analysis/examples/">Examples</a> <a class="sidebar-nav-item " href="/environmental-systems-analysis/resources/">Resources</a> </nav> </div> </div> <div class="content container"> <div class=franklin-content ><div class=banner ><h1 id=assignment_logistics ><a href="#assignment_logistics" class=header-anchor >Assignment Logistics</a></h1></div> <div class=franklin-toc ><ol><li><a href="#overview">Overview</a><li><a href="#assignment_report_writing">Assignment Report Writing</a><ol><li><a href="#code_chunks">Code Chunks</a><li><a href="#inline_code">Inline Code</a><li><a href="#typesetting_math">Typesetting Math</a><li><a href="#compiling_your_report">Compiling Your Report</a></ol><li><a href="#github_classroom_for_assignment_distribution_and_access">Github Classroom For Assignment Distribution and Access</a><ol><li><a href="#what_is_git_and_github">What is Git and Github?</a><li><a href="#why_are_we_using_github_classroom">Why Are We Using Github Classroom?</a><li><a href="#setting_up_your_account_and_computer">Setting Up Your Account And Computer</a><li><a href="#accessing_an_assignment">Accessing an Assignment</a><li><a href="#cloning_the_repository">Cloning The Repository</a><li><a href="#committing_and_pushing_code">Committing and Pushing Code</a><li><a href="#autocompiling_pdf_on_push">Autocompiling PDF on Push</a></ol></ol></div> <h2 id=overview ><a href="#overview" class=header-anchor >Overview</a></h2> <p>In this class, we will use Github Classroom to distribute assignments and manage code. You should use git and Github to maintain your assignment and project codes. PDFs of your compiled assignments should be uploaded to Gradescope &#40;<strong>make sure to tag the individual problems, or you will lose points&#33;</strong>&#41;. Reports will be written as self-contained <a href="http://weavejl.mpastell.com/stable/"><code>Weave.jl</code></a> files which integrates plots, code, and your written analysis. </p> <p>This entire workflow may seem a little complicated at first, but I promise it&#39;s not&#33; Like so many other things, it&#39;s simpler to do than it is to try to write out all of the steps, and you&#39;ll get the feel for it after the first one or two assignments &#40;which are intended to ease you into things&#41;.</p> <h2 id=assignment_report_writing ><a href="#assignment_report_writing" class=header-anchor >Assignment Report Writing</a></h2> <p>A Weave report combines Markdown &#40;for written text&#41; and Julia code into a single, integrated <code>.jmd</code> file. You can insert Julia variables into the written portion and their values will be inserted as if you&#39;ve typed them in yourself. Plots can also be generated upon compilation, rather than needing to produce them in Julia and then inserting them in manually.</p> <p>A Weave file consists of several parts:</p> <ol> <li><p>a header &#40;in <a href="https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started">YAML</a>&#41;, which you should only need to modify from the template with your name and NetID;</p> <li><p>Markdown &#40;specifically, <a href="https://docs.julialang.org/en/v1/stdlib/Markdown/">Julia Markdown</a>&#41;;</p> <li><p>Julia code chunks.</p> </ol> <p>We have provided a repository with a sample <code>.jmd</code> file <a href="https://github.com/BEE4750/weave-example">here</a> so you have a concrete example.</p> <h3 id=code_chunks ><a href="#code_chunks" class=header-anchor >Code Chunks</a></h3> <p>Code chunks are specified as they usually are in Markdown:</p> <pre><code class="julia hljs"><span class=hljs-string >``</span><span class=hljs-string >`julia
+...
+`</span><span class=hljs-string >``</span></code></pre> <p>These chunks will be evaluated as if you were running a normal Julia script.</p> <p>There are several <a href="http://weavejl.mpastell.com/stable/chunk_options/#Syntax">options</a> which can be specified when defining a chunk. You won&#39;t have to play with many of these &#40;we have set up defaults in the YAML header, such as echoing code and not caching results&#41;. The exception might be for <a href="http://weavejl.mpastell.com/stable/chunk_options/#Figures">specifying figure sizes and captions</a> when you insert plots. You can play with these if you want, particularly if you want to use LaTeX-style figure referencing.</p> <h3 id=inline_code ><a href="#inline_code" class=header-anchor >Inline Code</a></h3> <p>If you want to evaluate Julia code inline &#40;such as writing a statement which includes a variable value&#41;, use <code>&#96;j expr&#96;</code>. For example, <code>The minimum value is &#96;j min&#40;C&#41;&#96;.</code></p> <h3 id=typesetting_math ><a href="#typesetting_math" class=header-anchor >Typesetting Math</a></h3> <p>You can typeset math using LaTeX syntax. Inline, use double backticks, such as <code>&#96;&#96;x^2&#96;&#96;</code>. For large LaTeX equations or sections of math, you can use a code chunk with the &quot;math&quot; language:</p> <pre><code class="julia hljs"><span class=hljs-string >``</span><span class=hljs-string >`math
+...
+`</span><span class=hljs-string >``</span></code></pre> <p>So, to specify an optimization model in standard form &#40;which you will need to do for a few assignments&#41;, you could do a variation on:</p> <pre><code class="julia hljs"><span class=hljs-string >``</span><span class=hljs-string >`math
+\begin{alignat*}{2}
+&amp; &amp;\max 100x + 75y\\
+&amp;\text{subject to} &amp; \\
+&amp; &amp; x \geq 0\\
+&amp; &amp; y \geq 0 \\
+&amp; &amp; 40x + 20y \leq 300\\
+&amp; &amp; 6x + 12y \leq 80
+\end{alignat*}
+`</span><span class=hljs-string >``</span></code></pre> <p>which would be rendered as</p> <div class=no-number ><span class=katex-display ><span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML" display=block ><semantics><mtable rowspacing=0.2500em  columnalign="right left right left" columnspacing=0em ><mtr><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow><mi>max</mi><mo>⁡</mo><mn>100</mn><mi>x</mi><mo>+</mo><mn>75</mn><mi>y</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow><mrow></mrow><mtext>subject to</mtext></mrow></mstyle></mtd><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow><mi>y</mi><mo>≥</mo><mn>0</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow><mn>40</mn><mi>x</mi><mo>+</mo><mn>20</mn><mi>y</mi><mo>≤</mo><mn>300</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel=0  displaystyle=true ><mrow><mn>6</mn><mi>x</mi><mo>+</mo><mn>12</mn><mi>y</mi><mo>≤</mo><mn>80</mn></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex"> \begin{alignat*}{2} &amp; &amp;\max 100x + 75y\\ &amp;\text{subject to} &amp; \\ &amp; &amp; x \geq 0\\ &amp; &amp; y \geq 0 \\ &amp; &amp; 40x + 20y \leq 300\\ &amp; &amp; 6x + 12y \leq 80 \end{alignat*} </annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:9.000000000000002em;vertical-align:-4.250000000000001em;"></span><span class=mord ><span class=mtable ><span class=col-align-r ><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:4.750000000000001em;"><span style="top:-6.750000000000001em;"><span class=pstrut  style="height:2.84em;"></span><span class=mord ></span></span><span style="top:-5.25em;"><span class=pstrut  style="height:2.84em;"></span><span class=mord ></span></span><span style="top:-3.749999999999999em;"><span class=pstrut  style="height:2.84em;"></span><span class=mord ></span></span><span style="top:-2.249999999999999em;"><span class=pstrut  style="height:2.84em;"></span><span class=mord ></span></span><span style="top:-0.7499999999999996em;"><span class=pstrut  style="height:2.84em;"></span><span class=mord ></span></span><span style="top:0.7500000000000009em;"><span class=pstrut  style="height:2.84em;"></span><span class=mord ></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:4.250000000000001em;"><span></span></span></span></span></span><span class=col-align-l ><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:4.750000000000001em;"><span style="top:-6.910000000000001em;"><span class=pstrut  style="height:3em;"></span><span class=mord ><span class=mord ></span></span></span><span style="top:-5.41em;"><span class=pstrut  style="height:3em;"></span><span class=mord ><span class=mord ></span><span class="mord text"><span class=mord >subject to</span></span></span></span><span style="top:-3.9099999999999993em;"><span class=pstrut  style="height:3em;"></span><span class=mord ><span class=mord ></span></span></span><span style="top:-2.4099999999999993em;"><span class=pstrut  style="height:3em;"></span><span class=mord ><span class=mord ></span></span></span><span style="top:-0.9099999999999997em;"><span class=pstrut  style="height:3em;"></span><span class=mord ><span class=mord ></span></span></span><span style="top:0.5900000000000007em;"><span class=pstrut  style="height:3em;"></span><span class=mord ><span class=mord ></span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:4.250000000000001em;"><span></span></span></span></span></span><span class=col-align-r ><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:4.750000000000001em;"><span style="top:-6.910000000000001em;"><span class=pstrut  style="height:3em;"></span><span class=mord ><span class=mop >max</span><span class=mspace  style="margin-right:0.16666666666666666em;"></span><span class=mord >100</span><span class="mord mathnormal">x</span><span class=mspace  style="margin-right:0.2222222222222222em;"></span><span class=mbin >+</span><span class=mspace  style="margin-right:0.2222222222222222em;"></span><span class=mord >75</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span><span style="top:-5.41em;"><span class=pstrut  style="height:3em;"></span><span class=mord ></span></span><span style="top:-3.9099999999999993em;"><span class=pstrut  style="height:3em;"></span><span class=mord ><span class="mord mathnormal">x</span><span class=mspace  style="margin-right:0.2777777777777778em;"></span><span class=mrel >≥</span><span class=mspace  style="margin-right:0.2777777777777778em;"></span><span class=mord >0</span></span></span><span style="top:-2.4099999999999993em;"><span class=pstrut  style="height:3em;"></span><span class=mord ><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class=mspace  style="margin-right:0.2777777777777778em;"></span><span class=mrel >≥</span><span class=mspace  style="margin-right:0.2777777777777778em;"></span><span class=mord >0</span></span></span><span style="top:-0.9099999999999997em;"><span class=pstrut  style="height:3em;"></span><span class=mord ><span class=mord >40</span><span class="mord mathnormal">x</span><span class=mspace  style="margin-right:0.2222222222222222em;"></span><span class=mbin >+</span><span class=mspace  style="margin-right:0.2222222222222222em;"></span><span class=mord >20</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class=mspace  style="margin-right:0.2777777777777778em;"></span><span class=mrel >≤</span><span class=mspace  style="margin-right:0.2777777777777778em;"></span><span class=mord >300</span></span></span><span style="top:0.5900000000000007em;"><span class=pstrut  style="height:3em;"></span><span class=mord ><span class=mord >6</span><span class="mord mathnormal">x</span><span class=mspace  style="margin-right:0.2222222222222222em;"></span><span class=mbin >+</span><span class=mspace  style="margin-right:0.2222222222222222em;"></span><span class=mord >12</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class=mspace  style="margin-right:0.2777777777777778em;"></span><span class=mrel >≤</span><span class=mspace  style="margin-right:0.2777777777777778em;"></span><span class=mord >80</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:4.250000000000001em;"><span></span></span></span></span></span></span></span></span></span></span></span></div> <h3 id=compiling_your_report ><a href="#compiling_your_report" class=header-anchor >Compiling Your Report</a></h3> <p>Finally, when you&#39;re ready to compile the report to check your solution or how everything looks, navigate to the repository directory, open the Julia REPL, and enter the following:</p> <pre><code class="julia hljs"><span class=hljs-keyword >using</span> Pkg <span class=hljs-comment ># load the Julia package manager</span>
+Pkg.activate(.) <span class=hljs-comment ># activate the environment in the current directory</span>
+Pkg.instantiate() <span class=hljs-comment ># install the required packages; this isn&#x27;t always necessary</span>
+<span class=hljs-keyword >using</span> Weave <span class=hljs-comment ># load Weave.jl</span>
+Weave.weave(<span class=hljs-string >&quot;assignment.jmd&quot;</span>) <span class=hljs-comment ># compile the file to HTML</span></code></pre> <p>where you would replace <code>assignment.jmd</code> with the specific filename for that assignment.</p> <p>By default, <code>Weave.weave&#40;&#41;</code> compiles to an HTML file. This is convenient if you want to see your work as it doesn&#39;t require any other installations. While you eventually will submit a PDF, one will be <a href="#autocompiling_pdf_on_push">compiled upon pushing</a> to Github if there are no errors. If you have LaTeX installed, you can also compile locally to a PDF with</p> <pre><code class="julia hljs">Weave.weave(<span class=hljs-string >&quot;assignment.jmd&quot;</span>, doctype=<span class=hljs-string >&quot;md2pdf&quot;</span>)</code></pre>
+<h2 id=github_classroom_for_assignment_distribution_and_access ><a href="#github_classroom_for_assignment_distribution_and_access" class=header-anchor >Github Classroom For Assignment Distribution and Access</a></h2>
+<h3 id=what_is_git_and_github ><a href="#what_is_git_and_github" class=header-anchor >What is Git and Github?</a></h3>
+<p>Git is an industry standard version control system. It allows you to keep track of changes to files. This means that you can document changes and bug fixes, revert changes that created problems, and create alternative pathways to test changes which can then be incorporated into the main file&#40;s&#41; if desired. Github is a commonly used remote repository which ties into git. Remote repositories allow version-controlled software to be backed up and shared.</p>
+<h3 id=why_are_we_using_github_classroom ><a href="#why_are_we_using_github_classroom" class=header-anchor >Why Are We Using Github Classroom?</a></h3>
+<p>We are using Github in this class for a number of reasons.</p>
+<ul>
+<li><p>Version control is a best practice for software, and many of you are likely to take jobs which involve working with code.</p>
+
+<li><p>Github Classroom makes it easy to assign and collect group and individual assignments. You&#39;ll receive an email when an assignment is ready, and the repository will be automatically set up on Github, so all you have to do is <a href="#cloning_the_repository">clone it to your computer</a>. </p>
+
+<li><p>As Github allows code others to view and comment on code, it also facilitates collective debugging with classmates and instructors, rather than requiring us to work off shared screenshots or email threads. You can just share the link to your assignment repository on Slack and we can see the current state of your code, as well as any previous versions.</p>
+
+<li><p>Github allows us to automate compilation of code in a controlled environment, which will ensure that your code compiles smoothly and generates a nice PDF. </p>
+
+<li><p>Finally, Github provides documentation of the state of your code at any given time, so if there is a hiccup in submission to Gradescope, you have proof that your code was effectively ready on time&#33;</p>
+
+</ul>
+<h3 id=setting_up_your_account_and_computer ><a href="#setting_up_your_account_and_computer" class=header-anchor >Setting Up Your Account And Computer</a></h3>
+<p>If you don&#39;t have one, you should create an account at <a href="https://github.com">Github</a>. It will be easiest if your username includes your name in some way, but it&#39;s not necessary. You should also install <a href="http://happygitwithr.com/install-git.html">git</a> if your computer does not have it &#40;which you can test by typing <code>git</code> at a command line&#41;. </p>
+<p>You can interact with Github either through the command line &#40;using a terminal&#41; or <a href="https://desktop.github.com/">Github Desktop</a>.</p>
+<p>Next, you should create a folder for the course, something like <code>bee-4750/</code>. You could create a <code>lectures/</code> subfolder in here for notes, but we&#39;re mostly interested in storing homework files. </p>
+<h3 id=accessing_an_assignment ><a href="#accessing_an_assignment" class=header-anchor >Accessing an Assignment</a></h3>
+<p>When we release an assignment, you will receive an email with a link. Clicking on this link will create your own personal repository. Each assignment repository will include the following:</p>
+<ul>
+<li><p>a template for your solution and submission;</p>
+
+<li><p>files to create a standardized Julia environment for that assignment;</p>
+
+<li><p>a script to try to <a href="#autocompiling_pdf_on_push">automatically compile your report to a PDF</a>.</p>
+
+</ul>
+<p>The standardized environment is important because we know that those versions of packages will work smoothly together, while otherwise there could be clashes or changes to output that the TA isn&#39;t expecting.</p>
+<p>The assignment questions and grading rubric will be made available on the <a href="/environmental-systems-analysis/assignments/">Assignments</a> page.</p>
+<h3 id=cloning_the_repository ><a href="#cloning_the_repository" class=header-anchor >Cloning The Repository</a></h3>
+<p>After your repository is created, you can get its address by navigating to it on Github. Click the green &quot;Code&quot; button, which will you a URL or a Github Desktop link. </p>
+
+<figure style="text-align:center;">
+<img src="/environmental-systems-analysis/assets/images/github-clone.png" style="padding:0; width: 45%; align: text-align: center; display: inline;" alt=" What you should see after clicking the green "Code" button in your Github repository."/>
+<figcaption> What you should see after clicking the green "Code" button in your Github repository.</figcaption>
+</figure>
+
+<p>If you&#39;re using the command line, copy the URL. Go to your terminal, navigate your master homework folder &#40;say, <code>bee-4750/homework</code>&#41;, and type</p>
+<pre><code class="bash hljs">git <span class=hljs-built_in >clone</span> &lt;repository-link&gt;</code></pre>
+<p>to create the local repository and download the files.</p>
+<h3 id=committing_and_pushing_code ><a href="#committing_and_pushing_code" class=header-anchor >Committing and Pushing Code</a></h3>
+<p>As you code, you should get in the habit of making frequent <em>commits</em>. A commit tells git to store that version of the code, which can then be reverted to if something goes wrong in the future. A good commit consists of small changes which accomplish one addition/bug fix, so there&#39;s a clear sequence of possible reversions.</p>
+<p>Commits also require messages to document what was changed in that code &#40;such as adding a feature or fixing a bug&#41;. You can commit all code that has been changed from the last commit using</p>
+<pre><code class="bash hljs">git commit -am <span class=hljs-string >&quot;commit message&quot;</span></code></pre>
+<p>Optionally, you can also use <code>git add</code> to select a few changed files and then <code>git commit -m</code> to commit. </p>
+<p>When you want to sync your code with the Github repository, you should <em>push</em> your commits to the repository. You don&#39;t have to do this for every commit, but maybe at the end of each coding session. To push:</p>
+<pre><code class="bash hljs">git push origin main</code></pre>
+<p>where &quot;main&quot; is the default branch name; if you&#39;ve played with branching &#40;and there&#39;s no real reason to for this course&#41;, that might be something else..</p>
+<p>When pushing, you may get an error if something has caused your remote repository to be out of sync. For example, as discussed <a href="#autocompile_pdf_on_push">below</a>, we have configured the assignment repositories to automatically try to compile your code into a PDF. If this succeeds, there will be a PDF sitting in your remote repository that is not present locally. As a result, it&#39;s a good idea at the start of a coding session to fetch and pull to sync your local repository with the remote:</p>
+<pre><code class="bash hljs">git fetch &amp;&amp; git pull origin main</code></pre>
+<h3 id=autocompiling_pdf_on_push ><a href="#autocompiling_pdf_on_push" class=header-anchor >Autocompiling PDF on Push</a></h3>
+<p>One downside to using <code>Weave.jl</code> for the assignment writeups is that it requires LaTeX to produce a PDF, as discussed <a href="#compiling-assignments">above</a>, and you may not need to have a working LaTeX installation on your computer. If you do not want to bother installing LaTeX just for our class, Github will automatically compile everything when you push, though this may take a few minutes after your push. If your code isn&#39;t ready to go, this might result in an error &#40;which will be indicated by a red x on your repository page&#41; &#151; no big deal if you expect it. If you think your code should work, that would be a warning sign that something is off. If the compilation succeeds, you&#39;ll see a green check mark. The PDF will then appear in your repository, and if you&#39;ve finished your assignment, you can use <code>git fetch</code> and <code>git pull</code> to download it in your local repository, and submit that on Gradescope.</p>
+<div class=page-foot >
+  <div class=copyright >
+    <a href="https://github.com/vsrikrish/environmental-systems-analysis/"><b><img class=github-logo  src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"> repository for this page.</b></a>
+
+    Last modified: January 23, 2022. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+  </div>
+</div>
+</div>
+    </div>  
+    
+        
+
+
+
+    
+    
+        
+
+
+        
+
+<script>
+    (function(){
+    
+        // Get the elements.
+        // - the 'pre' element.
+        // - the 'div' with the 'paste-content' id.
+    
+        var pre = document.getElementsByTagName('pre');
+    
+        // Add a copy button in the 'pre' element.
+        // which only has the className of 'language-'.
+    
+        for (var i = 0; i < pre.length; i++) {
+            var isLanguage = pre[i].children[0].className.indexOf('language-');
+    
+            if ( isLanguage === 0 ) {
+                var button           = document.createElement('button');
+                        button.className = 'copy-button';
+                        button.textContent = 'Copy';
+    
+                        pre[i].appendChild(button);
+            }
+        };
+    
+        // Run Clipboard
+    
+        var copyCode = new Clipboard('.copy-button', {
+            target: function(trigger) {
+                return trigger.previousElementSibling;
+        }
+        });
+    
+        // On success:
+        // - Change the "Copy" text to "Copied".
+        // - Swap it to "Copy" in 2s.
+        // - Lead user to the "contenteditable" area with Velocity scroll.
+    
+        copyCode.on('success', function(event) {
+            event.clearSelection();
+            event.trigger.textContent = 'Copied';
+            window.setTimeout(function() {
+                event.trigger.textContent = 'Copy';
+            }, 2000);
+    
+        });
+    
+        // On error (Safari):
+        // - Change the  "Press Ctrl+C to copy"
+        // - Swap it to "Copy" in 2s.
+    
+        copyCode.on('error', function(event) {
+            event.trigger.textContent = 'Press "Ctrl + C" to copy';
+            window.setTimeout(function() {
+                event.trigger.textContent = 'Copy';
+            }, 5000);
+        });
+    
+    })();
+</script>

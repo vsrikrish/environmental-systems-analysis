@@ -7,10 +7,6 @@ on:
     paths:
       - 'syllabus/**'
   workflow_dispatch:
-  workflow_run:
-    workflows: [Build and Deploy]
-    types:
-      - completed
 
 jobs:
   render:
@@ -30,18 +26,12 @@ jobs:
         run: |
           cd syllabus
           Rscript -e 'rmarkdown::render("syllabus.Rmd", output_format = "pdf_document")'
-          mkdir ../assets
-          mv syllabus.pdf ../assets/
+          mv syllabus.pdf ../website/_assets/
       - name: Commit
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git checkout -b gh-pages
-          git add -f assets/syllabus.pdf
+          git add -f ../website/_assets/syllabus.pdf
           git commit -m "update syllabus"
-      - name: Push
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          force: True
+          git_branch=${GITHUB_REF#refs/heads/}
+          git push origin git_branch

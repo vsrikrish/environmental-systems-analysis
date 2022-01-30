@@ -6,7 +6,7 @@
 # Syllabus
 @@
 
-You can download a PDF of the full syllabus [here](assets/syllabus.pdf).
+You can download a PDF of the full syllabus [here](../assets/syllabus.pdf).
 
 \toc 
 

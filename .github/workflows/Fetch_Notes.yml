@@ -22,11 +22,7 @@ jobs:
     - name: Copy Notes
       run: |
         cd website
-        rsync -R lecture-notes/lecture*/*.html __site/
-        rsync -R lecture-notes/lecture*/*.pdf __site/
-        rsync -R lecture-notes/lecture*/figures/*.* __site/
-        rsync -R lecture-notes/javascript/* __site/
-        rsync -R lecture-notes/stylesheets/* __site/
+        rsync -r --exclude '.git*' 'lecture-notes/' '__site/'
     - name: Commit changes
       run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"

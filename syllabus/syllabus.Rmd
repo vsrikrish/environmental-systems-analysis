@@ -128,11 +128,7 @@ Students will be given grades for participation in class (in person or remote) a
 
 Some classes will involve hands-on programming exercises. These classes (and any notebooks or other resources) will be documented on [the website](https://viveks.me/environmental-systems-analysis) and announced ahead of time in class so anyone who is able can bring a laptop to class. These in-class programming exercises can be done in groups; if you cannot bring a laptop to class for whatever reason, you will be able to (and are encouraged to) work with other students. Several classes will also involve discussions of specified readings. These are available online either as free resources or through the Cornell library. Readings and links are available on [the online course schedule](https://viveks.me/environmental-systems-analysis/schedule).
 
-## Regulatory Review Project: 15%
-
-This group project consists of 3-5 summaries of a specific set of environmental regulations from verifiable news outlets. Summaries will include the current  status of a regulation and updates. More details on this assignment will be discussed in class. In addition to the final report, your group will submit a draft containing 1-2 summaries, which will allow me to give you feedback on your approach prior to the final project submission.
-
-## Final Term Project: 25%
+## Final Term Project: 40%
 
 This course will culminate with a term project with a topic selected from a suggested list (provided mid-semester). The goal of this project is to apply and extend the tools and approaches we will learn in class. While we encourage drawing on other classes or interests when developing and working on your project, **submitting work from another course or work which was completed prior to the course is not permitted**.
 
@@ -164,6 +160,10 @@ My goal is to make everyone feel comfortable in the classroom, regardless of ide
 
 In all communications and interactions with each other, members of this class community (students and instructors) are expected to be respectful and inclusive. Be mindful of how spoken or written language might be misunderstood, and be aware that, for a variety of reasons, how others perceive your words and actions may not be exactly how you intended them.
 
+# Mental Health Resources
+
+As a student, you may experience a range of issues which can negatively impact your mental health. Please do not ignore any of these stressors, or feel like you have to navigate these challenges alone! The TA and myself are not trained counselors, but we are here to support you in whatever capacity we can. You should never feel that you need to push yourself past your limits to complete any assignment for this class or any other. If we need to make modifications to the course schedule, you can certainly reach out to us. For broader support, please take advantage of [Cornell's mental health resources](https://mentalhealth.cornell.edu/).
+
 # Land Acknowledgement 
 
 Cornell University is located on the traditional homelands of the Gayog\b{o}hó:n\c{o}' (the Cayuga Nation). The Gayog\b{o}hó:n\c{o}' are members of the Haudenosaunee Confederacy, an alliance of six sovereign Nations with a historic and contemporary presence on this land. The Confederacy precedes the establishment of Cornell University, New York state, and the United States of America. We acknowledge the painful history of Gayog\b{o}hó:n\c{o}' dispossession, and honor the ongoing connection of Gayog\b{o}hó:n\c{o}' people, past and present, to these lands and waters.
@@ -189,26 +189,26 @@ sched <- rbind(
   c(8, advdate(semstart, 5, "mon"), "Linear Programming", NA),
   c(9, advdate(semstart, 5, "wed"), "Solving Linear Programs with Julia", "HW1 Due"),
   c(10, advdate(semstart, 6, "mon"), "Lake Eutrophication", "HW2 Assigned"),
-  c(11, advdate(semstart, 6, "wed"), "Lake Eutrophication 2", NA),
-  c(12, advdate(semstart, 7, "mon"), "Forest Management", NA),
-  c(13, advdate(semstart, 7, "wed"), "Mixed Integer Programming; Solid Waste", "HW2 Due"),
-  c(NA, advdate(semstart, 8, "mon"), "\\textbf{Fall Break -- No Class}", NA),
-  c(14, advdate(semstart, 8, "wed"), "Air Pollution", "HW3 Assigned"),
-  c(15, advdate(semstart, 9, "mon"), "Air Pollution 2", NA),
-  c(16, advdate(semstart, 9, "wed"), "Evolutionary Algorithms", NA),
-  c(17, advdate(semstart, 10, "mon"), "\\textit{Regulations Presentation}", "Regulations Project Release"),
-  c(18, advdate(semstart, 10, "wed"), "Dynamic Programming", "HW3 Due"),
-  c(19, advdate(semstart, 11, "mon"), "Robustness", "HW4 Assigned"),
-  c(20, advdate(semstart, 11, "wed"), "Sensitivity Analysis", "Term Project Release"),
-  c(21, advdate(semstart, 12, "mon"), "Multiple Objectives and Trade-Offs", "Regulations Proposal"),
-  c(22, advdate(semstart, 12, "wed"), "Decision Trees", "HW4 Due"),
-  c(23, advdate(semstart, 13, "mon"), "Stochastic Optimization", "HW5 Assigned"),
-  c(24, advdate(semstart, 13, "wed"), "Project Meetings", "Term Project Proposal"),
-  c(25, advdate(semstart, 14, "mon"), "Project Meetings", "Regulations Draft"),
+  c(11, advdate(semstart, 6, "wed"), "Forest Management", NA),
+  c(12, advdate(semstart, 7, "mon"), "Mixed Integer Programming; Solid Waste", NA),
+  c(13, advdate(semstart, 7, "wed"), "Air Pollution", "HW2 Due"),
+  c(NA, advdate(semstart, 8, "mon"), "\\textbf{Fall Break -- No Class}", "Term Project Release"),
+  c(14, advdate(semstart, 8, "wed"), "Optimization with Simulation", "HW3 Assigned"),
+  c(15, advdate(semstart, 9, "mon"), "Evolutionary Algorithms", NA),
+  c(16, advdate(semstart, 9, "wed"), "Dynamic Programming", NA),
+  c(17, advdate(semstart, 10, "mon"), "Robustness", NA),
+  c(18, advdate(semstart, 10, "wed"), "Sensitivity Analysis", "HW3 Due"),
+  c(19, advdate(semstart, 11, "mon"), "Robustness and SA In Julia", "HW4 Assigned"),
+  c(20, advdate(semstart, 11, "wed"), "Multiple Objectives and Trade-Offs", "Term Project Proposal"),
+  c(21, advdate(semstart, 12, "mon"), "Decision Trees", NA),
+  c(22, advdate(semstart, 12, "wed"), "Stochastic Programming", "HW4 Due"),
+  c(23, advdate(semstart, 13, "mon"), "Project Meetings", "HW5 Assigned"),
+  c(24, advdate(semstart, 13, "wed"), "Project Meetings", NA),
+  c(25, advdate(semstart, 14, "mon"), "Project Meetings", NA),
   c(NA, advdate(semstart, 14, "wed"), "\\textbf{Thanksgiving Break -- No Class}", "HW5 Due"),
   c(26, advdate(semstart, 15, "mon"), "Project Meetings", NA),
   c(27, advdate(semstart, 15, "wed"), "Project Meetings", NA),
-  c(28, advdate(semstart, 16, "mon"), "Project Meetings", "Regulations Report"),
+  c(28, advdate(semstart, 16, "mon"), "Project Meetings", NA),
   c(NA, advdate(semstart, 16, "wed"), "\\textbf{Study Period -- No Class}", "Term Project Poster")
 )
 
@@ -218,9 +218,9 @@ kable(sched, booktabs = T, format = "latex", escape=F) %>%
   kable_styling(latex_options=c("striped")) %>%
   pack_rows("Introduction to Systems Analysis", 1, 2, indent=FALSE) %>%
   pack_rows("Simulating Systems", 3, 7, indent=FALSE) %>%
-  pack_rows("Systems Management and Optimization", 8, 19, indent=FALSE) %>%
-  pack_rows("Analyzing Assumptions", 21, 22, indent=FALSE) %>%
-  pack_rows("Decision-Making Under Uncertainty", 23, 25, indent=FALSE) %>%
-  pack_rows("Term Project Work", 26, 32, indent=FALSE)
+  pack_rows("Systems Management and Optimization", 8, 18, indent=FALSE) %>%
+  pack_rows("Analyzing Solutions and Assumptions", 19, 22, indent=FALSE) %>%
+  pack_rows("Decision-Making Under Uncertainty", 23, 24, indent=FALSE) %>%
+  pack_rows("Term Project Work", 25, 32, indent=FALSE)
 ```
 

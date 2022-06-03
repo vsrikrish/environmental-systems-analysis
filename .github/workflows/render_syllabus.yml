@@ -25,7 +25,7 @@ jobs:
       - name: Render
         run: |
           cd syllabus
-          julia -e 'import Pkg; Pkg.activate("."); using Weave; Weave.weave("bee4750-syllabus.jmd", format="md2pdf")'
+          julia -e 'import Pkg; Pkg.activate("."); Pkg.instantiate(); using Weave; Weave.weave("bee4750-syllabus.jmd", format="md2pdf")'
           mv bee4750-syllabus.pdf ../website/_assets/
           cd ..
       - name: Commit
@@ -33,5 +33,5 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -f website/_assets/bee4750-syllabus.pdf
-          git commit -m "update syllabus"
+          git commit -m ${{ github.event.commits[0].message }}
           git push origin $GITHUB_REF

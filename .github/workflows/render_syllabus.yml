@@ -25,7 +25,7 @@ jobs:
       - name: Render
         run: |
           cd syllabus
-          tlmgr install abstract titling fancyhdr lastpage 
+          tlmgr install abstract titling fancyhdr lastpage lstlisting
           julia -e 'import Pkg; Pkg.activate("."); Pkg.instantiate(); using Weave; Weave.weave("bee4750-syllabus.jmd", doctype="md2pdf")'
           mv bee4750-syllabus.pdf ../website/_assets/
           cd ..

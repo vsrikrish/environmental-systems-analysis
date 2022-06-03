@@ -14,24 +14,24 @@ jobs:
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: r-lib/actions/setup-r@v1
-      - uses: r-lib/actions/setup-pandoc@v1
+      - name: Install Julia
+        uses: julia-actions/setup-julia@v1
+        with:
+          version: 1.6
       - name: Install TinyTeX
         uses: r-lib/actions/setup-tinytex@v1
         env:
           TINYTEX_INSTALLER: TinyTeX      
-      - name: Install rmarkdown
-        run: Rscript -e 'install.packages(c("rmarkdown", "kableExtra"))'
       - name: Render
         run: |
           cd syllabus
-          Rscript -e 'rmarkdown::render("syllabus.Rmd", output_format = "pdf_document")'
-          mv syllabus.pdf ../website/_assets/
+          julia -e 'import Pkg; Pkg.activate("."); using Weave; Weave.weave("bee4750-syllabus.jmd", format="md2pdf")'
+          mv bee4750-syllabus.pdf ../website/_assets/
           cd ..
       - name: Commit
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -f website/_assets/syllabus.pdf
+          git add -f website/_assets/bee4750-syllabus.pdf
           git commit -m "update syllabus"
           git push origin $GITHUB_REF

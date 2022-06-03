@@ -1,7 +1,13 @@
 syllabus/_cache
 syllabus/*.bib
-syllabus/syllabus.pdf
+syllabus/*.pdf
 syllabus/*.log
 syllabus/*.csl
-syllabus/syllabus.tex
+syllabus/*.tex
+syllabus/*.aux
+syllabus/*.out
+syllabus/*.*latexmk
+syllabus/*.fls
+syllabus/*.html
+syllabus/Manifest.toml
 .DS_Store

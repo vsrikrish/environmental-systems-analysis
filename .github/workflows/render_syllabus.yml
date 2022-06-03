@@ -34,5 +34,5 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -f website/_assets/bee4750-syllabus.pdf
-          git commit -m ${{ github.event.head_commit.message }}
+          git commit -m github.event.head_commit.message
           git push origin $GITHUB_REF

@@ -18,6 +18,11 @@
 \usepackage{tabu}
 \usepackage{xcolor}
 \usepackage{colortbl}
+
+\definecolor{CBorange}{HTML}{d95f02}
+\definecolor{CBpurple}{HTML}{7570b3}
+\definecolor{CBgreen}{HTML}{1b9e77}
+
 \usepackage{makecell}
 \usepackage{hyperref}
 \hypersetup{breaklinks=true,

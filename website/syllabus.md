@@ -2,10 +2,6 @@
 @def mintoclevel=2
 @def maxtoclevel=3
 
-+++ 
-weave = true 
-+++
-
 @@banner
 # Syllabus
 @@

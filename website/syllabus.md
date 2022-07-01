@@ -72,6 +72,31 @@ Students are encouraged to discuss any concerns with me during office hours or t
 
 Students can optimize their performance in the course by attending all lectures and labs, doing any required reading before class, actively participating in online and in-class discussions, beginning assignments early, and attending office hours. 
 
+## Diversity and Inclusion
+
+Our goal in this class is to foster an inclusive learning environment and make everyone feel comfortable in the classroom, regardless of social identity, background, and specific learning needs. As engineers, our work touches on many critical aspects of society, and questions of inclusion and social justice cannot be separated from considerations of systems analysis, objective selection, risk analysis, and trade-offs. 
+
+In all communications and interactions with each other, members of this class community (students and instructors) are expected to be respectful and inclusive. In this spirit, we ask all participants to:
+* share their experiences, values, and beliefs;
+* be open to and respectful of the views of others; and
+* value each other's opinions and communicate in a respectful manner.
+
+We all make mistakes in our communications with one another, both when speaking and listening. Be mindful of how spoken or written language might be misunderstood, and be aware that, for a variety of reasons, how others perceive your words and actions may not be exactly how you intended them. At the same time, it is also essential that we be respectful and interpret each other's comments and actions in good faith. 
+
+Please let me know if you feel any aspect(s) of class could be made more inclusive. Please also share any preferred name(s) and/or your pronouns with me if you wish: I use he/him/his, and you can refer to me either as Vivek or Prof. Srikrishnan.
+
+## Student Accomodations
+
+Let me know if you have any access barriers in this course, whether they relate to course materials, assignments, or communications. If any special accomodations would help you navigate any barriers and improve your chances of success, please exercise your right to those accomodations and reach out to me as early as possible with your [Student Disability Services](https://sds.cornell.edu/) (SDS) accomodation letter. This will ensure that we have enough time to make appropriate arrangements.
+
+If you need more immediate accomodations, but do not yet have a letter, please let me know and then follow up with SDS.
+
+# Mental Health Resources
+
+We all have to take care of our mental health, just as we would our physical health. As a student, you may experience a range of issues which can negatively impact your mental health. Please do not ignore any of these stressors, or feel like you have to navigate these challenges alone! You are part of a community of students, faculty, and staff, who have a responsibility to look for one another's well-being. If you are struggling with managing your mental health, or if you believe a classmate may be struggling, please reach out to the course instructor, the TA, or, for broader support, please take advantage of [Cornell's mental health resources](https://mentalhealth.cornell.edu/).
+
+The TA and myself are not trained counselors, but we are here to support you in whatever capacity we can. You should never feel that you need to push yourself past your limits to complete any assignment for this class or any other. If we need to make modifications to the course or assignment schedule, you can certainly reach out to us, and all relevant discussions will be kept strictly confidential. 
+
 ## Attendance
 
 Attendance is not *required*, but in general, students who attend class regularly will do better and get more out of the class than students who do not. Your class participation grade will reflect both the quantity and quality of your participation, only some of which can occur asynchronously. I will put as many course materials, such as lecture notes and announcements, as possible online, but viewing materials online is not the same as active participation and engagement.
@@ -130,31 +155,6 @@ Students (in groups of 2-3) will research a specific regulation and analyze its 
 This course will culminate with a term project with a topic selected from a suggested list (provided mid-semester). The goal of this project is to apply and extend the tools and approaches we will learn in class. While we encourage drawing on other classes or interests when developing and working on your project, **submitting work from another course or work which was completed prior to the course is not permitted**.
 
 The term project will be completed in small groups for students enrolled in BEE 4750 and individually for those in BEE 5750. The final deliverable for this project will be a poster summarizing the project and results. Ahead of that, you will submit a proposal for feedback on the scope of your project. The last few classes of the semester will consist of group meetings with me and the TA to answer questions and be kept aware of progress; participation in these meetings is required and will be a part of your project grade.
-
-## Diversity and Inclusion
-
-Our goal in this class is to foster an inclusive learning environment and make everyone feel comfortable in the classroom, regardless of social identity, background, and specific learning needs. As engineers, our work touches on many critical aspects of society, and questions of inclusion and social justice cannot be separated from considerations of systems analysis, objective selection, risk analysis, and trade-offs. 
-
-In all communications and interactions with each other, members of this class community (students and instructors) are expected to be respectful and inclusive. In this spirit, we ask all participants to:
-* share their experiences, values, and beliefs;
-* be open to and respectful of the views of others; and
-* value each other's opinions and communicate in a respectful manner.
-
-We all make mistakes in our communications with one another, both when speaking and listening. Be mindful of how spoken or written language might be misunderstood, and be aware that, for a variety of reasons, how others perceive your words and actions may not be exactly how you intended them. At the same time, it is also essential that we be respectful and interpret each other's comments and actions in good faith. 
-
-Please let me know if you feel any aspect(s) of class could be made more inclusive. Please also share any preferred name(s) and/or your pronouns with me if you wish: I use he/him/his, and you can refer to me either as Vivek or Prof. Srikrishnan.
-
-## Student Accomodations
-
-Let me know if you have any access barriers in this course, whether they relate to course materials, assignments, or communications. If any special accomodations would help you navigate any barriers and improve your chances of success, please exercise your right to those accomodations and reach out to me as early as possible with your [Student Disability Services](https://sds.cornell.edu/) (SDS) accomodation letter. This will ensure that we have enough time to make appropriate arrangements.
-
-If you need more immediate accomodations, but do not yet have a letter, please let me know and then follow up with SDS.
-
-# Mental Health Resources
-
-We all have to take care of our mental health, just as we would our physical health. As a student, you may experience a range of issues which can negatively impact your mental health. Please do not ignore any of these stressors, or feel like you have to navigate these challenges alone! You are part of a community of students, faculty, and staff, who have a responsibility to look for one another's well-being. If you are struggling with managing your mental health, or if you believe a classmate may be struggling, please reach out to the course instructor, the TA, or, for broader support, please take advantage of [Cornell's mental health resources](https://mentalhealth.cornell.edu/).
-
-The TA and myself are not trained counselors, but we are here to support you in whatever capacity we can. You should never feel that you need to push yourself past your limits to complete any assignment for this class or any other. If we need to make modifications to the course or assignment schedule, you can certainly reach out to us, and all relevant discussions will be kept strictly confidential. 
 
 ## Academic Integrity
 

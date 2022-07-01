@@ -31,76 +31,42 @@ and air pollution control.
 
 # Learning Objectives
 
-1. Develop  ability  to  identify  the  elements  of  a  complex  problem,  make  appropriate  assumptions,  and formulate reasonable approaches to solving it.
-2. Apply  principles  of  engineering  science  and  mathematics  to  solve  environmental  problems  and  evaluate solutions. 
-3. Students  recognize  the  need  for  new  knowledge  or  skills  and  find  and  implement  appropriate  learning strategies.
-4. Exhibit  understanding  of  the  trade-offs  that  result  from  competing  objectives  in  environmental  decision 
-making. 
+At the end of this class, students will:
+
+1. Establish system boundaries and distinguish between exogenous and endogenous processes;
+2. Develop mathematical models of environmental systems;
+3. Determine strategies for managing systems using optimization;
+4. Identify the  trade-offs  that  result  from  competing  objectives  in  environmental  decision -making; 
+5. Analyze environmental system risk and vulnerabilities.
 
 # Topics
 
 * Introduction to environmental systems, 
 * Modeling system dynamics
+* Multiple objectives and trade-offs
+* Uncertainty and risk (Monte Carlo analysis)
+* Dissolved oxygen in streams and rivers; waste load allocation (system simulation)
 * Modeling of watersheds & lakes (defining objectives, constraints)
 * Modeling for air pollution control (model linearization; linear programming)
 * Location of waste disposal facilities (integer linear programming)
-* Dissolved oxygen in streams and rivers; waste load allocation
-* Decision-making under uncertainty (decision trees; stochastic optimization)
+* Robustness of solutions and sensitivity analysis
 
 # Prerequisites
 
 BEE 2510 or BEE 2600 or permission of instructor. 
 
-# Software
+# Course Philosophy and Expectations
 
-This course will use the [Julia programming language](https://julialang.org) for programming exercises and assignments. No prior knowledge of Julia is assumed. Julia notebooks and example code will be provided for interactive examples and demonstrations.
+The goal of our course is to help you gain competancy and knowledge in the area of environmental systems analysis. This involves a dual responsibility on the part of the instructor and the student. As the instructor, my responsibility is to provide you with a structure and opportunity to learn. To this end, I will commit to:
+* provide organized and focused lectures, in-class activities, and assignments;
+* encourage students to regularly evaluate and provide feedback on the course;
+* manage the classroom atmosphere to promote learning;
+* schedule sufficient out-of-class contact opportunities, such as office hours;
+* allow adequate time for assignment completion;
+* make lecture materials, class policies, activities, and assignments accessible to students. 
+Students are encouraged to discuss any concerns with me during office hours or through a course communications channel.
 
-Assignments will be distributed using [Github Classroom](https://github.com). No previous knowledge of Github is required, but students should create a Github account linked to their Cornell email address.
-
-[Slack](https://slack.com) will be used for class communication.
-
-# Course Communications
-
-Most course communications will occur via Slack. Public Slack message are generally preferred to direct messages or emails, as other students can benefit from the discussions. If you would like to discuss something privately, a private Slack message or an in-person discussion is preferable to email to ensure that your message(s) don't get lost in my inbox. 
-
-Announcements will be made on the course website and in Slack. Emergency announcements will also be made on Canvas.
-
-# Office Hours
-
-TBD (based on an early-semester class poll). One office hour a week will be held on Zoom; another will focus on group coding sessions ([COVID-19 permitting](#covid)). If you would like to meet privately or cannot make office hours, please reach out to make an appointment.
-
-# Grading
-
-## Homework Assignments: 50%
-
-Homework assignments will be distributed using Github Classroom. Students should make sure they update their Github repositories as they work on the assignments; this helps with answering questions and gives you a backstop in case something goes wrong and you can't submit your assignment on time.
-
-Assignments are due by the end of the day (11:59pm Eastern Time) on the designed due date. Your writeup and code should be submitted to Gradescope as a PDF with the answers to each question tagged (a failure to do this will result in deductions). **Late assignments will generally not be accepted** so that we can discuss the assignments in class. However, your lowest grade will be dropped. We can discuss arrangements if multiple assignments will be missed for university-approved reasons, preferably ahead of time. Regrade requests for specific problems must be made within a week of the grading of that assignment. However, note that regrades can cut both ways --- the TA can take away points as well!
-
-Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but  plagiarism is a violation of [academic integrity](#integrity).
-
-
-## Participation: 10%
-
-Students will be given grades for participation in class (in person or remote) and in online discussions. Slack is intended to facilitate discussions between students as well as between students and instructors. If you have a question, please ask, and if you have an answer, share it.
-
-Some classes will involve hands-on programming exercises. These classes (and any notebooks or other resources) will be documented on [the website](https://viveks.me/environmental-systems-analysis) and announced ahead of time in class so anyone who is able can bring a laptop to class. These in-class programming exercises can be done in groups; if you cannot bring a laptop to class for whatever reason, you will be able to (and are encouraged to) work with other students. Several classes will also involve discussions of specified readings. These are available online either as free resources or through the Cornell library. Readings and links are available on [the online course schedule](https://viveks.me/environmental-systems-analysis/schedule).
-
-## Regulatory Review Project: 15%
-
-This group project consists of 3-5 summaries of a specific set of environmental regulations from verifiable news outlets. Summaries will include the current  status of a regulation and updates. More details on this assignment will be discussed in class. In addition to the final report, your group will submit a draft containing 1-2 summaries, which will allow me to give you feedback on your approach prior to the final project submission.
-
-## Final Term Project: 25%
-
-This course will culminate with a term project with a topic selected from a suggested list (provided mid-semester). The goal of this project is to apply and extend the tools and approaches we will learn in class. While we encourage drawing on other classes or interests when developing and working on your project, **submitting work from another course or work which was completed prior to the course is not permitted**.
-
-The term project will be completed in small groups for students enrolled in BEE 4750 and individually for those in BEE 5750. The final deliverable for this project will be a poster summarizing the project and results. Ahead of that, you will submit a proposal for feedback on the scope of your project. The [last few classes of the semester](#schedule) will consist of group meetings with me and the TA to answer questions and be kept aware of progress; participation in these meetings is required and will be a part of your project grade.
-
-# Academic Integrity {#integrity}
-
-Students are expected to abide by the [Cornell University Code of Academic Integrity](http://theuniversityfaculty.cornell.edu/academic-integrity/) in all aspects of this class. This class is designed to encourage collaboration, and students are encouraged to discuss their work with other students. However, all work submitted must represent the students' own work and understanding, whether individually or as a group (depending on the particulars of the assignment). This includes analyses,  code,  software  runs,  and  reports.of this class. Engineering as a profession relies upon the honesty and integrity of its practitioners (see *e.g.* the [American Society for Civil Engineers' Code of Ethics](https://www.asce.org/-/media/asce-images-and-files/career-and-growth/ethics/documents/asce-code-ethics.pdf)).
-
-The collaborative environment in this class should not be viewed as an invitation for plagiarism. Plagiarism occurs when a writer intentionally misrepresents another's words or ideas (including code!) as their own without acknowledging the source.  **All** external resources which are consulted while working on an assignment should be referenced, including other students and faculty with whom the assignment is discussed. You will never be penalized for consulting an external source for help and referencing it, but plagiarism will result in a zero for that assignment as well as the potential for your case to be passed on for additional disciplinary action.
+Students can optimize their performance in the course by attending all lectures and labs, doing any required reading before class, actively participating in online and in-class discussions, beginning assignments early, and attending office hours. 
 
 # Attendance
 
@@ -108,26 +74,90 @@ Attendance is not *required*, but in general, students who attend class regularl
 
 Life happens, of course, and this may lead you to miss class. Let me know if you need any appropriate arrangements ahead of time. For example, please stay home if you're feeling sick! This is beneficial for both for your own recovery and the health and safety of your classmates. We will also make any necessary arrangements if whatever is going on will negatively impact your grade, for example by causing you to be unable to submit an assignment on time.
 
-# COVID-19 Arrangements {#covid19}
+# Software
 
-The particulars of how COVID-19 will affect class are fluid, depending on Cornell policies and the state of any acute outbreaks. Let me know if you will miss class due to quarantine (either official or self-imposed), and we will make arrangements for streaming and recording class, as well as any required virtual office hours or missed assignments. If class is shifted online for any reason, we will make appropriate arrangements and keep students informed. If we are not allowed to have in-person meetings, all office hours will be moved online and we will figure out alternatives to the group coding sessions.
+[Canvas](https://canvas.cornell.edu/) is the learning management system, and can serve as a centralized hub for course materials. While the course website will serve as the main home for course content, it will be linked to from the Canvas sidebar.
+
+[Ed Discussion](https://edstem.org/) will be used for class communication. A link to the Ed Discussion page for the course will also be provided in the Canvas sidebar.
+
+Assignments will be distributed using [GitHub Classroom](https://github.com). No previous knowledge of GitHub is required, but students should create a GitHub account linked to their Cornell email address.
+
+# Course Communications
+
+Most course communications will occur via Ed. Public Ed posts are generally preferred to private posts or emails, as other students can benefit from the discussions. If you would like to discuss something privately, please do reach out through email or a private Ed post (which will only be viewable by you and the course staff).
+
+Announcements will be made on the course website and in Ed. Emergency announcements will also be made on Canvas.
+
+# Office Hours
+
+TBD (based on an early-semester class poll). One office hour a week will be held on Zoom. If you would like to meet privately or cannot make office hours, please reach out to make an appointment.
+
+# Grading
+
+## Homework Assignments: 35%
+
+Approximately 5-6 homework assignments will be assigned throughout the semester; the specifics depend on how quickly we move through the material. Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but  plagiarism is a violation of academic integrity.
+
+Some notes on assignment and grading logistics:
+
+  * Homework assignments will be distributed using GitHub Classroom. Students should make sure they update their GitHub repositories as they work on the assignments; this helps with answering questions and gives you a backstop in case something goes wrong and you can't submit your assignment on time.
+  * Assignments are due by 9:00pm Eastern Time on the designed due date. Your assignment report (which include your writeup and codes) should be submitted to Gradescope as a PDF with the answers to each question tagged (a failure to do this will result in deductions). 
+  * Late assignments will suffer a penalty of 10% per day until grades are returned.
+  * Your lowest homework grade will be dropped. We can discuss arrangements if multiple assignments will be missed for university-approved reasons, preferably ahead of time. 
+  * Regrade requests for specific problems must be made within a week of the grading of that assignment. However, note that regrades can cut both ways: the TA can take away points as well!
+
+
+## Participation: 10%
+
+Students will be given grades for participation in class (in person or remote) and in online discussions. Ed is intended to facilitate discussions between students as well as between students and instructors. If you have a question, please ask, and if you have an answer, share it.
+
+Some classes will involve hands-on programming exercises. These classes (and any notebooks or other resources) will be documented on [the website](https://viveks.me/environmental-systems-analysis) and announced ahead of time in class so anyone who is able can bring a laptop to class. These in-class programming exercises can be done in groups; if you cannot bring a laptop to class for whatever reason, you will be able to (and are encouraged to) work with other students. Several classes will also involve discussions of specified readings. These are available online either as free resources or through the Cornell library. Readings and links are available on [the online course schedule](https://viveks.me/environmental-systems-analysis/schedule).
+
+## Regulatory Analysis Project: 25%
+
+Students (in groups of 2-3) will research a specific regulation and analyze its implications for a relevant environmental system. More details on will be available later in the semester, but there will be two phases to the project:
+
+1. First, each group will identify a regulation of interest and research its purpose and statuatory limits. A one-page draft (with appropriate references cited) should be submitted summarizing these considerations. Feedback on this draft should inform the next component. This summary is worth 10% of the project's grade.
+2. Second, each group will research arguments for and against the existence and strength of their selected regulation. This research should be conducted using high-quality sources, building off a guest lecture by a Cornell librarian. Based on their research, each group should also articulate their thoughts on the appropriateness and effectiveness of the regulation. A 3-5 page paper addressing these considerations will be submitted, and further feedback will be provided. This paper is worth 30% of the project's grade.
+3. Finally, each group will develop an example systems model which would be subject to the regulation and will formulate a decision problem for management of this system under the regulatory standard. After analyzing the impact of changing the standard, each group should discuss (in a report that is at most 5 pages, but which can include supplemental material) their model, the ways in which it simplifies relevant real-world systems, and the potential real-world implications of regulatory changes. They should also revisit and reflect on their initial thoughts from the first phase. This report is worth 60% of the project's grade.
+
+## Final Term Project: 30%
+
+This course will culminate with a term project with a topic selected from a suggested list (provided mid-semester). The goal of this project is to apply and extend the tools and approaches we will learn in class. While we encourage drawing on other classes or interests when developing and working on your project, **submitting work from another course or work which was completed prior to the course is not permitted**.
+
+The term project will be completed in small groups for students enrolled in BEE 4750 and individually for those in BEE 5750. The final deliverable for this project will be a poster summarizing the project and results. Ahead of that, you will submit a proposal for feedback on the scope of your project. The last few classes of the semester will consist of group meetings with me and the TA to answer questions and be kept aware of progress; participation in these meetings is required and will be a part of your project grade.
+
+# Diversity and Inclusion
+
+Our goal in this class is to foster an inclusive learning environment and make everyone feel comfortable in the classroom, regardless of social identity, background, and specific learning needs. As engineers, our work touches on many critical aspects of society, and questions of inclusion and social justice cannot be separated from considerations of systems analysis, objective selection, risk analysis, and trade-offs. 
+
+In all communications and interactions with each other, members of this class community (students and instructors) are expected to be respectful and inclusive. In this spirit, we ask all participants to:
+* share their experiences, values, and beliefs;
+* be open to and respectful of the views of others; and
+* value each other's opinions and communicate in a respectful manner.
+
+We all make mistakes in our communications with one another, both when speaking and listening. Be mindful of how spoken or written language might be misunderstood, and be aware that, for a variety of reasons, how others perceive your words and actions may not be exactly how you intended them. At the same time, it is also essential that we be respectful and interpret each other's comments and actions in good faith. 
+
+Please let me know if you feel any aspect(s) of class could be made more inclusive. Please also share any preferred name(s) and/or your pronouns with me if you wish: I use he/him/his, and you can refer to me either as Vivek or Prof. Srikrishnan.
 
 # Student Accomodations
 
-If you require accomodations, please reach out to me as early as possible with your [Student Disability Services](https://sds.cornell.edu/) accomodation letter so we have adequate time to make appropriate arrangements. 
+Let me know if you have any access barriers in this course, whether they relate to course materials, assignments, or communications. If any special accomodations would help you navigate any barriers and improve your chances of success, please exercise your right to those accomodations and reach out to me as early as possible with your [Student Disability Services](https://sds.cornell.edu/) (SDS) accomodation letter. This will ensure that we have enough time to make appropriate arrangements.
 
-# Diversity and Inclusivity
+If you need more immediate accomodations, but do not yet have a letter, please let me know and then follow up with SDS.
 
-My goal is to make everyone feel comfortable in the classroom, regardless of identity, background, and specific learning needs. Please let me know if you feel any aspect(s) of class could be made more inclusive. Please also share any preferred name(s) and/or your pronouns with me if you wish: I use he/him/his, and you can refer to me either as Vivek or Prof. Srikrishnan.
+# Mental Health Resources
 
-In all communications and interactions with each other, members of this class community (students and instructors) are expected to be respectful and inclusive. Be mindful of how spoken or written language might be misunderstood, and be aware that, for a variety of reasons, how others perceive your words and actions may not be exactly how you intended them.
+We all have to take care of our mental health, just as we would our physical health. As a student, you may experience a range of issues which can negatively impact your mental health. Please do not ignore any of these stressors, or feel like you have to navigate these challenges alone! You are part of a community of students, faculty, and staff, who have a responsibility to look for one another's well-being. If you are struggling with managing your mental health, or if you believe a classmate may be struggling, please reach out to the course instructor, the TA, or, for broader support, please take advantage of [Cornell's mental health resources](https://mentalhealth.cornell.edu/).
 
-# Land Acknowledgement 
+The TA and myself are not trained counselors, but we are here to support you in whatever capacity we can. You should never feel that you need to push yourself past your limits to complete any assignment for this class or any other. If we need to make modifications to the course or assignment schedule, you can certainly reach out to us, and all relevant discussions will be kept strictly confidential. 
 
-Cornell University is located on the traditional homelands of the Gayogo̱hó꞉nǫ' (the Cayuga Nation). The Gayogo̱hó꞉nǫ' are members of the Haudenosaunee Confederacy, an alliance of six sovereign Nations with a historic and contemporary presence on this land. The Confederacy precedes the establishment of Cornell University, New York state, and the United States of America. We acknowledge the painful history of Gayogo̱hó꞉nǫ' dispossession, and honor the ongoing connection of Gayogo̱hó꞉nǫ' people, past and present, to these lands and waters.
+# Academic Integrity
 
-This land acknowledgment has been reviewed and approved by the traditional Gayogo̱hó꞉nǫ' leadership. 
+This class is designed to encourage collaboration, and students are encouraged to discuss their work with other students. However, I expect students to abide by the [Cornell University Code of Academic Integrity](http://theuniversityfaculty.cornell.edu/academic-integrity/) in all aspects of this class.  **All work submitted must represent the students' own work and understanding**, whether individually or as a group (depending on the particulars of the assignment). This includes analyses,  code,  software  runs,  and  reports. Engineering as a profession relies upon the honesty and integrity of its practitioners (see *e.g.* the [American Society for Civil Engineers' Code of Ethics](https://www.asce.org/-/media/asce-images-and-files/career-and-growth/ethics/documents/asce-code-ethics.pdf)).
 
-## Why Include Land Acknowledgements?
+The collaborative environment in this class should not be viewed as an invitation for plagiarism. Plagiarism occurs when a writer intentionally misrepresents another's words or ideas (including code!) as their own without acknowledging the source.  **All** external resources which are consulted while working on an assignment should be referenced, including other students and faculty with whom the assignment is discussed. You will never be penalized for consulting an external source for help and referencing it, but plagiarism will result in a zero for that assignment as well as the potential for your case to be passed on for additional disciplinary action.
 
-Land recognition is an expression of gratitude and appreciation to those whose territory we reside and work on, and a way of honoring the Indigenous peoples who lived on and cultivated this land long before us. It is important to understand the history that brought us to live, learn, and work on this land, and to understand our place within that history. Land acknowledgements are not in a past tense and are not purely historical. We need to build our mindfulness of our ongoing participation in land dispossession and the resulting consequences for Indigenous peoples and ourselves. Further, this is a course on environmental systems analysis, and systems often exhibit complex, path-dependent behavior: their present states are the results of their pasts. We cannot understand or manage systems without learning from and accounting for their historical development and evolution. Land acknowledgements help build and reinforce our awareness and mindfulness of the historical factors which led to our present.
+# COVID-19 Arrangements 
+
+The particulars of how COVID-19 will affect class are fluid, depending on Cornell policies and the state of any acute outbreaks. Let me know if you will miss class due to quarantine (either official or self-imposed), and we will make arrangements for streaming and recording class, as well as any required virtual office hours or missed assignments. If class is shifted online for any reason, we will make appropriate arrangements and keep students informed. If we are not allowed to have in-person meetings, all office hours will be moved online and we will figure out alternatives to the group coding sessions.

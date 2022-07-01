@@ -2,11 +2,15 @@
 @def mintoclevel=2
 @def maxtoclevel=3
 
++++ 
+weave = true 
++++
+
 @@banner
 # Syllabus
 @@
 
-You can download a PDF of the full syllabus [here](../assets/syllabus.pdf).
+You can download a PDF of the full syllabus [here](../assets/bee4750-syllabus.pdf).
 
 \toc 
 

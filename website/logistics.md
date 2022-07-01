@@ -14,13 +14,16 @@ We will have two 75-minute meetings a week, from 11:25-12:40 on Mondays and Wedn
 
 ## Office Hours
 
-## Announcements
-
-Course announcements will be made on [Canvas](https://canvas.cornell.edu) and [Slack](http://slack.com).
+Office hours are TBD. A poll will be sent out at the beginning of the semester to find times that work for as many students as possible. If you need help outside of office hours, post on [Ed Discussion](https://us.edstem.org) or make an appointment with Prof. Srikrishnan or the TA.
 
 ## Discussions
 
-We will use [Slack](https://slack.com) for most class communications. Please ask your fellow students and the instruction staff if you have any questions, and if you have an answer, please share! This course works best when we all learn from each other.
+We will use [Ed Discussion](https://us.edstem.org) for most class communications. Please ask your fellow students and the instruction staff if you have any questions or helpful comments, and if you have an answer, please share! This course works best when we all learn from each other.
+
+
+## Announcements
+
+Course announcements will be made on [Ed Discussion](https://us.edstem.org) and this website.
 
 ## Homework Assignments
 

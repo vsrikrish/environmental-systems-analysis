@@ -2,56 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-    <loc>syllabus/index.html</loc>
-    <lastmod>2022-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>examples/index.html</loc>
-    <lastmod>2022-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>tutorials/using-JuMP/index.html</loc>
-    <lastmod>2022-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>404/index.html</loc>
-    <lastmod>2022-07-02</lastmod>
+    <lastmod>2022-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>index.html</loc>
-    <lastmod>2022-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>logistics/index.html</loc>
-    <lastmod>2022-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>tutorials/julia-plots/index.html</loc>
-    <lastmod>2022-07-02</lastmod>
+    <lastmod>2022-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>schedule/index.html</loc>
-    <lastmod>2022-07-02</lastmod>
+    <lastmod>2022-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>tutorials/julia-plots/index.html</loc>
+    <lastmod>2022-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>policies/communications/index.html</loc>
+    <lastmod>2022-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>syllabus/index.html</loc>
+    <lastmod>2022-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>tutorials/using-JuMP/index.html</loc>
+    <lastmod>2022-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>404/index.html</loc>
+    <lastmod>2022-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>logistics/index.html</loc>
+    <lastmod>2022-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>assignments/index.html</loc>
-    <lastmod>2022-07-02</lastmod>
+    <lastmod>2022-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>

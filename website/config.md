@@ -4,11 +4,9 @@ Add here global page variables to use throughout your website.
 @def author = "Vivek Srikrishnan"
 @def mintoclevel = 2
 @def maxtoclevel = 3
-@def title = "Environmental Systems Analysis"
 @def prepath = "environmental-systems-analysis"
 @def hasmath = false
 @def generate_rss = false
-@def ignore = ["lecture-notes/"]
 
 
 +++
@@ -16,7 +14,7 @@ Add here global page variables to use throughout your website.
 # these files might be copied and, if markdown, processed by Franklin which
 # you might not want. Indicate directories by ending the name with a `/`.
 # Base files such as LICENSE.md and README.md are ignored by default.
-ignore = ["node_modules/"]
+ignore = ["node_modules/", "lecture-notes/"]
 
 +++
 

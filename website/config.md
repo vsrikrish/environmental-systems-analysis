@@ -23,12 +23,45 @@ Add here global latex commands to use throughout your pages.
 -->
 \newcommand{\R}{\mathbb R}
 \newcommand{\scal}[1]{\langle #1 \rangle}
-\newcommand{\blurb}[1]{ ~~~ !#1 ~~~ } 
-\newcommand{\refblank}[2]{ ~~~ #1 ~~~ } 
-\newcommand{\lineskip}{@@blank@@} 
-\newcommand{\skipline}{\lineskip} 
-\newcommand{\note}[1]{
-@@note 
+\newcommand{\blurb}[1]{
+    ~~~
+    <span style="font-size:24px;font-weight:300;">!#1</span>
+    ~~~
+}
+\newcommand{\refblank}[2]{
+    ~~~
+    <a href="!#2" target="_blank" rel="noopener noreferrer">#1</a>
+    ~~~
+}
+\newcommand{\lineskip}{@@blank@@}
+\newcommand{\skipline}{\lineskip}
+\newcommand{\note}[1]{@@note @@title ⚠ Note@@ @@content #1 @@ @@}
+\newcommand{\warn}[1]{@@warning @@title ⚠ Warning!@@ @@content #1 @@ @@}
+
+\newcommand{\esc}[2]{
+    ```julia:esc__!#1
+    #hideall
+    using Markdown
+    println("\`\`\`\`\`plaintext $(Markdown.htmlesc(raw"""#2""")) \`\`\`\`\`")
+    ```
+    \textoutput{esc__!#1}
+}
+
+\newcommand{\esch}[2]{
+    ```julia:esc__!#1
+    #hideall
+    using Markdown
+    println("\`\`\`\`\`html $(Markdown.htmlesc(raw"""#2""")) \`\`\`\`\`")
+    ```
+    \textoutput{esc__!#1}
+}
+
+\newcommand{\span}[2]{~~~<span style="display:inline-block;!#1">~~~!#2~~~</span>~~~}
+
+\newcommand{\goto}[1]{~~~<a href="!#1" id="goto"><span id="check">&check;</span><span id="arrow"><b>&rarr;</b></span></a>~~~}
+
+\newcommand{\smindent}[1]{\span{width:45px;text-align:right;color:slategray;}{#1}}
+\newcommand{\smnote}[1]{\style{font-size:85%;line-height:0em;}{#1}}@@note 
 @@title 
 ⚠ Note@@ 
 

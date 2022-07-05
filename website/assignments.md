@@ -11,7 +11,6 @@
 
 ## Schedule
 
-| Assignment | Due Date | Submission | Notes |
+| Assignment | Due Date | Notes |
 |------------|----------|------------|-------|
-| HW0 | Aug 31, 2022 | | HW0 is only graded for completion |
-
+| [HW0](/assignments/hw0/hw0.pdf) | Sep 02, 2022 | HW0 is only graded for completion |

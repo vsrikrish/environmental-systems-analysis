@@ -4,13 +4,11 @@
 # Assignment Logistics
 @@
 
+\blurb{This is an overview of the assignment distribution and submission workflow.}
+
+\lineskip
+
 \toc
-
-## Overview
-
-In this class, we will use GitHub Classroom to distribute assignments and manage code. You should use git and GitHub to maintain your assignment and project codes. PDFs of your compiled assignments should be uploaded to Gradescope (**make sure to tag the individual problems, or you will lose points!**). Reports will be written as self-contained [`Weave.jl`](http://weavejl.mpastell.com/stable/) files which integrates plots, code, and your written analysis. 
-
-This entire workflow may seem a little complicated at first, but I promise it's not! Like so many other things, it's simpler to do than it is to try to write out all of the steps, and you'll get the feel for it after the first one or two assignments (which are intended to ease you into things).
 
 ## Using GitHub
 
@@ -47,7 +45,7 @@ Next, you should create a folder for the course, something like `bee-4750/`. You
 
 ### Accepting An Assignment
 
-When we release an assignment, you will receive an email from GitHub Classroom containing an invitation link. When you click on this link, GitHub Classroom will ask you if you want to accept the invitation. If you answer "yes," a new repository will be created for you containing the repository template. In this class, this template will include the following files.
+When we release an assignment, you will receive an email from GitHub Classroom containing an invitation link. This link will also be provided in a pinned post in the relevant Ed Discussion forum. When you click on this link, GitHub Classroom will ask you if you want to accept the invitation. If you answer "yes," a new repository will be created for you containing the repository template. In this class, this template will include the following files.
 
 1) An `instructions.pdf` file containing the assignment details (also `instructions.jmd`, which is the source file for the PDF; feel free to look around that file if you want to see how anything was implemented).
 2) `Project.toml`, which is a file specifying the Julia packages and their versions which should be installed (you won't have to do anything with this file, but it's provided to reduce the risk of any issues with package versions. This environment will be automatically loaded (and any needed packages installed) before your code is compiled, so you don't need to explicitly do so  in your report. The list of packages which are included in the environment will be provided in the repository README. For each assignment, this environment should be sufficient, but if you come across another package you want to use, feel free to use Julia's `Pkg` package manager to add it.

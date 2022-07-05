@@ -2,7 +2,12 @@
 # Assignments
 @@
 
-Here is [information on solving, accessing, and submitting assignments](/assignments/assignment-logistics/).
+\toc
+
+## Policies and Workflow
+
+* [Assignment Policies](/policies/#assignments)
+* [Workflow](/assignments/workflow/)
 
 ## Schedule
 

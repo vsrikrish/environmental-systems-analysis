@@ -2,7 +2,7 @@
 # Assignments
 @@
 
-\toc
+\blurb{}
 
 ## Policies and Workflow
 
@@ -12,5 +12,5 @@
 ## Schedule
 
 | Assignment | Due Date | Notes |
-|------------|----------|------------|-------|
-| [HW0](/assignments/hw0/hw0.pdf) | Sep 02, 2022 | HW0 is only graded for completion |
+|------------|----------|------------|
+| [HW0](/assignments/hw0/instructions.pdf) | Sep 02, 2022 | HW0 is only graded for completion |

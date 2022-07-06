@@ -2,8 +2,6 @@
 # Assignments
 @@
 
-\blurb{}
-
 ## Policies and Workflow
 
 * [Assignment Policies](/policies/#assignments)

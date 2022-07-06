@@ -4,10 +4,6 @@
 # Assignment Logistics
 @@
 
-\blurb{This is an overview of the assignment distribution and submission workflow.}
-
-\lineskip
-
 \toc
 
 ## Using GitHub

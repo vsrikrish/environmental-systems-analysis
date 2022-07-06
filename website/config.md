@@ -23,8 +23,16 @@ Add here global latex commands to use throughout your pages.
 -->
 \newcommand{\R}{\mathbb R}
 \newcommand{\scal}[1]{\langle #1 \rangle}
-\newcommand{\blurb}[1]{ ~~~ !#1 ~~~ } 
-\newcommand{\refblank}[2]{ ~~~ #1 ~~~ } 
+\newcommand{\blurb}[1]{
+    ~~~
+    <span style="font-size:24px;font-weight:300;">!#1</span>
+    ~~~
+}
+\newcommand{\refblank}[2]{
+    ~~~
+    <a href="!#2" target="_blank" rel="noopener noreferrer">#1</a>
+    ~~~
+}
 \newcommand{\lineskip}{@@blank@@} 
 \newcommand{\skipline}{\lineskip} 
 \newcommand{\note}[1]{@@note @@title ⚠ Note@@ @@contents #1 @@ @@} 

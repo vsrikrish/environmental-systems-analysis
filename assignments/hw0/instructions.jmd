@@ -1,0 +1,143 @@
+---
+title: Homework 0
+author: BEE 4750/5750
+date: "Due: Sep 02, 2022 by 11:59pm ET"
+fontfamily: "mathpazo"
+fontsize: 11pt
+weave_options:
+    md2pdf:
+        template: "bee4750.tpl"
+---
+
+# Overview
+
+## Learning Objectives
+
+Homework 0 is intended to get you up and running with cloning the assignments using GitHub, installing and using Julia, and submitting the assignments. It will only be graded based on completion, but make sure you don't run into any problems with this workflow, which will be repeated for future homework assignments.
+
+# Problems
+
+## Problem 1: **Writing Some Basic Code**
+
+This problem focuses on writing basic Julia code and including and referencing that code in a `Weave.jl` report (you might want or need to consult the [`Weave.jl` documentation](https://weavejl.mpastell.com/stable/).
+
+### Problem 1.1: *Writing A Basic Function*
+
+Write a function to compute the square of a number. Include your code in a fenced code block like that below:
+
+```julia; eval=false
+function square_number(x)
+    # your code here
+    return val
+end
+```
+
+### Problem 1.2: *Referencing Output*
+
+Write a sentence where you include a compile-time calculation of $9^2$ using your function. You can use syntax like the following: 
+
+```julia; eval=false
+"We can see that $5^2 =$ `j square_number(5)`."
+```
+
+### Problem 1.3: *Making Plots*
+
+Use a loop to evaluate `square_number()` over the interval $[-10, 10]$, then plot the results. [This tutorial](https://viveks.me/environmental-systems-analysis/tutorials/julia-plots/) shows some plotting basics and provides links to other resources.
+
+To include a plot in your report dynamically, you can use a code block that outputs a figure. You should definitely use the `fig_cap` chunk option, and possibly also some of the others; see [the `Weave.jl` documentation](http://weavejl.mpastell.com/stable/chunk_options/). The use of the `label` chunk option lets you refer to the plot in your report using LaTeX, using `\ref{fig:square-plot}` (or whatever label). You can also just directly include figures if you've generated them separately using standard Markdown.
+
+## Problem 2: **Square root by Newton's method**
+
+This problem involves implementing an algorithm: in this case, Newton's method for computing square roots. It was shamelessly copied from MIT's [Introduction to Computational Thinking course](https://computationalthinking.mit.edu/Spring21/hw0/).
+
+The algorithm is as follows:
+
+Given $x > 0$, the desired output is $\sqrt{x}$.
+
+1. Take a guess `a`
+2. Divide `x` by `a`
+3. Update `a` to be the average of `x/a` and `a`,
+4. Repeat until `x/a` is close enough to `x`.
+5. Return `a` as the square root.
+
+### Problem 2.1: *Justify Step 3*
+
+Why must $\sqrt{x}$ lie between $x/a$ and $a$, as in Step 3 of the above algorithm? Take advantage of any math typesetting you might need using LaTeX.
+
+### Problem 2.2: *Implement the Algorithm*
+
+Implement the above algorithm in Julia. Notice that Step 4 requires some interpretation for "close enough"; this is usually done by including an additional parameter specifying an error tolerance.
+
+Test your code by outputting $\sqrt{2}$.
+
+
+## Problem 3: **Working with Vectors and Matrices**
+
+We won't be doing much (if any) linear algebra in this class, but vectors and matrices are useful data structures, so let's see how to use them.
+
+### Problem 3.1: *Generating Random Values*
+
+Make a random vector of length 20 using the `rand()` function. *Note*: We'll see later in the course how to use `Distributions.jl` to sample from particular distributions; using `rand()` in this way just samples from a uniform distribution over the unit interval $[0, 1]$.
+
+### Problem 3.2: *Calculating a Mean*
+
+Implement your own `mean()` function to calculate the mean of a vector using a `for` loop and the random vector from above. Then write another function `demean()` which subtracts the mean from every element of the vector using your `mean()` function.
+
+---
+
+> **NOTE: Mutation**  
+
+> Julia has particular conventions around functions which *mutate* the input data. What do we mean by mutation? A function can operate on data by modifying the original vector, or by creating a new vector. For example, in this problem, you might write the following function:
+
+```julia; eval=false
+function demean(vect)
+    ... # some other code might be needed here
+    for i in 1:length(vect)
+       vect[i] -= mean(vect)
+    end
+end
+```
+
+> Given how Julia handles memory and passing arguments (the details of which are not essential), this would mutate the original array and change the underlying data. In general, this is undesirable behavior unless high levels of code optimization are required (which they won't generally be for this course, and rule #1 of coding is not to prematurely optimize code), as the original data then cannot be reused. 
+
+> Instead, try to work with copies of data, particularly when they aren't really large. This is always done when you use the `=` operator; *e.g.* `x = 2*x`.
+
+> If you write a function which does mutate the original data, the convention in Julia is to append an exclamation mark (`!`) to its name to indicate that it is doing so. So `sort(x)` returns a sorted copy of `x`, while `sort!(x)` sorts `x` in place. In other words, our function above should have been called `demean!(vect)`.
+
+---
+
+### Problem 3.3: *Accessing Array Elements with Indices*
+
+Create a vector of 10 elements, where the center 6 elements are equal to 1 and the others are equal to 0. *Remember that indexing in Julia starts with 1, not 0*.
+
+### Problem 3.4: *Working with Matrices*
+
+Using the `rand()` function, create a random 5x5 matrix. Then subtract the mean of each column from that column.
+
+## Problem 4: **Plotting Graph Representations of Networks**
+
+This problem introduces you to `GraphRecipes.jl` (see [the documentation](https://docs.juliaplots.org/latest/graphrecipes/introduction/)), which provides tools for plotting networks as connected graphs. This may be useful in future assignments and projects for plotting system components and flows. We won't explicitly do this in this assignment, but you can change colors and shapes for the nodes to indicate different types of components.
+
+A key component in these plots is the *neighbor matrix* $A$. $A$ should be symmetric for undirected graphs (graphs where the edges are simple connections with no "starting" or "ending" node): $A_{ij} = A_{ji}$ to indicate that nodes $i$ and $j$ are mutually connected. For a directed graph, where an edge starts at $i$ and ends at $j$, $A_{ij} = 1$ but $A_{ji}$ is not necessarily 1 unless that edge is bidirectional (flows can occur in both directions).
+
+### Problem 4.1: *Plot An Undirected Graph*
+
+Plot an undirected graph with 5 nodes, labeled by index. Specify your graph's neighbor matrix using Julia matrix notation, *e.g.*:
+
+```julia; eval=false
+A = [...;
+     ...;
+     ...;
+     ...;
+     ...
+    ]
+```
+
+### Problem 4.2: *Plot a Directed Graph*
+
+Plot a directed graph with 5 nodes, labeled by index.
+
+### Problem 4.3: *Label Edges*
+
+For your directed graph from Problem 4.2, label each edge with a string expressing a quantity.
+

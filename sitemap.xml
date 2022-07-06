@@ -32,6 +32,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>assignments/workflow/index.html</loc>
+    <lastmod>2022-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>tutorials/julia-plots/index.html</loc>
     <lastmod>2022-07-06</lastmod>
     <changefreq>monthly</changefreq>

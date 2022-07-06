@@ -37,7 +37,7 @@ Next, you should create a folder for the course, something like `bee-4750/`. You
 
 * **Git**: A software version control system. For an introduction to Git, see [these CodeRefinery tutorials](https://coderefinery.github.io/git-intro/).
 * **Repository**: A database storing and tracking the files and folders associated with a particular project. A *local* repository is hosted on a specific, locally-accessed machine, while a *remote* repository is hosted and accessible on a server. Remote repositories can be *private* if they are accessible only by certain users or *public* if they can be seen and accessed by anyone.
-* **Commit**: A commit consists of a tracked change to a file or a set of files. When you make a commit using `git commit`, Git creates a unique ID associated with the state of the files in the repository at that point. This allows you to track how files have changed and use or revert back to a previous state. As a result, it is a good idea to make frequent commits which respond to small code changes (like adding a new feature or fixing a specific bug). Files are added to a commit using `git add <files>`, which can be used multiple times for a given commit. Commits are typically associated with a message briefly describing what changes were made, using `git commit -m "Commit Message."
+* **Commit**: A commit consists of a tracked change to a file or a set of files. When you make a commit using `git commit`, Git creates a unique ID associated with the state of the files in the repository at that point. This allows you to track how files have changed and use or revert back to a previous state. As a result, it is a good idea to make frequent commits which respond to small code changes (like adding a new feature or fixing a specific bug). Files are added to a commit using `git add <files>`, which can be used multiple times for a given commit. Commits are typically associated with a message briefly describing what changes were made, using `git commit -m "<commit-message>"`
 * **GitHub**: A cloud-based service for remote management and storage of git repositories.
 * **Clone**: A clone is a copy of a remote repository on your local system. A clone allows you to make changes to the files in the local version of the repository and keep track of those changes using Git. These changes can later be "pushed" to the remote repository. You can clone a remote repository to which you have access using `git clone <remote-repository-url>`.
 * **Push**: Changes to a local repository are sent to the remote repository using `git push`. Errors when pushing are usually the result of misalignments between the local and remote repository histories; a Google search can usually identify the specific cause.
@@ -167,6 +167,7 @@ $$
 \end{alignat*}
 $$
 @@
+
 ### Compiling Your Report
 
 Finally, when you're ready to compile the report to check your solution or how everything looks, navigate to the repository directory. We've included a script in `compile_report.jl` that will load the environment, install any needed packages, and compile your report into either a PDF or HTML (if you don't want to bother with LaTeX). From the command line:
@@ -174,6 +175,7 @@ Finally, when you're ready to compile the report to check your solution or how e
 ```bash
 julia compile_report.jl <solution-filename.jmd> <output-type>
 ```
+
 where `output-type` is optional (it will try to compile to a PDF if this is not included, or you can explicitly specify "pdf" or "html"). If you have the Julia REPL open and want to try to compile your code:
 
 ```julia

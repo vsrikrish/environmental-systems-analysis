@@ -114,9 +114,9 @@ pre {
     margin-bottom: 1em;
 }
 
-.note .content {
+.note .contents {
     padding: 10px;
-    padding-left: 2px;
+    padding-left: 12px;
 }
 
 .note .title{
@@ -138,7 +138,7 @@ pre {
     border-radius: 5px;
     margin-bottom: 1em;
 }
-.warning .content {
+.warning .contents {
     padding: 10px;
     padding-left: 12px;
 }

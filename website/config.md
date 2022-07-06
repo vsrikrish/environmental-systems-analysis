@@ -23,54 +23,12 @@ Add here global latex commands to use throughout your pages.
 -->
 \newcommand{\R}{\mathbb R}
 \newcommand{\scal}[1]{\langle #1 \rangle}
-\newcommand{\blurb}[1]{
-    ~~~
-    <span style="font-size:24px;font-weight:300;">!#1</span>
-    ~~~
-}
-\newcommand{\refblank}[2]{
-    ~~~
-    <a href="!#2" target="_blank" rel="noopener noreferrer">#1</a>
-    ~~~
-}
-\newcommand{\lineskip}{@@blank@@}
-\newcommand{\skipline}{\lineskip}
-\newcommand{\note}[1]{@@note @@title ⚠ Note@@ @@content #1 @@ @@}
-\newcommand{\warn}[1]{@@warning @@title ⚠ Warning!@@ @@content #1 @@ @@}
-
-\newcommand{\esc}[2]{
-    ```julia:esc__!#1
-    #hideall
-    using Markdown
-    println("\`\`\`\`\`plaintext $(Markdown.htmlesc(raw"""#2""")) \`\`\`\`\`")
-    ```
-    \textoutput{esc__!#1}
-}
-
-\newcommand{\esch}[2]{
-    ```julia:esc__!#1
-    #hideall
-    using Markdown
-    println("\`\`\`\`\`html $(Markdown.htmlesc(raw"""#2""")) \`\`\`\`\`")
-    ```
-    \textoutput{esc__!#1}
-}
-
-\newcommand{\span}[2]{~~~<span style="display:inline-block;!#1">~~~!#2~~~</span>~~~}
-
-\newcommand{\goto}[1]{~~~<a href="!#1" id="goto"><span id="check">&check;</span><span id="arrow"><b>&rarr;</b></span></a>~~~}
-
-\newcommand{\smindent}[1]{\span{width:45px;text-align:right;color:slategray;}{#1}}
-\newcommand{\smnote}[1]{\style{font-size:85%;line-height:0em;}{#1}}@@note 
-@@title 
-⚠ Note@@ 
-
-@@substance
-#1 
-@@ 
-
-@@} 
-\newcommand{\warn}[1]{@@warning @@title ⚠ Warning!@@ @@content #1 @@ @@}
+\newcommand{\blurb}[1]{ ~~~ !#1 ~~~ } 
+\newcommand{\refblank}[2]{ ~~~ #1 ~~~ } 
+\newcommand{\lineskip}{@@blank@@} 
+\newcommand{\skipline}{\lineskip} 
+\newcommand{\note}[1]{@@note @@title ⚠ Note@@ @@contents #1 @@ @@} 
+\newcommand{\warn}[1]{@@warning @@title ⚠ Warning!@@ @@contents #1 @@ @@}
 
 \newcommand{\esc}[2]{ julia:esc__!#1 #hideall using Markdown println("\`\`\`\`\`plaintext $(Markdown.htmlesc(raw"""#2""")) \`\`\`\`\`") \textoutput{esc__!#1} }
 
@@ -90,17 +48,6 @@ Add here global latex commands to use throughout your pages.
 </figure>
 ~~~
 }
-
-\newcommand{\nblink}[1]{
-
-<a href="https://raw.githubusercontent.com/juliaai/DataScienceTutorials.jl/gh-pages/__generated/!#1/tutorial.ipynb" target="_blank"><em>notebook</em></a>
-} \newcommand{\sclink}[1]{
-
-<a href="https://raw.githubusercontent.com/juliaai/DataScienceTutorials.jl/gh-pages/__generated/!#1/tutorial.jl" target="_blank"><em>annotated script</em></a>
-} \newcommand{\rawlink}[1]{
-
-<a href="https://raw.githubusercontent.com/juliaai/DataScienceTutorials.jl/gh-pages/__generated/!#1/tutorial-raw.jl" target="_blank"><em>raw script</em></a>
-} \newcommand{\proj}[1]{https://raw.githubusercontent.com/juliaai/DataScienceTutorials.jl/gh-pages/__generated/!#1/Project.toml} \newcommand{\mani}[1]{https://raw.githubusercontent.com/juliaai/DataScienceTutorials.jl/gh-pages/__generated/!#1/Manifest.toml} \newcommand{\tgz}[1]{https://raw.githubusercontent.com/juliaai/DataScienceTutorials.jl/gh-pages/__generated/!#1.tar.gz}
 
 \newcommand{\tutorial}[1]{ 
 \toc\literate{/_literate/!#1/tutorial.jl} }

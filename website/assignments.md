@@ -9,6 +9,6 @@
 
 ## Schedule
 
-| Assignment | Due Date | Notes |
-|------------|----------|------------|
-| [HW0](/assignments/hw0/instructions.pdf) | Sep 02, 2022 | HW0 is only graded for completion |
+| Assignment | Due Date | Instructions | Rubric |
+|------------|----------|:------------:|:------:|
+| HW0 | Sep 02, 2022 | [![HTML Instructions](https://img.shields.io/static/v1?label=web&message=view&color=b31b1b&labelColor=222222&style=plastic&)](/assignments/hw0/hw0) [![PDF Instructions](https://img.shields.io/static/v1?label=pdf&message=view&color=b31b1b&labelColor=222222&style=plastic&logoColor=white)](/assignments/hw0/hw0.pdf) | Only graded for completion |

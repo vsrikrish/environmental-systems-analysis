@@ -1,1 +1,1 @@
-nothing
+time : 6 x + 12 y ≤ 80.0

@@ -1,1 +1,3 @@
-nothing
+2-element Vector{JuMP.VariableRef}:
+ x
+ y

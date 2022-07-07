@@ -1,1 +1,1 @@
-nothing
+Random.TaskLocalRNG()

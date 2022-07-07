@@ -3,7 +3,7 @@
 <p>To generate a basic line plot, use <code>plot</code>.</p>
 <pre><code class="julia hljs">y = rand(<span class=hljs-number >5</span>)
 plot(y, label=<span class=hljs-string >&quot;original data&quot;</span>, legend=:topright)</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/line-plot.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/line-plot.png" alt="">
 <p>There&#39;s a lot of customization here that can occur, a lot of which is discussed in the docs or can be found with some Googling.</p>
 <h4 id=adding_plot_elements ><a href="#adding_plot_elements" class=header-anchor >Adding Plot Elements</a></h4>
 <p>Now we can add some other lines and point markers.</p>
@@ -11,49 +11,49 @@ plot(y, label=<span class=hljs-string >&quot;original data&quot;</span>, legend=
 y3 = rand(<span class=hljs-number >5</span>)
 plot!(y2, label=<span class=hljs-string >&quot;new data&quot;</span>)
 scatter!(y3, label=<span class=hljs-string >&quot;even more data&quot;</span>)</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/line-plot-added.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/line-plot-added.png" alt="">
 <p>Remember that an exclamation mark &#40;&#33;&#41; at the end of a function name means that function modifies an object in-place, so <code>plot&#33;</code> and <code>scatter&#33;</code> modify the current plotting object, they don&#39;t create a new plot.</p>
 <h4 id=removing_plot_elements ><a href="#removing_plot_elements" class=header-anchor >Removing Plot Elements</a></h4>
 <p>Sometimes we want to remove legends, axes, grid lines, and ticks.</p>
 <pre><code class="julia hljs">plot!(legend=<span class=hljs-literal >false</span>, axis=<span class=hljs-literal >false</span>, grid=<span class=hljs-literal >false</span>, ticks=<span class=hljs-literal >false</span>)</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/line-plot-removed.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/line-plot-removed.png" alt="">
 <h4 id=aspect_ratio ><a href="#aspect_ratio" class=header-anchor >Aspect Ratio</a></h4>
 <p>If we want to have a square aspect ratio, use <code>ratio &#61; 1</code>.</p>
 <pre><code class="julia hljs">v = rand(<span class=hljs-number >5</span>)
 plot(v, ratio=<span class=hljs-number >1</span>, legend=<span class=hljs-literal >false</span>)
 scatter!(v)</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/square-aspect.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/square-aspect.png" alt="">
 <h3 id=heatmaps ><a href="#heatmaps" class=header-anchor >Heatmaps</a></h3>
 <p>A heatmap is effectively a plotted matrix with colors chosen according to the values. Use <code>clim</code> to specify a fixed range for the color limits.</p>
 <pre><code class="julia hljs">A = rand(<span class=hljs-number >10</span>, <span class=hljs-number >10</span>)
 heatmap(A, clim=(<span class=hljs-number >0</span>, <span class=hljs-number >1</span>), ratio=<span class=hljs-number >1</span>, legend=<span class=hljs-literal >false</span>, axis=<span class=hljs-literal >false</span>, ticks=<span class=hljs-literal >false</span>)</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/heatmap-basic.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/heatmap-basic.png" alt="">
 <pre><code class="julia hljs">M = [ <span class=hljs-number >0</span> <span class=hljs-number >1</span> <span class=hljs-number >0</span>; <span class=hljs-number >0</span> <span class=hljs-number >0</span> <span class=hljs-number >0</span>; <span class=hljs-number >1</span> <span class=hljs-number >0</span> <span class=hljs-number >0</span>]
 whiteblack = [RGBA(<span class=hljs-number >1</span>,<span class=hljs-number >1</span>,<span class=hljs-number >1</span>,<span class=hljs-number >0</span>), RGB(<span class=hljs-number >0</span>,<span class=hljs-number >0</span>,<span class=hljs-number >0</span>)]
 heatmap(c=whiteblack, M, aspect_ratio = <span class=hljs-number >1</span>, ticks=<span class=hljs-number >.5</span>:<span class=hljs-number >3.5</span>, lims=(<span class=hljs-number >.5</span>,<span class=hljs-number >3.5</span>), gridalpha=<span class=hljs-number >1</span>, legend=<span class=hljs-literal >false</span>, axis=<span class=hljs-literal >false</span>, ylabel=<span class=hljs-string >&quot;i&quot;</span>, xlabel=<span class=hljs-string >&quot;j&quot;</span>)</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/heatmap-bw.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/heatmap-bw.png" alt="">
 <h4 id=custom_colors ><a href="#custom_colors" class=header-anchor >Custom Colors</a></h4>
 <pre><code class="julia hljs"><span class=hljs-keyword >using</span> Colors
 
 mycolors = [<span class=hljs-string >colorant&quot;lightslateblue&quot;</span>,<span class=hljs-string >colorant&quot;limegreen&quot;</span>,<span class=hljs-string >colorant&quot;red&quot;</span>]
 A = [i <span class=hljs-keyword >for</span> i=<span class=hljs-number >50</span>:<span class=hljs-number >300</span>, j=<span class=hljs-number >1</span>:<span class=hljs-number >100</span>]
 heatmap(A, c=mycolors, clim=(<span class=hljs-number >1</span>,<span class=hljs-number >300</span>))</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/heatmap-colors.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/heatmap-colors.png" alt="">
 <h3 id=plotting_areas_under_curves ><a href="#plotting_areas_under_curves" class=header-anchor >Plotting Areas Under Curves</a></h3>
 <pre><code class="julia hljs">y = rand(<span class=hljs-number >10</span>)
 plot(y, fillrange= y.*<span class=hljs-number >0</span> .+ <span class=hljs-number >.5</span>, label= <span class=hljs-string >&quot;above/below 1/2&quot;</span>, legend =:top)</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/above-below.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/above-below.png" alt="">
 <pre><code class="julia hljs">x = <span class=hljs-built_in >LinRange</span>(<span class=hljs-number >0</span>,<span class=hljs-number >2</span>,<span class=hljs-number >100</span>)
 y1 = exp.(x)
 y2 = exp.(<span class=hljs-number >1.3</span> .* x)
 plot(x, y1, fillrange = y2, fillalpha = <span class=hljs-number >0.35</span>, c = <span class=hljs-number >1</span>, label = <span class=hljs-string >&quot;Confidence band&quot;</span>, legend = :topleft)</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/confidence.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/confidence.png" alt="">
 <pre><code class="julia hljs">x = -<span class=hljs-number >3</span>:<span class=hljs-number >.01</span>:<span class=hljs-number >3</span>
 areaplot(x, exp.(-x.^<span class=hljs-number >2</span>/<span class=hljs-number >2</span>)/√(<span class=hljs-number >2</span><span class=hljs-literal >π</span>),alpha=<span class=hljs-number >.25</span>,legend=<span class=hljs-literal >false</span>)</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/normal-area.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/normal-area.png" alt="">
 <pre><code class="julia hljs">M = [<span class=hljs-number >1</span> <span class=hljs-number >2</span> <span class=hljs-number >3</span>; <span class=hljs-number >7</span> <span class=hljs-number >8</span> <span class=hljs-number >9</span>; <span class=hljs-number >4</span> <span class=hljs-number >5</span> <span class=hljs-number >6</span>; <span class=hljs-number >0</span> <span class=hljs-number >.5</span> <span class=hljs-number >1.5</span>]
 areaplot(<span class=hljs-number >1</span>:<span class=hljs-number >3</span>, M, seriescolor = [:red :green :blue ], fillalpha = [<span class=hljs-number >0.2</span> <span class=hljs-number >0.3</span> <span class=hljs-number >0.4</span>])</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/area-colored.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/area-colored.png" alt="">
 <pre><code class="julia hljs"><span class=hljs-keyword >using</span> SpecialFunctions
 f = x-&gt;exp(-x^<span class=hljs-number >2</span>/<span class=hljs-number >2</span>)/√(<span class=hljs-number >2</span><span class=hljs-literal >π</span>)
 δ = <span class=hljs-number >.01</span>
@@ -61,39 +61,39 @@ plot()
 x = √<span class=hljs-number >2</span> .* erfinv.(<span class=hljs-number >2</span> .*(δ/<span class=hljs-number >2</span> : δ : <span class=hljs-number >1</span>) .- <span class=hljs-number >1</span>)
 areaplot(x, f.(x), seriescolor=[ :red,:blue], legend=<span class=hljs-literal >false</span>)
 plot!(x, f.(x),c=:black)</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/normal-quantiles.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/normal-quantiles.png" alt="">
 <h3 id=plotting_shapes ><a href="#plotting_shapes" class=header-anchor >Plotting Shapes</a></h3>
 <pre><code class="julia hljs">rectangle(w, h, x, y) = Shape(x .+ [<span class=hljs-number >0</span>,w,w,<span class=hljs-number >0</span>], y .+ [<span class=hljs-number >0</span>,<span class=hljs-number >0</span>,h,h])
 circle(r,x,y) = (θ = <span class=hljs-built_in >LinRange</span>(<span class=hljs-number >0</span>,<span class=hljs-number >2</span><span class=hljs-literal >π</span>,<span class=hljs-number >500</span>); (x.+r.*cos.(θ), y.+r.*sin.(θ)))
 plot(circle(<span class=hljs-number >5</span>,<span class=hljs-number >0</span>,<span class=hljs-number >0</span>), ratio=<span class=hljs-number >1</span>, c=:red, fill=<span class=hljs-literal >true</span>)
 plot!(rectangle(<span class=hljs-number >5</span>*√<span class=hljs-number >2</span>,<span class=hljs-number >5</span>*√<span class=hljs-number >2</span>,-<span class=hljs-number >2.5</span>*√<span class=hljs-number >2</span>,-<span class=hljs-number >2.5</span>*√<span class=hljs-number >2</span>),c=:white,fill=<span class=hljs-literal >true</span>,legend=<span class=hljs-literal >false</span>)</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/circle-rect.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/circle-rect.png" alt="">
 <h3 id=plotting_distributions ><a href="#plotting_distributions" class=header-anchor >Plotting Distributions</a></h3>
 <p>The <a href="https://github.com/JuliaPlots/StatsPlots.jl/blob/master/README.md"><code>StatsPlots.jl</code></a> package is very useful for making various plots of probability distributions.</p>
 <pre><code class="julia hljs"><span class=hljs-keyword >using</span> Distributions, StatsPlots
 plot(Normal(<span class=hljs-number >2</span>, <span class=hljs-number >5</span>))</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/normal-pdf.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/normal-pdf.png" alt="">
 <pre><code class="julia hljs">scatter(LogNormal(<span class=hljs-number >0.8</span>, <span class=hljs-number >1.5</span>))</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/lognormal-scatter.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/lognormal-scatter.png" alt="">
 <p>We can also use this functionality to plot distributions of data in tabular data structures like <code>DataFrames</code>.</p>
 <pre><code class="julia hljs"><span class=hljs-keyword >using</span> DataFrames
 dat = DataFrame(a = <span class=hljs-number >1</span>:<span class=hljs-number >10</span>, b = <span class=hljs-number >10</span> .+ rand(<span class=hljs-number >10</span>), c = <span class=hljs-number >10</span> .* rand(<span class=hljs-number >10</span>))
 <span class=hljs-meta >@df</span> dat density([:b :c], color=[:black :red])</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/dataframe-dist.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/dataframe-dist.png" alt="">
 <h3 id=editing_plots_manually ><a href="#editing_plots_manually" class=header-anchor >Editing Plots Manually</a></h3>
 <pre><code class="julia hljs">pl = plot(<span class=hljs-number >1</span>:<span class=hljs-number >4</span>,[<span class=hljs-number >1</span>, <span class=hljs-number >4</span>, <span class=hljs-number >9</span>, <span class=hljs-number >16</span>])</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/basic-plot.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/basic-plot.png" alt="">
 <pre><code class="julia hljs">pl.attr</code></pre>
 <pre><code class="julia hljs">pl.series_list[<span class=hljs-number >1</span>]</code></pre>
 <pre><code class="julia hljs">pl[:size]=(<span class=hljs-number >300</span>,<span class=hljs-number >200</span>)</code></pre>
 <pre><code class="julia hljs">pl</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/basic-size.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/basic-size.png" alt="">
 <h3 id=log-scaled_axes ><a href="#log-scaled_axes" class=header-anchor >Log-Scaled Axes</a></h3>
 <pre><code class="julia hljs">xx = <span class=hljs-number >.1</span>:<span class=hljs-number >.1</span>:<span class=hljs-number >10</span>
 plot(xx.^<span class=hljs-number >2</span>, xaxis=:log, yaxis=:log)</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/log-axes.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/log-axes.png" alt="">
 <pre><code class="julia hljs">plot(exp.(x), yaxis=:log)</code></pre>
-<p><span style="color:red;">// Image matching '/assets/tutorials/julia-plots/code/log-exp.png' not found. //</span></p>
+<img src="/environmental-systems-analysis/assets/tutorials/julia-plots/code/output/log-exp.png" alt="">
 
 <div class=page-foot >
   <div class=copyright >

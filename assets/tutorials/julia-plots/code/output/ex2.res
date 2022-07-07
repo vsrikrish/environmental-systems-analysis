@@ -1,1 +1,1 @@
-MersenneTwister(1)
+nothing

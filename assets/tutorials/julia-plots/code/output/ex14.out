@@ -1,0 +1,3 @@
+ArgumentError: Package SpecialFunctions [276daf66-3868-5448-9aa4-cd146d93841b] is required but does not seem to be installed:
+ - Run `Pkg.instantiate()` to install all recorded dependencies.
+

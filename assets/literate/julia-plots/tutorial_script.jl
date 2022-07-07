@@ -78,6 +78,18 @@ plot(circle(5,0,0), ratio=1, c=:red, fill=true)
 plot!(rectangle(5*√2,5*√2,-2.5*√2,-2.5*√2),c=:white,fill=true,legend=false)
 savefig(joinpath(@OUTPUT, "circle-rect.png")) #hide
 
+using Distributions, StatsPlots
+plot(Normal(2, 5))
+savefig(joinpath(@OUTPUT, "normal-pdf.png")) # hide
+
+scatter(LogNormal(0.8, 1.5))
+savefig(joinpath(@OUTPUT, "lognormal-scatter.png")) # hide
+
+using DataFrames
+dat = DataFrame(a = 1:10, b = 10 .+ rand(10), c = 10 .* rand(10))
+@df dat density([:b :c], color=[:black :red])
+savefig(joinpath(@OUTPUT, "dataframe-dist.png")) #hide
+
 pl = plot(1:4,[1, 4, 9, 16])
 savefig(joinpath(@OUTPUT, "basic-plot.png")) #hide
 

@@ -176,28 +176,58 @@ savefig(joinpath(@OUTPUT, "circle-rect.png")) # hide
 
 \fig{circle-rect.png}
 
-### Editing Plots Manually
+### Plotting Distributions
+
+The [`StatsPlots.jl`](https://github.com/JuliaPlots/StatsPlots.jl/blob/master/README.md) package is very useful for making various plots of probability distributions.
 
 ````julia:ex16
+using Distributions, StatsPlots
+plot(Normal(2, 5))
+savefig(joinpath(@OUTPUT, "normal-pdf.png")) # hide
+````
+
+\fig{normal-pdf.png}
+
+````julia:ex17
+scatter(LogNormal(0.8, 1.5))
+savefig(joinpath(@OUTPUT, "lognormal-scatter.png")) # hide
+````
+
+\fig{lognormal-scatter.png}
+
+We can also use this functionality to plot distributions of data in tabular data structures like `DataFrames`.
+
+````julia:ex18
+using DataFrames
+dat = DataFrame(a = 1:10, b = 10 .+ rand(10), c = 10 .* rand(10))
+@df dat density([:b :c], color=[:black :red])
+savefig(joinpath(@OUTPUT, "dataframe-dist.png")) # hide
+````
+
+\fig{dataframe-dist.png}
+
+### Editing Plots Manually
+
+````julia:ex19
 pl = plot(1:4,[1, 4, 9, 16])
 savefig(joinpath(@OUTPUT, "basic-plot.png")) # hide
 ````
 
 \fig{basic-plot.png}
 
-````julia:ex17
+````julia:ex20
 pl.attr
 ````
 
-````julia:ex18
+````julia:ex21
 pl.series_list[1]
 ````
 
-````julia:ex19
+````julia:ex22
 pl[:size]=(300,200)
 ````
 
-````julia:ex20
+````julia:ex23
 pl
 savefig(joinpath(@OUTPUT, "basic-size.png")) # hide
 ````
@@ -206,7 +236,7 @@ savefig(joinpath(@OUTPUT, "basic-size.png")) # hide
 
 ### Log-Scaled Axes
 
-````julia:ex21
+````julia:ex24
 xx = .1:.1:10
 plot(xx.^2, xaxis=:log, yaxis=:log)
 savefig(joinpath(@OUTPUT, "log-axes.png")) # hide
@@ -214,7 +244,7 @@ savefig(joinpath(@OUTPUT, "log-axes.png")) # hide
 
 \fig{log-axes.png}
 
-````julia:ex22
+````julia:ex25
 plot(exp.(x), yaxis=:log)
 savefig(joinpath(@OUTPUT, "log-exp.png")) # hide
 ````

@@ -122,7 +122,7 @@ Create a vector of 10 elements, where the center 6 elements are equal to 1 and t
 
 Using the `rand()` function, create a random 5x5 matrix. Then subtract the mean of each column from that column.
 
-## Problem 4: **Writing a Simulation Model**
+## Problem 4: **Simulating a System**
 
 In this problem, you will put some of the previous pieces together, and also see how to draw samples from probability distributions in Julia. 
 

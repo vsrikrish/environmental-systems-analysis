@@ -147,6 +147,30 @@ savefig(joinpath(@OUTPUT, "circle-rect.png")) #hide
 
 # \fig{circle-rect.png}
 
+# ### Plotting Distributions
+
+# The [`StatsPlots.jl`](https://github.com/JuliaPlots/StatsPlots.jl/blob/master/README.md) package is very useful for making various plots of probability distributions.
+
+using Distributions, StatsPlots
+plot(Normal(2, 5))
+savefig(joinpath(@OUTPUT, "normal-pdf.png")) # hide
+
+# \fig{normal-pdf.png}
+
+scatter(LogNormal(0.8, 1.5))
+savefig(joinpath(@OUTPUT, "lognormal-scatter.png")) # hide
+
+# \fig{lognormal-scatter.png}
+
+# We can also use this functionality to plot distributions of data in tabular data structures like `DataFrames`.
+
+using DataFrames
+dat = DataFrame(a = 1:10, b = 10 .+ rand(10), c = 10 .* rand(10))
+@df dat density([:b :c], color=[:black :red])
+savefig(joinpath(@OUTPUT, "dataframe-dist.png")) #hide
+
+# \fig{dataframe-dist.png}
+
 # ### Editing Plots Manually
 
 pl = plot(1:4,[1, 4, 9, 16])

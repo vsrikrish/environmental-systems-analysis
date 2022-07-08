@@ -169,3 +169,13 @@ margin-bottom: 1em;
 .blank {
     height: 1.5em;
   }
+
+.badges img {
+    width: auto;
+    height: 20px;
+    width: 68px;
+    padding-left: 0;
+    border-radius: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}

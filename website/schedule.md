@@ -1,4 +1,4 @@
-@def title = "Environmental Systems Analysis, Fall 2022 Schedule"
+@def title = "Class Schedule"
 
 @@banner
 # Schedule
@@ -10,8 +10,6 @@ Links to readings from peer-reviewed literature may require a Cornell login for 
 
 | Lecture | Topic | Date | Notes | Readings | Resources |
 |:-------:|-------|:----:|:-----:|----------|-----------|
-|   | **Introduction to Systems Analysis** |
+|   | *Introduction to Systems Analysis* |
 | 1 | Introduction to Systems | Aug 22, 2022  |[html](/lecture-notes/lecture01/lecture01.html) | | |
 | 2 | Understanding Systems with Models | Aug 24, 2022 | | [Oreskes et al (1994)](https://login.proxy.library.cornell.edu/login?url=https://doi.org/10.1126/science.263.5147.641) | |
-|   | **Simulating Systems** |
-|   | Simulating Systems  | Aug 29, 2022 | | | |

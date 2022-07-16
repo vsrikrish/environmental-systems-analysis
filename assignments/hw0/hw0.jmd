@@ -3,7 +3,7 @@ title: Homework 0
 author: BEE 4750/5750
 date: "Due: Sep 02, 2022 by 9:00pm ET"
 fontfamily: "mathpazo"
-stylesheet: "../bee4750.css"
+stylesheet: "https://viveks.me/environmental-systems-analysis/assignments/bee4750.css"
 weave_options:
     md2pdf:
         template: "../bee4750pdf.tpl"

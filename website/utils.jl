@@ -61,8 +61,8 @@ function hfun_hw_badges(params)
   io = IOBuffer()
   write(io, Franklin.fd2html("""
     @@badges
-    $(hw_badge(0, "html"))
-    $(hw_badge(0, "pdf"))
+    $(hw_badge(num, "html"))
+    $(hw_badge(num, "pdf"))
     @@
     """, internal=true)
   )
@@ -74,8 +74,34 @@ function hfun_rubric_badges(params)
   io = IOBuffer()
   write(io, Franklin.fd2html("""
     @@badges
-    $(rubric_badge(0, "html"))
-    $(rubric_badge(0, "pdf"))
+    $(rubric_badge(num, "html"))
+    $(rubric_badge(num, "pdf"))
+    @@
+    """, internal=true)
+  )
+  return String(take!(io))
+end
+
+function lecture_badge(name)  
+  link = string("/assets/lecture-notes/", name, "/index.html")
+  alt_text = string(titlecase(name), " Notes")
+  badge_right = "web"
+  badge_left = "Notes"
+  badge_url = string("https://img.shields.io/static/v1?label=", badge_left, "&message=", badge_right, "&color=b31b1b&labelColor=222222&style=flat")
+  badge_string = string(
+    "[!", "[", alt_text, "]", 
+    "(", badge_url, ")", "]",
+    "(", link, ")"
+  )
+  return badge_string
+end
+
+function hfun_lecture_badges(params) 
+  name = params[1]
+  io = IOBuffer()
+  write(io, Franklin.fd2html("""
+    @@badges
+    $(lecture_badge(name))
     @@
     """, internal=true)
   )

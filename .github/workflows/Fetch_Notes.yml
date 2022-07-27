@@ -23,7 +23,9 @@ jobs:
     - name: Copy Notes
       run: |
         cd website
-        mkdir __site/lecture-notes/
+        cd __site
+        mkdir lecture-notes
+        cd ..
         rsync -r --exclude '.git*' 'lecture-notes/' '__site/lecture-notes/'
     - name: Commit changes
       run: |

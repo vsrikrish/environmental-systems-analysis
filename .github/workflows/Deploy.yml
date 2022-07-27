@@ -29,7 +29,7 @@ jobs:
         fetch-depth: 0
     - name: Update notes
       run: |
-        cd website/lecture-notes
+        cd website/_assets/lecture-notes
         git branch -u origin/Fall22 Fall22
         cd ..
         git submodule update --remote --recursive

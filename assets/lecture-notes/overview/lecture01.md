@@ -1,5 +1,3 @@
-<!DOCTYPE html> <title>Lecture 1</title> <meta http-equiv=Content-Type  content="text/html; charset=UTF-8" /> <link rel=stylesheet  href="../stylesheets/katex.min.css"> <link rel=stylesheet  href="../stylesheets/custom.css"> <style> @import url(https://fonts.googleapis.com/css?family=Roboto); @import url(https://fonts.googleapis.com/css?family=Nunito); @import url('https://fonts.googleapis.com/css2?family=Mulish'); </style> <textarea id=source >
-
 class: center, middle
 
 .title[Course Overview]
@@ -206,35 +204,7 @@ class: left
 ***
 
 * Start assignments early!
-* Ask questions in class and on Slack and try to help your classmates!
+* Ask questions in class and on Slack and try to help your classmates`
 * **Collaborate** &mdash; this is life as an engineer once you leave college!
 * But don't just copy, your work should reflect your own understanding.
 
----
-name: goals
-
-class: left
-
-# Goals For This Course
-<hr>
-
-We want to build on your environmental engineering fundamentals with systems modeling and decision-making skills to:
-* Understand and identify modeling choices;
-* Use models to understand systems dynamics;
-* Use simulation and optimization to make management decisions;
-* Assess and analyze risk;
-* Make decisions in uncertain settings.
-
----
-name: test-code
-
-class: left
-
-# Some Test Code
- 
-```julia
-1+2
-```
-
-
-</textarea> <script src="../javascript/remark-latest.min.js" type="text/javascript"></script> <script defer src="../javascript/katex.min.js"></script> <script defer src="../javascript/auto-render.min.js"></script> <script type="text/javascript" src="../javascript/call-javascript.js"> </script>

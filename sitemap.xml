@@ -20,19 +20,7 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>lecture-notes/overview/build/fonts/LICENSES/index.html</loc>
-    <lastmod>2022-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>software/index.html</loc>
-    <lastmod>2022-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>lecture-notes/overview/src/index.html</loc>
     <lastmod>2022-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -56,12 +44,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>lecture-notes/README/index.html</loc>
-    <lastmod>2022-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>assignments/workflow/index.html</loc>
     <lastmod>2022-07-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -69,12 +51,6 @@
 </url>
 <url>
     <loc>policies/index.html</loc>
-    <lastmod>2022-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>lecture-notes/overview/build/index.html</loc>
     <lastmod>2022-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -98,19 +74,7 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>lecture-notes/overview/lecture01/</loc>
-    <lastmod>2022-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>assignments/hw0/hw0/</loc>
-    <lastmod>2022-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>lecture-notes/overview/build/index/</loc>
     <lastmod>2022-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

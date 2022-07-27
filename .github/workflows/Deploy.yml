@@ -33,6 +33,11 @@ jobs:
         git branch -u origin/Fall22 Fall22
         cd ..
         git submodule update --remote --recursive
+    - name: Commit notes
+      run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -am "update note submodule"
     # NOTE: Python is necessary for the pre-rendering (minification) step
     - name: Install python
       uses: actions/setup-python@v2
@@ -60,10 +65,6 @@ jobs:
             using NodeJS; run(`$(npm_cmd()) install highlight.js`);
             using Franklin;
             optimize()'
-    - name: Copy Notes
-      run: |
-        cd website
-        rsync -r --exclude '.git*' 'lecture-notes/' '__site/'
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:

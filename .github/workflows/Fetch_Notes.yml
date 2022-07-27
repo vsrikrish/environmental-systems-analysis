@@ -1,6 +1,7 @@
 name: Update Notes
 on:
   repository_dispatch:
+  workflow_dispatch:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

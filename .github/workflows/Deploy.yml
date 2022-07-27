@@ -33,8 +33,6 @@ jobs:
         git branch -u origin/Fall22 Fall22
         cd ..
         git submodule update --remote --init --recursive
-    - name: Render and commit notes
-      run: |
         cd lecture-notes
         julia src/render.jl
     # NOTE: Python is necessary for the pre-rendering (minification) step

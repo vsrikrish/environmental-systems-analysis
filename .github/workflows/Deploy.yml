@@ -27,17 +27,6 @@ jobs:
         persist-credentials: false
         submodules: true
         fetch-depth: 0
-    - name: Update notes
-      run: |
-        cd website/_assets/lecture-notes
-        git branch -u origin/Fall22 Fall22
-        cd ..
-        git submodule update --remote --init --recursive
-        cd lecture-notes
-        julia src/render.jl
-        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        git commit -am "update notes"
     # NOTE: Python is necessary for the pre-rendering (minification) step
     - name: Install python
       uses: actions/setup-python@v2
@@ -50,6 +39,14 @@ jobs:
       uses: julia-actions/setup-julia@v1
       with:
         version: 1.7
+    - name: Update notes
+      run: |
+        cd website/_assets/lecture-notes
+        git branch -u origin/Fall22 Fall22
+        cd ..
+        git submodule update --remote --init --recursive
+        cd lecture-notes
+        julia src/render.jl
     # NOTE
     #   The steps below ensure that NodeJS and Franklin are loaded then it
     #   installs highlight.js which is needed for the prerendering step
@@ -65,6 +62,7 @@ jobs:
             using NodeJS; run(`$(npm_cmd()) install highlight.js`);
             using Franklin;
             optimize()'
+            mv website/_assets/lecture-notes website/_site/assets/
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:

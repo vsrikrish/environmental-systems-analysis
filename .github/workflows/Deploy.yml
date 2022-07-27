@@ -32,7 +32,7 @@ jobs:
         cd website/_assets/lecture-notes
         git branch -u origin/Fall22 Fall22
         cd ..
-        git submodule update --remote --recursive
+        git submodule update --remote --init --recursive
     - name: Commit notes
       run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"

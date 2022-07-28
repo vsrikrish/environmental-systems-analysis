@@ -39,6 +39,10 @@ jobs:
       uses: julia-actions/setup-julia@v1
       with:
         version: 1.7
+    - name: Setup git config
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "<>"
     - name: Update notes
       run: |
         cd website/_assets/lecture-notes

@@ -83,7 +83,7 @@ function hfun_rubric_badges(params)
 end
 
 function lecture_badge(name)  
-  link = string("/assets/lecture-notes/", name, "index.html")
+  link = string("/assets/lecture-notes/", name, "/index.html")
   alt_text = string(titlecase(name), " Notes")
   badge_right = "web"
   badge_left = "Notes"

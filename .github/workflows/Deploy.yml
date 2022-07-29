@@ -39,17 +39,6 @@ jobs:
       uses: julia-actions/setup-julia@v1
       with:
         version: 1.7
-    - name: Update notes
-      run: |
-        cd website/_assets/lecture-notes
-        git branch -u origin/Fall22 Fall22
-        cd ..
-        git submodule update --remote --recursive
-        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        git commit -am "update lecture notes"
-        git push
-        cd ../..
     # NOTE
     #   The steps below ensure that NodeJS and Franklin are loaded then it
     #   installs highlight.js which is needed for the prerendering step

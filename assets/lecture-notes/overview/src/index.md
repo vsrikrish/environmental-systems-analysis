@@ -430,8 +430,7 @@ For example:
 class: middle, center
 
 <hr>
-# Next Class
+# Next Time
 <hr>
 
-* Mathematical Modeling of Systems
-* Work Through An Example
+We will discuss mathematical models of systems, and work through an example.

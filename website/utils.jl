@@ -82,8 +82,11 @@ function hfun_rubric_badges(params)
   return String(take!(io))
 end
 
-function lecture_badge(name)  
-  link = string("/assets/lecture-notes/", name, "/index.html")
+function lecture_badge(num)  
+  path_names = filter(isdir, readdir("website/_assets/lecture-notes"))
+  lecture_path = filter(x -> startswith(x, num), path_names)
+  name = split(lecture_path, "-")[2]
+  link = string("/assets/lecture-notes/", lecture_path, "/index.html")
   alt_text = string(titlecase(name), " Notes")
   badge_right = "web"
   badge_left = "Notes"

@@ -170,12 +170,20 @@ margin-bottom: 1em;
     height: 1.5em;
   }
 
+.badges {
+}
+
 .badges img {
-    width: auto;
-    height: 20px;
-    width: 68px;
-    padding-left: 0;
     border-radius: 0px;
-    margin-left: auto;
-    margin-right: auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }

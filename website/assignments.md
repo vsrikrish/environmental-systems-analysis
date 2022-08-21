@@ -11,4 +11,4 @@
 
 | Assignment | Due Date | Instructions | Rubric |
 |------------|----------|:------------:|:------:|
-| Homework 0 | Sep 02, 2022 | {{hw_badges 0}} | Only graded for completion |
+| Homework 0 | Sep 01, 2022 | {{hw_badges 0}} | Only graded for completion |

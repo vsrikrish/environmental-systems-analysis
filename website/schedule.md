@@ -14,4 +14,4 @@ To save notes as a pdf, print the HTML to a PDF using your browser.
 |:-------:|-------|:----:|:-----:|----------|-----------|
 |   | *Introduction to Systems Analysis* |
 | 1 | Introduction to Systems | Aug 22, 2022  | {{lecture_badges 01}} | | |
-| 2 | Understanding Systems with Models | Aug 24, 2022 | | [Oreskes et al (1994)](https://login.proxy.library.cornell.edu/login?url=https://doi.org/10.1126/science.263.5147.641) | |
+| 2 | Understanding Systems with Models | Aug 24, 2022 | {{lecture_badges 02}} | [Oreskes et al (1994)](https://login.proxy.library.cornell.edu/login?url=https://doi.org/10.1126/science.263.5147.641) | |

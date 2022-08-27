@@ -4,7 +4,7 @@ Pkg.instantiate()
 
 using Remark
 
-paths_ignore = [".git", ".github", "javascript", "src", "stylesheets"]
+paths_ignore = [".git", ".github", "javascript", "src", "stylesheets", "fonts"]
 # if nothing is passed at the command line, build everything, but otherwise only build the notes with the passed index
 if isempty(ARGS)
     note_paths = setdiff(filter(x -> isdir(x), readdir(".")), paths_ignore)
@@ -24,5 +24,8 @@ for path in note_paths
     for f in filter(x -> occursin(".svg", x), readdir(string(path, "/build")))
         mv(string(path, "/build/", f), string(path, "/figures/", f); force=true)
     end
+    cp("fonts", string(path, "/fonts"); force=true)
+    cp("katex.min.css", string(path, "/katex.min.css"); force=true)
+    cp("katex.min.js", string(path, "/katex.min.js"); force=true)
     rm(string(path, "/src/style.css"))
 end

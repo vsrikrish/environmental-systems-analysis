@@ -17,3 +17,14 @@ Environmental processes can have complicated dynamics and conflicting objectives
 \note{This course will use the [Julia](https://julialang.org) programming language. No prior knowledge of Julia is required.
 }
 
+# Course Logistics
+
+## Class Meetings
+
+MW, 11:25am-12:40pm, 105 Riley-Robb Hall
+
+## Office Hours
+
+* T, 4-5pm, [by Zoom](https://edstem.org/us/courses/23643/discussion/1705086)
+* W, 3-4pm, 318 Riley-Robb
+* R, 12-1pm, 318 Riley-Robb

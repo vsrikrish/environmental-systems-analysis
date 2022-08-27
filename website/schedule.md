@@ -18,5 +18,5 @@ To save notes as a pdf, print the HTML to a PDF using your browser.
 |   | *Systems Simulation* |
 | 3 | Simulating Systems | Aug 29, 2022 | {{lecture_badges 03}} | [O'Hagan (2004)](http://doi.wiley.com/10.1111/j.1740-9713.2004.00050.x) | |
 | 4 | Uncertainty and Monte Carlo | Aug 31, 2022 | {{lecture_badges 04}} | | |
-|   | **No Class -- Labor Day** |
+|   | **No Class -- Labor Day** | Sep 5, 2022 |
 | 5 | More Monte Carlo and Risk | Sep 7, 2022 | {{lecture_badges 05}} | [Simpson et al (2021)](10.1016/j.oneear.2021.03.005) | |

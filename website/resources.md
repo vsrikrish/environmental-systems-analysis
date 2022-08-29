@@ -6,11 +6,17 @@
 
 ## Julia Programming
 
+* [Julia Documentation](https://docs.julialang.org/en/v1/)
 * [QuantEcon MATLAB-Python-Julia cheatsheet](https://cheatsheets.quantecon.org/)
 * [FastTrack to Julia cheatsheet](https://juliadocs.github.io/Julia-Cheat-Sheet/)
 * [Plotting cheatsheet](https://github.com/sswatson/cheatsheets/blob/master/plotsjl-cheatsheet.pdf)
 * [Introduction to Computational Thinking](https://computationalthinking.mit.edu/Spring21/): a great Julia based course at MIT!
 * [Comprehensive Julia Tutorials](https://www.youtube.com/playlist?list=PLCXbkShHt01seTlnlVg6O7f6jKGTguFi7): YouTube playlist covering a variety of Julia topics, starting with an introduciton to the language.
+
+## Markdown
+
+* [Markdown Cheatsheet](https://www.markdownguide.org/cheat-sheet/)
+* [GitHub Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) (note that not all of these commands may work in `Weave.jl`, as GitHub Markdown is an expanded syntax
 
 ## Git/GitHub
 

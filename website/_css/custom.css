@@ -3,8 +3,6 @@ html, body {
     font-family: 'Lato', serif;
 }
 
-
-
 h1 { color: #222222; }
 h1, h2, h3 {
     font-family: 'Noto Sans';
@@ -187,3 +185,98 @@ margin-bottom: 1em;
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+.schedule {
+    overflow-x: scroll;
+    position: relative;
+}
+
+ul.schedule-times,
+ul.schedule-days
+ul.schedule-events {
+    margin-top: 0;
+    padding-left: 0;
+}
+
+ul.schedule-times {
+    margin: 0px auto 0;
+    position: absolute;
+}
+
+.schedule-time {
+    color: #222222;
+    height: 40px;
+    margin-top: 0;
+    padding-top: 20px;
+    position: relative;
+    border-bottom: 1px solid #A2998B;
+}
+
+.schedule-time:last-child {
+    border-bottom: 1px solid #A2998B;
+}
+
+.schedule-days {
+    display: inline-flex;
+    margin-bottom: 0;
+    margin-left: 45px;
+    margin-top: 0;
+    position: relative;
+    list-style-type: none;
+}
+
+.schedule-day {
+    border-left: 1px solid #A2998B;
+    flex: 1 0 0;
+    margin: 0px 0px;
+    min-width: 150px;
+}
+
+.schedule-day:last-child {
+    border-right: 1px solid #A2998B;
+}
+
+h2.schedule-header {
+    align-items: center;
+    display: flex;
+    font-size: 18px !important;
+    height: 40px;
+    justify-content: center;
+    margin: 0;
+    border-top: 1px solid #A2998B;
+    border-bottom: 1px solid #A2998B;
+}
+
+.schedule-events {
+    display: flex;
+    padding: 0;
+    position: relative;
+}
+
+.schedule-event {
+    background-color: #222222;
+    border-radius: 2px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .1), inset 0 -3px 0 rgba(0, 0, 0, .2);
+    color: #ffffff;
+    float: left;
+    height: 100%;
+    margin: 0;
+    padding: 5px 10px;
+    position: absolute;
+    width: 100%;
+    font-size: 0.9em;
+}
+
+.schedule-event .name {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.lecture {
+    background-color: #B31B1B;
+}
+
+.office-hours {
+    background-color: #073949;
+}
+

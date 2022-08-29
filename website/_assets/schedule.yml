@@ -1,0 +1,36 @@
+---
+schedule:
+  - name: Monday
+    events:
+      - name: Lecture
+        start: 11:25 AM
+        end: 12:40 PM
+        location: 105 Riley-Robb
+      - name: Office Hours (TA)
+        start: 5:00 PM
+        end: 6:00 PM
+        location: 319 Riley-Robb
+  - name: Tuesday
+    events:
+      - name: Office Hours
+        start: 4:00 PM
+        end: 5:00 PM
+        location: Zoom
+  - name: Wednesday
+    events:
+      - name: Lecture
+        start: 11:25 AM
+        end: 12:40 PM
+        location: 105 Riley-Robb
+      - name: Office Hours
+        start: 3:00 PM
+        end: 4:00 PM
+        location: 318 Riley-Robb
+  - name: Thursday
+    events:
+      - name: Office Hours
+        start: 12:00 PM
+        end: 1:00 PM
+        location: 318 Riley-Robb
+  - name: Friday
+---

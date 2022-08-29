@@ -1,3 +1,6 @@
+using YAML
+using Dates
+
 function hfun_bar(vname)
   val = Meta.parse(vname[1])
   return round(sqrt(val), digits=2)
@@ -99,7 +102,7 @@ function lecture_badge(num)
   return badge_string
 end
 
-function hfun_lecture_badges(params) 
+function hfun_lecture_badges(params::Vector{String}) 
   name = params[1]
   io = IOBuffer()
   write(io, Franklin.fd2html("""
@@ -109,4 +112,39 @@ function hfun_lecture_badges(params)
     """, internal=true)
   )
   return String(take!(io))
+end
+
+function hfun_day_schedule(params::Vector{String})
+  path_to_yml = params[1]
+  dname = params[2]
+  sched = YAML.load_file(path_to_yml)["schedule"]
+  d = filter(kv -> kv["name"] == dname, sched)[1]
+  if haskey(d, "events")
+    events = d["events"]
+    # write the list
+    io = IOBuffer()
+    write(io, """<ul class="schedule-events" style="height: 790px">\n""")
+    for event in events
+      (name, location, start, finish) = values(event)
+      if startswith(name, "Office Hours")
+        slug = "office-hours"
+      else
+        slug = lowercase(name)
+        replace(slug, " " => "-")
+      end
+      top = string(Int(round(Minute(Time(start, "II:MM p") - Time(8)).value * 4/3)), "px")
+      height = string(Int(round(Minute(Time(finish, "II:MM p") - Time(start, "II:MM p")).value * 4/3)), "px")
+      write(io, """<li class="schedule-event $slug" style="top: $top; height: $height">\n""")
+      write(io, """<div class="name">$name</div>\n""")
+      write(io, """<div class="time">$start-$finish</div>\n""")
+      write(io, """<div class="location">$location</div>\n""")
+      write(io, "</li>\n")
+    end
+    write(io, "</ul>\n")
+
+    out = String(take!(io))
+  else
+    out = "\n"
+  end
+  return out
 end

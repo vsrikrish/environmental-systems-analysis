@@ -65,7 +65,7 @@ Given $x > 0$, the desired output is $\sqrt{x}$.
 1. Take a guess `a`
 2. Divide `x` by `a`
 3. Update `a` to be the average of `x/a` and `a`,
-4. Repeat until `x/a` is close enough to `x`.
+4. Repeat until `x/a` is close enough to `a`.
 5. Return `a` as the square root.
 
 ### Problem 2.1: *Justify Step 3*

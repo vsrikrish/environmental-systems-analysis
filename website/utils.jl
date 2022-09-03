@@ -78,7 +78,6 @@ function hfun_rubric_badges(params)
   write(io, Franklin.fd2html("""
     @@badges
     $(rubric_badge(num, "html"))
-    $(rubric_badge(num, "pdf"))
     @@
     """, internal=true)
   )

@@ -1,0 +1,605 @@
+<!--This file was generated, do not modify it.-->
+````julia:ex1
+using Pkg #hideall
+macro OUTPUT()
+    return isdefined(Main, :Franklin) ? Franklin.OUT_PATH[] : "/tmp/"
+end;
+````
+
+## Overview
+
+This tutorial will give some examples of basic Julia commands and syntax.
+
+## Getting Help
+* Check out the official documentation for Julia: [https://docs.julialang.org/en/v1/](https://docs.julialang.org/en/v1/).
+* [Stack Overflow](https://stackoverflow.com) is a commonly-used resource for programming assistance.
+* At a code prompt or in the REPL, you can always type `?functionname` to get help.
+
+## Comments
+Comments hide statements from the interpreter or compiler. It's a good idea to liberally comment your code so readers (including yourself!) know why your code is structured and written the way it is.
+Single-line comments in Julia are preceded with a `#`. Multi-line comments are preceded with `#=` and ended with `=#`
+
+## Suppressing Output
+
+You can suppress output using a semi-colon (;).
+
+````julia:ex2
+4+8;
+4+8
+````
+
+## Variables
+Variables are names which correspond to some type of object. These names are bound to objects (and hence their values) using the = operator.
+
+````julia:ex3
+x = 5
+````
+
+Variables can be manipulated with standard arithmetic operators.
+
+````julia:ex4
+4 + x
+````
+
+Another advantage of Julia is the ability to use Greek letters (or other Unicode characters) as variable names. For example, type `\` followed by the name of the Greek letter (*i.e.* `\alpha`) followed by TAB. This can make code easier to read, and more obviously comparable to associated equations.
+
+````julia:ex5
+α = 3 # The name of this variable was entered with \alpha + TAB + \_1
+````
+
+You can also include subscripts or superscripts in variable names using `\_` and `\^`, respectively, followed by TAB. If using a Greek letter followed by a sub- or super-script, make sure you TAB following the name of the letter before the sub- or super-script. Effectively, TAB after you finish typing the name of each `\character`.
+
+````julia:ex6
+β₁ = 10 # The name of this variable was entered with \beta + TAB + \_1 + TAB
+````
+
+However, try not to overwrite predefined names! For example, you might not want to use `π` as a variable name...
+
+````julia:ex7
+π
+````
+
+!!! tip "Overwriting predefined names"
+
+    In the grand scheme of things, overwriting `π` is not a huge deal unless you want to do some trigonometry. However, there are more important predefined functions and variables that you may want to be aware of. Always check that a variable or function name is not predefined!
+
+## Data Types
+Each datum (importantly, *not* the variable which is bound to it) has a [data type](https://docs.julialang.org/en/v1/manual/types/).
+
+!!! info "Variables and data"
+    Strictly speaking, a variable points to a particular memory address, which holds the information associated with some datum or data. These pieces of memory can be used to store different data as the variable is overwritten. This can be restricted to varying degrees depending on the programming language. In a *statically typed* language like C, the compiler needs to allocate memory based on the data type, and so once a variable is initialized with a given type, this type cannot be changed, even if the data itself can be. In a *dynamically typed* language such as Python, the types associated with variables can be changed, which may mean the variable needs to be assigned to a different piece of memory. This is one reason why compiled (and usually statically-typed) languages are often faster than interpreted (and usually dynamically-typed) languaged.
+
+Julia is a dynamically-typed language, which means that you do not need to specify the type of a variable when you define it, and you can change types mid-program. However, this does not work in Pluto, as Pluto tries to keep track of variables so it can update all cells in a notebook that refer to that variable when the variable changes upstream.
+
+Julia types are similar to C types, in that they require not only the *type* of data (Int, Float, String, etc), but also the precision (which is related to the amount of memory allocated to the variable). Issues with precision won't be a big deal in this class, though they matter when you're concerned about performance vs. decimal accuracy of code.
+You can identify the type of a variable or expression with the `typeof()` function.
+
+````julia:ex8
+typeof("This is a string.")
+typeof(x)
+````
+
+While Julia is dynamically-typed, you can specify the type of a variable when it is declared. This can increase speed, but perhaps just as importantly, can make it easier to identify type errors when debugging.
+
+````julia:ex9
+typeof(9)
+z::Int8 = 9
+typeof(z)
+````
+
+### Numeric types
+A key distinction is between an integer type (or *Int*) and a floating-point number type (or *float*). Integers only hold whole numbers, while floating-point numbers correspond to numbers with fractional (or decimal) parts. For example, `9` is an integer, while `9.25` is a floating point number. The difference between the two has to do with the way the number is stored in memory. `9`, an integer, is handled differently in memory than `9.0`, which is a floating-point number, even though they're mathematically the same value.
+
+````julia:ex10
+typeof(9)
+typeof(9.25)
+````
+
+Sometimes certain function specifications will require you to use a Float variable instead of an Int. One way to force an Int variable to be a Float is to add a decimal point at the end of the integer.
+
+````julia:ex11
+typeof(9.)
+````
+
+In Julia, floats can also refer to complex numbers.
+
+````julia:ex12
+typeof(5. + 1.1im) # im defines the imaginary part of the complex number
+
+typeof(sqrt(Complex(-4))) # we get an error if we try to take the square root of a negative number without telling Julia that it should be prepared to work with complex floats
+````
+
+### Strings
+Strings hold characters, rather than numeric values. Even if a string contains what seems like a number, it is actually stored as the character representation of the digits. As a result, you cannot use arithmetic operators (for example) on this datum.
+
+````julia:ex13
+"5" + 5
+````
+
+However, you can try to tell Julia to interpret a string encoding a numeric character as a numeric value.
+
+````julia:ex14
+Int("5") + 5
+````
+
+Two strings can be concatenated using `*`:
+
+````julia:ex15
+"Hello" * " " * "there"
+````
+
+### Booleans
+Boolean variables (or *Bools*) are logical variables, that can have `true` or `false` as values.
+
+````julia:ex16
+b = true
+````
+
+Numerical comparisons, such as `==`, `!=`, or `<', return a Bool.
+
+````julia:ex17
+c = 9 > 11
+````
+
+Bools are important for logical flows, such as if-then-else blocks or certain types of loops.
+
+## Mathematical operations
+Addition, subtraction, multiplication, and division work as you would expect. Just pay attention to types! The type of the output is influenced by the type of the inputs: adding or multiplying an Int by a Float will always result in a Float, even if the Float is mathematically an integer. Division is a little special: dividing an Int by another Int will still return a float, because Julia doesn't know ahead of time if the denominator is a factor of the numerator.
+
+````julia:ex18
+3 + 5
+3 * 2
+3 * 2.
+6 - 2
+9 / 3
+````
+
+Raising a base to an exponent uses `^`, not `**`.
+
+````julia:ex19
+3^2
+````
+
+Julia allows the use of updating operators to simplify updating a variable in place (in other words, using `x += 5` instead of `x = x + 5`.
+
+### Boolean algebra
+Logical operations can be used on variables of type `Bool`. Typical operators are `&&` (and), `||` (or), and `!` (not).
+
+````julia:ex20
+true && true
+true && false
+true || false
+!true
+````
+
+Comparisons can be chained together.
+
+````julia:ex21
+3 < 4 || 8 == 12
+````
+
+!!! tip "Making orders of operations explicit"
+	We didn't do this above, since Julia doesn't require it, but it's easier to understand these types of compound expressions if you use parentheses to signal the order of operations. This helps with debugging!
+
+````julia:ex22
+(3 < 4) || (8 == 12)
+````
+
+## Data Structures
+Data structures are containers which hold multiple values in a convenient fashion. Julia has several built-in data structures, and there are many extensions provided in additional packages.
+
+### Tuples
+Tuples are collections of values. Julia will pay attention to the types of these values, but they can be mixed. Tuples are also *immutable*: their values cannot be changed once they are defined.
+Tuples can be defined by just separating values with commas.
+
+````julia:ex23
+test_tuple = 4, 5, 6
+````
+
+To access a value, use square brackets and the desired index.
+
+!!! note "Julia indexing"
+    Julia indexing starts at 1, not 0!
+
+````julia:ex24
+test_tuple[1]
+````
+
+As mentioned above, tuples are immutable. What happens if we try to change the value of the first element of `test_tuple`?
+
+````julia:ex25
+test_tuple[1] = 5
+````
+
+Tuples also do not have to hold the same types of values.
+
+````julia:ex26
+test_tuple_2 = 4, 5., 'h'
+typeof(test_tuple_2)
+````
+
+Tuples can also be defined by enclosing the values in parentheses.
+
+````julia:ex27
+test_tuple_3 = (4, 5., 'h')
+typeof(test_tuple_3)
+````
+
+### Arrays
+Arrays also hold multiple values, which can be accessed based on their index position. Arrays are commonly defined using square brackets.
+
+````julia:ex28
+test_array = [1, 4, 7, 8]
+test_array[2]
+````
+
+Unlike tuples, arrays are mutable, and their contained values can be changed later.
+
+````julia:ex29
+test_array[1] = 6
+test_array
+````
+
+Arrays also can hold multiple types. Unlike tuples, this causes the array to no longer care about types at all.
+
+````julia:ex30
+test_array_2 = [6, 5., 'h']
+typeof(test_array)
+typeof(test_array_2)
+````
+
+### Dictionaries
+Instead of using integer indices based on position, dictionaries are indexed by keys. They are specified by passing key-value pairs to the `Dict()` method.
+
+````julia:ex31
+test_dict = Dict("A"=>1, "B"=>2)
+test_dict["B"]
+````
+
+### Comprehensions
+Creating a data structure with more than a handful of elements can be tedious to do by hand. If your desired array follows a certain pattern, you can create structures using a *comprehension*. Comprehensions iterate over some other data structure (such as an array) implicitly and populate the new data structure based on the specified instructions.
+
+````julia:ex32
+[i^2 for i in 0:1:5]
+````
+
+For dictionaries, make sure that you also specify the keys.
+
+````julia:ex33
+Dict(string(i) => i^2 for i in 0:1:5)
+````
+
+## Functions
+A function is an object which accepts a tuple of arguments and maps them to a return value. In Julia, functions are defined using the following syntax.
+
+````julia:ex34
+function my_function(x,y)
+````
+
+some stuff involving x and y
+
+````julia:ex35
+end
+
+function my_actual_function(x, y)
+	return x + y
+end
+
+my_actual_function(3, 5)
+````
+
+!!! note "Do you need to "return" values?"
+    Functions in Julia do not require explicit use of a `return` statement. They will return the last expression evaluated in their definition. However, it's good style to explicitly `return` function outputs. This improves readability and debugging, especially when functions can return multiple expressions based on logical control flows (if-then-else blocks).
+
+Functions in Julia are objects, and can be treated like other objects. They can be assigned to new variables or passed as arguments to other functions.
+
+````julia:ex36
+g = my_actual_function
+
+function function_of_functions(f, x, y)
+	return f(x, y)
+end
+
+function_of_functions(g, 3, 5)
+````
+
+### Short and Anonymous Functions
+In addition to the long form of the function definition shown above, simple functions can be specified in more compact forms when helpful.
+
+short form
+
+````julia:ex37
+h₁(x) = x^2 # make the subscript using \_1 + <TAB>
+
+h₁(4)
+````
+
+anonymous form
+
+````julia:ex38
+x->sin(x)
+
+(x->sin(x))(π/4)
+````
+
+### Mutating Functions
+The convention in Julia is that functions should not modify (or *mutate*) their input data. The reason for this is to ensure that the data is preserved. Mutating functions are mainly appropriate for applications where performance needs to be optimized, and making a copy of the input data would be too memory-intensive.
+If you do write a mutating function in Julia, the convention is to add a `!` to its name, like `my_mutating_function!(x)`.
+
+### Optional arguments
+There are two extremes with regard to function parameters which do not always need to be changed. The first is to hard-code them into the function body, which has a clear downside: when you do want to change them, the function needs to be edited directly. The other extreme is to treat them as regular arguments, passing them every time the function is called. This has the downside of potentially creating bloated function calls, particularly when there is a standard default value that makes sense for most function evaluations.
+
+Most modern languages, including Julia, allow an alternate solution, which is to make these arguments *optional*. This involves setting a default value, which is used unless the argument is explicitly defined in a function call.
+
+````julia:ex39
+function setting_optional_arguments(x, y, c=0.5)
+	return c * (x + y)
+end
+````
+
+If we want to stick with the fixed value $c=0.5$, all we have to do is call `setting_optional_arguments` with the `x` and `y` arguments.
+
+````julia:ex40
+setting_optional_arguments(3, 5)
+````
+
+Otherwise, we can pass a new value for `c`.
+
+````julia:ex41
+setting_optional_arguments(3, 5, 2)
+````
+
+### Passing data structures as arguments
+Instead of passing variables individually, it may make sense to pass a data structure, such as an array or a tuple, and then unpacking within the function definition. This is straightforward in long form: access the appropriate elements using their index.
+In short or anonymous form, there is a trick which allows the use of readable variables within the function definition.
+
+````julia:ex42
+h₂((x,y)) = x*y # enclose the input arguments in parentheses to tell Julia to expect and unpack a tuple
+h₂((2, 3)) # this works perfectly, as we passed in a tuple
+h₂(2, 3) # this gives an error, as h₂ expects a single tuple, not two different numeric values
+h₂([3, 10]) # this also works with arrays instead of tuples
+````
+
+### Vectorized operations
+Julia uses **dot syntax** to vectorize an operation and apply it *element-wise* across an array.
+For example, to calculate the square root of 3:
+
+````julia:ex43
+sqrt(3)
+````
+
+To calculate the square roots of every integer between 1 and 5:
+
+````julia:ex44
+sqrt.([1, 2, 3, 4, 5])
+````
+
+The same dot syntax is used for arithmetic operations over arrays, since these operations are really functions.
+
+````julia:ex45
+[1, 2, 3, 4] .* 2
+````
+
+Vectorization can be faster and is more concise to write and read than applying the same function to multiple variables or objects explicitly, so take advantage!
+
+### Returning multiple values
+You can return multiple values by separating them with a comma. This implicitly causes the function to return a tuple of values.
+
+````julia:ex46
+function return_multiple_values(x, y)
+	return x + y, x * y
+end
+return_multiple_values(3, 5)
+````
+
+These values can be unpacked into multiple variables.
+
+````julia:ex47
+n, ν = return_multiple_values(3, 5)
+n
+ν
+````
+
+### Returning nothing
+Sometimes you don't want a function to return any values at all. For example, you might want a function that only prints a string to the console.
+
+````julia:ex48
+function print_some_string(x)
+	println("x: $x")
+	return nothing
+end
+
+print_some_string(42)
+````
+
+### Function signatures
+You can specify the *signature* of a function by specifying the types of arguments and/or return value. This isn't necessary, but it can help with debugging. For example, suppose we did the following:
+
+````julia:ex49
+function_of_functions(g, 3, "5")
+````
+
+This type of error can be hard to track down without clear commenting. Specifying the type expected by a function can help debug these types of errors.
+
+````julia:ex50
+function new_function(f::Function, x::Int64, y::Int64)
+	return f(x, y)
+end
+
+new_function(g, 3, 5)
+new_function(g, 3, "5")
+````
+
+Notice that the error message here points out that the second numeric argument failed to match the expected type.
+
+### Return types
+We can also specify the expected output type of a function. This will cause the function to return the value as the specified type if possible, even if that isn't the "natural" result of the operation.
+
+````julia:ex51
+function yet_another_function(x, y)::Int64
+	return x + y
+end
+
+typeof(yet_another_function(3, 5.))
+````
+
+This will return an error if the result cannot be interpreted exactly as the specified type, which can be useful.
+
+````julia:ex52
+yet_another_function(3, 2.5)
+````
+
+## Printing Text Output
+The `Text()` function returns its argument as a plain text string. Notice how this is different from evaluating a string!
+
+````julia:ex53
+Text("I'm printing a string.")
+````
+
+`Text()` is used when you want to *return* the string passed to it. To print directly to the console, use `println()`.
+
+````julia:ex54
+println("I'm writing a string to the console.")
+````
+
+### Printing Variables In a String
+What if we want to include the value of a variable inside of a string? We do this using *string interpolation*, using `$variablename` inside of the string.
+
+````julia:ex55
+bar = 42
+Text("Now I'm printing a variable: $bar")
+````
+
+## Control Flows
+One of the tricky things about learning a new programming language can be getting used to the specifics of control flow syntax. These types of flows include conditional if-then-else statements or loops.
+
+### Conditional Blocks
+Conditional blocks allow different pieces of code to be evaluated depending on the value of a boolean expression or variable. For example, if we wanted to compute the absolute value of a number, rather than using `abs()`:
+
+````julia:ex56
+function our_abs(x)
+	if x >= 0
+		return x
+	else
+		return -x
+	end
+end
+
+our_abs(4)
+our_abs(-4)
+````
+
+To nest conditional statements, use `elseif`.
+
+````julia:ex57
+function test_sign(x)
+	if x > 0
+		return Text("x is positive.")
+	elseif x < 0
+		return Text("x is negative.")
+	else
+		return Text("x is zero.")
+	end
+end
+
+test_sign(-5)
+test_sign(0)
+````
+
+### Loops
+Loops allow expressions to be evaluated repeatedly until they are terminated. The two main types of loops are `while` loops and `for` loops.
+
+#### While loops
+`while` loops continue to evaluate an expression so long as a specified boolean condition is `true`. This is useful when you don't know how many iterations it will take for the desired goal to be reached.
+
+````julia:ex58
+function compute_factorial(x)
+	factorial = 1
+	while (x > 1)
+		factorial *= x
+		x -= 1
+	end
+	return factorial
+end
+
+compute_factorial(5)
+````
+
+!!! warning
+    While loops can easily turn into infinite loops if the condition is never meaningfully updated. Be careful, and look there if your programs are getting stuck.
+
+If the expression in a `while` loop is false when the loop is reached, the loop will never be evaluated.
+
+#### For loops
+`for` loops run for a finite number of iterations, based on some defined index variable.
+
+this function will add the numbers from 1 through x
+
+````julia:ex59
+function add_some_numbers(x)
+	total_sum = 0 # initialize at zero since we're adding
+	for i=1:x # the counter i is updated every iteration
+		total_sum += i
+	end
+	return total_sum
+end
+
+add_some_numbers(4)
+````
+
+`for` loops can also iterate over explicitly passed containers, rather than iterating over an incrementally-updated index sequence. Use the `in` keyword when defining the loop.
+
+this function will add all of the values passed in a container
+
+````julia:ex60
+function add_passed_numbers(set)
+	total_sum = 0
+	for i in set # this is the syntax we use when we want i to correspond to different container values
+		total_sum += i
+	end
+	return total_sum
+end
+
+add_passed_numbers([1, 3, 5])
+````
+
+## Linear algebra
+Matrices are defined in Julia as 2d arrays. Unlike basic arrays, matrices need to contain the same data type so Julia knows what operations are allowed. When defining a matrix, use semicolons to separate rows. Row elements should not be separated by commas.
+
+````julia:ex61
+test_matrix = [1 2 3; 4 5 6]
+````
+
+You can also specify matrices using spaces and newlines.
+
+````julia:ex62
+test_matrix_2 = [1 2 3
+				 4 5 6]
+````
+
+Finally, matrices can be created using comprehensions by separating the inputs by a comma.
+
+````julia:ex63
+[i*j for i in 1:1:5, j in 1:1:5]
+````
+
+Vectors are treated as 1d matrices.
+
+````julia:ex64
+test_row_vector = [1 2 3]
+test_col_vector = [1; 2; 3]
+test_col_vector = [1; 2; 3]
+````
+
+Many linear algebra operations on vectors and matrices can be loaded using the `LinearAlgebra` package.
+
+## Package management
+
+Sometimes you might need functionality that does not exist in base Julia. Julia handles packages using the [`Pkg` package manager](https://docs.julialang.org/en/v1/stdlib/Pkg/). After finding a package which has the functions that you need, you have two options:
+
+1. Use the package management prompt in the Julia REPL (the standard Julia interface; what you get when you type `julia` in your terminal). Enter this by typing `]` at the standard green Julia prompt `julia>`. This will become a blue `pkg>`. You can then download and install new packages using `add packagename`.
+
+2. From the standard prompt, enter `using Pkg; Pkg.add("packagename")`.
+
+The `packagename` package can then be used by adding `using packagename` to the start of the script.
+

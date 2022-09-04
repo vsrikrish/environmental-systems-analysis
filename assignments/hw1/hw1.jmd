@@ -40,14 +40,10 @@ Draw a diagram of the system to show an overview of the system you are modeling.
 
 ### Problem 1.2
 
-Express the effluent standard as an equation based on the treatment levels $X_1$ and $X_2$.
-
-### Problem 1.3
-
 Show the process of formulating a mathematical model for your system, computing the concentration of YUK for a given treatment plan. This is best done with equations supported by some descriptions. To generate a math block (as opposed to inline math mixed with text), use [syntax similar to a Julia block, but with "math" as the language](https://docs.julialang.org/en/v1/stdlib/Markdown/#Display-equations).
 
 
-### Problem 1.4
+### Problem 1.3
 
 Implement your model as a Julia function which computes the resulting YUK concentration and cost for a particular treatment plan. You can return multiple values from a function with a [tuple](https://docs.julialang.org/en/v1/manual/functions/#Tuples-1), as in:
 ```julia
@@ -60,15 +56,15 @@ println(a)
 println(b)
 ```
 
-### Problem 1.5
+### Problem 1.4
 
 Evaluate your model over a variety of treatment plans by varying $X_1$ and $X_2$. Plot the resulting tradeoffs between YUK concentrations and cost by using the [`scatter()` function from `Plots.jl`](https://docs.juliaplots.org/stable/api/#Plots.scatter-Tuple) (make one axis cost, and the other concentrations). What do you notice? You can also add a line to the plot to represent the effluent standard (either [`hline!()`](https://docs.juliaplots.org/stable/api/#Plots.hline!-Tuple) or [`vline()`](https://docs.juliaplots.org/stable/api/#Plots.vline!-Tuple), depending on which axis is appropriate...notice the use of the version of the function with an ! at the end of the name to reflect that this function mutates an existing `plot` object).
 
-### Problem 1.6
+### Problem 1.5
 
 Based on the plot from Problem 1.5, how would you select a treatment plan? How might this plan reflect the perspectives of various interested parties (factory owners, the public, regulatory agencies, etc)? Did how you set up your numerical experiment in Problem 1.5 influence your conclusions? Might they have changed with a different experimental design?
 
-### Problem 1.7
+### Problem 1.6
 
 What do you think should be investigated further to improve your model? What assumptions did the problem or you make that should be kept in mind when interpreting your results?
 

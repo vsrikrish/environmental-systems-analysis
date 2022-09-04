@@ -4,6 +4,11 @@
 
 \toc
 
+## Assignment Workflow and Configurations
+
+* [Setting up VS Code and Julia (Youtube)](https://www.youtube.com/watch?v=KesuPOlBB_o)
+* [Using `Weave.jl` (Youtube)][https://www.youtube.com/watch?v=moHTgjdbfiQ]
+
 ## Julia Programming
 
 * [Julia Documentation](https://docs.julialang.org/en/v1/)
@@ -24,6 +29,10 @@
 * [Learn Git Branching](https://learngitbranching.js.org/): An interactive, visual tutorial to how git works.
 * [Version Control](https://missing.csail.mit.edu/2020/version-control/) from MIT's "CS: Your Missing Semester" course.
 * [Git and GitHub for Poets](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV): YouTube playlist covering the basics of git and GitHub.
+
+## LaTeX Syntax
+
+* [LaTeX Cheatsheet](https://ctan.math.washington.edu/tex-archive/info/undergradmath/undergradmath.pdf)
 
 ## Optimization and Decision-Making
 

@@ -40,7 +40,7 @@ Draw a diagram of the system to show an overview of the system you are modeling.
 
 ### Problem 1.2
 
-Show the process of formulating a mathematical model for your system, computing the concentration of YUK for a given treatment plan. This is best done with equations supported by some descriptions. To generate a math block (as opposed to inline math mixed with text), use [syntax similar to a Julia block, but with "math" as the language](https://docs.julialang.org/en/v1/stdlib/Markdown/#Display-equations).
+Show the process of formulating a mathematical model for your system, computing the concentration of YUK for a given treatment plan. This is best done with equations supported by some descriptions. To generate a math block (as opposed to inline math mixed with text), use [syntax similar to a Julia block, but with "math" as the language](https://docs.julialang.org/en/v1/stdlib/Markdown/#Display-equations). Make sure you include, as additional equations in the model, any needed constraints on the values of $X_1$ and $X_2$ based on what they represent in the problem.
 
 
 ### Problem 1.3
@@ -58,7 +58,11 @@ println(b)
 
 ### Problem 1.4
 
-Evaluate your model over a variety of treatment plans by varying $X_1$ and $X_2$. Plot the resulting tradeoffs between YUK concentrations and cost by using the [`scatter()` function from `Plots.jl`](https://docs.juliaplots.org/stable/api/#Plots.scatter-Tuple) (make one axis cost, and the other concentrations). What do you notice? You can also add a line to the plot to represent the effluent standard (either [`hline!()`](https://docs.juliaplots.org/stable/api/#Plots.hline!-Tuple) or [`vline()`](https://docs.juliaplots.org/stable/api/#Plots.vline!-Tuple), depending on which axis is appropriate...notice the use of the version of the function with an ! at the end of the name to reflect that this function mutates an existing `plot` object).
+Evaluate your model over a variety of treatment plans by varying $X_1$ and $X_2$. As there are constraints on the values of $X_1$ and $X_2$ (they can't be arbitrary values), use a sampling strategy which takes these into account. Some options might include:
+- sampling from a joint distribution; for example, a [Dirichlet distribution](https://en.wikipedia.org/wiki/Dirichlet_distribution) is a distribution over $k$-dimensional vectors where the elements sum tup 1, and is implemented in `Distributions.jl` with the [`Dirichlet()`](https://juliastats.org/Distributions.jl/stable/multivariate/#Distributions.Dirichlet) function;
+- sampling $X_1$ or $X_2$ independently, looping over that vector, and sampling the other based on the corresponding value.
+
+Plot the resulting tradeoffs between YUK concentrations and cost by using the [`scatter()` function from `Plots.jl`](https://docs.juliaplots.org/stable/api/#Plots.scatter-Tuple) (make one axis cost, and the other concentrations). What do you notice? You can also add a line to the plot to represent the effluent standard (either [`hline!()`](https://docs.juliaplots.org/stable/api/#Plots.hline!-Tuple) or [`vline()`](https://docs.juliaplots.org/stable/api/#Plots.vline!-Tuple), depending on which axis is appropriate...notice the use of the version of the function with an ! at the end of the name to reflect that this function mutates an existing `plot` object).
 
 ### Problem 1.5
 

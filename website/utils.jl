@@ -50,7 +50,7 @@ function rubric_badge(num, ftype)
     badge_right = "pdf"
   end
   badge_left = "rubric"
-  badge_url = string("https://img.shields.io/static/v1?label=", badge_left, "&message=", badge_right, "&color=b31b1b&labelColor=222222&style=social")
+  badge_url = string("https://img.shields.io/static/v1?label=", badge_left, "&message=", badge_right, "&color=b31b1b&labelColor=222222&style=flat")
   badge_string = string(
     "[!", "[", alt_text, "]", 
     "(", badge_url, ")", "]",

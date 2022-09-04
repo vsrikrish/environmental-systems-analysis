@@ -17,16 +17,15 @@ We are using GitHub in this class for a number of reasons.
 - Version control is a best practice for software, and many of you are likely to take jobs which involve working with code.
 - GitHub Classroom makes it easy to assign and collect group and individual assignments. You'll receive an email when an assignment is ready, and the repository will be automatically set up on GitHub, so all you have to do is [clone it to your computer](/software#clone_your_repository).
 - As GitHub allows code others to view and comment on code, it also facilitates collective debugging with classmates and instructors, rather than requiring us to work off shared screenshots or email threads. You can just share the link to your assignment repository on Slack and we can see the current state of your code, as well as any previous versions.
-- GitHub allows us to automate compilation of code in a controlled environment, which will ensure that your code compiles smoothly and generates a nice PDF.
 - Finally, GitHub provides documentation of the state of your code at any given time, so if there is a hiccup in submission to Gradescope, you have proof that your code was effectively ready on time!
 
 ### Accepting An Assignment
 
-When we release an assignment, you will receive an email from GitHub Classroom containing an invitation link. This link will also be provided in a pinned post in the relevant Ed Discussion forum. When you click on this link, GitHub Classroom will ask you if you want to accept the invitation. If you answer "yes," a new repository will be created for you containing the repository template. In this class, this template will include the following files.
+When we release an assignment, you will receive an email from GitHub Classroom containing an invitation link. This link will be provided in a pinned post in the relevant Ed Discussion forum. When you click on this link, GitHub Classroom will ask you if you want to accept the invitation. If you answer "yes," a new repository will be created for you containing the repository template. In this class, this template will include the following files.
 
-1. An `instructions.pdf` file containing the assignment details (also `instructions.jmd`, which is the source file for the PDF; feel free to look around that file if you want to see how anything was implemented).
+1. `instructions.pdf` file containing the assignment details (also `instructions.jmd`, which is the source file for the PDF; feel free to look around that file if you want to see how anything was implemented).
 2. `Project.toml`, which is a file specifying the Julia packages and their versions which should be installed (you won't have to do anything with this file, but it's provided to reduce the risk of any issues with package versions. This environment will be automatically loaded (and any needed packages installed) before your code is compiled, so you don't need to explicitly do so in your report. The list of packages which are included in the environment will be provided in the repository README. For each assignment, this environment should be sufficient, but if you come across another package you want to use, feel free to use Julia's `Pkg` package manager to add it.
-3. A `solution-template.jmd` file which is a template for your solution report. For the most part, this is the only file you will need to rename/change.
+3. `solution-template.jmd` file which is a template for your solution report. For the most part, this is the only file you will need to rename/change.
 4. `compile_report.jl`, which contains code to compile the report into a PDF or an HTML. You won't need to touch this.
 5. Some other files consisting of templates and git/GitHub configuration; you don't need to touch any of these.
 
@@ -112,6 +111,4 @@ include("compile_report.jl")
 compile_report("solution-filename.jmd", output-type)
 ```
 
-### Autocompiling PDF on Push
-
-One downside to using `Weave.jl` for the assignment writeups is that it requires LaTeX to produce a PDF, and you may not need to have a working LaTeX installation on your computer. If you do not want to bother installing LaTeX just for our class, GitHub will automatically try to compile everything when you push, though this may take a few minutes after your push. If your code isn't ready to go, this might result in an error (which will be indicated by a red x on your repository page) &#151; no big deal if you expect it. If you think your code should work, that would be a warning sign that something is off. If the compilation succeeds, you'll see a green check mark. The PDF will then appear in your repository, and if you've finished your assignment, you can use `git pull` to download it in your local repository, and submit that on Gradescope.
+\note{If you compile your report to an HTML file, you can open the file in your favorite browser and "Print to PDF" to get a file you can upload to Gradescope.}

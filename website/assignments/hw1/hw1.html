@@ -157,10 +157,8 @@ pre.hljl > span.hljl-gt { }
 <p>Draw a diagram of the system to show an overview of the system you are modeling. Include a description and any nomenclature necessary for understanding your summary or diagram in text below the figure. To include a figure, you can modify the basic network graph provided in <code>solutions-template.jmd</code>, or use Markdown to include a figure you generate in another program, with the following syntax:</p>
 <pre><code>&#33;&#91;Alternate Text&#93;&#40;path/to/figure/&#41;</code></pre>
 <h3>Problem 1.2</h3>
-<p>Express the effluent standard as an equation based on the treatment levels <span class="math">$X_1$</span> and <span class="math">$X_2$</span>.</p>
-<h3>Problem 1.3</h3>
 <p>Show the process of formulating a mathematical model for your system, computing the concentration of YUK for a given treatment plan. This is best done with equations supported by some descriptions. To generate a math block &#40;as opposed to inline math mixed with text&#41;, use <a href="https://docs.julialang.org/en/v1/stdlib/Markdown/#Display-equations">syntax similar to a Julia block, but with &quot;math&quot; as the language</a>.</p>
-<h3>Problem 1.4</h3>
+<h3>Problem 1.3</h3>
 <p>Implement your model as a Julia function which computes the resulting YUK concentration and cost for a particular treatment plan. You can return multiple values from a function with a <a href="https://docs.julialang.org/en/v1/manual/functions/#Tuples-1">tuple</a>, as in:</p>
 
 
@@ -181,11 +179,11 @@ pre.hljl > span.hljl-gt { }
 </pre>
 
 
-<h3>Problem 1.5</h3>
+<h3>Problem 1.4</h3>
 <p>Evaluate your model over a variety of treatment plans by varying <span class="math">$X_1$</span> and <span class="math">$X_2$</span>. Plot the resulting tradeoffs between YUK concentrations and cost by using the <a href="https://docs.juliaplots.org/stable/api/#Plots.scatter-Tuple"><code>scatter&#40;&#41;</code> function from <code>Plots.jl</code></a> &#40;make one axis cost, and the other concentrations&#41;. What do you notice? You can also add a line to the plot to represent the effluent standard &#40;either <a href="https://docs.juliaplots.org/stable/api/#Plots.hline&#33;-Tuple"><code>hline&#33;&#40;&#41;</code></a> or <a href="https://docs.juliaplots.org/stable/api/#Plots.vline&#33;-Tuple"><code>vline&#40;&#41;</code></a>, depending on which axis is appropriate...notice the use of the version of the function with an &#33; at the end of the name to reflect that this function mutates an existing <code>plot</code> object&#41;.</p>
-<h3>Problem 1.6</h3>
+<h3>Problem 1.5</h3>
 <p>Based on the plot from Problem 1.5, how would you select a treatment plan? How might this plan reflect the perspectives of various interested parties &#40;factory owners, the public, regulatory agencies, etc&#41;? Did how you set up your numerical experiment in Problem 1.5 influence your conclusions? Might they have changed with a different experimental design?</p>
-<h3>Problem 1.7</h3>
+<h3>Problem 1.6</h3>
 <p>What do you think should be investigated further to improve your model? What assumptions did the problem or you make that should be kept in mind when interpreting your results?</p>
 <h2>References</h2>
 <p>If you used any external resource in the process of solving this problem, provide a reference below. These could be other people, websites, datasets, or code examples.</p>

@@ -1,0 +1,1 @@
+Now I'm printing a variable: 42

@@ -6,37 +6,32 @@ macro OUTPUT()
 end;
 
 4+8;
+
 4+8
 
 x = 5
 
 4 + x
 
-α = 3 # The name of this variable was entered with \alpha + TAB + \_1
+α = 3
 
 β₁ = 10 # The name of this variable was entered with \beta + TAB + \_1 + TAB
 
 π
 
 typeof("This is a string.")
+
 typeof(x)
 
 typeof(9)
-z::Int8 = 9
-typeof(z)
 
-typeof(9)
 typeof(9.25)
 
 typeof(9.)
 
-typeof(5. + 1.1im) # im defines the imaginary part of the complex number
-
-typeof(sqrt(Complex(-4))) # we get an error if we try to take the square root of a negative number without telling Julia that it should be prepared to work with complex floats
-
 "5" + 5
 
-Int("5") + 5
+parse(Int64, "5") + 5
 
 "Hello" * " " * "there"
 
@@ -45,21 +40,30 @@ b = true
 c = 9 > 11
 
 3 + 5
+
 3 * 2
+
 3 * 2.
+
 6 - 2
+
 9 / 3
 
 3^2
 
 true && true
+
 true && false
+
 true || false
+
 !true
 
 3 < 4 || 8 == 12
 
 (3 < 4) || (8 == 12)
+
+# Data Structures
 
 test_tuple = 4, 5, 6
 
@@ -81,6 +85,7 @@ test_array
 
 test_array_2 = [6, 5., 'h']
 typeof(test_array)
+
 typeof(test_array_2)
 
 test_dict = Dict("A"=>1, "B"=>2)
@@ -90,30 +95,23 @@ test_dict["B"]
 
 Dict(string(i) => i^2 for i in 0:1:5)
 
-function my_function(x,y)
-
-end
-
 function my_actual_function(x, y)
 	return x + y
 end
-
 my_actual_function(3, 5)
 
 g = my_actual_function
+g(3, 5)
 
 function function_of_functions(f, x, y)
 	return f(x, y)
 end
-
 function_of_functions(g, 3, 5)
 
 h₁(x) = x^2 # make the subscript using \_1 + <TAB>
-
 h₁(4)
 
 x->sin(x)
-
 (x->sin(x))(π/4)
 
 function setting_optional_arguments(x, y, c=0.5)
@@ -125,8 +123,11 @@ setting_optional_arguments(3, 5)
 setting_optional_arguments(3, 5, 2)
 
 h₂((x,y)) = x*y # enclose the input arguments in parentheses to tell Julia to expect and unpack a tuple
+
 h₂((2, 3)) # this works perfectly, as we passed in a tuple
+
 h₂(2, 3) # this gives an error, as h₂ expects a single tuple, not two different numeric values
+
 h₂([3, 10]) # this also works with arrays instead of tuples
 
 sqrt(3)
@@ -138,35 +139,19 @@ sqrt.([1, 2, 3, 4, 5])
 function return_multiple_values(x, y)
 	return x + y, x * y
 end
+
 return_multiple_values(3, 5)
 
 n, ν = return_multiple_values(3, 5)
 n
+
 ν
 
 function print_some_string(x)
 	println("x: $x")
 	return nothing
 end
-
 print_some_string(42)
-
-function_of_functions(g, 3, "5")
-
-function new_function(f::Function, x::Int64, y::Int64)
-	return f(x, y)
-end
-
-new_function(g, 3, 5)
-new_function(g, 3, "5")
-
-function yet_another_function(x, y)::Int64
-	return x + y
-end
-
-typeof(yet_another_function(3, 5.))
-
-yet_another_function(3, 2.5)
 
 Text("I'm printing a string.")
 
@@ -184,6 +169,7 @@ function our_abs(x)
 end
 
 our_abs(4)
+
 our_abs(-4)
 
 function test_sign(x)
@@ -197,6 +183,7 @@ function test_sign(x)
 end
 
 test_sign(-5)
+
 test_sign(0)
 
 function compute_factorial(x)
@@ -217,7 +204,6 @@ function add_some_numbers(x)
 	end
 	return total_sum
 end
-
 add_some_numbers(4)
 
 function add_passed_numbers(set)
@@ -227,7 +213,6 @@ function add_passed_numbers(set)
 	end
 	return total_sum
 end
-
 add_passed_numbers([1, 3, 5])
 
 test_matrix = [1 2 3; 4 5 6]
@@ -238,6 +223,6 @@ test_matrix_2 = [1 2 3
 [i*j for i in 1:1:5, j in 1:1:5]
 
 test_row_vector = [1 2 3]
-test_col_vector = [1; 2; 3]
+
 test_col_vector = [1; 2; 3]
 

@@ -7,11 +7,12 @@
 ## Assignment Workflow and Configurations
 
 * [Setting up VS Code and Julia (Youtube)](https://www.youtube.com/watch?v=KesuPOlBB_o)
-* [Using `Weave.jl` (Youtube)][https://www.youtube.com/watch?v=moHTgjdbfiQ]
+* [Using `Weave.jl` (Youtube)](https://www.youtube.com/watch?v=moHTgjdbfiQ)
 
 ## Julia Programming
 
 * [Julia Documentation](https://docs.julialang.org/en/v1/)
+* [JuliaAcademy](https://juliaacademy.com/courses): Check out the "Introduction to Julia (for programmers)" or "Julia Programming for Nervous Beginners" courses
 * [QuantEcon MATLAB-Python-Julia cheatsheet](https://cheatsheets.quantecon.org/)
 * [FastTrack to Julia cheatsheet](https://juliadocs.github.io/Julia-Cheat-Sheet/)
 * [Plotting cheatsheet](https://github.com/sswatson/cheatsheets/blob/master/plotsjl-cheatsheet.pdf)

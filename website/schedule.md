@@ -23,3 +23,4 @@ Please make sure that your class exercise repository is updated ahead of classes
 |   | **No Class -- Labor Day** | Sep 5, 2022 | | | |
 | 5 | Uncertainty and Monte Carlo | Sep 7, 2022 | {{lecture_badges 04}} | | [Simulation Exercise Repository](https://github.com/BEE4750/class-exercises/tree/main/01-simulation) |
 | 6 | More Monte Carlo and Risk | Sep 12, 2022 | {{lecture_badges 05}} | [Simpson et al (2021)](https://dx.doi.org/10.1016/j.oneear.2021.03.005) | |
+| 7 | Fate & Transport, Dissolved Oxygen | Sep 14, 2022 | {{lecture_badges 06}} | | |

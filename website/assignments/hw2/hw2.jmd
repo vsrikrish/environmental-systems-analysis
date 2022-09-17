@@ -57,7 +57,7 @@ Under the assumptions in Problem 1.1, determine the distance from waste stream 2
 
 ### Problem 1.3
 
-What is the minimum level of treatment (% removal) for waste stream 2 that will ensure that the dissolved oxygen concentration never drops below 4 mg/L, assuming that waste stream 1 remains untreated?
+What is the minimum level of treatment (% removal of the organic waste) for waste stream 2 that will ensure that the dissolved oxygen concentration never drops below 4 mg/L, assuming that waste stream 1 remains untreated?
 
 ### Problem 1.4
 
@@ -69,11 +69,11 @@ Suppose you were responsible for waste treatment along the river, with a regulat
 
 ### Problem 1.6
 
-Suppose now that the CBOD and NBOD values of the river inflow are uncertain. Suppose that your estimates of CBOD vary uniformly between 4 and 7 mg/L, and NBOD estimates vary uniformly between 3 and 8 mg/L. If you assume these values are independent, what is the probability that the strategy you identified in Problems 1.3 and 1.4 will fail to keep the dissolved oxygen concentration above 4 mg/L?
+Suppose now that the CBOD and NBOD values of the river inflow are uncertain. Suppose that your estimates of CBOD vary uniformly between 4 and 7 mg/L, and NBOD estimates vary uniformly between 3 and 8 mg/L. If you assume these values are independent, what is the probability that the strategy you identified in Problem 1.5 will fail to keep the dissolved oxygen concentration above 4 mg/L?
 
 ### Problem 1.7
 
-Now suppose that the CBOD and NBOD values are correlated: specifically, they have a correlation coefficient of 0.7. How does that impact the probability of maintaining a dissolved oxygen concentration above 4 mg/L under the treatment strategy from Problems 1.3 and 1.4? The solution template includes a code block defining a function `sample_correlated_uniform()` that you can use to produce correlated uniform variates.
+Now suppose that the CBOD and NBOD values are correlated: specifically, they have a correlation coefficient of 0.7. How does that impact the probability of maintaining a dissolved oxygen concentration above 4 mg/L under the treatment strategy from Problems 1.5? The solution template includes a code block defining a function `sample_correlated_uniform()` that you can use to produce correlated uniform variates.
 
 ### Problem 1.8
 

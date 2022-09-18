@@ -80,12 +80,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>assignments/index.html</loc>
-    <lastmod>2022-09-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>assignments/hw2/hw2/</loc>
     <lastmod>2022-09-18</lastmod>
     <changefreq>monthly</changefreq>

@@ -115,7 +115,7 @@ end
 
 function project_badge(nm, ftype)  
   if ftype == "html"
-    link = string("/assignments/", nm, "/")
+    link = string("/assignments/", nm, "/$nm/")
     alt_text = string("Project", titlecase(nm), " Instructions")
     badge_right = "web"
   elseif ftype == "pdf"

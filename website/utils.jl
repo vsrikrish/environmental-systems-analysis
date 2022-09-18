@@ -113,7 +113,7 @@ function hfun_lecture_badges(params::Vector{String})
   return String(take!(io))
 end
 
-function project_badge(nm, ftype)  
+function project_badges(nm, ftype)  
   if ftype == "html"
     link = string("/assignments/", nm, "/")
     alt_text = string("Project", titlecase(nm), " Instructions")
@@ -131,6 +131,19 @@ function project_badge(nm, ftype)
     "(", link, ")"
   )
   return badge_string
+end
+
+function hfun_project_badges(params) 
+  nm = params[1]
+  io = IOBuffer()
+  write(io, Franklin.fd2html("""
+    @@badges
+    $(hw_badge(nm, "html"))
+    $(hw_badge(nm, "pdf"))
+    @@
+    """, internal=true)
+  )
+  return String(take!(io))
 end
 
 

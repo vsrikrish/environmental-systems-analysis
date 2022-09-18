@@ -1,6 +1,11 @@
+@def mintoclevel=2
+@def maxtoclevel=2
+
 @@banner
 # Assignments and Projects
 @@
+
+\toc
 
 ## Assignments
 

@@ -113,6 +113,27 @@ function hfun_lecture_badges(params::Vector{String})
   return String(take!(io))
 end
 
+function project_badge(nm, ftype)  
+  if ftype == "html"
+    link = string("/assignments/", nm, "/")
+    alt_text = string("Project", titlecase(nm), " Instructions")
+    badge_right = "web"
+  elseif ftype == "pdf"
+    link = string("/assignments/", nm, "/$nm.pdf")
+    alt_text = string("Project", titlecase(nm), " Instructions")
+    badge_right = "pdf"
+  end
+  badge_left = "project"
+  badge_url = string("https://img.shields.io/static/v1?label=", badge_left, "&message=", badge_right, "&color=b31b1b&labelColor=222222&style=flat")
+  badge_string = string(
+    "[!", "[", alt_text, "]", 
+    "(", badge_url, ")", "]",
+    "(", link, ")"
+  )
+  return badge_string
+end
+
+
 function hfun_day_schedule(params::Vector{String})
   path_to_yml = params[1]
   dname = params[2]

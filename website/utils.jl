@@ -138,8 +138,8 @@ function hfun_project_badges(params)
   io = IOBuffer()
   write(io, Franklin.fd2html("""
     @@badges
-    $(hw_badge(nm, "html"))
-    $(hw_badge(nm, "pdf"))
+    $(project_badge(nm, "html"))
+    $(project_badge(nm, "pdf"))
     @@
     """, internal=true)
   )

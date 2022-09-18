@@ -113,7 +113,7 @@ function hfun_lecture_badges(params::Vector{String})
   return String(take!(io))
 end
 
-function project_badges(nm, ftype)  
+function project_badge(nm, ftype)  
   if ftype == "html"
     link = string("/assignments/", nm, "/")
     alt_text = string("Project", titlecase(nm), " Instructions")

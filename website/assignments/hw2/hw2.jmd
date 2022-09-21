@@ -35,7 +35,7 @@ where $U$ is the velocity of the river, $C_s$ is the saturated oxygen concentrat
 
 ## Problem 1: **Simulating Dissolved Oxygen**
 
-![Schematic of the river in problem 1](figures/river_diagram.png)
+![Schematic of the river in problem 1](../figures/river_diagram.jpg)
 
 A river which flows at 6 km/d is receiving waste discharges from two sources that are 15km apart, as shown in the figure. The values of $k_a$, $k_c$, and $k_n$ are 0.55, 0.35, and 0.25 per day, respectively. The river's saturated dissolved oxygen concentration is 10 mg/L.
 

@@ -26,6 +26,6 @@
 
 ### Schedule
 
-| Project | Instructions and Due Dates |
-|------------|----------|
-| Regulatory Review Project | {{project_badges regulation}} |
+| Project | Instructions and Due Dates | Resources |
+|------------|:----------:|:---------:|
+| Regulatory Review Project | {{project_badges regulation}} | [Regulation Research Handout](_assets/misc/regulation_addendum_handout.pdf) |

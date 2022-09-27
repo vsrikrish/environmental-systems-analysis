@@ -26,5 +26,5 @@ Please make sure that your class exercise repository is updated ahead of classes
 | 7 | Fate & Transport, Dissolved Oxygen | Sep 14, 2022 | {{lecture_badges 06}} | | |
 | 8 | Introduction to Prescriptive Modeling | Sep 19, 2022 | {{lecture_badges 07}} | | |
 | 9 | Introduction to Optimization | Sep 21, 2022 | {{lecture_badges 08}} | | |
-| 10 | Guest Lecture: Mel Jensen on Researching Regulations | Sep 26, 2022 | [Presentation](/_assets/misc/regulation_research_presentation.pdf) | | |
+| 10 | Guest Lecture: Mel Jensen on Researching Regulations | Sep 26, 2022 | [Presentation](/assets/misc/regulation_research_presentation.pdf) | | |
 | 11 | Using JuMP | Sep 28, 2022 | {{lecture_badges 09}} | | |

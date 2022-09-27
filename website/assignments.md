@@ -28,4 +28,4 @@
 
 | Project | Instructions and Due Dates | Resources |
 |------------|:----------:|:---------:|
-| Regulatory Review Project | {{project_badges regulation}} | [Regulation Research Handout](_assets/misc/regulation_addendum_handout.pdf) |
+| Regulatory Review Project | {{project_badges regulation}} | [Regulation Research Handout](/_assets/misc/regulation_addendum_handout.pdf) |

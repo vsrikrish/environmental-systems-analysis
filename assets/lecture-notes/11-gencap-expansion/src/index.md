@@ -103,6 +103,8 @@ In general, we have many possible fuel options:
 - Nuclear
 - Renewables (wind, solar, hydro)
 
+Each of these different types of plants has a different *capacity factor*, which reflects how much of the installed capacity can be relied upon at various times.
+
 ---
 class: left
 
@@ -115,7 +117,7 @@ Assume we can simplify demand to two scenarios:
 
 Generator types (only three):
 
-Tech | Peak Capacity Factor | Off-Peak Capacity Factor | Investment Cost $(\\$\text{/MW-yr})$ | Operating Cost $(\\$\text{/MWh})$ |
+Tech | Peak CF | Off-Peak CF | Investment Cost $(\\$\text{/MW-yr})$ | Operating Cost $(\\$\text{/MWh})$ |
 :--------: | ---------:| -------------: | ------------: | ----------: | 
 Gas | 0.9 | 0.9 | 100,000 | 50 |
 Wind | 0.2 | 0.5 | 150,000 | 0 |
@@ -212,8 +214,6 @@ Things can get more complex for real decisions, particularly with renewables...
 
 # Simple Capacity Expansion Example
 <hr>
-
-Putting this into `JuMP`:
 
 ```@example gencap
 using JuMP
@@ -371,6 +371,19 @@ template: poll-answer
 
 ---
 
+# Emissions
+<hr>
+
+We could add in emissions as a constraint or try to minimize emissions (instead of cost).
+
+**How would we do this?**
+
+--
+
+- Would need information on emissions per generated Wh.
+
+---
+
 # Non-Served Energy
 <hr>
 
@@ -384,22 +397,33 @@ It could be that it's cheaper to not serve energy during some periods than to bu
 - Generated electricity plus non-served energy equal demand.
 
 ---
-
-# Emissions
+# Non-Served Energy
 <hr>
 
-We could add in emissions as a constraint or try to minimize emissions (instead of cost).
+New objective:
 
-**How would we do this?**
+$$\begin{aligned}
+\min\_{x\_g, y\_{g,t}, nse\_t} Z &= \text{investment cost} + \text{operating cost} + \text{NSE cost}\\\\
+&= 100000 x\_\text{gas} + 150000 x\_\text{wind} + 150000 x\_\text{solar} \\\\
+& \quad + (3760 \times 50) y\_\text{gas,peak} + (5000 \times 50) y\_\text{gas,off} \\\\
+& \quad + NSECost \times nse\_t
+\end{aligned}$$
 
---
+---
+# Non-Served Energy
+<hr>
 
-- Would need information on emissions per generated Wh.
+New load constraints:
+
+$$\begin{aligned}
+y\_\text{gas, peak} + y\_\text{wind, peak} + y\_\text{solar, peak} + nse\_\text{peak}&= 3000 \\\\
+y\_\text{gas, off} + y\_\text{wind, off} + y\_\text{solar, off} + nse\_\text{off} &= 2000
+\end{aligned}$$
 
 ---
 class: middle
 
 # Next Class
 <hr>
-- Air Pollution Modeling Example
+- Air Pollution Modeling Example or Economic Dispatch
 <hr>

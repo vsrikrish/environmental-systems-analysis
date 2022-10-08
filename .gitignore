@@ -315,3 +315,22 @@ TSWLatexianTemp*
 
 *.tpl
 website/assignments/*/*.tex
+assignments/hw3-solutions/config
+assignments/hw3-solutions/description
+assignments/hw3-solutions/HEAD
+assignments/hw3-solutions/packed-refs
+assignments/hw3-solutions/hooks/applypatch-msg.sample
+assignments/hw3-solutions/hooks/commit-msg.sample
+assignments/hw3-solutions/hooks/fsmonitor-watchman.sample
+assignments/hw3-solutions/hooks/post-update.sample
+assignments/hw3-solutions/hooks/pre-applypatch.sample
+assignments/hw3-solutions/hooks/pre-commit.sample
+assignments/hw3-solutions/hooks/pre-merge-commit.sample
+assignments/hw3-solutions/hooks/pre-push.sample
+assignments/hw3-solutions/hooks/pre-rebase.sample
+assignments/hw3-solutions/hooks/pre-receive.sample
+assignments/hw3-solutions/hooks/prepare-commit-msg.sample
+assignments/hw3-solutions/hooks/push-to-checkout.sample
+assignments/hw3-solutions/hooks/update.sample
+assignments/hw3-solutions/info/exclude
+assignments/hw3-solutions/objects/pack/pack-b12c4e1566dd21ff9f15581b6d82bea2dbd66044.pack

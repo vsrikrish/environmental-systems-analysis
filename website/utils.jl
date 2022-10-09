@@ -59,6 +59,26 @@ function rubric_badge(num, ftype)
   return badge_string
 end
 
+function solution_badge(num, ftype)  
+  if ftype == "html"
+    link = string("/assignments/hw", num, "/vivek-solution/")
+    alt_text = string("HW", num, " Solution")
+    badge_right = "web"
+  elseif ftype == "pdf"
+    link = string("/assignments/hw", num, "/vivek-solution.pdf")
+    alt_text = string("HW", num, " Solution")
+    badge_right = "pdf"
+  end
+  badge_left = "solution"
+  badge_url = string("https://img.shields.io/static/v1?label=", badge_left, "&message=", badge_right, "&color=b31b1b&labelColor=222222&style=flat")
+  badge_string = string(
+    "[!", "[", alt_text, "]", 
+    "(", badge_url, ")", "]",
+    "(", link, ")"
+  )
+  return badge_string
+end
+
 function hfun_hw_badges(params) 
   num = params[1]
   io = IOBuffer()
@@ -84,6 +104,18 @@ function hfun_rubric_badges(params)
   return String(take!(io))
 end
 
+function hfun_solution_badges(params) 
+  num = params[1]
+  io = IOBuffer()
+  write(io, Franklin.fd2html("""
+    @@badges
+    $(solution_badge(num, "html"))
+    @@
+    """, internal=true)
+  )
+  return String(take!(io))
+end
+
 function lecture_badge(num)  
   path_names = filter(isdir, readdir("_assets/lecture-notes"; join=true))
   lecture_path = filter(x -> contains(x, num), path_names)
@@ -100,6 +132,7 @@ function lecture_badge(num)
   )
   return badge_string
 end
+
 
 function hfun_lecture_badges(params::Vector{String}) 
   name = params[1]

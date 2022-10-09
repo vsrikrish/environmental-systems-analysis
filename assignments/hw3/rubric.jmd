@@ -1,0 +1,43 @@
+---
+title: Homework 3 Rubric
+author: BEE 4750/5750
+date: "Due: Oct 20, 2022 by 9:00pm ET"
+fontfamily: "mathpazo"
+stylesheet: "https://viveks.me/environmental-systems-analysis/assignments/bee4750.css"
+weave_options:
+    md2pdf:
+        template: "../bee4750pdf.tpl"
+    md2html:
+        template: "../bee4750html.tpl"
+---
+
+# General Rubric:
+
+- 10% will be taken off per day for late submissions.
+- Penalty for failure to list references will depend on severity (not documenting collaborators vs. outright plagiarism, for example, are very different)
+- 1 point will be deducted for numerical results reported to an inappropriate level of precision.
+
+# Problem-Specific Rubric
+
+"--" indicates that a particular score is not achievable for a given problem or part.
+
+## Problem 1 (Total: 12 Points)
+
+| Part | 0 points | 1 point | 2 points | 3 points | 
+|------------|----------|:------------:|:------:|:----:|
+| 1.1 | Decision variables not defined or defined variables unrelated to problem description. | Appropriate decision variables defined, but notation is unclear or set of variables is incomplete. | Appropriate decision variables defined with clear notation | --  | 
+| 1.2 | Objective function not provided, objective function is missing elements, or equation provided with no justification or derivation. | Slightly incorrect objective function provided with derivation and/or justification.  | Objective function contains all needed components and is adequately justified and/or derived. | -- |
+| 1.3 | Constraints not provided or provided constraints are not related to the problem. | Constraint set not complete or constraints are not adequately justified. | Complete constraint set provided with justification. | -- | 
+| 1.4 | Code missing or does not produce a solvable problem. | Code provided and problem solves. | -- | -- | 
+| 1.5 | Problem not answered or answer not related to prior work. | Answer incomplete based on problem instructions. | Answer complete and reflective of implemented model. | -- | 
+| 1.6 | Answer missing or plots not reflective of problem solution. | Not all requested plots are provided or no take-aways provided but plots are present. | Plots provided, but are missing important elements (legends, axis labels, etc).  | Plots provided with interpretation. |
+
+## Problem 2 (Total: 8 Points)
+
+| Part | 0 points | 1 point | 2 points | 3 points | 
+|------------|----------|:------------:|:------:|:----:|
+| 2.1 | Problem is missing, answer does not reflect problem, or no justification is provided for answer. | Correct changes are made with justification. | -- | --  | 
+| 2.2 | Code missing or does not produce a solvable problem. | Code provided and problem solves. | -- | -- | 
+| 2.3 | Problem not answered or answer not related to prior work. | Answer incomplete based on problem instructions. | Answer complete and reflective of implemented model. | -- |
+| 2.4 | Answer missing or plots not reflective of problem solution. | Not all requested plots are provided or no take-aways provided but plots are present. | Plots provided, but are missing important elements (legends, axis labels, etc).  | Plots provided with interpretation. |
+| 2.5 | Answer missing or plots not reflective of problem solution. | Correct answer provided. | --  | -- | 

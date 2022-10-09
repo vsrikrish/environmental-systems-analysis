@@ -104,6 +104,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>assignments/hw3/rubric/</loc>
+    <lastmod>2022-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>assignments/hw3/hw3/</loc>
     <lastmod>2022-10-09</lastmod>
     <changefreq>monthly</changefreq>

@@ -1,6 +1,6 @@
 class: center, middle
 
-.title[LP Examples: Electric Power Systems]
+.title[LP Examples: Generating Capacity Expansion]
 <br>
 .subtitle[BEE 4750/5750]
 <br>
@@ -68,6 +68,7 @@ class: left
 class: left
 
 # Power Systems Decision Problems
+<hr>
 
 .center[![Decision Problems for Power Systems](figures/elec-decision-problems.svg)]
 .center[.cite[Adapted from Perez-Arriaga, Ignacio J., Hugh Rudnick, and Michel Rivier (2009).]]
@@ -76,6 +77,7 @@ class: left
 class: left
 
 # Electricity Generation by Source
+<hr>
 
 .center[![U.S. Electricity Generation by Source, 2021](https://www.eia.gov/energyexplained/electricity/images/outlet-graph-large.jpg)]
 
@@ -97,6 +99,10 @@ class: left
 
 Let's look at a *very* simplified example first.
 
+---
+# Simple Capacity Expansion Example
+<hr>
+
 In general, we have many possible fuel options:
 - Gas (combined cycle or simple cycle)
 - Coal
@@ -104,6 +110,7 @@ In general, we have many possible fuel options:
 - Renewables (wind, solar, hydro)
 
 Each of these different types of plants has a different *capacity factor*, which reflects how much of the installed capacity can be relied upon at various times.
+
 
 ---
 class: left

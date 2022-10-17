@@ -30,7 +30,7 @@ Each of these plant types has the following generation data (**disclaimer**: the
 | CCGT        | 85000  | 35 | 1    |  0.43 |
 | CT          | 62580  | 45 | 1    |  0.55 |
 | Wind        | 92000  | 0  | see below    |  0    |
-| Solar       | 92000  | 0  | see below    |  0    |
+| Solar       | 90000  | 0  | see below    |  0    |
 
 Assume that all 365 days in a year are equivalent in terms of demand and wind and solar capacity factors (**disclaimer**: this is obviously stylized and not reflective of reality, but it makes the problem simpler). These are given as:
 

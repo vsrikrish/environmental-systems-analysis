@@ -32,4 +32,5 @@ Please make sure that your class exercise repository is updated ahead of classes
 | 12 | JuMP Coding Exercise | Oct 3, 2022 | {{lecture_badges 10}} | | [Exercise Repository](https://github.com/BEE4750/class-exercises)
 | 13 | Generating Capacity Expansion | Oct 5, 2022 | {{lecture_badges 11}} | | |
 | 14 | Economic Dispatch | Oct 12, 2022 | {{lecture_badges 12}} | | |
-
+| 15 | Mixed Integer Programming | Oct 17, 2022 | {{lecture_badges 13}} | | |
+| 16 | Unit Commitment | Oct 19, 2022 | | | |

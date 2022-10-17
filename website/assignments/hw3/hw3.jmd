@@ -26,11 +26,11 @@ Each of these plant types has the following generation data (**disclaimer**: the
 | Type | Investment Cost (\$/MW-yr) | Operating Cost (\$/MWh) | Capacity Factor | CO$_2$ Emissions (tCO$_2$/MWh) |
 |----:|--------:|-----------:|------:|--------:|
 | Geothermal  | 457000 | 0  | 0.95 |  0    |
-| Coal        | 268000 | 24 | 1    |  1    |
+| Coal        | 268000 | 22 | 1    |  1    |
 | CCGT        | 85000  | 35 | 1    |  0.43 |
 | CT          | 62580  | 45 | 1    |  0.55 |
 | Wind        | 92000  | 0  | see below    |  0    |
-| Solar       | 90000  | 0  | see below    |  0    |
+| Solar       | 92000  | 0  | see below    |  0    |
 
 Assume that all 365 days in a year are equivalent in terms of demand and wind and solar capacity factors (**disclaimer**: this is obviously stylized and not reflective of reality, but it makes the problem simpler). These are given as:
 
@@ -48,7 +48,7 @@ Assume that all 365 days in a year are equivalent in terms of demand and wind an
 | 10   | 2591  | 0.04 | 0.93 |
 | 11   | 2626  | 0.04 | 0.99 |
 | 12   | 2714  | 0.01 | 0.99   |
-| 13   | 2803  | 0.04 | 0.99   |
+| 13   | 2803  | 0.04 | 0.85   |
 | 14   | 2842  | 0.04 | 0.99   |
 | 15   | 2891  | 0.01 | 0.95 |
 | 16   | 2821  | 0.01 | 0.81 |
@@ -61,7 +61,7 @@ Assume that all 365 days in a year are equivalent in terms of demand and wind an
 | 23   | 1684  | 0.55 | 0 |
 | 24   | 1563  | 0.58 | 0 |
 
-The utility will also penalize any non-served demand at the cost of non-served energy, which is set at \$9000/MWh.
+The utility will also penalize any non-served demand at the cost of non-served energy, which is set at \$1000/MWh.
 
 **Reminder**: Use `round(x; digits=n)` to report values to the appropriate precision!
 

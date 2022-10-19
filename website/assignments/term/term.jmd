@@ -1,0 +1,83 @@
+---
+title: Term Project Instructions
+author: BEE 4750/5750
+fontfamily: "mathpazo"
+stylesheet: "https://viveks.me/environmental-systems-analysis/assignments/bee4750.css"
+weave_options:
+    md2pdf:
+        template: "../bee4750pdf.tpl"
+    md2html:
+        template: "../bee4750html.tpl"
+---
+
+# Overview
+
+In this project, you will work in groups of 2-3 students (BEE 4750) or on your own (BEE 5750) to apply your systems modeling and analysis knowledge to an environmental system of your choice. **Note that all BEE 4750 students are required to work in groups for this project; if you need or would like assistance finding a group, let the course staff know as soon as possible.**
+
+The criteria for the project are provided below. 
+
+1. The goal of this project is for you to apply and extend your understanding of systems analysis. Therefore, you should start with what you have learned in this class and go deeper into the optimization, simulation, and/or uncertainty/risk aspect(s) of the modeling.
+2. Choose a system with environmental implications. This is intentionally broad and can include energy systems, food systems, water systems, transportation systems (through emissions), or an integrated system with multiple environmental subsystems.
+3. You should not reuse a project from another class, though you can draw on material from other courses to select your system of interest and inform your modeling and/or problem framing.
+4. When choosing a topic, think carefully about the resources available to you. You will need to search for and/or justify data, parameter values, and valid metrics and constraints for your system. This is part of the project (and its evaluation), but make sure you have a sense of where you could find relevant information before investing too much time.
+5. Cite all your sources and references! 
+6. Clearly state assumptions. It is ok for assumptions to be questionable, so long as they are justifiable and clearly stated! It is less ok for your analysis to appear questionable and it to be unclear why.
+7. We will not have project presentations to allow you more time to work on your projects.
+8. Some class sessions after Thanksgiving break will be reserved for you to meet with course staff for check-ins and guidance. Attendance (in-person or by Zoom) at these meetings is not optional and will be part of your grade. The schedule of these sessions will be announced closer to Thanksgiving.
+
+All submissions will be handled via Gradescope by the appropriate due dates, and should be submitted as PDFs (supporting code can be provided as a GitHub repository, with a link provided in the PDF). Any late submissions will be penalized by 10% per day unless prior arrangements are made.
+
+## Learning Objectives
+
+After completing this project, students will be able to:
+- find data to inform models of environmental systems of interest;
+- analyze the design and/or management of an environmental system of interest using appropriate modeling and analysis methods;
+- identify key assumptions influencing the modeling outcomes.
+
+# Project Components
+
+## Proposal (10 points): Due November 3, 2022, by 9PM ET
+
+Your group should submit a proposal presenting the following:
+- the system you are interested in studying;
+- the problem or question you will be focusing on;
+- a description of how you intend to approach the problem, potentially including (but not limited to) a system diagram, preliminary data sources, metrics, etc.
+
+The purpose of this proposal is to generate feedback on your choice of regulation and intended approach to the modeling study. The proposal will be graded only on completion, but feedback on the proposal will be provided to help guide the remainder of the project components. Some initial sources, either on qualitative or quantitative aspects of the project, should be provided to ensure their appropriateness.
+
+This proposal should be **no more than 1 page (double-spaced, size 12 font, maximum 1 inch page margins), not including a system diagram or references**. Details of the modeling, beyond a proposed diagram, are not required, but can be provided if they fit into the page limit.
+
+## Participation in Project Meetings (5 points)
+
+Your group will be required to attend meetings with the course staff to check in on your project status and have the opportunity to ask for guidance and/or feedback as needed.
+
+## Modeling Study (50 points): Due Dec 5, by 9PM ET (with an optional extension until Dec 15)
+
+Your group should conduct a modeling study analyzing your system of interest. Your submission of results should be made in the form of a poster. This poster should include:
+- a brief overview of your system of interest;
+- your question framing and any relevant hypotheses guiding your study; 
+- how you modeled the system;
+- any counterfactual simulations or uncertainty analyses you conducted;
+- your results and conclusions, including comments on relevant assumptions and how they might have influenced the results;
+- a discussion section highlighting how you extended and applied your knowledge on this project.
+
+A template will be provided for this poster, which will specify the appropriate dimensions and font sizes, and some other example posters will be provided for guidance on layout and content. 
+
+## Peer Evaluation Form (10 points; for 4750 students only)
+
+We will provide a peer evaluation form for you to fill out for each of your fellow group members which should be submitted to Gradescope.
+
+# Example Project Ideas
+
+Below, we will provide some suggestions for possible project ideas to get you thinking. These are not intended to be restrictive; feel free to be creative, so long as your project meets the criteria above.
+
+## Life Cycle Assessment Projects
+
+You can focus on life cycle assessments (LCA) to understand the flows of materials, energy, and emissions associated with a particular product or system. If you are interested in an LCA project, you can use an openly available tool like [OpenLCA](https://www.openlca.org/), which has a large number of available datasets. Online tutorials can be found here: <https://www.youtube.com/channel/UCGiahq1YZWK4pRXDVXuIi6w>. Some starting points can be found [in their case studies section](https://www.openlca.org/case-studies/), but you should use these as a launching pad, not something to replicate.
+
+## Energy & Environmental Impacts
+
+It is often important to understand the (potentially) competing objectives of economics and the environment. You can develop a simple optimization or simulations model for an environmental or energy system of your choosing. Typical objectives are often to minimize costs, but what are the potential tradeoffs between economic and environmental objectives? You can explore the robustness of cost-minimizing or other solutions to various uncertainties, or use a multi-objective model to map the tradeoffs. 
+
+**For example**: A small microgrid uses a traditional economic dispatch model to determine how much electricity to produce from natural gas, a diesel generator, solar panels, and a small wind turbine. For a deterministic decision on an hourly basis, it is straightforward to make decisions to minimize environmental impact, but uncertainty creates challenges. For this analysis, you would need to research emission rates and costs of generation for each fuel type and think about 
+how to incorporate the uncertainty of wind and/or solar into your analysis. Not having enough energy to meet demand is expensive, and the alternative is the more expensive gas peaker plant(s) to meet shortfalls. There is no wrong answer, if you show you did the appropriate background research to formulate the problem and make any relevant assumptions.

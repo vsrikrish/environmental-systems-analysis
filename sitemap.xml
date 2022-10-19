@@ -86,7 +86,13 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>assignments/hw1/vivek-solution/</loc>
+    <loc>assignments/hw0/hw0/</loc>
+    <lastmod>2022-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>assignments/hw2/rubric/</loc>
     <lastmod>2022-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -98,19 +104,25 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>assignments/hw2/vivek-solution/</loc>
-    <lastmod>2022-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>assignments/regulation/regulation/</loc>
     <lastmod>2022-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>assignments/hw0/hw0/</loc>
+    <loc>assignments/hw1/hw1/</loc>
+    <lastmod>2022-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>assignments/hw1/vivek-solution/</loc>
+    <lastmod>2022-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>assignments/hw2/vivek-solution/</loc>
     <lastmod>2022-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -128,19 +140,13 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>assignments/hw1/hw1/</loc>
+    <loc>assignments/term/term/</loc>
     <lastmod>2022-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>assignments/hw1/rubric/</loc>
-    <lastmod>2022-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/hw2/rubric/</loc>
     <lastmod>2022-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

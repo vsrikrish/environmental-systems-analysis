@@ -31,3 +31,4 @@
 | Project | Instructions and Due Dates | Resources |
 |------------|:----------:|:---------:|
 | Regulatory Review Project | {{project_badges regulation}} | [Regulation Research Handout](/assets/misc/regulation_addendum_handout.pdf) |
+| Term Project | {{project_badges term}} |  |

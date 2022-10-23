@@ -34,3 +34,4 @@ Please make sure that your class exercise repository is updated ahead of classes
 | 14 | Economic Dispatch | Oct 12, 2022 | {{lecture_badges 12}} | | |
 | 15 | Mixed Integer Programming | Oct 17, 2022 | {{lecture_badges 13}} | | |
 | 16 | Unit Commitment | Oct 19, 2022 | {{lecture_badges 14}} | | |
+| 17 | Emissions & Plume Models | Oct 24, 2022 | {{lecture_badges 15}} | | |

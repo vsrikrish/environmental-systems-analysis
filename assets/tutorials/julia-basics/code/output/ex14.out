@@ -2,5 +2,5 @@ MethodError: no method matching +(::String, ::Int64)
 Closest candidates are:
   +(::Any, ::Any, !Matched::Any, !Matched::Any...) at /opt/hostedtoolcache/julia/1.7.3/x64/share/julia/base/operators.jl:655
   +(!Matched::T, ::T) where T<:Union{Int128, Int16, Int32, Int64, Int8, UInt128, UInt16, UInt32, UInt64, UInt8} at /opt/hostedtoolcache/julia/1.7.3/x64/share/julia/base/int.jl:87
-  +(!Matched::T, ::Integer) where T<:AbstractChar at /opt/hostedtoolcache/julia/1.7.3/x64/share/julia/base/char.jl:237
+  +(!Matched::Distributions.NormalCanon, ::Real) at ~/.julia/packages/Distributions/QLJcf/src/univariate/continuous/normalcanon.jl:94
   ...

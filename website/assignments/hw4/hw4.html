@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<HTML lang = "en">
+<HEAD>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Homework 4</title>
+  
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    tags: "ams",
+    autoload: {
+      color: [],
+      colorv2: ['color']
+    },
+    processEscapes: true,
+    packages: {'[+]': ['noerrors']}
+  },
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/noerrors']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Menlo&family=Hind&family=Raleway&family=Yantramanav&display=swap');
+</style>
+
+  
+<style>
+pre.hljl {
+    border: 1px solid #ccc;
+    margin: 5px;
+    padding: 5px;
+    overflow-x: auto;
+    color: rgb(68,68,68); background-color: rgb(251,251,251); }
+pre.hljl > span.hljl-t { }
+pre.hljl > span.hljl-w { }
+pre.hljl > span.hljl-e { }
+pre.hljl > span.hljl-eB { }
+pre.hljl > span.hljl-o { }
+pre.hljl > span.hljl-k { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kc { color: rgb(59,151,46); font-style: italic; }
+pre.hljl > span.hljl-kd { color: rgb(214,102,97); font-style: italic; }
+pre.hljl > span.hljl-kn { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kp { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kr { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kt { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-n { }
+pre.hljl > span.hljl-na { }
+pre.hljl > span.hljl-nb { }
+pre.hljl > span.hljl-nbp { }
+pre.hljl > span.hljl-nc { }
+pre.hljl > span.hljl-ncB { }
+pre.hljl > span.hljl-nd { color: rgb(214,102,97); }
+pre.hljl > span.hljl-ne { }
+pre.hljl > span.hljl-neB { }
+pre.hljl > span.hljl-nf { color: rgb(66,102,213); }
+pre.hljl > span.hljl-nfm { color: rgb(66,102,213); }
+pre.hljl > span.hljl-np { }
+pre.hljl > span.hljl-nl { }
+pre.hljl > span.hljl-nn { }
+pre.hljl > span.hljl-no { }
+pre.hljl > span.hljl-nt { }
+pre.hljl > span.hljl-nv { }
+pre.hljl > span.hljl-nvc { }
+pre.hljl > span.hljl-nvg { }
+pre.hljl > span.hljl-nvi { }
+pre.hljl > span.hljl-nvm { }
+pre.hljl > span.hljl-l { }
+pre.hljl > span.hljl-ld { color: rgb(148,91,176); font-style: italic; }
+pre.hljl > span.hljl-s { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sa { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sb { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sc { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sd { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sdB { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sdC { color: rgb(201,61,57); }
+pre.hljl > span.hljl-se { color: rgb(59,151,46); }
+pre.hljl > span.hljl-sh { color: rgb(201,61,57); }
+pre.hljl > span.hljl-si { }
+pre.hljl > span.hljl-so { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sr { color: rgb(201,61,57); }
+pre.hljl > span.hljl-ss { color: rgb(201,61,57); }
+pre.hljl > span.hljl-ssB { color: rgb(201,61,57); }
+pre.hljl > span.hljl-nB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nbB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nfB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nh { color: rgb(59,151,46); }
+pre.hljl > span.hljl-ni { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nil { color: rgb(59,151,46); }
+pre.hljl > span.hljl-noB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-oB { color: rgb(102,102,102); font-weight: bold; }
+pre.hljl > span.hljl-ow { color: rgb(102,102,102); font-weight: bold; }
+pre.hljl > span.hljl-p { }
+pre.hljl > span.hljl-c { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-ch { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cm { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cp { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cpB { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cs { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-csB { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-g { }
+pre.hljl > span.hljl-gd { }
+pre.hljl > span.hljl-ge { }
+pre.hljl > span.hljl-geB { }
+pre.hljl > span.hljl-gh { }
+pre.hljl > span.hljl-gi { }
+pre.hljl > span.hljl-go { }
+pre.hljl > span.hljl-gp { }
+pre.hljl > span.hljl-gs { }
+pre.hljl > span.hljl-gsB { }
+pre.hljl > span.hljl-gt { }
+</style>
+
+
+
+  <link rel="stylesheet" href=https://viveks.me/environmental-systems-analysis/assignments/bee4750.css>
+</HEAD>
+
+<BODY>
+  <div class ="container">
+    <div class = "row">
+      <div class = "col-md-12 twelve columns">
+        <div class="title">
+          <h1 class="title">Homework 4</h1>
+          <h2 class="title">BEE 4750/5750</h2>
+          <h2 class="title">Due: Nov 3, 2022 by 9:00pm ET</h2>        
+
+        </div>
+    <hr class="title">
+
+
+        <h1>Overview</h1>
+<h2>Learning Objectives</h2>
+<p>Homework 4 is focused on assessing your ability to formulate and implement mixed-integer linear programming models.</p>
+<h2>Background Information</h2>
+<p>Two cities are developing a coordinated municipal solid waste &#40;MSW&#41; disposal plan.  Three disposal alternatives are being considered: a landfills &#40;LF&#41;, a materials recycling facility &#40;MRF&#41;, and a waste-to-energy facility &#40;WTE&#41;. The capacities of these facilities and the fees for operation and disposal are provided in the table below.</p>
+<table><tr><th><strong>Disposal Facility</strong></th><th><strong>Capacity</strong> &#40;Mg/d&#41;</th><th><strong>Fixed cost</strong> &#40;&#36;/d&#41;</th><th>**Tipping Fee ** &#40;&#36;/Mg&#41;</th><th><strong>Recycling Cost</strong> &#40;&#36;/Mg&#41;</th></tr><tr><td>Landfill</td><td>200</td><td>2000</td><td>50</td><td></td></tr><tr><td>Recycling Facility</td><td>350</td><td>1500</td><td>7</td><td>45 &#40;per Mg recycled&#41;</td></tr><tr><td>Waste-to-Energy Facility</td><td>150</td><td>2500</td><td>60</td><td></td></tr></table>
+<p>Transportation costs are &#36;1.5/Mg-km, and the relative distances between the cities and facilities are provided in the table below. </p>
+<table><tr><th><strong>City/Facility</strong></th><th><strong>MRF</strong></th><th><strong>Landfill</strong></th><th><strong>WTE</strong></th></tr><tr><td>1</td><td>5</td><td>30</td><td>15</td></tr><tr><td>2</td><td>15</td><td>25</td><td>10</td></tr><tr><td>MRF</td><td>-</td><td>32</td><td>15</td></tr><tr><td>LF</td><td>32</td><td>-</td><td>18</td></tr><tr><td>WTE</td><td>15</td><td>18</td><td>-</td></tr></table>
+<p>The fixed costs associated with the disposal options are incurred only if the particular disposal option is implemented.  The cities produce 100 and 170 Mg/day of solid waste, respectively, with the composition provided in the table below. </p>
+<table><tr><th><strong>Component</strong></th><th><strong>&#37; of total mass</strong></th><th><strong>Combustion ash</strong> &#40;&#37;&#41;</th><th><strong>MRF Recycling rate</strong> &#40;&#37;&#41;</th></tr><tr><td>Food Wastes</td><td>15</td><td>8</td><td>0</td></tr><tr><td>Paper &amp; Cardboard</td><td>40</td><td>7</td><td>55</td></tr><tr><td>Plastics</td><td>5</td><td>5</td><td>15</td></tr><tr><td>Textiles</td><td>3</td><td>10</td><td>10</td></tr><tr><td>Rubber, Leather</td><td>2</td><td>15</td><td>0</td></tr><tr><td>Wood</td><td>5</td><td>2</td><td>30</td></tr><tr><td>Yard Wastes</td><td>18</td><td>2</td><td>40</td></tr><tr><td>Glass</td><td>4</td><td>100</td><td>60</td></tr><tr><td>Ferrous</td><td>2</td><td>100</td><td>75</td></tr><tr><td>Aluminum</td><td>2</td><td>100</td><td>80</td></tr><tr><td>Other Metal</td><td>1</td><td>100</td><td>50</td></tr><tr><td>Miscellaneous</td><td>3</td><td>70</td><td>0</td></tr></table>
+<p>The information in the above table will help you determine the overall recycling and ash fractions. Note that the recycling residuals, which may be sent to either landfill or the WTE, have different ash content than the ash content of the original MSW. You will need to determine these fractions to construct your mass balance constraints. </p>
+<p><strong>Reminder</strong>: Use <code>round&#40;x; digits&#61;n&#41;</code> to report values to the appropriate precision&#33;</p>
+<h1>Problems</h1>
+<h2>Problem 1: <strong>Determine an Optimal Disposal Plan</strong></h2>
+<p>Determine an optimal disposal plan for the two cities, using the data provided above.</p>
+<h3>Problem 1.1: Calculate the Overall Recycling and Ash Fractions</h3>
+<p>Based on the information above, calculate the overall recycling and ash fractions for the waste produced by each city.</p>
+<h3>Problem 1.2: Identify Decision Variables</h3>
+<p>What are the decision variables for your optimization problem? Provide notation and variable meaning.</p>
+<h3>Problem 1.3: Formulate Objective</h3>
+<p>Formulate the objective function. Make sure to include any needed derivations or justifications for your equation&#40;s&#41;.</p>
+<h3>Problem 1.4: Formulate Constraints</h3>
+<p>Derive all relevant constraints &#40;you don&#39;t need to write them all out, but they should all be represented through your notation&#41;. Make sure to include any needed justifications or derivations. Why is your set of constraints complete?</p>
+<h3>Problem 1.5: Implement in <code>JuMP</code></h3>
+<p>Implement your optimization problem in <code>JuMP</code>. For this sub-problem, you only need to provide a code block with the problem formulation.</p>
+<h3>Problem 1.6: Report Results</h3>
+<p>Find the optimal solution. Draw a diagram showing the flows of waste between the cities and the facilities. Report the optimal objective value. Which facilities will not be used?</p>
+<h2>Problem 2: Adding a Carbon Tax</h2>
+<p>It is projected that in the near future the state will introduce a carbon tax that will increase the cost for transportation and for disposal by incineration. It is estimated that the additional costs will be:</p>
+<ul>
+<li><p>tipping fee for the WTE facility will increase to&#36;75/Mg; and</p>
+</li>
+<li><p>transportation costs will increase to &#36;2/Mg-km. </p>
+</li>
+</ul>
+<p>Discuss how this policy change will influence your recommendation.  </p>
+<h3>Problem 2.1: Identify Changes from Problem 1</h3>
+<p>What changes are needed to your optimization program from Problem 1? Formulate any different variables, objectives, and/or constraints.</p>
+<h3>Problem 2.2: Implement in <code>JuMP</code></h3>
+<p>Implement the new optimization problem in <code>JuMP</code>. For this sub-problem, you only need to provide a code block with the problem formulation. You can make only those changes needed from Problem 2.1 or rewrite the entire problem, depending on what&#39;s easier.</p>
+<h3>Problem 2.3: Find the Solution</h3>
+<p>Find the optimal solution and report the optimal objective value. Provide a diagram showing the new waste flows. What are the differences from the original plan?</p>
+<h2>References</h2>
+<p>List any external resources consulted, including classmates.</p>
+
+
+    <hr class="title">
+      </div>
+    </div>
+  </div>
+</BODY>
+
+</HTML>

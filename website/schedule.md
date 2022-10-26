@@ -24,7 +24,7 @@ Please make sure that your class exercise repository is updated ahead of classes
 | 5 | Uncertainty and Monte Carlo | Sep 7, 2022 | {{lecture_badges 04}} | | [Exercise Repository](https://github.com/BEE4750/class-exercises) |
 | 6 | More Monte Carlo and Risk | Sep 12, 2022 | {{lecture_badges 05}} | [Simpson et al (2021)](https://dx.doi.org/10.1016/j.oneear.2021.03.005) | |
 | 7 | Fate & Transport, Dissolved Oxygen | Sep 14, 2022 | {{lecture_badges 06}} | | |
-|   | *Optimization and Decision-Making |
+|   | *Optimization and Decision-Making* |
 | 8 | Introduction to Prescriptive Modeling | Sep 19, 2022 | {{lecture_badges 07}} | | |
 | 9 | Introduction to Optimization | Sep 21, 2022 | {{lecture_badges 08}} | | |
 | 10 | Guest Lecture: Mel Jensen on Researching Regulations | Sep 26, 2022 | [Presentation](/assets/misc/regulation_research_presentation.pdf) | | |

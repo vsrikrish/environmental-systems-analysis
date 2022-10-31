@@ -36,3 +36,4 @@ Please make sure that your class exercise repository is updated ahead of classes
 | 16 | Unit Commitment | Oct 19, 2022 | {{lecture_badges 14}} | | |
 | 17 | Emissions & Plume Models | Oct 24, 2022 | {{lecture_badges 15}} | | |
 | 18 | Emissions: Multiple Sources and Box Models | Oct 26, 2022 | {{lecture_badges 16}} | | |
+| 19 | Simulation-Optimization and the Lake Problem | Oct 31, 2022 | {{lecture_badges 17}} | | |

@@ -305,7 +305,7 @@ $$
 .center[![Impact On Flux](figures/lake-nox.svg)] .cite[Adapted from [Quinn et al (2017)](https://dx.doi.org/10.1016/j.envsoft.2017.02.017)] ]
 
 
-.right-column[ $a + y = 0.5, q=8$:
+.right-column[ $a + y = 0.05, q=2.5$:
 
 
 .center[![Impact On Flux](figures/lake-x.svg)] ]
@@ -421,10 +421,9 @@ But, like Monte Carlo, often other methods are impossible or worse.
 .left-column[Find estimate of gradient near current point and step in positive/negative direction (depending on max/min).
 
 
-:$
-
-
-x*{n+1} = x*n \pm \alpha*n \nabla f(x*n)
+$$
+x_{n+1} = x_n \pm \alpha_n \nabla f(x_n)
+$$
 
 
 But: may not find global optimum; stepsize plays a big role in convergence. ]
@@ -453,7 +452,26 @@ But: may not find global optimum; stepsize plays a big role in convergence. ]
   * No guarantees! Need to evaluate lots and convince yourself you've done enough.]
 
 
-.right-column[.center![Random Search Algorithm](figures/random-algorithm.svg)]
+.right-column[.center[![Random Search Algorithm](figures/random-algorithm.svg)]]
+
+
+---
+
+
+
+
+
+
+# Random Search with Constraints
+
+
+<hr>
+
+
+.left-column[With constraints, need a way to mark samples as infeasible.]
+
+
+.right-column[.center[![Random Search Algorithm](figures/random-algorithm-const.svg)]]
 
 
 ---
@@ -519,13 +537,13 @@ fobj(x) = mean([f(x) for i in 1:1000])
 # set bounds
 bounds = [0.0 1000.0]'
 # optimize
-results = optimize(fobj, bounds, ECA())
+results = optimize(fobj, bounds, DE())
 results.best_sol
 ```
 
 
 ```
-(f = 3.3030e+00, x = [1.6704228496204336])
+(f = 3.6109e+00, x = [2.368314566931006])
 ```
 
 
@@ -545,7 +563,236 @@ results.best_sol
 `Metaheuristics.jl` contains [a number of algorithms](https://docs.juliahub.com/Metaheuristics/aJ70z/3.2.12/algorithms/), covering a number of single-objective and multi-objective algorithms.
 
 
-We won't go into details here, and will just stick with `ECA()` in our examples.
+We won't go into details here, and will just stick with `DE()` (differential evolution) in our examples.
+
+
+---
+
+
+
+
+
+
+# Lake Example (Including Constraints)
+
+
+<hr>
+
+
+Lake Problem: Let's try to keep the probability of exceeding the critical value (leading to eutrophication) less than 80%.
+
+
+```julia
+using Metaheuristics
+using Distributions
+using Plots
+using Random
+using Roots
+Random.seed!(1)
+
+# set parameters
+q = 2.5
+b = 0.4
+T = 100
+nsamples = 1000
+```
+
+
+```
+1000
+```
+
+
+---
+
+
+
+
+# Lake Example (Including Constraints)
+
+
+<hr>
+
+
+.left-column[
+
+
+```julia
+# get NPS inflows
+lnorm = LogNormal(log(0.03), 0.1)
+y = rand(lnorm, (T, nsamples))
+# find critical value
+crit(x) = (x^q/(1+x^q)) - b*x
+Xcrit = find_zero(crit, (0.1, 1.5))
+```
+
+
+```
+0.6678778690448219
+```
+
+
+]
+
+
+.right-column[ .center[![NPS Inflow Distribution](figures/nps-inflow-samps.svg)] ]
+
+
+---
+
+
+
+
+# Lake Example (Including Constraints)
+
+
+<hr>
+
+
+```julia
+# define lake model
+function lake(a, y, q, b, T)
+    X = zeros(T+1, size(y, 2))
+    # calculate states
+    for t = 1:T
+        X[t+1, :] = X[t, :] .+ a[t] .+ y[t, :] .+ (X[t, :].^q./(1 .+ X[t, :].^q)) .- b.*X[t, :]
+    end
+    return X
+end
+function lake_opt(a, y, q, b, T, Xcrit)
+    X = lake(a, y, q, b, T)
+    # calculate exceedance of critical value
+    Pexceed = sum(X[101, :] .> Xcrit) / size(X, 2)
+    failconst = [Pexceed - 0.2]
+    return mean(a), failconst, [0.0]
+end
+```
+
+
+---
+
+
+
+
+# Lake Example (Including Constraints)
+
+
+<hr>
+
+
+```julia
+# set bounds
+bounds = [0.0ones(T) 0.1ones(T)]'
+# optimize
+obj(a) = lake_opt(a, y, q, b, T, Xcrit)
+options = Options(f_calls_limit=5000)
+results = optimize(obj, bounds, DE(options=options))
+```
+
+<pre>
++=========== RESULT ==========+
+  iteration: 5
+    minimum: 0.0370322
+  minimizer: [0.022076472828343345, 0.09899916718214197, 0.08989050384961975, 0.0309376448378213, 0.0008824165646296129, 0.019962459948983942, 0.030876020629795456, 0.0008851740888620339, 0.05127567043053332, 0.020044724625745566, 0.0726371866186155, 0.09704990771259873, 0.09152451875073744, 0.010552655643791778, 0.0021013449021318777, 0.029282958312966893, 0.05783230379218778, 0.028006263065764717, 0.026793092413382943, 0.0164753118989962, 0.0016384234204462583, 0.06127238284437064, 0.04996760030922329, 0.07291186860379559, 0.0017983436521787077, 0.0022481859487700237, 0.07484278605036089, 0.05212034486592401, 0.003605647173537726, 0.006884147204569639, 0.06121470082800236, 0.008939880581101064, 0.009268403065660473, 0.00856558675253562, 0.0590575857474078, 0.04769631703347137, 0.02607202017005513, 0.001042912858796331, 0.09473318357231095, 0.02574681673589537, 0.01750597358001768, 0.024506242439494084, 0.04451443136588381, 0.08069106890927884, 0.020443719211152088, 0.09073486840129104, 0.035986727142412994, 0.09253523045633633, 0.03214715383400821, 0.013631896207434276, 0.04009690128476173, 0.023062119015269025, 0.08183149639371368, 0.04917516602443296, 0.009683211016004433, 0.08387037690448705, 0.08990995225559371, 0.03295466058631406, 0.006202574841115603, 0.05935907217624828, 0.004091044059389582, 0.0006566155086883048, 0.06528046883654762, 0.01775732012064904, 0.08142197334126787, 0.014539230240052214, 0.03172580393880621, 0.0585585626028578, 0.020583370638167953, 0.007187069463098484, 0.0025727892325036307, 0.06651157444108163, 0.03823369994469339, 0.012018892014951488, 0.019134304081297307, 0.05835518992390061, 0.012431527485126888, 0.0810582923437417, 0.08939943583631019, 0.029926108778632915, 0.051541442521966366, 0.026298659075321255, 0.020851510449052705, 0.014581032596758874, 0.06659495725578947, 0.05392290123064206, 0.005651056055924905, 0.0013402809778118021, 0.0328574810112852, 1.2961213089955459e-5, 0.017785624496714968, 0.04399664525397469, 0.004838928900269746, 0.047502342915429624, 0.04967209115304081, 0.03645370738144943, 0.06479669294818324, 0.002028511072663952, 0.003756552783982118, 0.050740505434923644]
+    f calls: 5000
+  feasibles: 82 / 1000 in final population
+ total time: 113.1351 s
+stop reason: Maximum objective function calls exceeded.
++============================+
+</pre>
+
+
+---
+
+
+
+
+# Lake Example (Including Constraints)
+
+
+<hr>
+
+
+.left-column[
+
+
+```julia
+using Plots
+
+a = results.best_sol.x
+X = lake(a, y, q, b, T)
+plot(X, alpha=0.1,
+    guidefontsize=14, tickfontsize=12,
+    legendfontsize=12, label=:false,
+    legend=:topleft)
+hline!([Xcrit], color=:red, linestyle=:dot,
+    label="Critical Value")
+plot!(size=(400, 400))
+```
+
+
+```
+"/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/jl_0RfNWL/build/lake-series.svg"
+```
+
+
+]
+
+
+.right-column[ .center[![Lake Model Time Series](figures/lake-series.svg)] ]
+
+
+---
+
+
+
+
+# Lake Example (Including Constraints)
+
+
+<hr>
+
+
+.left-column[
+
+
+```julia
+histogram(X[101, :], xlabel="End P Concentration", ylabel="Count",
+    guidefontsize=14, tickfontsize=12,
+    legendfontsize=12, label=:false)
+vline!([Xcrit], color=:red, linestyle=:dot,
+    label="Critical Value")
+plot!(size=(400, 400))
+```
+
+
+```
+"/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/jl_0RfNWL/build/lake-dist.svg"
+```
+
+
+]
+
+
+.right-column[ .center[![Lake Model Time Series](figures/lake-dist.svg)] ]
+
+
+---
+
+
+
+
+
+
+# Key Takeaways
+
+
+<hr>
+
+
+  * Many challenges to using mathematical programming for general systems analysis.
+  * Can use simulation-optimization approaches.
+  * But be careful of computational expense and convergence!
 
 
 ---

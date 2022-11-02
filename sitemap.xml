@@ -14,12 +14,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>schedule/index.html</loc>
-    <lastmod>2022-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>software/index.html</loc>
     <lastmod>2022-11-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -129,6 +123,12 @@
 </url>
 <url>
     <loc>assignments/hw2/vivek-solution/</loc>
+    <lastmod>2022-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>assignments/hw3/vivek-solution/</loc>
     <lastmod>2022-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

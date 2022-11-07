@@ -38,3 +38,5 @@ Please make sure that your class exercise repository is updated ahead of classes
 | 18 | Emissions: Multiple Sources and Box Models | Oct 26, 2022 | {{lecture_badges 16}} | | |
 | 19 | Simulation-Optimization and the Lake Problem | Oct 31, 2022 | {{lecture_badges 17}} | | |
 | 20 | Simulation-Optimization Class Exercise | Nov 2, 2022 | {{lecture_badges 18}} | | [Exercise Repository](https://github.com/BEE4750/class-exercises) |
+|   | *Examining Assumptions* |
+| 21 | Robustness | Nov 7, 2022 | {{lecture_badges 19}} | | |

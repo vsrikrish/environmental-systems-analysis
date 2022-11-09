@@ -40,3 +40,4 @@ Please make sure that your class exercise repository is updated ahead of classes
 | 20 | Simulation-Optimization Class Exercise | Nov 2, 2022 | {{lecture_badges 18}} | | [Exercise Repository](https://github.com/BEE4750/class-exercises) |
 |   | *Examining Assumptions* |
 | 21 | Robustness | Nov 7, 2022 | {{lecture_badges 19}} | | |
+| 22 | Introduction to Sensitivity Analysis | Nov 9, 2022 | {{lecture_badges 20}} | | |

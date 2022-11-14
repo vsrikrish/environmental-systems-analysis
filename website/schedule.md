@@ -41,3 +41,5 @@ Please make sure that your class exercise repository is updated ahead of classes
 |   | *Examining Assumptions* |
 | 21 | Robustness | Nov 7, 2022 | {{lecture_badges 19}} | | |
 | 22 | Introduction to Sensitivity Analysis | Nov 9, 2022 | {{lecture_badges 20}} | | |
+| 23 | Decision-Making Under Uncertainty | Nov 14, 2022 | {{lecture_badges 21}} | | |
+| 24 | Examples of Decision-Making Under Uncertainty | Nov 16, 2022 | | | |

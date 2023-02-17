@@ -4,7 +4,7 @@ html, body {
 }
 
 h1 { color: #222222; }
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: 'Noto Sans';
 }
 .franklin-content li > p {
@@ -13,6 +13,8 @@ h1, h2, h3 {
 }
 
 h2 { color: #222222; }
+
+h4 { font-style: italic; }
 
 .sidebar h2 {
     color: #f7f7f7;
@@ -45,6 +47,8 @@ h2 { color: #222222; }
     text-align: center;
     font-size: 2rem;
     border-bottom: none;
+    margin-bottom: 0.25em;
+    padding-bottom: 0;
 }
 
 .banner h2 {
@@ -53,6 +57,16 @@ h2 { color: #222222; }
     font-size: 1.75em;
     border-bottom: none;
 }
+
+.duedate {
+    color: #222222;
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom: none;
+    display: block;
+    font-weight: bold;
+}
+
 
 .franklin-content .colbox-red {
     background-color: #f7f7f7;
@@ -281,3 +295,7 @@ h2.schedule-header {
     background-color: #073949;
 }
 
+.assignment-date {
+    font-weight: bold;
+    font-size: 1.2em;
+}

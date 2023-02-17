@@ -1,0 +1,702 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[]{IBM Plex Sans}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={BEE 4750 Syllabus, Fall 2023},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{BEE 4750 Syllabus, Fall 2023}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Cornell University}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, frame hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced, boxrule=0pt, breakable]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{course-information}{%
+\subsection{Course Information}\label{course-information}}
+
+\hypertarget{instructor}{%
+\subsubsection{Instructor}\label{instructor}}
+
+\begin{itemize}
+\tightlist
+\item
+  \faIcon{user} {\href{https://viveks.me}{Vivek Srikrishnan}}
+\item
+  \faIcon{envelope}
+  {\href{mailto:viveks@cornell.edu}{\nolinkurl{viveks@cornell.edu}}}
+\item
+  \faIcon{building} {318 Riley-Robb}
+\item
+  \faIcon{chalkboard-teacher} TBD
+\end{itemize}
+
+\hypertarget{ta}{%
+\subsubsection{TA}\label{ta}}
+
+\begin{itemize}
+\tightlist
+\item
+  \faIcon{user} {TBD}
+\item
+  \faIcon{envelope} {TBD}
+\item
+  \faIcon{building} {TBD}
+\item
+  \faIcon{chalkboard-teacher} TBD
+\end{itemize}
+
+\hypertarget{meetings}{%
+\subsubsection{Meetings}\label{meetings}}
+
+\begin{itemize}
+\tightlist
+\item
+  \faIcon{calendar} Mondays, Wednesdays
+\item
+  \faIcon{clock} 11:25-12:40
+\item
+  \faIcon{university} {105 Riley-Robb}
+\end{itemize}
+
+This is a 3-credit course which is required for the Environmental
+Engineering major.
+
+\hypertarget{course-description}{%
+\subsubsection{Course Description}\label{course-description}}
+
+Environmental processes have complicated dynamics and conflicting
+objectives. These dynamics can complicate analyses and which focus on a
+single component of the system, such as an individual pollution source.
+In this course, we will adopt a systems approach to environmental
+quality modeling and management, including applications in air and water
+pollution control and solid waste management. In particular, we will:
+
+\begin{itemize}
+\tightlist
+\item
+  learn how to define systems and their boundaries;
+\item
+  simulate system dynamics using computer models;
+\item
+  formulate and solve linear and nonlinear optimization problems;
+\item
+  analyze and assess risk after introducing uncertainty;
+\item
+  make decisions under uncertainty with stochastic and dynamic
+  programming; and
+\item
+  explore trade-offs across competing objectives.
+\end{itemize}
+
+\hypertarget{learning-objectives}{%
+\subsection{Learning Objectives}\label{learning-objectives}}
+
+At the end of this class, students will:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Establish system boundaries and distinguish between exogenous and
+  endogenous processes;
+\item
+  Develop mathematical models of environmental systems;
+\item
+  Determine strategies for managing systems using optimization;
+\item
+  Identify the trade-offs that result from competing objectives in
+  environmental decision -making;
+\item
+  Analyze environmental system risk and vulnerabilities.
+\end{enumerate}
+
+\hypertarget{topics}{%
+\subsection{Topics}\label{topics}}
+
+\begin{itemize}
+\tightlist
+\item
+  Introduction to environmental systems,
+\item
+  Modeling system dynamics
+\item
+  Multiple objectives and trade-offs
+\item
+  Uncertainty and risk (Monte Carlo analysis)
+\item
+  Dissolved oxygen in streams and rivers; waste load allocation (system
+  simulation)
+\item
+  Modeling of watersheds \& lakes (defining objectives, constraints)
+\item
+  Modeling for air pollution control (model linearization; linear
+  programming)
+\item
+  Location of waste disposal facilities (integer linear programming)
+\item
+  Robustness of solutions and sensitivity analysis
+\end{itemize}
+
+\hypertarget{prerequisites-preparation}{%
+\subsection{Prerequisites \&
+Preparation}\label{prerequisites-preparation}}
+
+The following courses/material would be ideal preparation:
+
+\begin{itemize}
+\tightlist
+\item
+  Environmental Processes (BEE 2510 or BEE 2600)
+\item
+  Engineering Computation (ENGRD/CEE 3200)
+\item
+  One course in probability or statistics (ENGRD 2700, CEE 3040, or
+  equivalent)
+\end{itemize}
+
+In the absence of one or more these prerequisites, you can seek the
+permission of instructor.
+
+If your programming or statistics skills are a little rusty, don't
+worry! We will review concepts and build skills as needed.
+
+\hypertarget{course-philosophy-and-expectations}{%
+\subsection{Course Philosophy and
+Expectations}\label{course-philosophy-and-expectations}}
+
+The goal of our course is to help you gain competancy and knowledge in
+the area of environmental systems analysis. This involves a dual
+responsibility on the part of the instructor and the student. As the
+instructor, my responsibility is to provide you with a structure and
+opportunity to learn. To this end, I will commit to:
+
+\begin{itemize}
+\tightlist
+\item
+  provide organized and focused lectures, in-class activities, and
+  assignments;
+\item
+  encourage students to regularly evaluate and provide feedback on the
+  course;
+\item
+  manage the classroom atmosphere to promote learning;
+\item
+  schedule sufficient out-of-class contact opportunities, such as office
+  hours;
+\item
+  allow adequate time for assignment completion;
+\item
+  make lecture materials, class policies, activities, and assignments
+  accessible to students.
+\end{itemize}
+
+Students are encouraged to discuss any concerns with me during office
+hours or through a course communications channel.
+
+Students can optimize their performance in the course by:
+
+\begin{itemize}
+\tightlist
+\item
+  attending all lectures;
+\item
+  doing any required preparatory work before class;
+\item
+  actively participating in online and in-class discussions;
+\item
+  beginning assignments and other work early;
+\item
+  and attending office hours as needed.
+\end{itemize}
+
+\hypertarget{community}{%
+\subsection{Community}\label{community}}
+
+\hypertarget{diversity-and-inclusion}{%
+\subsubsection{Diversity and Inclusion}\label{diversity-and-inclusion}}
+
+Our goal in this class is to foster an inclusive learning environment
+and make everyone feel comfortable in the classroom, regardless of
+social identity, background, and specific learning needs. As engineers,
+our work touches on many critical aspects of society, and questions of
+inclusion and social justice cannot be separated from considerations of
+systems analysis, objective selection, risk analysis, and trade-offs.
+
+In all communications and interactions with each other, members of this
+class community (students and instructors) are expected to be respectful
+and inclusive. In this spirit, we ask all participants to:
+
+\begin{itemize}
+\tightlist
+\item
+  share their experiences, values, and beliefs;
+\item
+  be open to and respectful of the views of others; and
+\item
+  value each other's opinions and communicate in a respectful manner.
+\end{itemize}
+
+We all make mistakes in our communications with one another, both when
+speaking and listening. Be mindful of how spoken or written language
+might be misunderstood, and be aware that, for a variety of reasons, how
+others perceive your words and actions may not be exactly how you
+intended them. At the same time, it is also essential that we be
+respectful and interpret each other's comments and actions in good
+faith.
+
+Please let me know if you feel any aspect(s) of class could be made more
+inclusive. Please also share any preferred name(s) and/or your pronouns
+with me if you wish: I use he/him/his, and you can refer to me either as
+Vivek or Prof.~Srikrishnan.
+
+\hypertarget{student-accomodations}{%
+\subsubsection{Student Accomodations}\label{student-accomodations}}
+
+Let me know if you have any access barriers in this course, whether they
+relate to course materials, assignments, or communications. If any
+special accomodations would help you navigate any barriers and improve
+your chances of success, please exercise your right to those
+accomodations and reach out to me as early as possible with your
+\href{https://sds.cornell.edu/}{Student Disability Services} (SDS)
+accomodation letter. This will ensure that we have enough time to make
+appropriate arrangements.
+
+If you need more immediate accomodations, but do not yet have a letter,
+please let me know and then follow up with SDS.
+
+\hypertarget{course-communications}{%
+\subsubsection{Course Communications}\label{course-communications}}
+
+Most course communications will occur via \href{https://edstem.org}{Ed
+Discussion}. Public Ed posts are generally preferred to private posts or
+emails, as other students can benefit from the discussions. If you would
+like to discuss something privately, please do reach out through email
+or a private Ed post (which will only be viewable by you and the course
+staff).
+
+Announcements will be made on the course website and in Ed. Emergency
+announcements will also be made on Canvas.
+
+\hypertarget{mental-health-resources}{%
+\subsubsection{Mental Health Resources}\label{mental-health-resources}}
+
+We all have to take care of our mental health, just as we would our
+physical health. As a student, you may experience a range of issues
+which can negatively impact your mental health. Please do not ignore any
+of these stressors, or feel like you have to navigate these challenges
+alone! You are part of a community of students, faculty, and staff, who
+have a responsibility to look for one another's well-being. If you are
+struggling with managing your mental health, or if you believe a
+classmate may be struggling, please reach out to the course instructor,
+the TA, or, for broader support, please take advantage of
+\href{https://mentalhealth.cornell.edu/}{Cornell's mental health
+resources}.
+
+The TA and myself are not trained counselors, but we are here to support
+you in whatever capacity we can. You should never feel that you need to
+push yourself past your limits to complete any assignment for this class
+or any other. If we need to make modifications to the course or
+assignment schedule, you can certainly reach out to us, and all relevant
+discussions will be kept strictly confidential.
+
+\hypertarget{course-policies}{%
+\subsection{Course Policies}\label{course-policies}}
+
+\hypertarget{attendance}{%
+\subsubsection{Attendance}\label{attendance}}
+
+Attendance is not \emph{required}, but in general, students who attend
+class regularly will do better and get more out of the class than
+students who do not. Your class participation grade will reflect both
+the quantity and quality of your participation, only some of which can
+occur asynchronously. I will put as many course materials, such as
+lecture notes and announcements, as possible online, but viewing
+materials online is not the same as active participation and engagement.
+
+Life happens, of course, and this may lead you to miss class. Let me
+know if you need any appropriate arrangements ahead of time. For
+example, please stay home if you're feeling sick! This is beneficial for
+both for your own recovery and the health and safety of your classmates.
+We will also make any necessary arrangements if whatever is going on
+will negatively impact your grade, for example by causing you to be
+unable to submit an assignment on time.
+
+\hypertarget{mask-policies}{%
+\subsubsection{Mask Policies}\label{mask-policies}}
+
+\textbf{Masks are encouraged but not required in the classroom}, per
+\href{https://covid.cornell.edu/updates/20220727-students-fall-semester.cfm}{university
+policy}. However, the University \emph{strongly encourages} compliance
+with requests to mask from students, faculty, and staff who are
+concerned about the risk of infection. Please be respectful of these
+concerns and requests if you cannot wear a mask.
+
+While I understand that students often prefer their instructors to be
+unmasked, I am frequently in contact with people whose underlying health
+conditions make them higher-risk for severe complications from COVID-19.
+As a result, I will not personally unmask unless every student in the
+classroom is wearing their mask properly, to ensure that I can interact
+with the entire class. Masks will be made available in class if you
+would like to wear one and do not have one on you.
+
+I will \textbf{require masks to be worn} in my office or during
+in-person office hours, as we are necessarily interacting in close
+quarters without great airflow.
+
+\hypertarget{academic-integrity}{%
+\subsubsection{Academic Integrity}\label{academic-integrity}}
+
+\textbf{TL;DR}: Don't cheat, copy, or plagiarize!
+
+This class is designed to encourage collaboration, and students are
+encouraged to discuss their work with other students. However, I expect
+students to abide by the
+\href{http://theuniversityfaculty.cornell.edu/academic-integrity/}{Cornell
+University Code of Academic Integrity} in all aspects of this class.
+\textbf{All work submitted must represent the students' own work and
+understanding}, whether individually or as a group (depending on the
+particulars of the assignment). This includes analyses, code, software
+runs, and reports. Engineering as a profession relies upon the honesty
+and integrity of its practitioners (see \emph{e.g.} the
+\href{https://www.asce.org/-/media/asce-images-and-files/career-and-growth/ethics/documents/asce-code-ethics.pdf}{American
+Society for Civil Engineers' Code of Ethics}).
+
+\hypertarget{external-resources}{%
+\subsubsection{External Resources}\label{external-resources}}
+
+The collaborative environment in this class should not be viewed as an
+invitation for plagiarism. Plagiarism occurs when a writer intentionally
+misrepresents another's words or ideas (including code!) as their own
+without acknowledging the source. \textbf{All} external resources which
+are consulted while working on an assignment should be referenced,
+including other students and faculty with whom the assignment is
+discussed. You will never be penalized for consulting an external source
+for help and referencing it, but plagiarism will result in a zero for
+that assignment as well as the potential for your case to be passed on
+for additional disciplinary action.
+
+\hypertarget{aiml-resource-policy}{%
+\subsubsection{AI/ML Resource Policy}\label{aiml-resource-policy}}
+
+As noted, all work submitted for a grade in this course must reflect
+your own understanding. The use and consulation of AI/ML tools, such as
+ChatGPT or similar, must be pre-approved and clearly referenced. If
+approved, you must:
+
+\begin{itemize}
+\tightlist
+\item
+  reference the URL of the service you are using including the specific
+  date you accessed it;
+\item
+  provide the exact query used to interact with the tool; and
+\item
+  report the exact response received.
+\end{itemize}
+
+Failure to attain prior approval or fully reference the interaction, as
+described above, will be treated as plagiarism and referred to the
+University accordingly.
+
+\hypertarget{late-work-policy}{%
+\subsubsection{Late Work Policy}\label{late-work-policy}}
+
+In general, late work will be subjected to a 10\% penalty per day, which
+can accumulate to 100\% of the total grade. However, sometimes things
+come up in life. Your lowest homework will be dropped automatically.
+
+While we will not automatically drop lab or application exercises,
+please reach out \emph{ahead of time} if you have extenuating
+circumstances (including University-approved absences or illnesses)
+which would make it difficult for you to submit your work on time. Work
+which would be late for appropriate reasons will be given extensions and
+the late penalty will be waived.
+
+\hypertarget{assessments}{%
+\subsection{Assessments}\label{assessments}}
+
+\hypertarget{application-exercises-5}{%
+\subsubsection{Application Exercises:
+5\%}\label{application-exercises-5}}
+
+Some weeks, small exercises will be assigned to introduce or extend
+concepts, or to get practice with programming syntax. Your notebooks for
+these exercises should be submitted by the end of the given week, no
+later than 9:00pm on Friday. These will be graded solely on the basis of
+completion.
+
+\hypertarget{lab-notebooks-15}{%
+\subsubsection{Lab Notebooks: 15\%}\label{lab-notebooks-15}}
+
+Some classes will involve hands-on exercises (which we will call
+``labs'') which will give you guided practice applying the concepts and
+methods from class. These classes will be announced on
+\href{https://viveks.me/environmental-systems-analysis}{the course
+website} ahead of time so anyone who is able can bring a laptop to
+class, and notebooks will be provided on GitHub. These labs can be done
+in groups; if you cannot bring a laptop to class for whatever reason,
+you will be able to (and are encouraged to) work with other students,
+though you must turn in your own notebook for grading.
+
+Some details on lab logistics:
+
+\begin{itemize}
+\tightlist
+\item
+  Some of the labs may some time outside of class, but they will not be
+  as intensive as a homework assignment.
+\item
+  You will be required to submit a PDF of your completed notebook to
+  Gradescope by 9:00pm one week after the lab session. Tag the answers
+  to each question: points will be deducted if this is not done.
+\item
+  While your lowest lab grade will not be dropped, late penalties will
+  be waived for appropriate reasons discussed with the instructor
+  (ideally ahead of time when circumstances allow).
+\item
+  Rubrics will be provided for lab grading as part of the lab
+  assignments.
+\end{itemize}
+
+\hypertarget{homework-assignments-40}{%
+\subsubsection{Homework Assignments:
+40\%}\label{homework-assignments-40}}
+
+Approximately 5-6 homework assignments will be assigned throughout the
+semester; the specifics depend on how quickly we move through the
+material. You will typically have 10 days to 2 weeks to work on Students
+are encouraged to collaborate and learn from each other on homework
+assignments, but each student must submit their own solutions reflecting
+their understanding of the material. Consulting and referencing external
+resources and your peers is encouraged (engineering is a collaborative
+discipline!), but plagiarism is a violation of academic integrity.
+
+Some notes on assignment and grading logistics:
+
+\begin{itemize}
+\tightlist
+\item
+  Homework assignments will be distributed using GitHub Classroom.
+  Students should make sure they update their GitHub repositories as
+  they work on the assignments; this helps with answering questions and
+  gives you a backstop in case something goes wrong and you can't submit
+  your assignment on time.
+\item
+  Homeworks are due by 9:00pm Eastern Time on the designed due date.
+  Your assignment notebook (which include your writeup and codes) should
+  be submitted to Gradescope as a PDF with the answers to each question
+  tagged (a failure to do this will result in deductions).
+\item
+  Rubrics will be provided for the homeworks as part of the
+  assignments.s
+\item
+  Your lowest homework grade will be dropped. We can discuss
+  arrangements if multiple assignments will be missed for
+  university-approved reasons, preferably ahead of time.
+\item
+  Regrade requests for specific problems must be made within a week of
+  the grading of that assignment. However, note that regrades can cut
+  both ways: the TA can take away points as well!
+\end{itemize}
+
+\hypertarget{final-term-project-40}{%
+\subsubsection{Final Term Project: 40\%}\label{final-term-project-40}}
+
+This course will culminate with a term project with a topic selected
+from a suggested list (provided mid-semester). The goal of this project
+is to apply and extend the tools and approaches we will learn in class.
+While we encourage drawing on other classes or interests when developing
+and working on your project, \textbf{submitting work from another course
+or work which was completed prior to the course is not permitted}.
+
+The term project will be completed in small groups (2-3 students) for
+students enrolled in BEE 4750 and individually for those in BEE 5750.
+The final deliverable for this project will be a poster summarizing the
+project and results. Ahead of that, you will submit the following:
+
+\begin{itemize}
+\tightlist
+\item
+  a proposal for feedback on the scope of your project; and
+\item
+  a 2-3 page report on the status and history of a regulation of
+  interest relevant to the system you are studying.
+\end{itemize}
+
+Rubrics will be provided for the components of the project.
+
+\hypertarget{covid-19-arrangements}{%
+\subsection{COVID-19 Arrangements}\label{covid-19-arrangements}}
+
+The particulars of how COVID-19 will affect class are fluid, depending
+on Cornell policies and the state of any acute outbreaks. Let me know if
+you will miss class due to quarantine (either official or self-imposed),
+and we will make arrangements for streaming and recording class, as well
+as any required virtual office hours or missed assignments. If class is
+shifted online for any reason, we will make appropriate arrangements and
+keep students informed. If we are not allowed to have in-person
+meetings, all office hours will be moved online and we will figure out
+alternatives to the group coding sessions.
+
+In general, please err on the side of not attending class if you suspect
+that you might be ill, with COVID-19 or anything else.
+
+
+
+\end{document}

@@ -1,0 +1,7 @@
+---
+title: "Julia Tutorials"
+---
+
+* [Julia Syntax](tutorials/julia-basics/tutorial.html)
+* [Plotting with Julia](tutorials/julia-plots/tutorial.html)
+* [Using JuMP](tutorials/using-JuMP/tutorial.html)

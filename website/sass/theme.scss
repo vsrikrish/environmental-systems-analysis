@@ -1,0 +1,51 @@
+/*-- scss:defaults --*/
+
+@import 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&IBM+Plex+Serif&family=Source+Serif+Pro&family=Source+Code+Pro&IBM+Plex+Mono&display=swap';
+
+@import 'https://kit.fontawesome.com/d16123e5b5.css';
+
+$font-family-sans-serif: "IBM Plex Sans", sans-serif;
+$font-family-monospace: "Source Code Pro", "IBM Plex Mono", monospace;
+$font-family-serif: "Source Serif Pro", "IBM Plex Serif", serif;
+
+$headings-font-family: $font-family-serif;
+
+// Base document colors
+$body-bg: #f7f7f7;
+$body-color: #222222;
+$link-color: #006699;
+
+// Navigation element colors
+$footer-bg: #9FAD9F;
+$footer-fg: #000000;
+$navbar-bg: #9FAD9F;
+$sidebar-bg: #f7f7f7;
+$sidebar-fg: #000000;
+
+// Bootstrap popovers
+$popover-bg: #9FAD9F;
+
+// Bootstrap inputs
+$input-bg: #9FAD9F;
+
+$code-block-bg: #e7e7e7;
+$code-bg: #e7e7e7;
+
+/*-- scss:rules --*/
+
+.cell-output pre {
+  background: #d7d7d7;
+}
+
+.course-details ul {
+    list-style: none;
+    text-indent: -0.7rem;
+    padding-left: 1.4rem;
+  }
+
+.tools-wide {
+  padding-top: 0.5em;
+  margin-left: auto;
+  margin-right:auto;
+  width: 65%;
+}

@@ -1,0 +1,82 @@
+project:
+  type: website
+
+website:
+  page-navigation: true
+  title: "BEE 4750 - Fall 2023"
+  description: "Homepage for BEE 4750/5750, Environmental Systems Analysis, at Cornell University, Fall 2023."
+  site-url: "https://viveks.me/environmental-systems-analysis"
+
+  repo-url: https://github.com/vsrikrish/environmental-systems-analysis
+  repo-actions: [edit, issue]
+
+  open-graph: true
+
+  page-footer:
+    right: "This page was built with [Quarto](https://quarto.org)."
+    left: "&copy; 2023, Vivek Srikrishnan"
+
+  sidebar:
+    style: docked
+    align: center
+    background: "#222222"
+    logo: _assets/cornell_logo_simple_b31b1b.svg
+    title: "BEE 4750: Environmental Systems Analysis"
+    subtitle: "BEE 4750"
+    search: true
+    tools: 
+      - icon: github
+        href: https://github.com/vsrikrish/environmental-systems-analysis
+        text: "Github Repository"
+      - icon: journal-check
+        href: https://canvas.cornell.edu
+        text: "Canvas"
+      - icon: chat-fill
+        text: "Ed Discussion"
+        url: https://edstem.org
+      - icon: bar-chart-fill
+        text: "Gradescope"
+        url: https://gradescope.com
+    collapse-level: 1
+    contents:
+      - section: "Course Information"
+        contents:
+          - href: index.qmd
+            text: Overview
+          - href: schedule.qmd
+            text: Schedule
+          - href: syllabus.qmd
+            text: Syllabus
+      - section: "Computing"
+        contents:
+          - href: computing/julia-examples.qmd
+            text: Julia Examples
+      - section: "Project"
+      - section: "Weekly Materials"
+      - text: "FAQ"
+        href: faq.qmd
+      - section: "Supplemental Notes"
+      - section: Resources
+        contents:
+          - href: resources/julia.qmd
+            text: Julia
+          - href: resources/github.qmd
+            text: GitHub
+          - href: resources/markdown.qmd
+            text: Markdown
+          - href: resources/optimization.qmd
+            text: Optimization and Decision-Making
+
+
+format:
+  html:
+    theme: 
+      light: [cosmo, sass/theme.scss]
+      dark: [cosmo, sass/theme-dark.scss]
+    mainfont: "Atkinson Hyperlegible"
+    copy-code: true
+    code-overflow: wrap
+    toc: true
+    anchor-sections: true
+
+

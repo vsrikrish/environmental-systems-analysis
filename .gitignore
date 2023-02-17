@@ -334,3 +334,5 @@ assignments/hw3-solutions/hooks/push-to-checkout.sample
 assignments/hw3-solutions/hooks/update.sample
 assignments/hw3-solutions/info/exclude
 assignments/hw3-solutions/objects/pack/pack-b12c4e1566dd21ff9f15581b6d82bea2dbd66044.pack
+
+/.luarc.json

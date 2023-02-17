@@ -1,27 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://viveks.me/environmental-systems-analysis/computing/tutorials/julia-plots/tutorial.html</loc>
-    <lastmod>2023-02-16T22:34:14.921Z</lastmod>
+    <loc>https://viveks.me/environmental-systems-analysis/labs/lab-01-basics.html</loc>
+    <lastmod>2023-02-17T16:47:41.056Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/environmental-systems-analysis/computing/tutorials/julia-basics/tutorial.html</loc>
-    <lastmod>2023-02-16T21:29:45.904Z</lastmod>
+    <loc>https://viveks.me/environmental-systems-analysis/examples.html</loc>
+    <lastmod>2023-02-17T16:47:42.168Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/environmental-systems-analysis/schedule.html</loc>
-    <lastmod>2023-02-16T22:36:14.884Z</lastmod>
+    <loc>https://viveks.me/environmental-systems-analysis/assignments/workflow.html</loc>
+    <lastmod>2023-02-17T16:47:43.287Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/environmental-systems-analysis/computing/tutorials/using-JuMP/tutorial.html</loc>
-    <lastmod>2023-02-16T22:38:06.019Z</lastmod>
+    <loc>https://viveks.me/environmental-systems-analysis/assignments/hw0.html</loc>
+    <lastmod>2023-02-17T16:47:44.429Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/environmental-systems-analysis/computing/julia-examples.html</loc>
-    <lastmod>2023-02-16T22:30:20.768Z</lastmod>
+    <loc>https://viveks.me/environmental-systems-analysis/resources/github.html</loc>
+    <lastmod>2023-02-17T16:47:45.523Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/resources/markdown.html</loc>
+    <lastmod>2023-02-17T16:47:46.073Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/resources/optimization.html</loc>
+    <lastmod>2023-02-17T16:47:46.610Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/resources/julia.html</loc>
+    <lastmod>2023-02-17T16:47:47.194Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/website.html</loc>
+    <lastmod>2023-02-17T16:47:47.720Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/index.html</loc>
+    <lastmod>2023-02-17T16:47:48.218Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/policies/communications.html</loc>
+    <lastmod>2023-02-17T16:47:48.977Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/slides/lec-01-class-intro.html</loc>
+    <lastmod>2023-02-17T16:47:50.197Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/faq.html</loc>
-    <lastmod>2023-02-16T22:36:14.147Z</lastmod>
+    <lastmod>2023-02-17T16:48:16.988Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/agenda.html</loc>
+    <lastmod>2023-02-17T16:48:17.313Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/tutorials/julia-plots.html</loc>
+    <lastmod>2023-02-17T16:48:17.677Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/tutorials/using-JuMP.html</loc>
+    <lastmod>2023-02-17T16:48:18.004Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/tutorials/probability-stats.html</loc>
+    <lastmod>2023-02-17T16:48:18.330Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/tutorials/julia-basics.html</loc>
+    <lastmod>2023-02-17T16:48:18.710Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/syllabus.html</loc>
+    <lastmod>2023-02-17T16:48:19.732Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/computing/julia-examples.html</loc>
+    <lastmod>2023-02-17T16:48:20.124Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/computing/tutorials/julia-plots/tutorial.html</loc>
+    <lastmod>2023-02-17T16:49:44.170Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/computing/tutorials/julia-basics/tutorial.html</loc>
+    <lastmod>2023-02-17T16:50:16.472Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/computing/tutorials/using-JuMP/tutorial.html</loc>
+    <lastmod>2023-02-17T16:51:44.796Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/schedule.html</loc>
+    <lastmod>2023-02-17T16:51:45.186Z</lastmod>
   </url>
 </urlset>

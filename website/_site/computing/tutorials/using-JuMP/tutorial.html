@@ -123,6 +123,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
@@ -352,7 +355,7 @@ y &amp;\geq 0
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># define objective function</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(a, b) <span class="op">=</span> pa <span class="op">*</span> a <span class="op">+</span> pb <span class="op">*</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="87">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>f (generic function with 1 method)</code></pre>
 </div>
 </div>
@@ -369,8 +372,17 @@ y &amp;\geq 0
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">yticks!</span>(<span class="fl">0</span><span class="op">:</span><span class="fu">maximum</span>(b)) <span class="co"># set y-axis ticks</span></span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">areaplot!</span>(a[a<span class="op">.&lt;=</span><span class="fl">11</span>], (<span class="fl">300</span> <span class="op">.-</span> <span class="fl">40</span><span class="op">*</span>a)<span class="op">./</span><span class="fl">20</span>, legend<span class="op">=</span><span class="cn">false</span>, opacity<span class="op">=</span><span class="fl">0.3</span>) <span class="co"># plot materials constraint feasible region</span></span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">areaplot!</span>(a[a<span class="op">.&lt;=</span><span class="fl">8</span>], (<span class="fl">80</span> <span class="op">.-</span> <span class="fl">6</span><span class="op">*</span>a)<span class="op">./</span><span class="fl">12</span>, legend<span class="op">=</span><span class="cn">false</span>, opacity<span class="op">=</span><span class="fl">0.3</span>) <span class="co"># plot time constraint feasible region</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="88">
-<p><img src="tutorial_files/figure-html/cell-4-output-1.svg" class="img-fluid"></p>
+<div class="cell-output cell-output-display">
+<div style="padding: 1em; background-color: #f8d6da; border: 1px solid #f5c6cb; font-weight: bold;">
+<p>The WebIO Jupyter extension was not detected. See the
+<a href="https://juliagizmos.github.io/WebIO.jl/latest/providers/ijulia/" target="_blank">
+    WebIO Jupyter integration documentation
+</a>
+for more information.
+</p></div>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<p><img src="tutorial_files/figure-html/cell-4-output-2.svg" class="img-fluid"></p>
 </div>
 </div>
 <p>We can see exactly where the solution will be, at the intersection of the feasible regions imposed by the two constraints (note how this is related to the gradient of the objective function)! Let’s now use JuMP to identify the location of this point (though we could also solve for it using linear algebra).</p>
@@ -387,7 +399,7 @@ y &amp;\geq 0
 <p>To solve our problem, first we need to <strong>define the model</strong>. The <em>model object</em> has lots of attributes, including the variables, constraints, solver options, etc. We create a new model using the <code>Model()</code> function. Since we are using the <code>Clp</code> solver, we need to tell JuMP to use the <code>Clp.Optimizer</code> solver function.</p>
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>factory_model <span class="op">=</span> <span class="fu">Model</span>(Clp.Optimizer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="90">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>A JuMP Model
 Feasibility problem with:
 Variables: 0
@@ -412,7 +424,7 @@ Solver name: Clp</code></pre>
 <p>Finally, if we want to see all of the variables associated with a model, we can use the <code>all_variables</code> function to obtain an array.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all_variables</span>(factory_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="93">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>2-element Vector{VariableRef}:
  x
  y</code></pre>
@@ -424,13 +436,13 @@ Solver name: Clp</code></pre>
 <p>When defining variables, we were able to declare constraints on their values by specifying upper and lower bounds. However, we also have other constraints, which involve multiple decision variables. These are specified using the <code>@constraint</code> macro. Unlike variables, we also need to pass names for each constraint. We will use <code>time</code> for the time constraint and <code>materials</code> for the materials constraint. These names must be unique.</p>
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(factory_model, time, <span class="fl">6</span>x <span class="op">+</span> <span class="fl">12</span>y <span class="op">&lt;=</span> <span class="fl">80</span>) <span class="co"># specify the time constraint</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="94">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>time : 6 x + 12 y ≤ 80.0</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(factory_model, materials, <span class="fl">40</span>x <span class="op">+</span> <span class="fl">20</span>y <span class="op">&lt;=</span> <span class="fl">300</span>) <span class="co"># materials constraint</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="95">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>materials : 40 x + 20 y ≤ 300.0</code></pre>
 </div>
 </div>
@@ -440,7 +452,7 @@ Solver name: Clp</code></pre>
 <p>So far, we’ve defined the feasible region of the decision-variable domain by setting the constraints. But we need to specify our objective function to know what we are trying to minimize or maximize over this region. We define the objective function using the <code>@objective</code> macro. In addition to specifying the model objective and the function, we need to tell JuMP whether we want to minimize or maximize.</p>
 <div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@objective</span>(factory_model, Max, <span class="fl">100</span>x <span class="op">+</span> <span class="fl">75</span>y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="96">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <p><span class="math display">\[ 100 x + 75 y \]</span></p>
 </div>
 </div>
@@ -460,7 +472,7 @@ Solver name: Clp</code></pre>
 <p>We can also get a nicely styled LaTeX version, which might be useful.</p>
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">latex_formulation</span>(factory_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="98">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <p><span class="math display">\[ \begin{aligned}
 \max\quad &amp; 100 x + 75 y\\
 \text{Subject to} \quad &amp; 6 x + 12 y \leq 80.0\\
@@ -491,13 +503,13 @@ Clp0032I Optimal objective 847.2222222 - 2 iterations time 0.002</code></pre>
 <p>To find the optimal values of our decision variables, we need to query the values of the variables using <code>value.()</code>. We use <code>value.()</code> (the vectorized version of <code>value()</code>) because JuMP stores decision variables differently depending on their number and how they were defined. Uses the dot-syntax here works with any model specification, while the plain <code>value()</code> will not work if a queried decision variable is stored as a vector.</p>
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="100">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>5.555555555555555</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="101">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>3.8888888888888884</code></pre>
 </div>
 </div>
@@ -519,7 +531,7 @@ Clp0032I Optimal objective 847.2222222 - 2 iterations time 0.002</code></pre>
 <span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co"># now we plot the solution that we obtained</span></span>
 <span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>([<span class="fu">value</span>.(x)],[<span class="fu">value</span>.(y)], markercolor<span class="op">=</span><span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="102">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <p><img src="tutorial_files/figure-html/cell-18-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -530,33 +542,33 @@ Clp0032I Optimal objective 847.2222222 - 2 iterations time 0.002</code></pre>
 <p>We can also use <code>value.()</code> to evaluate our constraints without manually using the equations.</p>
 <div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="103">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>80.0</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(materials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="104">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>300.0</code></pre>
 </div>
 </div>
 <p>What if we also want the optimal objective value? We can obtain this using <code>objective_value()</code>.</p>
 <div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">objective_value</span>(factory_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="105">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>847.2222222222222</code></pre>
 </div>
 </div>
 <p>We could also define other expressions via the <a href="https://jump.dev/JuMP.jl/stable/expressions/#JuMP.@expression"><code>@expression</code> macro</a> as functions of the decision variables and evaluate those. For example, let’s say that we wanted to know the total number of widgets we’d produce under our optimal allocation of resources.</p>
 <div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@expression</span>(factory_model, total_widgets, x<span class="op">+</span>y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="106">
+<div class="cell-output cell-output-display" data-execution_count="22">
 <p><span class="math display">\[ x + y \]</span></p>
 </div>
 </div>
 <div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(total_widgets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="107">
+<div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>9.444444444444443</code></pre>
 </div>
 </div>
@@ -566,20 +578,20 @@ Clp0032I Optimal objective 847.2222222 - 2 iterations time 0.002</code></pre>
 <p>We can identify if our model has a dual solution by calling <code>has_duals()</code>.</p>
 <div class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">has_duals</span>(factory_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="108">
+<div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>true</code></pre>
 </div>
 </div>
 <p>If we want to know the dual solution associated with a constraint, we use the <code>shadow_price()</code> function.</p>
 <div class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shadow_price</span>(time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="109">
+<div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>2.7777777777777786</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shadow_price</span>(materials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="110">
+<div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>2.083333333333333</code></pre>
 </div>
 </div>
@@ -587,7 +599,7 @@ Clp0032I Optimal objective 847.2222222 - 2 iterations time 0.002</code></pre>
 <pre><code>reduced_cost(x)</code></pre>
 <div class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">reduced_cost</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="111">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>-0.0</code></pre>
 </div>
 </div>

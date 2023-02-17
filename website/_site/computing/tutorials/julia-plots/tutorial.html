@@ -330,7 +330,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fu">rand</span>(<span class="fl">5</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(y, label<span class="op">=</span><span class="st">"original data"</span>, legend<span class="op">=:</span>topright)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="58">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <p><img src="tutorial_files/figure-html/cell-4-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -344,7 +344,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y3 <span class="op">=</span> <span class="fu">rand</span>(<span class="fl">5</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(y2, label<span class="op">=</span><span class="st">"new data"</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(y3, label<span class="op">=</span><span class="st">"even more data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="59">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <p><img src="tutorial_files/figure-html/cell-5-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -355,7 +355,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Sometimes we want to remove legends, axes, grid lines, and ticks.</p>
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(legend<span class="op">=</span><span class="cn">false</span>, axis<span class="op">=</span><span class="cn">false</span>, grid<span class="op">=</span><span class="cn">false</span>, ticks<span class="op">=</span><span class="cn">false</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="60">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <p><img src="tutorial_files/figure-html/cell-6-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -367,7 +367,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> <span class="fu">rand</span>(<span class="fl">5</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(v, ratio<span class="op">=</span><span class="fl">1</span>, legend<span class="op">=</span><span class="cn">false</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="61">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <p><img src="tutorial_files/figure-html/cell-7-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -378,7 +378,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fu">rand</span>(<span class="fl">10</span>, <span class="fl">10</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">heatmap</span>(A, clim<span class="op">=</span>(<span class="fl">0</span>, <span class="fl">1</span>), ratio<span class="op">=</span><span class="fl">1</span>, legend<span class="op">=</span><span class="cn">false</span>, axis<span class="op">=</span><span class="cn">false</span>, ticks<span class="op">=</span><span class="cn">false</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="62">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <p><img src="tutorial_files/figure-html/cell-8-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -386,7 +386,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> [ <span class="fl">0</span> <span class="fl">1</span> <span class="fl">0</span>; <span class="fl">0</span> <span class="fl">0</span> <span class="fl">0</span>; <span class="fl">1</span> <span class="fl">0</span> <span class="fl">0</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>whiteblack <span class="op">=</span> [<span class="fu">RGBA</span>(<span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">0</span>), <span class="fu">RGB</span>(<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>)]</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">heatmap</span>(c<span class="op">=</span>whiteblack, M, aspect_ratio <span class="op">=</span> <span class="fl">1</span>, ticks<span class="op">=</span><span class="fl">.5</span><span class="op">:</span><span class="fl">3.5</span>, lims<span class="op">=</span>(<span class="fl">.5</span>,<span class="fl">3.5</span>), gridalpha<span class="op">=</span><span class="fl">1</span>, legend<span class="op">=</span><span class="cn">false</span>, axis<span class="op">=</span><span class="cn">false</span>, ylabel<span class="op">=</span><span class="st">"i"</span>, xlabel<span class="op">=</span><span class="st">"j"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="63">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <p><img src="tutorial_files/figure-html/cell-9-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -398,7 +398,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>mycolors <span class="op">=</span> [colorant<span class="st">"lightslateblue"</span>,colorant<span class="st">"limegreen"</span>,colorant<span class="st">"red"</span>]</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [i for i<span class="op">=</span><span class="fl">50</span><span class="op">:</span><span class="fl">300</span>, j<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span>]</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">heatmap</span>(A, c<span class="op">=</span>mycolors, clim<span class="op">=</span>(<span class="fl">1</span>,<span class="fl">300</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="64">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <p><img src="tutorial_files/figure-html/cell-10-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -409,7 +409,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fu">rand</span>(<span class="fl">10</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(y, fillrange<span class="op">=</span> y<span class="op">.*</span><span class="fl">0</span> <span class="op">.+</span> <span class="fl">.5</span>, label<span class="op">=</span> <span class="st">"above/below 1/2"</span>, legend <span class="op">=:</span>top)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="65">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <p><img src="tutorial_files/figure-html/cell-11-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -418,21 +418,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>y1 <span class="op">=</span> <span class="fu">exp</span>.(x)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>y2 <span class="op">=</span> <span class="fu">exp</span>.(<span class="fl">1.3</span> <span class="op">.*</span> x)</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y1, fillrange <span class="op">=</span> y2, fillalpha <span class="op">=</span> <span class="fl">0.35</span>, c <span class="op">=</span> <span class="fl">1</span>, label <span class="op">=</span> <span class="st">"Confidence band"</span>, legend <span class="op">=</span> <span class="op">:</span>topleft)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="66">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <p><img src="tutorial_files/figure-html/cell-12-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="op">-</span><span class="fl">3</span><span class="op">:</span><span class="fl">.01</span><span class="op">:</span><span class="fl">3</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">areaplot</span>(x, <span class="fu">exp</span>.(<span class="op">-</span>x<span class="op">.^</span><span class="fl">2</span><span class="op">/</span><span class="fl">2</span>)<span class="op">/</span><span class="fu">√</span>(<span class="fl">2</span>π),alpha<span class="op">=</span><span class="fl">.25</span>,legend<span class="op">=</span><span class="cn">false</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="67">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <p><img src="tutorial_files/figure-html/cell-13-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> [<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>; <span class="fl">7</span> <span class="fl">8</span> <span class="fl">9</span>; <span class="fl">4</span> <span class="fl">5</span> <span class="fl">6</span>; <span class="fl">0</span> <span class="fl">.5</span> <span class="fl">1.5</span>]</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">areaplot</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, M, seriescolor <span class="op">=</span> [<span class="op">:</span>red <span class="op">:</span>green <span class="op">:</span>blue ], fillalpha <span class="op">=</span> [<span class="fl">0.2</span> <span class="fl">0.3</span> <span class="fl">0.4</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="68">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <p><img src="tutorial_files/figure-html/cell-14-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -444,7 +444,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> √<span class="fl">2</span> <span class="op">.*</span> <span class="fu">erfinv</span>.(<span class="fl">2</span> <span class="op">.*</span>(δ<span class="op">/</span><span class="fl">2</span> <span class="op">:</span> δ <span class="op">:</span> <span class="fl">1</span>) <span class="op">.-</span> <span class="fl">1</span>)</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">areaplot</span>(x, <span class="fu">f</span>.(x), seriescolor<span class="op">=</span>[ <span class="op">:</span>red,<span class="op">:</span>blue], legend<span class="op">=</span><span class="cn">false</span>)</span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(x, <span class="fu">f</span>.(x),c<span class="op">=:</span>black)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="69">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <p><img src="tutorial_files/figure-html/cell-15-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -456,7 +456,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">circle</span>(r,x,y) <span class="op">=</span> (θ <span class="op">=</span> <span class="fu">LinRange</span>(<span class="fl">0</span>,<span class="fl">2</span>π,<span class="fl">500</span>); (x<span class="op">.+</span>r<span class="op">.*</span><span class="fu">cos</span>.(θ), y<span class="op">.+</span>r<span class="op">.*</span><span class="fu">sin</span>.(θ)))</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">circle</span>(<span class="fl">5</span>,<span class="fl">0</span>,<span class="fl">0</span>), ratio<span class="op">=</span><span class="fl">1</span>, c<span class="op">=:</span>red, fill<span class="op">=</span><span class="cn">true</span>)</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(<span class="fu">rectangle</span>(<span class="fl">5</span><span class="op">*</span>√<span class="fl">2</span>,<span class="fl">5</span><span class="op">*</span>√<span class="fl">2</span>,<span class="op">-</span><span class="fl">2.5</span><span class="op">*</span>√<span class="fl">2</span>,<span class="op">-</span><span class="fl">2.5</span><span class="op">*</span>√<span class="fl">2</span>),c<span class="op">=:</span>white,fill<span class="op">=</span><span class="cn">true</span>,legend<span class="op">=</span><span class="cn">false</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="70">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <p><img src="tutorial_files/figure-html/cell-16-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -467,13 +467,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Distributions</span>, <span class="bu">StatsPlots</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">Normal</span>(<span class="fl">2</span>, <span class="fl">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="71">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <p><img src="tutorial_files/figure-html/cell-17-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter</span>(<span class="fu">LogNormal</span>(<span class="fl">0.8</span>, <span class="fl">1.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="72">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <p><img src="tutorial_files/figure-html/cell-18-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -482,7 +482,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>dat <span class="op">=</span> <span class="fu">DataFrame</span>(a <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, b <span class="op">=</span> <span class="fl">10</span> <span class="op">.+</span> <span class="fu">rand</span>(<span class="fl">10</span>), c <span class="op">=</span> <span class="fl">10</span> <span class="op">.*</span> <span class="fu">rand</span>(<span class="fl">10</span>))</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@df</span> dat <span class="fu">density</span>([<span class="op">:</span>b <span class="op">:</span>c], color<span class="op">=</span>[<span class="op">:</span>black <span class="op">:</span>red])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="73">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <p><img src="tutorial_files/figure-html/cell-19-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -491,13 +491,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 class="anchored" data-anchor-id="editing-plots-manually">Editing Plots Manually</h3>
 <div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>pl <span class="op">=</span> <span class="fu">plot</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">4</span>,[<span class="fl">1</span>, <span class="fl">4</span>, <span class="fl">9</span>, <span class="fl">16</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="74">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <p><img src="tutorial_files/figure-html/cell-20-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>pl.attr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="75">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>RecipesPipeline.DefaultsDict with 30 entries:
   :dpi                      =&gt; 96
   :background_color_outside =&gt; :match
@@ -529,19 +529,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>pl.series_list[<span class="fl">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="76">
+<div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>Plots.Series(RecipesPipeline.DefaultsDict(:plot_object =&gt; Plot{Plots.GRBackend() n=1}, :subplot =&gt; Subplot{1}, :label =&gt; "y1", :fillalpha =&gt; nothing, :linealpha =&gt; nothing, :linecolor =&gt; RGBA{Float64}(0.0,0.6056031611752245,0.9786801175696073,1.0), :series_index =&gt; 1, :markerstrokealpha =&gt; nothing, :markeralpha =&gt; nothing, :seriestype =&gt; :path…))</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>pl[<span class="op">:</span>size]<span class="op">=</span>(<span class="fl">300</span>,<span class="fl">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="77">
+<div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>(300, 200)</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>pl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="78">
+<div class="cell-output cell-output-display" data-execution_count="24">
 <p><img src="tutorial_files/figure-html/cell-24-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
@@ -551,13 +551,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>xx <span class="op">=</span> <span class="fl">.1</span><span class="op">:</span><span class="fl">.1</span><span class="op">:</span><span class="fl">10</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(xx<span class="op">.^</span><span class="fl">2</span>, xaxis<span class="op">=:</span>log, yaxis<span class="op">=:</span>log)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="79">
+<div class="cell-output cell-output-display" data-execution_count="25">
 <p><img src="tutorial_files/figure-html/cell-25-output-1.svg" class="img-fluid"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">exp</span>.(x), yaxis<span class="op">=:</span>log)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="80">
+<div class="cell-output cell-output-display" data-execution_count="26">
 <p><img src="tutorial_files/figure-html/cell-26-output-1.svg" class="img-fluid"></p>
 </div>
 </div>

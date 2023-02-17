@@ -79,4 +79,7 @@ format:
     toc: true
     anchor-sections: true
 
+execute:
+  freeze: auto
+  
 

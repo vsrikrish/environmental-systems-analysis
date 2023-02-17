@@ -25,7 +25,7 @@ jobs:
           version: 1.8
 
       - name: Install IJulia
-        run: julia -e 'using Pkg; Pkg.activate("."); Pkg.instantiate()'
+        run: julia -e 'using Pkg; Pkg.activate("website"); Pkg.instantiate()'
           
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2

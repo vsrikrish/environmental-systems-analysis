@@ -93,9 +93,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "About",
+    "title": "BEE 4750: Environmental Systems Analysis",
     "section": "",
-    "text": "About this site"
+    "text": "Environmental processes can have complicated dynamics and conflicting objectives. These dynamics can complicate analyses and decision-making which focus on a single component of the system, such as an individual pollution source. In this course, we will adopt a systems approach to environmental quality modeling and management, including applications in air and water pollution control and solid waste management. In particular, we will:\n\nlearn how to define systems and their boundaries;\nsimulate system dynamics using computer models;\nformulate and solve linear and nonlinear optimization problems;\nanalyze and assess risk after introducing uncertainty;\nmake decisions under uncertainty with stochastic and dynamic programming; and\nexplore trade-offs across competing objectives.\n\n\n\n\n\n\n\nNote\n\n\n\nThis course will use the Julia programming language. No prior knowledge of Julia is required."
   },
   {
     "objectID": "slides/lec-01-class-intro.html#course-overview",

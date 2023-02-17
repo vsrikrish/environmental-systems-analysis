@@ -24,13 +24,9 @@ jobs:
         with:
           version: 1.8
 
-      - name: Install Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-          cache: 'pip'
-      - run: pip install jupyter
-
+      - name: Install IJulia
+        run: julia -e 'using Pkg; Pkg.activate("."); Pkg.instantiate()'
+          
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:

@@ -1,3 +1,0 @@
-MethodError: no method matching h₂(::Int64, ::Int64)
-Closest candidates are:
-  h₂(::Any) at none:1

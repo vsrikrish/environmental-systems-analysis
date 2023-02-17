@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.203">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>BEE 4750 - Fall 2023 - Tutorial: Solving Linear Programs with JuMP</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta property="og:title" content="BEE 4750 - Fall 2023 - Tutorial: Solving Linear Programs with JuMP">
+<meta property="og:description" content="">
+<meta property="og:site-name" content="BEE 4750 - Fall 2023">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">BEE 4750: Environmental Systems Analysis</li></ol></nav>
+      <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
+      <a href="../../../index.html" class="sidebar-logo-link">
+      <img src="../../../_assets/cornell_logo_simple_b31b1b.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../../">BEE 4750: Environmental Systems Analysis</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/vsrikrish/environmental-systems-analysis" title="Github Repository" class="quarto-navigation-tool px-1" aria-label="Github Repository"><i class="bi bi-github"></i></a>
+    <a href="https://canvas.cornell.edu" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-journal-check"></i></a>
+    <a href="https://edstem.org" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-chat-fill"></i></a>
+    <a href="https://gradescope.com" title="Gradescope" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-bar-chart-fill"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">Course Information</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">Overview</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../schedule.html" class="sidebar-item-text sidebar-link">Schedule</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Computing</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../computing/julia-examples.html" class="sidebar-item-text sidebar-link">Julia Examples</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">Project</span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">Weekly Materials</span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">Supplemental Notes</span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">Resources</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../resources/julia.html" class="sidebar-item-text sidebar-link">Julia</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../resources/github.html" class="sidebar-item-text sidebar-link">GitHub</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../resources/markdown.html" class="sidebar-item-text sidebar-link">Markdown</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../resources/optimization.html" class="sidebar-item-text sidebar-link">Optimization and Decision-Making</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#linear-programming-example-how-many-widgets-should-a-factory-produce" id="toc-linear-programming-example-how-many-widgets-should-a-factory-produce" class="nav-link" data-scroll-target="#linear-programming-example-how-many-widgets-should-a-factory-produce">Linear Programming Example: How Many Widgets Should A Factory Produce?</a>
+  <ul class="collapse">
+  <li><a href="#defining-the-problem" id="toc-defining-the-problem" class="nav-link" data-scroll-target="#defining-the-problem">Defining The Problem</a></li>
+  <li><a href="#visualizing-the-problem" id="toc-visualizing-the-problem" class="nav-link" data-scroll-target="#visualizing-the-problem">Visualizing the Problem</a></li>
+  <li><a href="#solving-this-problem-using-jump" id="toc-solving-this-problem-using-jump" class="nav-link" data-scroll-target="#solving-this-problem-using-jump">Solving This Problem Using JuMP</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/computing/tutorials/using-JuMP/tutorial.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tutorial: Solving Linear Programs with JuMP</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This tutorial will demonstrate how to use the <code>JuMP</code> package in Julia to solve linear optimization problems. It draws heavily from <a href="https://github.com/east-winds/power-systems-optimization/blob/master/Notebooks/02-Anatomy-of-a-Model.ipynb">this tutorial</a> by Jesse D. Jenkins and Michael R. Davidson.</p>
+<p><a href="https://jump.dev/">JuMP</a> (“<strong>Ju</strong>lia for <strong>M</strong>athematical <strong>P</strong>rogramming”) is an open-source Julia package that adds functionality for formulating and solving a variety of optimization problems. One advantage of JuMP is that its syntax matches the typical mathematical formalism used to specify optimization problems. We will use JuMP in this class for our optimization work.</p>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>Here we will outline the basic steps for configuring JuMP, though you can also refer to the official <a href="https://jump.dev/JuMP.jl/stable/installation/#Installation-Guide">Installation Guide</a>.</p>
+<p>If <code>JuMP</code> is not already in your environment (it will be for any of your assignments, but may not be if you’re doing something independently), you will need to install it. You will also need to <a href="https://jump.dev/JuMP.jl/stable/installation/#Supported-solvers">select a solver and install the relevant package</a>. Some of these are commercial, while others are open source. Solvers are also not typically universal, as different types of optimization problems use different algorithms, so be aware of what problem you’re trying to solve instead of just blindly copying code from one task to another.</p>
+<p>For example, for the linear programming example, we will use the Clp (<a href="https://github.com/coin-or/Clp">COIN-OR Linear Programming</a>) solver via the <a href="https://github.com/jump-dev/Clp.jl"><code>Clp</code></a> package. As seen on the solver table, Clp is open source (via the EPL, or <a href="https://opensource.org/licenses/EPL-1.0">Eclipse Public License</a>) and can solve linear programs (LP). For the mixed-integer linear programming example, we will instead of the Cbc (<a href="https://github.com/coin-or/Cbc">COIN-OR Branch and Cut</a>) solver via the <a href="https://github.com/jump-dev/Cbc.jl"><code>Cbc</code></a> package. This is also open-source (it comes from the same group as Clp) and can solve mixed-integer or binary linear programs.</p>
+</section>
+<section id="linear-programming-example-how-many-widgets-should-a-factory-produce" class="level2">
+<h2 class="anchored" data-anchor-id="linear-programming-example-how-many-widgets-should-a-factory-produce">Linear Programming Example: How Many Widgets Should A Factory Produce?</h2>
+<section id="defining-the-problem" class="level3">
+<h3 class="anchored" data-anchor-id="defining-the-problem">Defining The Problem</h3>
+<p>Suppose we own a factory that can produce two types of widgets:</p>
+<ul>
+<li>Widget A generates a profit of <span class="math inline">\(p_A = \$100\)</span> per widget; and</li>
+<li>Widget B generates a profit of <span class="math inline">\(p_B = \$75\)</span> per widget. Let <span class="math inline">\(x\)</span> be the number of units of widget A that we want to produce, and <span class="math inline">\(y\)</span> the number of units of widget B. Our goal is to <em>maximize</em> our total profit <span class="math inline">\(p_Ax + p_By\)</span>. This is the <strong>objective function</strong>. We express this objective using the equation <span class="math display">\[\max 100x + 75y.\]</span></li>
+</ul>
+<p>Further, we cannot build a negative number of either type of widget. This is known as a <em>non-negativity constraint</em>, and can be expressed as <span class="math display">\[\begin{align}
+x &amp;\geq 0\\
+y &amp;\geq 0
+\end{align}\]</span></p>
+<p>This isn’t a very interesting problem yet! We would simply build as much of both widgets as we could, because there are no constraints on our ability to produce. To make this more realistic, let’s suppose that both widgets are produced using the same raw material <span class="math inline">\(M\)</span>, of which we can only procure 300 units. Then, if:</p>
+<ul>
+<li>Widget A requires 40 units of <span class="math inline">\(M\)</span> per widget, and</li>
+<li>Widget B requires 20 units of <span class="math inline">\(M\)</span> per widget, we arrive at the following material <strong>constraint</strong>: <span class="math display">\[40x + 20y \leq 300.\]</span></li>
+</ul>
+<p>But we might have another constraint: time! Each widget may take a different amount of labor to produce. For example, let’s say that</p>
+<ul>
+<li>Widget A takes 6 hours to produce and</li>
+<li>Widget B takes 12 hours to produce. Further, there are only 80 hours per work that can be allocated to widget production. This becomes the time constraint <span class="math display">\[6x + 12y \leq 80.\]</span></li>
+</ul>
+<p>Consolidating equations (1)–(4) gives us the following <strong>constrained optimization problem</strong>: <span class="math display">\[\begin{align}
+&amp; &amp;\max 100x + 75y\\
+&amp;\text{subject to} &amp; \\
+&amp; &amp; x \geq 0\\
+&amp; &amp; y \geq 0 \\
+&amp; &amp; 40x + 20y \leq 300\\
+&amp; &amp; 6x + 12y \leq 80
+\end{align}\]</span></p>
+</section>
+<section id="visualizing-the-problem" class="level3">
+<h3 class="anchored" data-anchor-id="visualizing-the-problem">Visualizing the Problem</h3>
+<p>Let’s do some plotting to examine the geometry of our optimization problem. We can do this using the <a href="https://docs.juliaplots.org/latest/"><code>Plots</code></a> package in Julia.</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set up objective function parameters and variables</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pa <span class="op">=</span> <span class="fl">100</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pb <span class="op">=</span> <span class="fl">75</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fu">range</span>(<span class="fl">0</span>, <span class="fl">8</span>, step<span class="op">=</span><span class="fl">0.25</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fu">range</span>(<span class="fl">0</span>, <span class="fl">8</span>, step<span class="op">=</span><span class="fl">0.25</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># define objective function</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(a, b) <span class="op">=</span> pa <span class="op">*</span> a <span class="op">+</span> pb <span class="op">*</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>f (generic function with 1 method)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># start plotting</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plotlyjs</span>()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(a,b,(a,b)<span class="fu">-&gt;f</span>(a,b),nlevels<span class="op">=</span><span class="fl">15</span>, c<span class="op">=:</span>heat, linewidth<span class="op">=</span><span class="fl">10</span>, colorbar <span class="op">=</span> <span class="cn">false</span>, contour_labels <span class="op">=</span> <span class="cn">true</span>) <span class="co"># objective function contours</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">title!</span>(<span class="st">"Factory Optimization Problem"</span>) <span class="co"># add title</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">xaxis!</span>(<span class="st">"x=Widget A"</span>, lims<span class="op">=</span>(<span class="fl">0</span>, <span class="fu">maximum</span>(a))) <span class="co"># add x-axis title and limits</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">yaxis!</span>(<span class="st">"y=Widget B"</span>, lims<span class="op">=</span>(<span class="fl">0</span>, <span class="fu">maximum</span>(b))) <span class="co"># add y-axis title and limits</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">xticks!</span>(<span class="fl">0</span><span class="op">:</span><span class="fu">maximum</span>(a)) <span class="co"># set x-axis ticks</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">yticks!</span>(<span class="fl">0</span><span class="op">:</span><span class="fu">maximum</span>(b)) <span class="co"># set y-axis ticks</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">areaplot!</span>(a[a<span class="op">.&lt;=</span><span class="fl">11</span>], (<span class="fl">300</span> <span class="op">.-</span> <span class="fl">40</span><span class="op">*</span>a)<span class="op">./</span><span class="fl">20</span>, legend<span class="op">=</span><span class="cn">false</span>, opacity<span class="op">=</span><span class="fl">0.3</span>) <span class="co"># plot materials constraint feasible region</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">areaplot!</span>(a[a<span class="op">.&lt;=</span><span class="fl">8</span>], (<span class="fl">80</span> <span class="op">.-</span> <span class="fl">6</span><span class="op">*</span>a)<span class="op">./</span><span class="fl">12</span>, legend<span class="op">=</span><span class="cn">false</span>, opacity<span class="op">=</span><span class="fl">0.3</span>) <span class="co"># plot time constraint feasible region</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div style="padding: 1em; background-color: #f8d6da; border: 1px solid #f5c6cb; font-weight: bold;">
+<p>The WebIO Jupyter extension was not detected. See the
+<a href="https://juliagizmos.github.io/WebIO.jl/latest/providers/ijulia/" target="_blank">
+    WebIO Jupyter integration documentation
+</a>
+for more information.
+</p></div>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<p><img src="tutorial_files/figure-html/cell-4-output-2.svg" class="img-fluid"></p>
+</div>
+</div>
+<p>We can see exactly where the solution will be, at the intersection of the feasible regions imposed by the two constraints (note how this is related to the gradient of the objective function)! Let’s now use JuMP to identify the location of this point (though we could also solve for it using linear algebra).</p>
+</section>
+<section id="solving-this-problem-using-jump" class="level3">
+<h3 class="anchored" data-anchor-id="solving-this-problem-using-jump">Solving This Problem Using JuMP</h3>
+<section id="setting-up-the-model-and-solver" class="level4">
+<h4 class="anchored" data-anchor-id="setting-up-the-model-and-solver">Setting Up the Model and Solver</h4>
+<p>First, we should load <code>JuMP</code> and <code>Clp</code>.</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">JuMP</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Clp</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To solve our problem, first we need to <strong>define the model</strong>. The <em>model object</em> has lots of attributes, including the variables, constraints, solver options, etc. We create a new model using the <code>Model()</code> function. Since we are using the <code>Clp</code> solver, we need to tell JuMP to use the <code>Clp.Optimizer</code> solver function.</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>factory_model <span class="op">=</span> <span class="fu">Model</span>(Clp.Optimizer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>A JuMP Model
+Feasibility problem with:
+Variables: 0
+Model mode: AUTOMATIC
+CachingOptimizer state: EMPTY_OPTIMIZER
+Solver name: Clp</code></pre>
+</div>
+</div>
+<p>There are a bunch of attributes and options that we could set, but we won’t in this example. If needed, look at the <code>Clp.jl</code> <a href="https://github.com/jump-dev/Clp.jl">documentation</a>.</p>
+</section>
+<section id="define-variables" class="level4">
+<h4 class="anchored" data-anchor-id="define-variables">Define Variables</h4>
+<p>Decision variables (<span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> in this case) in JuMP are defined using the <code>@variable</code> macro. The first argument passed to <code>@variable()</code> is the model object, in this case, <code>factory_model</code>, and the second argument are bounds on that variable, created using <code>&gt;=</code> and <code>&lt;=</code>. JuMP will interpret the bound specification to obtain the variable name. In this case, our only bounds directly on the variables are the non-negativity constraints.</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(factory_model, x <span class="op">&gt;=</span> <span class="fl">0</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(factory_model, y <span class="op">&gt;=</span> <span class="fl">0</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If we had a free (or unbounded) variable <span class="math inline">\(z\)</span>, we could declare that variable using <code>@variable(model, z)</code>. JuMP also requires unique names for each variable, or it will throw an error. This is one place where it’s nice that Julia lets us use sub- and superscripts in variable names!</p>
+<p>If we did want to modify the bounds after defining the variable, we could do so using the <code>set_lower_bound</code> and <code>set_upper_bound</code> functions, or we could remove them using <code>delete_lower_bound</code> and <code>delete_upper_bound</code>.</p>
+<p>Finally, if we want to see all of the variables associated with a model, we can use the <code>all_variables</code> function to obtain an array.</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all_variables</span>(factory_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>2-element Vector{VariableRef}:
+ x
+ y</code></pre>
+</div>
+</div>
+</section>
+<section id="define-constraints" class="level4">
+<h4 class="anchored" data-anchor-id="define-constraints">Define Constraints</h4>
+<p>When defining variables, we were able to declare constraints on their values by specifying upper and lower bounds. However, we also have other constraints, which involve multiple decision variables. These are specified using the <code>@constraint</code> macro. Unlike variables, we also need to pass names for each constraint. We will use <code>time</code> for the time constraint and <code>materials</code> for the materials constraint. These names must be unique.</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(factory_model, time, <span class="fl">6</span>x <span class="op">+</span> <span class="fl">12</span>y <span class="op">&lt;=</span> <span class="fl">80</span>) <span class="co"># specify the time constraint</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>time : 6 x + 12 y ≤ 80.0</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(factory_model, materials, <span class="fl">40</span>x <span class="op">+</span> <span class="fl">20</span>y <span class="op">&lt;=</span> <span class="fl">300</span>) <span class="co"># materials constraint</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>materials : 40 x + 20 y ≤ 300.0</code></pre>
+</div>
+</div>
+</section>
+<section id="define-objective-function" class="level4">
+<h4 class="anchored" data-anchor-id="define-objective-function">Define Objective Function</h4>
+<p>So far, we’ve defined the feasible region of the decision-variable domain by setting the constraints. But we need to specify our objective function to know what we are trying to minimize or maximize over this region. We define the objective function using the <code>@objective</code> macro. In addition to specifying the model objective and the function, we need to tell JuMP whether we want to minimize or maximize.</p>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@objective</span>(factory_model, Max, <span class="fl">100</span>x <span class="op">+</span> <span class="fl">75</span>y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<p><span class="math display">\[ 100 x + 75 y \]</span></p>
+</div>
+</div>
+<p>Now, let’s look at the model specification.</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(factory_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><span class="math display">\[ \begin{aligned}
+\max\quad &amp; 100 x + 75 y\\
+\text{Subject to} \quad &amp; 6 x + 12 y \leq 80.0\\
+&amp; 40 x + 20 y \leq 300.0\\
+&amp; x \geq 0.0\\
+&amp; y \geq 0.0\\
+\end{aligned} \]</span></p>
+</div>
+</div>
+<p>We can also get a nicely styled LaTeX version, which might be useful.</p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">latex_formulation</span>(factory_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<p><span class="math display">\[ \begin{aligned}
+\max\quad &amp; 100 x + 75 y\\
+\text{Subject to} \quad &amp; 6 x + 12 y \leq 80.0\\
+&amp; 40 x + 20 y \leq 300.0\\
+&amp; x \geq 0.0\\
+&amp; y \geq 0.0\\
+\end{aligned} \]</span></p>
+</div>
+</div>
+<p>We won’t go into detail here, but there are other ways to define the model, which are detailed in the <a href="https://jump.dev/JuMP.jl/stable/">JuMP documentation</a>. For example, we can specify multiple variables using <a href="https://jump.dev/JuMP.jl/stable/manual/variables/#variables"><code>@variables</code></a>. Similarly, we can use <a href="https://jump.dev/JuMP.jl/stable/manual/constraints/#The-@constraints-macro"><code>@constraints</code></a> to define multiple constraints at once. Or we can use <a href="https://jump.dev/JuMP.jl/stable/tutorials/Getting%20started/variables_constraints_objective/#Constraints-in-a-loop">loops</a> to define multiple constraints or constraints involving many variables. We can also specify the model in <a href="https://jump.dev/JuMP.jl/stable/tutorials/Getting%20started/variables_constraints_objective/#Vectorized-syntax">vectorized syntax</a>, which is similar to how linear programs are specified in MATLAB.</p>
+</section>
+<section id="solve-the-model" class="level4">
+<h4 class="anchored" data-anchor-id="solve-the-model">Solve the Model</h4>
+<p>Now it’s time to solve the model and find the optimal values <span class="math inline">\((x^*, y^*)\)</span>. Since we specified the solver when we initialized <code>factory_model</code>, all we have to do is call the <code>optimize!</code> function.</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">optimize!</span>(factory_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Coin0506I Presolve 2 (0) rows, 2 (0) columns and 4 (0) elements
+Clp0006I 0  Obj 0 Dual inf 175 (2)
+Clp0006I 2  Obj 847.22222
+Clp0000I Optimal - objective value 847.22222
+Clp0032I Optimal objective 847.2222222 - 2 iterations time 0.002</code></pre>
+</div>
+</div>
+</section>
+<section id="query-the-solution" class="level4">
+<h4 class="anchored" data-anchor-id="query-the-solution">Query the Solution</h4>
+<p>To find the optimal values of our decision variables, we need to query the values of the variables using <code>value.()</code>. We use <code>value.()</code> (the vectorized version of <code>value()</code>) because JuMP stores decision variables differently depending on their number and how they were defined. Uses the dot-syntax here works with any model specification, while the plain <code>value()</code> will not work if a queried decision variable is stored as a vector.</p>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>5.555555555555555</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>3.8888888888888884</code></pre>
+</div>
+</div>
+<p>So we can see that our optimal inputs are <span class="math display">\[(x^*, y^*) = (5.56, 3.89)\]</span> (and we’ll pretend that we can manufacture and sell parts of widgets).</p>
+</section>
+<section id="visualize-the-solution" class="level4">
+<h4 class="anchored" data-anchor-id="visualize-the-solution">Visualize the Solution</h4>
+<p>Let’s take our previous plot and add the solution point to make sure that we got the solution we expected.</p>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># replot the previous plot</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(a,b,(a,b)<span class="fu">-&gt;f</span>(a,b),nlevels<span class="op">=</span><span class="fl">15</span>, c<span class="op">=:</span>heat, linewidth<span class="op">=</span><span class="fl">10</span>, colorbar <span class="op">=</span> <span class="cn">false</span>, contour_labels <span class="op">=</span> <span class="cn">true</span>) <span class="co"># objective function contours</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title!</span>(<span class="st">"Factory Optimization Problem"</span>) <span class="co"># add title</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">xaxis!</span>(<span class="st">"x=Widget A"</span>, lims<span class="op">=</span>(<span class="fl">0</span>, <span class="fu">maximum</span>(a))) <span class="co"># add x-axis title and limits</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">yaxis!</span>(<span class="st">"y=Widget B"</span>, lims<span class="op">=</span>(<span class="fl">0</span>, <span class="fu">maximum</span>(b))) <span class="co"># add y-axis title and limits</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">xticks!</span>(<span class="fl">0</span><span class="op">:</span><span class="fu">maximum</span>(a)) <span class="co"># set x-axis ticks</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">yticks!</span>(<span class="fl">0</span><span class="op">:</span><span class="fu">maximum</span>(b)) <span class="co"># set y-axis ticks</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="fu">areaplot!</span>(a, (<span class="fl">300</span> <span class="op">.-</span> <span class="fl">40</span><span class="op">*</span>a)<span class="op">./</span><span class="fl">20</span>, legend<span class="op">=</span><span class="cn">false</span>, opacity<span class="op">=</span><span class="fl">0.3</span>) <span class="co"># plot materials constraint feasible region</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="fu">areaplot!</span>(a, (<span class="fl">80</span> <span class="op">.-</span> <span class="fl">6</span><span class="op">*</span>a)<span class="op">./</span><span class="fl">12</span>, legend<span class="op">=</span><span class="cn">false</span>, opacity<span class="op">=</span><span class="fl">0.3</span>) <span class="co"># plot time constraint feasible region</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co"># now we plot the solution that we obtained</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>([<span class="fu">value</span>.(x)],[<span class="fu">value</span>.(y)], markercolor<span class="op">=</span><span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<p><img src="tutorial_files/figure-html/cell-18-output-1.svg" class="img-fluid"></p>
+</div>
+</div>
+<p>The solution <span class="math display">\[(x^*, y^*)\]</span> is exactly where we deduced it would be geometrically.</p>
+</section>
+<section id="other-stuff-we-can-do" class="level4">
+<h4 class="anchored" data-anchor-id="other-stuff-we-can-do">Other Stuff We Can Do</h4>
+<p>We can also use <code>value.()</code> to evaluate our constraints without manually using the equations.</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>80.0</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(materials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>300.0</code></pre>
+</div>
+</div>
+<p>What if we also want the optimal objective value? We can obtain this using <code>objective_value()</code>.</p>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">objective_value</span>(factory_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>847.2222222222222</code></pre>
+</div>
+</div>
+<p>We could also define other expressions via the <a href="https://jump.dev/JuMP.jl/stable/expressions/#JuMP.@expression"><code>@expression</code> macro</a> as functions of the decision variables and evaluate those. For example, let’s say that we wanted to know the total number of widgets we’d produce under our optimal allocation of resources.</p>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@expression</span>(factory_model, total_widgets, x<span class="op">+</span>y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<p><span class="math display">\[ x + y \]</span></p>
+</div>
+</div>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(total_widgets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>9.444444444444443</code></pre>
+</div>
+</div>
+</section>
+<section id="dual-solutions" class="level4">
+<h4 class="anchored" data-anchor-id="dual-solutions">Dual Solutions</h4>
+<p>We can identify if our model has a dual solution by calling <code>has_duals()</code>.</p>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">has_duals</span>(factory_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>true</code></pre>
+</div>
+</div>
+<p>If we want to know the dual solution associated with a constraint, we use the <code>shadow_price()</code> function.</p>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shadow_price</span>(time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<pre><code>2.7777777777777786</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shadow_price</span>(materials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<pre><code>2.083333333333333</code></pre>
+</div>
+</div>
+<p>If the binding constraint was a variable bound, we could also query that shadow price by calling <code>reduced_cost()</code> on the variable.</p>
+<pre><code>reduced_cost(x)</code></pre>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">reduced_cost</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>-0.0</code></pre>
+</div>
+</div>
+<p>In this case, the relevant shadow prices are zero because the optimum is in the interior of the domain. If we had added a strong enough upper bound on the value(s) of one or both of our decision variables (say, x &lt;= 4), then this would be non-zero.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© 2023, Vivek Srikrishnan</div>   
+    <div class="nav-footer-right">This page was built with <a href="https://quarto.org">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>

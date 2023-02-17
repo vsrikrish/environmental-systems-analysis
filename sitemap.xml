@@ -1,172 +1,87 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-<url>
-    <loc>examples/index.html</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>index.html</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>schedule/index.html</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>software/index.html</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>tutorials/julia-plots/index.html</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>resources/index.html</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>policies/communications/index.html</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/workflow/index.html</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>policies/index.html</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>tutorials/julia-basics/index.html</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>tutorials/using-JuMP/index.html</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>404/index.html</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>agenda/index.html</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/index.html</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/hw0/hw0/</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/hw2/rubric/</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/hw4/rubric/</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/hw2/hw2/</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/regulation/regulation/</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/hw1/hw1/</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/hw1/vivek-solution/</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/hw2/vivek-solution/</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/hw3/vivek-solution/</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/hw3/rubric/</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/hw4/hw4/</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/hw3/hw3/</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/term/term/</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>assignments/hw1/rubric/</loc>
-    <lastmod>2022-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/labs/lab-01-basics.html</loc>
+    <lastmod>2023-02-17T17:55:27.278Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/assignments/workflow.html</loc>
+    <lastmod>2023-02-17T17:55:27.907Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/assignments/hw0.html</loc>
+    <lastmod>2023-02-17T17:55:28.684Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/resources/github.html</loc>
+    <lastmod>2023-02-17T17:55:29.420Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/resources/markdown.html</loc>
+    <lastmod>2023-02-17T17:55:29.817Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/resources/optimization.html</loc>
+    <lastmod>2023-02-17T17:55:30.161Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/resources/julia.html</loc>
+    <lastmod>2023-02-17T17:55:30.540Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/website.html</loc>
+    <lastmod>2023-02-17T17:55:30.884Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/index.html</loc>
+    <lastmod>2023-02-17T17:55:31.240Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/slides/lec-01-class-intro.html</loc>
+    <lastmod>2023-02-17T17:55:32.675Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/faq.html</loc>
+    <lastmod>2023-02-17T17:55:33.820Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/tutorials/julia-plots.html</loc>
+    <lastmod>2023-02-17T17:55:34.278Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/tutorials/using-JuMP.html</loc>
+    <lastmod>2023-02-17T17:55:34.639Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/tutorials/probability-stats.html</loc>
+    <lastmod>2023-02-17T17:55:35.044Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/tutorials/julia-basics.html</loc>
+    <lastmod>2023-02-17T17:55:35.426Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/syllabus.html</loc>
+    <lastmod>2023-02-17T17:55:36.552Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/computing/julia-examples.html</loc>
+    <lastmod>2023-02-17T17:55:36.902Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/computing/tutorials/julia-plots/tutorial.html</loc>
+    <lastmod>2023-02-17T17:55:38.351Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/computing/tutorials/julia-basics/tutorial.html</loc>
+    <lastmod>2023-02-17T17:55:41.219Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/computing/tutorials/using-JuMP/tutorial.html</loc>
+    <lastmod>2023-02-17T17:55:42.940Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/schedule.html</loc>
+    <lastmod>2023-02-17T17:55:43.562Z</lastmod>
+  </url>
 </urlset>

@@ -12,5 +12,7 @@ Environmental processes can have complicated dynamics and conflicting objectives
 * explore trade-offs across competing objectives.
 
 ::: {.callout-note}
+## Julia
+
 This course will use the [Julia](https://julialang.org) programming language. No prior knowledge of Julia is required.
 :::

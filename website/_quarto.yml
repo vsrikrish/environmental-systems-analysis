@@ -10,6 +10,8 @@ website:
   repo-url: https://github.com/vsrikrish/environmental-systems-analysis
   repo-actions: [edit, issue]
 
+  callout-appearance: simple
+
   open-graph: true
 
   page-footer:

@@ -19,9 +19,15 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Install Julia
+        uses: julia-actions/setup-julia@v1
+        with:
+          version: 1.8
+
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          path: "website"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

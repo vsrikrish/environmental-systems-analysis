@@ -22,7 +22,7 @@ jobs:
       - name: Install Julia
         uses: julia-actions/setup-julia@v1
         with:
-          version: 1.8
+          version: 1.8.3
 
       - name: Install IJulia
         run: julia -e 'using Pkg; Pkg.activate("website"); Pkg.instantiate(); Pkg.build("IJulia")'

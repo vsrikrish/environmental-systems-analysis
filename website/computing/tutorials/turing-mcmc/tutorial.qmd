@@ -227,6 +227,6 @@ Now let's look at the residuals from the posterior median and the data. The part
 y_pred_data = mc_predict_regression(x, chain)
 y_med_data = quantile.(eachrow(y_pred_data), 0.5)
 residuals = y_med_data .- y
-plot(pacf(residuals, 1:4), line=:stem, legend=:false, grid=:false, linewidth=2, xlabel="Lag", ylabel="Partial Autocorrelation")
+plot(pacf(residuals, 1:4), line=:stem, marker=:circle, legend=:false, grid=:false, linewidth=2, xlabel="Lag", ylabel="Partial Autocorrelation")
 hline!([0], linestyle=:dot, color=:red)
 ```

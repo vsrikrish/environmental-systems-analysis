@@ -63,13 +63,17 @@ Here are some steps I would follow:
     - ***Provide code***. It's very difficult to get a sense of what might be going wrong if you just say that you have a problem, even if you share the error message. If you have a small question (you can demonstrate the error with a brief snippet of code), you can directly put this into your Ed post, but otherwise, please provide a link to your GitHub repository and where to find the relevant codes.
 
       ::: {.callout-note}
-         You must commit and push your current files to GitHub prior to this, or we won't be able to see the code that you're having trouble with.
+         ## Update Your Repository!
+      
+         You must commit and push your current files to GitHub prior to asking for help, or we won't be able to see the code that you're having trouble with.
       :::
 
 3. ***Come to office hours***. If you can identify the problem, but we're having trouble solving it via Ed or more urgency is required, please come to office hours and we can try to work through the issue. This is most helpful if you've already done some problem-solving on your own.
 
    ::: {.callout-warning}
-    Waiting until the last day or two to start an assignment can cause problems if you don't have time to work through the following steps. If office hours are busy and you haven't gone through the prior steps, you may be prioritized below than students who are have, and we may not have time to solve your problem. **Running into coding challenges is not a valid reason to get an extension on an assignment!**
+      ## Give Yourself Time To Problem-Solve
+   
+       Waiting until the last day or two to start an assignment can cause problems if you don't have time to work through the following steps. If office hours are busy and you haven't gone through the prior steps, you may be prioritized below than students who are have, and we may not have time to solve your problem. **Running into coding challenges is not a valid reason to get an extension on an assignment!**
    :::
 
 ### How do I get a PDF of my notebook for submission?
@@ -77,6 +81,8 @@ Here are some steps I would follow:
 There are two main options, depending on what you've already got set up on your computer.
 
 ::: {.callout-important}
+## Run Notebook Cells Before Submission
+
 Remember to "Run All" cells prior to conversion and submission, or else we won't see your results!
 :::
 
@@ -95,6 +101,8 @@ Remember to "Run All" cells prior to conversion and submission, or else we won't
 The instructions for submitting your assignment to Gradescope can be found [here](https://help.gradescope.com/article/ccbpppziu9-student-submit-work#submitting_a_pdf). 
 
 ::: {.callout-important}
+## Tag Pages
+
 Make sure that you mark/tag the pages corresponding to each question! Otherwise, we will deduct 10%. If a problem spans multiple pages, tag them all; if a page includes multiple problems, tag it several times.
 :::
 

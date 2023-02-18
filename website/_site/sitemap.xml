@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/faq.html</loc>
-    <lastmod>2023-02-17T19:49:15.431Z</lastmod>
+    <lastmod>2023-02-18T15:25:23.017Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/tutorials/julia-plots.html</loc>
@@ -66,7 +66,7 @@
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/computing/julia-examples.html</loc>
-    <lastmod>2023-02-17T19:56:43.326Z</lastmod>
+    <lastmod>2023-02-18T15:26:28.257Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/computing/tutorials/julia-plots/tutorial.html</loc>
@@ -78,10 +78,14 @@
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/computing/tutorials/using-JuMP/tutorial.html</loc>
-    <lastmod>2023-02-17T19:46:32.827Z</lastmod>
+    <lastmod>2023-02-18T15:26:31.453Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/schedule.html</loc>
     <lastmod>2023-02-17T19:45:32.412Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/computing/tutorials/turing-mcmc/tutorial.html</loc>
+    <lastmod>2023-02-18T16:08:46.498Z</lastmod>
   </url>
 </urlset>

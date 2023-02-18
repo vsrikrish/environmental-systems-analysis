@@ -79,6 +79,8 @@ format:
     toc: true
     anchor-sections: true
     callout-appearance: simple
+    reference-location: margin
+    citation-location: margin
 
 execute:
   freeze: auto

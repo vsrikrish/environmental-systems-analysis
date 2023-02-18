@@ -1,87 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://viveks.me/environmental-systems-analysis/assignments/hw0.html</loc>
-    <lastmod>2023-02-18T12:41:48.929Z</lastmod>
-  </url>
-  <url>
-    <loc>https://viveks.me/environmental-systems-analysis/assignments/workflow.html</loc>
-    <lastmod>2023-02-18T12:41:51.073Z</lastmod>
-  </url>
-  <url>
     <loc>https://viveks.me/environmental-systems-analysis/labs/lab-01-basics.html</loc>
-    <lastmod>2023-02-18T12:41:52.017Z</lastmod>
+    <lastmod>2023-02-18T12:44:27.587Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/computing/julia-examples.html</loc>
-    <lastmod>2023-02-18T12:41:52.357Z</lastmod>
+    <lastmod>2023-02-18T12:44:28.623Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/computing/tutorials/julia-basics/tutorial.html</loc>
-    <lastmod>2023-02-18T12:41:54.149Z</lastmod>
+    <lastmod>2023-02-18T12:44:30.435Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/computing/tutorials/using-JuMP/tutorial.html</loc>
-    <lastmod>2023-02-18T12:41:55.257Z</lastmod>
+    <lastmod>2023-02-18T12:44:31.547Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/computing/tutorials/julia-plots/tutorial.html</loc>
-    <lastmod>2023-02-18T12:41:56.337Z</lastmod>
+    <lastmod>2023-02-18T12:44:32.635Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/faq.html</loc>
-    <lastmod>2023-02-18T12:42:08.341Z</lastmod>
+    <lastmod>2023-02-18T12:44:44.711Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/syllabus.html</loc>
-    <lastmod>2023-02-18T12:42:08.961Z</lastmod>
+    <lastmod>2023-02-18T12:44:45.339Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/schedule.html</loc>
-    <lastmod>2023-02-18T12:42:09.321Z</lastmod>
+    <lastmod>2023-02-18T12:44:45.703Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/index.html</loc>
-    <lastmod>2023-02-18T12:42:09.669Z</lastmod>
+    <lastmod>2023-02-18T12:44:46.063Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lec-01-class-intro.html</loc>
-    <lastmod>2023-02-18T12:42:10.513Z</lastmod>
+    <lastmod>2023-02-18T12:44:46.939Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/resources/markdown.html</loc>
-    <lastmod>2023-02-18T12:42:11.621Z</lastmod>
+    <lastmod>2023-02-18T12:44:48.003Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/resources/optimization.html</loc>
-    <lastmod>2023-02-18T12:42:11.993Z</lastmod>
+    <lastmod>2023-02-18T12:44:48.363Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/resources/julia.html</loc>
-    <lastmod>2023-02-18T12:42:12.349Z</lastmod>
+    <lastmod>2023-02-18T12:44:48.723Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/resources/github.html</loc>
-    <lastmod>2023-02-18T12:42:12.725Z</lastmod>
-  </url>
-  <url>
-    <loc>https://viveks.me/environmental-systems-analysis/tutorials/using-JuMP.html</loc>
-    <lastmod>2023-02-18T12:42:13.077Z</lastmod>
-  </url>
-  <url>
-    <loc>https://viveks.me/environmental-systems-analysis/tutorials/probability-stats.html</loc>
-    <lastmod>2023-02-18T12:42:13.417Z</lastmod>
-  </url>
-  <url>
-    <loc>https://viveks.me/environmental-systems-analysis/tutorials/julia-basics.html</loc>
-    <lastmod>2023-02-18T12:42:13.793Z</lastmod>
-  </url>
-  <url>
-    <loc>https://viveks.me/environmental-systems-analysis/tutorials/julia-plots.html</loc>
-    <lastmod>2023-02-18T12:42:14.137Z</lastmod>
+    <lastmod>2023-02-18T12:44:49.071Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/website.html</loc>
-    <lastmod>2023-02-18T12:42:14.505Z</lastmod>
+    <lastmod>2023-02-18T12:44:49.419Z</lastmod>
   </url>
 </urlset>

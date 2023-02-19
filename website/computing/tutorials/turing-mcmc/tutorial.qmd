@@ -26,6 +26,7 @@ using Distributions
 using Plots
 using LaTeXStrings
 using StatsPlots
+using StatsBase
 using Optim
 using Random
 ```
@@ -217,7 +218,7 @@ scatter!(x, y, color=:red, label="Data")
 
 From @fig-prediction-regression, it looks like our model might be slightly under-confident, as with 10 data points, we would expect 5% of them (or 1/2 of a "data point") to be outside the 95% prediction interval. It's hard to tell with only 10 data points, though! We could resolve this by tightening our priors, but this depends on how much information we used to specify them in the first place. The goal shouldn't be to hit a specific level of uncertainty, but if there is a sound reason to tighten the priors, we could do so.
 
-Now let's look at the residuals from the posterior median and the data. The partial autocorrelations plotted in @fig-residuals-regression suggest that the residuals aren't autocorrelated, which supports our modeling assumption that they were independent.
+Now let's look at the residuals from the posterior median and the data. The partial autocorrelations plotted in @fig-residuals-regression are not fully convincing, as there are large autocorrelation coefficients with long lags, but the dataset is quite small, so it's hard to draw strong conclusions. We won't go further down this rabbit hole as we know our data-generating process involved independent noise, but for a real dataset, we might want to try a model specification with autocorrelated data to compare.
 
 ```{julia}
 #| column: margin

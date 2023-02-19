@@ -310,8 +310,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LaTeXStrings</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsPlots</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Optim</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Random</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsBase</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Optim</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Random</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>As this tutorial involves random number generation, we will set a random seed to ensure reproducibility.</p>
 <div class="cell" data-execution_count="3">
@@ -436,7 +437,7 @@ b \sim \text{Normal(0, 10)} \\
 └   ϵ = 0.0125</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Sampling (1 threads):  50%|██████████████▌              |  ETA: 0:00:00</code></pre>
+<pre><code>Sampling (1 threads):  50%|██████████████▌              |  ETA: 0:00:01</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Sampling (1 threads): 100%|█████████████████████████████| Time: 0:00:01</code></pre>
@@ -450,8 +451,8 @@ b \sim \text{Normal(0, 10)} \\
 Iterations        = 1001:1:6000
 Number of chains  = 4
 Samples per chain = 5000
-Wall duration     = 14.14 seconds
-Compute duration  = 11.9 seconds
+Wall duration     = 13.99 seconds
+Compute duration  = 11.88 seconds
 parameters        = σ², a, b
 internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
 Summary Statistics
@@ -503,7 +504,7 @@ A   │
 <p>The MLE results have some additional error compared to the MCMC means (the slope and noise variance are further from the data-generating values), but this can be a lot faster, at the expense of getting estimates of uncertainty.</p>
 </section>
 </section>
-<section id="model-diagnostics-and-posterior-predictive-checks" class="level3">
+<section id="model-diagnostics-and-posterior-predictive-checks" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="model-diagnostics-and-posterior-predictive-checks">Model Diagnostics and Posterior Predictive Checks</h3>
 <p>One advantage of the Bayesian modeling approach here is that we have access to a <em>generative model</em>, or a model which we can use to generate datasets. This means that we can now use Monte Carlo simulation, sampling from our posteriors, to look at how uncertainty in the parameter estimates propagates through the model. Let’s write a function which gets samples from the MCMC chains and generates datasets.</p>
 <div class="cell" data-execution_count="9">
@@ -577,7 +578,22 @@ A   │
 </div>
 </div>
 <p>From <a href="#fig-prediction-regression">Figure&nbsp;3</a>, it looks like our model might be slightly under-confident, as with 10 data points, we would expect 5% of them (or 1/2 of a “data point”) to be outside the 95% prediction interval. It’s hard to tell with only 10 data points, though! We could resolve this by tightening our priors, but this depends on how much information we used to specify them in the first place. The goal shouldn’t be to hit a specific level of uncertainty, but if there is a sound reason to tighten the priors, we could do so.</p>
-<p>Now let’s look at the residuals from the posterior median and the data. The histogram in <strong>?@fig-residuals-regression</strong> might be more useful for a larger dataset, but this will give us a sense if our residuals appear to be biased or skewed, and we could also look for autocorrelation with a scatterplot or by computing the partial autocorrelation function.</p>
+<p>Now let’s look at the residuals from the posterior median and the data. The partial autocorrelations plotted in <a href="#fig-residuals-regression">Figure&nbsp;4</a> suggest that the residuals aren’t autocorrelated, which supports our modeling assumption that they were independent.</p>
+<div class="cell page-columns page-full" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>y_pred_data <span class="op">=</span> <span class="fu">mc_predict_regression</span>(x, chain)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>y_med_data <span class="op">=</span> <span class="fu">quantile</span>.(<span class="fu">eachrow</span>(y_pred_data), <span class="fl">0.5</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>residuals <span class="op">=</span> y_med_data <span class="op">.-</span> y</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">pacf</span>(residuals, <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>), line<span class="op">=:</span>stem, marker<span class="op">=:</span>circle, legend<span class="op">=:</span><span class="cn">false</span>, grid<span class="op">=:</span><span class="cn">false</span>, linewidth<span class="op">=</span><span class="fl">2</span>, xlabel<span class="op">=</span><span class="st">"Lag"</span>, ylabel<span class="op">=</span><span class="st">"Partial Autocorrelation"</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hline!</span>([<span class="fl">0</span>], linestyle<span class="op">=:</span>dot, color<span class="op">=:</span>red)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<div class="no-row-height column-margin column-container"><div class="cell-output cell-output-display" data-execution_count="14">
+<div id="fig-residuals-regression" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="tutorial_files/figure-html/fig-residuals-regression-output-1.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: Partial autocorrelation function of model residuals, relative to the predictive median.</figcaption><p></p>
+</figure>
+</div>
+</div></div></div>
 
 
 </section>

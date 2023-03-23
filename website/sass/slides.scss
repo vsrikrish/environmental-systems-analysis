@@ -114,6 +114,12 @@ strong {color: #EF4035;}
     border: 2px solid black !important;
 }
 
+.reveal table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .reveal tr:nth-child(even){
     background-color: #f7f7f7;
 }
@@ -123,11 +129,22 @@ strong {color: #EF4035;}
     font-weight: bold;
 }
 
-.cite {
+.reveal figcaption {
+    text-align: center;
+    font-style: italic;
+}
+
+.cell-output {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reveal p.caption {
     font-size: 0.7em;
     color: #222222;
     font-style: italic;
     font-family: $font-family-serif;
     padding-top: 1px;
     display: block;
+    text-align: center;
 }

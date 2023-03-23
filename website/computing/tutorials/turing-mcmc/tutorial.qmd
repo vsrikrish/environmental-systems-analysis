@@ -4,6 +4,10 @@ jupyter: julia-1.8
 execute:
     error: true
     warning: true
+format:
+    html: default
+    ipynb: default
+format-links: [ipynb]
 ---
 
 
@@ -29,6 +33,9 @@ using StatsPlots
 using StatsBase
 using Optim
 using Random
+using DataFrames
+using Downloads
+using CSV
 ```
 
 As this tutorial involves random number generation, we will set a random seed to ensure reproducibility.
@@ -150,6 +157,7 @@ Let's now plot the chains for visual inspection.
 ```{julia}
 #| label: fig-chains-regression
 #| fig-cap: "Output from the MCMC sampler. Each row corresponds to a different parameter: $\\sigma^2$, $a$, and $b$. Each chain is shown in a different color. The left column shows the sampler traceplots, and the right column the resulting posterior distributions."
+#| column: page-inset-right
 
 plot(chain)
 ```
@@ -228,6 +236,37 @@ Now let's look at the residuals from the posterior median and the data. The part
 y_pred_data = mc_predict_regression(x, chain)
 y_med_data = quantile.(eachrow(y_pred_data), 0.5)
 residuals = y_med_data .- y
-plot(pacf(residuals, 1:4), line=:stem, marker=:circle, legend=:false, grid=:false, linewidth=2, xlabel="Lag", ylabel="Partial Autocorrelation")
+plot(pacf(residuals, 1:4), line=:stem, marker=:circle, legend=:false, grid=:false, linewidth=2, xlabel="Lag", ylabel="Partial Autocorrelation", markersize=8, tickfontsize=14, guidefontsize=16, legendfontsize=16)
 hline!([0], linestyle=:dot, color=:red)
+```
+
+## Fitting Extreme Value Models to Tide Gauge Data
+
+Let's now look at an example of fitting an extreme value distribution (namely, a generalized extreme value distribution) to tide gauge data.
+
+First, we'll download and plot the data:
+
+```{julia}
+#| label: fig-tds-scatter
+#| fig-cap: "Total dissolved solids ($mg/L$) vs. discharge ($m^3/s$) for the Cuyahoga River from 1969 to 1973. Data obtained from [Statistical Methods in Water Resources](https://doi.org/10.3133/tm4A3)."
+
+fname = "data/tds.csv" # CHANGE THIS!
+url = "https://www.sciencebase.gov/catalog/file/get/5d5af82de4b01d82ce8ed296?f=__disk__b9%2Fb7%2F40%2Fb9b74037d91c45e730ba4c170fe3ffaf9470d360"
+if !isfile(fname)
+    Downloads.download(url, fname)
+end
+tds = DataFrame(CSV.File(fname))
+tds[!, [:date, :discharge_cms, :tds_mgL]]
+
+p = scatter(tds.discharge_cms, tds.tds_mgL, xlabel=L"Discharge~($m^3/s$)", ylabel=L"Total dissolved solids~($mg/L$)", title="Cuyahoga River, Ohio, 1969–1973", label="Data")
+```
+
+Note at @fig-tds-scatter does not look linear at all. However, it does look roughly like an inverse-exponential plot, which suggests that logarithmically-transforming the $x$-axis might look linear.
+
+```{julia}
+#| label: fig-tds-log-scatter
+#| fig-cap: "The same plot as @fig-tds-scatter, but with the $x$-axis shown on a log scale."
+
+x_ticks = [1, 2, 5, 10, 20, 50, 100]
+plot(p, xaxis=:log, xticks=(x_ticks, string.(x_ticks)))
 ```

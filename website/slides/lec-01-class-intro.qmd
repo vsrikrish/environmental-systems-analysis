@@ -83,7 +83,6 @@ execute:
 4. Analyzing Assumptions
 5. Decision-Making Under Uncertainty
 
-
 # Course Policies
 
 ---

@@ -1,0 +1,252 @@
+---
+title: "Economic Dispatch"
+subtitle: "Lecture xx"
+author: "Vivek Srikrishnan"
+course: "BEE 4750"
+institution: "Cornell University"
+date: "October xx, 2023"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Outline"
+        slide-level: 2
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        header: "[BEE 4750, Environmental Systems Analysis](https://viveks.me/environmental-systems-analysis)"
+        template-partials:
+            - title-slide.html
+        html-math-method: 
+            method: mathjax
+            url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+        menu:
+            numbers: true
+        fig-align: center
+execute:
+    freeze: auto
+---
+
+# Questions and Last Class Review
+
+---
+
+## Questions?
+
+:::: {.columns .center}
+::: {.column width="40%"}
+![](images/vsrikrish-poll.png){fig-alt="Poll Everywhere QR Code" fig-align="center" width="100%"}
+:::
+::: {.column width=60%}
+**Text**: VSRIKRISH to 22333
+
+**URL**: [https://pollev.com/vsrikrish](https://pollev.com/vsrikrish)
+:::
+::::
+
+---
+
+## Last Class: Generating Capacity Expansion
+
+![Adapted from [Perez-Arriaga, Ignacio J., Hugh Rudnick, and Michel Rivier (2009)](https://www.taylorfrancis.com/chapters/edit/10.1201/9781420007275-1/electric-energy-systems%E2%80%94an-overview-ignacio-p%C3%A9rez-arriaga-hugh-rudnick-michel-rivier-abbad).](figures/elec-decision-problems.svg)
+
+---
+
+### Generating Capacity Expansion
+
+How should much of each type of additional electricity generation should we build to:
+
+- Meet projected demand;
+- Satisfy policy and engineering constraints.
+
+# Overview: Economic Dispatch
+
+---
+
+## Economic Dispatch
+
+**Decision Problem**: Given a fleet of (online) generators, how do we meet demand at lowest cost?
+
+. . .
+
+**New Constraints**: Power plants are generally subject to engineering constraints that we had previously neglected, including:
+
+- Ramping limits
+- Minimum/Maximum power outputs
+- May include network constraints (we will ignore here)
+
+
+# Single-Period Dispatch
+
+---
+
+## Simple, Single-Period Dispatch
+
+What does this look like for a single period?
+
+Let:
+
+Variable | Meaning | Units
+:-----: | :------ | -----:
+$d$ | demand | MW
+$y_g$ | generation by generator $g$ | MW
+$VarCost_g$ | variable generation cost for generator $g$ | \$/MW 
+$P^{\text{min/max}}_g$ | generation limits for generator $g$ | MW
+
+---
+
+## Single-Period Problem Formulation
+
+Then the economic dispatch problem becomes: 
+
+$$\begin{aligned}
+\min_{\mathbf{y}} & \sum_g VarCost_g \times y_g \\
+\text{subject to:} & \\
+& \sum_g y_g = d \\
+& y_g \leq P^{\text{max}}_g \\
+& y_g \geq P^{\text{min}}_g
+\end{aligned}$$
+
+---
+
+## Single-Period Problem Data
+
+{{< embed notebooks/economic-dispatch.ipynb#spgen-data >}}
+
+---
+
+## Single-Period Problem Solution
+
+If $d = 1800\ \text{MW}$:
+
+<br>
+
+{{< embed notebooks/economic-dispatch.ipynb#spdispatch-results >}}
+
+---
+
+## Marginal Generators
+
+Once we hit the minimum for each generator, we then "fill up" capacity from lowest-cost generators first, then move on.
+
+. . .
+
+- For this problem, the coal generator is the **marginal generator**.
+
+- The marginal generation unit sets the price of electricity.
+
+- If we had used all of our coal capacity, the natural gas unit would be the marginal generator.
+
+---
+
+## Merit Order and the Dispatch Stack
+
+::: {.columns}
+
+::: {.column width=40%}
+This is the concept of **merit order**: plants are scheduled to supply additional electricity based (*mostly*) on their variable costs.
+:::
+
+::: {.column width=60%}
+
+{{< embed notebooks/economic-dispatch.ipynb#dispatch-stack >}}
+
+:::
+
+:::
+
+---
+
+## What Might Complicate This Simple Merit Ordering?
+
+:::: {.columns .center}
+::: {.column width="40%"}
+![](images/vsrikrish-poll.png){fig-alt="Poll Everywhere QR Code" fig-align="center" width="100%"}
+:::
+::: {.column width=60%}
+**Text**: VSRIKRISH to 22333
+
+**URL**: [https://pollev.com/vsrikrish](https://pollev.com/vsrikrish)
+:::
+::::
+
+
+# Multiple-Period Dispatch
+
+---
+
+## Multiple Time Period Example
+
+What changes with multiple time periods?
+
+. . .
+
+- Need to meet demand at every time period;
+- We have additional **ramping** constraints: plants can only increase and decrease their output by so much from time to time, by $R_g$.
+
+---
+
+## Multiple Period Problem Formulation
+
+$$\begin{aligned}
+\min_\mathbf{y} & \sum_g VarCost_g \times \sum_t y_{g,t} \\
+\text{subject to:} & \\
+& \sum_g y_{g,t} = d_t \\
+& P^\text{min}_g \leq y_{g,t} \leq P^{\text{max}}_g \\
+& \color{red}y_{g,t+1} - y_{g, t} \leq R_g \\
+& \color{red}y_{g,t} - y_{g, t+1} \leq R_g
+\end{aligned}$$
+
+---
+
+## Multiple Period Dispatch Results
+
+{{< embed notebooks/economic-dispatch.ipynb#mpdispatch-stacked >}}
+
+---
+
+## Multiple Period Dispatch Results
+
+{{< embed notebooks/economic-dispatch.ipynb#mpdispatch-results >}}
+
+---
+
+## Duck Curve and Ramping with Renewables
+
+::: {.columns}
+
+::: {.column width=45%}
+
+Ramping and minimum generation play a major role in systems with high levels of renewable penetration.
+
+:::
+
+::: {.column width=55% .center}
+
+![Source: [Power Magazine](https://www.powermag.com/duck-hunting-california-independent-system-operator/)](figures/duck_curve.jpeg)
+
+:::
+
+:::
+
+# Key Takeaways and Upcoming Schedule
+
+---
+
+## Key Takeaways
+
+**Economic Dispatch**: how to generate power from a generation fleet at lowest production cost?
+
+- At its most basic, can be formulated as a straightforward linear program.
+- Naive "merit order" is complicated by ramping and minimum generation constraints.
+- Example of how systems dynamics complicate simple supply-demand mechanics.
+
+---
+
+## Upcoming Schedule

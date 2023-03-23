@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -272,6 +272,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#using-turing" id="toc-using-turing" class="nav-link" data-scroll-target="#using-turing">Using Turing</a></li>
   <li><a href="#model-diagnostics-and-posterior-predictive-checks" id="toc-model-diagnostics-and-posterior-predictive-checks" class="nav-link" data-scroll-target="#model-diagnostics-and-posterior-predictive-checks">Model Diagnostics and Posterior Predictive Checks</a></li>
   </ul></li>
+  <li><a href="#fitting-extreme-value-models-to-tide-gauge-data" id="toc-fitting-extreme-value-models-to-tide-gauge-data" class="nav-link" data-scroll-target="#fitting-extreme-value-models-to-tide-gauge-data">Fitting Extreme Value Models to Tide Gauge Data</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/computing/tutorials/turing-mcmc/tutorial.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -309,7 +310,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsPlots</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsBase</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Optim</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Random</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Random</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Downloads</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CSV</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>As this tutorial involves random number generation, we will set a random seed to ensure reproducibility.</p>
 <div class="cell" data-execution_count="3">
@@ -350,7 +354,7 @@ y = 5 + 4x + \varepsilon \\
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter</span>(x, y, label<span class="op">=</span><span class="st">"Data"</span>, xlabel<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>x<span class="sc">$</span><span class="st">", </span>ylabel<span class="st">=L"</span><span class="op">$</span>y<span class="op">$</span><span class="st">", markersize=10, tickfontsize=14, guidefontsize=16, legendfontsize=16)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<div class="no-row-height column-margin column-container"><div class="cell-output cell-output-display" data-execution_count="5">
+<div class="no-row-height column-margin column-container"><div class="cell-output cell-output-display" data-execution_count="90">
 <div id="fig-scatter-regression" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="tutorial_files/figure-html/fig-scatter-regression-output-1.svg" class="img-fluid figure-img"></p>
@@ -398,7 +402,7 @@ b \sim \text{Normal(0, 10)} \\
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        y[i] <span class="op">~</span> <span class="fu">Normal</span>(μ, σ²)</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="91">
 <pre><code>linear_regression (generic function with 2 methods)</code></pre>
 </div>
 </div>
@@ -434,22 +438,22 @@ b \sim \text{Normal(0, 10)} \\
 └   ϵ = 0.0125</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Sampling (1 threads):  50%|██████████████▌              |  ETA: 0:00:01</code></pre>
+<pre><code>Sampling (1 threads):  50%|██████████████▌              |  ETA: 0:00:00</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Sampling (1 threads): 100%|█████████████████████████████| Time: 0:00:02</code></pre>
+<pre><code>Sampling (1 threads): 100%|█████████████████████████████| Time: 0:00:00</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>chain = MCMC chain (5000×15×4 Array{Float64, 3})</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="92">
 <div class="ansi-escaped-output">
 <pre>Chains MCMC chain (5000×15×4 Array{Float64, 3}):
 Iterations        = 1001:1:6000
 Number of chains  = 4
 Samples per chain = 5000
-Wall duration     = 15.53 seconds
-Compute duration  = 13.19 seconds
+Wall duration     = 2.25 seconds
+Compute duration  = 2.09 seconds
 parameters        = σ², a, b
 internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
 Summary Statistics
@@ -472,9 +476,9 @@ Quantiles
 <div class="page-columns page-full"><p>How can we interpret the output? The first parts of the summary statistics are straightforward: we get the mean, standard deviation, and Monte Carlo standard error (<code>mcse</code>) of each parameter. We also get information about the effective sample size (ESS)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> and <span class="math inline">\(\hat{R}\)</span>, which measures the ratio of within-chain variance and across-chain variance as a check for convergence<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;The ESS reflects the efficiency of the sampler: this is an estimate of the equivalent number of independent samples; the more correlated the samples, the lower the ESS.</p></li><li id="fn3"><p><sup>3</sup>&nbsp;The closer <span class="math inline">\(\hat{R}\)</span> is to 1, the better.</p></li></div></div>
 <p>In this case, we can see that we were able to recover the “true” data-generating values of <span class="math inline">\(\sigma^2 = 10\)</span> and <span class="math inline">\(b = 4\)</span>, but <span class="math inline">\(a\)</span> is slightly off (the mean is 3, rather than the data-generating value of 5). This isn’t surprising: given the variance of the noise <span class="math inline">\(\sigma^2\)</span>, there are many different intercepts which could fit within that spread.</p>
 <p>Let’s now plot the chains for visual inspection.</p>
-<div class="cell" data-execution_count="7">
+<div class="cell page-columns page-full" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display column-page-inset-right" data-execution_count="93">
 <div id="fig-chains-regression" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="tutorial_files/figure-html/fig-chains-regression-output-1.svg" class="img-fluid figure-img"></p>
@@ -489,7 +493,7 @@ Quantiles
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mle_model <span class="op">=</span> <span class="fu">linear_regression</span>(x, y); <span class="co"># specify the model object</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">optimize</span>(mle_model, <span class="fu">MLE</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<div class="no-row-height column-margin column-container"><div class="cell-output cell-output-display" data-execution_count="9">
+<div class="no-row-height column-margin column-container"><div class="cell-output cell-output-display" data-execution_count="94">
 <pre><code>ModeResult with maximized lp of -34.57
 3-element Named Vector{Float64}
 A   │ 
@@ -518,7 +522,7 @@ A   │
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
 <span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y</span>
 <span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="95">
 <pre><code>mc_predict_regression (generic function with 1 method)</code></pre>
 </div>
 </div>
@@ -526,7 +530,7 @@ A   │
 <div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x_pred <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">20</span>;</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> <span class="fu">mc_predict_regression</span>(x_pred, chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="96">
 <pre><code>21×20000 Matrix{Float64}:
    6.68936    -1.81801  -4.58763  …   14.6356    -0.671331   5.57161
    2.46789     7.18889   9.67166       6.15337   -0.285616  13.6276
@@ -565,7 +569,7 @@ A   │
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># plot median line</span></span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(x_pred, y_med, color<span class="op">=:</span>blue, label<span class="op">=</span><span class="st">"Prediction Median"</span>)</span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(x, y, color<span class="op">=:</span>red, label<span class="op">=</span><span class="st">"Data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="98">
 <div id="fig-prediction-regression" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="tutorial_files/figure-html/fig-prediction-regression-output-1.svg" class="img-fluid figure-img"></p>
@@ -580,10 +584,10 @@ A   │
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>y_pred_data <span class="op">=</span> <span class="fu">mc_predict_regression</span>(x, chain)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>y_med_data <span class="op">=</span> <span class="fu">quantile</span>.(<span class="fu">eachrow</span>(y_pred_data), <span class="fl">0.5</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>residuals <span class="op">=</span> y_med_data <span class="op">.-</span> y</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">pacf</span>(residuals, <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>), line<span class="op">=:</span>stem, marker<span class="op">=:</span>circle, legend<span class="op">=:</span><span class="cn">false</span>, grid<span class="op">=:</span><span class="cn">false</span>, linewidth<span class="op">=</span><span class="fl">2</span>, xlabel<span class="op">=</span><span class="st">"Lag"</span>, ylabel<span class="op">=</span><span class="st">"Partial Autocorrelation"</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">pacf</span>(residuals, <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>), line<span class="op">=:</span>stem, marker<span class="op">=:</span>circle, legend<span class="op">=:</span><span class="cn">false</span>, grid<span class="op">=:</span><span class="cn">false</span>, linewidth<span class="op">=</span><span class="fl">2</span>, xlabel<span class="op">=</span><span class="st">"Lag"</span>, ylabel<span class="op">=</span><span class="st">"Partial Autocorrelation"</span>, markersize<span class="op">=</span><span class="fl">8</span>, tickfontsize<span class="op">=</span><span class="fl">14</span>, guidefontsize<span class="op">=</span><span class="fl">16</span>, legendfontsize<span class="op">=</span><span class="fl">16</span>)</span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hline!</span>([<span class="fl">0</span>], linestyle<span class="op">=:</span>dot, color<span class="op">=:</span>red)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<div class="no-row-height column-margin column-container"><div class="cell-output cell-output-display" data-execution_count="14">
+<div class="no-row-height column-margin column-container"><div class="cell-output cell-output-display" data-execution_count="99">
 <div id="fig-residuals-regression" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="tutorial_files/figure-html/fig-residuals-regression-output-1.svg" class="img-fluid figure-img"></p>
@@ -591,9 +595,46 @@ A   │
 </figure>
 </div>
 </div></div></div>
-
-
 </section>
+</section>
+<section id="fitting-extreme-value-models-to-tide-gauge-data" class="level2">
+<h2 class="anchored" data-anchor-id="fitting-extreme-value-models-to-tide-gauge-data">Fitting Extreme Value Models to Tide Gauge Data</h2>
+<p>Let’s now look at an example of fitting an extreme value distribution (namely, a generalized extreme value distribution) to tide gauge data.</p>
+<p>First, we’ll download and plot the data:</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>fname <span class="op">=</span> <span class="st">"data/tds.csv"</span> <span class="co"># CHANGE THIS!</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://www.sciencebase.gov/catalog/file/get/5d5af82de4b01d82ce8ed296?f=__disk__b9%2Fb7%2F40%2Fb9b74037d91c45e730ba4c170fe3ffaf9470d360"</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> !<span class="fu">isfile</span>(fname)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">Downloads</span>.<span class="fu">download</span>(url, fname)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>tds <span class="op">=</span> <span class="fu">DataFrame</span>(CSV.<span class="fu">File</span>(fname))</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>tds[!, [<span class="op">:</span>date, <span class="op">:</span>discharge_cms, <span class="op">:</span>tds_mgL]]</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fu">scatter</span>(tds.discharge_cms, tds.tds_mgL, xlabel<span class="op">=</span>L<span class="st">"Discharge~(</span><span class="sc">$</span>m<span class="st">^3/s</span><span class="sc">$</span><span class="st">)", </span>ylabel<span class="st">=L"</span>Total dissolved <span class="fu">solids~</span>(<span class="op">$</span>mg<span class="op">/</span>L<span class="op">$</span>)<span class="st">", title="</span>Cuyahoga River, Ohio, <span class="fl">1969</span>–<span class="fl">1973</span><span class="st">", label="</span>Data<span class="st">")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="100">
+<div id="fig-tds-scatter" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="tutorial_files/figure-html/fig-tds-scatter-output-1.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;5: Total dissolved solids (<span class="math inline">\(mg/L\)</span>) vs.&nbsp;discharge (<span class="math inline">\(m^3/s\)</span>) for the Cuyahoga River from 1969 to 1973. Data obtained from <a href="https://doi.org/10.3133/tm4A3">Statistical Methods in Water Resources</a>.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note at <a href="#fig-tds-scatter">Figure&nbsp;5</a> does not look linear at all. However, it does look roughly like an inverse-exponential plot, which suggests that logarithmically-transforming the <span class="math inline">\(x\)</span>-axis might look linear.</p>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x_ticks <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">5</span>, <span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">50</span>, <span class="fl">100</span>]</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(p, xaxis<span class="op">=:</span>log, xticks<span class="op">=</span>(x_ticks, <span class="fu">string</span>.(x_ticks)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="101">
+<div id="fig-tds-log-scatter" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="tutorial_files/figure-html/fig-tds-log-scatter-output-1.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6: The same plot as <a href="#fig-tds-scatter">Figure&nbsp;5</a>, but with the <span class="math inline">\(x\)</span>-axis shown on a log scale.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+
+
 </section>
 
 

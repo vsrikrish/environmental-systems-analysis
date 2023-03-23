@@ -18,6 +18,7 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        version: pre-release
         
       - name: Set up Python
         uses: actions/setup-python@v2

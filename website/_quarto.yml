@@ -1,5 +1,7 @@
 project:
   type: website
+  preview:
+    port: 4200
 
 website:
   page-navigation: true
@@ -12,17 +14,25 @@ website:
 
   open-graph: true
 
+
   page-footer:
-    right: "This page was built with [Quarto](https://quarto.org)."
-    left: "&copy; 2023, Vivek Srikrishnan"
+    right: |
+      Made with [Julia](https://julialang.org) and [Quarto](https://quarto.org/)<br>
+      [View the source at {{< fa brands github >}} GitHub]({{< var course.github >}})
+
+    left: |
+      Content {{< fa copyright >}} {{< var course.copyright_year >}}  by [{{< var instructor.name_no_title >}}]({{< var instructor.url >}}).
+      See the [About page](/about.html) page for credit information.<br>
+      All content licensed under a {{< fa brands creative-commons >}}
+      {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}}
+      [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
   sidebar:
     style: docked
     align: center
     background: "#222222"
     logo: _assets/cornell_logo_simple_b31b1b.svg
-    title: "BEE 4750: Environmental Systems Analysis"
-    subtitle: "BEE 4750"
+    title: "{{< var course.number >}}: {{< course.title >}}"
     search: true
     tools: 
       - icon: github
@@ -47,10 +57,12 @@ website:
             text: Schedule
           - href: syllabus.qmd
             text: Syllabus
-      - section: "Computing"
+      - section: "Julia Tutorials"
         contents:
-          - href: computing/julia-examples.qmd
-            text: Julia Examples
+          - href: tutorials/julia-basics.qmd
+            text: Julia Basics
+          - href: tutorials/julia-plots.qmd
+            text: Making Plots
       - section: "Project"
       - section: "Weekly Materials"
       - text: "FAQ"
@@ -81,7 +93,10 @@ format:
     callout-appearance: simple
     reference-location: margin
     citation-location: margin
+    code-annotations: select
 
+bibliography: references.bib
+csl: _assets/references/american-geophysical-union.csl
 execute:
   freeze: auto
   

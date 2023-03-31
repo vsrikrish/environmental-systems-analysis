@@ -57,16 +57,17 @@ website:
             text: Schedule
           - href: syllabus.qmd
             text: Syllabus
+      - section: assignments.qmd
+      - section: labs.qmd
+      - section: project.qmd
+      - text: "FAQ"
+        href: faq.qmd
       - section: "Julia Tutorials"
         contents:
           - href: tutorials/julia-basics.qmd
             text: Julia Basics
           - href: tutorials/julia-plots.qmd
             text: Making Plots
-      - section: "Project"
-      - section: "Weekly Materials"
-      - text: "FAQ"
-        href: faq.qmd
       - section: "Supplemental Notes"
       - section: Resources
         contents:

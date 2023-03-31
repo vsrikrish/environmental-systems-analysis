@@ -15,11 +15,19 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Pull & update submodules recursively
+        run: |
+          git submodule update --init --recursive
+          git submodule update --recursive --remote
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: pre-release
+          tinytex: true
         
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -43,6 +51,6 @@ jobs:
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
-          path: "website"
+          path: "."
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

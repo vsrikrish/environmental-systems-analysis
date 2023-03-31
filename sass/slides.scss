@@ -1,0 +1,150 @@
+/*-- scss:defaults --*/
+
+// fonts
+@import 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&IBM+Plex+Serif&family=Source+Serif+Pro&family=Source+Code+Pro&IBM+Plex+Mono&display=swap';
+
+@import 'https://kit.fontawesome.com/d16123e5b5.css';
+
+$font-family-sans-serif: "IBM Plex Sans", sans-serif;
+$font-family-monospace: "Source Code Pro", "IBM Plex Mono", monospace;
+$font-family-serif: "Source Serif Pro", "IBM Plex Serif", serif;
+
+$presentation-font-size-root: 45px;
+
+// headings
+$presentation-heading-font: "Source Serif Pro", "IBM Plex Serif", serif !important;
+$presentation-heading-color: #b31b1b !important;
+
+// colors
+$body-color: #222222;
+
+/*-- scss:rules --*/
+
+details>summary {
+    font-size: 0.75em;
+}
+ 
+h2 {
+    border-bottom: 2px solid #b31b1b;
+}
+
+h2, h3 {
+    margin-bottom: 10px !important;
+}
+
+.small {
+    font-size: 0.75em;
+}
+  
+.author {
+    font-size: 0.9em;
+    color: #073949;
+    letter-spacing: 0.025em;
+    padding-bottom: 0.02em;
+    display: block;
+}
+
+#title-slide .date {
+    font-size: 1.5em;
+    color: #222222;
+    display: inline;
+    font-variant: small-caps;
+    text-align: center;
+    width: 48%;
+    float: right;
+    padding-top: 0em;
+    margin-top: 0em;
+}
+
+#title-slide .subtitle {
+    font-size: 1.5em;
+    color: #222222;
+    display: inline;
+    font-variant: small-caps;
+    text-align: center;
+    width: 48%;
+    float: left;
+    padding-top: 0em;
+    margin-top: 0em;
+}
+
+.footer{
+    font-size: 0.5em !important;
+}
+
+#TOC a {
+    font-size: 1.2em;
+}
+
+#TOC ul {
+    line-height: 2em;
+}
+
+ol ol {
+    list-style-type: lower-roman;
+}
+
+ul ul {
+    list-style-type: square;
+}
+
+a {
+    font-color: #006699;
+    text-decoration: none;
+}
+
+blockquote {
+    background: #f7f7f7;
+    border-left: 10px solid #222;
+    margin: 2px 1em;
+    padding: 0px 1em;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+strong {color: #EF4035;}
+
+.slide-number {
+    font-size: 0.5em !important;
+    color: #073949 !important;
+}
+
+.reveal th, td, table {
+    padding: 5px;
+    border: 2px solid black !important;
+}
+
+.reveal table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reveal tr:nth-child(even){
+    background-color: #f7f7f7;
+}
+
+.reveal th {
+    color: #EF4035;
+    font-weight: bold;
+}
+
+.reveal figcaption {
+    text-align: center;
+    font-style: italic;
+}
+
+.cell-output {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reveal p.caption {
+    font-size: 0.7em;
+    color: #222222;
+    font-style: italic;
+    font-family: $font-family-serif;
+    padding-top: 1px;
+    display: block;
+    text-align: center;
+}

@@ -1,0 +1,104 @@
+project:
+  type: website
+  preview:
+    port: 4200
+
+website:
+  page-navigation: true
+  title: "BEE 4750 - Fall 2023"
+  description: "Homepage for BEE 4750/5750, Environmental Systems Analysis, at Cornell University, Fall 2023."
+  site-url: "https://viveks.me/environmental-systems-analysis"
+
+  repo-url: https://github.com/vsrikrish/environmental-systems-analysis
+  repo-actions: [edit, issue]
+
+  open-graph: true
+
+
+  page-footer:
+    right: |
+      Made with [Julia](https://julialang.org) and [Quarto](https://quarto.org/)<br>
+      [View the source at {{< fa brands github >}} GitHub]({{< var course.github >}})
+
+    left: |
+      Content {{< fa copyright >}} {{< var course.copyright_year >}}  by [{{< var instructor.name_no_title >}}]({{< var instructor.url >}}).
+      See the [About page](/about.html) page for credit information.<br>
+      All content licensed under a {{< fa brands creative-commons >}}
+      {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}}
+      [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+  sidebar:
+    style: docked
+    align: center
+    background: "#222222"
+    logo: _assets/cornell_logo_simple_b31b1b.svg
+    title: "{{< var course.number >}}: {{< course.title >}}"
+    search: true
+    tools: 
+      - icon: github
+        href: https://github.com/vsrikrish/environmental-systems-analysis
+        text: "Github Repository"
+      - icon: journal-check
+        href: https://canvas.cornell.edu
+        text: "Canvas"
+      - icon: chat-fill
+        text: "Ed Discussion"
+        url: https://edstem.org
+      - icon: bar-chart-fill
+        text: "Gradescope"
+        url: https://gradescope.com
+    collapse-level: 1
+    contents:
+      - section: "Course Information"
+        contents:
+          - href: index.qmd
+            text: Overview
+          - href: schedule.qmd
+            text: Schedule
+          - href: syllabus.qmd
+            text: Syllabus
+      - section: assignments.qmd
+      - section: labs.qmd
+      - section: project.qmd
+      - text: "FAQ"
+        href: faq.qmd
+      - section: "Julia Tutorials"
+        contents:
+          - href: tutorials/julia-basics.qmd
+            text: Julia Basics
+          - href: tutorials/julia-plots.qmd
+            text: Making Plots
+      - section: "Supplemental Notes"
+      - section: Resources
+        contents:
+          - href: resources/julia.qmd
+            text: Julia
+          - href: resources/github.qmd
+            text: GitHub
+          - href: resources/markdown.qmd
+            text: Markdown
+          - href: resources/optimization.qmd
+            text: Optimization and Decision-Making
+
+
+format:
+  html:
+    theme: 
+      light: [cosmo, sass/theme.scss]
+      dark: [cosmo, sass/theme-dark.scss]
+    mainfont: "Atkinson Hyperlegible"
+    copy-code: true
+    code-overflow: wrap
+    toc: true
+    anchor-sections: true
+    callout-appearance: simple
+    reference-location: margin
+    citation-location: margin
+    code-annotations: select
+
+bibliography: references.bib
+csl: _assets/references/american-geophysical-union.csl
+execute:
+  freeze: auto
+  
+

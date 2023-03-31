@@ -1,0 +1,34 @@
+author: Vivek Srikrishnan
+
+instructor:
+  name: Professor Vivek Srikrishnan
+  name_no_title: Vivek Srikrishnan
+  email: viveks@cornell.edu
+  url: "https://viveks.me"
+  github: vsrikrish
+  office: "318 Riley-Robb"
+  contact_policy: >-
+    Use the class's Ed Discussion board for any class-related queries.
+  appointment_url: https://calendly.com/vsrikrish/
+
+course:
+  number: "BEE 4750/5750"
+  title: "Environmental Systems Analysis"
+  semester: "Spring 2023"
+  days: "MWF"
+  time: "1:25-2:15pm"
+  location: "TBD"
+  github: "https://www.github.com/vsrikrish/environmental-systems-analysis"
+  url: "https://viveks.me/environmental-systems-analysis"
+  copyright_year: "2023"
+
+university:
+  name: Cornell University
+  url: "https://www.cornell.edu"
+
+department:
+  name: Department of Biological & Environmental Engineering
+  url: "https://bee.cals.cornell.edu"
+
+github_org:
+  repo: "https://github.com/BEE4750"

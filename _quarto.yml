@@ -84,8 +84,7 @@ website:
 format:
   html:
     theme: 
-      light: [cosmo, sass/theme.scss]
-      dark: [cosmo, sass/theme-dark.scss]
+      [zephyr, sass/theme.scss]
     mainfont: "Atkinson Hyperlegible"
     copy-code: true
     code-overflow: wrap

@@ -57,7 +57,7 @@ website:
             text: Schedule
           - href: syllabus.qmd
             text: Syllabus
-      - section: assignments.qmd
+      - section: hw.qmd
       - section: labs.qmd
       - section: project.qmd
       - text: "FAQ"

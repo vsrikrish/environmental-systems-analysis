@@ -9,6 +9,6 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 ::: column-screen-inset-right
 | Week | Date        | Topic | Slides | AE | Lab | HW | Project |
 :-----:|:------------|:------|:------:|:--:|:---:|:--:|:-------:|
-| 1    | Mon, Aug 21 | Welcome to BEE 4750! | [{{< fa sharp presentation-screen >}}](slides/lec-01-class-intro.html){target="_blank"}  | [{{< fa sharp coffee-pot >}}](ae/ae-01-setup.html) |  | [{{< fa sharp pen-field >}}](hw/hw-01-debug.html) | |
+| 1    | Mon, Aug 21 | Welcome to BEE 4750! | [{{< fa sharp presentation-screen >}}](slides/lec-01-class-intro.html){target="_blank"}  | [{{< fa sharp coffee-pot >}}](ae/ae-01-setup.html) |  | [{{< fa sharp pen-field >}}](hw/hw01/hw01.html) | |
 | | Wed, Aug 23 | Julia Basics and Setup | | | [{{< fa sharp laptop >}}](labs/lab-01-basics.html) | | |
 :::

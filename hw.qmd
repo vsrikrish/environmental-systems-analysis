@@ -1,5 +1,5 @@
 ---
-title: "Assignments"
+title: "Homework"
 tbl-colwidths: [20, 5, 5, 10]
 ---
 
@@ -18,5 +18,5 @@ This page contains information about and a schedule of the homework assignments 
 
 | Assignment | Instructions | Rubric | Solutions | Due Date |
 |:----------:|:------------:|:------:|:---------:|:--------:|
-| HW1 | [{{< fa sharp pen-field >}}](assignments/hw01/hw01.html) | [{{< fa sharp file-check >}}](assignments/hw01/rubric.html) | [{{< fa sharp key-skeleton >}}](assignments/solutions/hw01-solution.html) |Sep 08, 2023 |
+| HW1 | [{{< fa sharp pen-field >}}](hw/hw01/hw01.html) | [{{< fa sharp file-check >}}](hw/rubrics/hw01-rubric.qmd) | [{{< fa sharp key-skeleton >}}]{style="color:grey"} | Sep 08, 2023 |
 

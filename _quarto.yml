@@ -30,8 +30,7 @@ website:
   sidebar:
     style: docked
     align: center
-    background: "#222222"
-    logo: _assets/cornell_logo_simple_b31b1b.svg
+    logo: _assets/logos/cornell_logo_simple_b31b1b.svg
     title: "{{< var course.number >}}: {{< course.title >}}"
     search: true
     tools: 
@@ -58,7 +57,12 @@ website:
           - href: syllabus.qmd
             text: Syllabus
       - section: hw.qmd
+        contents:
+          - href: hw/hw01/hw01.qmd
+            text: Homework 1
       - section: labs.qmd
+        contents:
+          - labs/lab01/lab01.qmd
       - section: project.qmd
       - text: "FAQ"
         href: faq.qmd

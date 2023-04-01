@@ -224,6 +224,27 @@
     "text": "Package management\nSometimes you might need functionality that does not exist in base Julia. Julia handles packages using the Pkg package manager. After finding a package which has the functions that you need, you have two options: 1. Use the package management prompt in the Julia REPL (the standard Julia interface; what you get when you type julia in your terminal). Enter this by typing ] at the standard green Julia prompt julia&gt;. This will become a blue pkg&gt;. You can then download and install new packages using add packagename. 2. From the standard prompt, enter using Pkg; Pkg.add(packagename). The packagename package can then be used by adding using packagename to the start of the script."
   },
   {
+    "objectID": "hw.html",
+    "href": "hw.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "This page contains information about and a schedule of the homework assignments for the semester."
+  },
+  {
+    "objectID": "hw.html#general-information",
+    "href": "hw.html#general-information",
+    "title": "Assignments",
+    "section": "General Information",
+    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.\nTo convert the assignment notebook to PDF, you can use VS Code to render the notebook to HTML, and then use your browser to print to PDF. If you have set up LaTeX with VS Code, you can convert directly to a PDF."
+  },
+  {
+    "objectID": "hw.html#schedule",
+    "href": "hw.html#schedule",
+    "title": "Assignments",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nRubric\nSolutions\nDue Date\n\n\n\n\nHW1\n\n\n\nSep 08, 2023"
+  },
+  {
     "objectID": "slides/notebooks/economic-dispatch.html",
     "href": "slides/notebooks/economic-dispatch.html",
     "title": "Economic Dispatch with JuMP",
@@ -474,27 +495,6 @@
     "title": "Welcome to BEE 4750!",
     "section": "Next Classes",
     "text": "Next Classes\nWednesday: Onboarding/AE to set up Julia and GitHub and get a head start on HW 1.  Monday: What is a system? Why do we care?\n\n\nBEE 4750, Environmental Systems Analysis"
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "This page contains information about and a schedule of the homework assignments for the semester."
-  },
-  {
-    "objectID": "assignments.html#general-information",
-    "href": "assignments.html#general-information",
-    "title": "Assignments",
-    "section": "General Information",
-    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.\nTo convert the assignment notebook to PDF, you can use VS Code to render the notebook to HTML, and then use your browser to print to PDF. If you have set up LaTeX with VS Code, you can convert directly to a PDF."
-  },
-  {
-    "objectID": "assignments.html#schedule",
-    "href": "assignments.html#schedule",
-    "title": "Assignments",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nRubric\nDue Date\n\n\n\n\nHW1\n\n\nSep 08, 2023"
   },
   {
     "objectID": "syllabus.html",

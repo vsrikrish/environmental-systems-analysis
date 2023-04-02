@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BEE 4750 - Fall 2023 - Lab 01 - Julia Basics</title>
+<title>BEE 4750 - Fall 2023 - Tutorial: Using LaTeX in Jupyter Notebooks</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,6 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../resources/julia.html" rel="next">
+<link href="../tutorials/julia-plots.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -98,8 +100,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="BEE 4750 - Fall 2023 - Lab 01 - Julia Basics">
+<meta property="og:title" content="BEE 4750 - Fall 2023 - Tutorial: Using LaTeX in Jupyter Notebooks">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://viveks.me/environmental-systems-analysis/tutorials/latex-notebook_files/figure-html/cell-3-output-1.svg">
 <meta property="og:site-name" content="BEE 4750 - Fall 2023">
 </head>
 
@@ -112,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">BEE 4750/5750</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/julia-basics.html">Julia Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/latex-notebook.html">Math in Notebooks</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -221,13 +224,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
  <span class="menu-text">Julia Tutorials</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/julia-basics.html" class="sidebar-item-text sidebar-link">
@@ -238,6 +241,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../tutorials/julia-plots.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Making Plots</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/latex-notebook.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Math in Notebooks</span></a>
   </div>
 </li>
       </ul>
@@ -291,29 +300,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#julia" id="toc-julia" class="nav-link" data-scroll-target="#julia">Julia</a></li>
-  <li><a href="#jupyter-notebooks" id="toc-jupyter-notebooks" class="nav-link" data-scroll-target="#jupyter-notebooks">Jupyter Notebooks</a></li>
-  <li><a href="#julia-basics" id="toc-julia-basics" class="nav-link" data-scroll-target="#julia-basics">Julia Basics</a></li>
-  <li><a href="#formatting-math" id="toc-formatting-math" class="nav-link" data-scroll-target="#formatting-math">Formatting Math</a></li>
-  <li><a href="#looking-for-help" id="toc-looking-for-help" class="nav-link" data-scroll-target="#looking-for-help">Looking For Help</a></li>
-  </ul></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
-  <ul class="collapse">
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  <li><a href="#exercise-3-making-a-plot" id="toc-exercise-3-making-a-plot" class="nav-link" data-scroll-target="#exercise-3-making-a-plot">Exercise 3: Making a Plot</a></li>
-  </ul></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#inline-mathematics" id="toc-inline-mathematics" class="nav-link" data-scroll-target="#inline-mathematics">Inline Mathematics</a></li>
+  <li><a href="#displaying-equations" id="toc-displaying-equations" class="nav-link" data-scroll-target="#displaying-equations">Displaying Equations</a></li>
+  <li><a href="#sizing-parentheses-or-brackets" id="toc-sizing-parentheses-or-brackets" class="nav-link" data-scroll-target="#sizing-parentheses-or-brackets">Sizing Parentheses or Brackets</a></li>
+  <li><a href="#using-latex-in-figures" id="toc-using-latex-in-figures" class="nav-link" data-scroll-target="#using-latex-in-figures">Using LaTeX in Figures</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/vsrikrish/environmental-systems-analysis/blob/main/labs/lab-01-basics.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/tutorials/latex-notebook.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 01 - Julia Basics</h1>
+<h1 class="title">Tutorial: Using LaTeX in Jupyter Notebooks</h1>
 </div>
 
 
@@ -328,125 +328,121 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p><a href="https://github.com/EnvironmentalSystemsAnalysis-FA23/lab01">Download on <i class="fa-brands fa-github" aria-label="github"></i>.</a></p>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<section id="julia" class="level3">
-<h3 class="anchored" data-anchor-id="julia">Julia</h3>
-<p>Julia is an up-and-coming language, originally developed for scientific programming. While learning a new programming language always has its hiccups, the good news is that if you’ve programmed in a high-level language such as Python or MATLAB, most Julia concepts should look familiar. This notebook will guide you through the basics of writing Julia code and where to look for help. It was adapted from materials by Patrick Applegate and Klaus Keller (<a href="https://leanpub.com/raes">Risk Analysis in the Earth Sciences</a>), <a href="https://tonyewong.github.io/">Tony Wong</a>, and <a href="https://www.hadjimichael.info/">Antonia Hadjimichael</a>.</p>
-<p>If you have not successfully set up Julia, follow the instructions in <a href="ae/ae-01-setup.html">Application Exercise 1</a> and/or ask for help.</p>
-<p>You can use other editors for this course, but our recommendation is <a href="https://code.visualstudio.com/">Visual Studio Code</a> with the <a href="https://marketplace.visualstudio.com/items?itemName=julialang.language-julia">Julia extension</a>, which will make life a <em>lot</em> simpler! You should have set this up as part of <a href="ae/ae-01-setup.html">Application Exercise 1</a>, but if not, do so now and/or ask for help.</p>
+<p>This tutorial was inspired and draws from <a href="http://chebe163.caltech.edu/2018w/handouts/intro_to_latex.html">Justin Bois’ tutorial</a>.</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In this tutorial, you will learn how to typeset mathematics and equations in Jupyter notebooks using LaTeX.</p>
 </section>
-<section id="jupyter-notebooks" class="level3">
-<h3 class="anchored" data-anchor-id="jupyter-notebooks">Jupyter Notebooks</h3>
-<p>Jupyter notebooks integrate text and equations in Markdown with Julia (or Python, or R) code. To do this, Jupyter notebooks consist of two types of “cells”: code cells and Markdown (text) cells.</p>
-<p>Click once on this section of text. A box will appear around this text (and some areas above/below it) - all of that is within this cell.</p>
-<p>Markdown is a text markup framework for formatting language that makes things look pretty when viewed across different platforms: web browsers, notebooks, and so forth. Text written in Markdown can also include hyperlinks, LaTeX equations, section headers, and images, among other features (most of <a href="https://viveks.me/climate-risk-analysis">the course website</a> and the lecture notes were all written in Markdown!). <a href="https://www.markdownguide.org/cheat-sheet/">Here is a basic Markdown cheat sheet</a>.</p>
-<p>What you are looking at right now is the formatted text after the Markdown is processed. To see the raw Markdown, do one of:</p>
-<ul>
-<li>press <code>Enter</code> while that cell is selected, or</li>
-<li>double-click on that cell.</li>
-</ul>
-<hr>
-<p>A couple of the features you will see in this Markdown cell:</p>
-<ul>
-<li>The <code>---</code> command creates a horizontal line. This is also nice for separating sections.</li>
-<li>Backticks (<code>`...`</code>) can be used to format and highlight code, keystrokes, etc.</li>
-<li>The <code>#</code> sign is used to create a new section header; two <code>#</code> signs (<code>##</code>) is used to create a new subsection header; <code>###</code> creates a subsubsection, and so on.</li>
-<li>You can create a bulleted list by using the asterisk <code>*</code> or a dash <code>-</code> and a space.</li>
-<li>You can create regular text by just typing as usual.</li>
-<li>You can create <strong>bold-faced text</strong> by wrapping it with two asterisks on both sides.</li>
-<li>You can create <em>italicized text</em> by wrapping it with a single asterisk on both sides.</li>
-<li>To create a new paragraph, you must include a blank line between the old and new paragraphs.</li>
-</ul>
-<p>At this point you might be wondering how to turn this cell back into the fully formatted Markdown text instead of the raw Markdown you’re probably still looking at. You have a couple of options, depending on your platform, but the most consistent is to type <code>Shift + Enter</code> to <strong>execute</strong> the cell (this is also how to run code, but more on that later).</p>
-<p>Additionally, you will frequently need to create new cells in your Jupyter notebooks. How you do this will depend on how you interact with the notebook, but try to figure this out now.</p>
-<p>One tip is to think carefully about what bits of code should be in the same cell, as you typically only see output from the last command in a cell. For example, compare the following:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">5</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="inline-mathematics" class="level2">
+<h2 class="anchored" data-anchor-id="inline-mathematics">Inline Mathematics</h2>
+<p>To include mathematical notation within text, enclose the LaTeX within dollar signs <code>$</code>. For example, to obtain the output</p>
+<blockquote class="blockquote">
+<p>the objective function is <span class="math inline">\(4x + 7x\)</span>,</p>
+</blockquote>
+<p>you would enter</p>
+<blockquote class="blockquote">
+<p><code>the objective function is $4x + 7x$</code>.</p>
+</blockquote>
+<p>You can enter subscripts and superscripts with <code>_</code> and <code>^</code>, respectively; to get</p>
+<blockquote class="blockquote">
+<p>the function is <span class="math inline">\(f(x_i) = x_i^2\)</span>,</p>
+</blockquote>
+<p>type</p>
+<blockquote class="blockquote">
+<p>the function is <code>$f(x_i) = x_i^2$</code>.</p>
+</blockquote>
+<p>If you want multiple characters to be enclosed in a subscript or superscript, enclose them in braces <code>{}</code>:</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(e^{i \pi} - 1 = 0\)</span> is produced by</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><code>$e^{i \pi} - 1 = 0$</code>.</p>
+</blockquote>
+<p>To get special characters like <span class="math inline">\(\pi\)</span> (or other Greek letters), precede their name (or sometimes a code) with a backslash: <code>$\pi$</code>. There are a number of special characters like this, which you can find in <a href="https://ctan.math.washington.edu/tex-archive/info/undergradmath/undergradmath.pdf">cheatsheets like this one</a>.</p>
+<p>Bold characters, which you might use to denote vectors, can be rendered using <code>\mathbf</code>:</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(\mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^n a_i \times b_i\)</span></p>
+</blockquote>
+<blockquote class="blockquote">
+<p><code>$\mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^n a_i \times b_i$</code></p>
+</blockquote>
+<p>Fractions can be displayed using <code>\frac{}{}</code>, where the first bracket encloses the numerator and the second the denominator, as in</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(\frac{1}{2}\)</span></p>
+</blockquote>
+<blockquote class="blockquote">
+<p><code>$\frac{1}{2}$</code></p>
+</blockquote>
+</section>
+<section id="displaying-equations" class="level2">
+<h2 class="anchored" data-anchor-id="displaying-equations">Displaying Equations</h2>
+<p>To place equations or other mathematics on their own line(s), enclose the entire block in <em>two</em> dollar signs <code>$$</code>. For example, the prior dot-product definition could be displayed as <span class="math display">\[
+\mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^n a_i \times b_i
+\]</span> using</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\mathbf</span><span class="ss">{a} </span><span class="sc">\cdot</span><span class="ss"> </span><span class="sc">\mathbf</span><span class="ss">{b} = </span><span class="sc">\sum</span><span class="ss">_{i=1}^n a_i </span><span class="sc">\times</span><span class="ss"> b_i</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Displaying equations on their own line(s) can improve the spacing of symbols like sums (as above) or fractions: compare the inline</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(x &lt; \frac{1}{2}\)</span></p>
+</blockquote>
+<p>to <span class="math display">\[
+x &lt; \frac{1}{2}.
+\]</span></p>
+<p>To display multiple related lines in a single block, there are two environments of note. The first will center all of the equations, and is obtained by enclosing the equations in <code>\begin{gather}</code> and <code>\end{gather}</code>. Each line should be separated with <code>\\</code>:</p>
+<p><span class="math display">\[
+\begin{gather}
+x_1 + x_2 \leq 5 \\
+y \leq \frac{1}{2}.
+\end{gather}
+\]</span></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">gather</span>}</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">x_1 + x_2 </span><span class="sc">\leq</span><span class="ss"> 5 </span><span class="sc">\\</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ss">y </span><span class="sc">\leq</span><span class="ss"> </span><span class="sc">\frac</span><span class="ss">{1}{2}.</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">gather</span>}</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The second environment will let you align the equations as you wish instead of automatically centering them, and is used by enclosing the equations with <code>\begin{align}</code> and <code>\end{align}</code>, with an ampersand <code>&amp;</code> in front of the characters which will be used on each line to align the equations:</p>
+<p><span class="math display">\[
+\begin{align}
+x_1 + x_2 &amp;\leq 5 \\
+y &amp;\leq \frac{1}{2}.
+\end{align}
+\]</span></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ss">x_1 + x_2 &amp;</span><span class="sc">\leq</span><span class="ss"> 5 </span><span class="sc">\\</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ss">y &amp;</span><span class="sc">\leq</span><span class="ss"> </span><span class="sc">\frac</span><span class="ss">{1}{2}.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sizing-parentheses-or-brackets" class="level2">
+<h2 class="anchored" data-anchor-id="sizing-parentheses-or-brackets">Sizing Parentheses or Brackets</h2>
+<p>By default, parentheses and brackets are sized for simple characters, but will look bad when used to surround fractions or sums, particularly when they are not used in-line: <span class="math display">\[
+x_n = (\frac{1}{2})^n.
+\]</span> To make this look better, use <code>\left</code> and <code>\right</code> around the left and right parentheses or brackets: <span class="math display">\[
+x_n = \left(\frac{1}{2}\right)^n
+\]</span></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ss">x_n = </span><span class="sc">\left</span><span class="ss">(</span><span class="sc">\frac</span><span class="ss">{1}{2}</span><span class="sc">\right</span><span class="ss">)^n.</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is totally optional, but helps!</p>
+</section>
+<section id="using-latex-in-figures" class="level2">
+<h2 class="anchored" data-anchor-id="using-latex-in-figures">Using LaTeX in Figures</h2>
+<p>You may want to use LaTeX in figures, for example if your <span class="math inline">\(x\)</span>-axis should have a title like <span class="math inline">\(x\)</span>. To do this, load the <code>LaTeXStrings</code> package and precede the relevant LaTeX-formatted string (within in-line dollar signs <code>$</code>) with <code>L</code>, as in:</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LaTeXStrings</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="op">-</span><span class="fl">2</span>π<span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">2</span>π  </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="fu">exp</span>.(<span class="fu">sin</span>.(x)), xlabel<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>x<span class="sc">$</span><span class="st">", </span>ylabel<span class="st">=L"</span><span class="op">$</span>e<span class="op">^</span>{<span class="fu">\sin</span>(x)}<span class="op">$</span><span class="st">", legend=false)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<p><img src="latex-notebook_files/figure-html/cell-3-output-1.svg" class="img-fluid"></p>
 </div>
-<p>with</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>In Julia, you can also suppress the output of a command with a semi-colon:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(x);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>which can help if you want to split some code out for clarity or to insert some text prior to it, but don’t want to clutter the notebook with its output.</p>
-<p>For code cells, to execute the commands within the cell, we also press <code>Shift+Enter</code>.</p>
-<p>Finally, <strong>make sure that you evaluate all of the code cells in order before submitting</strong>. One bad outcome with notebooks occurs when cells are evaluated out of order, so fixed bugs and edits in previous cells do not get a chance to propagate down. You can do this with the <code>Run All</code> command in whichever interface you’re using to edit your notebook.</p>
-</section>
-<section id="julia-basics" class="level3">
-<h3 class="anchored" data-anchor-id="julia-basics">Julia Basics</h3>
-<p>There are many tutorials and references for Julia, including a <a href="../tutorials/julia-basics.html">basics overview on the class website</a>. Please feel free to reference these as you work through any part of the course.</p>
-</section>
-<section id="formatting-math" class="level3">
-<h3 class="anchored" data-anchor-id="formatting-math">Formatting Math</h3>
-<p>It will often be helpful to include nicely-formatted mathematics in a notebook. Markdown accomodates this using LaTeX syntax. A LaTeX cheatsheet is available on the class website, and many other guides exist online.</p>
-<p>Below is an example of a formatted equation: <span class="math display">\[x = 5\]</span>.</p>
-</section>
-<section id="looking-for-help" class="level3">
-<h3 class="anchored" data-anchor-id="looking-for-help">Looking For Help</h3>
-<p>There is no shame in using Google, or other resources, for help when programming. There are many, many times when you can’t quite get the syntax to work, can’t quite figure out the right package or command to use, or are feeling too lazy or overwhelmed (I’m not judging either of those!) to dig through the documentation. Some good resources include:</p>
-<ul>
-<li><a href="https://stackoverflow.com/">Stack Overflow</a> is a treasure trove of answers;</li>
-<li>The <a href="https://discourse.julialang.org/">official Julia forum</a> and the <a href="https://www.reddit.com/r/Julia/">Julia Subreddit</a> are also very useful.</li>
-</ul>
-<p>You are also highly encouraged to post on <a href="https://us.edstem.org">Ed Discussion</a>, though getting a response might be less immediate. Just be mindful that to get good answers, <a href="https://stackoverflow.com/help/how-to-ask">you have to help people help you</a>, and <strong>make sure to give credit to any resources that were helpful</strong>!</p>
-</section>
-</section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
-<p>Use your understanding of Julia syntax to complete the following (hopefully short) exercises. Convert your completed notebook to a PDF and submit it to the Gradescope Assignment “Lab 1”.</p>
-<p><strong>Remember to</strong>:</p>
-<ul>
-<li>Evaluate all of your code cells, in order (using a <code>Run All</code> command). This will make sure all output is visible and that the code cells were evaluated in the correct order.</li>
-<li>Tag each of the problems when you submit to Gradescope; a 10% penalty will be deducted if this is not done.</li>
-</ul>
-<section id="exercise-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>Given two numeric arrays <code>x</code> and <code>y</code>, write a function to compute their dot product if they have equal length, and return an error if not (this is useful for debugging!). Use the following code as a starting point.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">dot_product</span>(x, y)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">...</span> <span class="co"># insert test condition for equal lengths</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="co"># compute and return dot product</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">throw</span>(<span class="fu">DimensionMismatch</span>(<span class="st">"length of x not equal to length of y"</span>))</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>This problem involves implementing Newton’s method for computing square roots; it was shamelessly copied from MIT’s <a href="https://computationalthinking.mit.edu/Spring21/hw0/">Introduction to Computational Thinking</a>. You will use a <code>while</code> loop instead of the <code>for</code> loop above.</p>
-<p>Implement the following algorithm in a function newton_sqrt:</p>
-<p>Given $x &gt; 0:</p>
-<ol type="1">
-<li>Take a guess <span class="math inline">\(a\)</span>.</li>
-<li>Divide <span class="math inline">\(x\)</span> by <span class="math inline">\(a\)</span>.<br>
-</li>
-<li>Update <span class="math inline">\(a\)</span> as the average of <span class="math inline">\(x/a\)</span> and <span class="math inline">\(a\)</span>.</li>
-<li>Repeat until <span class="math inline">\(x/a\)</span> is within a tolerance of <span class="math inline">\(\varepsilon\)</span> from <span class="math inline">\(a\)</span>.</li>
-<li>Return <span class="math inline">\(a \approx \sqrt{x}\)</span>.</li>
-</ol>
-<p>Use your <code>newton_sqrt</code> function to compute <span class="math inline">\(\sqrt{2}\)</span> to within a tolerance of <span class="math inline">\(\varepsilon = 0.01\)</span>.</p>
-</section>
-<section id="exercise-3-making-a-plot" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-3-making-a-plot">Exercise 3: Making a Plot</h3>
-<p>Write a function to compute the square of an integer <code>x</code>. Evaluate this function for integers between <span class="math inline">\(x=-5\)</span> and <span class="math inline">\(x=5\)</span> and make a plot of the squared values (you can find a quick guide to making various types of plots <a href="../tutorials/julia-plots.html">here</a>). Make sure to label your axes.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -750,6 +746,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../tutorials/julia-plots.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Making Plots</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../resources/julia.html" class="pagination-link">
+        <span class="nav-page-text">Julia</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

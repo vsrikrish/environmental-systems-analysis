@@ -62,7 +62,8 @@ website:
             text: Homework 1
       - section: labs.qmd
         contents:
-          - labs/lab01/lab01.qmd
+          - href: labs/lab01/lab01.qmd
+            text: Lab 1
       - section: project.qmd
       - text: "FAQ"
         href: faq.qmd

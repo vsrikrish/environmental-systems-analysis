@@ -31,7 +31,7 @@ website:
     style: docked
     align: center
     logo: _assets/logos/cornell_logo_simple_b31b1b.svg
-    title: "{{< var course.number >}}: {{< course.title >}}"
+    title: "{{< var course.number >}}"
     search: true
     tools: 
       - icon: github
@@ -89,7 +89,7 @@ website:
 format:
   html:
     theme: 
-      [zephyr, sass/theme.scss]
+      [simplex, sass/theme.scss]
     mainfont: "Atkinson Hyperlegible"
     copy-code: true
     code-overflow: wrap

@@ -18,5 +18,5 @@ This page contains information about and a schedule of the homework assignments 
 
 | Assignment | Instructions | Rubric | Solutions | Due Date |
 |:----------:|:------------:|:------:|:---------:|:--------:|
-| HW1 | [{{< fa sharp pen-field >}}](hw/hw01/hw01.html) | [{{< fa sharp file-check >}}](rubrics/hw01-rubric.qmd) | [{{< fa sharp key-skeleton >}}]{style="color:grey"} | Sep 08, 2023 |
+| HW1 | [{{< fa sharp pen-field >}}](hw/hw01/hw01.html) | [{{< fa sharp file-check >}}](rubrics/hw01.qmd) | [{{< fa sharp key-skeleton >}}]{style="color:grey"} | Sep 08, 2023 |
 

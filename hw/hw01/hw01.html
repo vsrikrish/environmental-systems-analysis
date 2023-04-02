@@ -132,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <img src="../../_assets/logos/cornell_logo_simple_b31b1b.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">BEE 4750/5750: </a> 
+      <a href="../../">BEE 4750/5750</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/vsrikrish/environmental-systems-analysis" title="Github Repository" class="quarto-navigation-tool px-1" aria-label="Github Repository"><i class="bi bi-github"></i></a>
     <a href="https://canvas.cornell.edu" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-journal-check"></i></a>
@@ -368,280 +368,11 @@ Due Date
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="pp">@__DIR__</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>  Activating project at `~/work/environmental-systems-analysis/environmental-systems-analysis/hw/hw01`
-   Installed JpegTurbo_jll ──────────────── v2.1.91+0
-   Installed libfdk_aac_jll ─────────────── v2.0.2+0
-   Installed x265_jll ───────────────────── v3.5.0+0
-   Installed GR_jll ─────────────────────── v0.71.8+0
-   Installed Libmount_jll ───────────────── v2.35.0+0
-   Installed LERC_jll ───────────────────── v3.0.0+1
-   Installed OffsetArrays ───────────────── v1.12.9
-   Installed LoggingExtras ──────────────── v1.0.0
-   Installed Opus_jll ───────────────────── v1.3.2+0
-   Installed Xorg_xkbcomp_jll ───────────── v1.4.2+4
-   Installed Measures ───────────────────── v0.3.2
-   Installed RelocatableFolders ─────────── v1.0.0
-   Installed NetworkLayout ──────────────── v0.4.5
-   Installed EarCut_jll ─────────────────── v2.2.4+0
-   Installed Grisu ──────────────────────── v1.0.2
-   Installed Xorg_xcb_util_wm_jll ───────── v0.4.1+1
-   Installed Xorg_xcb_util_image_jll ────── v0.4.0+1
-   Installed Contour ────────────────────── v0.6.2
-   Installed StaticArrays ───────────────── v1.5.19
-   Installed RecipesPipeline ────────────── v0.6.11
-   Installed PlotUtils ──────────────────── v1.3.4
-   Installed Cairo_jll ──────────────────── v1.16.1+1
-   Installed Xorg_libpthread_stubs_jll ──── v0.1.0+3
-   Installed OpenSSL ────────────────────── v1.3.3
-   Installed HTTP ───────────────────────── v1.7.4
-   Installed Xorg_xcb_util_jll ──────────── v0.4.0+1
-   Installed Fontconfig_jll ─────────────── v2.13.93+0
-   Installed Xorg_libxkbfile_jll ────────── v1.1.0+4
-   Installed Libgpg_error_jll ───────────── v1.42.0+0
-   Installed Xorg_libXinerama_jll ───────── v1.1.4+4
-   Installed Xorg_libXau_jll ────────────── v1.0.9+4
-   Installed GR ─────────────────────────── v0.71.8
-   Installed Qt5Base_jll ────────────────── v5.15.3+2
-   Installed FFMPEG ─────────────────────── v0.4.1
-   Installed IrrationalConstants ────────── v0.2.2
-   Installed Showoff ────────────────────── v1.0.3
-   Installed ArnoldiMethod ──────────────── v0.2.0
-   Installed SpecialFunctions ───────────── v2.2.0
-   Installed Bzip2_jll ──────────────────── v1.0.8+0
-   Installed HarfBuzz_jll ───────────────── v2.8.1+1
-   Installed SimpleBufferStream ─────────── v1.1.0
-   Installed Xorg_xcb_util_keysyms_jll ──── v0.4.0+1
-   Installed PlotThemes ─────────────────── v3.1.0
-   Installed xkbcommon_jll ──────────────── v1.4.1+0
-   Installed Pipe ───────────────────────── v1.3.0
-   Installed NaNMath ────────────────────── v1.0.2
-   Installed LZO_jll ────────────────────── v2.10.1+0
-   Installed fzf_jll ────────────────────── v0.29.0+0
-   Installed FriBidi_jll ────────────────── v1.0.10+0
-   Installed StaticArraysCore ───────────── v1.4.0
-   Installed TranscodingStreams ─────────── v0.9.11
-   Installed GLFW_jll ───────────────────── v3.3.8+0
-   Installed Ratios ─────────────────────── v0.4.3
-   Installed UnicodeFun ─────────────────── v0.4.1
-   Installed x264_jll ───────────────────── v2021.5.5+0
-   Installed Colors ─────────────────────── v0.12.10
-   Installed FreeType2_jll ──────────────── v2.10.4+0
-   Installed JLFzf ──────────────────────── v0.1.5
-   Installed Graphs ─────────────────────── v1.8.0
-   Installed CodecZlib ──────────────────── v0.7.1
-   Installed StatsAPI ───────────────────── v1.6.0
-   Installed Xorg_libxcb_jll ────────────── v1.13.0+3
-   Installed libaom_jll ─────────────────── v3.4.0+0
-   Installed libpng_jll ─────────────────── v1.6.38+0
-   Installed GraphRecipes ───────────────── v0.5.12
-   Installed ColorSchemes ───────────────── v3.20.0
-   Installed StatsBase ──────────────────── v0.33.21
-   Installed Scratch ────────────────────── v1.2.0
-   Installed Zstd_jll ───────────────────── v1.5.4+0
-   Installed ColorTypes ─────────────────── v0.11.4
-   Installed Xorg_libXext_jll ───────────── v1.3.4+4
-   Installed Expat_jll ──────────────────── v2.4.8+0
-   Installed TensorCore ─────────────────── v0.1.1
-   Installed GeometryTypes ──────────────── v0.8.5
-   Installed Inflate ────────────────────── v0.1.3
-   Installed Plots ──────────────────────── v1.38.8
-   Installed Extents ────────────────────── v0.1.1
-   Installed Libtiff_jll ────────────────── v4.4.0+0
-   Installed Libffi_jll ─────────────────── v3.2.2+1
-   Installed ColorVectorSpace ───────────── v0.9.10
-   Installed Xorg_libXrender_jll ────────── v0.9.10+4
-   Installed AbstractTrees ──────────────── v0.4.4
-   Installed ChainRulesCore ─────────────── v1.15.7
-   Installed Ogg_jll ────────────────────── v1.3.5+1
-   Installed Xorg_libXi_jll ─────────────── v1.7.10+4
-   Installed XSLT_jll ───────────────────── v1.1.34+0
-   Installed OpenSpecFun_jll ────────────── v0.5.5+0
-   Installed Xorg_libXcursor_jll ────────── v1.2.0+4
-   Installed LogExpFunctions ────────────── v0.3.23
-   Installed InverseFunctions ───────────── v0.1.8
-   Installed Libuuid_jll ────────────────── v2.36.0+0
-   Installed SimpleTraits ───────────────── v0.9.4
-   Installed GPUArraysCore ──────────────── v0.1.4
-   Installed Wayland_protocols_jll ──────── v1.25.0+0
-   Installed Xorg_xcb_util_renderutil_jll ─ v0.3.9+1
-   Installed Adapt ──────────────────────── v3.6.1
-   Installed DocStringExtensions ────────── v0.9.3
-   Installed Graphite2_jll ──────────────── v1.3.14+0
-   Installed libass_jll ─────────────────── v0.15.1+0
-   Installed XML2_jll ───────────────────── v2.10.3+0
-   Installed Gettext_jll ────────────────── v0.21.0+0
-   Installed Wayland_jll ────────────────── v1.21.0+0
-   Installed Pixman_jll ─────────────────── v0.40.1+0
-   Installed OpenSSL_jll ────────────────── v1.1.20+0
-   Installed Xorg_xtrans_jll ────────────── v1.4.0+3
-   Installed IterTools ──────────────────── v1.4.0
-   Installed BitFlags ───────────────────── v0.1.7
-   Installed Libgcrypt_jll ──────────────── v1.8.7+0
-   Installed Xorg_xkeyboard_config_jll ──── v2.27.0+4
-   Installed FFMPEG_jll ─────────────────── v4.4.2+2
-   Installed Xorg_libXrandr_jll ─────────── v1.5.2+4
-   Installed FixedPointNumbers ──────────── v0.8.4
-   Installed GeometryBasics ─────────────── v0.4.6
-   Installed Interpolations ─────────────── v0.14.7
-   Installed Xorg_libXfixes_jll ─────────── v5.0.3+4
-   Installed RecipesBase ────────────────── v1.3.3
-   Installed LAME_jll ───────────────────── v3.100.1+0
-   Installed Libiconv_jll ───────────────── v1.16.1+2
-   Installed libvorbis_jll ──────────────── v1.3.7+1
-   Installed IniFile ────────────────────── v0.5.1
-   Installed URIs ───────────────────────── v1.4.2
-   Installed StructArrays ───────────────── v0.6.15
-   Installed Xorg_libXdmcp_jll ──────────── v1.1.3+4
-   Installed Glib_jll ───────────────────── v2.74.0+2
-   Installed AxisAlgorithms ─────────────── v1.0.1
-   Installed Xorg_libX11_jll ────────────── v1.6.9+4
-   Installed Libglvnd_jll ───────────────── v1.6.0+0
-   Installed WoodburyMatrices ───────────── v0.5.5
-   Installed Unzip ──────────────────────── v0.2.0
-   Installed GeoInterface ───────────────── v1.3.0
-   Installed ChangesOfVariables ─────────── v0.1.6
-Precompiling project...
-  ✓ StatsAPI
-  ✓ TensorCore
-  ✓ Contour
-  ✓ Pipe
-  ✓ OpenLibm_jll
-  ✓ Measures
-  ✓ WoodburyMatrices
-  ✓ InverseFunctions
-  ✓ IterTools
-  ✓ Grisu
-  ✓ FixedPointNumbers
-  ✓ IniFile
-  ✓ Unzip
-  ✓ DocStringExtensions
-  ✓ AbstractTrees
-  ✓ IrrationalConstants
-  ✓ URIs
-  ✓ Extents
-  ✓ SimpleBufferStream
-  ✓ PCRE2_jll
-  ✓ UnicodeFun
-  ✓ Ratios
-  ✓ TranscodingStreams
-  ✓ ChainRulesCore
-  ✓ Inflate
-  ✓ Adapt
-  ✓ BitFlags
-  ✓ Scratch
-  ✓ StaticArraysCore
-  ✓ LoggingExtras
-  ✓ OpenSSL_jll
-  ✓ SimpleTraits
-  ✓ Graphite2_jll
-  ✓ Libmount_jll
-  ✓ RecipesBase
-  ✓ Bzip2_jll
-  ✓ Xorg_libXau_jll
-  ✓ libpng_jll
-  ✓ libfdk_aac_jll
-  ✓ LAME_jll
-  ✓ Pixman_jll
-  ✓ fzf_jll
-  ✓ LERC_jll
-  ✓ EarCut_jll
-  ✓ JpegTurbo_jll
-  ✓ Ogg_jll
-  ✓ Xorg_libXdmcp_jll
-  ✓ x265_jll
-  ✓ x264_jll
-  ✓ libaom_jll
-  ✓ Zstd_jll
-  ✓ Expat_jll
-  ✓ LZO_jll
-  ✓ Xorg_xtrans_jll
-  ✓ Opus_jll
-  ✓ Libiconv_jll
-  ✓ Libffi_jll
-  ✓ Libgpg_error_jll
-  ✓ Wayland_protocols_jll
-  ✓ OpenSpecFun_jll
-  ✓ Xorg_libpthread_stubs_jll
-  ✓ FriBidi_jll
-  ✓ NaNMath
-  ✓ Libuuid_jll
-  ✓ Showoff
-  ✓ AxisAlgorithms
-  ✓ CodecZlib
-  ✓ GeoInterface
-  ✓ ChangesOfVariables
-  ✓ GPUArraysCore
-  ✓ RelocatableFolders
-  ✓ OffsetArrays
-  ✓ ColorTypes
-  ✓ FreeType2_jll
-  ✓ JLFzf
-  ✓ libvorbis_jll
-  ✓ Libtiff_jll
-  ✓ OpenSSL
-  ✓ Libgcrypt_jll
-  ✓ XML2_jll
-  ✓ StructArrays
-  ✓ LogExpFunctions
-  ✓ Fontconfig_jll
-  ✓ StaticArrays
-  ✓ XSLT_jll
-  ✓ HTTP
-  ✓ Colors
-  ✓ Gettext_jll
-  ✓ Wayland_jll
-  ✓ ArnoldiMethod
-  ✓ StatsBase
-  ✓ SpecialFunctions
-  ✓ GeometryTypes
-  ✓ Xorg_libxcb_jll
-  ✓ Glib_jll
-  ✓ Interpolations
-  ✓ GeometryBasics
-  ✓ ColorVectorSpace
-  ✓ Xorg_xcb_util_jll
-  ✓ Xorg_libX11_jll
-  ✓ Graphs
-  ✓ Xorg_xcb_util_image_jll
-  ✓ Xorg_xcb_util_keysyms_jll
-  ✓ NetworkLayout
-  ✓ Xorg_xcb_util_wm_jll
-  ✓ Xorg_xcb_util_renderutil_jll
-  ✓ Xorg_libXrender_jll
-  ✓ Xorg_libXext_jll
-  ✓ Xorg_libxkbfile_jll
-  ✓ Xorg_libXfixes_jll
-  ✓ Libglvnd_jll
-  ✓ Xorg_libXinerama_jll
-  ✓ Xorg_libXrandr_jll
-  ✓ Cairo_jll
-  ✓ Xorg_xkbcomp_jll
-  ✓ Xorg_libXcursor_jll
-  ✓ Xorg_libXi_jll
-  ✓ HarfBuzz_jll
-  ✓ Xorg_xkeyboard_config_jll
-  ✓ GLFW_jll
-  ✓ ColorSchemes
-  ✓ libass_jll
-  ✓ xkbcommon_jll
-  ✓ FFMPEG_jll
-  ✓ Qt5Base_jll
-  ✓ FFMPEG
-  ✓ GR_jll
-  ✓ GR
-  ✓ PlotUtils
-  ✓ PlotThemes
-  ✓ RecipesPipeline
-  ✓ GraphRecipes
-  ✓ Plots
-  133 dependencies successfully precompiled in 131 seconds. 35 already precompiled.</code></pre>
-</div>
 </div>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">GraphRecipes</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LaTeXStrings</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">GraphRecipes</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LaTeXStrings</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -651,18 +382,18 @@ Precompiling project...
 <h3 class="anchored" data-anchor-id="problem-1-20-points">Problem 1 (20 points)</h3>
 <p>You’ve been tasked with writing code to identify the minimum value in an array. You cannot use a predefined function. Your colleague suggested the function below, but it does not return the minimum value.</p>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">minimum</span>(array)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    min_value <span class="op">=</span> <span class="fl">0</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(array)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> array[i] <span class="op">&lt;</span> min_value</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            min_value <span class="op">=</span> array[i]</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> min_value</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>array_values <span class="op">=</span> [<span class="fl">89</span>, <span class="fl">90</span>, <span class="fl">95</span>, <span class="fl">100</span>, <span class="fl">100</span>, <span class="fl">78</span>, <span class="fl">99</span>, <span class="fl">98</span>, <span class="fl">100</span>, <span class="fl">95</span>]</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> <span class="fu">minimum</span>(array_values);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">minimum</span>(array)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    min_value <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(array)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> array[i] <span class="op">&lt;</span> min_value</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>            min_value <span class="op">=</span> array[i]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> min_value</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>array_values <span class="op">=</span> [<span class="fl">89</span>, <span class="fl">90</span>, <span class="fl">95</span>, <span class="fl">100</span>, <span class="fl">100</span>, <span class="fl">78</span>, <span class="fl">99</span>, <span class="fl">98</span>, <span class="fl">100</span>, <span class="fl">95</span>]</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> <span class="fu">minimum</span>(array_values);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>minimum(array_values) = 0</code></pre>
 </div>
@@ -684,13 +415,13 @@ Precompiling project...
 <h3 class="anchored" data-anchor-id="problem-2-20-points">Problem 2 (20 points)</h3>
 <p>Your team is trying to compute the average grade for your class, but the following code produces an error.</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>student_grades <span class="op">=</span> [<span class="fl">89</span>, <span class="fl">90</span>, <span class="fl">95</span>, <span class="fl">100</span>, <span class="fl">100</span>, <span class="fl">78</span>, <span class="fl">99</span>, <span class="fl">98</span>, <span class="fl">100</span>, <span class="fl">95</span>]</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">class_average</span>(grades)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  average_grade <span class="op">=</span> <span class="fu">mean</span>(student_grades)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> average_grade</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> average_grade;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>student_grades <span class="op">=</span> [<span class="fl">89</span>, <span class="fl">90</span>, <span class="fl">95</span>, <span class="fl">100</span>, <span class="fl">100</span>, <span class="fl">78</span>, <span class="fl">99</span>, <span class="fl">98</span>, <span class="fl">100</span>, <span class="fl">95</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">class_average</span>(grades)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  average_grade <span class="op">=</span> <span class="fu">mean</span>(student_grades)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> average_grade</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> average_grade;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>LoadError: UndefVarError: average_grade not defined</code></pre>
 </div>
@@ -712,18 +443,18 @@ Precompiling project...
 <h3 class="anchored" data-anchor-id="problem-3-20-points">Problem 3 (20 points)</h3>
 <p>You’ve been handed some code to analyze. The original coder was not very considerate of other potential users: the function is called <code>mystery_function</code> and there are no comments explaining the purpose of the code. It appears to take in an array and return some numbers, and you’ve been assured that the code works as intended.</p>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">mystery_function</span>(values)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> []</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> v <span class="kw">in</span> values</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> !(v <span class="kw">in</span> y)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>            <span class="fu">append!</span>(y, v)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>list_of_values <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">2</span>, <span class="fl">1</span>]</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> <span class="fu">mystery_function</span>(list_of_values);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">mystery_function</span>(values)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> []</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> v <span class="kw">in</span> values</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> !(v <span class="kw">in</span> y)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            <span class="fu">append!</span>(y, v)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>list_of_values <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">2</span>, <span class="fl">1</span>]</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> <span class="fu">mystery_function</span>(list_of_values);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>mystery_function(list_of_values) = Any[1, 2, 3, 4]</code></pre>
 </div>
@@ -747,21 +478,21 @@ Precompiling project...
 <h4 class="anchored" data-anchor-id="problem-4.1-10-points">Problem 4.1 (10 points)</h4>
 <p>The flow of wastewater through this treatment system is shown in <a href="#fig-wastewater">Figure&nbsp;1</a>. Modify the edge labels (by editing the <code>edge_labels</code> dictionary in the code producing <a href="#fig-wastewater">Figure&nbsp;1</a>) to show how the wastewater allocations result in the final YUK discharge into Pristine Brook. For the <code>edge_label</code> dictionary, the tuple <span class="math inline">\((i, j)\)</span> corresponds to the arrow going from node <span class="math inline">\(i\)</span> to node <span class="math inline">\(j\)</span>. The syntax for any entry is <code>(i, j) =&gt; "label text"</code>, and the label text can include mathematical notation if the string is prefaced with an <code>L</code>, as in <code>L"x_1"</code> will produce <span class="math inline">\(x_1\)</span>.</p>
 <div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">GraphRecipes</span>, <span class="bu">Plots</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [<span class="fl">0</span> <span class="fl">1</span> <span class="fl">1</span> <span class="fl">1</span>;</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0</span> <span class="fl">0</span> <span class="fl">0</span> <span class="fl">1</span>;</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0</span> <span class="fl">0</span> <span class="fl">0</span> <span class="fl">1</span>;</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0</span> <span class="fl">0</span> <span class="fl">0</span> <span class="fl">0</span>]</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"Plant"</span>, <span class="st">"Land Treatment"</span>, <span class="st">"Chem Treatment"</span>, <span class="st">"Pristine Brook"</span>]</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># modify this dictionary to add labels</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>edge_labels <span class="op">=</span> <span class="fu">Dict</span>((<span class="fl">1</span>, <span class="fl">2</span>) <span class="op">=&gt;</span> <span class="st">""</span>, (<span class="fl">1</span>,<span class="fl">3</span>) <span class="op">=&gt;</span> <span class="st">""</span>, (<span class="fl">1</span>, <span class="fl">4</span>) <span class="op">=&gt;</span> <span class="st">""</span>,(<span class="fl">2</span>, <span class="fl">4</span>) <span class="op">=&gt;</span> <span class="st">""</span>,(<span class="fl">3</span>, <span class="fl">4</span>) <span class="op">=&gt;</span> <span class="st">""</span>)</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>shapes<span class="op">=</span>[<span class="op">:</span>hexagon, <span class="op">:</span>rect, <span class="op">:</span>rect, <span class="op">:</span>hexagon]</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>xpos <span class="op">=</span> [<span class="fl">0</span>, <span class="op">-</span><span class="fl">1.5</span>, <span class="op">-</span><span class="fl">0.25</span>, <span class="fl">1</span>]</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>ypos <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="op">-</span><span class="fl">1</span>]</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="fu">graphplot</span>(A, names<span class="op">=</span>names,edgelabel<span class="op">=</span>edge_labels, markersize<span class="op">=</span><span class="fl">0.15</span>, markershapes<span class="op">=</span>shapes, markercolor<span class="op">=:</span>white, x<span class="op">=</span>xpos, y<span class="op">=</span>ypos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">GraphRecipes</span>, <span class="bu">Plots</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [<span class="fl">0</span> <span class="fl">1</span> <span class="fl">1</span> <span class="fl">1</span>;</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0</span> <span class="fl">0</span> <span class="fl">0</span> <span class="fl">1</span>;</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0</span> <span class="fl">0</span> <span class="fl">0</span> <span class="fl">1</span>;</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0</span> <span class="fl">0</span> <span class="fl">0</span> <span class="fl">0</span>]</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"Plant"</span>, <span class="st">"Land Treatment"</span>, <span class="st">"Chem Treatment"</span>, <span class="st">"Pristine Brook"</span>]</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># modify this dictionary to add labels</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>edge_labels <span class="op">=</span> <span class="fu">Dict</span>((<span class="fl">1</span>, <span class="fl">2</span>) <span class="op">=&gt;</span> <span class="st">""</span>, (<span class="fl">1</span>,<span class="fl">3</span>) <span class="op">=&gt;</span> <span class="st">""</span>, (<span class="fl">1</span>, <span class="fl">4</span>) <span class="op">=&gt;</span> <span class="st">""</span>,(<span class="fl">2</span>, <span class="fl">4</span>) <span class="op">=&gt;</span> <span class="st">""</span>,(<span class="fl">3</span>, <span class="fl">4</span>) <span class="op">=&gt;</span> <span class="st">""</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>shapes<span class="op">=</span>[<span class="op">:</span>hexagon, <span class="op">:</span>rect, <span class="op">:</span>rect, <span class="op">:</span>hexagon]</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>xpos <span class="op">=</span> [<span class="fl">0</span>, <span class="op">-</span><span class="fl">1.5</span>, <span class="op">-</span><span class="fl">0.25</span>, <span class="fl">1</span>]</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>ypos <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="op">-</span><span class="fl">1</span>]</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="fu">graphplot</span>(A, names<span class="op">=</span>names,edgelabel<span class="op">=</span>edge_labels, markersize<span class="op">=</span><span class="fl">0.15</span>, markershapes<span class="op">=</span>shapes, markercolor<span class="op">=:</span>white, x<span class="op">=</span>xpos, y<span class="op">=</span>ypos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div id="fig-wastewater" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -780,13 +511,13 @@ Precompiling project...
 <h4 class="anchored" data-anchor-id="problem-4.3-10-points">Problem 4.3 (10 points)</h4>
 <p>Implement this systems model as a Julia function which computes the resulting YUK concentration and cost for a particular treatment plan. You can return multiple values from a function with a <a href="https://docs.julialang.org/en/v1/manual/functions/#Tuples-1">tuple</a>, as in:</p>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">multiple_return_values</span>(x, y)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (x<span class="op">+</span>y, x<span class="op">*</span>y)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="fu">multiple_return_values</span>(<span class="fl">2</span>, <span class="fl">5</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> a;</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> b;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">multiple_return_values</span>(x, y)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (x<span class="op">+</span>y, x<span class="op">*</span>y)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>a, b <span class="op">=</span> <span class="fu">multiple_return_values</span>(<span class="fl">2</span>, <span class="fl">5</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> a;</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> b;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a = 7
 b = 10</code></pre>

@@ -1,6 +1,5 @@
 ---
 title: "Tutorial: Making Plots with Julia"
-jupyter: julia-1.8
 execute:
     error: true
     warning: true

@@ -73,6 +73,8 @@ website:
             text: Julia Basics
           - href: tutorials/julia-plots.qmd
             text: Making Plots
+          - href: tutorials/latex-notebook.qmd
+            text: Math in Notebooks
       - section: "Supplemental Notes"
       - section: Resources
         contents:

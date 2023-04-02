@@ -1,6 +1,5 @@
 ---
 title: "Tutorial: Using LaTeX in Jupyter Notebooks"
-jupyter: julia-1.8
 execute:
     error: true
     warning: true

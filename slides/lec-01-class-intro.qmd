@@ -205,7 +205,7 @@ Dan searches the internet for relevant code and copy-pastes it into his Jupyter 
 
 . . .
 
-<hr>
+
 **Probably Not OK**: 
 
 - What portion of the work is Dan's? How important were the copied (and cited) codes?
@@ -221,7 +221,7 @@ Matthew and Rhonda work together to figure out how to implement the codes, but e
 
 . . .
 
-<hr>
+
 **Definitely OK**: 
 
 - Matthew and Rhonda have collaborated to understand how to solve the problem(s), but has written up their own solution, demonstrating their understanding.
@@ -236,7 +236,7 @@ Felix and Rachel are working together on a problem involving a derivation. Rache
 
 . . .
 
-<hr>
+
 **Likely Not OK**:
 
 - Did Felix contribute enough to the derivation?

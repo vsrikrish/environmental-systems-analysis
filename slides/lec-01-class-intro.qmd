@@ -201,11 +201,11 @@ But often lines aren't that simple. Let's quickly consider some scenarios (h/t t
 
 Dan searches the internet for relevant code and copy-pastes it into his Jupyter notebook.  He properly cites the source of the codes.
 
-:::{.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out}
 **Is this ok?**
 :::
 
-:::{.fragment .fade-up}
+::: {.fragment .fade-up}
 **Probably Not OK**: 
 
 - What portion of the work is Dan's? How important were the copied (and cited) codes?
@@ -218,11 +218,11 @@ Dan searches the internet for relevant code and copy-pastes it into his Jupyter 
 
 Matthew and Rhonda work together to figure out how to implement the codes, but each works on their own computer and develops their own software.
 
-:::{.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out}
 **Is this ok?**
 :::
 
-:::{.fragment .fade-up}
+::: {.fragment .fade-up}
 **Definitely OK**: 
 
 - Matthew and Rhonda have collaborated to understand how to solve the problem(s), but has written up their own solution, demonstrating their understanding.
@@ -234,11 +234,11 @@ Matthew and Rhonda work together to figure out how to implement the codes, but e
 
 Felix and Rachel are working together on a problem involving a derivation. Rachel types it up in LaTeX and sends the code to Felix, who pastes it into his Jupyter notebook.
 
-:::{.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out}
 **Is this ok?**
 :::
 
-:::{.fragment .fade-up}
+::: {.fragment .fade-up}
 **Likely Not OK**:
 
 - Did Felix contribute enough to the derivation?

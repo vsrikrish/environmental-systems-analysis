@@ -356,7 +356,19 @@ Homework assignments and labs will be distributed using GitHub Classroom.
 
 ## Next Classes
 
+<<<<<<< HEAD
 **Wednesday**: Onboarding/AE to set up Julia and GitHub and get a head start on HW 1.
 <br><br>
 **Friday**: What is a system? Why do we care?
+=======
+**Wednesday**: Onboarding/AE to set up Julia and GitHub and work on HW 1. 
+- Preparation: 
+    - AE link is available on the website. 
+    - HW 1 link is available on Ed.
+   
+<br>
+**Friday**: Work on Lab 1. 
+- Preparation: 
+    - Lab 1 link is available on Ed. Click it to accept the lab before class, and based on Wednesday.
+>>>>>>> feb0312 (update lecture)
 

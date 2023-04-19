@@ -30,7 +30,7 @@ website:
   sidebar:
     style: docked
     align: center
-    logo: _assets/logos/cornell_logo_simple_b31b1b.svg
+    logo: _assets/logos/cornell-reduced-red.svg
     title: "{{< var course.number >}}"
     search: true
     tools: 

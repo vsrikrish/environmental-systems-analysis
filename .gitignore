@@ -339,21 +339,7 @@ assignments/hw3-solutions/info/exclude
 assignments/hw3-solutions/objects/pack/pack-b12c4e1566dd21ff9f15581b6d82bea2dbd66044.pack
 
 /.luarc.json
-website/_site/agenda.html
-website/_site/examples.html
-website/_site/search.json
-website/_site/sitemap.xml
-website/_site/assignments/hw0.html
-website/_site/assignments/workflow.html
-website/_site/computing/tutorials/turing-mcmc/tutorial.html
-website/_site/computing/tutorials/turing-mcmc/tutorial_files/figure-html/fig-chains-regression-output-1.svg
-website/_site/computing/tutorials/turing-mcmc/tutorial_files/figure-html/fig-prediction-regression-output-1.svg
-website/_site/computing/tutorials/turing-mcmc/tutorial_files/figure-html/fig-residuals-regression-output-1.svg
-website/_site/computing/tutorials/turing-mcmc/tutorial_files/figure-html/fig-scatter-regression-output-1.svg
-website/_site/policies/communications.html
-website/_site/tutorials/julia-basics.html
-website/_site/tutorials/julia-plots.html
-website/_site/tutorials/probability-stats.html
-website/_site/tutorials/using-JuMP.html
-
+_site/agenda.html
 /.quarto/
+
+_site/

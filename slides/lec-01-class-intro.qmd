@@ -48,6 +48,8 @@ execute:
 :::
 
 ::: {.column width="50%"}
+::: {.fragment .fade-in}
+
 ### Example Systems
 
 * Air pollution
@@ -55,6 +57,7 @@ execute:
 * Electric power systems
 * Solid waste management
 
+:::
 :::
 ::::
 
@@ -112,8 +115,9 @@ execute:
 ### Application Exercises (5%)
 
 - Small exercises intended to briefly practice syntax or gain intuition
-- Clone notebooks from GitHub
-- Due by the end of the relevant week (**9:00pm on Friday**)
+- Some may involve code: clone notebooks from GitHub
+- Others may be more conceptual (e.g. think of an example)
+- Due (submit to Gradescope) by the end of the relevant week (**9:00pm on Friday**)
 - Graded only on completion
 - Two will be dropped.
 
@@ -127,6 +131,7 @@ execute:
 - **If you can't bring a laptop to these classes, you can work with someone else**
 - Can work in groups, but must submit your own notebook
 - Due by **9:00 next Thursday (one week) after lab session**.
+- Will drop one.
 
 ---
 
@@ -136,6 +141,7 @@ execute:
 - Focus on new or extended applications and conceptual questions
 - Managed with GitHub Classroom
 - Due by **9:00pm** on the due date (usually Thursday)
+- Will not drop any of these; you have lots of time!
 
 ---
 
@@ -161,14 +167,17 @@ Not required, but students tend to do better when they're actively engaged in cl
 ## Office Hours
 
 - Time TBD (will send out poll)
-- Almost impossible to find a time that works for all (or even most); please feel free to make appointments as needed.
-- I *will* require mask-wearing in my office --- it's not a big space!
+- Almost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed.
+
 
 ---
 
 ## Accomodations
 
 If you have any access barriers in this class, *please* seek out any helpful accomodations.
+
+- Get an SDS letter.
+- If you need an accomodation before you have an official letter, please reach out to me ASAP!
 
 
 ---
@@ -245,6 +254,23 @@ Felix and Rachel are working together on a problem involving a derivation. Rache
 - ***Definitely not OK if Felix doesn't give Rachel credit for her contribution.***
 :::
 
+---
+
+### Academic Integrity: Scenario 4
+
+Darren uses ChatGPT to debug an error in his homework code. He fixes the error and credits ChatGPT in his References section.
+
+::: {.fragment .fade-in-then-out}
+**Is this ok?**
+:::
+
+::: {.fragment .fade-up}
+**Well-meaning, but no!**:
+
+- Using ChatGPT (or other ML tools) can be ok, but...
+- **Need to ask permission and thoroughly document the query and the exact response.**
+:::
+
 # Class Tools
 
 ---
@@ -301,14 +327,28 @@ All assignments, labs, and AEs will be provided as Jupyter Notebooks.
 
 ---
 
+### Jupyter Notebooks
+
+We will use Jupyter Notebooks for most computing tasks (including assignments).
+
+- Allow for interactive evaluation of code and integration with text (including nicely typeset mathematics)
+- Can export to PDF (or HTML -> PDF) for submission to Gradescope.
+- **Be careful before submitting**:
+    - Evaluate all cells *in order*
+
+---
+
 ### GitHub Classroom
 
-Homework assignments will be distributed using GitHub Classroom.
+Homework assignments and labs will be distributed using GitHub Classroom.
 
 - Every student will have a unique "repository."
 - When assignment is released, I will share the link for repository creation on Ed Discussion.
 - Makes it easy to share code for assistance and debugging.
 
+::: {.fragment .fade-in}
+**We will spend Wednesday getting up and running with Julia and GitHub --- bring your laptops!**
+:::
 
 # Upcoming Schedule
 
@@ -318,5 +358,5 @@ Homework assignments will be distributed using GitHub Classroom.
 
 **Wednesday**: Onboarding/AE to set up Julia and GitHub and get a head start on HW 1.
 <br><br>
-**Monday**: What is a system? Why do we care?
+**Friday**: What is a system? Why do we care?
 

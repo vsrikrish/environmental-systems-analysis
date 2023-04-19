@@ -2,9 +2,23 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "BEE 4750: Environmental Systems Analysis",
+    "title": "BEE 4750/5750: Environmental Systems Analysis",
     "section": "",
-    "text": "Environmental processes can have complicated dynamics and conflicting objectives. These dynamics can complicate analyses and decision-making which focus on a single component of the system, such as an individual pollution source. In this course, we will adopt a systems approach to environmental quality modeling and management, including applications in air and water pollution control and solid waste management. In particular, we will:\n\nlearn how to define systems and their boundaries;\nsimulate system dynamics using computer models;\nformulate and solve linear and nonlinear optimization problems;\nanalyze and assess risk after introducing uncertainty;\nmake decisions under uncertainty with stochastic and dynamic programming; and\nexplore trade-offs across competing objectives.\n\n\n\n\n\n\n\nJulia\n\n\n\nThis course will use the Julia programming language. No prior knowledge of Julia is required."
+    "text": "This is the course website for the Spring 2023 edition of BEE 4750/5750, Environmental Systems Analysis, taught at Cornell University by Vivek Srikrishnan."
+  },
+  {
+    "objectID": "index.html#course-information",
+    "href": "index.html#course-information",
+    "title": "BEE 4750/5750: Environmental Systems Analysis",
+    "section": "Course Information",
+    "text": "Course Information\n\nDetails on the class and course policies are provided in the syllabus.\nTopics and weekly materials can be found in the schedule."
+  },
+  {
+    "objectID": "index.html#software-tools",
+    "href": "index.html#software-tools",
+    "title": "BEE 4750/5750: Environmental Systems Analysis",
+    "section": "Software Tools",
+    "text": "Software Tools\n\nThis course will use the Julia programming language. Julia is a modern, free, open source language which is designed for scientific computing. No prior knowledge of Julia is required. My recommendation is to use Visual Studio Code with the official Julia extension for coding.\nAssignments will be distributed using GitHub Classroom. You should create a GitHub account, but we will walk through how to use it."
   },
   {
     "objectID": "labs.html",
@@ -60,7 +74,7 @@
     "href": "slides/lec-01-class-intro.html#course-overview",
     "title": "Welcome to BEE 4750!",
     "section": "Course Overview",
-    "text": "Course Overview\n\n\nTopics\n\nDefine systems\nSimulate system dynamics\nAnalyze and assess risk\nFormulate and solve optimization problems\nExplore trade-offs across competing objectives\n\n\nExample Systems\n\nAir pollution\nWastewater management\nElectric power systems\nSolid waste management"
+    "text": "Course Overview\n\n\nTopics\n\nDefine systems\nSimulate system dynamics\nAnalyze and assess risk\nFormulate and solve optimization problems\nExplore trade-offs across competing objectives\n\n\n\n\nExample Systems\n\nAir pollution\nWastewater management\nElectric power systems\nSolid waste management"
   },
   {
     "objectID": "slides/lec-01-class-intro.html#what-do-you-hope-to-get-out-of-this-course",
@@ -95,14 +109,14 @@
     "href": "slides/lec-01-class-intro.html#office-hours",
     "title": "Welcome to BEE 4750!",
     "section": "Office Hours",
-    "text": "Office Hours\n\nTime TBD (will send out poll)\nAlmost impossible to find a time that works for all (or even most); please feel free to make appointments as needed.\nI will require mask-wearing in my office — it’s not a big space!"
+    "text": "Office Hours\n\nTime TBD (will send out poll)\nAlmost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed."
   },
   {
     "objectID": "slides/lec-01-class-intro.html#accomodations",
     "href": "slides/lec-01-class-intro.html#accomodations",
     "title": "Welcome to BEE 4750!",
     "section": "Accomodations",
-    "text": "Accomodations\nIf you have any access barriers in this class, please seek out any helpful accomodations."
+    "text": "Accomodations\nIf you have any access barriers in this class, please seek out any helpful accomodations.\n\nGet an SDS letter.\nIf you need an accomodation before you have an official letter, please reach out to me ASAP!"
   },
   {
     "objectID": "slides/lec-01-class-intro.html#academic-integrity",
@@ -151,7 +165,7 @@
     "href": "slides/lec-01-class-intro.html#next-classes",
     "title": "Welcome to BEE 4750!",
     "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Onboarding/AE to set up Julia and GitHub and get a head start on HW 1.  Monday: What is a system? Why do we care?\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Next Classes\nWednesday: Onboarding/AE to set up Julia and GitHub and get a head start on HW 1.  Friday: What is a system? Why do we care?\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/notebooks/economic-dispatch.html",
@@ -697,6 +711,6 @@
     "href": "labs/lab01/lab01.html#exercises",
     "title": "BEE 4750 Lab 1: Julia Basics",
     "section": "Exercises",
-    "text": "Exercises\nUse your understanding of Julia syntax to complete the following (hopefully short) exercises. Convert your completed notebook to a PDF and submit it to the Gradescope Assignment “Lab 1”.\nRemember to:\n\nEvaluate all of your code cells, in order (using a Run All command). This will make sure all output is visible and that the code cells were evaluated in the correct order.\nTag each of the problems when you submit to Gradescope; a 10% penalty will be deducted if this is not done.\n\n\nExercise 1\nGiven two numeric arrays x and y, write a function to compute their dot product if they have equal length, and return an error if not (this is useful for debugging!). Use the following code as a starting point.\n\nfunction dot_product(x, y)\n    if ... # insert test condition for equal lengths\n        # compute and return dot product\n    else\n        throw(DimensionMismatch(\"length of x not equal to length of y\"))\n    end\nend\n\nHere are some tests to make sure your code works as intended. Tests like these are useful to make sure everything works as intended. One reason to split your code up into functions is that it makes it straightforward to write tests to make sure each piece of your code works, which makes it easier to identify where errors are occuring.\n\ndot_product([1 2 3], [4 5 6])\n\n\ndot_product([1 2 3], [4 5])\n\n\n\nExercise 2\nThis problem involves implementing Newton’s method for computing square roots; it was shamelessly copied from MIT’s Introduction to Computational Thinking. You will use a while loop instead of the for loop shown above.\nImplement the following algorithm in a function newton_sqrt:\nGiven $x &gt; 0:\n\nTake a guess \\(a\\).\nDivide \\(x\\) by \\(a\\).\n\nUpdate \\(a\\) as the average of \\(x/a\\) and \\(a\\).\nRepeat until \\(x/a\\) is within a tolerance of \\(\\varepsilon\\) from \\(a\\).\nReturn \\(a \\approx \\sqrt{x}\\).\n\n\n# insert your code here\n\nUse your newton_sqrt function to compute \\(\\sqrt{2}\\) to within a tolerance of \\(\\varepsilon = 0.01\\).\n\n# insert your code here\n\n\n\nExercise 3: Making a Plot\nWrite a function to compute the square of an integer x. Evaluate this function for integers between \\(x=-5\\) and \\(x=5\\) and make a plot of the squared values (you can find a quick guide to making various types of plots here). Make sure to label your axes.\n\n# insert your code here"
+    "text": "Exercises\nUse your understanding of Julia syntax to complete the following (hopefully short) exercises. Convert your completed notebook to a PDF and submit it to the Gradescope Assignment “Lab 1”.\nRemember to:\n\nEvaluate all of your code cells, in order (using a Run All command). This will make sure all output is visible and that the code cells were evaluated in the correct order.\nTag each of the problems when you submit to Gradescope; a 10% penalty will be deducted if this is not done.\n\n\nExercise 1\nGiven two numeric arrays x and y, write a function to compute their dot product if they have equal length, and return an error if not (this is useful for debugging!). Use the following code as a starting point.\n\nfunction dot_product(x, y)\n    if ... # insert test condition for equal lengths\n        # compute and return dot product\n    else\n        throw(DimensionMismatch(\"length of x not equal to length of y\"))\n    end\nend\n\nHere are some tests to make sure your code works as intended. Tests like these are useful to make sure everything works as intended. One reason to split your code up into functions is that it makes it straightforward to write tests to make sure each piece of your code works, which makes it easier to identify where errors are occuring.\n\ndot_product([1 2 3], [4 5 6])\n\nIf you know the value you should get, you can write a more formal test using the @assert macro, which is a good way to “automate” checking (since you get an obvious error if the code doesn’t work as desired):\n\n@assert dot_product([1 2 3], [4 5 6]) == 32\n\nLet’s also make sure we get an error when the dimensions of the two vectors don’t match:\n\ndot_product([1 2 3], [4 5])\n\n\n\nExercise 2\nThis problem involves implementing Newton’s method for computing square roots; it was shamelessly copied from MIT’s Introduction to Computational Thinking. You will use a while loop instead of the for loop shown above.\nImplement the following algorithm in a function newton_sqrt:\nGiven \\(x &gt; 0\\):\n\nTake a guess \\(a\\).\nDivide \\(x\\) by \\(a\\).\n\nUpdate \\(a\\) as the average of \\(x/a\\) and \\(a\\).\nRepeat until \\(x/a\\) is within a tolerance of \\(\\varepsilon\\) from \\(a\\).\nReturn \\(a \\approx \\sqrt{x}\\).\n\n\n# insert your code here\n\nUse your newton_sqrt function to compute \\(\\sqrt{2}\\) to within a tolerance of \\(\\varepsilon = 0.01\\).\n\n# insert your code here\n\n\n\nExercise 3: Making a Plot\nWrite a function to compute the square of an integer x. Evaluate this function for integers between \\(x=-5\\) and \\(x=5\\) and make a plot of the squared values (you can find a quick guide to making various types of plots here). Make sure to label your axes.\n\n# insert your code here"
   }
 ]

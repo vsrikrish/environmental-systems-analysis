@@ -591,6 +591,7 @@ Many linear algebra operations on vectors and matrices can be loaded using the `
 ## Package management
 
 Sometimes you might need functionality that does not exist in base Julia. Julia handles packages using the [`Pkg` package manager](https://docs.julialang.org/en/v1/stdlib/Pkg/). After finding a package which has the functions that you need, you have two options:
-1. Use the package management prompt in the Julia REPL (the standard Julia interface; what you get when you type `julia` in your terminal). Enter this by typing `]` at the standard green Julia prompt `julia>`. This will become a blue `pkg>`. You can then download and install new packages using `add packagename`. 
-2. From the standard prompt, enter `using Pkg; Pkg.add(packagename)`.
+
+1. Use the package management prompt in the Julia REPL (the standard Julia interface; what you get when you type `julia` in your terminal). Enter this by typing `]` at the standard green Julia prompt `julia>`. This will become a blue `pkg>`. You can then add new packages using `add packagename`. 
+2. From the standard prompt, enter `import Pkg; Pkg.add(packagename)`.
 The `packagename` package can then be used by adding `using packagename` to the start of the script.

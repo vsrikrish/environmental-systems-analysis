@@ -16,7 +16,6 @@ format:
         toc: true
         toc-depth: 1
         toc-title: "Overview"
-        slide-level: 2
         history: false
         link-external-newwindow: true
         theme: ../sass/slides.scss
@@ -65,16 +64,7 @@ execute:
 
 ## What Do You Hope To Get Out Of This Course?
 
-:::: {.columns .center}
-::: {.column width="40%"}
-![](images/vsrikrish-poll.png){fig-alt="Poll Everywhere QR Code" fig-align="center" width="100%"}
-:::
-::: {.column width=60%}
-**Text**: VSRIKRISH to 22333
-
-**URL**: [https://pollev.com/vsrikrish](https://pollev.com/vsrikrish)
-:::
-::::
+{{< include _poll-prompt.qmd >}}
 
 ---
 
@@ -101,7 +91,7 @@ execute:
 
 ---
 
-### Overall Guidelines
+## Overall Guidelines
 
 - Collaboration *highly* encouraged, but **all work must reflect your own understanding**
 - Submit PDFs on Gradescope
@@ -112,7 +102,7 @@ execute:
 
 ---
 
-### Application Exercises (5%)
+## Application Exercises (5%)
 
 - Small exercises intended to briefly practice syntax or gain intuition
 - Some may involve code: clone notebooks from GitHub
@@ -123,7 +113,7 @@ execute:
 
 ---
 
-### Labs (15%)
+## Labs (15%)
 
 - In-class guided activities
 - May need some time after class to complete
@@ -135,7 +125,7 @@ execute:
 
 ---
 
-### Homework Assignments (40%)
+## Homework Assignments (40%)
 
 - Roughly every other week (5-6 in total?)
 - Focus on new or extended applications and conceptual questions
@@ -145,7 +135,7 @@ execute:
 
 ---
 
-### Final Project (40%)
+## Final Project (40%)
 
 - Analyze a system of interest
 - Go beyond class examples/methods
@@ -206,7 +196,7 @@ But often lines aren't that simple. Let's quickly consider some scenarios (h/t t
 
 ---
 
-### Academic Integrity: Scenario 1
+## Academic Integrity: Scenario 1
 
 Dan searches the internet for relevant code and copy-pastes it into his Jupyter notebook.  He properly cites the source of the codes.
 
@@ -223,7 +213,7 @@ Dan searches the internet for relevant code and copy-pastes it into his Jupyter 
 
 ---
 
-### Academic Integrity: Scenario 2
+## Academic Integrity: Scenario 2
 
 Matthew and Rhonda work together to figure out how to implement the codes, but each works on their own computer and develops their own software.
 
@@ -239,7 +229,7 @@ Matthew and Rhonda work together to figure out how to implement the codes, but e
 
 ---
 
-### Academic Integrity: Scenario 3
+## Academic Integrity: Scenario 3
 
 Felix and Rachel are working together on a problem involving a derivation. Rachel types it up in LaTeX and sends the code to Felix, who pastes it into his Jupyter notebook.
 
@@ -256,7 +246,7 @@ Felix and Rachel are working together on a problem involving a derivation. Rache
 
 ---
 
-### Academic Integrity: Scenario 4
+## Academic Integrity: Scenario 4
 
 Darren uses ChatGPT to debug an error in his homework code. He fixes the error and credits ChatGPT in his References section.
 
@@ -273,7 +263,7 @@ Darren uses ChatGPT to debug an error in his homework code. He fixes the error a
 
 ---
 
-### ChatGPT: The Stochastic Parrot
+## ChatGPT: The Stochastic Parrot
 
 Why is ChatGPT (and other ML/AI tools) singled out?
 
@@ -316,30 +306,17 @@ Systems analysis requires mathematical modeling, and computing allows that to sc
 
 ---
 
-### Julia
+## Julia
 
 In this course, we will use the [Julia programming language](https://julialang.org).
 <br><br>
 All assignments, labs, and AEs will be provided as Jupyter Notebooks.
 
----
-
 ## What Is Your Programming Experience?
 
-:::: {.columns .center}
-::: {.column width="40%"}
-![](images/vsrikrish-poll.png){fig-alt="Poll Everywhere QR Code" fig-align="center" width="100%"}
-:::
-::: {.column width=60%}
-**Text**: VSRIKRISH to 22333
+{{< include _poll-prompt.qmd >}}
 
-**URL**: [https://pollev.com/vsrikrish](https://pollev.com/vsrikrish)
-:::
-::::
-
----
-
-### Jupyter Notebooks
+## Jupyter Notebooks
 
 We will use Jupyter Notebooks for most computing tasks (including assignments).
 
@@ -348,9 +325,7 @@ We will use Jupyter Notebooks for most computing tasks (including assignments).
 - **Be careful before submitting**:
     - Evaluate all cells *in order*
 
----
-
-### GitHub Classroom
+## GitHub Classroom
 
 Homework assignments and labs will be distributed using GitHub Classroom.
 
@@ -358,23 +333,23 @@ Homework assignments and labs will be distributed using GitHub Classroom.
 - When assignment is released, I will share the link for repository creation on Ed Discussion.
 - Makes it easy to share code for assistance and debugging (share links to repositories, not out-of-context code and screenshots).
 
-::: {.fragment .fade-in}
-**We will spend Wednesday getting up and running with Julia and GitHub --- bring your laptops!**
-:::
 
 # Upcoming Schedule
-
----
 
 ## Next Classes
 
 **Wednesday**: Onboarding/AE to set up Julia and GitHub and work on HW 1. 
+
 - Preparation: 
     - AE link is available on the website. 
     - HW 1 link is available on Ed.
+    - **Bring your laptop if possible!**
    
-<br>
+
+## Next Classes
+
 **Friday**: Work on Lab 1. 
+
 - Preparation: 
     - Lab 1 link is available on Ed. Click it to accept the lab before class, and based on Wednesday.
 

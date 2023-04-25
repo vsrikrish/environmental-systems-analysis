@@ -30,7 +30,6 @@ execute:
 
 # Welcome!
 
----
 
 ## Course Overview
 
@@ -60,13 +59,13 @@ execute:
 :::
 ::::
 
----
+
 
 ## What Do You Hope To Get Out Of This Course?
 
 {{< include _poll-prompt.qmd >}}
 
----
+
 
 ## Course Organization
 
@@ -78,7 +77,7 @@ execute:
 
 # Course Policies
 
----
+
 
 ## Grades
 
@@ -89,7 +88,7 @@ execute:
 | Homework Assignments | 40% |
 | Final Project | 40% |
 
----
+
 
 ## Overall Guidelines
 
@@ -100,7 +99,7 @@ execute:
 - **Always cite external references**
 - Curve unlikely (not worth asking about...)
 
----
+
 
 ## Application Exercises (5%)
 
@@ -111,7 +110,7 @@ execute:
 - Graded only on completion
 - Two will be dropped.
 
----
+
 
 ## Labs (15%)
 
@@ -123,7 +122,7 @@ execute:
 - Due by **9:00 next Thursday (one week) after lab session**.
 - Will drop one.
 
----
+
 
 ## Homework Assignments (40%)
 
@@ -133,7 +132,7 @@ execute:
 - Due by **9:00pm** on the due date (usually Thursday)
 - Will not drop any of these; you have lots of time!
 
----
+
 
 ## Final Project (40%)
 
@@ -145,14 +144,14 @@ execute:
     - Proposal (one page)
     - 2 -- 3 page report on a relevant regulation of interest
 
----
+
 
 
 ## Attendance
 
 Not required, but students tend to do better when they're actively engaged in class.
 
----
+
 
 ## Office Hours
 
@@ -160,7 +159,7 @@ Not required, but students tend to do better when they're actively engaged in cl
 - Almost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed.
 
 
----
+
 
 ## Accomodations
 
@@ -170,7 +169,7 @@ If you have any access barriers in this class, *please* seek out any helpful acc
 - If you need an accomodation before you have an official letter, please reach out to me ASAP!
 
 
----
+
 
 ## Academic Integrity
 
@@ -186,7 +185,7 @@ Hopefully not a concern...
 - Don't just copy...learn from others and give credit.
 - Submit your own original work.
 
----
+
 
 ## Academic Integrity
 
@@ -194,7 +193,7 @@ Obviously, just copying down answers from Chegg or ChatGPT and passing them off 
 <br><br>
 But often lines aren't that simple. Let's quickly consider some scenarios (h/t to [Tony Wong](https://tonyewong.github.io/) for these).
 
----
+
 
 ## Academic Integrity: Scenario 1
 
@@ -211,7 +210,7 @@ Dan searches the internet for relevant code and copy-pastes it into his Jupyter 
 - Did Dan understand what he copied?
 :::
 
----
+
 
 ## Academic Integrity: Scenario 2
 
@@ -227,7 +226,7 @@ Matthew and Rhonda work together to figure out how to implement the codes, but e
 - Matthew and Rhonda have collaborated to understand how to solve the problem(s), but has written up their own solution, demonstrating their understanding.
 :::
 
----
+
 
 ## Academic Integrity: Scenario 3
 
@@ -244,7 +243,6 @@ Felix and Rachel are working together on a problem involving a derivation. Rache
 - ***Definitely not OK if Felix doesn't give Rachel credit for her contribution.***
 :::
 
----
 
 ## Academic Integrity: Scenario 4
 
@@ -261,7 +259,7 @@ Darren uses ChatGPT to debug an error in his homework code. He fixes the error a
 - **Need to ask permission and thoroughly document the query and the exact response.**
 :::
 
----
+
 
 ## ChatGPT: The Stochastic Parrot
 
@@ -275,7 +273,7 @@ Why is ChatGPT (and other ML/AI tools) singled out?
 
 # Class Tools
 
----
+
 
 ## Communications
 
@@ -289,7 +287,7 @@ Use [Ed Discussion](https://us.edstem.org) for questions and discussions about c
 When urgency or privacy is required, email is ok.
 
 
----
+
 
 ## Course Website
 
@@ -298,13 +296,13 @@ When urgency or privacy is required, email is ok.
 - Central hub for information, schedule, and policies
 - Will add link and some information to Canvas (assignment due dates, etc)
 
----
+
 
 ## Computing Tools
 
 Systems analysis requires mathematical modeling, and computing allows that to scale.
 
----
+
 
 ## Julia
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BEE 4750 - Fall 2023 - BEE 4750 Lab 1: Julia Basics</title>
+<title>BEE 4750 - Fall 2023 - BEE 4750 Application Exercise 1: Setting Up GitHub and Julia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../project.html" rel="next">
-<link href="../../labs.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -100,9 +98,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="BEE 4750 - Fall 2023 - BEE 4750 Lab 1: Julia Basics">
+<meta property="og:title" content="BEE 4750 - Fall 2023 - BEE 4750 Application Exercise 1: Setting Up GitHub and Julia">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://viveks.me/environmental-systems-analysis/aes/ae01/figures/vs-code-extensions.png">
 <meta property="og:site-name" content="BEE 4750 - Fall 2023">
+<meta property="og:image:height" content="67">
+<meta property="og:image:width" content="72">
 </head>
 
 <body class="nav-sidebar docked">
@@ -114,7 +115,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../labs.html">Labs</a></li><li class="breadcrumb-item"><a href="../../labs/lab01/lab01.html">Lab 1</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      {{&lt; var course.number &gt;}}
+      </li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -198,14 +201,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="../../labs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Labs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../labs/lab01/lab01.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../labs/lab01/lab01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 1</span></a>
   </div>
 </li>
@@ -299,30 +302,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a>
   <ul class="collapse">
-  <li><a href="#julia" id="toc-julia" class="nav-link" data-scroll-target="#julia">Julia</a></li>
-  <li><a href="#jupyter-notebooks" id="toc-jupyter-notebooks" class="nav-link" data-scroll-target="#jupyter-notebooks">Jupyter Notebooks</a></li>
-  <li><a href="#julia-basics" id="toc-julia-basics" class="nav-link" data-scroll-target="#julia-basics">Julia Basics</a></li>
-  <li><a href="#formatting-math" id="toc-formatting-math" class="nav-link" data-scroll-target="#formatting-math">Formatting Math</a></li>
-  <li><a href="#looking-for-help" id="toc-looking-for-help" class="nav-link" data-scroll-target="#looking-for-help">Looking For Help</a></li>
-  </ul></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
-  <ul class="collapse">
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  <li><a href="#exercise-3-making-a-plot" id="toc-exercise-3-making-a-plot" class="nav-link" data-scroll-target="#exercise-3-making-a-plot">Exercise 3: Making a Plot</a></li>
+  <li><a href="#install-git" id="toc-install-git" class="nav-link" data-scroll-target="#install-git">Install Git</a></li>
+  <li><a href="#sec-install-julia" id="toc-sec-install-julia" class="nav-link" data-scroll-target="#sec-install-julia">Install Julia</a></li>
+  <li><a href="#sec-install-code" id="toc-sec-install-code" class="nav-link" data-scroll-target="#sec-install-code">Install and Set Up VS Code</a></li>
+  <li><a href="#sec-github" id="toc-sec-github" class="nav-link" data-scroll-target="#sec-github">Set Up GitHub</a></li>
+  <li><a href="#sec-notebook" id="toc-sec-notebook" class="nav-link" data-scroll-target="#sec-notebook">Open and Edit The Notebook</a></li>
+  <li><a href="#sec-export-pdf" id="toc-sec-export-pdf" class="nav-link" data-scroll-target="#sec-export-pdf">Export the Notebook</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/labs/lab01/lab01.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lab01.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/aes/ae01/ae01.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="ae01.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">BEE 4750 Lab 1: Julia Basics</h1>
+<h1 class="title">BEE 4750 Application Exercise 1: Setting Up GitHub and Julia</h1>
 </div>
 
 
@@ -337,6 +336,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p>::: {.content-hidden unless-format=“ipynb”}</p>
 <div class="callout callout-style-simple callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -347,173 +347,245 @@ Due Date
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Friday, 9/1/23, 9:00pm</p>
+<p>Friday, 8/1/23, 9:00pm</p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-caution">
+<div class="callout callout-style-simple callout-important">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>If you are enrolled in the course, make sure that you use the GitHub Classroom link provided in Ed Discussion, or you may not be able to get help if you run into problems.</p>
-<p>Otherwise, you can <a href="https://github.com/BEE4750/lab01">find the Github repository here</a>.</p>
+<p>You can <a href="https://github.com/BEE4750/ae01">find the Github repository here</a>.</p>
 </div>
 </div>
 </div>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p>The following code should go at the top of most Julia scripts; it will load the local package environment and install any needed packages. You will see this often and shouldn’t need to touch it.</p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"."</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>This next cell loads packages which are required for the rest of the code evaluation. In this case, we only need to load the <code>Plots.jl</code> plotting package, but you will see others over the course of the semester (and can add more if desired; just make sure that you’ve <a href="https://viveks.me/environmental-systems-analysis/tutorials/julia-basics.html#package-management">added the new packages to the environment</a>). Standard Julia practice is to load all of the needed packages at the top of the file.</p>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<section id="julia" class="level3">
-<h3 class="anchored" data-anchor-id="julia">Julia</h3>
-<p>Julia is an up-and-coming language, originally developed for scientific programming. While learning a new programming language always has its hiccups, the good news is that if you’ve programmed in a high-level language such as Python or MATLAB, most Julia concepts should look familiar.</p>
-<p>If you have not successfully set up Julia, follow the instructions in <a href="ae/ae-01-setup.html">Application Exercise 1</a> and/or ask for help.</p>
-<p>You can use other editors for this course, but our recommendation is <a href="https://code.visualstudio.com/">Visual Studio Code</a> with the <a href="https://marketplace.visualstudio.com/items?itemName=julialang.language-julia">Julia extension</a>, which will make life a <em>lot</em> simpler! You should have set this up as part of <a href="ae/ae-01-setup.html">Application Exercise 1</a>, but if not, do so now and/or ask for help.</p>
-</section>
-<section id="jupyter-notebooks" class="level3">
-<h3 class="anchored" data-anchor-id="jupyter-notebooks">Jupyter Notebooks</h3>
-<p>Jupyter notebooks integrate text and equations in Markdown with Julia (or Python, or R) code. To do this, Jupyter notebooks consist of two types of “cells”: code cells and Markdown (text) cells.</p>
-<p>Click once on this section of text. A box will appear around this text (and some areas above/below it) - all of that is within this cell.</p>
-<p>Markdown is a text markup framework for formatting language that makes things look pretty when viewed across different platforms: web browsers, notebooks, and so forth. Text written in Markdown can also include hyperlinks, LaTeX equations, section headers, and images, among other features (most of <a href="https://viveks.me/climate-risk-analysis">the course website</a> and the lecture notes were all written in Markdown!). <a href="https://www.markdownguide.org/cheat-sheet/">Here is a basic Markdown cheat sheet</a>.</p>
-<p>What you are looking at right now is the formatted text after the Markdown is processed. To see the raw Markdown, do one of:</p>
-<ul>
-<li>press <code>Enter</code> while that cell is selected, or</li>
-<li>double-click on that cell.</li>
-</ul>
-<hr>
-<p>A couple of the features you will see in this Markdown cell:</p>
-<ul>
-<li>The <code>---</code> command creates a horizontal line. This is also nice for separating sections.</li>
-<li>Backticks (<code>`...`</code>) can be used to format and highlight code, keystrokes, etc.</li>
-<li>The <code>#</code> sign is used to create a new section header; two <code>#</code> signs (<code>##</code>) is used to create a new subsection header; <code>###</code> creates a subsubsection, and so on.</li>
-<li>You can create a bulleted list by using the asterisk <code>*</code> or a dash <code>-</code> and a space.</li>
-<li>You can create regular text by just typing as usual.</li>
-<li>You can create <strong>bold-faced text</strong> by wrapping it with two asterisks on both sides.</li>
-<li>You can create <em>italicized text</em> by wrapping it with a single asterisk on both sides.</li>
-<li>To create a new paragraph, you must include a blank line between the old and new paragraphs.</li>
-</ul>
-<p>At this point you might be wondering how to turn this cell back into the fully formatted Markdown text instead of the raw Markdown you’re probably still looking at. You have a couple of options, depending on your platform, but the most consistent is to type <code>Shift + Enter</code> to <strong>execute</strong> the cell (this is also how to run code, but more on that later).</p>
-<p>Additionally, you will frequently need to create new cells in your Jupyter notebooks. How you do this will depend on how you interact with the notebook, but try to figure this out now.</p>
-<p>One tip is to think carefully about what bits of code should be in the same cell, as you typically only see output from the last command in a cell. For example, compare the following:</p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">5</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>-0.9589242746631385</code></pre>
-</div>
-</div>
-<p>with</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>5</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>-0.9589242746631385</code></pre>
-</div>
-</div>
-<p>In Julia, you can also suppress the output of a command with a semi-colon:</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(x);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>which can help if you want to split some code out for clarity or to insert some text prior to it, but don’t want to clutter the notebook with its output.</p>
-<p>For code cells, to execute the commands within the cell, we also press <code>Shift+Enter</code>.</p>
-<p>Finally, <strong>make sure that you evaluate all of the code cells in order before submitting</strong>. One bad outcome with notebooks occurs when cells are evaluated out of order, so fixed bugs and edits in previous cells do not get a chance to propagate down. You can do this with the <code>Run All</code> command in whichever interface you’re using to edit your notebook.</p>
-</section>
-<section id="julia-basics" class="level3">
-<h3 class="anchored" data-anchor-id="julia-basics">Julia Basics</h3>
-<p>There are many tutorials and references for Julia, including a <a href="../tutorials/julia-basics.html">basics overview on the class website</a>. Please feel free to reference these as you work through any part of the course.</p>
-</section>
-<section id="formatting-math" class="level3">
-<h3 class="anchored" data-anchor-id="formatting-math">Formatting Math</h3>
-<p>It will often be helpful to include nicely-formatted mathematics in a notebook. Markdown accomodates this using LaTeX syntax. A LaTeX cheatsheet is available on the class website, and many other guides exist online.</p>
-<p>Below is an example of a formatted equation: <span class="math display">\[x = 5.\]</span></p>
-</section>
-<section id="looking-for-help" class="level3">
-<h3 class="anchored" data-anchor-id="looking-for-help">Looking For Help</h3>
-<p>There is no shame in using Google, or other resources, for help when programming. There are many, many times when you can’t quite get the syntax to work, can’t quite figure out the right package or command to use, or are feeling too lazy or overwhelmed (I’m not judging either of those!) to dig through the documentation. Some good resources include:</p>
-<ul>
-<li><a href="https://stackoverflow.com/">Stack Overflow</a> is a treasure trove of answers;</li>
-<li>The <a href="https://discourse.julialang.org/">official Julia forum</a> and the <a href="https://www.reddit.com/r/Julia/">Julia Subreddit</a> are also very useful.</li>
-</ul>
-<p>You are also highly encouraged to post on <a href="https://us.edstem.org">Ed Discussion</a>, though getting a response might be less immediate. Just be mindful that to get good answers, <a href="https://stackoverflow.com/help/how-to-ask">you have to help people help you</a>, and <strong>make sure to give credit to any resources that were helpful</strong>!</p>
-</section>
-</section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
-<p>Use your understanding of Julia syntax to complete the following (hopefully short) exercises. Convert your completed notebook to a PDF and submit it to the Gradescope Assignment “Lab 1”.</p>
-<p><strong>Remember to</strong>:</p>
-<ul>
-<li>Evaluate all of your code cells, in order (using a <code>Run All</code> command). This will make sure all output is visible and that the code cells were evaluated in the correct order.</li>
-<li>Tag each of the problems when you submit to Gradescope; a 10% penalty will be deducted if this is not done.</li>
-</ul>
-<section id="exercise-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>Given two numeric arrays <code>x</code> and <code>y</code>, write a function to compute their dot product if they have equal length, and return an error if not (this is useful for debugging!). Use the following code as a starting point.</p>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">dot_product</span>(x, y)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">...</span> <span class="co"># insert test condition for equal lengths</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="co"># compute and return dot product</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">throw</span>(<span class="fu">DimensionMismatch</span>(<span class="st">"length of x not equal to length of y"</span>))</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Here are some tests to make sure your code works as intended. Tests like these are useful to make sure everything works as intended. One reason to split your code up into functions is that it makes it straightforward to write tests to make sure each piece of your code works, which makes it easier to identify where errors are occuring.</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dot_product</span>([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>], [<span class="fl">4</span> <span class="fl">5</span> <span class="fl">6</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>If you know the value you should get, you can write a more formal test using the <code>@assert</code> macro, which is a good way to “automate” checking (since you get an obvious error if the code doesn’t work as desired):</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">dot_product</span>([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>], [<span class="fl">4</span> <span class="fl">5</span> <span class="fl">6</span>]) <span class="op">==</span> <span class="fl">32</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Let’s also make sure we get an error when the dimensions of the two vectors don’t match:</p>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dot_product</span>([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>], [<span class="fl">4</span> <span class="fl">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>This problem involves implementing Newton’s method for computing square roots; it was shamelessly copied from MIT’s <a href="https://computationalthinking.mit.edu/Spring21/hw0/">Introduction to Computational Thinking</a>. You will use a <code>while</code> loop instead of the <code>for</code> loop shown above.</p>
-<p>Implement the following algorithm in a function <code>newton_sqrt</code>:</p>
-<p>Given <span class="math inline">\(x &gt; 0\)</span>:</p>
+<p>In this application exercise, you will:</p>
 <ol type="1">
-<li>Take a guess <span class="math inline">\(a\)</span>.</li>
-<li>Divide <span class="math inline">\(x\)</span> by <span class="math inline">\(a\)</span>.<br>
-</li>
-<li>Update <span class="math inline">\(a\)</span> as the average of <span class="math inline">\(x/a\)</span> and <span class="math inline">\(a\)</span>.</li>
-<li>Repeat until <span class="math inline">\(x/a\)</span> is within a tolerance of <span class="math inline">\(\varepsilon\)</span> from <span class="math inline">\(a\)</span>.</li>
-<li>Return <span class="math inline">\(a \approx \sqrt{x}\)</span>.</li>
+<li>Install git and Julia;</li>
+<li>set up a GitHub account;</li>
+<li>“clone” a repository to your local machine;</li>
+<li>edit a Jupyter notebook; and</li>
+<li>write and run some basic code.</li>
 </ol>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="tasks" class="level2">
+<h2 class="anchored" data-anchor-id="tasks">Tasks</h2>
+<p>Your tasks are:</p>
+<ol type="1">
+<li><a href="https://git-scm.com/downloads">Install <code>git</code></a> on your machine if necessary.</li>
+<li><a href="#sec-install-julia">Install Julia</a> using the <code>juliaup</code> tool.</li>
+<li><a href="#sec-install-code">Install and set up VS Code</a> if you don’t already have an editor you’d like to use. VS Code is an editor of choice for Julia, as it as a rich and well-supported Julia extension. If you have a different coding environment, please find instructions for how to set it up to edit Julia.</li>
+<li><a href="#sec-github">Set up a GitHub account and clone the application exercise repository</a>.</li>
+<li><a href="#sec-notebook">Open and edit the notebook</a>.</li>
+<li><a href="#sec-export-pdf">Export the notebook to a PDF</a>.</li>
+<li>Submit the PDF to Gradescope by the due date.</li>
+</ol>
+</section>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<section id="install-git" class="level3">
+<h3 class="anchored" data-anchor-id="install-git">Install Git</h3>
+<p>If you have already installed <code>git</code>, you don’t need to worry about this section. If you haven’t, <a href="https://git-scm.com/downloads">download</a> the appropriate version for your operating system.</p>
+<div class="callout callout-style-simple callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>Use your <code>newton_sqrt</code> function to compute <span class="math inline">\(\sqrt{2}\)</span> to within a tolerance of <span class="math inline">\(\varepsilon = 0.01\)</span>.</p>
-<div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-title-container flex-fill">
+Mac Versions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you have a Mac, be aware if you have an Apple Silicon (M1 or M2) Mac or an Intel Mac. Many of the installations you will go through in this exercise have different versions for each processor type, and the program may not work properly if you still the wrong version. There’s nothing that can’t be undone, but it’s easier to be install the correct version first!</p>
+</div>
 </div>
 </section>
-<section id="exercise-3-making-a-plot" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-3-making-a-plot">Exercise 3: Making a Plot</h3>
-<p>Write a function to compute the square of an integer <code>x</code>. Evaluate this function for integers between <span class="math inline">\(x=-5\)</span> and <span class="math inline">\(x=5\)</span> and make a plot of the squared values (you can find a quick guide to making various types of plots <a href="../tutorials/julia-plots.html">here</a>). Make sure to label your axes.</p>
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="sec-install-julia" class="level3">
+<h3 class="anchored" data-anchor-id="sec-install-julia">Install Julia</h3>
+<p>I recommend installing Julia using the <code>juliaup</code> tool, which will let you easily manage versions in the future and works seamlessly with VS Code. The instructions can be found at the <a href="https://github.com/JuliaLang/juliaup">JuliaUp GitHub repository</a>, but we will summarize them here.</p>
+<section id="installing-juliaup-on-windows" class="level4">
+<h4 class="anchored" data-anchor-id="installing-juliaup-on-windows">Installing Juliaup on Windows</h4>
+<p>If your computer uses Windows, you can install Juliaup <a href="https://www.microsoft.com/store/apps/9NJNWW8PVKMN">from the Windows Store</a>.</p>
+</section>
+<section id="installing-juliaup-on-macos" class="level4">
+<h4 class="anchored" data-anchor-id="installing-juliaup-on-macos">Installing Juliaup on MacOS</h4>
+<p>If you have a Mac, open a terminal (such as the Terminal app) and enter:</p>
+<pre class="shell"><code>curl -fsSL https://install.julialang.org | sh</code></pre>
+</section>
+<section id="installing-julia-1.8.5" class="level4">
+<h4 class="anchored" data-anchor-id="installing-julia-1.8.5">Installing Julia 1.8.5</h4>
+<p>Once you install Juliaup, install Julia version 1.8.5 by opening a terminal (in MacOS or Linux) or the command line (in Windows) and entering:</p>
+<pre class="shell"><code>julia add 1.8.5
+julia default 1.8.5</code></pre>
+<p>This will install Julia 1.8.5 and make it the default version, which should maximize package compatibility throughout this course. Going forward, if you want to add new versions or change the default, you can <a href="https://github.com/JuliaLang/juliaup#using-juliaup">follow the Juliaup instructions</a>.</p>
+</section>
+</section>
+<section id="sec-install-code" class="level3">
+<h3 class="anchored" data-anchor-id="sec-install-code">Install and Set Up VS Code</h3>
+<p>You can skip this section if you already have a coding environment you like; just set it up to work with Julia. Otherwise, VS Code is as close to an officially supported editor for Julia as you can get. We will follow <a href="https://www.julia-vscode.org/docs/dev/gettingstarted/">this guide for setting up VS Code with Julia</a>.</p>
+<section id="installing-vs-code" class="level4">
+<h4 class="anchored" data-anchor-id="installing-vs-code">Installing VS Code</h4>
+<p>You can download it <a href="https://code.visualstudio.com/download">here</a>; open the downloaded file to install.</p>
+</section>
+<section id="install-the-julia-extension" class="level4">
+<h4 class="anchored" data-anchor-id="install-the-julia-extension">Install the Julia Extension</h4>
+<ol type="1">
+<li><p>Open VS Code.</p></li>
+<li><p>Select View and click Extensions to open the Extension View. This view can also be found on the sidebar with the following logo:</p>
+<p><img src="figures/vs-code-extensions.png" class="img-fluid" alt="VS Code Extensions View Logo">.</p></li>
+<li><p>Search for <code>julia</code> in the search box. Click the green install button.</p></li>
+<li><p>Restart VS Code once the installation is complete. It should automatically find your Julia installation; talk to Vivek if not.</p></li>
+</ol>
+<p>The Julia VS Code extension offers you some nice features. You can start a REPL (an interactive Julia coding environment) by opening the “Command Palette” (View -&gt; Command Palette, or CTRL/CMD+SHIFT+P) and typing “REPL” to bring up “Julia: Start REPL”. You can also create <code>*.jl</code> files to write Julia code and execute line by line. However, we will primarily use Jupyter notebooks in this class, but this might be useful for testing code or for your project.</p>
+</section>
+<section id="install-the-jupyter-notebook-extension" class="level4">
+<h4 class="anchored" data-anchor-id="install-the-jupyter-notebook-extension">Install the Jupyter Notebook Extension</h4>
+<p>The Jupyter Notebook extension allows you to export a Jupyter notebook to PDF or to HTML and then to PDF.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+PDF Export for Gradescope
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will need to export every notebook to a PDF for submission to Gradescope. Direct export to PDF requires a LaTeX installation. If you would like to go this route, please look at <a href="https://www.latex-project.org/get/">the LaTeX installation instructions for your operating system</a>.</p>
+<p>Otherwise, exporting to HTML and then using your browser to save the resulting page to a PDF is a perfect solution.</p>
+</div>
+</div>
+<p>Follow the same instructions as above, but search for <code>jupyter</code> and install the Jupyter extension. Restart VS Code.</p>
+</section>
+</section>
+<section id="sec-github" class="level3">
+<h3 class="anchored" data-anchor-id="sec-github">Set Up GitHub</h3>
+<section id="create-github-account" class="level4">
+<h4 class="anchored" data-anchor-id="create-github-account">Create GitHub Account</h4>
+<p>If you already have a GitHub account, you can use that for this course and do not need to create a new account.</p>
+<p>Otherwise, <a href="https://github.com/join">create an account</a>. It doesn’t have to be linked to your Cornell email or use your Cornell NetID.</p>
+<p>For labs and homework assignments (we will work on Lab 1 in class on Friday and Homework 1 is available), you should use the GitHub Classroom link to “accept” the assignment provided on Ed Discussion, which will give you your own GitHub repository for that assignment. The first time you click one of these links, you will need to link your place on the course roster with your GitHub account.</p>
+<p>When application exercises require notebook use (which is the case here, but will not always be), you can follow the workflow in these next steps, and will be prompted to do so in the instructions for that exercise.</p>
+<p>You can do almost everything that you will need to do for this course with GitHub directly through VS Code, or you can use the GitHub UI or the Terminal. We will assume in these instructions that you will just work through VS Code.</p>
+</section>
+<section id="clone-the-repository" class="level4">
+<h4 class="anchored" data-anchor-id="clone-the-repository">Clone the Repository</h4>
+<p>Once you have created your account, navigate to the <a href="https://github.com/BEE4750/ae01">GitHub repository for the assignment</a>. You will have your own repository for assignments that you accept through the GitHub Classroom links, but for now, let’s use this common repository. Click the green “Code” button, and copy the URL by clicking on the clipboard icon.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/github-clone.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Code Clone Interface on GitHub</figcaption>
+</figure>
+</div>
+<p>Next, open a new VS Code window. You should see the following options.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/vs-code-clone.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">VS Code New Window</figcaption>
+</figure>
+</div>
+<p>Click “Clone Git Repository” and select “Clone from GitHub” when it pops up. Paste the URL for the repository into the search bar and select the repository that comes up. You will then be prompted to pick a location to save the repository. I recommend keeping a single master folder for the course, which can then be divided into <code>aes</code> (for application exercises), <code>labs</code>, and <code>hws</code>. For example:</p>
+<pre><code>BEE4750
+|---aes
+|---labs
+|---hws</code></pre>
+<p>Then, pick the appropriate subdirectory. When you clone the repository, it will automatically create a directory for the repository, so you do not need to create the <code>ae01</code> repository explicity. Just select <code>aes</code>.</p>
+<p>Once you do that, you will be prompted to open the new folder. The next time you want to work on the notebook, pick “Open Folder” from the initial VS Code New Window page and find the folder that was created (for example <code>aes/ae01</code>.) Opening a folder is recommended, as it will provide a more convenient interface for working with the entire repository, versus opening a single file.</p>
+<div class="callout callout-style-simple callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Working with GitHub Repositories
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this assignment, we’re only asking you to clone a Github repository. In Lab 1, you will be asked to “commit” and “push” your files to synchronize your local repository with your personal GitHub Classroom repository, which allows you to keep code updated. This is useful for ensuring that you have a backup of your files with tracked changes (for example, if you try to redo a problem but break something), and will make it easy to ask for help on Ed Discussion (just add a link to your repository with the current version of your code that isn’t working as intended).</p>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-notebook" class="level3">
+<h3 class="anchored" data-anchor-id="sec-notebook">Open and Edit The Notebook</h3>
+<section id="open-notebook-and-select-julia-kernel" class="level4">
+<h4 class="anchored" data-anchor-id="open-notebook-and-select-julia-kernel">Open Notebook and Select Julia Kernel</h4>
+<p>Open the <code>ae01.ipynb</code> file.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>.ipynb</code> files
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>.ipynb</code> extension is for Jupyter notebooks, and this should be the primary file type you work with on most assignments for this course.</p>
+<p>Jupyter notebooks consist of two types of “cells, which are editable areas”:</p>
+<ol type="1">
+<li>“Text” cells, in which you can write text using <a href="https://www.datacamp.com/tutorial/markdown-in-jupyter-notebook">Markdown</a>, which uses minimal styling to format text. You can see the “raw” Markdown for any cell by double clicking on it to make it editable. Text cells can also be used to format mathematics using <a href="https://viveks.me/environmental-systems-analysis/tutorials/latex-notebook.html">LaTeX syntax</a>, but no LaTeX is actually required for this to work.</li>
+<li>“Code” cells, which contain code which can be evaluated. The language of the code should match the kernel used for compilation (see below). A “play” button will appear next to a code cell which can be used to evaluate the cell’s contents. <strong>Be careful that running cells out of order can result in errors or bad results</strong>, as each cell is evaluated independently, so if a function or variable is specified in a prior cell which is not executed, a later cell which requires those values will not work properly. Before submitting, make sure to evaluate all cells in order (for example, using the “Run All” button at the top of the VS Code window).</li>
+</ol>
+</div>
+</div>
+<p>In the upper right corner, you should see an icon similar to this (but perhaps with different text):</p>
+<p><img src="figures/kernel-selection.png" class="img-fluid" alt="Kernel Selection Button">.</p>
+<p>This is where you will click to select the “kernel” which is used to compile the Jupyter notebook. Click it, and you will be prompted to select a kernel. You likely need to select “Select Another Kernel…”, then “Julia Language Support,” and then “Julia 1.8 channel.”</p>
+</section>
+<section id="edit-notebook" class="level4">
+<h4 class="anchored" data-anchor-id="edit-notebook">Edit Notebook</h4>
+<p>Finally, let’s make some edits to the notebook.</p>
+<ol type="1">
+<li><p>Double click the text cell at the top of the notebook that includes the “<strong>Name</strong>:” and “<strong>ID</strong>:” prompts. Add your name and Cornell NetID.</p></li>
+<li><p>Create a code cell below this by hovering your cursor over the bottom of this text cell. You should see the following buttons pop up:</p>
+<img src="figures/new-cell.png" class="img-fluid" alt="Create New Cell">
+<p>Click on “+Code” and the new cell should appear.</p></li>
+<li><p>In this code cell, write a function to compute the square of a value <span class="math inline">\(x\)</span>. The code should have the following basic structure:</p></li>
+</ol>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the following is how you define a function </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># called "square_function" which accepts an input argument x.</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">square_function</span>(x)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># put your code here</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="co"># add in the variable or value that should be returned</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>square_function (generic function with 1 method)</code></pre>
+</div>
+</div>
+<p>Test your function by computing <span class="math inline">\(2^2\)</span> and <span class="math inline">\(4.5^2\)</span>. We’ve added a cell evaluating the <code>square_function(2)</code>; add one evaluating <code>square_function(4.5)</code>.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>The <code>@show</code> macro nicely formats output to include the name of the output that’s being shown. The line ends with a semi-colon (<code>;</code>) to suppress the direct output of the cell (which would be redundant, but isn’t a problem). Otherwise, the semi-colon is not mandatory; it only serves the purpose of suppressing output from a given line.</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> <span class="fu">square_function</span>(<span class="fl">2</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>square_function(2) = nothing</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-export-pdf" class="level3">
+<h3 class="anchored" data-anchor-id="sec-export-pdf">Export the Notebook</h3>
+<p>Congratulations, you’ve set up Julia and GitHub and learned the basics of working with Jupyter Notebooks! The last step is to export the notebook for submission to Gradescope.</p>
+<p>You should see the following menu bar at the top of the VS Code window: <img src="figures/vs-code-top-bar.png" class="img-fluid" alt="Notebook Menu Bar"></p>
+<ol type="1">
+<li>Click “Run All” at the top to execute all of the cells in order. <strong>Please do not forget to do this before exporting and submitting or you may lose points because your code has not been executed or may have errors</strong>.</li>
+<li>Click the ellipsis (“…”) and select “Export”. If you have LaTeX installed, you can click “PDF”; otherwise, click “HTML.” Save the file, and then when prompted, open the file. This should open the page in your browser; go to the print interface and save as a PDF. ::: {.callout-tip} When printing to PDF, long lines will run off the edge of code cells, which may result in comments or code being hidden. If you see this, go back to the notebook and break up long lines into shorter onces (for example, see the comment in the above code cell) to ensure key parts of your results aren’t missing. :::</li>
+</ol>
+<p>Great! That’s the basic workflow for every assignment in this course.</p>
+<p>Now you have your PDF that you can submit to Gradescope. Make sure that you tag pages corresponding to relevant problems to avoid a 10% penalty. For this exercise, tag page 1 for Problem 1 (submission of the PDF) and the page with your square function code for Problem 2.</p>
 
 
 </section>
@@ -820,18 +892,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../labs.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Labs</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../project.html" class="pagination-link">
-        <span class="nav-page-text">Final Project</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

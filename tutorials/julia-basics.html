@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.333">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -1114,7 +1114,11 @@ typeof(test_tuple_3)</code></pre>
 </section>
 <section id="package-management" class="level2">
 <h2 class="anchored" data-anchor-id="package-management">Package management</h2>
-<p>Sometimes you might need functionality that does not exist in base Julia. Julia handles packages using the <a href="https://docs.julialang.org/en/v1/stdlib/Pkg/"><code>Pkg</code> package manager</a>. After finding a package which has the functions that you need, you have two options: 1. Use the package management prompt in the Julia REPL (the standard Julia interface; what you get when you type <code>julia</code> in your terminal). Enter this by typing <code>]</code> at the standard green Julia prompt <code>julia&gt;</code>. This will become a blue <code>pkg&gt;</code>. You can then download and install new packages using <code>add packagename</code>. 2. From the standard prompt, enter <code>using Pkg; Pkg.add(packagename)</code>. The <code>packagename</code> package can then be used by adding <code>using packagename</code> to the start of the script.</p>
+<p>Sometimes you might need functionality that does not exist in base Julia. Julia handles packages using the <a href="https://docs.julialang.org/en/v1/stdlib/Pkg/"><code>Pkg</code> package manager</a>. After finding a package which has the functions that you need, you have two options:</p>
+<ol type="1">
+<li>Use the package management prompt in the Julia REPL (the standard Julia interface; what you get when you type <code>julia</code> in your terminal). Enter this by typing <code>]</code> at the standard green Julia prompt <code>julia&gt;</code>. This will become a blue <code>pkg&gt;</code>. You can then add new packages using <code>add packagename</code>.</li>
+<li>From the standard prompt, enter <code>import Pkg; Pkg.add(packagename)</code>. The <code>packagename</code> package can then be used by adding <code>using packagename</code> to the start of the script.</li>
+</ol>
 
 
 </section>

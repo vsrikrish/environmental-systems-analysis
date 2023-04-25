@@ -13,7 +13,7 @@ format:
         width: 1280
         height: 720
         transition: none
-        toc: true
+        toc: false
         toc-depth: 1
         toc-title: "Overview"
         history: false
@@ -28,23 +28,23 @@ execute:
     freeze: auto
 ---
 
-# Application Exercise 1: Getting Started with Julia and GitHub
+# Application Exercise 1
 
-## Application Exercise Overview
+## Overview
 
 Application exercises are short assignments meant to tie into the week's discussion. 
 
-These might be small coding exercises (for practice) or mini problems (think about a particular system for discussion).
+- These might be small coding exercises (for practice) or mini problems (think about a particular system for discussion).
 
-We will not normally work on these in class.
+- We will not normally work on these in class.
 
-::: {.fragment fade-in}
+::: {.fragment .fade-in}
 Today is an exception --- focus on getting acquainted with the basic workflow and toolkit.
 :::
 
 ## Instructions
 
-If you haven't already, go to the [instructions]({{< var course.url >}}/aes/ae01/ae0.qmd).
+If you haven't already, go to the [instructions]({{< var course.url >}}/aes/ae01/ae01.html).
 
 For this application exercise, the instructions will:
 
@@ -58,7 +58,7 @@ For this application exercise, the instructions will:
 
 - Do not have to finish this in class, but please make sure to ask questions if you reach any sticking points.
 - Must submit PDF by **Friday at 9:00pm**: turnaround is short this week, but there is little work for this one.
-- If you have extra time, can get started on [Homework 1]({{< var course.url >}}/hws/hw01/hw01.qmd) (get the GitHub link from [Ed Discussion](https://us.edstem.org)).
+- If you have extra time, can get started on [Homework 1]({{< var course.url >}}/hw/hw01/hw01.html) (get the GitHub link from [Ed Discussion](https://us.edstem.org)).
 
 
 

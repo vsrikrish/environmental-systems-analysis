@@ -4,3 +4,6 @@
 [submodule "labs/lab01"]
 	path = labs/lab01
 	url = https://github.com/BEE4750/lab01.git
+[submodule "aes/ae01"]
+	path = aes/ae01
+	url = https://github.com/BEE4750/ae01.git

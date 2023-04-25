@@ -12,7 +12,7 @@
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2023-08-23">
-  <title>BEE 4750 - Fall 2023 - Welcome to BEE 4750!</title>
+  <title>BEE 4750 - Fall 2023 - Getting Started with Julia and GitHub</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -320,8 +320,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="BEE 4750 - Fall 2023 - Welcome to BEE 4750!">
-<meta property="og:description" content="Lecture 01">
+<meta property="og:title" content="BEE 4750 - Fall 2023 - Getting Started with Julia and GitHub">
+<meta property="og:description" content="Lecture 02">
 <meta property="og:site-name" content="BEE 4750 - Fall 2023">
 </head>
 <body class="quarto-light">
@@ -329,365 +329,49 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-    <h1 class="title">Welcome to BEE 4750!</h1>
+    <h1 class="title">Getting Started with Julia and GitHub</h1>
   <hr>
-<p class="subtitle">Lecture 01</p>
+<p class="subtitle">Lecture 02</p>
 <p class="date">2023-08-23</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Overview</h2>
 <ul>
-<li><a href="#/welcome" id="/toc-welcome">Welcome!</a></li>
-<li><a href="#/course-policies" id="/toc-course-policies">Course Policies</a></li>
-<li><a href="#/class-tools" id="/toc-class-tools">Class Tools</a></li>
-<li><a href="#/upcoming-schedule" id="/toc-upcoming-schedule">Upcoming Schedule</a></li>
+<li><a href="#/application-exercise-1-getting-started-with-julia-and-github" id="/toc-application-exercise-1-getting-started-with-julia-and-github">Application Exercise 1: Getting Started with Julia and GitHub</a></li>
 </ul>
 </nav>
 </section>
 <section>
-<section id="welcome" class="title-slide slide level1 center">
-<h1>Welcome!</h1>
+<section id="application-exercise-1-getting-started-with-julia-and-github" class="title-slide slide level1 center">
+<h1>Application Exercise 1: Getting Started with Julia and GitHub</h1>
 
 </section>
-<section id="course-overview" class="slide level2">
-<h2>Course Overview</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="topics">Topics</h3>
+<section id="application-exercise-overview" class="slide level2">
+<h2>Application Exercise Overview</h2>
+<p>Application exercises are short assignments meant to tie into the week’s discussion.</p>
+<p>These might be small coding exercises (for practice) or mini problems (think about a particular system for discussion).</p>
+<p>We will not normally work on these in class.</p>
+<p>::: {.fragment fade-in} Today is an exception — focus on getting acquainted with the basic workflow and toolkit. :::</p>
+</section>
+<section id="instructions" class="slide level2">
+<h2>Instructions</h2>
+<p>If you haven’t already, go to the <a href="https://viveks.me/environmental-systems-analysis/aes/ae01/ae0.qmd">instructions</a>.</p>
+<p>For this application exercise, the instructions will:</p>
 <ul>
-<li>Define systems</li>
-<li>Simulate system dynamics</li>
-<li>Analyze and assess risk</li>
-<li>Formulate and solve optimization problems</li>
-<li>Explore trade-offs across competing objectives</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="fragment fade-in">
-<!-- -->
-<h3 id="example-systems">Example Systems</h3>
-<ul>
-<li>Air pollution</li>
-<li>Wastewater management</li>
-<li>Electric power systems</li>
-<li>Solid waste management</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="what-do-you-hope-to-get-out-of-this-course" class="slide level2">
-<h2>What Do You Hope To Get Out Of This Course?</h2>
-<div class="columns center">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/vsrikrish-poll.png" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
-</figure>
-</div>
-</div><div class="column" style="width:60%;">
-<p><strong>Text</strong>: VSRIKRISH to 22333</p>
-<p><strong>URL</strong>: <a href="https://pollev.com/vsrikrish">https://pollev.com/vsrikrish</a></p>
-</div>
-</div>
-</section>
-<section id="course-organization" class="slide level2">
-<h2>Course Organization</h2>
-<ol type="1">
-<li>Introduction to Systems Analysis</li>
-<li>Simulating Systems and Risk</li>
-<li>Systems Management and Optimization</li>
-<li>Analyzing Assumptions</li>
-<li>Decision-Making Under Uncertainty</li>
-</ol>
-</section></section>
-<section>
-<section id="course-policies" class="title-slide slide level1 center">
-<h1>Course Policies</h1>
-
-</section>
-<section id="grades" class="slide level2">
-<h2>Grades</h2>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Assessment</th>
-<th style="text-align: right;">% of Grade</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Application Exercises</td>
-<td style="text-align: right;">5%</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Lab Notebooks</td>
-<td style="text-align: right;">15%</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Homework Assignments</td>
-<td style="text-align: right;">40%</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Final Project</td>
-<td style="text-align: right;">40%</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section class="slide level2">
-
-<h3 id="overall-guidelines">Overall Guidelines</h3>
-<ul>
-<li>Collaboration <em>highly</em> encouraged, but <strong>all work must reflect your own understanding</strong></li>
-<li>Submit PDFs on Gradescope</li>
-<li>10% penalty per day late</li>
-<li>Rubrics will be made available as relevant</li>
-<li><strong>Always cite external references</strong></li>
-<li>Curve unlikely (not worth asking about…)</li>
+<li>walk you through installing git, Julia and VS Code;</li>
+<li>creating a GitHub account;</li>
+<li>cloning the repository;</li>
+<li>opening and editing the notebook;</li>
+<li>exporting to PDF for Gradescope.</li>
 </ul>
 </section>
-<section class="slide level2">
-
-<h3 id="application-exercises-5">Application Exercises (5%)</h3>
+<section id="tips" class="slide level2">
+<h2>Tips</h2>
 <ul>
-<li>Small exercises intended to briefly practice syntax or gain intuition</li>
-<li>Some may involve code: clone notebooks from GitHub</li>
-<li>Others may be more conceptual (e.g.&nbsp;think of an example)</li>
-<li>Due (submit to Gradescope) by the end of the relevant week (<strong>9:00pm on Friday</strong>)</li>
-<li>Graded only on completion</li>
-<li>Two will be dropped.</li>
+<li>Do not have to finish this in class, but please make sure to ask questions if you reach any sticking points.</li>
+<li>Must submit PDF by <strong>Friday at 9:00pm</strong>: turnaround is short this week, but there is little work for this one.</li>
+<li>If you have extra time, can get started on <a href="https://viveks.me/environmental-systems-analysis/hws/hw01/hw01.qmd">Homework 1</a> (get the GitHub link from <a href="https://us.edstem.org">Ed Discussion</a>).</li>
 </ul>
-</section>
-<section class="slide level2">
-
-<h3 id="labs-15">Labs (15%)</h3>
-<ul>
-<li>In-class guided activities</li>
-<li>May need some time after class to complete</li>
-<li>Focus on “how” to apply methods and concepts from class</li>
-<li><strong>If you can’t bring a laptop to these classes, you can work with someone else</strong></li>
-<li>Can work in groups, but must submit your own notebook</li>
-<li>Due by <strong>9:00 next Thursday (one week) after lab session</strong>.</li>
-<li>Will drop one.</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="homework-assignments-40">Homework Assignments (40%)</h3>
-<ul>
-<li>Roughly every other week (5-6 in total?)</li>
-<li>Focus on new or extended applications and conceptual questions</li>
-<li>Managed with GitHub Classroom</li>
-<li>Due by <strong>9:00pm</strong> on the due date (usually Thursday)</li>
-<li>Will not drop any of these; you have lots of time!</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="final-project-40">Final Project (40%)</h3>
-<ul>
-<li>Analyze a system of interest</li>
-<li>Go beyond class examples/methods</li>
-<li>Work in groups of 2 – 3 for BEE 4750, individually for BEE 5750</li>
-<li>Final submission is a PDF of a poster</li>
-<li>Intermediate submissions:
-<ul>
-<li>Proposal (one page)</li>
-<li>2 – 3 page report on a relevant regulation of interest</li>
-</ul></li>
-</ul>
-</section>
-<section id="attendance" class="slide level2">
-<h2>Attendance</h2>
-<p>Not required, but students tend to do better when they’re actively engaged in class.</p>
-</section>
-<section id="office-hours" class="slide level2">
-<h2>Office Hours</h2>
-<ul>
-<li>Time TBD (will send out poll)</li>
-<li>Almost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed.</li>
-</ul>
-</section>
-<section id="accomodations" class="slide level2">
-<h2>Accomodations</h2>
-<p>If you have any access barriers in this class, <em>please</em> seek out any helpful accomodations.</p>
-<ul>
-<li>Get an SDS letter.</li>
-<li>If you need an accomodation before you have an official letter, please reach out to me ASAP!</li>
-</ul>
-</section>
-<section id="academic-integrity" class="slide level2">
-<h2>Academic Integrity</h2>
-<p>Hopefully not a concern…</p>
-<ul>
-<li>Collaboration is great and is encouraged!</li>
-<li>Knowing how to find and use helpful resources is a skill we want to develop.</li>
-</ul>
-<div class="fragment">
-<p><strong>But</strong>:</p>
-<ul>
-<li>Don’t just copy…learn from others and give credit.</li>
-<li>Submit your own original work.</li>
-</ul>
-</div>
-</section>
-<section id="academic-integrity-1" class="slide level2">
-<h2>Academic Integrity</h2>
-<p>Obviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok. <br><br> But often lines aren’t that simple. Let’s quickly consider some scenarios (h/t to <a href="https://tonyewong.github.io/">Tony Wong</a> for these).</p>
-</section>
-<section class="slide level2">
-
-<h3 id="academic-integrity-scenario-1">Academic Integrity: Scenario 1</h3>
-<p>Dan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. He properly cites the source of the codes.</p>
-<div class="fragment fade-in-then-out">
-<p><strong>Is this ok?</strong></p>
-</div>
-<div class="fragment fade-up">
-<p><strong>Probably Not OK</strong>:</p>
-<ul>
-<li>What portion of the work is Dan’s? How important were the copied (and cited) codes?</li>
-<li>Did Dan understand what he copied?</li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="academic-integrity-scenario-2">Academic Integrity: Scenario 2</h3>
-<p>Matthew and Rhonda work together to figure out how to implement the codes, but each works on their own computer and develops their own software.</p>
-<div class="fragment fade-in-then-out">
-<p><strong>Is this ok?</strong></p>
-</div>
-<div class="fragment fade-up">
-<p><strong>Definitely OK</strong>:</p>
-<ul>
-<li>Matthew and Rhonda have collaborated to understand how to solve the problem(s), but has written up their own solution, demonstrating their understanding.</li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="academic-integrity-scenario-3">Academic Integrity: Scenario 3</h3>
-<p>Felix and Rachel are working together on a problem involving a derivation. Rachel types it up in LaTeX and sends the code to Felix, who pastes it into his Jupyter notebook.</p>
-<div class="fragment fade-in-then-out">
-<p><strong>Is this ok?</strong></p>
-</div>
-<div class="fragment fade-up">
-<p><strong>Likely Not OK</strong>:</p>
-<ul>
-<li>Did Felix contribute enough to the derivation?</li>
-<li><strong><em>Definitely not OK if Felix doesn’t give Rachel credit for her contribution.</em></strong></li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="academic-integrity-scenario-4">Academic Integrity: Scenario 4</h3>
-<p>Darren uses ChatGPT to debug an error in his homework code. He fixes the error and credits ChatGPT in his References section.</p>
-<div class="fragment fade-in-then-out">
-<p><strong>Is this ok?</strong></p>
-</div>
-<div class="fragment fade-up">
-<p><strong>Well-meaning, but no!</strong>:</p>
-<ul>
-<li>Using ChatGPT (or other ML tools) can be ok, but…</li>
-<li><strong>Need to ask permission and thoroughly document the query and the exact response.</strong></li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="chatgpt-the-stochastic-parrot">ChatGPT: The Stochastic Parrot</h3>
-<p>Why is ChatGPT (and other ML/AI tools) singled out?</p>
-<div class="fragment fade-in">
-<ul>
-<li><strong>Stochasticity</strong>: Response to a given prompt is not necessarily the same, so need to track what you received.</li>
-<li><strong>Lack of Transparency</strong>: Not clear what the training data is, so documentation is essential (ML is not great at extrapolation).</li>
-<li><strong>Not Well-Suited to All Tasks</strong>: Can be useful for getting a skeleton, starter code, or debugging. Really (and obviously) bad at interpretation and analysis.</li>
-</ul>
-</div>
-</section></section>
-<section>
-<section id="class-tools" class="title-slide slide level1 center">
-<h1>Class Tools</h1>
-
-</section>
-<section id="communications" class="slide level2">
-<h2>Communications</h2>
-<p>Use <a href="https://us.edstem.org">Ed Discussion</a> for questions and discussions about class, homework assignments, etc.</p>
-<ul>
-<li>Try to use public posts so others can benefit from questions and can weigh in.</li>
-<li><strong>I will make announcements through Ed</strong>.</li>
-</ul>
-<p><br></p>
-<p>When urgency or privacy is required, email is ok.</p>
-</section>
-<section id="course-website" class="slide level2">
-<h2>Course Website</h2>
-<p><a href="https://viveks.me/environmental-systems-analysis" class="uri">https://viveks.me/environmental-systems-analysis</a></p>
-<ul>
-<li>Central hub for information, schedule, and policies</li>
-<li>Will add link and some information to Canvas (assignment due dates, etc)</li>
-</ul>
-</section>
-<section id="computing-tools" class="slide level2">
-<h2>Computing Tools</h2>
-<p>Systems analysis requires mathematical modeling, and computing allows that to scale.</p>
-</section>
-<section class="slide level2">
-
-<h3 id="julia">Julia</h3>
-<p>In this course, we will use the <a href="https://julialang.org">Julia programming language</a>. <br><br> All assignments, labs, and AEs will be provided as Jupyter Notebooks.</p>
-</section>
-<section id="what-is-your-programming-experience" class="slide level2">
-<h2>What Is Your Programming Experience?</h2>
-<div class="columns center">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/vsrikrish-poll.png" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
-</figure>
-</div>
-</div><div class="column" style="width:60%;">
-<p><strong>Text</strong>: VSRIKRISH to 22333</p>
-<p><strong>URL</strong>: <a href="https://pollev.com/vsrikrish">https://pollev.com/vsrikrish</a></p>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="jupyter-notebooks">Jupyter Notebooks</h3>
-<p>We will use Jupyter Notebooks for most computing tasks (including assignments).</p>
-<ul>
-<li>Allow for interactive evaluation of code and integration with text (including nicely typeset mathematics)</li>
-<li>Can export to PDF (or HTML -&gt; PDF) for submission to Gradescope.</li>
-<li><strong>Be careful before submitting</strong>:
-<ul>
-<li>Evaluate all cells <em>in order</em></li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="github-classroom">GitHub Classroom</h3>
-<p>Homework assignments and labs will be distributed using GitHub Classroom.</p>
-<ul>
-<li>Every student will have a unique “repository.”</li>
-<li>When assignment is released, I will share the link for repository creation on Ed Discussion.</li>
-<li>Makes it easy to share code for assistance and debugging (share links to repositories, not out-of-context code and screenshots).</li>
-</ul>
-<div class="fragment fade-in">
-<p><strong>We will spend Wednesday getting up and running with Julia and GitHub — bring your laptops!</strong></p>
-</div>
-</section></section>
-<section>
-<section id="upcoming-schedule" class="title-slide slide level1 center">
-<h1>Upcoming Schedule</h1>
-
-</section>
-<section id="next-classes" class="slide level2">
-<h2>Next Classes</h2>
-<p><strong>Wednesday</strong>: Onboarding/AE to set up Julia and GitHub and work on HW 1. - Preparation: - AE link is available on the website. - HW 1 link is available on Ed.</p>
-<p><br> <strong>Friday</strong>: Work on Lab 1. - Preparation: - Lab 1 link is available on Ed. Click it to accept the lab before class, and based on Wednesday.</p>
 
 <div class="footer footer-default">
 <p><a href="https://viveks.me/environmental-systems-analysis">BEE 4750, Environmental Systems Analysis</a></p>

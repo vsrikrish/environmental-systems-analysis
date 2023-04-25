@@ -1,0 +1,64 @@
+---
+title: "Getting Started with Julia and GitHub"
+subtitle: "Lecture 02"
+author: "Vivek Srikrishnan"
+course: "BEE 4750"
+institution: "Cornell University"
+date: "August 23, 2023"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        footer: "[BEE 4750, Environmental Systems Analysis](https://viveks.me/environmental-systems-analysis)"
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+execute:
+    freeze: auto
+---
+
+# Application Exercise 1: Getting Started with Julia and GitHub
+
+## Application Exercise Overview
+
+Application exercises are short assignments meant to tie into the week's discussion. 
+
+These might be small coding exercises (for practice) or mini problems (think about a particular system for discussion).
+
+We will not normally work on these in class.
+
+::: {.fragment fade-in}
+Today is an exception --- focus on getting acquainted with the basic workflow and toolkit.
+:::
+
+## Instructions
+
+If you haven't already, go to the [instructions]({{< var course.url >}}/aes/ae01/ae0.qmd).
+
+For this application exercise, the instructions will:
+
+- walk you through installing git, Julia and VS Code;
+- creating a GitHub account;
+- cloning the repository;
+- opening and editing the notebook;
+- exporting to PDF for Gradescope.
+
+## Tips
+
+- Do not have to finish this in class, but please make sure to ask questions if you reach any sticking points.
+- Must submit PDF by **Friday at 9:00pm**: turnaround is short this week, but there is little work for this one.
+- If you have extra time, can get started on [Homework 1]({{< var course.url >}}/hws/hw01/hw01.qmd) (get the GitHub link from [Ed Discussion](https://us.edstem.org)).
+
+
+

@@ -472,18 +472,18 @@ PDF Export for Gradescope
 </section>
 <section id="clone-the-repository" class="level4">
 <h4 class="anchored" data-anchor-id="clone-the-repository">Clone the Repository</h4>
-<p>Once you have created your account, navigate to the <a href="https://github.com/BEE4750/ae01">GitHub repository for the assignment</a>. You will have your own repository for assignments that you accept through the GitHub Classroom links, but for now, let’s use this common repository. Click the green “Code” button, and copy the URL by clicking on the clipboard icon.</p>
-<div class="quarto-figure quarto-figure-center">
+<p>Once you have created your account, navigate to the <a href="https://github.com/BEE4750/ae01">GitHub repository for the assignment</a>. You will have your own repository for assignments that you accept through the GitHub Classroom links, but for now, let’s use this common repository. Click the green “Code” button (you should see the interface shown in <a href="#fig-github-clone" class="quarto-xref">Figure&nbsp;1</a>), and copy the URL by clicking on the clipboard icon.</p>
+<div id="fig-github-clone" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/github-clone.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Code Clone Interface on GitHub</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;1: Code Clone Interface on GitHub</figcaption>
 </figure>
 </div>
-<p>Next, open a new VS Code window. You should see the following options.</p>
-<div class="quarto-figure quarto-figure-center">
+<p>Next, open a new VS Code window. You should see the following options (<a href="#fig-vscode-clone" class="quarto-xref">Figure&nbsp;2</a>).</p>
+<div id="fig-vscode-clone" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/vs-code-clone.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">VS Code New Window</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;2: VS Code New Window</figcaption>
 </figure>
 </div>
 <p>Click “Clone Git Repository” and select “Clone from GitHub” when it pops up. Paste the URL for the repository into the search bar and select the repository that comes up. You will then be prompted to pick a location to save the repository. I recommend keeping a single master folder for the course, which can then be divided into <code>aes</code> (for application exercises), <code>labs</code>, and <code>hws</code>. For example:</p>
@@ -531,8 +531,13 @@ Working with GitHub Repositories
 </ol>
 </div>
 </div>
-<p>In the upper right corner, you should see an icon similar to this (but perhaps with different text):</p>
-<p><img src="figures/kernel-selection.png" class="img-fluid" alt="Kernel Selection Button">.</p>
+<p>In the upper right corner, you should see an icon similar to <a href="#fig-kernel-select" class="quarto-xref">Figure&nbsp;3</a> (but perhaps with different text).</p>
+<div id="fig-kernel-select" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/kernel-selection.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Kernel Selection Button</figcaption>
+</figure>
+</div>
 <p>This is where you will click to select the “kernel” which is used to compile the Jupyter notebook. Click it, and you will be prompted to select a kernel. You likely need to select “Select Another Kernel…”, then “Julia Language Support,” and then “Julia 1.8 channel.”</p>
 </section>
 <section id="edit-notebook" class="level4">
@@ -578,7 +583,13 @@ Working with GitHub Repositories
 <section id="sec-export-pdf" class="level3">
 <h3 class="anchored" data-anchor-id="sec-export-pdf">Export the Notebook</h3>
 <p>Congratulations, you’ve set up Julia and GitHub and learned the basics of working with Jupyter Notebooks! The last step is to export the notebook for submission to Gradescope.</p>
-<p>You should see the following menu bar at the top of the VS Code window: <img src="figures/vs-code-top-bar.png" class="img-fluid" alt="Notebook Menu Bar"></p>
+<p>You should see the menu bar shown in <a href="#fig-notebook-menu" class="quarto-xref">Figure&nbsp;4</a> at the top of the VS Code window.</p>
+<div id="fig-notebook-menu" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/vs-code-top-bar.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4: Notebook Menu Bar</figcaption>
+</figure>
+</div>
 <ol type="1">
 <li>Click “Run All” at the top to execute all of the cells in order. <strong>Please do not forget to do this before exporting and submitting or you may lose points because your code has not been executed or may have errors</strong>.</li>
 <li>Click the ellipsis (“…”) and select “Export”. If you have LaTeX installed, you can click “PDF”; otherwise, click “HTML.” Save the file, and then when prompted, open the file. This should open the page in your browser; go to the print interface and save as a PDF. ::: {.callout-tip} When printing to PDF, long lines will run off the edge of code cells, which may result in comments or code being hidden. If you see this, go back to the notebook and break up long lines into shorter onces (for example, see the comment in the above code cell) to ensure key parts of your results aren’t missing. :::</li>

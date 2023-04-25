@@ -271,6 +271,18 @@ Darren uses ChatGPT to debug an error in his homework code. He fixes the error a
 - **Need to ask permission and thoroughly document the query and the exact response.**
 :::
 
+---
+
+### ChatGPT: The Stochastic Parrot
+
+Why is ChatGPT (and other ML/AI tools) singled out?
+
+::: {.fragment .fade-in}
+- **Stochasticity**: Response to a given prompt is not necessarily the same, so need to track what you received.
+- **Lack of Transparency**: Not clear what the training data is, so documentation is essential (ML is not great at extrapolation).
+- **Not Well-Suited to All Tasks**: Can be useful for getting a skeleton, starter code, or debugging. Really (and obviously) bad at interpretation and analysis.
+:::
+
 # Class Tools
 
 ---
@@ -344,7 +356,7 @@ Homework assignments and labs will be distributed using GitHub Classroom.
 
 - Every student will have a unique "repository."
 - When assignment is released, I will share the link for repository creation on Ed Discussion.
-- Makes it easy to share code for assistance and debugging.
+- Makes it easy to share code for assistance and debugging (share links to repositories, not out-of-context code and screenshots).
 
 ::: {.fragment .fade-in}
 **We will spend Wednesday getting up and running with Julia and GitHub --- bring your laptops!**
@@ -356,11 +368,6 @@ Homework assignments and labs will be distributed using GitHub Classroom.
 
 ## Next Classes
 
-<<<<<<< HEAD
-**Wednesday**: Onboarding/AE to set up Julia and GitHub and get a head start on HW 1.
-<br><br>
-**Friday**: What is a system? Why do we care?
-=======
 **Wednesday**: Onboarding/AE to set up Julia and GitHub and work on HW 1. 
 - Preparation: 
     - AE link is available on the website. 
@@ -370,5 +377,4 @@ Homework assignments and labs will be distributed using GitHub Classroom.
 **Friday**: Work on Lab 1. 
 - Preparation: 
     - Lab 1 link is available on Ed. Click it to accept the lab before class, and based on Wednesday.
->>>>>>> feb0312 (update lecture)
 

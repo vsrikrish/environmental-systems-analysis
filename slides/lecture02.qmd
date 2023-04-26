@@ -60,5 +60,13 @@ For this application exercise, the instructions will:
 - Must submit PDF by **Friday at 9:00pm**: turnaround is short this week, but there is little work for this one.
 - If you have extra time, can get started on [Homework 1]({{< var course.url >}}/hw/hw01/hw01.html) (get the GitHub link from [Ed Discussion](https://us.edstem.org)).
 
+# Upcoming Schedule
+
+## Next Class
+
+Work on Lab 1. 
+
+- Preparation: 
+    - Lab 1 link is available on Ed. Click it to accept the lab before class, and based on Wednesday.
 
 

@@ -9,7 +9,7 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 ::: column-screen-inset-right
 | Week | Date        | Topic | Slides | AE | Lab | HW | Project |
 :-----:|:------------|:------|:------:|:--:|:---:|:--:|:-------:|
-| 1    | Mon, Aug 21 | Welcome to BEE 4750! | [{{< fa sharp presentation-screen >}}](slides/lecture01.qmd){target="_blank"}  | |  | [{{< fa sharp pen-field >}}](hw/hw01/hw01.qmd) | |
-| | Wed, Aug 23 | Julia and GitHub Setup | [{{< fa sharp presentation-screen >}}](slides/lecture02.qmd)  | [{{< fa sharp coffee-pot >}}](aes/ae01/ae01.qmd) | | | |
-| | Fri, Aug 25 | Julia and GitHub Basics | | | [{{< fa sharp laptop >}}](labs/lab01/lab01.qmd) | | |
+| 1    | Mon, Aug 21 | Welcome to BEE 4750! | [{{< fa sharp presentation-screen >}}](slides/lecture01-1.qmd){target="_blank"}  | |  | [{{< fa sharp pen-field >}}](hw/hw01/hw01.qmd) | |
+| | Wed, Aug 23 | Julia and GitHub Setup | [{{< fa sharp presentation-screen >}}](slides/lecture01-2.qmd){target="_blank"}   | [{{< fa sharp coffee-pot >}}](aes/ae01/ae01.qmd) | | | |
+| | Fri, Aug 25 | Julia and GitHub Basics | [{{< fa sharp presentation-screen >}}](slides/lecture01-3.qmd){target="_blank"} | | [{{< fa sharp laptop >}}](labs/lab01/lab01.qmd) | | |
 :::

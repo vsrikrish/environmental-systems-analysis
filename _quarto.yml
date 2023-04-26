@@ -67,7 +67,7 @@ website:
       - section: project.qmd
       - text: "FAQ"
         href: faq.qmd
-      - section: "Julia Tutorials"
+      - section: "Tutorials"
         contents:
           - href: tutorials/julia-basics.qmd
             text: Julia Basics
@@ -101,6 +101,7 @@ format:
     reference-location: margin
     citation-location: margin
     code-annotations: select
+    html-math-method: mathjax
 
 bibliography: references.bib
 csl: _assets/references/american-geophysical-union.csl

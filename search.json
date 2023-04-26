@@ -70,6 +70,202 @@
     "text": "Rubric\n\nProblem 1 (20 Points)\n\nProblem 1.1 (10 points)\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0-3)\nDeveloping (4-6)\nAbove Average (7-9)\nExcellent (10)\n\n\n\n\nMissing or logic error incorrectly identified.\nLogic error correctly identifed, but unclear description which makes the connection to the code tenuous.\nLogic error correctly identified and connected to the code, but some lack of clarity in the description.\nLogic error correctly identified and clearly described, including where it occurs in the code.\n\n\n\n\n\nProblem 1.2 (5 points)\n\n\n\n\n\n\n\n\nNeeds Improvement (0-2)\nAbove Average (3-4)\nExcellent (5)\n\n\n\n\nNo fixed code provided or new function does not fix the underlying error.\nCode fixes the underlying error, but has no comments or additional mistakes.\nCode fixes the error without other bugs and includes comments indicating the change.\n\n\n\n\n\nProblem 1.3 (5 points)\n\n\n\n\n\n\n\n\nNeeds Improvement (0-2)\nAbove Average (3-4)\nExcellent (5)\n\n\n\n\nFixed function not used.\nFixed function used, but incorrectly applied.\nFixed function used and produces the correct value.\n\n\n\n\n\n\nProblem 2 (20 points)\n\nProblem 2.1 (10 points)\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0-3)\nDeveloping (4-6)\nAbove Average (7-9)\nExcellent (10)\n\n\n\n\nMissing or logic error incorrectly identified.\nLogic error correctly identifed, but unclear description which makes the connection to the code tenuous.\nLogic error correctly identified and connected to the code, but some lack of clarity in the description.\nLogic error correctly identified and clearly described, including where it occurs in the code.\n\n\n\n\n\nProblem 2.2 (5 points)\n\n\n\n\n\n\n\n\nNeeds Improvement (0-2)\nAbove Average (3-4)\nExcellent (5)\n\n\n\n\nNo fixed code provided or new function does not fix the underlying error.\nCode fixes the underlying error, but has no comments or additional mistakes.\nCode fixes the error without other bugs and includes comments indicating the change.\n\n\n\n\n\nProblem 2.3 (5 points)\n\n\n\n\n\n\n\n\nNeeds Improvement (0-2)\nAbove Average (3-4)\nExcellent (5)\n\n\n\n\nFixed function not used.\nFixed function used, but incorrectly applied.\nFixed function used and produces the correct value.\n\n\n\n\n\n\nProblem 3 (20 points)\n\nProblem 3.1 (10 points)\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0-3)\nDeveloping (4-6)\nAbove Average (7-9)\nExcellent (10)\n\n\n\n\nAnswer missing or explained purpose is incorrect.\nExplanation of purpose is vague and does not reflect understanding of what code does.\nExplanation of purpose is mostly correct, but may have some slight vagueness or lack of clarity.\nPurpose is explained accurately and clearly.\n\n\n\n\n\nProblem 3.2 (10 points)\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0-3)\nDeveloping (4-6)\nAbove Average (7-9)\nExcellent (10)\n\n\n\n\nComments missing or do not help explain the purpose of the code.\nComments are incomplete, but the ones that are present are helpful.\nComments generally provided and helpful, but some are not clear.\nComments clearly explain why and how the code works.\n\n\n\n\n\n\nProblem 4 (40 points)\n\nProblem 4.1 (10 points)\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0-3)\nDeveloping (4-6)\nAbove Average (7-9)\nExcellent (10)\n\n\n\n\nLabels missing or have no or little relationship to the problem description.\nLabels reflect the correct quantities but are misapplied to the system diagram.\nLabels have some slight mistakes but reflect understanding of description and diagram.\nLabels are correct and appear on the right vertices.\n\n\n\n\n\nProblem 4.2 (10 points)\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0-3)\nDeveloping (4-6)\nAbove Average (7-9)\nExcellent (10)\n\n\n\n\nModel is missing or does not reflect problem description.\nModel missing components or equations have large errors and/or no or little justification from the stated problem.\nEquations are generally correct and but may include some small mistakes or justification is vague at points.\nEquations are correct and well-justified with reference to the problem description.\n\n\n\n\n\nProblem 4.3 (10 points)\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0-3)\nDeveloping (4-6)\nAbove Average (7-9)\nExcellent (10)\n\n\n\n\nCode is missing or contains serious mistakes that prevent it from running.\nFunction runs, but has serious errors which prevent it from implementing the derived equations.\nFunction contains minor errors or is missing clarifying comments.\nFunction correctly implements model and is appropriately commented.\n\n\n\n\n\nProblem 4.4 (10 points)\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0-3)\nDeveloping (4-6)\nAbove Average (7-9)\nExcellent (10)\n\n\n\n\nExperiments or explanations are missing (e.g. there is only a reporting of results) or aren’t reflective of the questions.\nExperiments present and sufficient but explanations are sketchy and do not address the questions.\nExperiments present and sufficient, but questions are not fully engaged with, or minor errors (plot labels not labeled, etc) in presentation.\nExperiments present and sufficient and discussion of questions is complete."
   },
   {
+    "objectID": "slides/lecture01-1.html#course-overview",
+    "href": "slides/lecture01-1.html#course-overview",
+    "title": "Welcome to BEE 4750!",
+    "section": "Course Overview",
+    "text": "Course Overview\n\n\nTopics\n\nDefine systems\nSimulate system dynamics\nAnalyze and assess risk\nFormulate and solve optimization problems\nExplore trade-offs across competing objectives\n\n\n\n\nExample Systems\n\nAir pollution\nWastewater management\nElectric power systems\nSolid waste management"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#what-do-you-hope-to-get-out-of-this-course",
+    "href": "slides/lecture01-1.html#what-do-you-hope-to-get-out-of-this-course",
+    "title": "Welcome to BEE 4750!",
+    "section": "What Do You Hope To Get Out Of This Course?",
+    "text": "What Do You Hope To Get Out Of This Course?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#course-organization",
+    "href": "slides/lecture01-1.html#course-organization",
+    "title": "Welcome to BEE 4750!",
+    "section": "Course Organization",
+    "text": "Course Organization\n\nIntroduction to Systems Analysis\nSimulating Systems and Risk\nSystems Management and Optimization\nAnalyzing Assumptions\nDecision-Making Under Uncertainty"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#grades",
+    "href": "slides/lecture01-1.html#grades",
+    "title": "Welcome to BEE 4750!",
+    "section": "Grades",
+    "text": "Grades\n\n\n\nAssessment\n% of Grade\n\n\n\n\nApplication Exercises\n5%\n\n\nLab Notebooks\n15%\n\n\nHomework Assignments\n40%\n\n\nFinal Project\n40%"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#overall-guidelines",
+    "href": "slides/lecture01-1.html#overall-guidelines",
+    "title": "Welcome to BEE 4750!",
+    "section": "Overall Guidelines",
+    "text": "Overall Guidelines\n\nCollaboration highly encouraged, but all work must reflect your own understanding\nSubmit PDFs on Gradescope\n10% penalty per day late\nRubrics will be made available as relevant\nAlways cite external references\nCurve unlikely (not worth asking about…)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#application-exercises-5",
+    "href": "slides/lecture01-1.html#application-exercises-5",
+    "title": "Welcome to BEE 4750!",
+    "section": "Application Exercises (5%)",
+    "text": "Application Exercises (5%)\n\nSmall exercises intended to briefly practice syntax or gain intuition\nSome may involve code: clone notebooks from GitHub\nOthers may be more conceptual (e.g. think of an example)\nDue (submit to Gradescope) by the end of the relevant week (9:00pm on Friday)\nGraded only on completion\nTwo will be dropped."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#labs-15",
+    "href": "slides/lecture01-1.html#labs-15",
+    "title": "Welcome to BEE 4750!",
+    "section": "Labs (15%)",
+    "text": "Labs (15%)\n\nIn-class guided activities\nMay need some time after class to complete\nFocus on “how” to apply methods and concepts from class\nIf you can’t bring a laptop to these classes, you can work with someone else\nCan work in groups, but must submit your own notebook\nDue by 9:00 next Thursday (one week) after lab session.\nWill drop one."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#homework-assignments-40",
+    "href": "slides/lecture01-1.html#homework-assignments-40",
+    "title": "Welcome to BEE 4750!",
+    "section": "Homework Assignments (40%)",
+    "text": "Homework Assignments (40%)\n\nRoughly every other week (5-6 in total?)\nFocus on new or extended applications and conceptual questions\nManaged with GitHub Classroom\nDue by 9:00pm on the due date (usually Thursday)\nWill not drop any of these; you have lots of time!"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#final-project-40",
+    "href": "slides/lecture01-1.html#final-project-40",
+    "title": "Welcome to BEE 4750!",
+    "section": "Final Project (40%)",
+    "text": "Final Project (40%)\n\nAnalyze a system of interest\nGo beyond class examples/methods\nWork in groups of 2 – 3 for BEE 4750, individually for BEE 5750\nFinal submission is a PDF of a poster\nIntermediate submissions:\n\nProposal (one page)\n2 – 3 page report on a relevant regulation of interest"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#attendance",
+    "href": "slides/lecture01-1.html#attendance",
+    "title": "Welcome to BEE 4750!",
+    "section": "Attendance",
+    "text": "Attendance\nNot required, but students tend to do better when they’re actively engaged in class."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#office-hours",
+    "href": "slides/lecture01-1.html#office-hours",
+    "title": "Welcome to BEE 4750!",
+    "section": "Office Hours",
+    "text": "Office Hours\n\nTime TBD (will send out poll)\nAlmost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#accomodations",
+    "href": "slides/lecture01-1.html#accomodations",
+    "title": "Welcome to BEE 4750!",
+    "section": "Accomodations",
+    "text": "Accomodations\nIf you have any access barriers in this class, please seek out any helpful accomodations.\n\nGet an SDS letter.\nIf you need an accomodation before you have an official letter, please reach out to me ASAP!"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#academic-integrity",
+    "href": "slides/lecture01-1.html#academic-integrity",
+    "title": "Welcome to BEE 4750!",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nHopefully not a concern…\n\nCollaboration is great and is encouraged!\nKnowing how to find and use helpful resources is a skill we want to develop.\n\n\nBut:\n\nDon’t just copy…learn from others and give credit.\nSubmit your own original work."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#academic-integrity-1",
+    "href": "slides/lecture01-1.html#academic-integrity-1",
+    "title": "Welcome to BEE 4750!",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nObviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok.  But often lines aren’t that simple. Let’s quickly consider some scenarios (h/t to Tony Wong for these)."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#academic-integrity-scenario-1",
+    "href": "slides/lecture01-1.html#academic-integrity-scenario-1",
+    "title": "Welcome to BEE 4750!",
+    "section": "Academic Integrity: Scenario 1",
+    "text": "Academic Integrity: Scenario 1\nDan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. He properly cites the source of the codes.\n\nIs this ok?\n\n\nProbably Not OK:\n\nWhat portion of the work is Dan’s? How important were the copied (and cited) codes?\nDid Dan understand what he copied?"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#academic-integrity-scenario-2",
+    "href": "slides/lecture01-1.html#academic-integrity-scenario-2",
+    "title": "Welcome to BEE 4750!",
+    "section": "Academic Integrity: Scenario 2",
+    "text": "Academic Integrity: Scenario 2\nMatthew and Rhonda work together to figure out how to implement the codes, but each works on their own computer and develops their own software.\n\nIs this ok?\n\n\nDefinitely OK:\n\nMatthew and Rhonda have collaborated to understand how to solve the problem(s), but has written up their own solution, demonstrating their understanding."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#academic-integrity-scenario-3",
+    "href": "slides/lecture01-1.html#academic-integrity-scenario-3",
+    "title": "Welcome to BEE 4750!",
+    "section": "Academic Integrity: Scenario 3",
+    "text": "Academic Integrity: Scenario 3\nFelix and Rachel are working together on a problem involving a derivation. Rachel types it up in LaTeX and sends the code to Felix, who pastes it into his Jupyter notebook.\n\nIs this ok?\n\n\nLikely Not OK:\n\nDid Felix contribute enough to the derivation?\nDefinitely not OK if Felix doesn’t give Rachel credit for her contribution."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#academic-integrity-scenario-4",
+    "href": "slides/lecture01-1.html#academic-integrity-scenario-4",
+    "title": "Welcome to BEE 4750!",
+    "section": "Academic Integrity: Scenario 4",
+    "text": "Academic Integrity: Scenario 4\nDarren uses ChatGPT to debug an error in his homework code. He fixes the error and credits ChatGPT in his References section.\n\nIs this ok?\n\n\nWell-meaning, but no!:\n\nUsing ChatGPT (or other ML tools) can be ok, but…\nNeed to ask permission and thoroughly document the query and the exact response."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#chatgpt-the-stochastic-parrot",
+    "href": "slides/lecture01-1.html#chatgpt-the-stochastic-parrot",
+    "title": "Welcome to BEE 4750!",
+    "section": "ChatGPT: The Stochastic Parrot",
+    "text": "ChatGPT: The Stochastic Parrot\nWhy is ChatGPT (and other ML/AI tools) singled out?\n\n\nStochasticity: Response to a given prompt is not necessarily the same, so need to track what you received.\nLack of Transparency: Not clear what the training data is, so documentation is essential (ML is not great at extrapolation).\nNot Well-Suited to All Tasks: Can be useful for getting a skeleton, starter code, or debugging. Really (and obviously) bad at interpretation and analysis."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#communications",
+    "href": "slides/lecture01-1.html#communications",
+    "title": "Welcome to BEE 4750!",
+    "section": "Communications",
+    "text": "Communications\nUse Ed Discussion for questions and discussions about class, homework assignments, etc.\n\nTry to use public posts so others can benefit from questions and can weigh in.\nI will make announcements through Ed.\n\n\nWhen urgency or privacy is required, email is ok."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#course-website",
+    "href": "slides/lecture01-1.html#course-website",
+    "title": "Welcome to BEE 4750!",
+    "section": "Course Website",
+    "text": "Course Website\nhttps://viveks.me/environmental-systems-analysis\n\nCentral hub for information, schedule, and policies\nWill add link and some information to Canvas (assignment due dates, etc)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#computing-tools",
+    "href": "slides/lecture01-1.html#computing-tools",
+    "title": "Welcome to BEE 4750!",
+    "section": "Computing Tools",
+    "text": "Computing Tools\nSystems analysis requires mathematical modeling, and computing allows that to scale."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#julia",
+    "href": "slides/lecture01-1.html#julia",
+    "title": "Welcome to BEE 4750!",
+    "section": "Julia",
+    "text": "Julia\nIn this course, we will use the Julia programming language.  All assignments, labs, and AEs will be provided as Jupyter Notebooks."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#what-is-your-programming-experience",
+    "href": "slides/lecture01-1.html#what-is-your-programming-experience",
+    "title": "Welcome to BEE 4750!",
+    "section": "What Is Your Programming Experience?",
+    "text": "What Is Your Programming Experience?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#jupyter-notebooks",
+    "href": "slides/lecture01-1.html#jupyter-notebooks",
+    "title": "Welcome to BEE 4750!",
+    "section": "Jupyter Notebooks",
+    "text": "Jupyter Notebooks\nWe will use Jupyter Notebooks for most computing tasks (including assignments).\n\nAllow for interactive evaluation of code and integration with text (including nicely typeset mathematics)\nCan export to PDF (or HTML -&gt; PDF) for submission to Gradescope.\nBe careful before submitting:\n\nEvaluate all cells in order"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#github-classroom",
+    "href": "slides/lecture01-1.html#github-classroom",
+    "title": "Welcome to BEE 4750!",
+    "section": "GitHub Classroom",
+    "text": "GitHub Classroom\nHomework assignments and labs will be distributed using GitHub Classroom.\n\nEvery student will have a unique “repository.”\nWhen assignment is released, I will share the link for repository creation on Ed Discussion.\nMakes it easy to share code for assistance and debugging (share links to repositories, not out-of-context code and screenshots)."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#next-classes",
+    "href": "slides/lecture01-1.html#next-classes",
+    "title": "Welcome to BEE 4750!",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: Onboarding/AE to set up Julia and GitHub and work on HW 1.\n\nPreparation:\n\nAE link is available on the website.\nHW 1 link is available on Ed.\nBring your laptop if possible!"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#next-classes-1",
+    "href": "slides/lecture01-1.html#next-classes-1",
+    "title": "Welcome to BEE 4750!",
+    "section": "Next Classes",
+    "text": "Next Classes\nFriday: Work on Lab 1.\n\nPreparation:\n\nLab 1 link is available on Ed. Click it to accept the lab before class, and based on Wednesday.\n\n\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
     "objectID": "slides/notebooks/economic-dispatch.html",
     "href": "slides/notebooks/economic-dispatch.html",
     "title": "Economic Dispatch with JuMP",
@@ -105,221 +301,95 @@
     "text": "Multiple-Period Dispatch\nWhat changes for multiple periods?\n\nNeed to meet demand at every time period\nWe have additional ramping constraints: plants can only increase and decrease their output by so much from time to time, by \\(R_g\\).\n\n\nJuMP Implementation\n\n\nCode\nramp = [150, 200, 100, 250, 300]\ndemand = [1725, 1596, 1476, 1408, 1530, 1714, 1820, 1973, 2081, 2202, 2105, 2065, \n    2045, 2195, 2309, 2390, 2486, 2515, 2075, 2006, 1956, 1902, 1865, 1820]\nh = length(demand)\nT = 1:h\n\ndispatch2 = Model(HiGHS.Optimizer)\n@variable(dispatch2, gen_minpower[g] &lt;= y[g in G, t in T] &lt;= gen_maxpower[g])\n@objective(dispatch2, Min, sum(gen_varcost .* sum([y[:, t] for t in T])))\n@constraint(dispatch2, load[t in T], sum(y[:, t]) == demand[t])\n@constraint(dispatch2, rampup[g in G, t in 1:h-1], y[g, t+1] - y[g, t] &lt;= ramp[g])\n@constraint(dispatch2, rampdown[g in G, t in 1:h-1], y[g, t] - y[g, t+1] &lt;= ramp[g])\n\nlatex_formulation(dispatch2)\n\n\n\\[ \\begin{aligned}\n\\min\\quad & 2 y_{3,1} + 2 y_{3,2} + 2 y_{3,3} + 2 y_{3,4} + 2 y_{3,5} + 2 y_{3,6} + 2 y_{3,7} + 2 y_{3,8} + 2 y_{3,9} + 2 y_{3,10} + 2 y_{3,11} + 2 y_{3,12} + 2 y_{3,13} + 2 y_{3,14} + 2 y_{3,15} + 2 y_{3,16} + 2 y_{3,17} + 2 y_{3,18} + 2 y_{3,19} + 2 y_{3,20} + 2 y_{3,21} + 2 y_{3,22} + 2 y_{3,23} + 2 y_{3,24} + 21.5 y_{4,1} + 21.5 y_{4,2} + 21.5 y_{4,3} + 21.5 y_{4,4} + 21.5 y_{4,5} + 21.5 y_{4,6} + 21.5 y_{4,7} + 21.5 y_{4,8} + 21.5 y_{4,9} + 21.5 y_{4,10} + 21.5 y_{4,11} + 21.5 y_{4,12} + 21.5 y_{4,13} + 21.5 y_{4,14} + 21.5 y_{4,15} + 21.5 y_{4,16} + 21.5 y_{4,17} + 21.5 y_{4,18} + 21.5 y_{4,19} + 21.5 y_{4,20} + 21.5 y_{4,21} + 21.5 y_{4,22} + 21.5 y_{4,23} + 21.5 y_{4,24} + 23 y_{5,1} + 23 y_{5,2} + 23 y_{5,3} + 23 y_{5,4} + 23 y_{5,5} + 23 y_{5,6} + 23 y_{5,7} + 23 y_{5,8} + 23 y_{5,9} + 23 y_{5,10} + 23 y_{5,11} + 23 y_{5,12} + 23 y_{5,13} + 23 y_{5,14} + 23 y_{5,15} + 23 y_{5,16} + 23 y_{5,17} + 23 y_{5,18} + 23 y_{5,19} + 23 y_{5,20} + 23 y_{5,21} + 23 y_{5,22} + 23 y_{5,23} + 23 y_{5,24}\\\\\n\\text{Subject to} \\quad & y_{1,1} + y_{2,1} + y_{3,1} + y_{4,1} + y_{5,1} = 1725.0\\\\\n& y_{1,2} + y_{2,2} + y_{3,2} + y_{4,2} + y_{5,2} = 1596.0\\\\\n& y_{1,3} + y_{2,3} + y_{3,3} + y_{4,3} + y_{5,3} = 1476.0\\\\\n& y_{1,4} + y_{2,4} + y_{3,4} + y_{4,4} + y_{5,4} = 1408.0\\\\\n& y_{1,5} + y_{2,5} + y_{3,5} + y_{4,5} + y_{5,5} = 1530.0\\\\\n& y_{1,6} + y_{2,6} + y_{3,6} + y_{4,6} + y_{5,6} = 1714.0\\\\\n& y_{1,7} + y_{2,7} + y_{3,7} + y_{4,7} + y_{5,7} = 1820.0\\\\\n& y_{1,8} + y_{2,8} + y_{3,8} + y_{4,8} + y_{5,8} = 1973.0\\\\\n& y_{1,9} + y_{2,9} + y_{3,9} + y_{4,9} + y_{5,9} = 2081.0\\\\\n& y_{1,10} + y_{2,10} + y_{3,10} + y_{4,10} + y_{5,10} = 2202.0\\\\\n& y_{1,11} + y_{2,11} + y_{3,11} + y_{4,11} + y_{5,11} = 2105.0\\\\\n& y_{1,12} + y_{2,12} + y_{3,12} + y_{4,12} + y_{5,12} = 2065.0\\\\\n& y_{1,13} + y_{2,13} + y_{3,13} + y_{4,13} + y_{5,13} = 2045.0\\\\\n& y_{1,14} + y_{2,14} + y_{3,14} + y_{4,14} + y_{5,14} = 2195.0\\\\\n& y_{1,15} + y_{2,15} + y_{3,15} + y_{4,15} + y_{5,15} = 2309.0\\\\\n& y_{1,16} + y_{2,16} + y_{3,16} + y_{4,16} + y_{5,16} = 2390.0\\\\\n& y_{1,17} + y_{2,17} + y_{3,17} + y_{4,17} + y_{5,17} = 2486.0\\\\\n& y_{1,18} + y_{2,18} + y_{3,18} + y_{4,18} + y_{5,18} = 2515.0\\\\\n& y_{1,19} + y_{2,19} + y_{3,19} + y_{4,19} + y_{5,19} = 2075.0\\\\\n& y_{1,20} + y_{2,20} + y_{3,20} + y_{4,20} + y_{5,20} = 2006.0\\\\\n& y_{1,21} + y_{2,21} + y_{3,21} + y_{4,21} + y_{5,21} = 1956.0\\\\\n& y_{1,22} + y_{2,22} + y_{3,22} + y_{4,22} + y_{5,22} = 1902.0\\\\\n& y_{1,23} + y_{2,23} + y_{3,23} + y_{4,23} + y_{5,23} = 1865.0\\\\\n& y_{1,24} + y_{2,24} + y_{3,24} + y_{4,24} + y_{5,24} = 1820.0\\\\\n& -y_{1,1} + y_{1,2} \\leq 150.0\\\\\n& -y_{2,1} + y_{2,2} \\leq 200.0\\\\\n& -y_{3,1} + y_{3,2} \\leq 100.0\\\\\n& -y_{4,1} + y_{4,2} \\leq 250.0\\\\\n& -y_{5,1} + y_{5,2} \\leq 300.0\\\\\n& -y_{1,2} + y_{1,3} \\leq 150.0\\\\\n& -y_{2,2} + y_{2,3} \\leq 200.0\\\\\n& -y_{3,2} + y_{3,3} \\leq 100.0\\\\\n& -y_{4,2} + y_{4,3} \\leq 250.0\\\\\n& -y_{5,2} + y_{5,3} \\leq 300.0\\\\\n& -y_{1,3} + y_{1,4} \\leq 150.0\\\\\n& -y_{2,3} + y_{2,4} \\leq 200.0\\\\\n& -y_{3,3} + y_{3,4} \\leq 100.0\\\\\n& -y_{4,3} + y_{4,4} \\leq 250.0\\\\\n& -y_{5,3} + y_{5,4} \\leq 300.0\\\\\n& -y_{1,4} + y_{1,5} \\leq 150.0\\\\\n& -y_{2,4} + y_{2,5} \\leq 200.0\\\\\n& -y_{3,4} + y_{3,5} \\leq 100.0\\\\\n& -y_{4,4} + y_{4,5} \\leq 250.0\\\\\n& -y_{5,4} + y_{5,5} \\leq 300.0\\\\\n& -y_{1,5} + y_{1,6} \\leq 150.0\\\\\n& -y_{2,5} + y_{2,6} \\leq 200.0\\\\\n& -y_{3,5} + y_{3,6} \\leq 100.0\\\\\n& -y_{4,5} + y_{4,6} \\leq 250.0\\\\\n& -y_{5,5} + y_{5,6} \\leq 300.0\\\\\n& -y_{1,6} + y_{1,7} \\leq 150.0\\\\\n& -y_{2,6} + y_{2,7} \\leq 200.0\\\\\n& -y_{3,6} + y_{3,7} \\leq 100.0\\\\\n& -y_{4,6} + y_{4,7} \\leq 250.0\\\\\n& -y_{5,6} + y_{5,7} \\leq 300.0\\\\\n& -y_{1,7} + y_{1,8} \\leq 150.0\\\\\n& -y_{2,7} + y_{2,8} \\leq 200.0\\\\\n& -y_{3,7} + y_{3,8} \\leq 100.0\\\\\n& -y_{4,7} + y_{4,8} \\leq 250.0\\\\\n& -y_{5,7} + y_{5,8} \\leq 300.0\\\\\n& -y_{1,8} + y_{1,9} \\leq 150.0\\\\\n& -y_{2,8} + y_{2,9} \\leq 200.0\\\\\n& -y_{3,8} + y_{3,9} \\leq 100.0\\\\\n& -y_{4,8} + y_{4,9} \\leq 250.0\\\\\n& -y_{5,8} + y_{5,9} \\leq 300.0\\\\\n& -y_{1,9} + y_{1,10} \\leq 150.0\\\\\n& -y_{2,9} + y_{2,10} \\leq 200.0\\\\\n& -y_{3,9} + y_{3,10} \\leq 100.0\\\\\n& -y_{4,9} + y_{4,10} \\leq 250.0\\\\\n& -y_{5,9} + y_{5,10} \\leq 300.0\\\\\n& -y_{1,10} + y_{1,11} \\leq 150.0\\\\\n& -y_{2,10} + y_{2,11} \\leq 200.0\\\\\n& -y_{3,10} + y_{3,11} \\leq 100.0\\\\\n& -y_{4,10} + y_{4,11} \\leq 250.0\\\\\n& -y_{5,10} + y_{5,11} \\leq 300.0\\\\\n& -y_{1,11} + y_{1,12} \\leq 150.0\\\\\n& -y_{2,11} + y_{2,12} \\leq 200.0\\\\\n& -y_{3,11} + y_{3,12} \\leq 100.0\\\\\n& -y_{4,11} + y_{4,12} \\leq 250.0\\\\\n& -y_{5,11} + y_{5,12} \\leq 300.0\\\\\n& -y_{1,12} + y_{1,13} \\leq 150.0\\\\\n& -y_{2,12} + y_{2,13} \\leq 200.0\\\\\n& -y_{3,12} + y_{3,13} \\leq 100.0\\\\\n& -y_{4,12} + y_{4,13} \\leq 250.0\\\\\n& -y_{5,12} + y_{5,13} \\leq 300.0\\\\\n& -y_{1,13} + y_{1,14} \\leq 150.0\\\\\n& -y_{2,13} + y_{2,14} \\leq 200.0\\\\\n& -y_{3,13} + y_{3,14} \\leq 100.0\\\\\n& -y_{4,13} + y_{4,14} \\leq 250.0\\\\\n& -y_{5,13} + y_{5,14} \\leq 300.0\\\\\n& -y_{1,14} + y_{1,15} \\leq 150.0\\\\\n& -y_{2,14} + y_{2,15} \\leq 200.0\\\\\n& -y_{3,14} + y_{3,15} \\leq 100.0\\\\\n& -y_{4,14} + y_{4,15} \\leq 250.0\\\\\n& -y_{5,14} + y_{5,15} \\leq 300.0\\\\\n& -y_{1,15} + y_{1,16} \\leq 150.0\\\\\n& -y_{2,15} + y_{2,16} \\leq 200.0\\\\\n& -y_{3,15} + y_{3,16} \\leq 100.0\\\\\n& -y_{4,15} + y_{4,16} \\leq 250.0\\\\\n& -y_{5,15} + y_{5,16} \\leq 300.0\\\\\n& -y_{1,16} + y_{1,17} \\leq 150.0\\\\\n& -y_{2,16} + y_{2,17} \\leq 200.0\\\\\n& -y_{3,16} + y_{3,17} \\leq 100.0\\\\\n& -y_{4,16} + y_{4,17} \\leq 250.0\\\\\n& -y_{5,16} + y_{5,17} \\leq 300.0\\\\\n& -y_{1,17} + y_{1,18} \\leq 150.0\\\\\n& -y_{2,17} + y_{2,18} \\leq 200.0\\\\\n& -y_{3,17} + y_{3,18} \\leq 100.0\\\\\n& -y_{4,17} + y_{4,18} \\leq 250.0\\\\\n& -y_{5,17} + y_{5,18} \\leq 300.0\\\\\n& -y_{1,18} + y_{1,19} \\leq 150.0\\\\\n& -y_{2,18} + y_{2,19} \\leq 200.0\\\\\n& -y_{3,18} + y_{3,19} \\leq 100.0\\\\\n& -y_{4,18} + y_{4,19} \\leq 250.0\\\\\n& -y_{5,18} + y_{5,19} \\leq 300.0\\\\\n& -y_{1,19} + y_{1,20} \\leq 150.0\\\\\n& -y_{2,19} + y_{2,20} \\leq 200.0\\\\\n& -y_{3,19} + y_{3,20} \\leq 100.0\\\\\n& -y_{4,19} + y_{4,20} \\leq 250.0\\\\\n& -y_{5,19} + y_{5,20} \\leq 300.0\\\\\n& -y_{1,20} + y_{1,21} \\leq 150.0\\\\\n& -y_{2,20} + y_{2,21} \\leq 200.0\\\\\n& -y_{3,20} + y_{3,21} \\leq 100.0\\\\\n& -y_{4,20} + y_{4,21} \\leq 250.0\\\\\n& -y_{5,20} + y_{5,21} \\leq 300.0\\\\\n& -y_{1,21} + y_{1,22} \\leq 150.0\\\\\n& -y_{2,21} + y_{2,22} \\leq 200.0\\\\\n& -y_{3,21} + y_{3,22} \\leq 100.0\\\\\n& -y_{4,21} + y_{4,22} \\leq 250.0\\\\\n& -y_{5,21} + y_{5,22} \\leq 300.0\\\\\n& -y_{1,22} + y_{1,23} \\leq 150.0\\\\\n& -y_{2,22} + y_{2,23} \\leq 200.0\\\\\n& -y_{3,22} + y_{3,23} \\leq 100.0\\\\\n& -y_{4,22} + y_{4,23} \\leq 250.0\\\\\n& -y_{5,22} + y_{5,23} \\leq 300.0\\\\\n& -y_{1,23} + y_{1,24} \\leq 150.0\\\\\n& -y_{2,23} + y_{2,24} \\leq 200.0\\\\\n& -y_{3,23} + y_{3,24} \\leq 100.0\\\\\n& -y_{4,23} + y_{4,24} \\leq 250.0\\\\\n& -y_{5,23} + y_{5,24} \\leq 300.0\\\\\n& y_{1,1} - y_{1,2} \\leq 150.0\\\\\n& y_{2,1} - y_{2,2} \\leq 200.0\\\\\n& y_{3,1} - y_{3,2} \\leq 100.0\\\\\n& y_{4,1} - y_{4,2} \\leq 250.0\\\\\n& y_{5,1} - y_{5,2} \\leq 300.0\\\\\n& y_{1,2} - y_{1,3} \\leq 150.0\\\\\n& y_{2,2} - y_{2,3} \\leq 200.0\\\\\n& y_{3,2} - y_{3,3} \\leq 100.0\\\\\n& y_{4,2} - y_{4,3} \\leq 250.0\\\\\n& y_{5,2} - y_{5,3} \\leq 300.0\\\\\n& y_{1,3} - y_{1,4} \\leq 150.0\\\\\n& y_{2,3} - y_{2,4} \\leq 200.0\\\\\n& y_{3,3} - y_{3,4} \\leq 100.0\\\\\n& y_{4,3} - y_{4,4} \\leq 250.0\\\\\n& y_{5,3} - y_{5,4} \\leq 300.0\\\\\n& y_{1,4} - y_{1,5} \\leq 150.0\\\\\n& y_{2,4} - y_{2,5} \\leq 200.0\\\\\n& y_{3,4} - y_{3,5} \\leq 100.0\\\\\n& y_{4,4} - y_{4,5} \\leq 250.0\\\\\n& y_{5,4} - y_{5,5} \\leq 300.0\\\\\n& y_{1,5} - y_{1,6} \\leq 150.0\\\\\n& y_{2,5} - y_{2,6} \\leq 200.0\\\\\n& y_{3,5} - y_{3,6} \\leq 100.0\\\\\n& y_{4,5} - y_{4,6} \\leq 250.0\\\\\n& y_{5,5} - y_{5,6} \\leq 300.0\\\\\n& y_{1,6} - y_{1,7} \\leq 150.0\\\\\n& y_{2,6} - y_{2,7} \\leq 200.0\\\\\n& y_{3,6} - y_{3,7} \\leq 100.0\\\\\n& y_{4,6} - y_{4,7} \\leq 250.0\\\\\n& y_{5,6} - y_{5,7} \\leq 300.0\\\\\n& y_{1,7} - y_{1,8} \\leq 150.0\\\\\n& y_{2,7} - y_{2,8} \\leq 200.0\\\\\n& y_{3,7} - y_{3,8} \\leq 100.0\\\\\n& y_{4,7} - y_{4,8} \\leq 250.0\\\\\n& y_{5,7} - y_{5,8} \\leq 300.0\\\\\n& y_{1,8} - y_{1,9} \\leq 150.0\\\\\n& y_{2,8} - y_{2,9} \\leq 200.0\\\\\n& y_{3,8} - y_{3,9} \\leq 100.0\\\\\n& y_{4,8} - y_{4,9} \\leq 250.0\\\\\n& y_{5,8} - y_{5,9} \\leq 300.0\\\\\n& y_{1,9} - y_{1,10} \\leq 150.0\\\\\n& y_{2,9} - y_{2,10} \\leq 200.0\\\\\n& y_{3,9} - y_{3,10} \\leq 100.0\\\\\n& y_{4,9} - y_{4,10} \\leq 250.0\\\\\n& y_{5,9} - y_{5,10} \\leq 300.0\\\\\n& y_{1,10} - y_{1,11} \\leq 150.0\\\\\n& y_{2,10} - y_{2,11} \\leq 200.0\\\\\n& y_{3,10} - y_{3,11} \\leq 100.0\\\\\n& y_{4,10} - y_{4,11} \\leq 250.0\\\\\n& y_{5,10} - y_{5,11} \\leq 300.0\\\\\n& y_{1,11} - y_{1,12} \\leq 150.0\\\\\n& y_{2,11} - y_{2,12} \\leq 200.0\\\\\n& y_{3,11} - y_{3,12} \\leq 100.0\\\\\n& y_{4,11} - y_{4,12} \\leq 250.0\\\\\n& y_{5,11} - y_{5,12} \\leq 300.0\\\\\n& y_{1,12} - y_{1,13} \\leq 150.0\\\\\n& y_{2,12} - y_{2,13} \\leq 200.0\\\\\n& y_{3,12} - y_{3,13} \\leq 100.0\\\\\n& y_{4,12} - y_{4,13} \\leq 250.0\\\\\n& y_{5,12} - y_{5,13} \\leq 300.0\\\\\n& y_{1,13} - y_{1,14} \\leq 150.0\\\\\n& y_{2,13} - y_{2,14} \\leq 200.0\\\\\n& y_{3,13} - y_{3,14} \\leq 100.0\\\\\n& y_{4,13} - y_{4,14} \\leq 250.0\\\\\n& y_{5,13} - y_{5,14} \\leq 300.0\\\\\n& y_{1,14} - y_{1,15} \\leq 150.0\\\\\n& y_{2,14} - y_{2,15} \\leq 200.0\\\\\n& y_{3,14} - y_{3,15} \\leq 100.0\\\\\n& y_{4,14} - y_{4,15} \\leq 250.0\\\\\n& y_{5,14} - y_{5,15} \\leq 300.0\\\\\n& y_{1,15} - y_{1,16} \\leq 150.0\\\\\n& y_{2,15} - y_{2,16} \\leq 200.0\\\\\n& y_{3,15} - y_{3,16} \\leq 100.0\\\\\n& y_{4,15} - y_{4,16} \\leq 250.0\\\\\n& y_{5,15} - y_{5,16} \\leq 300.0\\\\\n& y_{1,16} - y_{1,17} \\leq 150.0\\\\\n& y_{2,16} - y_{2,17} \\leq 200.0\\\\\n& y_{3,16} - y_{3,17} \\leq 100.0\\\\\n& y_{4,16} - y_{4,17} \\leq 250.0\\\\\n& y_{5,16} - y_{5,17} \\leq 300.0\\\\\n& y_{1,17} - y_{1,18} \\leq 150.0\\\\\n& y_{2,17} - y_{2,18} \\leq 200.0\\\\\n& y_{3,17} - y_{3,18} \\leq 100.0\\\\\n& y_{4,17} - y_{4,18} \\leq 250.0\\\\\n& y_{5,17} - y_{5,18} \\leq 300.0\\\\\n& y_{1,18} - y_{1,19} \\leq 150.0\\\\\n& y_{2,18} - y_{2,19} \\leq 200.0\\\\\n& y_{3,18} - y_{3,19} \\leq 100.0\\\\\n& y_{4,18} - y_{4,19} \\leq 250.0\\\\\n& y_{5,18} - y_{5,19} \\leq 300.0\\\\\n& y_{1,19} - y_{1,20} \\leq 150.0\\\\\n& y_{2,19} - y_{2,20} \\leq 200.0\\\\\n& y_{3,19} - y_{3,20} \\leq 100.0\\\\\n& y_{4,19} - y_{4,20} \\leq 250.0\\\\\n& y_{5,19} - y_{5,20} \\leq 300.0\\\\\n& y_{1,20} - y_{1,21} \\leq 150.0\\\\\n& y_{2,20} - y_{2,21} \\leq 200.0\\\\\n& y_{3,20} - y_{3,21} \\leq 100.0\\\\\n& y_{4,20} - y_{4,21} \\leq 250.0\\\\\n& y_{5,20} - y_{5,21} \\leq 300.0\\\\\n& y_{1,21} - y_{1,22} \\leq 150.0\\\\\n& y_{2,21} - y_{2,22} \\leq 200.0\\\\\n& y_{3,21} - y_{3,22} \\leq 100.0\\\\\n& y_{4,21} - y_{4,22} \\leq 250.0\\\\\n& y_{5,21} - y_{5,22} \\leq 300.0\\\\\n& y_{1,22} - y_{1,23} \\leq 150.0\\\\\n& y_{2,22} - y_{2,23} \\leq 200.0\\\\\n& y_{3,22} - y_{3,23} \\leq 100.0\\\\\n& y_{4,22} - y_{4,23} \\leq 250.0\\\\\n& y_{5,22} - y_{5,23} \\leq 300.0\\\\\n& y_{1,23} - y_{1,24} \\leq 150.0\\\\\n& y_{2,23} - y_{2,24} \\leq 200.0\\\\\n& y_{3,23} - y_{3,24} \\leq 100.0\\\\\n& y_{4,23} - y_{4,24} \\leq 250.0\\\\\n& y_{5,23} - y_{5,24} \\leq 300.0\\\\\n& y_{1,1} \\geq 0.0\\\\\n& y_{2,1} \\geq 0.0\\\\\n& y_{3,1} \\geq 200.0\\\\\n& y_{4,1} \\geq 160.0\\\\\n& y_{5,1} \\geq 40.0\\\\\n& y_{1,2} \\geq 0.0\\\\\n& y_{2,2} \\geq 0.0\\\\\n& y_{3,2} \\geq 200.0\\\\\n& y_{4,2} \\geq 160.0\\\\\n& y_{5,2} \\geq 40.0\\\\\n& y_{1,3} \\geq 0.0\\\\\n& y_{2,3} \\geq 0.0\\\\\n& y_{3,3} \\geq 200.0\\\\\n& y_{4,3} \\geq 160.0\\\\\n& y_{5,3} \\geq 40.0\\\\\n& y_{1,4} \\geq 0.0\\\\\n& y_{2,4} \\geq 0.0\\\\\n& y_{3,4} \\geq 200.0\\\\\n& y_{4,4} \\geq 160.0\\\\\n& y_{5,4} \\geq 40.0\\\\\n& y_{1,5} \\geq 0.0\\\\\n& y_{2,5} \\geq 0.0\\\\\n& y_{3,5} \\geq 200.0\\\\\n& y_{4,5} \\geq 160.0\\\\\n& y_{5,5} \\geq 40.0\\\\\n& y_{1,6} \\geq 0.0\\\\\n& y_{2,6} \\geq 0.0\\\\\n& y_{3,6} \\geq 200.0\\\\\n& y_{4,6} \\geq 160.0\\\\\n& y_{5,6} \\geq 40.0\\\\\n& y_{1,7} \\geq 0.0\\\\\n& y_{2,7} \\geq 0.0\\\\\n& y_{3,7} \\geq 200.0\\\\\n& y_{4,7} \\geq 160.0\\\\\n& y_{5,7} \\geq 40.0\\\\\n& y_{1,8} \\geq 0.0\\\\\n& y_{2,8} \\geq 0.0\\\\\n& y_{3,8} \\geq 200.0\\\\\n& y_{4,8} \\geq 160.0\\\\\n& y_{5,8} \\geq 40.0\\\\\n& y_{1,9} \\geq 0.0\\\\\n& y_{2,9} \\geq 0.0\\\\\n& y_{3,9} \\geq 200.0\\\\\n& y_{4,9} \\geq 160.0\\\\\n& y_{5,9} \\geq 40.0\\\\\n& y_{1,10} \\geq 0.0\\\\\n& y_{2,10} \\geq 0.0\\\\\n& y_{3,10} \\geq 200.0\\\\\n& y_{4,10} \\geq 160.0\\\\\n& y_{5,10} \\geq 40.0\\\\\n& y_{1,11} \\geq 0.0\\\\\n& y_{2,11} \\geq 0.0\\\\\n& y_{3,11} \\geq 200.0\\\\\n& y_{4,11} \\geq 160.0\\\\\n& y_{5,11} \\geq 40.0\\\\\n& y_{1,12} \\geq 0.0\\\\\n& y_{2,12} \\geq 0.0\\\\\n& y_{3,12} \\geq 200.0\\\\\n& y_{4,12} \\geq 160.0\\\\\n& y_{5,12} \\geq 40.0\\\\\n& y_{1,13} \\geq 0.0\\\\\n& y_{2,13} \\geq 0.0\\\\\n& y_{3,13} \\geq 200.0\\\\\n& y_{4,13} \\geq 160.0\\\\\n& y_{5,13} \\geq 40.0\\\\\n& y_{1,14} \\geq 0.0\\\\\n& y_{2,14} \\geq 0.0\\\\\n& y_{3,14} \\geq 200.0\\\\\n& y_{4,14} \\geq 160.0\\\\\n& y_{5,14} \\geq 40.0\\\\\n& y_{1,15} \\geq 0.0\\\\\n& y_{2,15} \\geq 0.0\\\\\n& y_{3,15} \\geq 200.0\\\\\n& y_{4,15} \\geq 160.0\\\\\n& y_{5,15} \\geq 40.0\\\\\n& y_{1,16} \\geq 0.0\\\\\n& y_{2,16} \\geq 0.0\\\\\n& y_{3,16} \\geq 200.0\\\\\n& y_{4,16} \\geq 160.0\\\\\n& y_{5,16} \\geq 40.0\\\\\n& y_{1,17} \\geq 0.0\\\\\n& y_{2,17} \\geq 0.0\\\\\n& y_{3,17} \\geq 200.0\\\\\n& y_{4,17} \\geq 160.0\\\\\n& y_{5,17} \\geq 40.0\\\\\n& y_{1,18} \\geq 0.0\\\\\n& y_{2,18} \\geq 0.0\\\\\n& y_{3,18} \\geq 200.0\\\\\n& y_{4,18} \\geq 160.0\\\\\n& y_{5,18} \\geq 40.0\\\\\n& y_{1,19} \\geq 0.0\\\\\n& y_{2,19} \\geq 0.0\\\\\n& y_{3,19} \\geq 200.0\\\\\n& y_{4,19} \\geq 160.0\\\\\n& y_{5,19} \\geq 40.0\\\\\n& y_{1,20} \\geq 0.0\\\\\n& y_{2,20} \\geq 0.0\\\\\n& y_{3,20} \\geq 200.0\\\\\n& y_{4,20} \\geq 160.0\\\\\n& y_{5,20} \\geq 40.0\\\\\n& y_{1,21} \\geq 0.0\\\\\n& y_{2,21} \\geq 0.0\\\\\n& y_{3,21} \\geq 200.0\\\\\n& y_{4,21} \\geq 160.0\\\\\n& y_{5,21} \\geq 40.0\\\\\n& y_{1,22} \\geq 0.0\\\\\n& y_{2,22} \\geq 0.0\\\\\n& y_{3,22} \\geq 200.0\\\\\n& y_{4,22} \\geq 160.0\\\\\n& y_{5,22} \\geq 40.0\\\\\n& y_{1,23} \\geq 0.0\\\\\n& y_{2,23} \\geq 0.0\\\\\n& y_{3,23} \\geq 200.0\\\\\n& y_{4,23} \\geq 160.0\\\\\n& y_{5,23} \\geq 40.0\\\\\n& y_{1,24} \\geq 0.0\\\\\n& y_{2,24} \\geq 0.0\\\\\n& y_{3,24} \\geq 200.0\\\\\n& y_{4,24} \\geq 160.0\\\\\n& y_{5,24} \\geq 40.0\\\\\n& y_{1,1} \\leq 150.0\\\\\n& y_{2,1} \\leq 200.0\\\\\n& y_{3,1} \\leq 1000.0\\\\\n& y_{4,1} \\leq 700.0\\\\\n& y_{5,1} \\leq 500.0\\\\\n& y_{1,2} \\leq 150.0\\\\\n& y_{2,2} \\leq 200.0\\\\\n& y_{3,2} \\leq 1000.0\\\\\n& y_{4,2} \\leq 700.0\\\\\n& y_{5,2} \\leq 500.0\\\\\n& y_{1,3} \\leq 150.0\\\\\n& y_{2,3} \\leq 200.0\\\\\n& y_{3,3} \\leq 1000.0\\\\\n& y_{4,3} \\leq 700.0\\\\\n& y_{5,3} \\leq 500.0\\\\\n& y_{1,4} \\leq 150.0\\\\\n& y_{2,4} \\leq 200.0\\\\\n& y_{3,4} \\leq 1000.0\\\\\n& y_{4,4} \\leq 700.0\\\\\n& y_{5,4} \\leq 500.0\\\\\n& y_{1,5} \\leq 150.0\\\\\n& y_{2,5} \\leq 200.0\\\\\n& y_{3,5} \\leq 1000.0\\\\\n& y_{4,5} \\leq 700.0\\\\\n& y_{5,5} \\leq 500.0\\\\\n& y_{1,6} \\leq 150.0\\\\\n& y_{2,6} \\leq 200.0\\\\\n& y_{3,6} \\leq 1000.0\\\\\n& y_{4,6} \\leq 700.0\\\\\n& y_{5,6} \\leq 500.0\\\\\n& y_{1,7} \\leq 150.0\\\\\n& y_{2,7} \\leq 200.0\\\\\n& y_{3,7} \\leq 1000.0\\\\\n& y_{4,7} \\leq 700.0\\\\\n& y_{5,7} \\leq 500.0\\\\\n& y_{1,8} \\leq 150.0\\\\\n& y_{2,8} \\leq 200.0\\\\\n& y_{3,8} \\leq 1000.0\\\\\n& y_{4,8} \\leq 700.0\\\\\n& y_{5,8} \\leq 500.0\\\\\n& y_{1,9} \\leq 150.0\\\\\n& y_{2,9} \\leq 200.0\\\\\n& y_{3,9} \\leq 1000.0\\\\\n& y_{4,9} \\leq 700.0\\\\\n& y_{5,9} \\leq 500.0\\\\\n& y_{1,10} \\leq 150.0\\\\\n& y_{2,10} \\leq 200.0\\\\\n& y_{3,10} \\leq 1000.0\\\\\n& y_{4,10} \\leq 700.0\\\\\n& y_{5,10} \\leq 500.0\\\\\n& y_{1,11} \\leq 150.0\\\\\n& y_{2,11} \\leq 200.0\\\\\n& y_{3,11} \\leq 1000.0\\\\\n& y_{4,11} \\leq 700.0\\\\\n& y_{5,11} \\leq 500.0\\\\\n& y_{1,12} \\leq 150.0\\\\\n& y_{2,12} \\leq 200.0\\\\\n& y_{3,12} \\leq 1000.0\\\\\n& y_{4,12} \\leq 700.0\\\\\n& y_{5,12} \\leq 500.0\\\\\n& y_{1,13} \\leq 150.0\\\\\n& y_{2,13} \\leq 200.0\\\\\n& y_{3,13} \\leq 1000.0\\\\\n& y_{4,13} \\leq 700.0\\\\\n& y_{5,13} \\leq 500.0\\\\\n& y_{1,14} \\leq 150.0\\\\\n& y_{2,14} \\leq 200.0\\\\\n& y_{3,14} \\leq 1000.0\\\\\n& y_{4,14} \\leq 700.0\\\\\n& y_{5,14} \\leq 500.0\\\\\n& y_{1,15} \\leq 150.0\\\\\n& y_{2,15} \\leq 200.0\\\\\n& y_{3,15} \\leq 1000.0\\\\\n& y_{4,15} \\leq 700.0\\\\\n& y_{5,15} \\leq 500.0\\\\\n& y_{1,16} \\leq 150.0\\\\\n& y_{2,16} \\leq 200.0\\\\\n& y_{3,16} \\leq 1000.0\\\\\n& y_{4,16} \\leq 700.0\\\\\n& y_{5,16} \\leq 500.0\\\\\n& y_{1,17} \\leq 150.0\\\\\n& y_{2,17} \\leq 200.0\\\\\n& y_{3,17} \\leq 1000.0\\\\\n& y_{4,17} \\leq 700.0\\\\\n& y_{5,17} \\leq 500.0\\\\\n& y_{1,18} \\leq 150.0\\\\\n& y_{2,18} \\leq 200.0\\\\\n& y_{3,18} \\leq 1000.0\\\\\n& y_{4,18} \\leq 700.0\\\\\n& y_{5,18} \\leq 500.0\\\\\n& y_{1,19} \\leq 150.0\\\\\n& y_{2,19} \\leq 200.0\\\\\n& y_{3,19} \\leq 1000.0\\\\\n& y_{4,19} \\leq 700.0\\\\\n& y_{5,19} \\leq 500.0\\\\\n& y_{1,20} \\leq 150.0\\\\\n& y_{2,20} \\leq 200.0\\\\\n& y_{3,20} \\leq 1000.0\\\\\n& y_{4,20} \\leq 700.0\\\\\n& y_{5,20} \\leq 500.0\\\\\n& y_{1,21} \\leq 150.0\\\\\n& y_{2,21} \\leq 200.0\\\\\n& y_{3,21} \\leq 1000.0\\\\\n& y_{4,21} \\leq 700.0\\\\\n& y_{5,21} \\leq 500.0\\\\\n& y_{1,22} \\leq 150.0\\\\\n& y_{2,22} \\leq 200.0\\\\\n& y_{3,22} \\leq 1000.0\\\\\n& y_{4,22} \\leq 700.0\\\\\n& y_{5,22} \\leq 500.0\\\\\n& y_{1,23} \\leq 150.0\\\\\n& y_{2,23} \\leq 200.0\\\\\n& y_{3,23} \\leq 1000.0\\\\\n& y_{4,23} \\leq 700.0\\\\\n& y_{5,23} \\leq 500.0\\\\\n& y_{1,24} \\leq 150.0\\\\\n& y_{2,24} \\leq 200.0\\\\\n& y_{3,24} \\leq 1000.0\\\\\n& y_{4,24} \\leq 700.0\\\\\n& y_{5,24} \\leq 500.0\\\\\n\\end{aligned} \\]\n\n\n\n\nCode\n\nset_silent(dispatch2)\noptimize!(dispatch2)\n\ngen = value.(y).data\n\n\n5×24 Matrix{Float64}:\n  150.0   150.0  150.0  128.0  150.0  …   150.0   150.0   150.0   150.0\n  200.0   200.0  200.0  200.0  200.0      200.0   200.0   200.0   200.0\n 1000.0  1000.0  926.0  880.0  980.0     1000.0  1000.0  1000.0  1000.0\n  335.0   206.0  160.0  160.0  160.0      566.0   512.0   475.0   430.0\n   40.0    40.0   40.0   40.0   40.0       40.0    40.0    40.0    40.0\n\n\n\n\nCode\nareaplot(gen', \n    label=permutedims(gen_names), \n    xlabel = \"Hour\", \n    ylabel =\"Generated Electricity (MW)\", \n    color_palette=:tol_muted, \n    size=(1200, 600), \n    left_margin=6mm, \n    bottom_margin=6mm,\n    grid=:false,\n    legend = :outerright, ylim=(0, 2800),\n    legendfontsize=20, tickfontsize=20, \n    guidefontsize=20\n)\nplot!(demand, color=:red, \n    label=\"demand\", linestyle=:dash,\n    linewidth=5)\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\np = plot(gen', \n    label=permutedims(gen_names), \n    xlabel = \"Hour\", \n    ylabel =\"Generated Electricity (MW)\", \n    color_palette=:tol_muted, \n    linewidth=5,\n    size=(1200, 600), left_margin=6mm, \n    bottom_margin=6mm,\n    legendfontsize=20, tickfontsize=20, \n    guidefontsize=20,\n    legend=:outerright\n)\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotice that even though hydro is effectively zero-cost, we reduce dispatched hydropower in hour 4 because coal is at its minimum generating capacity and nuclear can’t be ramped down further. These constraints complicate the simple merit order that we previously saw.\nThese constraints also play a major role in systems with high levels of renewable penetration. For example, the so-called California “duck curve” is created by the challenges of ramping generation between the early afternoon, when solar generation is at its maximum, and in the evening, when solar generation is decreasing and demand increases rapidly.\n\n\n\nCalifornia Duck Curve"
   },
   {
-    "objectID": "slides/lecture02.html#overview",
-    "href": "slides/lecture02.html#overview",
+    "objectID": "slides/lecture01-2.html#overview",
+    "href": "slides/lecture01-2.html#overview",
     "title": "Getting Started with Julia and GitHub",
     "section": "Overview",
     "text": "Overview\nApplication exercises are short assignments meant to tie into the week’s discussion.\n\nThese might be small coding exercises (for practice) or mini problems (think about a particular system for discussion).\nWe will not normally work on these in class.\n\n\nToday is an exception — focus on getting acquainted with the basic workflow and toolkit."
   },
   {
-    "objectID": "slides/lecture02.html#instructions",
-    "href": "slides/lecture02.html#instructions",
+    "objectID": "slides/lecture01-2.html#instructions",
+    "href": "slides/lecture01-2.html#instructions",
     "title": "Getting Started with Julia and GitHub",
     "section": "Instructions",
     "text": "Instructions\nIf you haven’t already, go to the instructions.\nFor this application exercise, the instructions will:\n\nwalk you through installing git, Julia and VS Code;\ncreating a GitHub account;\ncloning the repository;\nopening and editing the notebook;\nexporting to PDF for Gradescope."
   },
   {
-    "objectID": "slides/lecture02.html#tips",
-    "href": "slides/lecture02.html#tips",
+    "objectID": "slides/lecture01-2.html#tips",
+    "href": "slides/lecture01-2.html#tips",
     "title": "Getting Started with Julia and GitHub",
     "section": "Tips",
-    "text": "Tips\n\nDo not have to finish this in class, but please make sure to ask questions if you reach any sticking points.\nMust submit PDF by Friday at 9:00pm: turnaround is short this week, but there is little work for this one.\nIf you have extra time, can get started on Homework 1 (get the GitHub link from Ed Discussion).\n\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Tips\n\nDo not have to finish this in class, but please make sure to ask questions if you reach any sticking points.\nMust submit PDF by Friday at 9:00pm: turnaround is short this week, but there is little work for this one.\nIf you have extra time, can get started on Homework 1 (get the GitHub link from Ed Discussion)."
   },
   {
-    "objectID": "slides/lecture01.html#course-overview",
-    "href": "slides/lecture01.html#course-overview",
-    "title": "Welcome to BEE 4750!",
-    "section": "Course Overview",
-    "text": "Course Overview\n\n\nTopics\n\nDefine systems\nSimulate system dynamics\nAnalyze and assess risk\nFormulate and solve optimization problems\nExplore trade-offs across competing objectives\n\n\n\n\nExample Systems\n\nAir pollution\nWastewater management\nElectric power systems\nSolid waste management"
+    "objectID": "slides/lecture01-2.html#next-class",
+    "href": "slides/lecture01-2.html#next-class",
+    "title": "Getting Started with Julia and GitHub",
+    "section": "Next Class",
+    "text": "Next Class\nWork on Lab 1.\n\nPreparation:\n\nLab 1 link is available on Ed. Click it to accept the lab before class, and based on Wednesday.\n\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
-    "objectID": "slides/lecture01.html#what-do-you-hope-to-get-out-of-this-course",
-    "href": "slides/lecture01.html#what-do-you-hope-to-get-out-of-this-course",
-    "title": "Welcome to BEE 4750!",
-    "section": "What Do You Hope To Get Out Of This Course?",
-    "text": "What Do You Hope To Get Out Of This Course?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish"
+    "objectID": "slides/lecture01-3.html#overview",
+    "href": "slides/lecture01-3.html#overview",
+    "title": "Lab 1: Julia Basics",
+    "section": "Overview",
+    "text": "Overview\nLabs are in-class exercises intended to get practice with coding or analysis workflows.\n\nInstructions available on website\nDownload ahead of time by using link in Ed Discussion.\nWill your have own repository — let’s discuss how this works next.\nDon’t have to finish these in class, but due by the end of next week (Friday, 9/1, 9pm)."
   },
   {
-    "objectID": "slides/lecture01.html#course-organization",
-    "href": "slides/lecture01.html#course-organization",
-    "title": "Welcome to BEE 4750!",
-    "section": "Course Organization",
-    "text": "Course Organization\n\nIntroduction to Systems Analysis\nSimulating Systems and Risk\nSystems Management and Optimization\nAnalyzing Assumptions\nDecision-Making Under Uncertainty"
+    "objectID": "slides/lecture01-3.html#using-github",
+    "href": "slides/lecture01-3.html#using-github",
+    "title": "Lab 1: Julia Basics",
+    "section": "Using GitHub",
+    "text": "Using GitHub\n\nWednesday: we saw how to “clone” repositories on GitHub (remote -&gt; local).\nToday: how to “commit” and “push” changes (local -&gt; remote)"
   },
   {
-    "objectID": "slides/lecture01.html#grades",
-    "href": "slides/lecture01.html#grades",
-    "title": "Welcome to BEE 4750!",
-    "section": "Grades",
-    "text": "Grades\n\n\n\nAssessment\n% of Grade\n\n\n\n\nApplication Exercises\n5%\n\n\nLab Notebooks\n15%\n\n\nHomework Assignments\n40%\n\n\nFinal Project\n40%"
+    "objectID": "slides/lecture01-3.html#committing-changes",
+    "href": "slides/lecture01-3.html#committing-changes",
+    "title": "Lab 1: Julia Basics",
+    "section": "Committing Changes",
+    "text": "Committing Changes\n“Committing” is the git term for locking in a particular repository state.\n\nOnce changes are committed, you can restore that version of the files by reverting later changes.\nCommits are associated with messages which briefly describe the change(s) that were made.\nCommit meaningful changes often and use informative messages!"
   },
   {
-    "objectID": "slides/lecture01.html#overall-guidelines",
-    "href": "slides/lecture01.html#overall-guidelines",
-    "title": "Welcome to BEE 4750!",
-    "section": "Overall Guidelines",
-    "text": "Overall Guidelines\n\nCollaboration highly encouraged, but all work must reflect your own understanding\nSubmit PDFs on Gradescope\n10% penalty per day late\nRubrics will be made available as relevant\nAlways cite external references\nCurve unlikely (not worth asking about…)"
+    "objectID": "slides/lecture01-3.html#git-and-vs-code",
+    "href": "slides/lecture01-3.html#git-and-vs-code",
+    "title": "Lab 1: Julia Basics",
+    "section": "Git and VS Code",
+    "text": "Git and VS Code\nAfter saving changes to a file, you will see something like this on the left-most (vertical) bar:\n\n\n\n\n\nVS Code Source Control Icon\n\n\n\nThis is the “Source Control” icon."
   },
   {
-    "objectID": "slides/lecture01.html#application-exercises-5",
-    "href": "slides/lecture01.html#application-exercises-5",
-    "title": "Welcome to BEE 4750!",
-    "section": "Application Exercises (5%)",
-    "text": "Application Exercises (5%)\n\nSmall exercises intended to briefly practice syntax or gain intuition\nSome may involve code: clone notebooks from GitHub\nOthers may be more conceptual (e.g. think of an example)\nDue (submit to Gradescope) by the end of the relevant week (9:00pm on Friday)\nGraded only on completion\nTwo will be dropped."
+    "objectID": "slides/lecture01-3.html#committing-changes-with-vs-code",
+    "href": "slides/lecture01-3.html#committing-changes-with-vs-code",
+    "title": "Lab 1: Julia Basics",
+    "section": "Committing Changes with VS Code",
+    "text": "Committing Changes with VS Code\n\n\n\nClicking on this icon should show something like this panel.\nClick the “+” button next to any files you want to commit, add a message, and click “Commit”."
   },
   {
-    "objectID": "slides/lecture01.html#labs-15",
-    "href": "slides/lecture01.html#labs-15",
-    "title": "Welcome to BEE 4750!",
-    "section": "Labs (15%)",
-    "text": "Labs (15%)\n\nIn-class guided activities\nMay need some time after class to complete\nFocus on “how” to apply methods and concepts from class\nIf you can’t bring a laptop to these classes, you can work with someone else\nCan work in groups, but must submit your own notebook\nDue by 9:00 next Thursday (one week) after lab session.\nWill drop one."
+    "objectID": "slides/lecture01-3.html#pushing-changes",
+    "href": "slides/lecture01-3.html#pushing-changes",
+    "title": "Lab 1: Julia Basics",
+    "section": "Pushing Changes",
+    "text": "Pushing Changes\n“Pushing” syncs committed changes from the local repository to the remote repository on GitHub.\n\nOnce commits are pushed, they can be viewed on the repository by anyone with access.\nYour repositories are all public, so your classmates, the TA, and I can see your code and try to help debug!"
   },
   {
-    "objectID": "slides/lecture01.html#homework-assignments-40",
-    "href": "slides/lecture01.html#homework-assignments-40",
-    "title": "Welcome to BEE 4750!",
-    "section": "Homework Assignments (40%)",
-    "text": "Homework Assignments (40%)\n\nRoughly every other week (5-6 in total?)\nFocus on new or extended applications and conceptual questions\nManaged with GitHub Classroom\nDue by 9:00pm on the due date (usually Thursday)\nWill not drop any of these; you have lots of time!"
+    "objectID": "slides/lecture01-3.html#pushing-and-vs-code",
+    "href": "slides/lecture01-3.html#pushing-and-vs-code",
+    "title": "Lab 1: Julia Basics",
+    "section": "Pushing and VS Code",
+    "text": "Pushing and VS Code\nOnce you’ve made commits, you will see the following on the bottom of your VS Code window:\n\n\nThe number by  are the number of commits which are present on the remote repository but not the local repository, and the number by  are the number of local commits which have not been synchronized.\n\n\n\n\nVS Code Sync\n\n\n\nClick the button and VS Code will “pull” remote changes and “push” local changes."
   },
   {
-    "objectID": "slides/lecture01.html#final-project-40",
-    "href": "slides/lecture01.html#final-project-40",
-    "title": "Welcome to BEE 4750!",
-    "section": "Final Project (40%)",
-    "text": "Final Project (40%)\n\nAnalyze a system of interest\nGo beyond class examples/methods\nWork in groups of 2 – 3 for BEE 4750, individually for BEE 5750\nFinal submission is a PDF of a poster\nIntermediate submissions:\n\nProposal (one page)\n2 – 3 page report on a relevant regulation of interest"
+    "objectID": "slides/lecture01-3.html#instructions",
+    "href": "slides/lecture01-3.html#instructions",
+    "title": "Lab 1: Julia Basics",
+    "section": "Instructions",
+    "text": "Instructions\nIf you haven’t already, get the link from Ed Discussion.\nThis lab focuses on:\n\nBasic programming with Julia;\nWriting and evaluating functions;\nWriting loops;\nMaking simple plots."
   },
   {
-    "objectID": "slides/lecture01.html#attendance",
-    "href": "slides/lecture01.html#attendance",
-    "title": "Welcome to BEE 4750!",
-    "section": "Attendance",
-    "text": "Attendance\nNot required, but students tend to do better when they’re actively engaged in class."
-  },
-  {
-    "objectID": "slides/lecture01.html#office-hours",
-    "href": "slides/lecture01.html#office-hours",
-    "title": "Welcome to BEE 4750!",
-    "section": "Office Hours",
-    "text": "Office Hours\n\nTime TBD (will send out poll)\nAlmost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed."
-  },
-  {
-    "objectID": "slides/lecture01.html#accomodations",
-    "href": "slides/lecture01.html#accomodations",
-    "title": "Welcome to BEE 4750!",
-    "section": "Accomodations",
-    "text": "Accomodations\nIf you have any access barriers in this class, please seek out any helpful accomodations.\n\nGet an SDS letter.\nIf you need an accomodation before you have an official letter, please reach out to me ASAP!"
-  },
-  {
-    "objectID": "slides/lecture01.html#academic-integrity",
-    "href": "slides/lecture01.html#academic-integrity",
-    "title": "Welcome to BEE 4750!",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\nHopefully not a concern…\n\nCollaboration is great and is encouraged!\nKnowing how to find and use helpful resources is a skill we want to develop.\n\n\nBut:\n\nDon’t just copy…learn from others and give credit.\nSubmit your own original work."
-  },
-  {
-    "objectID": "slides/lecture01.html#academic-integrity-1",
-    "href": "slides/lecture01.html#academic-integrity-1",
-    "title": "Welcome to BEE 4750!",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\nObviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok.  But often lines aren’t that simple. Let’s quickly consider some scenarios (h/t to Tony Wong for these)."
-  },
-  {
-    "objectID": "slides/lecture01.html#academic-integrity-scenario-1",
-    "href": "slides/lecture01.html#academic-integrity-scenario-1",
-    "title": "Welcome to BEE 4750!",
-    "section": "Academic Integrity: Scenario 1",
-    "text": "Academic Integrity: Scenario 1\nDan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. He properly cites the source of the codes.\n\nIs this ok?\n\n\nProbably Not OK:\n\nWhat portion of the work is Dan’s? How important were the copied (and cited) codes?\nDid Dan understand what he copied?"
-  },
-  {
-    "objectID": "slides/lecture01.html#academic-integrity-scenario-2",
-    "href": "slides/lecture01.html#academic-integrity-scenario-2",
-    "title": "Welcome to BEE 4750!",
-    "section": "Academic Integrity: Scenario 2",
-    "text": "Academic Integrity: Scenario 2\nMatthew and Rhonda work together to figure out how to implement the codes, but each works on their own computer and develops their own software.\n\nIs this ok?\n\n\nDefinitely OK:\n\nMatthew and Rhonda have collaborated to understand how to solve the problem(s), but has written up their own solution, demonstrating their understanding."
-  },
-  {
-    "objectID": "slides/lecture01.html#academic-integrity-scenario-3",
-    "href": "slides/lecture01.html#academic-integrity-scenario-3",
-    "title": "Welcome to BEE 4750!",
-    "section": "Academic Integrity: Scenario 3",
-    "text": "Academic Integrity: Scenario 3\nFelix and Rachel are working together on a problem involving a derivation. Rachel types it up in LaTeX and sends the code to Felix, who pastes it into his Jupyter notebook.\n\nIs this ok?\n\n\nLikely Not OK:\n\nDid Felix contribute enough to the derivation?\nDefinitely not OK if Felix doesn’t give Rachel credit for her contribution."
-  },
-  {
-    "objectID": "slides/lecture01.html#academic-integrity-scenario-4",
-    "href": "slides/lecture01.html#academic-integrity-scenario-4",
-    "title": "Welcome to BEE 4750!",
-    "section": "Academic Integrity: Scenario 4",
-    "text": "Academic Integrity: Scenario 4\nDarren uses ChatGPT to debug an error in his homework code. He fixes the error and credits ChatGPT in his References section.\n\nIs this ok?\n\n\nWell-meaning, but no!:\n\nUsing ChatGPT (or other ML tools) can be ok, but…\nNeed to ask permission and thoroughly document the query and the exact response."
-  },
-  {
-    "objectID": "slides/lecture01.html#chatgpt-the-stochastic-parrot",
-    "href": "slides/lecture01.html#chatgpt-the-stochastic-parrot",
-    "title": "Welcome to BEE 4750!",
-    "section": "ChatGPT: The Stochastic Parrot",
-    "text": "ChatGPT: The Stochastic Parrot\nWhy is ChatGPT (and other ML/AI tools) singled out?\n\n\nStochasticity: Response to a given prompt is not necessarily the same, so need to track what you received.\nLack of Transparency: Not clear what the training data is, so documentation is essential (ML is not great at extrapolation).\nNot Well-Suited to All Tasks: Can be useful for getting a skeleton, starter code, or debugging. Really (and obviously) bad at interpretation and analysis."
-  },
-  {
-    "objectID": "slides/lecture01.html#communications",
-    "href": "slides/lecture01.html#communications",
-    "title": "Welcome to BEE 4750!",
-    "section": "Communications",
-    "text": "Communications\nUse Ed Discussion for questions and discussions about class, homework assignments, etc.\n\nTry to use public posts so others can benefit from questions and can weigh in.\nI will make announcements through Ed.\n\n\nWhen urgency or privacy is required, email is ok."
-  },
-  {
-    "objectID": "slides/lecture01.html#course-website",
-    "href": "slides/lecture01.html#course-website",
-    "title": "Welcome to BEE 4750!",
-    "section": "Course Website",
-    "text": "Course Website\nhttps://viveks.me/environmental-systems-analysis\n\nCentral hub for information, schedule, and policies\nWill add link and some information to Canvas (assignment due dates, etc)"
-  },
-  {
-    "objectID": "slides/lecture01.html#computing-tools",
-    "href": "slides/lecture01.html#computing-tools",
-    "title": "Welcome to BEE 4750!",
-    "section": "Computing Tools",
-    "text": "Computing Tools\nSystems analysis requires mathematical modeling, and computing allows that to scale."
-  },
-  {
-    "objectID": "slides/lecture01.html#julia",
-    "href": "slides/lecture01.html#julia",
-    "title": "Welcome to BEE 4750!",
-    "section": "Julia",
-    "text": "Julia\nIn this course, we will use the Julia programming language.  All assignments, labs, and AEs will be provided as Jupyter Notebooks."
-  },
-  {
-    "objectID": "slides/lecture01.html#what-is-your-programming-experience",
-    "href": "slides/lecture01.html#what-is-your-programming-experience",
-    "title": "Welcome to BEE 4750!",
-    "section": "What Is Your Programming Experience?",
-    "text": "What Is Your Programming Experience?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish"
-  },
-  {
-    "objectID": "slides/lecture01.html#jupyter-notebooks",
-    "href": "slides/lecture01.html#jupyter-notebooks",
-    "title": "Welcome to BEE 4750!",
-    "section": "Jupyter Notebooks",
-    "text": "Jupyter Notebooks\nWe will use Jupyter Notebooks for most computing tasks (including assignments).\n\nAllow for interactive evaluation of code and integration with text (including nicely typeset mathematics)\nCan export to PDF (or HTML -&gt; PDF) for submission to Gradescope.\nBe careful before submitting:\n\nEvaluate all cells in order"
-  },
-  {
-    "objectID": "slides/lecture01.html#github-classroom",
-    "href": "slides/lecture01.html#github-classroom",
-    "title": "Welcome to BEE 4750!",
-    "section": "GitHub Classroom",
-    "text": "GitHub Classroom\nHomework assignments and labs will be distributed using GitHub Classroom.\n\nEvery student will have a unique “repository.”\nWhen assignment is released, I will share the link for repository creation on Ed Discussion.\nMakes it easy to share code for assistance and debugging (share links to repositories, not out-of-context code and screenshots)."
-  },
-  {
-    "objectID": "slides/lecture01.html#next-classes",
-    "href": "slides/lecture01.html#next-classes",
-    "title": "Welcome to BEE 4750!",
-    "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Onboarding/AE to set up Julia and GitHub and work on HW 1.\n\nPreparation:\n\nAE link is available on the website.\nHW 1 link is available on Ed.\nBring your laptop if possible!"
-  },
-  {
-    "objectID": "slides/lecture01.html#next-classes-1",
-    "href": "slides/lecture01.html#next-classes-1",
-    "title": "Welcome to BEE 4750!",
-    "section": "Next Classes",
-    "text": "Next Classes\nFriday: Work on Lab 1.\n\nPreparation:\n\nLab 1 link is available on Ed. Click it to accept the lab before class, and based on Wednesday.\n\n\n\n\nBEE 4750, Environmental Systems Analysis"
+    "objectID": "slides/lecture01-3.html#tips",
+    "href": "slides/lecture01-3.html#tips",
+    "title": "Lab 1: Julia Basics",
+    "section": "Tips",
+    "text": "Tips\n\nDo not have to finish this in class, but please make sure to ask questions if you reach any sticking points.\nMust submit PDF by next Friday (9/1) at 9:00pm.\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "tutorials/julia-plots.html",

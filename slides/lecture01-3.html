@@ -7,12 +7,14 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.6">
 
   <meta name="author" content="Vivek Srikrishnan">
-  <meta name="dcterms.date" content="2023-08-23">
-  <title>BEE 4750 - Fall 2023 - Getting Started with Julia and GitHub</title>
+  <meta name="dcterms.date" content="2023-08-25">
+  <title>BEE 4750 - Fall 2023 - Lab 1: Julia Basics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -320,8 +322,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="BEE 4750 - Fall 2023 - Getting Started with Julia and GitHub">
-<meta property="og:description" content="Lecture 02">
+<meta property="og:title" content="BEE 4750 - Fall 2023 - Lab 1: Julia Basics">
+<meta property="og:description" content="Lecture 03">
 <meta property="og:site-name" content="BEE 4750 - Fall 2023">
 </head>
 <body class="quarto-light">
@@ -329,45 +331,114 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-    <h1 class="title">Getting Started with Julia and GitHub</h1>
+    <h1 class="title">Lab 1: Julia Basics</h1>
   <hr>
-<p class="subtitle">Lecture 02</p>
-<p class="date">2023-08-23</p>
+<p class="subtitle">Lecture 03</p>
+<p class="date">2023-08-25</p>
 </section>
 <section>
-<section id="application-exercise-1" class="title-slide slide level1 center">
-<h1>Application Exercise 1</h1>
+<section id="lab-1" class="title-slide slide level1 center">
+<h1>Lab 1</h1>
 
 </section>
 <section id="overview" class="slide level2">
 <h2>Overview</h2>
-<p>Application exercises are short assignments meant to tie into the week’s discussion.</p>
+<p>Labs are in-class exercises intended to get practice with coding or analysis workflows.</p>
 <ul>
-<li><p>These might be small coding exercises (for practice) or mini problems (think about a particular system for discussion).</p></li>
-<li><p>We will not normally work on these in class.</p></li>
+<li>Instructions available <a href="https://viveks.me/environmental-systems-analysis/labs.html">on website</a></li>
+<li>Download ahead of time by using link in <a href="https://us.edstem.org">Ed Discussion</a>.</li>
+<li>Will your have own repository — let’s discuss how this works next.</li>
+<li>Don’t have to finish these in class, but due by the end of next week (<strong>Friday, 9/1, 9pm</strong>).</li>
 </ul>
+</section>
+<section id="using-github" class="slide level2">
+<h2>Using GitHub</h2>
+<ul>
+<li><strong>Wednesday</strong>: we saw how to “clone” repositories on GitHub (remote -&gt; local).</li>
+<li><strong>Today</strong>: how to “commit” and “push” changes (local -&gt; remote)</li>
+</ul>
+</section>
+<section id="committing-changes" class="slide level2">
+<h2>Committing Changes</h2>
+<p>“Committing” is the git term for locking in a particular repository state.</p>
+<ul>
+<li>Once changes are committed, you can restore that version of the files by reverting later changes.</li>
+<li>Commits are associated with <em>messages</em> which briefly describe the change(s) that were made.</li>
+<li>Commit meaningful changes often and use informative messages!</li>
+</ul>
+</section>
+<section id="git-and-vs-code" class="slide level2 nostretch">
+<h2>Git and VS Code</h2>
+<p>After saving changes to a file, you will see something like this on the left-most (vertical) bar:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/vscode-github.png"></p>
+<figcaption>VS Code Source Control Icon</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>This is the “Source Control” icon.</p>
+</div>
+</div>
+</section>
+<section id="committing-changes-with-vs-code" class="slide level2 nostretch">
+<h2>Committing Changes with VS Code</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Clicking on this icon should show something like this panel.</li>
+<li>Click the “+” button next to any files you want to commit, add a message, and click “Commit”.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/vscode-source.png"></p>
+</div>
+</div>
+</section>
+<section id="pushing-changes" class="slide level2">
+<h2>Pushing Changes</h2>
+<p>“Pushing” syncs committed changes from the local repository to the remote repository on GitHub.</p>
+<ul>
+<li>Once commits are pushed, they can be viewed on the repository by anyone with access.</li>
+<li>Your repositories are all public, so your classmates, the TA, and I can see your code and try to help debug!</li>
+</ul>
+</section>
+<section id="pushing-and-vs-code" class="slide level2">
+<h2>Pushing and VS Code</h2>
+<p>Once you’ve made commits, you will see the following on the bottom of your VS Code window:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>The number by <i class="fa-solid fa-arrow-down" aria-label="arrow-down"></i> are the number of commits which are present on the remote repository but not the local repository, and the number by <i class="fa-solid fa-arrow-up" aria-label="arrow-up"></i> are the number of local commits which have not been synchronized.</p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/vscode-push.png"></p>
+<figcaption>VS Code Sync</figcaption>
+</figure>
+</div>
 <div class="fragment fade-in">
-<p>Today is an exception — focus on getting acquainted with the basic workflow and toolkit.</p>
+<p>Click the button and VS Code will “pull” remote changes and “push” local changes.</p>
+</div>
+</div>
 </div>
 </section>
 <section id="instructions" class="slide level2">
 <h2>Instructions</h2>
-<p>If you haven’t already, go to the <a href="https://viveks.me/environmental-systems-analysis/aes/ae01/ae01.html">instructions</a>.</p>
-<p>For this application exercise, the instructions will:</p>
+<p>If you haven’t already, get the link from <a href="https://us.edstem.org">Ed Discussion</a>.</p>
+<p>This lab focuses on:</p>
 <ul>
-<li>walk you through installing git, Julia and VS Code;</li>
-<li>creating a GitHub account;</li>
-<li>cloning the repository;</li>
-<li>opening and editing the notebook;</li>
-<li>exporting to PDF for Gradescope.</li>
+<li>Basic programming with Julia;</li>
+<li>Writing and evaluating functions;</li>
+<li>Writing loops;</li>
+<li>Making simple plots.</li>
 </ul>
 </section>
 <section id="tips" class="slide level2">
 <h2>Tips</h2>
 <ul>
 <li>Do not have to finish this in class, but please make sure to ask questions if you reach any sticking points.</li>
-<li>Must submit PDF by <strong>Friday at 9:00pm</strong>: turnaround is short this week, but there is little work for this one.</li>
-<li>If you have extra time, can get started on <a href="https://viveks.me/environmental-systems-analysis/hw/hw01/hw01.html">Homework 1</a> (get the GitHub link from <a href="https://us.edstem.org">Ed Discussion</a>).</li>
+<li>Must submit PDF by <strong>next Friday (9/1) at 9:00pm</strong>.</li>
 </ul>
 
 <div class="footer footer-default">
@@ -559,7 +630,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],

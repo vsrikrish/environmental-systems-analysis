@@ -1,0 +1,125 @@
+---
+title: "Lab 1: Julia Basics"
+subtitle: "Lecture 03"
+author: "Vivek Srikrishnan"
+course: "BEE 4750"
+institution: "Cornell University"
+date: "August 25, 2023"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: false
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        footer: "[BEE 4750, Environmental Systems Analysis](https://viveks.me/environmental-systems-analysis)"
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: mathjax
+execute:
+    freeze: auto
+---
+
+# Lab 1
+
+## Overview
+
+Labs are in-class exercises intended to get practice with coding or analysis workflows.
+
+- Instructions available [on website]({{< var course.url >}}/labs.html)
+- Download ahead of time by using link in [Ed Discussion](https://us.edstem.org).
+- Will your have own repository --- let's discuss how this works next.
+- Don't have to finish these in class, but due by the end of next week (**Friday, 9/1, 9pm**).
+
+## Using GitHub
+
+- **Wednesday**: we saw how to "clone" repositories on GitHub (remote -> local).
+- **Today**: how to "commit" and "push" changes (local -> remote)
+
+## Committing Changes
+
+"Committing" is the git term for locking in a particular repository state.
+
+- Once changes are committed, you can restore that version of the files by reverting later changes.
+- Commits are associated with *messages* which briefly describe the change(s) that were made.
+- Commit meaningful changes often and use informative messages!
+
+## Git and VS Code {.nostretch}
+
+After saving changes to a file, you will see something like this on the left-most (vertical) bar:
+
+:::: {.columns}
+::: {.column width=50%}
+![VS Code Source Control Icon](images/vscode-github.png)
+:::
+
+::: {.column width=50%}
+This is the "Source Control" icon.
+:::
+::::
+
+## Committing Changes with VS Code {.nostretch}
+
+:::: {.columns}
+
+::: {.column width=50%}
+- Clicking on this icon should show something like this panel. 
+- Click the "+" button next to any files you want to commit, add a message, and click "Commit".
+:::
+
+::: {.column width=50%}
+![](images/vscode-source.png)
+:::
+
+::::
+
+## Pushing Changes
+
+"Pushing" syncs committed changes from the local repository to the remote repository on GitHub. 
+
+- Once commits are pushed, they can be viewed on the repository by anyone with access.
+- Your repositories are all public, so your classmates, the TA, and I can see your code and try to help debug!
+
+## Pushing and VS Code
+
+Once you've made commits, you will see the following on the bottom of your VS Code window:
+
+:::: {.columns}
+::: {.column width=50%}
+The number by {{< fa arrow-down >}} are the number of commits which are present on the remote repository but not the local repository, and the number by {{< fa arrow-up >}} are the number of local commits which have not been synchronized.
+:::
+
+::: {.column width=50%}
+![VS Code Sync](images/vscode-push.png)
+
+::: {.fragment .fade-in}
+Click the button and VS Code will "pull" remote changes and "push" local changes.
+:::
+:::
+::::
+
+
+## Instructions
+
+If you haven't already, get the link from [Ed Discussion](https://us.edstem.org).
+
+This lab focuses on:
+
+- Basic programming with Julia;
+- Writing and evaluating functions;
+- Writing loops;
+- Making simple plots.
+
+## Tips
+
+- Do not have to finish this in class, but please make sure to ask questions if you reach any sticking points.
+- Must submit PDF by **next Friday (9/1) at 9:00pm**.

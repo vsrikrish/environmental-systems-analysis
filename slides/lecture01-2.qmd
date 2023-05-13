@@ -45,9 +45,7 @@ Today is an exception --- focus on getting acquainted with the basic workflow an
 
 ## Instructions
 
-If you haven't already, go to the [instructions]({{< var course.url >}}/aes/ae01/ae01.html).
-
-For this application exercise, the instructions will:
+If you haven't already, go to the [instructions]({{< var course.url >}}/aes/ae01/ae01.html). For this application exercise, the instructions will:
 
 - walk you through installing git, Julia and VS Code;
 - creating a GitHub account;

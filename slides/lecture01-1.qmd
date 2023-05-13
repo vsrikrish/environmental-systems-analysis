@@ -42,8 +42,8 @@ execute:
   * Define systems
   * Simulate system dynamics
   * Analyze and assess risk
-  * Formulate and solve optimization problems
-  * Explore trade-offs across competing objectives
+  * Make decisions with optimization
+  * Explore trade-offs across objectives
 :::
 
 ::: {.column width="50%"}
@@ -108,15 +108,13 @@ execute:
 - Some may involve code: clone notebooks from GitHub
 - Others may be more conceptual (e.g. think of an example)
 - Due (submit to Gradescope) by the end of the relevant week (**9:00pm on Friday**)
-- Graded only on completion
-- Two will be dropped.
+- Graded only on completion, will drop two
 
 
 
 ## Labs (15%)
 
-- In-class guided activities
-- May need some time after class to complete
+- In-class guided activities, but may need some time after class to complete
 - Focus on "how" to apply methods and concepts from class
 - **If you can't bring a laptop to these classes, you can work with someone else**
 - Can work in groups, but must submit your own notebook
@@ -140,10 +138,13 @@ execute:
 - Analyze a system of interest
 - Go beyond class examples/methods
 - Work in groups of 2 -- 3 for BEE 4750, individually for BEE 5750
-- Final submission is a PDF of a poster
-- Intermediate submissions:
-    - Proposal (one page)
-    - 2 -- 3 page report on a relevant regulation of interest
+
+## Final Project: Deliverables
+
+- **Proposal**: one page overview of system and model plan
+- **Regulatory Review**: 2--3 page report on relevant regulations
+- **Literature Review *(BEE 5750)***: 2 page synthesis of relevant literature
+- **Poster**: Overview and results (due end of semester)
 
 
 
@@ -181,8 +182,6 @@ Hopefully not a concern...
 
 . . .
 
-**But**:
-
 - Don't just copy...learn from others and give credit.
 - Submit your own original work.
 
@@ -191,41 +190,54 @@ Hopefully not a concern...
 ## Academic Integrity
 
 Obviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok.
-<br><br>
+
 But often lines aren't that simple. Let's quickly consider some scenarios (h/t to [Tony Wong](https://tonyewong.github.io/) for these).
 
 
 
 ## Academic Integrity: Scenario 1
 
-Dan searches the internet for relevant code and copy-pastes it into his Jupyter notebook.  He properly cites the source of the codes.
+Dan searches the internet for relevant code and copy-pastes it into his Jupyter notebook.  He cites the source of the codes.
 
-::: {.fragment .fade-in-then-out}
-**Is this ok?**
-:::
+::: {.callout-important}
+### Is this ok?
 
-::: {.fragment .fade-up}
-**Probably Not OK**: 
+::: {.fragment .fade-in}
+**Probably Not**
 
-- What portion of the work is Dan's? How important were the copied (and cited) codes?
+- What portion of the work is Dan's?
+- How important were the codes?
 - Did Dan understand what he copied?
 :::
+:::
 
+## Academic Integrity: Scenario 1
 
+Dan searches the internet for relevant code and copy-pastes it into his Jupyter notebook.  He cites the source of the codes.
+
+::: {.callout-tip}
+### What Should Dan Do?
+
+::: {.fragment .fade-in}
+Dan should *paraphrase* the codes he found to incorporate them with his own code, and then also cite them.
+:::
+:::
 
 ## Academic Integrity: Scenario 2
 
-Matthew and Rhonda work together to figure out how to implement the codes, but each works on their own computer and develops their own software.
+Matthew and Rhonda work together to figure out how to implement the codes, but each works on their own computer and develops their own solutions.
 
-::: {.fragment .fade-in-then-out}
-**Is this ok?**
+::: {.callout-important}
+### Is this ok?
+
+::: {.fragment .fade-in}
+**Definitely!**
+
+- Independent implementations shows understanding.
+
+:::
 :::
 
-::: {.fragment .fade-up}
-**Definitely OK**: 
-
-- Matthew and Rhonda have collaborated to understand how to solve the problem(s), but has written up their own solution, demonstrating their understanding.
-:::
 
 
 
@@ -233,15 +245,16 @@ Matthew and Rhonda work together to figure out how to implement the codes, but e
 
 Felix and Rachel are working together on a problem involving a derivation. Rachel types it up in LaTeX and sends the code to Felix, who pastes it into his Jupyter notebook.
 
-::: {.fragment .fade-in-then-out}
-**Is this ok?**
-:::
+::: {.callout-important}
+### Is this ok?
 
-::: {.fragment .fade-up}
-**Likely Not OK**:
+::: {.fragment .fade-in}
+**Likely Not**
 
 - Did Felix contribute enough to the derivation?
 - ***Definitely not OK if Felix doesn't give Rachel credit for her contribution.***
+
+:::
 :::
 
 
@@ -249,15 +262,16 @@ Felix and Rachel are working together on a problem involving a derivation. Rache
 
 Darren uses ChatGPT to debug an error in his homework code. He fixes the error and credits ChatGPT in his References section.
 
-::: {.fragment .fade-in-then-out}
-**Is this ok?**
-:::
+::: {.callout-important}
+### Is this ok?
 
-::: {.fragment .fade-up}
-**Well-meaning, but no!**:
+::: {.fragment .fade-in}
+**Well-meaning, but no!**
 
 - Using ChatGPT (or other ML tools) can be ok, but...
 - **Need to ask permission and thoroughly document the query and the exact response.**
+
+:::
 :::
 
 
@@ -283,8 +297,6 @@ Use [Ed Discussion](https://us.edstem.org) for questions and discussions about c
 - Try to use public posts so others can benefit from questions and can weigh in.
 - **I will make announcements through Ed**.
 
-<br>
-
 When urgency or privacy is required, email is ok.
 
 
@@ -308,7 +320,7 @@ Systems analysis requires mathematical modeling, and computing allows that to sc
 ## Julia
 
 In this course, we will use the [Julia programming language](https://julialang.org).
-<br><br>
+
 All assignments, labs, and AEs will be provided as Jupyter Notebooks.
 
 ## What Is Your Programming Experience?
@@ -321,8 +333,7 @@ We will use Jupyter Notebooks for most computing tasks (including assignments).
 
 - Allow for interactive evaluation of code and integration with text (including nicely typeset mathematics)
 - Can export to PDF (or HTML -> PDF) for submission to Gradescope.
-- **Be careful before submitting**:
-    - Evaluate all cells *in order*
+- **Be careful before submitting**: Evaluate all cells *in order*
 
 ## GitHub Classroom
 

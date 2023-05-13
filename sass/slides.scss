@@ -26,9 +26,10 @@ details>summary {
  
 h2 {
     border-bottom: 2px solid #b31b1b;
+    margin-bottom: 0.5em !important;
 }
 
-h2, h3 {
+h3 {
     margin-bottom: 10px !important;
 }
 
@@ -93,13 +94,35 @@ a {
     text-decoration: none;
 }
 
-blockquote {
-    background: #f7f7f7;
-    border-left: 10px solid #222;
+.reveal p {
+    margin-top: 1em;
+}
+
+.reveal p {
+    margin-bottom: 1em;
+}
+
+.reveal .quote {
+    color: #555555;
+    font-size: 0.9em;
+}
+
+.reveal .quote blockquote {
+    border: none;
     margin: 2px 1em;
     padding: 0px 1em;
-    font-size: 0.9em;
     font-style: italic;
+}
+
+
+.reveal .quote .cite {
+    text-align: right;
+    font-variant: small-caps;
+    border-left: 0;
+}
+
+.h3 {
+    margin-top: 1em;
 }
 
 strong {color: #EF4035;}

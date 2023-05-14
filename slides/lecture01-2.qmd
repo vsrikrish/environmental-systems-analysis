@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with Julia and GitHub"
+title: "Introduction to Systems Analysis!"
 subtitle: "Lecture 02"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
@@ -13,7 +13,7 @@ format:
         width: 1280
         height: 720
         transition: none
-        toc: false
+        toc: true
         toc-depth: 1
         toc-title: "Overview"
         history: false
@@ -24,48 +24,147 @@ format:
             - title-slide.html
         menu:
             numbers: true
-        html-math-method: mathjax      
+        html-math-method: mathjax
+        mermaid:
+            theme: neutral
 execute:
     freeze: auto
 ---
 
-# Application Exercise 1
+# Why Study Systems?
 
-## Overview
+## What Is A System?
 
-Application exercises are short assignments meant to tie into the week's discussion. 
+A system is:
 
-- These might be small coding exercises (for practice) or mini problems (think about a particular system for discussion).
+::: {.quote}
+> "an interconnected set of elements that is coherently organized in a way that achieves something...
+>
+> A system must consist of three kinds of things: *elements*, *interconnections* and *a function or purpose*."
 
-- We will not normally work on these in class.
-
-::: {.fragment .fade-in}
-Today is an exception --- focus on getting acquainted with the basic workflow and toolkit.
+::: {.cite} 
+--- Donella Meadows, *Thinking in Systems: A Primer*, 2008 
+:::
 :::
 
-## Instructions
+## Examples of Systems
 
-If you haven't already, go to the [instructions]({{< var course.url >}}/aes/ae01/ae01.html). For this application exercise, the instructions will:
+Can we think of any examples of systems?
 
-- walk you through installing git, Julia and VS Code;
-- creating a GitHub account;
-- cloning the repository;
-- opening and editing the notebook;
-- exporting to PDF for Gradescope.
+. . .
 
-## Tips
+What about things that are not systems?
 
-- Do not have to finish this in class, but please make sure to ask questions if you reach any sticking points.
-- Must submit PDF by **Friday at 9:00pm**: turnaround is short this week, but there is little work for this one.
-- If you have extra time, can get started on [Homework 1]({{< var course.url >}}/hw/hw01/hw01.html) (get the GitHub link from [Ed Discussion](https://us.edstem.org)).
+## Why Are Systems Interesting?
+
+In other words, **a system involves an interconnected set of components**.
+
+Those interconnections can lead to very different dynamics and outcomes than if the component processes were studied in isolation.
+
+This is called *emergence*.
+
+# Key Definitions
+
+## System State
+
+**System State**: quantities or variables which evolve over time based on external inputs and system dynamics.
+
+The state gives you a "snapshot" of the system at a given point in time.
+
+## Stocks and Flows
+
+- A **stock** is the amount of a system property: concentrations of a pollutant, numbers of currency units, etc.
+- A **flow** is the way in which a stock changes: decay, diffusion, production, consumption, etc.
+
+## Modeling Flows
+
+For example:
+
+::: {.incremental}
+- Mass balance equations let us track changes in stocks at particular points;
+- Equilibrium conditions are requirements that there is no net flow, and thus that stocks are preserved;
+- Fate and transport modeling involves quantifying how stocks change as they move through the system.
+:::
+
+# Examples of Systems Dynamics
+
+## Feedback Loops
+
+:::: {.columns}
+
+::: {.column width=60%}
+One example of an emergent systems dynamic is a **reinforcing (positive) feedback loop**, where a shock to the system state gets worse.
+
+Feedback loops can also be **dampening (negative)**, where a shock is weakened.
+:::
+
+::: {.column width=40%}
+![Ice-Albedo Feedback Loop](images/ice-albedo.svg){width=100%}
+:::
+
+::::
+
+## Tipping Points
+
+:::: {.columns}
+
+::: {.column width=50%}
+Another important systems concept is a **tipping point**, where the system changes states abruptly and drastically.
+
+Examples include lake eutrophication and ice-sheet melting.
+:::
+
+::: {.column width=50%}
+{{< embed notebooks/shallow-lake.ipynb#fig-lake-noinput >}}
+:::
+
+::::
+
+
+# Systems Analysis
+
+## Systems Analysis Overview
+
+:::: {.columns}
+
+::: {.column width=50%}
+### What We Study
+
+- System dynamics;
+- Response to inputs;
+- Alternatives for management or design.
+
+:::
+
+::: {.column width=50%}
+### Needs
+
+::: {.fragment  .fade-in}
+- *Definition of the system*
+- Systems model
+
+:::
+:::
+::::
+
+## What Do We Need To Define A System?
+
+::: {.incremental}
+- **Components**: relevant processes, agents, etc
+- **Interconnections**: relationships between system components
+- **Control volume**: internal vs. external components
+- **Inputs**: control policies and/or external forcings
+- **Outputs**: measured quantities of interest
+:::
 
 # Upcoming Schedule
 
-## Next Class
+## Next Classes
 
-Work on Lab 1. 
+**Friday**: Work on Lab 1. 
 
 - Preparation: 
-    - Lab 1 link is available on Ed. Click it to accept the lab before class, and based on Wednesday.
+    - Follow the steps in [Tools Setup]({{< var course.url >}}/setup.qmd) to get GitHub and Julia set up.
+    - Click the Lab 1 link in Ed Discussion to link your GitHub account to the class roster and create your Lab 1 repository.
 
-
+**Monday**: Overview of Systems Dynamics (aka the "Systems Zoo")

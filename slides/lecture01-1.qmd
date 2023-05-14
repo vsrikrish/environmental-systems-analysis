@@ -84,8 +84,7 @@ execute:
 
 | Assessment | % of Grade |
 |:-----------|-----------:|
-| Application Exercises | 5% |
-| Lab Notebooks | 15% |
+| Lab Notebooks | 20% |
 | Homework Assignments | 40% |
 | Final Project | 40% |
 
@@ -101,18 +100,7 @@ execute:
 - Curve unlikely (not worth asking about...)
 
 
-
-## Application Exercises (5%)
-
-- Small exercises intended to briefly practice syntax or gain intuition
-- Some may involve code: clone notebooks from GitHub
-- Others may be more conceptual (e.g. think of an example)
-- Due (submit to Gradescope) by the end of the relevant week (**9:00pm on Friday**)
-- Graded only on completion, will drop two
-
-
-
-## Labs (15%)
+## Labs (20%)
 
 - In-class guided activities, but may need some time after class to complete
 - Focus on "how" to apply methods and concepts from class
@@ -348,18 +336,9 @@ Homework assignments and labs will be distributed using GitHub Classroom.
 
 ## Next Classes
 
-**Wednesday**: Onboarding/AE to set up Julia and GitHub and work on HW 1. 
-
-- Preparation: 
-    - AE link is available on the website. 
-    - HW 1 link is available on Ed.
-    - **Bring your laptop if possible!**
-   
-
-## Next Classes
+**Wednesday**: Introduction to Systems Analysis
 
 **Friday**: Work on Lab 1. 
 
 - Preparation: 
-    - Lab 1 link is available on Ed. Click it to accept the lab before class, and based on Wednesday.
-
+    - Lab 1 link is available on Ed. Click it to accept the lab before class.

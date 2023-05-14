@@ -232,11 +232,7 @@ In general, late work will be subjected to a 10% penalty per day, *which can acc
 
 ## Assessments
 
-### Application Exercises: 5%
-
-Some weeks, small exercises will be assigned to introduce concepts or gain intuition, or to get practice with programming syntax. Your notebooks for these exercises should be submitted by the end of the given week, no later than 9:00pm on Friday. These will be graded solely on the basis of completion. Two application exercises will be dropped.
-
-### Lab Notebooks: 15%
+### Lab Notebooks: 20%
 
 Some classes will involve hands-on exercises (which we will call "labs") which will give you guided practice applying the concepts and methods from class. These classes will be announced on [the course website](https://viveks.me/environmental-systems-analysis) ahead of time so anyone who is able can bring a laptop to class, and notebooks will be provided on GitHub. These labs can be done in groups; if you cannot bring a laptop to class for whatever reason, you will be able to (and are encouraged to) work with other students, though you must turn in your own notebook for grading.
 

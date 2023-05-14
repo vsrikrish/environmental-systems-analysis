@@ -65,6 +65,8 @@ website:
           - href: labs/lab01/lab01.qmd
             text: Lab 1
       - section: project.qmd
+      - text: "Tools Setup"
+        href: setup.qmd
       - text: "FAQ"
         href: faq.qmd
       - section: "Tutorials"

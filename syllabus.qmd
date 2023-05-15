@@ -1,5 +1,4 @@
 ---
-jupyter: julia-1.8
 format:
   html:
     toc-depth: 3

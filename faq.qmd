@@ -1,6 +1,5 @@
 ---
 title: "FAQ"
-jupyter: julia-1.8
 ---
 
 ## Julia

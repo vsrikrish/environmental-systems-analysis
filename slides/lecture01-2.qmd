@@ -25,8 +25,8 @@ format:
         menu:
             numbers: true
         html-math-method: mathjax
-        mermaid:
-            theme: neutral
+        include-in-header: mathjax-config.html
+        date-format: long
 execute:
     freeze: auto
 ---

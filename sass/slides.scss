@@ -163,11 +163,16 @@ strong {color: #EF4035;}
 }
 
 .reveal p.caption {
+    display: none;
+}
+
+.reveal .caption p {
     font-size: 0.7em;
     color: #222222;
     font-style: italic;
     font-family: $font-family-serif;
     padding-top: 1px;
+    margin-top: 0;
     display: block;
     text-align: center;
 }

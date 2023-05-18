@@ -1,15 +1,30 @@
 ---
 title: "BEE 4750: Environmental Systems Analysis"
-tbl-colwidths: [5, 10, 25, 5, 5, 5, 5, 5]
+tbl-colwidths: [5, 10, 25, 5, 5, 5, 5]
 ---
 
 This page contains a schedule of the topics, content, and assignments for the semester.
 Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.
 
 ::: column-screen-inset-right
-| Week | Date        | Topic | Slides | AE | Lab | HW | Project |
+| Week | Date        | Topic | Slides | Lab | HW | Project |
 :-----:|:------------|:------|:------:|:--:|:---:|:--:|:-------:|
-| 1    | Mon, Aug 21 | Welcome to BEE 4750! | [{{< fa sharp presentation-screen >}}](slides/lecture01-1.qmd){target="_blank"}  | |  | [{{< fa sharp pen-field >}}](hw/hw01/hw01.qmd) | |
-| | Wed, Aug 23 | Julia and GitHub Setup | [{{< fa sharp presentation-screen >}}](slides/lecture01-2.qmd){target="_blank"}   | [{{< fa sharp coffee-pot >}}](aes/ae01/ae01.qmd) | | | |
-| | Fri, Aug 25 | Julia and GitHub Basics | [{{< fa sharp presentation-screen >}}](slides/lecture01-3.qmd){target="_blank"} | | [{{< fa sharp laptop >}}](labs/lab01/lab01.qmd) | | |
+| 1    | Mon, Aug 21 | Welcome to BEE 4750! | [{{< fa sharp presentation-screen >}}](slides/lecture01-1.qmd){target="_blank"}  | | | |
+|      | Wed, Aug 23 | Introduction to Systems Analysis | [{{< fa sharp presentation-screen >}}](slides/lecture01-2.qmd){target="_blank"}   | | | | 
+|      | Fri, Aug 25 | Lab: Julia and GitHub Setup | [{{< fa sharp presentation-screen >}}](slides/lecture01-3.qmd){target="_blank"} | [{{< fa sharp laptop-code >}}](labs/lab01/lab01.qmd) |  [{{< fa sharp pen-field >}}](hw/hw01/hw01.qmd) | | 
+| 2    | Mon, Aug 28 | Modeling Systems | [{{< fa sharp presentation-screen >}}](slides/lecture02-1.qmd){target="_blank"} | | | |
+|      | Wed, Aug 30 | [{{< fa sharp presentation-screen >}}](slides/lecture02-2.qmd){target="_blank"} | | | | |
+|      | Fri, Sep 01 | Example: Shallow Lake Eutrophication | | | | |
+| 3    | Mon, Sep 04 | Simulating Systems and Dissolved Oxygen | | | | |
+|      | Wed, Sep 06 | Risk | | | | |
+|      | Fri, Sep 08 | Uncertainty and Probability Review | | [{{< fa sharp pen-field >}}](hw/hw02/hw02.qmd) | | | 
+| 4    | Mon, Sep 11 | Monte Carlo Simulation | | | | |
+|      | Wed, Sep 13 | Monte Carlo Error | | | | |
+|      | Fri, Sep 15 | Lab: Monte Carlo | | [{{< fa sharp laptop-code >}}](labs/lab02/lab02.qmd) | | |
+| 5    | Mon, Sep 18 | Prescriptive Modeling | | | | |
+|      | Wed, Sep 20 | Prescriptive Modeling II | | | | |
+|      | Fri, Sep 22 | Introduction to Optimization | | | | |
+| 6    | Mon, Sep 25 | Example: Resource and Land Allocation | | | | |
+|      | Wed, Sep 27 | Lab: Optimization with JuMP.jl | | | | |
+
 :::

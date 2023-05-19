@@ -13,7 +13,7 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 |      | Wed, Aug 23 | Introduction to Systems Analysis | [{{< fa sharp presentation-screen >}}](slides/lecture01-2.qmd){target="_blank"}   | | | | 
 |      | Fri, Aug 25 | Lab: Julia and GitHub Setup | [{{< fa sharp presentation-screen >}}](slides/lecture01-3.qmd){target="_blank"} | [{{< fa sharp laptop-code >}}](labs/lab01/lab01.qmd) |  [{{< fa sharp pen-field >}}](hw/hw01/hw01.qmd) | | 
 | 2    | Mon, Aug 28 | Modeling Systems | [{{< fa sharp presentation-screen >}}](slides/lecture02-1.qmd){target="_blank"} | | | |
-|      | Wed, Aug 30 | [{{< fa sharp presentation-screen >}}](slides/lecture02-2.qmd){target="_blank"} | | | | |
+|      | Wed, Aug 30 | Example: Wastewater | [{{< fa sharp presentation-screen >}}](slides/lecture02-2.qmd){target="_blank"} | | | | 
 |      | Fri, Sep 01 | Example: Shallow Lake Eutrophication | [{{< fa sharp presentation-screen >}}](slides/lecture02-3.qmd){target="_blank"} | | | |
 | 3    | Mon, Sep 04 | Simulating Systems and Box Models | | | | |
 |      | Wed, Sep 06 | Dissolved Oxygen | | | | |

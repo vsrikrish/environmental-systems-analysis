@@ -157,6 +157,26 @@ Examples include lake eutrophication and ice-sheet melting.
 - **Outputs**: measured quantities of interest
 :::
 
+# Key Takeaways
+
+## Key Takeaways
+
+- A **system** is an interconnected set of components.
+- Systems are interesting because interconnections can result in unexpected outcomes.
+- Key terms:
+    - **state**
+    - **stocks**
+    - **flows**
+
+## Key Takeaways
+
+- To define a system, need to specify:
+    - components
+    - interconnections
+    - control volume
+    - external inputs
+    - outputs of interest
+
 # Upcoming Schedule
 
 ## Next Classes
@@ -167,4 +187,6 @@ Examples include lake eutrophication and ice-sheet melting.
     - Follow the steps in [Tools Setup]({{< var course.url >}}/setup.qmd) to get GitHub and Julia set up.
     - Click the Lab 1 link in Ed Discussion to link your GitHub account to the class roster and create your Lab 1 repository.
 
-**Monday**: Overview of Systems Dynamics (aka the "Systems Zoo")
+## Next Classes
+
+**Monday**: Modeling Systems

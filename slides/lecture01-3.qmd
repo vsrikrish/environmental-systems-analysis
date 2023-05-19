@@ -212,7 +212,6 @@ You should see the following menu bar at the top of the VS Code window:
 
 ## Next Classes
 
-**Monday**: Examples of Systems Dynamics (aka the "Systems Zoo")
+**Monday**: Modeling Systems
 
-**Wednesday**: Using Models To Understand Systems
-
+**Wednesday/Friday**: Examples of Systems Models

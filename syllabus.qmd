@@ -21,6 +21,19 @@ format:
     number-sections: false
 ---
 
+```{julia}
+#| echo: false
+#| output: false
+
+import Pkg
+Pkg.activate(".")
+Pkg.instantiate()
+
+using Dates
+using DataFrames
+using PrettyTables
+```
+
 ## Course Overview
 
 This is a 3 credit course which is required for the Environmental Engineering major, and can only be taken for a letter grade.
@@ -271,10 +284,6 @@ Rubrics will be provided for the components of the project.
 ```{julia}
 #| echo: false
 #| output: false
-
-using Dates
-using DataFrames
-using PrettyTables
 
 start_date = Date(2023, 8, 21)
 end_date = Date(2023, 12, 4)

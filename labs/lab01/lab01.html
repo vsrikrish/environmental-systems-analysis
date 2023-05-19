@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.6">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -102,7 +102,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <meta property="og:title" content="BEE 4750 - Fall 2023 - BEE 4750 Lab 1: Julia Basics">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://viveks.me/environmental-systems-analysis/labs/lab01/figures/vs-code-top-bar.png">
 <meta property="og:site-name" content="BEE 4750 - Fall 2023">
+<meta property="og:image:height" content="60">
+<meta property="og:image:width" content="1080">
 </head>
 
 <body class="nav-sidebar docked">
@@ -217,6 +220,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tools Setup</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../faq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FAQ</span></a>
   </div>
@@ -314,8 +323,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
   <li><a href="#exercise-3-making-a-plot" id="toc-exercise-3-making-a-plot" class="nav-link" data-scroll-target="#exercise-3-making-a-plot">Exercise 3: Making a Plot</a></li>
   </ul></li>
+  <li><a href="#export-the-notebook" id="toc-export-the-notebook" class="nav-link" data-scroll-target="#export-the-notebook">Export the Notebook</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/labs/lab01/lab01.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lab01.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/labs/lab01/lab01.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -379,8 +389,8 @@ Due Date
 <section id="julia" class="level3">
 <h3 class="anchored" data-anchor-id="julia">Julia</h3>
 <p>Julia is an up-and-coming language, originally developed for scientific programming. While learning a new programming language always has its hiccups, the good news is that if you’ve programmed in a high-level language such as Python or MATLAB, most Julia concepts should look familiar.</p>
-<p>If you have not successfully set up Julia, follow the instructions in <a href="ae/ae-01-setup.html">Application Exercise 1</a> and/or ask for help.</p>
-<p>You can use other editors for this course, but our recommendation is <a href="https://code.visualstudio.com/">Visual Studio Code</a> with the <a href="https://marketplace.visualstudio.com/items?itemName=julialang.language-julia">Julia extension</a>, which will make life a <em>lot</em> simpler! You should have set this up as part of <a href="ae/ae-01-setup.html">Application Exercise 1</a>, but if not, do so now and/or ask for help.</p>
+<p>If you have not successfully set up Julia, follow the instructions in <a href="https://viveks.me/environmental-systems-analysis/setup.html">Tools Setup</a> and/or ask for help.</p>
+<p>You can use other editors for this course, but our recommendation is <a href="https://code.visualstudio.com/">Visual Studio Code</a> with the <a href="https://marketplace.visualstudio.com/items?itemName=julialang.language-julia">Julia extension</a>, which will make life a <em>lot</em> simpler! You should have set this up by following the <a href="https://viveks.me/environmental-systems-analysis/setup.html">Tools Setup</a> instructions, but if not, do so now and/or ask for help.</p>
 </section>
 <section id="jupyter-notebooks" class="level3">
 <h3 class="anchored" data-anchor-id="jupyter-notebooks">Jupyter Notebooks</h3>
@@ -514,9 +524,20 @@ Due Date
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-
-
 </section>
+</section>
+<section id="export-the-notebook" class="level2">
+<h2 class="anchored" data-anchor-id="export-the-notebook">Export the Notebook</h2>
+<p>The last step is to export the notebook for submission to Gradescope (this section won’t be repeated going forward, but the steps are the same).</p>
+<p>You should see the following menu bar at the top of the VS Code window: <img src="figures/vs-code-top-bar.png" class="img-fluid" alt="Notebook Menu Bar"></p>
+<ol type="1">
+<li>Click “Run All” at the top to execute all of the cells in order. <strong>Please do not forget to do this before exporting and submitting or you may lose points because your code has not been executed or may have errors</strong>.</li>
+<li>Click the ellipsis (“…”) and select “Export”. If you have LaTeX installed, you can click “PDF”; otherwise, click “HTML.” Save the file, and then when prompted, open the file. This should open the page in your browser; go to the print interface and save as a PDF. ::: {.callout-tip} When printing to PDF, long lines will run off the edge of code cells, which may result in comments or code being hidden. If you see this, go back to the notebook and break up long lines into shorter onces (for example, see the comment in the above code cell) to ensure key parts of your results aren’t missing. :::</li>
+</ol>
+<p>Great! That’s the basic workflow for every assignment in this course.</p>
+<p>Now you have your PDF that you can submit to Gradescope. Make sure that you tag pages corresponding to relevant problems to avoid a 10% penalty.</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -626,30 +647,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, function() {
-      let href = xref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children.length > 2) {
-          for (let i = 0; i < 2; i++) {
-            container.appendChild(note.children[i].cloneNode(true));
-          }
-          return container.innerHTML
-        } else {
-          return note.innerHTML;
-        }
-      } else {
-        return note.innerHTML;
-      }
     });
   }
       let selectedAnnoteEl;

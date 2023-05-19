@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.6">
+  <meta name="generator" content="quarto-1.3.353">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2023-08-21">
@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -320,6 +320,15 @@
       margin-right: 0; 
     }
   </style>
+  <!-- Mathjax 3 config -->
+  <script>
+  window.MathJax = {
+      chtml: {
+        scale: 0.9,                      
+        minScale: 0.5
+      },
+    };
+  </script>
 <meta property="og:title" content="BEE 4750 - Fall 2023 - Welcome to BEE 4750!">
 <meta property="og:description" content="Lecture 01">
 <meta property="og:site-name" content="BEE 4750 - Fall 2023">
@@ -332,7 +341,7 @@
     <h1 class="title">Welcome to BEE 4750!</h1>
   <hr>
 <p class="subtitle">Lecture 01</p>
-<p class="date">2023-08-21</p>
+<p class="date">August 21, 2023</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Overview</h2>
@@ -358,8 +367,8 @@
 <li>Define systems</li>
 <li>Simulate system dynamics</li>
 <li>Analyze and assess risk</li>
-<li>Formulate and solve optimization problems</li>
-<li>Explore trade-offs across competing objectives</li>
+<li>Make decisions with optimization</li>
+<li>Explore trade-offs across objectives</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="fragment fade-in">
@@ -386,7 +395,7 @@
 </div>
 </div><div class="column" style="width:60%;">
 <p><strong>Text</strong>: VSRIKRISH to 22333</p>
-<p><strong>URL</strong>: <a href="https://pollev.com/vsrikrish">https://pollev.com/vsrikrish</a></p>
+<p><strong>URL</strong>: <a href="https://pollev.com/vsrikrish">https://pollev.com/vsrikrish</a> <br><br> <a href="https://www.polleverywhere.com/multiple_choice_polls/qKeig0hHShZYHAOmvZtZm?preview=true&amp;controls=none" data-preview-link="true">See Results</a></p>
 </div>
 </div>
 </section>
@@ -416,18 +425,14 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Application Exercises</td>
-<td style="text-align: right;">5%</td>
+<td style="text-align: left;">Lab Notebooks</td>
+<td style="text-align: right;">20%</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Lab Notebooks</td>
-<td style="text-align: right;">15%</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Homework Assignments</td>
 <td style="text-align: right;">40%</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Final Project</td>
 <td style="text-align: right;">40%</td>
 </tr>
@@ -445,22 +450,10 @@
 <li>Curve unlikely (not worth asking about…)</li>
 </ul>
 </section>
-<section id="application-exercises-5" class="slide level2">
-<h2>Application Exercises (5%)</h2>
+<section id="labs-20" class="slide level2">
+<h2>Labs (20%)</h2>
 <ul>
-<li>Small exercises intended to briefly practice syntax or gain intuition</li>
-<li>Some may involve code: clone notebooks from GitHub</li>
-<li>Others may be more conceptual (e.g.&nbsp;think of an example)</li>
-<li>Due (submit to Gradescope) by the end of the relevant week (<strong>9:00pm on Friday</strong>)</li>
-<li>Graded only on completion</li>
-<li>Two will be dropped.</li>
-</ul>
-</section>
-<section id="labs-15" class="slide level2">
-<h2>Labs (15%)</h2>
-<ul>
-<li>In-class guided activities</li>
-<li>May need some time after class to complete</li>
+<li>In-class guided activities, but may need some time after class to complete</li>
 <li>Focus on “how” to apply methods and concepts from class</li>
 <li><strong>If you can’t bring a laptop to these classes, you can work with someone else</strong></li>
 <li>Can work in groups, but must submit your own notebook</li>
@@ -484,12 +477,15 @@
 <li>Analyze a system of interest</li>
 <li>Go beyond class examples/methods</li>
 <li>Work in groups of 2 – 3 for BEE 4750, individually for BEE 5750</li>
-<li>Final submission is a PDF of a poster</li>
-<li>Intermediate submissions:
+</ul>
+</section>
+<section id="final-project-deliverables" class="slide level2">
+<h2>Final Project: Deliverables</h2>
 <ul>
-<li>Proposal (one page)</li>
-<li>2 – 3 page report on a relevant regulation of interest</li>
-</ul></li>
+<li><strong>Proposal</strong>: one page overview of system and model plan</li>
+<li><strong>Regulatory Review</strong>: 2–3 page report on relevant regulations</li>
+<li><strong>Literature Review <em>(BEE 5750)</em></strong>: 2 page synthesis of relevant literature</li>
+<li><strong>Poster</strong>: Overview and results (due end of semester)</li>
 </ul>
 </section>
 <section id="attendance" class="slide level2">
@@ -519,7 +515,6 @@
 <li>Knowing how to find and use helpful resources is a skill we want to develop.</li>
 </ul>
 <div class="fragment">
-<p><strong>But</strong>:</p>
 <ul>
 <li>Don’t just copy…learn from others and give credit.</li>
 <li>Submit your own original work.</li>
@@ -528,61 +523,118 @@
 </section>
 <section id="academic-integrity-1" class="slide level2">
 <h2>Academic Integrity</h2>
-<p>Obviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok. <br><br> But often lines aren’t that simple. Let’s quickly consider some scenarios (h/t to <a href="https://tonyewong.github.io/">Tony Wong</a> for these).</p>
+<p>Obviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok.</p>
+<p>But often lines aren’t that simple. Let’s quickly consider some scenarios (h/t to <a href="https://tonyewong.github.io/">Tony Wong</a> for these).</p>
 </section>
 <section id="academic-integrity-scenario-1" class="slide level2">
 <h2>Academic Integrity: Scenario 1</h2>
-<p>Dan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. He properly cites the source of the codes.</p>
-<div class="fragment fade-in-then-out">
+<p>Dan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. He cites the source of the codes.</p>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
 <p><strong>Is this ok?</strong></p>
 </div>
-<div class="fragment fade-up">
-<p><strong>Probably Not OK</strong>:</p>
+<div class="callout-content">
+<div class="fragment fade-in">
+<p><strong>Probably Not</strong></p>
 <ul>
-<li>What portion of the work is Dan’s? How important were the copied (and cited) codes?</li>
+<li>What portion of the work is Dan’s?</li>
+<li>How important were the codes?</li>
 <li>Did Dan understand what he copied?</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="academic-integrity-scenario-1-1" class="slide level2">
+<h2>Academic Integrity: Scenario 1</h2>
+<p>Dan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. He cites the source of the codes.</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>What Should Dan Do?</strong></p>
+</div>
+<div class="callout-content">
+<div class="fragment fade-in">
+<p>Dan should <em>paraphrase</em> the codes he found to incorporate them with his own code, and then also cite them.</p>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="academic-integrity-scenario-2" class="slide level2">
 <h2>Academic Integrity: Scenario 2</h2>
-<p>Matthew and Rhonda work together to figure out how to implement the codes, but each works on their own computer and develops their own software.</p>
-<div class="fragment fade-in-then-out">
+<p>Matthew and Rhonda work together to figure out how to implement the codes, but each works on their own computer and develops their own solutions.</p>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
 <p><strong>Is this ok?</strong></p>
 </div>
-<div class="fragment fade-up">
-<p><strong>Definitely OK</strong>:</p>
+<div class="callout-content">
+<div class="fragment fade-in">
+<p><strong>Definitely!</strong></p>
 <ul>
-<li>Matthew and Rhonda have collaborated to understand how to solve the problem(s), but has written up their own solution, demonstrating their understanding.</li>
+<li>Independent implementations shows understanding.</li>
 </ul>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="academic-integrity-scenario-3" class="slide level2">
 <h2>Academic Integrity: Scenario 3</h2>
 <p>Felix and Rachel are working together on a problem involving a derivation. Rachel types it up in LaTeX and sends the code to Felix, who pastes it into his Jupyter notebook.</p>
-<div class="fragment fade-in-then-out">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
 <p><strong>Is this ok?</strong></p>
 </div>
-<div class="fragment fade-up">
-<p><strong>Likely Not OK</strong>:</p>
+<div class="callout-content">
+<div class="fragment fade-in">
+<p><strong>Likely Not</strong></p>
 <ul>
 <li>Did Felix contribute enough to the derivation?</li>
 <li><strong><em>Definitely not OK if Felix doesn’t give Rachel credit for her contribution.</em></strong></li>
 </ul>
 </div>
+</div>
+</div>
+</div>
 </section>
 <section id="academic-integrity-scenario-4" class="slide level2">
 <h2>Academic Integrity: Scenario 4</h2>
 <p>Darren uses ChatGPT to debug an error in his homework code. He fixes the error and credits ChatGPT in his References section.</p>
-<div class="fragment fade-in-then-out">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
 <p><strong>Is this ok?</strong></p>
 </div>
-<div class="fragment fade-up">
-<p><strong>Well-meaning, but no!</strong>:</p>
+<div class="callout-content">
+<div class="fragment fade-in">
+<p><strong>Well-meaning, but no!</strong></p>
 <ul>
 <li>Using ChatGPT (or other ML tools) can be ok, but…</li>
 <li><strong>Need to ask permission and thoroughly document the query and the exact response.</strong></li>
 </ul>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="chatgpt-the-stochastic-parrot" class="slide level2">
@@ -608,7 +660,6 @@
 <li>Try to use public posts so others can benefit from questions and can weigh in.</li>
 <li><strong>I will make announcements through Ed</strong>.</li>
 </ul>
-<p><br></p>
 <p>When urgency or privacy is required, email is ok.</p>
 </section>
 <section id="course-website" class="slide level2">
@@ -625,7 +676,8 @@
 </section>
 <section id="julia" class="slide level2">
 <h2>Julia</h2>
-<p>In this course, we will use the <a href="https://julialang.org">Julia programming language</a>. <br><br> All assignments, labs, and AEs will be provided as Jupyter Notebooks.</p>
+<p>In this course, we will use the <a href="https://julialang.org">Julia programming language</a>.</p>
+<p>All assignments, labs, and AEs will be provided as Jupyter Notebooks.</p>
 </section>
 <section id="what-is-your-programming-experience" class="slide level2">
 <h2>What Is Your Programming Experience?</h2>
@@ -638,7 +690,7 @@
 </div>
 </div><div class="column" style="width:60%;">
 <p><strong>Text</strong>: VSRIKRISH to 22333</p>
-<p><strong>URL</strong>: <a href="https://pollev.com/vsrikrish">https://pollev.com/vsrikrish</a></p>
+<p><strong>URL</strong>: <a href="https://pollev.com/vsrikrish">https://pollev.com/vsrikrish</a> <br><br> <a href="https://www.polleverywhere.com/multiple_choice_polls/qKeig0hHShZYHAOmvZtZm?preview=true&amp;controls=none" data-preview-link="true">See Results</a></p>
 </div>
 </div>
 </section>
@@ -648,10 +700,7 @@
 <ul>
 <li>Allow for interactive evaluation of code and integration with text (including nicely typeset mathematics)</li>
 <li>Can export to PDF (or HTML -&gt; PDF) for submission to Gradescope.</li>
-<li><strong>Be careful before submitting</strong>:
-<ul>
-<li>Evaluate all cells <em>in order</em></li>
-</ul></li>
+<li><strong>Be careful before submitting</strong>: Evaluate all cells <em>in order</em></li>
 </ul>
 </section>
 <section id="github-classroom" class="slide level2">
@@ -670,23 +719,12 @@
 </section>
 <section id="next-classes" class="slide level2">
 <h2>Next Classes</h2>
-<p><strong>Wednesday</strong>: Onboarding/AE to set up Julia and GitHub and work on HW 1.</p>
-<ul>
-<li>Preparation:
-<ul>
-<li>AE link is available on the website.</li>
-<li>HW 1 link is available on Ed.</li>
-<li><strong>Bring your laptop if possible!</strong></li>
-</ul></li>
-</ul>
-</section>
-<section id="next-classes-1" class="slide level2">
-<h2>Next Classes</h2>
+<p><strong>Wednesday</strong>: Introduction to Systems Analysis</p>
 <p><strong>Friday</strong>: Work on Lab 1.</p>
 <ul>
 <li>Preparation:
 <ul>
-<li>Lab 1 link is available on Ed. Click it to accept the lab before class, and based on Wednesday.</li>
+<li>Lab 1 link is available on Ed. Click it to accept the lab before class.</li>
 </ul></li>
 </ul>
 

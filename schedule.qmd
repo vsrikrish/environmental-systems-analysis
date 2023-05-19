@@ -14,10 +14,10 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 |      | Fri, Aug 25 | Lab: Julia and GitHub Setup | [{{< fa sharp presentation-screen >}}](slides/lecture01-3.qmd){target="_blank"} | [{{< fa sharp laptop-code >}}](labs/lab01/lab01.qmd) |  [{{< fa sharp pen-field >}}](hw/hw01/hw01.qmd) | | 
 | 2    | Mon, Aug 28 | Modeling Systems | [{{< fa sharp presentation-screen >}}](slides/lecture02-1.qmd){target="_blank"} | | | |
 |      | Wed, Aug 30 | [{{< fa sharp presentation-screen >}}](slides/lecture02-2.qmd){target="_blank"} | | | | |
-|      | Fri, Sep 01 | Example: Shallow Lake Eutrophication | | | | |
-| 3    | Mon, Sep 04 | Simulating Systems and Dissolved Oxygen | | | | |
-|      | Wed, Sep 06 | Risk | | | | |
-|      | Fri, Sep 08 | Uncertainty and Probability Review | | [{{< fa sharp pen-field >}}](hw/hw02/hw02.qmd) | | | 
+|      | Fri, Sep 01 | Example: Shallow Lake Eutrophication | [{{< fa sharp presentation-screen >}}](slides/lecture02-3.qmd){target="_blank"} | | | |
+| 3    | Mon, Sep 04 | Simulating Systems and Box Models | | | | |
+|      | Wed, Sep 06 | Dissolved Oxygen | | | | |
+|      | Fri, Sep 08 | Uncertainty and Risk | | [{{< fa sharp pen-field >}}](hw/hw02/hw02.qmd) | | | 
 | 4    | Mon, Sep 11 | Monte Carlo Simulation | | | | |
 |      | Wed, Sep 13 | Monte Carlo Error | | | | |
 |      | Fri, Sep 15 | Lab: Monte Carlo | | [{{< fa sharp laptop-code >}}](labs/lab02/lab02.qmd) | | |

@@ -27,7 +27,6 @@ format:
         html-math-method: mathjax
         include-in-header: mathjax-config.html
         date-format: long
-        embed-resources: true
 execute:
     freeze: auto
 ---

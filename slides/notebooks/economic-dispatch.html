@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.78">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -357,7 +357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div id="cell-1" class="cell" data-scrolled="true" data-execution_count="183">
+<div class="cell" data-scrolled="true" data-execution_count="183">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
@@ -368,7 +368,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>  Activating project at `~/Teaching/environmental-systems-analysis/website/slides`</code></pre>
 </div>
 </div>
-<div id="cell-2" class="cell" data-execution_count="184">
+<div class="cell" data-execution_count="184">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span>
@@ -388,7 +388,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="single-period-economic-dispatch" class="level2">
 <h2 class="anchored" data-anchor-id="single-period-economic-dispatch">Single-Period Economic Dispatch</h2>
 <p>Let’s say that we have a fleet of the following generators.</p>
-<div id="cell-spgen-data" class="cell" data-execution_count="185">
+<div class="cell" data-execution_count="185">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>header <span class="op">=</span> [<span class="st">"Plant"</span>, <span class="st">"P&lt;sub&gt;min&lt;/sub&gt; (MW)"</span>, <span class="st">"P&lt;sub&gt;max&lt;/sub&gt; (MW)"</span>, <span class="st">"VarCost (\$/MW)"</span>]</span>
@@ -402,7 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="spgen-data" class="cell-output cell-output-display">
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <thead>
-<tr class="header headerLastRow">
+<tr class="header header headerLastRow">
 <th style="text-align: right;" data-quarto-table-cell-role="th">Plant</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">P<sub>min</sub> (MW)</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">P<sub>max</sub> (MW)</th>
@@ -448,7 +448,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="jump-formulation" class="level2">
 <h2 class="anchored" data-anchor-id="jump-formulation">JuMP Formulation</h2>
-<div id="cell-8" class="cell" data-execution_count="186">
+<div class="cell" data-execution_count="186">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>demand <span class="op">=</span> <span class="fl">1800</span></span>
@@ -478,14 +478,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 \end{aligned} \]</span></p>
 </div>
 </div>
-<div id="cell-9" class="cell" data-execution_count="187">
+<div class="cell" data-execution_count="187">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set_silent</span>(dispatch)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">optimize!</span>(dispatch)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cell-spdispatch-results" class="cell" data-execution_count="188">
+<div class="cell" data-execution_count="188">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>gen_sol <span class="op">=</span> <span class="fu">value</span>.(y).data</span>
@@ -497,7 +497,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="spdispatch-results" class="cell-output cell-output-display">
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <thead>
-<tr class="header headerLastRow">
+<tr class="header header headerLastRow">
 <th style="text-align: right;" data-quarto-table-cell-role="th">Plant</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Dispatch (MW)</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">P<sub>min</sub> (MW)</th>
@@ -547,7 +547,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="merit-order-and-the-dispatch-stack" class="level3">
 <h3 class="anchored" data-anchor-id="merit-order-and-the-dispatch-stack">Merit Order and the Dispatch Stack</h3>
 <p>This procedure of starting with the lowest-cost generation and adding generation sequentially from generators in order of cost is the concept of <strong>merit order</strong>: plants are scheduled to supply additional electricity based (<em>mostly</em>) on their variable costs. We can visualize the <strong>supply curve</strong> (or the <em>dispatch stack</em>) to see the order in which electricity is dispatched.</p>
-<div id="cell-13" class="cell" data-execution_count="189">
+<div class="cell" data-execution_count="189">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>supply_curve <span class="op">=</span> <span class="fu">DataFrame</span>( </span>
@@ -563,7 +563,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div><div style="float: left;"><span>5×4 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header">
+<tr class="header header">
 <th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">name</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">pmin</th>
@@ -619,7 +619,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-dispatch-stack" class="cell" data-execution_count="190">
+<div class="cell" data-execution_count="190">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rectangle</span>(w, h, x, y) <span class="op">=</span> <span class="fu">Shape</span>(x <span class="op">.+</span> [<span class="fl">0</span>,w,w,<span class="fl">0</span>], y <span class="op">.+</span> [<span class="fl">0</span>,<span class="fl">0</span>,h,h]) </span>
@@ -727,7 +727,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="jump-implementation" class="level3">
 <h3 class="anchored" data-anchor-id="jump-implementation">JuMP Implementation</h3>
-<div id="cell-17" class="cell" data-execution_count="191">
+<div class="cell" data-execution_count="191">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ramp <span class="op">=</span> [<span class="fl">150</span>, <span class="fl">200</span>, <span class="fl">100</span>, <span class="fl">250</span>, <span class="fl">300</span>]</span>
@@ -1245,7 +1245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 \end{aligned} \]</span></p>
 </div>
 </div>
-<div id="cell-18" class="cell" data-execution_count="192">
+<div class="cell" data-execution_count="192">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
@@ -1263,7 +1263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    40.0    40.0   40.0   40.0   40.0       40.0    40.0    40.0    40.0</code></pre>
 </div>
 </div>
-<div id="cell-mpdispatch-stacked" class="cell" data-execution_count="193">
+<div class="cell" data-execution_count="193">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">areaplot</span>(gen<span class="op">'</span>, </span>
@@ -1342,7 +1342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <path clip-path="url(#clip100)" d="M4069.6 1383.56 L4069.6 1348.49 L4080.25 1348.49 L4080.25 1438.54 L4069.6 1438.54 L4069.6 1428.82 Q4066.25 1434.6 4061.1 1437.44 Q4056 1440.22 4048.83 1440.22 Q4037.08 1440.22 4029.67 1430.84 Q4022.32 1421.47 4022.32 1406.19 Q4022.32 1390.91 4029.67 1381.54 Q4037.08 1372.16 4048.83 1372.16 Q4056 1372.16 4061.1 1375 Q4066.25 1377.77 4069.6 1383.56 M4033.32 1406.19 Q4033.32 1417.94 4038.12 1424.65 Q4042.98 1431.3 4051.43 1431.3 Q4059.88 1431.3 4064.74 1424.65 Q4069.6 1417.94 4069.6 1406.19 Q4069.6 1394.44 4064.74 1387.79 Q4059.88 1381.07 4051.43 1381.07 Q4042.98 1381.07 4038.12 1387.79 Q4033.32 1394.44 4033.32 1406.19 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip100)" d="M4157.62 1403.47 L4157.62 1408.68 L4108.67 1408.68 Q4109.36 1419.67 4115.26 1425.46 Q4121.22 1431.19 4131.81 1431.19 Q4137.95 1431.19 4143.68 1429.68 Q4149.46 1428.18 4155.14 1425.17 L4155.14 1435.24 Q4149.41 1437.67 4143.39 1438.94 Q4137.37 1440.22 4131.18 1440.22 Q4115.67 1440.22 4106.58 1431.19 Q4097.56 1422.16 4097.56 1406.77 Q4097.56 1390.85 4106.12 1381.54 Q4114.74 1372.16 4129.33 1372.16 Q4142.4 1372.16 4149.99 1380.61 Q4157.62 1389 4157.62 1403.47 M4146.98 1400.34 Q4146.86 1391.61 4142.06 1386.4 Q4137.31 1381.19 4129.44 1381.19 Q4120.53 1381.19 4115.15 1386.22 Q4109.82 1391.26 4109.01 1400.4 L4146.98 1400.34 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip100)" d="M4225.56 1386.17 Q4229.56 1378.99 4235.11 1375.58 Q4240.67 1372.16 4248.19 1372.16 Q4258.32 1372.16 4263.82 1379.28 Q4269.31 1386.34 4269.31 1399.42 L4269.31 1438.54 L4258.61 1438.54 L4258.61 1399.76 Q4258.61 1390.45 4255.31 1385.93 Q4252.01 1381.42 4245.24 1381.42 Q4236.96 1381.42 4232.16 1386.92 Q4227.36 1392.42 4227.36 1401.91 L4227.36 1438.54 L4216.65 1438.54 L4216.65 1399.76 Q4216.65 1390.39 4213.35 1385.93 Q4210.05 1381.42 4203.17 1381.42 Q4195.01 1381.42 4190.21 1386.98 Q4185.4 1392.47 4185.4 1401.91 L4185.4 1438.54 L4174.7 1438.54 L4174.7 1373.72 L4185.4 1373.72 L4185.4 1383.79 Q4189.05 1377.83 4194.14 1375 Q4199.23 1372.16 4206.24 1372.16 Q4213.3 1372.16 4218.21 1375.75 Q4223.19 1379.34 4225.56 1386.17 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip100)" d="M4320.01 1405.96 Q4307.1 1405.96 4302.13 1408.91 Q4297.15 1411.86 4297.15 1418.98 Q4297.15 1424.65 4300.85 1428.01 Q4304.61 1431.3 4311.04 1431.3 Q4319.89 1431.3 4325.22 1425.05 Q4330.6 1418.75 4330.6 1408.33 L4330.6 1405.96 L4320.01 1405.96 M4341.25 1401.56 L4341.25 1438.54 L4330.6 1438.54 L4330.6 1428.7 Q4326.95 1434.6 4321.51 1437.44 Q4316.07 1440.22 4308.2 1440.22 Q4298.25 1440.22 4292.35 1434.66 Q4286.5 1429.05 4286.5 1419.67 Q4286.5 1408.73 4293.79 1403.18 Q4301.14 1397.62 4315.67 1397.62 L4330.6 1397.62 L4330.6 1396.58 Q4330.6 1389.23 4325.74 1385.24 Q4320.93 1381.19 4312.2 1381.19 Q4306.64 1381.19 4301.37 1382.52 Q4296.11 1383.85 4291.25 1386.51 L4291.25 1376.67 Q4297.09 1374.42 4302.59 1373.32 Q4308.09 1372.16 4313.29 1372.16 Q4327.36 1372.16 4334.3 1379.45 Q4341.25 1386.74 4341.25 1401.56 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip100)" d="M4417.06 1399.42 L4417.06 1438.54 L4406.41 1438.54 L4406.41 1399.76 Q4406.41 1390.56 4402.82 1385.99 Q4399.23 1381.42 4392.06 1381.42 Q4383.43 1381.42 4378.46 1386.92 Q4373.48 1392.42 4373.48 1401.91 L4373.48 1438.54 L4362.77 1438.54 L4362.77 1373.72 L4373.48 1373.72 L4373.48 1383.79 Q4377.3 1377.95 4382.45 1375.05 Q4387.66 1372.16 4394.43 1372.16 Q4405.6 1372.16 4411.33 1379.11 Q4417.06 1385.99 4417.06 1399.42 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip100)" d="M4480.94 1383.56 L4480.94 1348.49 L4491.59 1348.49 L4491.59 1438.54 L4480.94 1438.54 L4480.94 1428.82 Q4477.59 1434.6 4472.44 1437.44 Q4467.34 1440.22 4460.17 1440.22 Q4448.42 1440.22 4441.01 1430.84 Q4433.66 1421.47 4433.66 1406.19 Q4433.66 1390.91 4441.01 1381.54 Q4448.42 1372.16 4460.17 1372.16 Q4467.34 1372.16 4472.44 1375 Q4477.59 1377.77 4480.94 1383.56 M4444.66 1406.19 Q4444.66 1417.94 4449.46 1424.65 Q4454.32 1431.3 4462.77 1431.3 Q4471.22 1431.3 4476.08 1424.65 Q4480.94 1417.94 4480.94 1406.19 Q4480.94 1394.44 4476.08 1387.79 Q4471.22 1381.07 4462.77 1381.07 Q4454.32 1381.07 4449.46 1387.79 Q4444.66 1394.44 4444.66 1406.19 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path></svg>
 </div>
 </div>
-<div id="cell-mpdispatch-results" class="cell" data-execution_count="194">
+<div class="cell" data-execution_count="194">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fu">plot</span>(gen<span class="op">'</span>, </span>
@@ -1533,34 +1533,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, function() {
-      let href = xref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note !== null) {
-        if (id.startsWith('sec-')) {
-          // Special case sections, only their first couple elements
-          const container = document.createElement("div");
-          if (note.children && note.children.length > 2) {
-            for (let i = 0; i < 2; i++) {
-              container.appendChild(note.children[i].cloneNode(true));
-            }
-            return container.innerHTML
-          } else {
-            return note.innerHTML;
-          }
-        } else {
-          return note.innerHTML;
-        }
-      } else {
-        return "";
-      }
     });
   }
       let selectedAnnoteEl;

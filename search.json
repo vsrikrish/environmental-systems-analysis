@@ -1222,7 +1222,7 @@
     "href": "slides/lecture02-3.html#shallow-lake-model-runoff",
     "title": "Eutrophication Modeling Example",
     "section": "Shallow Lake Model: Runoff",
-    "text": "Shallow Lake Model: Runoff\n\nRandom runoffs \\(y_t\\) are sampled from a LogNormal distribution.\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Lognormal Distributions"
+    "text": "Shallow Lake Model: Runoff\n\nRandom runoffs \\(y_t\\) are sampled from a LogNormal distribution.\n\n\nFigure 1: Lognormal Distributions"
   },
   {
     "objectID": "slides/lecture02-3.html#shallow-lake-model-p-dynamics",

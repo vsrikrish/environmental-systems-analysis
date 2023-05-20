@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.4.78">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -325,7 +325,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#export-the-notebook" id="toc-export-the-notebook" class="nav-link" data-scroll-target="#export-the-notebook">Export the Notebook</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/labs/lab01/lab01.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/labs/lab01/lab01.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lab01.ipynb" download="lab01.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -360,27 +360,30 @@ Due Date
 <p>Friday, 9/1/23, 9:00pm</p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-caution">
-<div class="callout-body d-flex">
+<div class="callout callout-style-simple callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>If you are enrolled in the course, make sure that you use the GitHub Classroom link provided in Ed Discussion, or you may not be able to get help if you run into problems.</p>
 <p>Otherwise, you can <a href="https://github.com/BEE4750/lab01">find the Github repository here</a>.</p>
-</div>
 </div>
 </div>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>The following code should go at the top of most Julia scripts; it will load the local package environment and install any needed packages. You will see this often and shouldn’t need to touch it.</p>
-<div class="cell" data-execution_count="1">
+<div id="5180dc69" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"."</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This next cell loads packages which are required for the rest of the code evaluation. In this case, we only need to load the <code>Plots.jl</code> plotting package, but you will see others over the course of the semester (and can add more if desired; just make sure that you’ve <a href="https://viveks.me/environmental-systems-analysis/tutorials/julia-basics.html#package-management">added the new packages to the environment</a>). Standard Julia practice is to load all of the needed packages at the top of the file.</p>
-<div class="cell" data-execution_count="2">
+<div id="8ee9c298" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -417,7 +420,7 @@ Due Date
 <p>At this point you might be wondering how to turn this cell back into the fully formatted Markdown text instead of the raw Markdown you’re probably still looking at. You have a couple of options, depending on your platform, but the most consistent is to type <code>Shift + Enter</code> to <strong>execute</strong> the cell (this is also how to run code, but more on that later).</p>
 <p>Additionally, you will frequently need to create new cells in your Jupyter notebooks. How you do this will depend on how you interact with the notebook, but try to figure this out now.</p>
 <p>One tip is to think carefully about what bits of code should be in the same cell, as you typically only see output from the last command in a cell. For example, compare the following:</p>
-<div class="cell" data-execution_count="3">
+<div id="6153497e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">5</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -425,20 +428,20 @@ Due Date
 </div>
 </div>
 <p>with</p>
-<div class="cell" data-execution_count="4">
+<div id="f378002a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>5</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="5">
+<div id="50a28e56" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>-0.9589242746631385</code></pre>
 </div>
 </div>
 <p>In Julia, you can also suppress the output of a command with a semi-colon:</p>
-<div class="cell" data-execution_count="6">
+<div id="5248ddbc" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(x);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>which can help if you want to split some code out for clarity or to insert some text prior to it, but don’t want to clutter the notebook with its output.</p>
@@ -475,7 +478,7 @@ Due Date
 <section id="exercise-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
 <p>Given two numeric arrays <code>x</code> and <code>y</code>, write a function to compute their dot product if they have equal length, and return an error if not (this is useful for debugging!). Use the following code as a starting point.</p>
-<div class="cell" data-execution_count="7">
+<div id="50847d1a" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">dot_product</span>(x, y)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">...</span> <span class="co"># insert test condition for equal lengths</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="co"># compute and return dot product</span></span>
@@ -485,15 +488,15 @@ Due Date
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here are some tests to make sure your code works as intended. Tests like these are useful to make sure everything works as intended. One reason to split your code up into functions is that it makes it straightforward to write tests to make sure each piece of your code works, which makes it easier to identify where errors are occuring.</p>
-<div class="cell" data-execution_count="8">
+<div id="bae5892b" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dot_product</span>([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>], [<span class="fl">4</span> <span class="fl">5</span> <span class="fl">6</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you know the value you should get, you can write a more formal test using the <code>@assert</code> macro, which is a good way to “automate” checking (since you get an obvious error if the code doesn’t work as desired):</p>
-<div class="cell" data-execution_count="9">
+<div id="e49b580c" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">dot_product</span>([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>], [<span class="fl">4</span> <span class="fl">5</span> <span class="fl">6</span>]) <span class="op">==</span> <span class="fl">32</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s also make sure we get an error when the dimensions of the two vectors don’t match:</p>
-<div class="cell" data-execution_count="10">
+<div id="10734e35" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dot_product</span>([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>], [<span class="fl">4</span> <span class="fl">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -510,18 +513,18 @@ Due Date
 <li>Repeat until <span class="math inline">\(x/a\)</span> is within a tolerance of <span class="math inline">\(\varepsilon\)</span> from <span class="math inline">\(a\)</span>.</li>
 <li>Return <span class="math inline">\(a \approx \sqrt{x}\)</span>.</li>
 </ol>
-<div class="cell" data-execution_count="11">
+<div id="3039afd0" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Use your <code>newton_sqrt</code> function to compute <span class="math inline">\(\sqrt{2}\)</span> to within a tolerance of <span class="math inline">\(\varepsilon = 0.01\)</span>.</p>
-<div class="cell" data-execution_count="12">
+<div id="80f3bcf7" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-3-making-a-plot" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-3-making-a-plot">Exercise 3: Making a Plot</h3>
 <p>Write a function to compute the square of an integer <code>x</code>. Evaluate this function for integers between <span class="math inline">\(x=-5\)</span> and <span class="math inline">\(x=5\)</span> and make a plot of the squared values (you can find a quick guide to making various types of plots <a href="../tutorials/julia-plots.html">here</a>). Make sure to label your axes.</p>
-<div class="cell" data-execution_count="13">
+<div id="7a237bab" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -647,6 +650,34 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, function() {
+      let href = xref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note !== null) {
+        if (id.startsWith('sec-')) {
+          // Special case sections, only their first couple elements
+          const container = document.createElement("div");
+          if (note.children && note.children.length > 2) {
+            for (let i = 0; i < 2; i++) {
+              container.appendChild(note.children[i].cloneNode(true));
+            }
+            return container.innerHTML
+          } else {
+            return note.innerHTML;
+          }
+        } else {
+          return note.innerHTML;
+        }
+      } else {
+        return "";
+      }
     });
   }
       let selectedAnnoteEl;

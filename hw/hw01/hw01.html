@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.4.78">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -318,7 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#problem-4-40-points" id="toc-problem-4-40-points" class="nav-link" data-scroll-target="#problem-4-40-points">Problem 4 (40 points)</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/hw/hw01/hw01.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/hw/hw01/hw01.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="hw01.ipynb" download="hw01.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -353,15 +353,18 @@ Due Date
 <p>Friday, 9/8/23, 9:00pm</p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-caution">
-<div class="callout-body d-flex">
+<div class="callout callout-style-simple callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>If you are enrolled in the course, make sure that you use the GitHub Classroom link provided in Ed Discussion, or you may not be able to get help if you run into problems.</p>
 <p>Otherwise, you can <a href="https://github.com/BEE4750/hw01">find the Github repository here</a>.</p>
-</div>
 </div>
 </div>
 <section id="overview" class="level2">
@@ -376,12 +379,12 @@ Due Date
 <section id="load-environment" class="level3">
 <h3 class="anchored" data-anchor-id="load-environment">Load Environment</h3>
 <p>The following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.</p>
-<div class="cell" data-execution_count="1">
+<div id="d6dcbefb" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="pp">@__DIR__</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="2">
+<div id="e5338ccd" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">GraphRecipes</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LaTeXStrings</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -393,7 +396,7 @@ Due Date
 <section id="problem-1-20-points" class="level3">
 <h3 class="anchored" data-anchor-id="problem-1-20-points">Problem 1 (20 points)</h3>
 <p>You’ve been tasked with writing code to identify the minimum value in an array. You cannot use a predefined function. Your colleague suggested the function below, but it does not return the minimum value.</p>
-<div class="cell" data-execution_count="3">
+<div id="c73068b9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">minimum</span>(array)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    min_value <span class="op">=</span> <span class="fl">0</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(array)</span>
@@ -426,7 +429,7 @@ Due Date
 <section id="problem-2-20-points" class="level3">
 <h3 class="anchored" data-anchor-id="problem-2-20-points">Problem 2 (20 points)</h3>
 <p>Your team is trying to compute the average grade for your class, but the following code produces an error.</p>
-<div class="cell" data-execution_count="4">
+<div id="0d6a1a04" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>student_grades <span class="op">=</span> [<span class="fl">89</span>, <span class="fl">90</span>, <span class="fl">95</span>, <span class="fl">100</span>, <span class="fl">100</span>, <span class="fl">78</span>, <span class="fl">99</span>, <span class="fl">98</span>, <span class="fl">100</span>, <span class="fl">95</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">class_average</span>(grades)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  average_grade <span class="op">=</span> <span class="fu">mean</span>(student_grades)</span>
@@ -454,7 +457,7 @@ Due Date
 <section id="problem-3-20-points" class="level3">
 <h3 class="anchored" data-anchor-id="problem-3-20-points">Problem 3 (20 points)</h3>
 <p>You’ve been handed some code to analyze. The original coder was not very considerate of other potential users: the function is called <code>mystery_function</code> and there are no comments explaining the purpose of the code. It appears to take in an array and return some numbers, and you’ve been assured that the code works as intended.</p>
-<div class="cell" data-execution_count="5">
+<div id="e64f93c4" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">mystery_function</span>(values)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> []</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> v <span class="kw">in</span> values</span>
@@ -488,8 +491,8 @@ Due Date
 <p>Cheap Plastic Products is wondering how to allocate their wastewater between these three disposal and treatment methods (land disposal, and chemical treatment, and land disposal) to meet the effluent standard while keeping costs manageable.</p>
 <section id="problem-4.1-10-points" class="level4">
 <h4 class="anchored" data-anchor-id="problem-4.1-10-points">Problem 4.1 (10 points)</h4>
-<p>The flow of wastewater through this treatment system is shown in <a href="#fig-wastewater">Figure&nbsp;1</a>. Modify the edge labels (by editing the <code>edge_labels</code> dictionary in the code producing <a href="#fig-wastewater">Figure&nbsp;1</a>) to show how the wastewater allocations result in the final YUK discharge into Pristine Brook. For the <code>edge_label</code> dictionary, the tuple <span class="math inline">\((i, j)\)</span> corresponds to the arrow going from node <span class="math inline">\(i\)</span> to node <span class="math inline">\(j\)</span>. The syntax for any entry is <code>(i, j) =&gt; "label text"</code>, and the label text can include mathematical notation if the string is prefaced with an <code>L</code>, as in <code>L"x_1"</code> will produce <span class="math inline">\(x_1\)</span>.</p>
-<div class="cell" data-execution_count="6">
+<p>The flow of wastewater through this treatment system is shown in <a href="#fig-wastewater" class="quarto-xref">Figure&nbsp;1</a>. Modify the edge labels (by editing the <code>edge_labels</code> dictionary in the code producing <a href="#fig-wastewater" class="quarto-xref">Figure&nbsp;1</a>) to show how the wastewater allocations result in the final YUK discharge into Pristine Brook. For the <code>edge_label</code> dictionary, the tuple <span class="math inline">\((i, j)\)</span> corresponds to the arrow going from node <span class="math inline">\(i\)</span> to node <span class="math inline">\(j\)</span>. The syntax for any entry is <code>(i, j) =&gt; "label text"</code>, and the label text can include mathematical notation if the string is prefaced with an <code>L</code>, as in <code>L"x_1"</code> will produce <span class="math inline">\(x_1\)</span>.</p>
+<div id="cell-fig-wastewater" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">GraphRecipes</span>, <span class="bu">Plots</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [<span class="fl">0</span> <span class="fl">1</span> <span class="fl">1</span> <span class="fl">1</span>;</span>
@@ -522,7 +525,7 @@ Due Date
 <section id="problem-4.3-10-points" class="level4">
 <h4 class="anchored" data-anchor-id="problem-4.3-10-points">Problem 4.3 (10 points)</h4>
 <p>Implement this systems model as a Julia function which computes the resulting YUK concentration and cost for a particular treatment plan. You can return multiple values from a function with a <a href="https://docs.julialang.org/en/v1/manual/functions/#Tuples-1">tuple</a>, as in:</p>
-<div class="cell" data-execution_count="7">
+<div id="b8e2bb11" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">multiple_return_values</span>(x, y)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (x<span class="op">+</span>y, x<span class="op">*</span>y)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
@@ -653,6 +656,34 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, function() {
+      let href = xref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note !== null) {
+        if (id.startsWith('sec-')) {
+          // Special case sections, only their first couple elements
+          const container = document.createElement("div");
+          if (note.children && note.children.length > 2) {
+            for (let i = 0; i < 2; i++) {
+              container.appendChild(note.children[i].cloneNode(true));
+            }
+            return container.innerHTML
+          } else {
+            return note.innerHTML;
+          }
+        } else {
+          return note.innerHTML;
+        }
+      } else {
+        return "";
+      }
     });
   }
       let selectedAnnoteEl;

@@ -216,6 +216,14 @@ In general, simple models might be able to be solved analytically, but anything 
 :::
 :::
 
+## Models And Assumptions
+
+![XKCD Comic 2355](https://imgs.xkcd.com/comics/university_covid_model_2x.png)
+
+::: {.caption}
+Source: [XKCD 2355](https://xkcd.com/2355)
+:::
+
 ## A Leading Question
 
 Someone has developed a model of a complex process (say...number of cases of a particular infectious disease). 

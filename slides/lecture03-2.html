@@ -7,14 +7,12 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.78">
 
   <meta name="author" content="Vivek Srikrishnan">
-  <meta name="dcterms.date" content="2023-08-28">
-  <title>BEE 4750 - Fall 2023 - Understanding Systems with Models</title>
+  <meta name="dcterms.date" content="2023-09-06">
+  <title>BEE 4750 - Fall 2023 - Building A Dissolved Oxygen Model</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -342,11 +340,8 @@
     }
   };
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<meta property="og:title" content="BEE 4750 - Fall 2023 - Understanding Systems with Models">
-<meta property="og:description" content="Lecture 04">
+<meta property="og:title" content="BEE 4750 - Fall 2023 - Building A Dissolved Oxygen Model">
+<meta property="og:description" content="Lecture 08">
 <meta property="og:site-name" content="BEE 4750 - Fall 2023">
 </head>
 <body class="quarto-light">
@@ -354,18 +349,18 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-    <h1 class="title">Understanding Systems with Models</h1>
+    <h1 class="title">Building A Dissolved Oxygen Model</h1>
   <hr>
-<p class="subtitle">Lecture 04</p>
-<p class="date">August 28, 2023</p>
+<p class="subtitle">Lecture 08</p>
+<p class="date">September 6, 2023</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Overview</h2>
 <ul>
 <li><a href="#/review-and-questions" id="/toc-review-and-questions">Review and Questions</a></li>
-<li><a href="#/modeling-systems" id="/toc-modeling-systems">Modeling Systems</a></li>
-<li><a href="#/caution-all-models-are-wrong" id="/toc-caution-all-models-are-wrong">Caution: “All Models Are Wrong…”</a></li>
-<li><a href="#/key-takeaways" id="/toc-key-takeaways">Key Takeaways</a></li>
+<li><a href="#/dissolved-oxygen-overview" id="/toc-dissolved-oxygen-overview">Dissolved Oxygen Overview</a></li>
+<li><a href="#/modeling-dissolved-oxygen" id="/toc-modeling-dissolved-oxygen">Modeling Dissolved Oxygen</a></li>
+<li><a href="#/key-points" id="/toc-key-points">Key Points</a></li>
 <li><a href="#/upcoming-schedule" id="/toc-upcoming-schedule">Upcoming Schedule</a></li>
 </ul>
 </nav>
@@ -375,29 +370,29 @@
 <h1>Review and Questions</h1>
 
 </section>
-<section id="what-is-a-system" class="slide level2">
-<h2>What Is A System?</h2>
-<p>A system is an interconnected set of components which “achieve” some function.</p>
-</section>
-<section id="system-state" class="slide level2">
-<h2>System State</h2>
-<p><strong>System State</strong>: quantities or variables which evolve over time based on external inputs and system dynamics.</p>
-<p>The state gives you a “snapshot” of the system at a given point in time.</p>
-</section>
-<section id="stocks-and-flows" class="slide level2">
-<h2>Stocks and Flows</h2>
+<section id="last-class" class="slide level2">
+<h2>Last Class</h2>
 <ul>
-<li>A <strong>stock</strong> is the amount of a system property: concentrations of a pollutant, numbers of currency units, etc.</li>
-<li>A <strong>flow</strong> is the way in which a stock changes: decay, diffusion, production, consumption, etc.</li>
+<li>Model-based simulation as a way to understand system dynamics and response.</li>
+<li>Box models: mass-balance in some region of the domain</li>
+<li>Can generalize single box models by:
+<ul>
+<li>Adding more complexity;</li>
+<li>combining multiple boxes.</li>
+</ul></li>
 </ul>
 </section>
-<section id="why-are-systems-interesting" class="slide level2">
-<h2>Why Are Systems Interesting?</h2>
-<p>System interconnections can lead to very different dynamics and outcomes than if the component processes were studied in isolation.</p>
-<p>This can have implications for design and management, and means we need to <strong>model the entire system</strong> to understand how different processes impact the whole.</p>
+<section id="why-simulate" class="slide level2">
+<h2>Why Simulate?</h2>
+<ol type="1">
+<li>System involves complex, nonlinear dynamics that may not be analytically tractable.</li>
+<li>Setting up and running a real-world experiment is not possible.</li>
+<li>State depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.</li>
+<li>Need to understand range of system performance across rarely-seen conditions.</li>
+</ol>
 </section>
 <section id="questions" class="slide level2">
-<h2>Questions?</h2>
+<h2>Questions</h2>
 <div class="columns center">
 <div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
@@ -412,257 +407,239 @@
 </div>
 </section></section>
 <section>
-<section id="modeling-systems" class="title-slide slide level1 center">
-<h1>Modeling Systems</h1>
+<section id="dissolved-oxygen-overview" class="title-slide slide level1 center">
+<h1>Dissolved Oxygen Overview</h1>
 
 </section>
-<section id="systems-analysis-needs" class="slide level2">
-<h2>Systems Analysis Needs</h2>
-<p>To study a system, we need:</p>
+<section id="fate-transport-modeling" class="slide level2">
+<h2>Fate &amp; Transport Modeling</h2>
+<p><strong>How do nutrients and other quantities move through environmental mediums?</strong></p>
+<p>What can make fate &amp; transport modeling more complex?</p>
+<div class="fragment fade-in">
 <ul>
-<li>A <strong>definition</strong> of the system <span style="color: green"><i class="fa-sharp fa-circle-check" aria-label="circle-check"></i></span></li>
-<li>A <strong>model</strong> of the system</li>
+<li>Multiple points of inflow;</li>
+<li>More complex growth/decay dynamics.</li>
+<li>Stochasticity/randomness.</li>
 </ul>
+</div>
 </section>
-<section id="what-is-a-model" class="slide level2">
-<h2>What Is A Model?</h2>
+<section id="dissolved-oxygen" class="slide level2">
+<h2>Dissolved Oxygen</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="physical-models">Physical Models</h3>
+<p>Dissolved oxygen (DO) is the free, non-compound oxygen present in water or other liquids.</p>
+<p>Freshwater can only hold small amounts, and this capacity is regulated by temperature.</p>
+</div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Fallingwater_miniature_model_at_MRRV,_Carnegie_Science_Center.JPG/640px-Fallingwater_miniature_model_at_MRRV,_Carnegie_Science_Center.JPG" style="width:75.0%"></p>
-<figcaption>Falling Water Miniature Model</figcaption>
+<p><img data-src="https://www.fondriest.com/environmental-measurements/wp-content/uploads/2013/11/dissolvedoxygen_river-levels.jpg" style="width:80.0%"></p>
+<figcaption>Dissolved Oxygen by temperature</figcaption>
 </figure>
 </div>
 <div class="caption">
-<p>Source: <a href="https://commons.wikimedia.org/wiki/File:Fallingwater_miniature_model_at_MRRV,_Carnegie_Science_Center.JPG">Wikimedia</a></p>
+<p>Source: <a href="https://www.fondriest.com/environmental-measurements/parameters/water-quality/dissolved-oxygen/">fondriest.com</a></p>
 </div>
+</div>
+</div>
+</section>
+<section id="temperature-impact-on-do" class="slide level2">
+<h2>Temperature Impact on DO</h2>
+
+<img data-src="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/do_temp_0.png" class="r-stretch quarto-figure-center"><p class="caption">Dissolved Oxygen and Temperature Plot</p><div class="caption">
+<p>Source: <a href="https://www.usgs.gov/special-topics/water-science-school/science/dissolved-oxygen-and-water">usgs.gov</a></p>
+</div>
+</section>
+<section id="dissolved-oxygen-and-life" class="slide level2">
+<h2>Dissolved Oxygen and Life</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Dissolved oxygen is an important nutrient for aquatic life.</p>
+<p><strong>Hypoxia</strong> occurs when DO levels are <span class="math inline">\(&lt; 2\)</span> mg/L.</p>
 </div><div class="column" style="width:50%;">
-<div class="fragment fade-in">
-<!-- -->
-<h3 id="mathematical-models">Mathematical Models</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/math-model.png"></p>
-<figcaption>Mathematical Model Machine</figcaption>
+<p><img data-src="https://www.fondriest.com/environmental-measurements/wp-content/uploads/2013/11/dissolvedoxygen_levels-fresh.jpg" style="width:45.0%"></p>
+<figcaption>Minimum DO requirements for freshwater fish</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:10%;">
+<div class="caption">
+<p>Source: <a href="https://www.fondriest.com/environmental-measurements/parameters/water-quality/dissolved-oxygen/">fondriest.com</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="factors-influencing-do" class="slide level2">
+<h2>Factors Influencing DO</h2>
+<ul>
+<li>Temperature, Pressure, Depth</li>
+<li>Salinity</li>
+<li>Mixing</li>
+<li>Plant and Microbial Life</li>
+<li>Organic Matter</li>
+</ul>
+</section>
+<section id="impact-of-paris-on-seine-do-1874" class="slide level2">
+<h2>Impact of Paris On Seine DO, 1874</h2>
+
+<img data-src="https://www.researchgate.net/publication/325721176/figure/fig10/AS:962439298445322@1606474818380/Longitudinal-profiles-x-axis-in-km-downstream-of-Paris-center-of-dissolved-oxygen_W640.jpg" class="r-stretch quarto-figure-center"><p class="caption">Dissolved Oxygen Downstream of Paris, 1874</p><div class="caption">
+<p>Source: Dmitrieva, T., et al.&nbsp;(2018). <a href="https://doi.org/10.1007/s12685-018-0216-7" class="uri">https://doi.org/10.1007/s12685-018-0216-7</a></p>
+</div>
+</section>
+<section id="do-regulatory-standards" class="slide level2">
+<h2>DO Regulatory Standards</h2>
+<p><strong>Objective</strong>: Keep DO <em>above</em> the regulatory standard.</p>
+<p>In NY (via <a href="https://govt.westlaw.com/nycrr/Document/I4ed90412cd1711dda432a117e6e0f345?viewType=FullText&amp;originationContext=documenttoc&amp;transitionType=CategoryPageItem&amp;contextData=(sc.Default)&amp;bhcp=1">Westlaw</a>):</p>
+<ul>
+<li>DO levels may not fall below 3 mg/L</li>
+<li>DO may not be below 4.8 mg/L for an extended period</li>
+</ul>
+</section></section>
+<section>
+<section id="modeling-dissolved-oxygen" class="title-slide slide level1 center">
+<h1>Modeling Dissolved Oxygen</h1>
+
+</section>
+<section id="oxygen-balance-in-rivers-and-streams" class="slide level2">
+<h2>Oxygen Balance in Rivers and Streams</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/do-processes.svg" style="height:100.0%"></p>
+<figcaption>Processes influencing oxygen balance in moving freshwater</figcaption>
+</figure>
+</div>
+</section>
+<section id="selecting-a-metric-for-do-fluxes" class="slide level2">
+<h2>Selecting a Metric for DO Fluxes</h2>
+<p>Typically use <strong>oxygen demand</strong> (OD):</p>
+<ul>
+<li>measure of the concentration of oxidizable materials in a water sample</li>
+<li>metric for organic waste contamination</li>
+<li>reflects how oxygen will be depleted in a given segment</li>
+</ul>
+<p>But there are several different processes affecting total OD!</p>
+</section>
+<section id="biochemical-oxygen-demand-bod" class="slide level2">
+<h2>Biochemical Oxygen Demand (BOD)</h2>
+<p>Oxygen used by microbes during aerobic decomposition of organic materials: <span class="math display">\[\text{Organic Matter} + \text{O}_2 \rightarrow \text{CO}_2 +  \text{H}_2\text{O} + \text{NO}_3 + \text{SO}_2 + \text{Residuals}\]</span></p>
+<p>Broadly speaking, we care about two types of BOD: <strong>Carbonaceous BOD</strong> and <strong>Nitrogenous BOD</strong>.</p>
+</section>
+<section id="carbonaceous-bod-cbod" class="slide level2">
+<h2>Carbonaceous BOD (CBOD)</h2>
+<p>Oxygen consumed during microbial decomposition of carbon compounds, <em>e.g.</em>: <span class="math display">\[\text{C}_a\text{H}_b\text{O}_c + d\text{O}_2 \rightarrow e\text{H}_2\text{O} + f\text{CO}_2\]</span></p>
+</section>
+<section id="nitrogenous-bod-nbod" class="slide level2">
+<h2>Nitrogenous BOD (NBOD)</h2>
+<p>Oxygen consumed during microbial decomposition of nitrogen compounds: <span class="math display">\[2\text{NH}_2^+ + 4\text{O}_2 \rightarrow 2\text{H}_2\text{O} + 4\text{H}^+ + 2\text{NO}_3^-\]</span></p>
+</section>
+<section id="bod-and-time" class="slide level2">
+<h2>BOD and Time</h2>
+<p>Moreover, BOD is differentiated based on time frame, <em>e.g.</em>:</p>
+<ul>
+<li>BOD<sub>5</sub>: oxygen demand over 5 days</li>
+<li>BOD<sub>20</sub>: oxygen demand over 20 days</li>
+</ul>
+</section>
+<section id="do-modeling-needs" class="slide level2">
+<h2>DO Modeling Needs</h2>
+<p>Need a model that will predict DO as a function of CBOD, NBOD.</p>
+<p>Use a <em>fate and transport</em> modeling approach: how are relevant quantities moved downstream?</p>
+<p><strong>Note</strong>: Can’t assume homogeneous processes.</p>
+</section>
+<section id="modeling-do" class="slide level2">
+<h2>Modeling DO</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p>So what do we do?</p>
+<p>Start by assuming <em>steady-state</em> waste in each section (or box…).</p>
+</div><div class="column" style="width:70%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/do-processes.svg"></p>
+<figcaption>Processes influencing oxygen balance in moving freshwater</figcaption>
 </figure>
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="mathematical-models-of-systems" class="slide level2">
-<h2>Mathematical Models of Systems</h2>
-
-<img data-src="images/system-conceptual.svg" class="r-stretch quarto-figure-center"><p class="caption">Conceptual Model of a System</p></section>
-<section id="environmental-systems" class="slide level2">
-<h2>Environmental Systems</h2>
+<section id="modeling-do-1" class="slide level2">
+<h2>Modeling DO</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:30%;">
+<p>We’ll track the mass balance in terms of rates (not absolute mass).</p>
+<p>What happens to an element of water?</p>
+</div><div class="column" style="width:70%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/system-environmental.svg" style="width:100.0%"></p>
-<figcaption>Conceptual Model of an Environmental System</figcaption>
+<p><img data-src="images/do-processes.svg"></p>
+<figcaption>Processes influencing oxygen balance in moving freshwater</figcaption>
 </figure>
 </div>
-</div><div class="column" style="width:40%;">
-<ul>
-<li>Municipal sewage into lakes, rivers, etc.</li>
-<li>Power plant emissions into air</li>
-<li>Solid waste placed on landfill</li>
-<li>CO<sub>2</sub> into atmosphere</li>
-</ul>
 </div>
 </div>
 </section>
-<section id="deterministic-vs.-stochastic-models" class="slide level2">
-<h2>Deterministic vs.&nbsp;Stochastic Models</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="deterministic-models">Deterministic Models</h3>
-<div id="804ecee1" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="3">
-<!--?xml version="1.0" encoding="utf-8"?-->
-<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="960" height="480" viewbox="0 0 3840 1920">
-<defs>
-  <clippath id="clip220">
-    <rect x="0" y="0" width="3840" height="1920"></rect>
-  </clippath>
-</defs>
-<path clip-path="url(#clip220)" d="M0 1920 L3840 1920 L3840 0 L0 0  Z" fill="#ffffff" fill-rule="evenodd" fill-opacity="1"></path>
-<defs>
-  <clippath id="clip221">
-    <rect x="768" y="0" width="2689" height="1920"></rect>
-  </clippath>
-</defs>
-<path clip-path="url(#clip220)" d="M218.588 1596.09 L2391.18 1596.09 L2391.18 47.2441 L218.588 47.2441  Z" fill="#ffffff" fill-rule="evenodd" fill-opacity="1"></path>
-<defs>
-  <clippath id="clip222">
-    <rect x="218" y="47" width="2174" height="1550"></rect>
-  </clippath>
-</defs>
-<polyline clip-path="url(#clip222)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:2; stroke-opacity:1; fill:none" points="280.077,1596.09 280.077,47.2441 "></polyline>
-<polyline clip-path="url(#clip222)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:2; stroke-opacity:1; fill:none" points="2329.69,1596.09 2329.69,47.2441 "></polyline>
-<polyline clip-path="url(#clip220)" style="stroke:#ffffff; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="218.588,1596.09 2391.18,1596.09 "></polyline>
-<polyline clip-path="url(#clip220)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="280.077,1596.09 280.077,1577.19 "></polyline>
-<polyline clip-path="url(#clip220)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="2329.69,1596.09 2329.69,1577.19 "></polyline>
-<path clip-path="url(#clip220)" d="M279.053 1641.68 L279.053 1652.72 L292.212 1652.72 L292.212 1657.68 L279.053 1657.68 L279.053 1678.8 Q279.053 1683.55 280.337 1684.91 Q281.657 1686.26 285.65 1686.26 L292.212 1686.26 L292.212 1691.61 L285.65 1691.61 Q278.254 1691.61 275.441 1688.86 Q272.629 1686.09 272.629 1678.8 L272.629 1657.68 L267.941 1657.68 L267.941 1652.72 L272.629 1652.72 L272.629 1641.68 L279.053 1641.68 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip220)" d="M2278.69 1641.68 L2278.69 1652.72 L2291.85 1652.72 L2291.85 1657.68 L2278.69 1657.68 L2278.69 1678.8 Q2278.69 1683.55 2279.97 1684.91 Q2281.29 1686.26 2285.28 1686.26 L2291.85 1686.26 L2291.85 1691.61 L2285.28 1691.61 Q2277.89 1691.61 2275.07 1688.86 Q2272.26 1686.09 2272.26 1678.8 L2272.26 1657.68 L2267.57 1657.68 L2267.57 1652.72 L2272.26 1652.72 L2272.26 1641.68 L2278.69 1641.68 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip220)" d="M2326.26 1647.02 L2326.26 1666.36 L2345.6 1666.36 L2345.6 1672.27 L2326.26 1672.27 L2326.26 1691.61 L2320.42 1691.61 L2320.42 1672.27 L2301.08 1672.27 L2301.08 1666.36 L2320.42 1666.36 L2320.42 1647.02 L2326.26 1647.02 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip220)" d="M2361.95 1685.7 L2373.41 1685.7 L2373.41 1646.16 L2360.94 1648.66 L2360.94 1642.27 L2373.34 1639.77 L2380.35 1639.77 L2380.35 1685.7 L2391.81 1685.7 L2391.81 1691.61 L2361.95 1691.61 L2361.95 1685.7 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip220)" d="M1205.46 1743.54 L1256.62 1743.54 L1256.62 1750.43 L1235.15 1750.43 L1235.15 1804.02 L1226.93 1804.02 L1226.93 1750.43 L1205.46 1750.43 L1205.46 1743.54 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip220)" d="M1261.64 1758.65 L1269.09 1758.65 L1269.09 1804.02 L1261.64 1804.02 L1261.64 1758.65 M1261.64 1740.99 L1269.09 1740.99 L1269.09 1750.43 L1261.64 1750.43 L1261.64 1740.99 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip220)" d="M1320.01 1767.36 Q1322.81 1762.34 1326.7 1759.95 Q1330.59 1757.56 1335.85 1757.56 Q1342.94 1757.56 1346.79 1762.54 Q1350.64 1767.48 1350.64 1776.64 L1350.64 1804.02 L1343.15 1804.02 L1343.15 1776.88 Q1343.15 1770.36 1340.84 1767.2 Q1338.53 1764.04 1333.79 1764.04 Q1328 1764.04 1324.63 1767.89 Q1321.27 1771.74 1321.27 1778.38 L1321.27 1804.02 L1313.78 1804.02 L1313.78 1776.88 Q1313.78 1770.32 1311.47 1767.2 Q1309.16 1764.04 1304.34 1764.04 Q1298.63 1764.04 1295.26 1767.93 Q1291.9 1771.78 1291.9 1778.38 L1291.9 1804.02 L1284.41 1804.02 L1284.41 1758.65 L1291.9 1758.65 L1291.9 1765.7 Q1294.45 1761.53 1298.02 1759.54 Q1301.58 1757.56 1306.48 1757.56 Q1311.43 1757.56 1314.87 1760.07 Q1318.35 1762.58 1320.01 1767.36 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip220)" d="M1404.31 1779.48 L1404.31 1783.12 L1370.04 1783.12 Q1370.53 1790.82 1374.66 1794.87 Q1378.83 1798.88 1386.25 1798.88 Q1390.54 1798.88 1394.55 1797.83 Q1398.6 1796.77 1402.57 1794.67 L1402.57 1801.71 Q1398.56 1803.42 1394.35 1804.31 Q1390.14 1805.2 1385.8 1805.2 Q1374.95 1805.2 1368.59 1798.88 Q1362.27 1792.56 1362.27 1781.78 Q1362.27 1770.64 1368.26 1764.12 Q1374.3 1757.56 1384.51 1757.56 Q1393.66 1757.56 1398.97 1763.47 Q1404.31 1769.35 1404.31 1779.48 M1396.86 1777.29 Q1396.78 1771.17 1393.42 1767.52 Q1390.1 1763.88 1384.59 1763.88 Q1378.35 1763.88 1374.58 1767.4 Q1370.85 1770.93 1370.29 1777.33 L1396.86 1777.29 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip220)" d="M26.7493 887.594 L34.7296 887.594 Q32.5016 892.253 31.4078 896.385 Q30.3141 900.517 30.3141 904.365 Q30.3141 911.049 32.9067 914.695 Q35.4992 918.3 40.2793 918.3 Q44.2897 918.3 46.3557 915.91 Q48.3811 913.48 49.6369 906.755 L50.6496 901.813 Q52.3915 892.658 56.807 888.323 Q61.182 883.948 68.5546 883.948 Q77.3451 883.948 81.8821 889.863 Q86.4191 895.737 86.4191 907.12 Q86.4191 911.414 85.4469 916.275 Q84.4747 921.095 82.5707 926.28 L74.1449 926.28 Q76.94 921.298 78.3578 916.518 Q79.7756 911.738 79.7756 907.12 Q79.7756 900.112 77.021 896.304 Q74.2664 892.496 69.1623 892.496 Q64.7063 892.496 62.1947 895.251 Q59.6831 897.965 58.4274 904.203 L57.4551 909.186 Q55.6322 918.341 51.7434 922.432 Q47.8545 926.523 40.9275 926.523 Q32.9067 926.523 28.2886 920.893 Q23.6706 915.221 23.6706 905.297 Q23.6706 901.043 24.4403 896.628 Q25.2099 892.212 26.7493 887.594 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip220)" d="M26.9923 864.14 L39.8742 864.14 L39.8742 848.787 L45.667 848.787 L45.667 864.14 L70.2965 864.14 Q75.8462 864.14 77.4261 862.641 Q79.006 861.101 79.006 856.443 L79.006 848.787 L85.2443 848.787 L85.2443 856.443 Q85.2443 865.071 82.0441 868.352 Q78.8034 871.634 70.2965 871.634 L45.667 871.634 L45.667 877.102 L39.8742 877.102 L39.8742 871.634 L26.9923 871.634 L26.9923 864.14 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip220)" d="M62.4378 818.364 Q62.4378 827.398 64.5037 830.882 Q66.5697 834.365 71.5523 834.365 Q75.5222 834.365 77.8717 831.773 Q80.1807 829.14 80.1807 824.643 Q80.1807 818.445 75.8057 814.719 Q71.3903 810.951 64.0986 810.951 L62.4378 810.951 L62.4378 818.364 M59.3591 803.498 L85.2443 803.498 L85.2443 810.951 L78.3578 810.951 Q82.4897 813.503 84.4747 817.311 Q86.4191 821.119 86.4191 826.628 Q86.4191 833.596 82.5302 837.728 Q78.6009 841.819 72.0384 841.819 Q64.3822 841.819 60.4933 836.715 Q56.6045 831.57 56.6045 821.403 L56.6045 810.951 L55.8753 810.951 Q50.7306 810.951 47.9355 814.354 Q45.0999 817.716 45.0999 823.833 Q45.0999 827.722 46.0316 831.408 Q46.9633 835.095 48.8267 838.497 L41.9402 838.497 Q40.3603 834.406 39.5907 830.558 Q38.7805 826.709 38.7805 823.063 Q38.7805 813.22 43.8846 808.359 Q48.9888 803.498 59.3591 803.498 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip220)" d="M26.9923 780.772 L39.8742 780.772 L39.8742 765.419 L45.667 765.419 L45.667 780.772 L70.2965 780.772 Q75.8462 780.772 77.4261 779.273 Q79.006 777.734 79.006 773.075 L79.006 765.419 L85.2443 765.419 L85.2443 773.075 Q85.2443 781.704 82.0441 784.985 Q78.8034 788.266 70.2965 788.266 L45.667 788.266 L45.667 793.735 L39.8742 793.735 L39.8742 788.266 L26.9923 788.266 L26.9923 780.772 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip220)" d="M60.6959 716.808 L64.3417 716.808 L64.3417 751.079 Q72.0384 750.593 76.0893 746.461 Q80.0997 742.288 80.0997 734.875 Q80.0997 730.581 79.0465 726.571 Q77.9932 722.52 75.8868 718.55 L82.9353 718.55 Q84.6367 722.56 85.5279 726.773 Q86.4191 730.986 86.4191 735.321 Q86.4191 746.177 80.0997 752.537 Q73.7803 758.857 63.0049 758.857 Q51.8649 758.857 45.3429 752.861 Q38.7805 746.825 38.7805 736.617 Q38.7805 727.462 44.6948 722.155 Q50.5686 716.808 60.6959 716.808 M58.5084 724.262 Q52.3915 724.343 48.7457 727.705 Q45.0999 731.027 45.0999 736.536 Q45.0999 742.774 48.6242 746.542 Q52.1485 750.269 58.5489 750.836 L58.5084 724.262 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><polyline clip-path="url(#clip222)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="280.077,1208.88 2329.69,434.455 "></polyline>
-<circle clip-path="url(#clip222)" cx="280.077" cy="1208.88" r="36" fill="#000000" fill-rule="evenodd" fill-opacity="1" stroke="none"></circle>
-<circle clip-path="url(#clip222)" cx="2329.69" cy="434.455" r="36" fill="#000000" fill-rule="evenodd" fill-opacity="1" stroke="none"></circle>
-</svg>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
+<section id="steady-state-waste-do-mass-balance" class="slide level2">
+<h2>Steady-State Waste, DO Mass Balance</h2>
+<p>Let <span class="math inline">\(U\)</span> be the river velocity (km/d), <span class="math inline">\(x\)</span> the distance downstream from a waste release site in km, and <span class="math inline">\(C(x)\)</span> the DO concentration at <span class="math inline">\(x\)</span> in mg/L.</p>
+<p><span class="math display">\[\begin{align}
+U \frac{dC}{dx} &amp;= \text{Change in DO} \\[0.5em]
+&amp;= \text{Reaeration} + \text{Photosynthesis} - \text{Respiration}  \\[0.5em]
+&amp; \qquad - \text{Benthal Uptake} - \text{CBOD} - \text{NBOD}
+
+\end{align}\]</span></p>
+</section>
+<section id="bod-oxygen-uptake" class="slide level2">
+<h2>BOD Oxygen Uptake</h2>
+<p>Assume deoxygenation from waste decomposition is first-order (rate <span class="math inline">\(k\)</span>):</p>
+<p><span class="math display">\[\begin{aligned}
+\frac{dM}{dt} &amp;= -kM \\\\
+\Rightarrow M &amp;= M_0 \exp(-kt)
+\end{aligned}\]</span></p>
 <div class="fragment fade-in">
-<!-- -->
-<h3 id="stochastic-models">Stochastic Models</h3>
-<div id="a6f43a62" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="4">
-<!--?xml version="1.0" encoding="utf-8"?-->
-<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="960" height="480" viewbox="0 0 3840 1920">
-<defs>
-  <clippath id="clip310">
-    <rect x="0" y="0" width="3840" height="1920"></rect>
-  </clippath>
-</defs>
-<path clip-path="url(#clip310)" d="M0 1920 L3840 1920 L3840 0 L0 0  Z" fill="#ffffff" fill-rule="evenodd" fill-opacity="1"></path>
-<defs>
-  <clippath id="clip311">
-    <rect x="768" y="0" width="2689" height="1920"></rect>
-  </clippath>
-</defs>
-<path clip-path="url(#clip310)" d="M218.588 1596.09 L2391.18 1596.09 L2391.18 47.2441 L218.588 47.2441  Z" fill="#ffffff" fill-rule="evenodd" fill-opacity="1"></path>
-<defs>
-  <clippath id="clip312">
-    <rect x="218" y="47" width="2174" height="1550"></rect>
-  </clippath>
-</defs>
-<polyline clip-path="url(#clip312)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:2; stroke-opacity:1; fill:none" points="280.077,1596.09 280.077,47.2441 "></polyline>
-<polyline clip-path="url(#clip312)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:2; stroke-opacity:1; fill:none" points="2329.69,1596.09 2329.69,47.2441 "></polyline>
-<polyline clip-path="url(#clip310)" style="stroke:#ffffff; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="218.588,1596.09 2391.18,1596.09 "></polyline>
-<polyline clip-path="url(#clip310)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="280.077,1596.09 280.077,1577.19 "></polyline>
-<polyline clip-path="url(#clip310)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="2329.69,1596.09 2329.69,1577.19 "></polyline>
-<path clip-path="url(#clip310)" d="M279.053 1641.68 L279.053 1652.72 L292.212 1652.72 L292.212 1657.68 L279.053 1657.68 L279.053 1678.8 Q279.053 1683.55 280.337 1684.91 Q281.657 1686.26 285.65 1686.26 L292.212 1686.26 L292.212 1691.61 L285.65 1691.61 Q278.254 1691.61 275.441 1688.86 Q272.629 1686.09 272.629 1678.8 L272.629 1657.68 L267.941 1657.68 L267.941 1652.72 L272.629 1652.72 L272.629 1641.68 L279.053 1641.68 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip310)" d="M2278.69 1641.68 L2278.69 1652.72 L2291.85 1652.72 L2291.85 1657.68 L2278.69 1657.68 L2278.69 1678.8 Q2278.69 1683.55 2279.97 1684.91 Q2281.29 1686.26 2285.28 1686.26 L2291.85 1686.26 L2291.85 1691.61 L2285.28 1691.61 Q2277.89 1691.61 2275.07 1688.86 Q2272.26 1686.09 2272.26 1678.8 L2272.26 1657.68 L2267.57 1657.68 L2267.57 1652.72 L2272.26 1652.72 L2272.26 1641.68 L2278.69 1641.68 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip310)" d="M2326.26 1647.02 L2326.26 1666.36 L2345.6 1666.36 L2345.6 1672.27 L2326.26 1672.27 L2326.26 1691.61 L2320.42 1691.61 L2320.42 1672.27 L2301.08 1672.27 L2301.08 1666.36 L2320.42 1666.36 L2320.42 1647.02 L2326.26 1647.02 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip310)" d="M2361.95 1685.7 L2373.41 1685.7 L2373.41 1646.16 L2360.94 1648.66 L2360.94 1642.27 L2373.34 1639.77 L2380.35 1639.77 L2380.35 1685.7 L2391.81 1685.7 L2391.81 1691.61 L2361.95 1691.61 L2361.95 1685.7 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip310)" d="M1205.46 1743.54 L1256.62 1743.54 L1256.62 1750.43 L1235.15 1750.43 L1235.15 1804.02 L1226.93 1804.02 L1226.93 1750.43 L1205.46 1750.43 L1205.46 1743.54 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip310)" d="M1261.64 1758.65 L1269.09 1758.65 L1269.09 1804.02 L1261.64 1804.02 L1261.64 1758.65 M1261.64 1740.99 L1269.09 1740.99 L1269.09 1750.43 L1261.64 1750.43 L1261.64 1740.99 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip310)" d="M1320.01 1767.36 Q1322.81 1762.34 1326.7 1759.95 Q1330.59 1757.56 1335.85 1757.56 Q1342.94 1757.56 1346.79 1762.54 Q1350.64 1767.48 1350.64 1776.64 L1350.64 1804.02 L1343.15 1804.02 L1343.15 1776.88 Q1343.15 1770.36 1340.84 1767.2 Q1338.53 1764.04 1333.79 1764.04 Q1328 1764.04 1324.63 1767.89 Q1321.27 1771.74 1321.27 1778.38 L1321.27 1804.02 L1313.78 1804.02 L1313.78 1776.88 Q1313.78 1770.32 1311.47 1767.2 Q1309.16 1764.04 1304.34 1764.04 Q1298.63 1764.04 1295.26 1767.93 Q1291.9 1771.78 1291.9 1778.38 L1291.9 1804.02 L1284.41 1804.02 L1284.41 1758.65 L1291.9 1758.65 L1291.9 1765.7 Q1294.45 1761.53 1298.02 1759.54 Q1301.58 1757.56 1306.48 1757.56 Q1311.43 1757.56 1314.87 1760.07 Q1318.35 1762.58 1320.01 1767.36 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip310)" d="M1404.31 1779.48 L1404.31 1783.12 L1370.04 1783.12 Q1370.53 1790.82 1374.66 1794.87 Q1378.83 1798.88 1386.25 1798.88 Q1390.54 1798.88 1394.55 1797.83 Q1398.6 1796.77 1402.57 1794.67 L1402.57 1801.71 Q1398.56 1803.42 1394.35 1804.31 Q1390.14 1805.2 1385.8 1805.2 Q1374.95 1805.2 1368.59 1798.88 Q1362.27 1792.56 1362.27 1781.78 Q1362.27 1770.64 1368.26 1764.12 Q1374.3 1757.56 1384.51 1757.56 Q1393.66 1757.56 1398.97 1763.47 Q1404.31 1769.35 1404.31 1779.48 M1396.86 1777.29 Q1396.78 1771.17 1393.42 1767.52 Q1390.1 1763.88 1384.59 1763.88 Q1378.35 1763.88 1374.58 1767.4 Q1370.85 1770.93 1370.29 1777.33 L1396.86 1777.29 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip310)" d="M26.7493 887.594 L34.7296 887.594 Q32.5016 892.253 31.4078 896.385 Q30.3141 900.517 30.3141 904.365 Q30.3141 911.049 32.9067 914.695 Q35.4992 918.3 40.2793 918.3 Q44.2897 918.3 46.3557 915.91 Q48.3811 913.48 49.6369 906.755 L50.6496 901.813 Q52.3915 892.658 56.807 888.323 Q61.182 883.948 68.5546 883.948 Q77.3451 883.948 81.8821 889.863 Q86.4191 895.737 86.4191 907.12 Q86.4191 911.414 85.4469 916.275 Q84.4747 921.095 82.5707 926.28 L74.1449 926.28 Q76.94 921.298 78.3578 916.518 Q79.7756 911.738 79.7756 907.12 Q79.7756 900.112 77.021 896.304 Q74.2664 892.496 69.1623 892.496 Q64.7063 892.496 62.1947 895.251 Q59.6831 897.965 58.4274 904.203 L57.4551 909.186 Q55.6322 918.341 51.7434 922.432 Q47.8545 926.523 40.9275 926.523 Q32.9067 926.523 28.2886 920.893 Q23.6706 915.221 23.6706 905.297 Q23.6706 901.043 24.4403 896.628 Q25.2099 892.212 26.7493 887.594 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip310)" d="M26.9923 864.14 L39.8742 864.14 L39.8742 848.787 L45.667 848.787 L45.667 864.14 L70.2965 864.14 Q75.8462 864.14 77.4261 862.641 Q79.006 861.101 79.006 856.443 L79.006 848.787 L85.2443 848.787 L85.2443 856.443 Q85.2443 865.071 82.0441 868.352 Q78.8034 871.634 70.2965 871.634 L45.667 871.634 L45.667 877.102 L39.8742 877.102 L39.8742 871.634 L26.9923 871.634 L26.9923 864.14 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip310)" d="M62.4378 818.364 Q62.4378 827.398 64.5037 830.882 Q66.5697 834.365 71.5523 834.365 Q75.5222 834.365 77.8717 831.773 Q80.1807 829.14 80.1807 824.643 Q80.1807 818.445 75.8057 814.719 Q71.3903 810.951 64.0986 810.951 L62.4378 810.951 L62.4378 818.364 M59.3591 803.498 L85.2443 803.498 L85.2443 810.951 L78.3578 810.951 Q82.4897 813.503 84.4747 817.311 Q86.4191 821.119 86.4191 826.628 Q86.4191 833.596 82.5302 837.728 Q78.6009 841.819 72.0384 841.819 Q64.3822 841.819 60.4933 836.715 Q56.6045 831.57 56.6045 821.403 L56.6045 810.951 L55.8753 810.951 Q50.7306 810.951 47.9355 814.354 Q45.0999 817.716 45.0999 823.833 Q45.0999 827.722 46.0316 831.408 Q46.9633 835.095 48.8267 838.497 L41.9402 838.497 Q40.3603 834.406 39.5907 830.558 Q38.7805 826.709 38.7805 823.063 Q38.7805 813.22 43.8846 808.359 Q48.9888 803.498 59.3591 803.498 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip310)" d="M26.9923 780.772 L39.8742 780.772 L39.8742 765.419 L45.667 765.419 L45.667 780.772 L70.2965 780.772 Q75.8462 780.772 77.4261 779.273 Q79.006 777.734 79.006 773.075 L79.006 765.419 L85.2443 765.419 L85.2443 773.075 Q85.2443 781.704 82.0441 784.985 Q78.8034 788.266 70.2965 788.266 L45.667 788.266 L45.667 793.735 L39.8742 793.735 L39.8742 788.266 L26.9923 788.266 L26.9923 780.772 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip310)" d="M60.6959 716.808 L64.3417 716.808 L64.3417 751.079 Q72.0384 750.593 76.0893 746.461 Q80.0997 742.288 80.0997 734.875 Q80.0997 730.581 79.0465 726.571 Q77.9932 722.52 75.8868 718.55 L82.9353 718.55 Q84.6367 722.56 85.5279 726.773 Q86.4191 730.986 86.4191 735.321 Q86.4191 746.177 80.0997 752.537 Q73.7803 758.857 63.0049 758.857 Q51.8649 758.857 45.3429 752.861 Q38.7805 746.825 38.7805 736.617 Q38.7805 727.462 44.6948 722.155 Q50.5686 716.808 60.6959 716.808 M58.5084 724.262 Q52.3915 724.343 48.7457 727.705 Q45.0999 731.027 45.0999 736.536 Q45.0999 742.774 48.6242 746.542 Q52.1485 750.269 58.5489 750.836 L58.5084 724.262 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><polyline clip-path="url(#clip312)" style="stroke:#009af9; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="280.077,1208.88 2329.69,627.628 "></polyline>
-<circle clip-path="url(#clip312)" cx="280.077" cy="1208.88" r="36" fill="#009af9" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip312)" cx="2329.69" cy="627.628" r="36" fill="#009af9" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<polyline clip-path="url(#clip312)" style="stroke:#e26f46; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="280.077,1208.88 2329.69,279.089 "></polyline>
-<circle clip-path="url(#clip312)" cx="280.077" cy="1208.88" r="36" fill="#e26f46" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip312)" cx="2329.69" cy="279.089" r="36" fill="#e26f46" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<polyline clip-path="url(#clip312)" style="stroke:#3da44d; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="280.077,1208.88 2329.69,355.042 "></polyline>
-<circle clip-path="url(#clip312)" cx="280.077" cy="1208.88" r="36" fill="#3da44d" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip312)" cx="2329.69" cy="355.042" r="36" fill="#3da44d" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<polyline clip-path="url(#clip312)" style="stroke:#c271d2; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="280.077,1208.88 2329.69,1103.01 "></polyline>
-<circle clip-path="url(#clip312)" cx="280.077" cy="1208.88" r="36" fill="#c271d2" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip312)" cx="2329.69" cy="1103.01" r="36" fill="#c271d2" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<polyline clip-path="url(#clip312)" style="stroke:#ac8d18; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="280.077,1208.88 2329.69,755.881 "></polyline>
-<circle clip-path="url(#clip312)" cx="280.077" cy="1208.88" r="36" fill="#ac8d18" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip312)" cx="2329.69" cy="755.881" r="36" fill="#ac8d18" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<polyline clip-path="url(#clip312)" style="stroke:#00a9ad; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="280.077,1208.88 2329.69,190.493 "></polyline>
-<circle clip-path="url(#clip312)" cx="280.077" cy="1208.88" r="36" fill="#00a9ad" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip312)" cx="2329.69" cy="190.493" r="36" fill="#00a9ad" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<polyline clip-path="url(#clip312)" style="stroke:#ed5d92; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="280.077,1208.88 2329.69,859.684 "></polyline>
-<circle clip-path="url(#clip312)" cx="280.077" cy="1208.88" r="36" fill="#ed5d92" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip312)" cx="2329.69" cy="859.684" r="36" fill="#ed5d92" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<polyline clip-path="url(#clip312)" style="stroke:#c68125; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="280.077,1208.88 2329.69,1265.06 "></polyline>
-<circle clip-path="url(#clip312)" cx="280.077" cy="1208.88" r="36" fill="#c68125" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip312)" cx="2329.69" cy="1265.06" r="36" fill="#c68125" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip312)" cx="280.077" cy="1208.88" r="36" fill="#000000" fill-rule="evenodd" fill-opacity="1" stroke="none"></circle>
-</svg>
-</div>
-</div>
-</div>
-</div>
+<p>But our equations are formulated in terms of distance:</p>
+<p><span class="math display">\[M = M_0 \exp(-kx/U)\]</span></p>
 </div>
 </section>
-<section id="descriptive-vs.-prescriptive-models" class="slide level2">
-<h2>Descriptive vs.&nbsp;Prescriptive Models</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="descriptive-models">Descriptive Models</h3>
-<ul>
-<li>Used primarily for describing or simulating dynamics.</li>
-<li>Intended for <em>simulations</em> and <em>exploratory</em> and/or <em>Monte Carlo analysis</em>.</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="fragment fade-in">
-<!-- -->
-<h3 id="prescriptive-models">Prescriptive Models</h3>
-<ul>
-<li>Specify (prescribe) an action, decision, or policy.</li>
-<li>Intended for <em>optimization</em> or <em>decision analysis</em>.</li>
-</ul>
-</div>
-</div>
-</div>
+<section id="bod-oxygen-uptake-1" class="slide level2">
+<h2>BOD Oxygen Uptake</h2>
+<p>For biochemical organics, if <span class="math inline">\(k_c\)</span> is the deoxygenation rate (d<span class="math inline">\(^{-1}\)</span>);</p>
+<p><span class="math display">\[B(x) = B_0 \exp(-k_c x / U);\]</span></p>
+<p>For nitrification, if <span class="math inline">\(k_n\)</span> is the deoxygenation rate (d<span class="math inline">\(^{-1}\)</span>):</p>
+<p><span class="math display">\[N(x) = N_0 \exp(-k_n x / U).\]</span></p>
 </section>
-<section id="analytic-vs.-numerical-solutions" class="slide level2">
-<h2>Analytic vs.&nbsp;Numerical Solutions</h2>
-<p>Mathematical models can be solved:</p>
-<ol type="1">
-<li><strong>Analytically</strong>: can find the exact solution in closed form;</li>
-<li><strong>Numerically</strong>: can only find solutions (exact or approximate) using computational tools.</li>
-</ol>
-<p>In general, simple models might be able to be solved analytically, but anything more complex requires numerical methods.</p>
+<section id="steady-state-waste-do-mass-balance-1" class="slide level2">
+<h2>Steady-State Waste, DO Mass Balance</h2>
+<p>So the corresponding oxygen uptake rates are <span class="math display">\[k_c B(x) = k_c B_0 \exp(-k_c x / U)\]</span> and</p>
+<p><span class="math display">\[k_n N(x) = k_n N_0 \exp(-k_n x / U).\]</span></p>
+</section>
+<section id="steady-state-waste-do-mass-balance-2" class="slide level2">
+<h2>Steady-State Waste, DO Mass Balance</h2>
+<p>Other processes:</p>
+<ul>
+<li><p>Reaeration, assume a simple linear model based on difference from saturation level <span class="math inline">\(C_s\)</span>: <span class="math inline">\(k_a (C_s - C)\)</span></p></li>
+<li><p>Assume measured, constant values for photosynthesis (<span class="math inline">\(P_s\)</span>), respiration (<span class="math inline">\(R\)</span>), benthal uptake (<span class="math inline">\(S_B\)</span>)</p></li>
+</ul>
+</section>
+<section id="steady-state-waste-do-mass-balance-3" class="slide level2">
+<h2>Steady-State Waste, DO Mass Balance</h2>
+<p>Putting it all together:</p>
+<p><span class="math display">\[\begin{aligned}
+U \frac{dC}{dx} &amp;= k_a (C_s - C) + P - R - S_B \\\\
+&amp;\quad - k_cB_0\exp\left(\frac{-k_cx}{U}\right) - k_n N_0\exp\left(\frac{-k_nx}{U}\right)
+\end{aligned}\]</span></p>
 </section></section>
 <section>
-<section id="caution-all-models-are-wrong" class="title-slide slide level1 center">
-<h1>Caution: “All Models Are Wrong…”</h1>
+<section id="key-points" class="title-slide slide level1 center">
+<h1>Key Points</h1>
 
 </section>
-<section id="all-models-are-wrong-but-some-are-useful" class="slide level2">
-<h2>“All Models Are Wrong, But Some Are Useful”</h2>
-<div class="quote">
-<blockquote>
-<p>…all models are approximations. Essentially, all models are wrong, but some are useful. However, the approximate nature of the model must always be borne in mind….</p>
-</blockquote>
-<div class="cite">
-<p>— Box &amp; Draper, <em>Empirical Model Building and Response Surfaces</em>, 1987</p>
-</div>
-</div>
-</section>
-<section id="what-are-models-good-for" class="slide level2">
-<h2>What Are Models Good For?</h2>
-<div class="quote">
-<blockquote>
-<p>Models can corroborate a hypothesis by offering evidence to strengthen what may be already partly established through other means…</p>
-<p><strong>Thus, the primary value of models is heuristic: Models are representations, useful for guiding further study but not susceptible to proof.</strong></p>
-</blockquote>
-<div class="cite">
-<p>— Oreskes et al, <a href="https://www.science.org/doi/10.1126/science.263.5147.641">“Verification, Validation, and Confirmation of Numerical Models in the Earth Sciences”</a>, 1994</p>
-</div>
-</div>
-</section>
-<section id="models-and-assumptions" class="slide level2">
-<h2>Models And Assumptions</h2>
-
-<img data-src="https://imgs.xkcd.com/comics/university_covid_model_2x.png" class="r-stretch quarto-figure-center"><p class="caption">XKCD Comic 2355</p><div class="caption">
-<p>Source: <a href="https://xkcd.com/2355">XKCD 2355</a></p>
-</div>
-</section>
-<section id="a-leading-question" class="slide level2">
-<h2>A Leading Question</h2>
-<p>Someone has developed a model of a complex process (say…number of cases of a particular infectious disease).</p>
-<p>They claim that their model has <em>precisely</em> predicted case counts for a few months, and use this to argue that we should use it to predict future case counts.</p>
-<p><strong>Should we trust their claim? What might this imply about the model? Could it be useful?</strong></p>
-</section></section>
-<section>
-<section id="key-takeaways" class="title-slide slide level1 center">
-<h1>Key Takeaways</h1>
-
-</section>
-<section id="key-takeaways-1" class="slide level2">
-<h2>Key Takeaways</h2>
+<section id="key-points-1" class="slide level2">
+<h2>Key Points</h2>
 <ul>
-<li>Mathematical models allow us to understand how external inputs combine with internal system dynamics to produce outputs.</li>
-<li>Models can be <strong>prescriptive</strong> or <strong>descriptive</strong> depending on goal of analysis.</li>
-<li>For most interesting problems, cannot solve analytically and need to use numerical methods.</li>
-</ul>
-</section>
-<section id="key-takeaways-2" class="slide level2">
-<h2>Key Takeaways</h2>
-<ul>
-<li><strong>All models are at best approximations</strong>: be conscious of what assumptions you’ve made and how they might change the modeled outcomes (you will be asked to do this on homeworks).</li>
+<li>Dissolved oxygen (DO) is essential for water quality and aquatic life.</li>
+<li>Commonly regulated to keep DO above a minimum threshold.</li>
+<li>DO impacted by a number of factors, notably organic waste decomposition and nitrification.</li>
+<li>We derived a first-order equation for DO using mass-balance and fate &amp; transport principles.</li>
 </ul>
 </section></section>
 <section>
@@ -672,7 +649,9 @@
 </section>
 <section id="next-classes" class="slide level2">
 <h2>Next Classes</h2>
-<p><strong>Wednesday and Friday</strong>: Examples of Formulating/Analyzing Models.</p>
+<p><strong>Friday</strong>: Use DO model for simulation.</p>
+<p><strong>Next Week</strong>: Uncertainty, Probability (Monte Carlo) and Risk Analysis</p>
+<p><strong>Homework</strong>: - HW1 due Friday - HW2 assigned Friday (on simulation for dissolved oxygen and risk)</p>
 
 <div class="footer footer-default">
 <p><a href="https://viveks.me/environmental-systems-analysis">BEE 4750, Environmental Systems Analysis</a></p>

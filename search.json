@@ -140,6 +140,132 @@
     "text": "Software Tools\n\nThis course will use the Julia programming language. Julia is a modern, free, open source language which is designed for scientific computing. No prior knowledge of Julia is required. My recommendation is to use Visual Studio Code with the official Julia extension for coding.\nAssignments will be distributed using GitHub Classroom. You should create a GitHub account, but we will walk through how to use it."
   },
   {
+    "objectID": "slides/lecture03-3.html#last-class",
+    "href": "slides/lecture03-3.html#last-class",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Last Class",
+    "text": "Last Class\n\n\n\nDissolved Oxygen: essential quantity for aquatic life\nMinimum concentration regulated\nUsed mass-balance to derive first-order equation\n\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#do-concentration-equation",
+    "href": "slides/lecture03-3.html#do-concentration-equation",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "DO Concentration Equation",
+    "text": "DO Concentration Equation\n\\[\\begin{align}\n\\overbrace{U \\frac{dC}{dx}}^{\\text{Concentration Change}} &= \\overbrace{k_a (C_s - C)}^{\\text{Reaeration}} + \\overbrace{P - R - S_B}^{\\text{Constants}} \\\\[0.5em]\n&\\quad - \\underbrace{k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right)}_{\\text{CBOD}} - \\underbrace{k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)}_{\\text{NBOD}}\n\\end{align}\\]"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#questions",
+    "href": "slides/lecture03-3.html#questions",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#steady-state-mass-balance-solution",
+    "href": "slides/lecture03-3.html#steady-state-mass-balance-solution",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Steady-State Mass-Balance Solution",
+    "text": "Steady-State Mass-Balance Solution\n\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1), \\\\[1em]\n\n\\alpha_1 &= \\exp\\left(-\\frac{k_a x}{U}\\right) \\\\[0.25em]\n\\alpha_2 &= \\left(\\frac{k_c}{k_a-k_c}\\right)\\left[\\exp\\left(\\frac{-k_c x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right] \\\\[0.25em]\n\\alpha_3 &= \\left(\\frac{k_n}{k_a-k_n}\\right)\\left[\\exp\\left(\\frac{-k_n x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right]\n\\end{align}\\]"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#steady-state-mass-balance-solution-1",
+    "href": "slides/lecture03-3.html#steady-state-mass-balance-solution-1",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Steady-State Mass-Balance Solution",
+    "text": "Steady-State Mass-Balance Solution\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 \\\\[0.5em]\n& \\qquad + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1),\n\\end{align}\\]\nNote: Usually, these models ignore \\(P\\), \\(R\\), and \\(S_B\\).\nWhy do you think that might be?"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#dissolved-oxygen-sag-curve",
+    "href": "slides/lecture03-3.html#dissolved-oxygen-sag-curve",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Dissolved Oxygen “Sag” Curve",
+    "text": "Dissolved Oxygen “Sag” Curve\n\n\nDissolved oxygen concentrations downstream of a waste release “sag” and then start to recover as CBOD and NBOD decrease.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Sag curve for dissolved oxygen."
+  },
+  {
+    "objectID": "slides/lecture03-3.html#how-to-simulate",
+    "href": "slides/lecture03-3.html#how-to-simulate",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "How To Simulate",
+    "text": "How To Simulate\nSo far, this is only different from our single-box airshed in terms of the number of processes.\nSingle equation, straightforward to evaluate across many values of \\(x\\) with a loop:\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = (y -&gt; dissolved_oxygen(y, parameters)).(x)"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#single-discharge-example",
+    "href": "slides/lecture03-3.html#single-discharge-example",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Single-Discharge Example",
+    "text": "Single-Discharge Example\n\n\n\n\n\n\n\n\n\nParameter\nRiver\nWaste\nGeneral\n\n\n\n\nVolume (m3/d)\n100,000\n10,000\n—\n\n\nDO (mg/L)\n6.4\n4.2\n—\n\n\nCBOD (mg/L)\n5\n49\n—\n\n\nNBOD (mg/L)\n5\n27\n—\n\n\n\\(C_s\\) (mg/L)\n—\n—\n7\n\n\n\\(k_a\\), \\(k_c\\), \\(k_n\\)\n—\n—\n0.8, 0.5, 0.4"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#single-discharge-example-initial-condition",
+    "href": "slides/lecture03-3.html#single-discharge-example-initial-condition",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Single-Discharge Example: Initial Condition",
+    "text": "Single-Discharge Example: Initial Condition\nHow do we find the initial state (\\(x=0\\))?\n\nNeed to compute the mixed concentrations of DO, CBOD, and NBOD (\\(Q\\) is the flow volume):\n\\[C_0 = C_\\text{mixed} = \\frac{C_\\text{river} \\times Q_\\text{river} + C_\\text{waste} \\times Q_\\text{waste}}{Q_\\text{river} + Q_\\text{waste}}\\]"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#single-discharge-example-initial-condition-1",
+    "href": "slides/lecture03-3.html#single-discharge-example-initial-condition-1",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Single-Discharge Example: Initial Condition",
+    "text": "Single-Discharge Example: Initial Condition\nSo the initial values:\n\\[C_0 = 6.2 \\ \\text{mg/L}\\]\n\\[B_0 = 9 \\ \\text{mg/L}\\]\n\\[N_0 = 7 \\ \\text{mg/L}\\]"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#single-discharge-example-simulation",
+    "href": "slides/lecture03-3.html#single-discharge-example-simulation",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Single-Discharge Example: Simulation",
+    "text": "Single-Discharge Example: Simulation\nNow we can compute \\(C(x)\\) (river velocity \\(U = 5\\) km/d).\n\n\nfunction dissolved_oxygen(x, Cs, C0, B0, N0, ka, kc, kn, U)\n    α1 = exp(-ka * x / U)\n    α2 = (kc / (ka - kc)) * (exp(-kc * x / U) - α1)\n    α3 = (kn / (ka - kn)) * (exp(-kn * x / U) - α1)\n    C = (Cs * (1 - α1)) + (C0 * α1) - (B0 * α2) - (N0 * α3)\n    return C\nend\n\nx = 0:0.1:20\nC = (y -&gt; dissolved_oxygen(y, Cs, C0, B0, N0, ka, kc, kn, U)).(x)"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#single-discharge-example-simulation-1",
+    "href": "slides/lecture03-3.html#single-discharge-example-simulation-1",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Single-Discharge Example: Simulation",
+    "text": "Single-Discharge Example: Simulation\n\n\n\n\nCode\nplot(x, C; linewidth=3, \n    label=\"Dissolved Oxygen\", \n    tickfontsize=16, \n    guidefontsize=16, \n    legendfontsize=16)\nxlabel!(L\"$x$ (km)\")\nylabel!(\"DO Concentration (mg/L)\")\nhline!([3], color=:red, \n    linestyle=:dash, \n    label=\"Regulatory Standard\")\nplot!(size=(500, 500))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Single-Release Dissolved Oxygen Example"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#multiple-discharges",
+    "href": "slides/lecture03-3.html#multiple-discharges",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Multiple Discharges",
+    "text": "Multiple Discharges\nWhat happens if we have multiple discharge sites?\n\nSchematic for Multiple Discharge Example"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#multiple-discharges-1",
+    "href": "slides/lecture03-3.html#multiple-discharges-1",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Multiple Discharges",
+    "text": "Multiple Discharges\n\n\nThink about this as a multi-box problem:\n\nBox 1: From Release 1 to Release 2\nBox 2: From Release 2 to End\n\n\n\n\n\nMultiple Discharge Boxes"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#multiple-discharges-2",
+    "href": "slides/lecture03-3.html#multiple-discharges-2",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Multiple Discharges",
+    "text": "Multiple Discharges\n\n\n\nDynamics within each box are like single-release example;\nMake sure to get new initial conditions from relevant outflows!\n\n\n\n\n\nMultiple Discharge Boxes"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#multiple-discharges-3",
+    "href": "slides/lecture03-3.html#multiple-discharges-3",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Multiple Discharges",
+    "text": "Multiple Discharges\nQuestion: Who would you penalize for lack of compliance?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Multi-Release Dissolved Oxygen Example"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#key-points-1",
+    "href": "slides/lecture03-3.html#key-points-1",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Key Points",
+    "text": "Key Points\n\nSimulation involves running the model over space/time.\nMultiple sections as “multi-box” model: outflows from one box become inflows/initial conditions for another.\nAssigning blame/responsibility in an interdependent system is not straightforward!"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#next-classes",
+    "href": "slides/lecture03-3.html#next-classes",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Next Classes",
+    "text": "Next Classes\nMonday: Uncertainty and Risk\nWednesday/Friday: Monte Carlo Simulation\nHomework: - HW1 due today! - HW2 link available on Ed (due in two weeks).\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
     "objectID": "slides/lecture01-1.html#course-overview",
     "href": "slides/lecture01-1.html#course-overview",
     "title": "Welcome to BEE 4750!",
@@ -336,6 +462,195 @@
     "text": "Next Classes\nWednesday: Introduction to Systems Analysis\nFriday: Work on Lab 1.\n\nPreparation:\n\nLab 1 link is available on Ed. Click it to accept the lab before class.\n\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
+    "objectID": "slides/lecture03-2.html#last-class",
+    "href": "slides/lecture03-2.html#last-class",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Last Class",
+    "text": "Last Class\n\nModel-based simulation as a way to understand system dynamics and response.\nBox models: mass-balance in some region of the domain\nCan generalize single box models by:\n\nAdding more complexity;\ncombining multiple boxes."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#why-simulate",
+    "href": "slides/lecture03-2.html#why-simulate",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Why Simulate?",
+    "text": "Why Simulate?\n\nSystem involves complex, nonlinear dynamics that may not be analytically tractable.\nSetting up and running a real-world experiment is not possible.\nState depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.\nNeed to understand range of system performance across rarely-seen conditions."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#questions",
+    "href": "slides/lecture03-2.html#questions",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#fate-transport-modeling",
+    "href": "slides/lecture03-2.html#fate-transport-modeling",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Fate & Transport Modeling",
+    "text": "Fate & Transport Modeling\nHow do nutrients and other quantities move through environmental mediums?\nWhat can make fate & transport modeling more complex?\n\n\nMultiple points of inflow;\nMore complex growth/decay dynamics.\nStochasticity/randomness."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#dissolved-oxygen",
+    "href": "slides/lecture03-2.html#dissolved-oxygen",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Dissolved Oxygen",
+    "text": "Dissolved Oxygen\n\n\nDissolved oxygen (DO) is the free, non-compound oxygen present in water or other liquids.\nFreshwater can only hold small amounts, and this capacity is regulated by temperature.\n\n\n\n\nDissolved Oxygen by temperature\n\n\n\nSource: fondriest.com"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#temperature-impact-on-do",
+    "href": "slides/lecture03-2.html#temperature-impact-on-do",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Temperature Impact on DO",
+    "text": "Temperature Impact on DO\n\nDissolved Oxygen and Temperature Plot\nSource: usgs.gov"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#dissolved-oxygen-and-life",
+    "href": "slides/lecture03-2.html#dissolved-oxygen-and-life",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Dissolved Oxygen and Life",
+    "text": "Dissolved Oxygen and Life\n\n\nDissolved oxygen is an important nutrient for aquatic life.\nHypoxia occurs when DO levels are \\(&lt; 2\\) mg/L.\n\n\n\n\nMinimum DO requirements for freshwater fish\n\n\n\n\nSource: fondriest.com"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#factors-influencing-do",
+    "href": "slides/lecture03-2.html#factors-influencing-do",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Factors Influencing DO",
+    "text": "Factors Influencing DO\n\nTemperature, Pressure, Depth\nSalinity\nMixing\nPlant and Microbial Life\nOrganic Matter"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#impact-of-paris-on-seine-do-1874",
+    "href": "slides/lecture03-2.html#impact-of-paris-on-seine-do-1874",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Impact of Paris On Seine DO, 1874",
+    "text": "Impact of Paris On Seine DO, 1874\n\nDissolved Oxygen Downstream of Paris, 1874\nSource: Dmitrieva, T., et al. (2018). https://doi.org/10.1007/s12685-018-0216-7"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#do-regulatory-standards",
+    "href": "slides/lecture03-2.html#do-regulatory-standards",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "DO Regulatory Standards",
+    "text": "DO Regulatory Standards\nObjective: Keep DO above the regulatory standard.\nIn NY (via Westlaw):\n\nDO levels may not fall below 3 mg/L\nDO may not be below 4.8 mg/L for an extended period"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#oxygen-balance-in-rivers-and-streams",
+    "href": "slides/lecture03-2.html#oxygen-balance-in-rivers-and-streams",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Oxygen Balance in Rivers and Streams",
+    "text": "Oxygen Balance in Rivers and Streams\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#selecting-a-metric-for-do-fluxes",
+    "href": "slides/lecture03-2.html#selecting-a-metric-for-do-fluxes",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Selecting a Metric for DO Fluxes",
+    "text": "Selecting a Metric for DO Fluxes\nTypically use oxygen demand (OD):\n\nmeasure of the concentration of oxidizable materials in a water sample\nmetric for organic waste contamination\nreflects how oxygen will be depleted in a given segment\n\nBut there are several different processes affecting total OD!"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#biochemical-oxygen-demand-bod",
+    "href": "slides/lecture03-2.html#biochemical-oxygen-demand-bod",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Biochemical Oxygen Demand (BOD)",
+    "text": "Biochemical Oxygen Demand (BOD)\nOxygen used by microbes during aerobic decomposition of organic materials: \\[\\text{Organic Matter} + \\text{O}_2 \\rightarrow \\text{CO}_2 +  \\text{H}_2\\text{O} + \\text{NO}_3 + \\text{SO}_2 + \\text{Residuals}\\]\nBroadly speaking, we care about two types of BOD: Carbonaceous BOD and Nitrogenous BOD."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#carbonaceous-bod-cbod",
+    "href": "slides/lecture03-2.html#carbonaceous-bod-cbod",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Carbonaceous BOD (CBOD)",
+    "text": "Carbonaceous BOD (CBOD)\nOxygen consumed during microbial decomposition of carbon compounds, e.g.: \\[\\text{C}_a\\text{H}_b\\text{O}_c + d\\text{O}_2 \\rightarrow e\\text{H}_2\\text{O} + f\\text{CO}_2\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#nitrogenous-bod-nbod",
+    "href": "slides/lecture03-2.html#nitrogenous-bod-nbod",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Nitrogenous BOD (NBOD)",
+    "text": "Nitrogenous BOD (NBOD)\nOxygen consumed during microbial decomposition of nitrogen compounds: \\[2\\text{NH}_2^+ + 4\\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O} + 4\\text{H}^+ + 2\\text{NO}_3^-\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#bod-and-time",
+    "href": "slides/lecture03-2.html#bod-and-time",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "BOD and Time",
+    "text": "BOD and Time\nMoreover, BOD is differentiated based on time frame, e.g.:\n\nBOD5: oxygen demand over 5 days\nBOD20: oxygen demand over 20 days"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#do-modeling-needs",
+    "href": "slides/lecture03-2.html#do-modeling-needs",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "DO Modeling Needs",
+    "text": "DO Modeling Needs\nNeed a model that will predict DO as a function of CBOD, NBOD.\nUse a fate and transport modeling approach: how are relevant quantities moved downstream?\nNote: Can’t assume homogeneous processes."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#modeling-do",
+    "href": "slides/lecture03-2.html#modeling-do",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Modeling DO",
+    "text": "Modeling DO\n\n\nSo what do we do?\nStart by assuming steady-state waste in each section (or box…).\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#modeling-do-1",
+    "href": "slides/lecture03-2.html#modeling-do-1",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Modeling DO",
+    "text": "Modeling DO\n\n\nWe’ll track the mass balance in terms of rates (not absolute mass).\nWhat happens to an element of water?\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#steady-state-waste-do-mass-balance",
+    "href": "slides/lecture03-2.html#steady-state-waste-do-mass-balance",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nLet \\(U\\) be the river velocity (km/d), \\(x\\) the distance downstream from a waste release site in km, and \\(C(x)\\) the DO concentration at \\(x\\) in mg/L.\n\\[\\begin{align}\nU \\frac{dC}{dx} &= \\text{Change in DO} \\\\[0.5em]\n&= \\text{Reaeration} + \\text{Photosynthesis} - \\text{Respiration}  \\\\[0.5em]\n& \\qquad - \\text{Benthal Uptake} - \\text{CBOD} - \\text{NBOD}\n\n\\end{align}\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#bod-oxygen-uptake",
+    "href": "slides/lecture03-2.html#bod-oxygen-uptake",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "BOD Oxygen Uptake",
+    "text": "BOD Oxygen Uptake\nAssume deoxygenation from waste decomposition is first-order (rate \\(k\\)):\n\\[\\begin{aligned}\n\\frac{dM}{dt} &= -kM \\\\\\\\\n\\Rightarrow M &= M_0 \\exp(-kt)\n\\end{aligned}\\]\n\nBut our equations are formulated in terms of distance:\n\\[M = M_0 \\exp(-kx/U)\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#bod-oxygen-uptake-1",
+    "href": "slides/lecture03-2.html#bod-oxygen-uptake-1",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "BOD Oxygen Uptake",
+    "text": "BOD Oxygen Uptake\nFor biochemical organics, if \\(k_c\\) is the deoxygenation rate (d\\(^{-1}\\));\n\\[B(x) = B_0 \\exp(-k_c x / U);\\]\nFor nitrification, if \\(k_n\\) is the deoxygenation rate (d\\(^{-1}\\)):\n\\[N(x) = N_0 \\exp(-k_n x / U).\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#steady-state-waste-do-mass-balance-1",
+    "href": "slides/lecture03-2.html#steady-state-waste-do-mass-balance-1",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nSo the corresponding oxygen uptake rates are \\[k_c B(x) = k_c B_0 \\exp(-k_c x / U)\\] and\n\\[k_n N(x) = k_n N_0 \\exp(-k_n x / U).\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#steady-state-waste-do-mass-balance-2",
+    "href": "slides/lecture03-2.html#steady-state-waste-do-mass-balance-2",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nOther processes:\n\nReaeration, assume a simple linear model based on difference from saturation level \\(C_s\\): \\(k_a (C_s - C)\\)\nAssume measured, constant values for photosynthesis (\\(P_s\\)), respiration (\\(R\\)), benthal uptake (\\(S_B\\))"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#steady-state-waste-do-mass-balance-3",
+    "href": "slides/lecture03-2.html#steady-state-waste-do-mass-balance-3",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nPutting it all together:\n\\[\\begin{aligned}\nU \\frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B \\\\\\\\\n&\\quad - k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right) - k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#key-points-1",
+    "href": "slides/lecture03-2.html#key-points-1",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Key Points",
+    "text": "Key Points\n\nDissolved oxygen (DO) is essential for water quality and aquatic life.\nCommonly regulated to keep DO above a minimum threshold.\nDO impacted by a number of factors, notably organic waste decomposition and nitrification.\nWe derived a first-order equation for DO using mass-balance and fate & transport principles."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#next-classes",
+    "href": "slides/lecture03-2.html#next-classes",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Next Classes",
+    "text": "Next Classes\nFriday: Use DO model for simulation.\nNext Week: Uncertainty, Probability (Monte Carlo) and Risk Analysis\nHomework: - HW1 due Friday - HW2 assigned Friday (on simulation for dissolved oxygen and risk)\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
     "objectID": "slides/lecture01-2.html#what-is-a-system",
     "href": "slides/lecture01-2.html#what-is-a-system",
     "title": "Introduction to Systems Analysis!",
@@ -389,7 +704,7 @@
     "href": "slides/lecture01-2.html#tipping-points",
     "title": "Introduction to Systems Analysis!",
     "section": "Tipping Points",
-    "text": "Tipping Points\n\n\nAnother important systems concept is a tipping point, where the system changes states abruptly and drastically.\nExamples include lake eutrophication and ice-sheet melting.\n\n\n\n\n\n\n\nFigure 1: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "text": "Tipping Points\n\n\nAnother important systems concept is a tipping point, where the system changes states abruptly and drastically.\nExamples include lake eutrophication and ice-sheet melting.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
   },
   {
     "objectID": "slides/lecture01-2.html#systems-analysis-overview",
@@ -539,6 +854,174 @@
     "text": "Next Classes\nMonday: Modeling Systems\nWednesday/Friday: Examples of Systems Models\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
+    "objectID": "slides/lecture03-1.html#lake-eutrophication-example",
+    "href": "slides/lecture03-1.html#lake-eutrophication-example",
+    "title": "Simulating Systems and Box Models",
+    "section": "Lake Eutrophication Example",
+    "text": "Lake Eutrophication Example\n\nNonlinear system dynamics can result in unexpected behaviors\n\nBifurcations\nTipping Points\n\nBe careful about planning against particular parameter values or focusing on one process."
+  },
+  {
+    "objectID": "slides/lecture03-1.html#questions",
+    "href": "slides/lecture03-1.html#questions",
+    "title": "Simulating Systems and Box Models",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture03-1.html#what-is-simulation",
+    "href": "slides/lecture03-1.html#what-is-simulation",
+    "title": "Simulating Systems and Box Models",
+    "section": "What is Simulation?",
+    "text": "What is Simulation?\nSimulation: evaluating a model to understand how a system might evolve under a particular set of conditions."
+  },
+  {
+    "objectID": "slides/lecture03-1.html#why-simulate-systems",
+    "href": "slides/lecture03-1.html#why-simulate-systems",
+    "title": "Simulating Systems and Box Models",
+    "section": "Why Simulate Systems?",
+    "text": "Why Simulate Systems?\n\n\nSystem involves complex, nonlinear dynamics that may not be analytically tractable.\nSetting up and running a real-world experiment is not possible.\nState depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.\nNeed to understand range of system performance across rarely-seen conditions."
+  },
+  {
+    "objectID": "slides/lecture03-1.html#simulating-the-shallow-lake-model",
+    "href": "slides/lecture03-1.html#simulating-the-shallow-lake-model",
+    "title": "Simulating Systems and Box Models",
+    "section": "Simulating the Shallow Lake Model",
+    "text": "Simulating the Shallow Lake Model\nFor the shallow lake model\n\\[X_{t+1} = X_t + a_t + y_t + \\frac{X_t^q}{1 + X_t^q} - bX_t, \\quad\ny_t \\sim \\text{LogNormal}(\\mu, \\sigma^2).\n\\]\nwe need to simulate because:\n\ninflows \\(a_t, y_t\\) can change over time (non-steady state);\nstate \\(X_{t+1}\\) depends on \\(X_t\\)."
+  },
+  {
+    "objectID": "slides/lecture03-1.html#what-do-we-need-to-simulate-the-lake-model",
+    "href": "slides/lecture03-1.html#what-do-we-need-to-simulate-the-lake-model",
+    "title": "Simulating Systems and Box Models",
+    "section": "What Do We Need To Simulate The Lake Model?",
+    "text": "What Do We Need To Simulate The Lake Model?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture03-1.html#lake-model-simulation-parameters",
+    "href": "slides/lecture03-1.html#lake-model-simulation-parameters",
+    "title": "Simulating Systems and Box Models",
+    "section": "Lake Model Simulation: Parameters",
+    "text": "Lake Model Simulation: Parameters\n\n\n\nVariable\nValue\nUnits\n\n\n\n\n\\(X_0\\)\n\\(0\\)\ndimensionless\n\n\n\\(\\mu\\)\n\\(\\log(0.03)\\)\ndimensionless\n\n\n\\(\\sigma^2\\)\n\\(0.1\\)\ndimensionless\n\n\n\\(q\\)\n\\(2.5\\)\ndimensionless\n\n\n\\(b\\)\n\\(0.4\\)\ndimensionless"
+  },
+  {
+    "objectID": "slides/lecture03-1.html#lake-model-simulation-results",
+    "href": "slides/lecture03-1.html#lake-model-simulation-results",
+    "title": "Simulating Systems and Box Models",
+    "section": "Lake Model Simulation: Results",
+    "text": "Lake Model Simulation: Results\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Inflows \\(y_t\\) for this lake problem simulation.\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: State of the lake under two different constant release scenarios."
+  },
+  {
+    "objectID": "slides/lecture03-1.html#simulating-multiple-objectives",
+    "href": "slides/lecture03-1.html#simulating-multiple-objectives",
+    "title": "Simulating Systems and Box Models",
+    "section": "Simulating Multiple Objectives",
+    "text": "Simulating Multiple Objectives\nSimulation also facilitates analyses of multiple outcomes of interest, which can involve tradeoffs.\nFor example:\n\n\nElectric power system: CO\\(_2\\) emissions and cost;\nReservoir operations: hydropower potential, water supply, flood risk."
+  },
+  {
+    "objectID": "slides/lecture03-1.html#what-is-a-box-model",
+    "href": "slides/lecture03-1.html#what-is-a-box-model",
+    "title": "Simulating Systems and Box Models",
+    "section": "What Is A Box Model?",
+    "text": "What Is A Box Model?\nBox models are a common building block of simulation models.\n\n\nBox models are all about mass-balance (mass \\(m\\)), assume well-mixed within box.\nCan be steady-state \\((\\dot{m} = 0)\\) or not.\n\n\n\n\nSteady-State Box Example"
+  },
+  {
+    "objectID": "slides/lecture03-1.html#box-models-and-simulation",
+    "href": "slides/lecture03-1.html#box-models-and-simulation",
+    "title": "Simulating Systems and Box Models",
+    "section": "Box Models and Simulation",
+    "text": "Box Models and Simulation\nMany simulation models are built by:\n\nDividing the domain into individual boxes (1-D, 2-D, or 3-D);\nStarting from initial box:\n\nSimulate change to stock within box;\nObtain outflow as inflow into adjacent boxes;\nMove onto next box;\n\nIf needed (e.g. non-steady-state), repeat for each time step."
+  },
+  {
+    "objectID": "slides/lecture03-1.html#box-model-applications",
+    "href": "slides/lecture03-1.html#box-model-applications",
+    "title": "Simulating Systems and Box Models",
+    "section": "Box Model Applications",
+    "text": "Box Model Applications\nSome applications of box models include:\n\nWater balance/hydrologic flow models;\nClimate models (ocean heat/CO\\(_2\\) uptake through “box” layers)\nAirsheds"
+  },
+  {
+    "objectID": "slides/lecture03-1.html#box-model-example-airsheds",
+    "href": "slides/lecture03-1.html#box-model-example-airsheds",
+    "title": "Simulating Systems and Box Models",
+    "section": "Box Model Example: Airsheds",
+    "text": "Box Model Example: Airsheds\nLet’s look at a simple steady-state box model of an airshed.\n\n\n\nVariable\nMeaning\nUnits\n\n\n\n\n\\(m\\)\nmass of some air pollutant\ng\n\n\n\\(C\\)\nconcentration in box\ng/m\\(^3\\)\n\n\n\\(S, D\\)\nsource, deposition rate within the box\ng/s\n\n\n\\(u\\)\nwind speed\nm/s\n\n\n\\(L, W, H\\)\nbox dimensions\nm"
+  },
+  {
+    "objectID": "slides/lecture03-1.html#steady-state-airshed-box-model",
+    "href": "slides/lecture03-1.html#steady-state-airshed-box-model",
+    "title": "Simulating Systems and Box Models",
+    "section": "Steady-State Airshed Box Model",
+    "text": "Steady-State Airshed Box Model\nSteady-state box ⇒ \\(\\dot{m} = 0\\).\n\\[\\begin{align}\n0 &= m_\\text{in} - m_\\text{out} + S - D \\\\[0.5em]\n&\\class{\\fragment}{{} = (u WH) C_\\text{in} - (u WH) C + S - D } \\\\[0.5em]\n\\end{align}\\]\n\nSolving for \\(C\\): \\[C = C_{in} + \\frac{S-D}{uWH}\\]"
+  },
+  {
+    "objectID": "slides/lecture03-1.html#non-steady-state-box-model",
+    "href": "slides/lecture03-1.html#non-steady-state-box-model",
+    "title": "Simulating Systems and Box Models",
+    "section": "Non-Steady State Box Model",
+    "text": "Non-Steady State Box Model\nNow let’s assume some process affecting \\(m\\) depends on time.\nFor example: let’s say we care about an air pollutant which has a first-order decay rate \\(k\\), so \\(L(t) = -km_\\text{box}(t)\\).\n\\[\\Rightarrow \\dot{m} = m_\\text{in} - m_\\text{out} + S - km_\\text{box}(t)\\]"
+  },
+  {
+    "objectID": "slides/lecture03-1.html#non-steady-state-solution",
+    "href": "slides/lecture03-1.html#non-steady-state-solution",
+    "title": "Simulating Systems and Box Models",
+    "section": "Non-Steady State Solution",
+    "text": "Non-Steady State Solution\n\\[\\begin{gather}\n&\\dot{m} = \\frac{d(CV)}{dt} = \\overbrace{(u WH) C_\\text{in}}^{\\text{inflow}} - \\overbrace{(u WH) C}^{\\text{outflow}} + \\overbrace{S - D}^{\\text{net emissions}} - \\overbrace{kCV}^{\\text{mass decay}} \\\\[0.5em]\n&\\class{fragment}{{} \\frac{dC}{dt} = \\underbrace{\\frac{u WH}{V} C_\\text{in} + \\frac{S - D}{V}}_{\\Large =P} - \\underbrace{\\left(\\frac{u WH}{V} + k\\right)}_{\\Large =l} C} \\\\[0.5em]\n&\\class{fragment}{{} \\frac{dC}{dt} = P - l C}\n\\end{gather}\\]"
+  },
+  {
+    "objectID": "slides/lecture03-1.html#non-steady-state-solution-1",
+    "href": "slides/lecture03-1.html#non-steady-state-solution-1",
+    "title": "Simulating Systems and Box Models",
+    "section": "Non-Steady State Solution",
+    "text": "Non-Steady State Solution\n\\[\\begin{gather}\n&\\frac{dC}{dt} = P - l C \\\\[0.5em]\n&\\class{fragment}{{} \\int \\frac{dC}{P-lC} = \\int dt} \\\\[0.5em]\n&\\class{fragment}{{} -\\frac{1}{l} \\ln\\left(P-lC\\right) = t + A} \\\\[0.5em]\n&\\class{fragment}{{} \\underbrace{C(0) = C_0}_\\text{initial condition} \\Rightarrow A = -\\frac{1}{l} \\ln\\left(P-lC_0\\right)}\n\\end{gather}\\]"
+  },
+  {
+    "objectID": "slides/lecture03-1.html#non-steady-state-solution-2",
+    "href": "slides/lecture03-1.html#non-steady-state-solution-2",
+    "title": "Simulating Systems and Box Models",
+    "section": "Non-Steady State Solution",
+    "text": "Non-Steady State Solution\n\\[\\begin{gather}\n&-\\frac{1}{l} \\ln\\left(P-lC\\right) = t - \\frac{1}{l} \\ln\\left(P-lC_0\\right) \\\\[0.5em]\n&\\class{fragment}{{} -\\frac{1}{l} \\ln\\left(\\frac{P-lC}{P-lC_0}\\right) = t} \\\\[0.5em]\n&\\class{fragment}{{} C = -\\frac{1}{l} \\left(P - e^{-lt}\\left(P-lC_0\\right)\\right)} \\\\[0.5em]\n&\\class{fragment}{{} C(t) = C_0 e^{-lt} + \\frac{P}{l}\\left(1 - e^{-lt}\\right) }\n\\end{gather}\\]"
+  },
+  {
+    "objectID": "slides/lecture03-1.html#non-steady-state-solution-3",
+    "href": "slides/lecture03-1.html#non-steady-state-solution-3",
+    "title": "Simulating Systems and Box Models",
+    "section": "Non-Steady State Solution",
+    "text": "Non-Steady State Solution\n\\[C(t) = \\color{red}C_0 e^{-lt} \\color{black}+ \\color{blue}\\frac{P}{l}\\left(1 - e^{-lt}\\right)\\]\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitial condition is transient (decays to zero eventually);\nConcentration converges to a steady-state solution."
+  },
+  {
+    "objectID": "slides/lecture03-1.html#time-varying-flows",
+    "href": "slides/lecture03-1.html#time-varying-flows",
+    "title": "Simulating Systems and Box Models",
+    "section": "Time-Varying Flows",
+    "text": "Time-Varying Flows\nCan also incorporate more complex in/outflow dynamics:\n\nstochastic/dynamic in advection (wind speed);\nInflow/outflow concentrations varying over time"
+  },
+  {
+    "objectID": "slides/lecture03-1.html#multiple-boxes",
+    "href": "slides/lecture03-1.html#multiple-boxes",
+    "title": "Simulating Systems and Box Models",
+    "section": "Multiple Boxes",
+    "text": "Multiple Boxes\nTo make this into a multi-box model, we can string together boxes (so the outflow from box 1 becomes the inflow for box 2).\nWe’ll see an example of this next class.\nKey point for now: there is a computational/approximation tradeoff when deciding on box resolution."
+  },
+  {
+    "objectID": "slides/lecture03-1.html#key-takeaways-simulation",
+    "href": "slides/lecture03-1.html#key-takeaways-simulation",
+    "title": "Simulating Systems and Box Models",
+    "section": "Key Takeaways: Simulation",
+    "text": "Key Takeaways: Simulation\n\nSimulation: Use model to evaluate system dynamics/outputs under different conditions.\nSimulation ⇔ Descriptive Modeling\nSimulation useful as a proxy for “real-world” experiments or future projections"
+  },
+  {
+    "objectID": "slides/lecture03-1.html#key-takeaways-box-models",
+    "href": "slides/lecture03-1.html#key-takeaways-box-models",
+    "title": "Simulating Systems and Box Models",
+    "section": "Key Takeaways: Box Models",
+    "text": "Key Takeaways: Box Models\n\nBuilding block for many simulation models.\nBoxes are \\(n\\)-d “chunks” of the system domain.\nBox Models ⇔ Mass/Energy Balance.\nNon-Steady State Box Models can often be decomposed into a transient portion and an equilibrium/steady-state portion.\nCan combine multiple boxes together to create more complex models."
+  },
+  {
+    "objectID": "slides/lecture03-1.html#next-classes",
+    "href": "slides/lecture03-1.html#next-classes",
+    "title": "Simulating Systems and Box Models",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: Building Dissolved Oxygen Model\nFriday: Dissolved Oxygen Simulation\nHomework: - HW1 due Friday - HW2 assigned Friday (on simulation for dissolved oxygen and risk)\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
     "objectID": "slides/lecture02-1.html#what-is-a-system",
     "href": "slides/lecture02-1.html#what-is-a-system",
     "title": "Understanding Systems with Models",
@@ -635,6 +1118,13 @@
     "title": "Understanding Systems with Models",
     "section": "What Are Models Good For?",
     "text": "What Are Models Good For?\n\n\nModels can corroborate a hypothesis by offering evidence to strengthen what may be already partly established through other means…\nThus, the primary value of models is heuristic: Models are representations, useful for guiding further study but not susceptible to proof.\n\n\n— Oreskes et al, “Verification, Validation, and Confirmation of Numerical Models in the Earth Sciences”, 1994"
+  },
+  {
+    "objectID": "slides/lecture02-1.html#models-and-assumptions",
+    "href": "slides/lecture02-1.html#models-and-assumptions",
+    "title": "Understanding Systems with Models",
+    "section": "Models And Assumptions",
+    "text": "Models And Assumptions\n\nXKCD Comic 2355\nSource: XKCD 2355"
   },
   {
     "objectID": "slides/lecture02-1.html#a-leading-question",
@@ -746,77 +1236,77 @@
     "href": "slides/lecture02-3.html#dynamics-without-inflows",
     "title": "Eutrophication Modeling Example",
     "section": "Dynamics Without Inflows",
-    "text": "Dynamics Without Inflows\n\n\nFirst, let’s look at the dynamics without inflows (\\(a_t=y_t=0\\)) to get a sense of baseline behavior.\nWe’ll focus on the case where \\(q = 2.5\\).\n\n\n\n\n\n\n\nFigure 2: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "text": "Dynamics Without Inflows\n\n\nFirst, let’s look at the dynamics without inflows (\\(a_t=y_t=0\\)) to get a sense of baseline behavior.\nWe’ll focus on the case where \\(q = 2.5\\).\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
   },
   {
     "objectID": "slides/lecture02-3.html#dynamics-without-inflows-1",
     "href": "slides/lecture02-3.html#dynamics-without-inflows-1",
     "title": "Eutrophication Modeling Example",
     "section": "Dynamics Without Inflows",
-    "text": "Dynamics Without Inflows\n\n\nImportant: where is the black line (recycled P from sediment) relative to the straight line (outflows)?\nThis reflects trend in natural P dynamics (red arrows).\n\n\n\n\n\n\n\nFigure 3: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "text": "Dynamics Without Inflows\n\n\nImportant: where is the black line (recycled P from sediment) relative to the straight line (outflows)?\nThis reflects trend in natural P dynamics (red arrows).\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
   },
   {
     "objectID": "slides/lecture02-3.html#dynamics-without-inflows-equilibria",
     "href": "slides/lecture02-3.html#dynamics-without-inflows-equilibria",
     "title": "Eutrophication Modeling Example",
     "section": "Dynamics Without Inflows: Equilibria",
-    "text": "Dynamics Without Inflows: Equilibria\n\n\nThe intersection points are equilibria, where the state of the system is fixed and doesn’t change.\n\n\n\n\n\n\n\nFigure 4: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "text": "Dynamics Without Inflows: Equilibria\n\n\nThe intersection points are equilibria, where the state of the system is fixed and doesn’t change.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
   },
   {
     "objectID": "slides/lecture02-3.html#dynamics-without-inflows-equilibria-1",
     "href": "slides/lecture02-3.html#dynamics-without-inflows-equilibria-1",
     "title": "Eutrophication Modeling Example",
     "section": "Dynamics Without Inflows: Equilibria",
-    "text": "Dynamics Without Inflows: Equilibria\n\n\nFor \\(b=0.4\\), three equilibria:\n\n\\(X=0\\);\n\\(X = X_o = 0.67\\) (oligotrophic)\n\\(X = X_e = 2.2\\) (eutrophic)\n\n\n\n\n\n\n\n\nFigure 5: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "text": "Dynamics Without Inflows: Equilibria\n\n\nFor \\(b=0.4\\), three equilibria:\n\n\\(X=0\\);\n\\(X = X_o = 0.67\\) (oligotrophic)\n\\(X = X_e = 2.2\\) (eutrophic)\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
   },
   {
     "objectID": "slides/lecture02-3.html#dynamics-without-inflows-equilibria-2",
     "href": "slides/lecture02-3.html#dynamics-without-inflows-equilibria-2",
     "title": "Eutrophication Modeling Example",
     "section": "Dynamics Without Inflows: Equilibria",
-    "text": "Dynamics Without Inflows: Equilibria\n\n\nThese equilibria have different nearby behaviors:\n\n\\(X=0\\) and \\(X=2.2\\) are stable: the state will recover after a perturbation.\n\\(X=0.67\\) is unstable.\n\n\n\n\n\n\n\n\nFigure 6: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "text": "Dynamics Without Inflows: Equilibria\n\n\nThese equilibria have different nearby behaviors:\n\n\\(X=0\\) and \\(X=2.2\\) are stable: the state will recover after a perturbation.\n\\(X=0.67\\) is unstable.\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
   },
   {
     "objectID": "slides/lecture02-3.html#dynamics-without-inflows-equilibria-3",
     "href": "slides/lecture02-3.html#dynamics-without-inflows-equilibria-3",
     "title": "Eutrophication Modeling Example",
     "section": "Dynamics Without Inflows: Equilibria",
-    "text": "Dynamics Without Inflows: Equilibria\n\n\nThis gives rise to a tipping point as we cross \\(X=0.67\\): stable oligotrophic behavior suddenly switches to eutrophication.\n\n\n\n\n\n\n\nFigure 7: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "text": "Dynamics Without Inflows: Equilibria\n\n\nThis gives rise to a tipping point as we cross \\(X=0.67\\): stable oligotrophic behavior suddenly switches to eutrophication.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
   },
   {
     "objectID": "slides/lecture02-3.html#dynamics-without-inflows-bifurcation",
     "href": "slides/lecture02-3.html#dynamics-without-inflows-bifurcation",
     "title": "Eutrophication Modeling Example",
     "section": "Dynamics Without Inflows: Bifurcation",
-    "text": "Dynamics Without Inflows: Bifurcation\n\n\nFor different values of \\(b\\), the number of equilibria changes.\n\n\\(b = 0.2\\): Only two equilibria\n\nstable at \\(X=0\\)\nunstable at \\(X=0.36\\)\n\n\\(b=0.6\\): Only stable equilibrium at \\(X=0\\).\n\n\n\n\n\n\n\n\nFigure 8: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "text": "Dynamics Without Inflows: Bifurcation\n\n\nFor different values of \\(b\\), the number of equilibria changes.\n\n\\(b = 0.2\\): Only two equilibria\n\nstable at \\(X=0\\)\nunstable at \\(X=0.36\\)\n\n\\(b=0.6\\): Only stable equilibrium at \\(X=0\\).\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 8: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
   },
   {
     "objectID": "slides/lecture02-3.html#dynamics-without-inflows-bifurcation-1",
     "href": "slides/lecture02-3.html#dynamics-without-inflows-bifurcation-1",
     "title": "Eutrophication Modeling Example",
     "section": "Dynamics Without Inflows: Bifurcation",
-    "text": "Dynamics Without Inflows: Bifurcation\n\n\nThese changes in the type and/or number of equilibria is called a bifurcation, and these are relatively common properties of systems.\n\n\n\n\n\n\n\nFigure 9: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "text": "Dynamics Without Inflows: Bifurcation\n\n\nThese changes in the type and/or number of equilibria is called a bifurcation, and these are relatively common properties of systems.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 9: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
   },
   {
     "objectID": "slides/lecture02-3.html#dynamics-without-inflows-bifurcation-2",
     "href": "slides/lecture02-3.html#dynamics-without-inflows-bifurcation-2",
     "title": "Eutrophication Modeling Example",
     "section": "Dynamics Without Inflows: Bifurcation",
-    "text": "Dynamics Without Inflows: Bifurcation\n\n\nBifurcations are important, because they can result in unexpected outcomes if we plan for one type of stability but get another.\nThis is particularly acute when we are uncertain about the values of relevant parameters.\n\n\n\n\n\n\n\nFigure 10: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "text": "Dynamics Without Inflows: Bifurcation\n\n\nBifurcations are important, because they can result in unexpected outcomes if we plan for one type of stability but get another.\nThis is particularly acute when we are uncertain about the values of relevant parameters.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 10: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
   },
   {
     "objectID": "slides/lecture02-3.html#dynamics-with-inflows",
     "href": "slides/lecture02-3.html#dynamics-with-inflows",
     "title": "Eutrophication Modeling Example",
     "section": "Dynamics With Inflows",
-    "text": "Dynamics With Inflows\n\n\nLet’s look at what happens if \\(a_t + y_t = 0.05\\) (constant inflows). The equilibria are shifted.\nWith \\(b=0.2\\), this eliminates equilibria: the lake will inevitably eutrophy.\n\n\n\n\n\n\n\nFigure 11: Lake eutrophication dynamics based on the shallow lake model with. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "text": "Dynamics With Inflows\n\n\nLet’s look at what happens if \\(a_t + y_t = 0.05\\) (constant inflows). The equilibria are shifted.\nWith \\(b=0.2\\), this eliminates equilibria: the lake will inevitably eutrophy.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 11: Lake eutrophication dynamics based on the shallow lake model with. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
   },
   {
     "objectID": "slides/lecture02-3.html#dynamics-with-inflows-1",
     "href": "slides/lecture02-3.html#dynamics-with-inflows-1",
     "title": "Eutrophication Modeling Example",
     "section": "Dynamics With Inflows",
-    "text": "Dynamics With Inflows\n\n\nBut this assumes constant inflows: remember that we would treat \\(y_t\\) as random.\nWhat are the implications for management?\n\n\n\n\n\n\n\nFigure 12: Lake eutrophication dynamics based on the shallow lake model with. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "text": "Dynamics With Inflows\n\n\nBut this assumes constant inflows: remember that we would treat \\(y_t\\) as random.\nWhat are the implications for management?\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 12: Lake eutrophication dynamics based on the shallow lake model with. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
   },
   {
     "objectID": "slides/lecture02-3.html#key-takeaways-1",
@@ -987,11 +1477,18 @@
     "text": "Next Classes\nFriday: Lake Eutrophication Example\nMonday: Simulating Dissolved Oxygen Dynamics\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
+    "objectID": "slides/notebooks/dissolved-oxygen.html",
+    "href": "slides/notebooks/dissolved-oxygen.html",
+    "title": "BEE 4750 - Fall 2023",
+    "section": "",
+    "text": "---\ntitle: \"Dissolved Oxygen\"\nauthor: \"Vivek Srikrishnan\"\ndate: \"5/13/2023\"\nformat:\n  html:\n    code-fold: true\n  ipynb: default\njupyter: julia-1.9\n---\n\n\nimport Pkg\nPkg.activate(\"..\")\nPkg.instantiate()\n\n  Activating project at `~/Teaching/environmental-systems-analysis/website/slides`\n\n\n\nusing Plots\nusing Measures\nusing LaTeXStrings\n\nA first-order model for dissolved oxygen (DO) is\n\\[\\begin{align}\nU \\frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B - k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right) - k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)\n\\end{align}\\]\nwhich has solution\n\\[C(x) = C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1),\\]\nbut we’ll ignore \\(P\\), \\(R\\), and \\(S_B\\) as these just modify \\(C_s\\).\n\n## function to simulate DO given parameters\n\nfunction do_simulate(x, C0, B0, N0, ka, kn, kc, Cs, U)\n    B = B0 .* exp.(-kc .* x ./ U)\n    N = N0 .* exp.(-kn .* x ./ U)\n    alpha1 = exp.(-ka .* x ./ U)\n    alpha2 = (kc/(ka-kc)) .* (exp.(-kc .* x / U) - exp.(-ka .* x / U))\n    alpha3 = (kn/(ka-kn)) .* (exp.(-kn .* x / U) - exp.(-ka .* x / U))\n    C = Cs .* (1 .- alpha1) + (C0 .* alpha1) - (B0 .* alpha2) - (N0 .* alpha3)\n    return (C, B, N)\nend  \n\ndo_simulate (generic function with 1 method)\n\n\n\n\nka = 0.8\nkc = 0.4\nkn = 0.25\n\nx = 0:40\n\nC, B, N = do_simulate(x, 12, 10, 6, ka, kc, kn, 10, 6)\n\n([12.0, 11.00645310548937, 10.175859173274619, 9.485735592776512, 8.916529246889715, 8.451243511008714, 8.075112259659466, 7.7753149851202945, 7.540727870097758, 7.3617063020117754  …  8.192305787065738, 8.267173709636479, 8.339934969497461, 8.410487111173717, 8.47875989610827, 8.544710197112913, 8.608317593145037, 8.669580573208266, 8.72851326979175, 8.785142652415068], [10.0, 9.591894571091382, 9.200444146293233, 8.824969025845954, 8.464817248906142, 8.11936346150635, 7.788007830714049, 7.470175003104326, 7.1653131057378925, 6.872892787909723  …  2.748123805594897, 2.6359713811572676, 2.5283959580474646, 2.425210746356487, 2.326236579172927, 2.231301601484298, 2.140240971774475, 2.052896575799093, 1.9691167520419406, 1.8887560283756186], [6.0, 5.613041910189707, 5.251039914257685, 4.912384518467891, 4.595570030187892, 4.299187863442736, 4.0219202762138355, 3.7625345116383366, 3.5198773170601907, 3.292869816564159  …  0.7596426167345016, 0.7106509740828222, 0.6648189501740032, 0.6219427716691671, 0.5818318071864303, 0.5443077197364751, 0.5092036738201045, 0.47636359366246933, 0.44564146928600323, 0.4169007073368093])\n\n\n\np1 = plot(x, C, grid=false, color=:black, ylabel=\"DO/OD (mg/l)\", xlabel=\"Distance (km)\", label=\"DO\", linewidth=3, left_margin=8mm, top_margin=10mm, guidefontsize=16, legendfontsize=16, tickfontsize=14, xticks=:false, yticks=:false, legend=:right)\nplot!(x, B, color=:green, label=\"CBOD\", linestyle=:dash, linewidth=3)\nplot!(x, N, color=:blue, label=\"NBOD\", linestyle=:dash, linewidth=3)\nplot!(x, 10 * ones(length(x)), color=:purple, label=L\"C_s\", linestyle=:dot, linewidth=3)\n\nannotate!(1.5, 12.75, text(\"Waste Discharge\", pointsize=16, color=:red))\nvline!([0], color=:red, linewidth=2, label=:false)\nplot!(size=(700, 500))\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Sag curve for dissolved oxygen.\n\n\n\n\nC0 = 6.2\nB0 = 9\nN0 = 7\n\nka = 0.8\nkc = 0.5\nkn = 0.4\nCs = 7\nU = 5\n\n5\n\n\n\nfunction dissolved_oxygen(x, Cs, C0, B0, N0, ka, kc, kn, U)\n    α1 = exp(-ka * x / U)\n    α2 = (kc / (ka - kc)) * (exp(-kc * x / U) - α1)\n    α3 = (kn / (ka - kn)) * (exp(-kn * x / U) - α1)\n    C = (Cs * (1 - α1)) + (C0 * α1) - (B0 * α2) - (N0 * α3)\n    return C\nend\n\nx = 0:0.1:20\nC = (y -&gt; dissolved_oxygen(y, Cs, C0, B0, N0, ka, kc, kn, U)).(x)\n\n\n\nCode\nplot(x, C; linewidth=3, \n    label=\"Dissolved Oxygen\", \n    tickfontsize=16, \n    guidefontsize=16, \n    legendfontsize=16)\nxlabel!(L\"$x$ (km)\")\nylabel!(\"DO Concentration (mg/L)\")\nhline!([3], color=:red, \n    linestyle=:dash, \n    label=\"Regulatory Standard\")\nplot!(size=(500, 500))\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Single-Release Dissolved Oxygen Example\n\n\n\n\nQ1 = 100000\nQ2 = 20000\nQ3 = 25000\n\nx0 = 0\nx1 = 18\nx2 = 30\nx3 = 45\n\nC01 = 6\nB01 = 5\nN01 = 4.5\n\nC1, B1, N1 = do_simulate(x0:x1, C01, B01, N01, ka, kc, kn, 9, 6)\n\nC02 = (C1[length(C1)] * Q1 + 3 * Q2) / (Q1 + Q2)\nB02 = (B1[length(B1)] * Q1 + 55 * Q2) / (Q1 + Q2)\nN02 = (N1[length(N1)] * Q1 + 50 * Q2) / (Q1 + Q2)\n\nC2, B2, N2 = do_simulate(x0:(x2-x1), C02, B02, N02, ka, kc, kn, 9, 6)\n\nC03 = (C2[length(C2)] * (Q1 + Q2) + 4 * Q3) / (Q1 + Q2 + Q3)\nB03 = (B2[length(B2)] * (Q1 + Q2) + 40 * Q3) / (Q1 + Q2 + Q3)\nN03 = (N2[length(N2)] * (Q1 + Q2) + 30 * Q3) / (Q1 + Q2 + Q3)\n\nC3, B3, N3 = do_simulate(x0:(x3-x2), C03, B03, N03, ka, kc, kn, 9, 6)\n\nplot(x0:x1, C1, grid=false, color=:black, ylabel=\"DO (mg/L)\", xlabel=\"Distance (km)\", label=\"DO\", xticks=:false, yticks=:false, linewidth=3, left_margin=12mm, top_margin=10mm, bottom_margin=20mm, guidefontsize=16, tickfontsize=16, legendfontsize=16)\nplot!(x1:x2, C2, color=:black, label=false, linewidth=3)\nplot!(x2:x3, C3, color=:black, label=false, linewidth=3)\nplot!(size=(1200, 500))\n\nvline!([x0, x1, x2], color=:green, linewidth=3, label=\"Discharge\")\nhline!([3], color=:red, linewidth=3, label=\"Regulation\", linestyle=:dash)\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Multi-Release Dissolved Oxygen Example"
+  },
+  {
     "objectID": "slides/notebooks/shallow-lake.html",
     "href": "slides/notebooks/shallow-lake.html",
     "title": "Shallow Lake Problem",
     "section": "",
-    "text": "Code\nusing Pkg\nPkg.activate(dirname(@__DIR__))\nPkg.instantiate()\nCode\nusing Plots\nusing LaTeXStrings"
+    "text": "Code\nusing Pkg\nPkg.activate(dirname(@__DIR__))\nPkg.instantiate()\nCode\nusing Plots\nusing LaTeXStrings\nusing Distributions\nusing Random"
   },
   {
     "objectID": "slides/notebooks/shallow-lake.html#introduction",
@@ -1012,7 +1509,14 @@
     "href": "slides/notebooks/shallow-lake.html#lake-problem-dynamics",
     "title": "Shallow Lake Problem",
     "section": "Lake Problem Dynamics",
-    "text": "Lake Problem Dynamics\nThis analysis is adapted from Quinn et al. (2017).\n\nQuinn, J. D., Reed, P. M., & Keller, K. (2017). Direct policy search for robust multi-objective management of deeply uncertain socio-ecological tipping points. Environmental Modelling & Software, 92, 125–141. https://doi.org/10.1016/j.envsoft.2017.02.017\nFirst, let’s look at how the balance of P recycling and outflows affects the accumulation of P in the lake absent additional inputs (\\(a=y=0\\)).\n\n\nCode\n# define functions for lake recycling and outflows\nlake_P_cycling(x, q) = x.^q ./ (1 .+ x.^q);\nlake_P_out(x, b) = b .* x;\n\n# define range of lake states X\nx = 0:0.05:2.5;\n\n\n\n\nCode\n# plot recycling and outflows for selected values of b and q\np1 = plot(x, lake_P_cycling(x, 2.5), color=:black, linewidth=5,legend=:topleft, label=:false, ylabel=\"P Flux\", xlabel=L\"$X_t$\", tickfontsize=14, guidefontsize=16, legendfontsize=14, palette=:tol_muted, framestyle=:zerolines, grid=:false)\nplot!(x, lake_P_out(x, 0.6), linewidth=3, linestyle=:dash, label=L\"$b=0.6$\")\nplot!(x, lake_P_out(x, 0.4), linewidth=3, linestyle=:dash, label=L\"$b=0.4$\")\nplot!(x, lake_P_out(x, 0.2), linewidth=3, linestyle=:dash, label=L\"$b=0.2$\")\nquiver!([1], [0.35], quiver=([1], [0.4]), color=:red, linewidth=2)\nquiver!([0.4], [0.19], quiver=([-0.125], [-0.05]), color=:red, linewidth=2)\nquiver!([2.5], [0.97], quiver=([-0.125], [-0.05]), color=:red, linewidth=2)\nplot!(ylims=(-0.02, 1))\nplot!(size=(600, 600))\n\n\n\n\n\nFigure 1: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux.\n\n\n\n\nBased on Figure 1, we can see that there are typically three equilibria: a stable equilibrium at \\(X=0\\), an unstable, oligotrophic equilibrium \\(X_o\\), and a stable, eutrophic equilibrium \\(X_e\\). When \\(X_t &lt; X_o\\), the lake tends towards a zero P level without external inputs, while when \\(X_t &gt; X_o\\), the lake will inevitably undergo eutrophication, as the P level will tend towards \\(X_e\\). This means that \\(X_t=X_o\\) corresponds to a tipping point: beyond that level, the lake will abruptly switch to a eutrophic state from which it cannot recover.\nThis lake is subject to a bifurcation depending on the values of \\(b\\) and \\(q\\). To see this, let’s fix \\(q=2.5\\), as in Figure 1. For \\(b=0.4\\), there are the two equilibria mentioned previously. However, when \\(b=0.2\\), there is only the unstable equilibrium \\(X=X_o\\) in addition to \\(X=0\\). For \\(b=0.6\\), the only equilibrium is \\(X=0\\), so any positive P input would result in eutrophication. This highlights the delicacy of systems which exhibit bifurcations: whether an equilibrium is stable or unstable, or even exists, can depend on a characteristic of the system which is often highly uncertain.\n\n\nCode\neq = [0, 0.67, 2.2]\nscatter!(p1, eq, (y -&gt; lake_P_cycling(y, 2.5)).(eq), label=\"Equilibria\", markersize=10, markercolor=:red)\n\n\n\n\n\nFigure 2: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux.\n\n\n\n\n\n\nCode\np2 = plot(x, 0.05 .+ lake_P_cycling(x, 2.5), color=:black, linewidth=5,legend=:topleft, label=:false, ylabel=\"P Flux\", xlabel=L\"$X_t$\", tickfontsize=14, guidefontsize=16, legendfontsize=14, palette=:tol_muted, framestyle=:zerolines, grid=:false)\nplot!(x, lake_P_out(x, 0.6), linewidth=3, linestyle=:dash, label=L\"$b=0.6$\")\nplot!(x, lake_P_out(x, 0.4), linewidth=3, linestyle=:dash, label=L\"$b=0.4$\")\nplot!(x, lake_P_out(x, 0.2), linewidth=3, linestyle=:dash, label=L\"$b=0.2$\")\nplot!(size=(600, 600))\n\n\n\n\n\nFigure 3: Lake eutrophication dynamics based on the shallow lake model with. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "text": "Lake Problem Dynamics\nThis analysis is adapted from Quinn et al. (2017).\n\nQuinn, J. D., Reed, P. M., & Keller, K. (2017). Direct policy search for robust multi-objective management of deeply uncertain socio-ecological tipping points. Environmental Modelling & Software, 92, 125–141. https://doi.org/10.1016/j.envsoft.2017.02.017\nFirst, let’s look at how the balance of P recycling and outflows affects the accumulation of P in the lake absent additional inputs (\\(a=y=0\\)).\n\n\nCode\n# define functions for lake recycling and outflows\nlake_P_cycling(x, q) = x.^q ./ (1 .+ x.^q);\nlake_P_out(x, b) = b .* x;\n\n# define range of lake states X\nx = 0:0.05:2.5;\n\n\n\n\nCode\n# plot recycling and outflows for selected values of b and q\np1 = plot(x, lake_P_cycling(x, 2.5), color=:black, linewidth=5,legend=:topleft, label=:false, ylabel=\"P Flux\", xlabel=L\"$X_t$\", tickfontsize=14, guidefontsize=16, legendfontsize=14, palette=:tol_muted, framestyle=:zerolines, grid=:false)\nplot!(x, lake_P_out(x, 0.6), linewidth=3, linestyle=:dash, label=L\"$b=0.6$\")\nplot!(x, lake_P_out(x, 0.4), linewidth=3, linestyle=:dash, label=L\"$b=0.4$\")\nplot!(x, lake_P_out(x, 0.2), linewidth=3, linestyle=:dash, label=L\"$b=0.2$\")\nquiver!([1], [0.35], quiver=([1], [0.4]), color=:red, linewidth=2)\nquiver!([0.4], [0.19], quiver=([-0.125], [-0.05]), color=:red, linewidth=2)\nquiver!([2.5], [0.97], quiver=([-0.125], [-0.05]), color=:red, linewidth=2)\nplot!(ylims=(-0.02, 1))\nplot!(size=(600, 600))\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux.\n\n\n\nBased on Figure 1, we can see that there are typically three equilibria: a stable equilibrium at \\(X=0\\), an unstable, oligotrophic equilibrium \\(X_o\\), and a stable, eutrophic equilibrium \\(X_e\\). When \\(X_t &lt; X_o\\), the lake tends towards a zero P level without external inputs, while when \\(X_t &gt; X_o\\), the lake will inevitably undergo eutrophication, as the P level will tend towards \\(X_e\\). This means that \\(X_t=X_o\\) corresponds to a tipping point: beyond that level, the lake will abruptly switch to a eutrophic state from which it cannot recover.\nThis lake is subject to a bifurcation depending on the values of \\(b\\) and \\(q\\). To see this, let’s fix \\(q=2.5\\), as in Figure 1. For \\(b=0.4\\), there are the two equilibria mentioned previously. However, when \\(b=0.2\\), there is only the unstable equilibrium \\(X=X_o\\) in addition to \\(X=0\\). For \\(b=0.6\\), the only equilibrium is \\(X=0\\), so any positive P input would result in eutrophication. This highlights the delicacy of systems which exhibit bifurcations: whether an equilibrium is stable or unstable, or even exists, can depend on a characteristic of the system which is often highly uncertain.\n\n\nCode\neq = [0, 0.67, 2.2]\nscatter!(p1, eq, (y -&gt; lake_P_cycling(y, 2.5)).(eq), label=\"Equilibria\", markersize=10, markercolor=:red)\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux.\n\n\n\n\n\nCode\np2 = plot(x, 0.05 .+ lake_P_cycling(x, 2.5), color=:black, linewidth=5,legend=:topleft, label=:false, ylabel=\"P Flux\", xlabel=L\"$X_t$\", tickfontsize=14, guidefontsize=16, legendfontsize=14, palette=:tol_muted, framestyle=:zerolines, grid=:false)\nplot!(x, lake_P_out(x, 0.6), linewidth=3, linestyle=:dash, label=L\"$b=0.6$\")\nplot!(x, lake_P_out(x, 0.4), linewidth=3, linestyle=:dash, label=L\"$b=0.4$\")\nplot!(x, lake_P_out(x, 0.2), linewidth=3, linestyle=:dash, label=L\"$b=0.2$\")\nplot!(size=(600, 600))\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Lake eutrophication dynamics based on the shallow lake model with. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+  },
+  {
+    "objectID": "slides/notebooks/shallow-lake.html#simulating-the-model-under-constant-inflows",
+    "href": "slides/notebooks/shallow-lake.html#simulating-the-model-under-constant-inflows",
+    "title": "Shallow Lake Problem",
+    "section": "Simulating The Model Under Constant Inflows",
+    "text": "Simulating The Model Under Constant Inflows\nLet’s simulate the model when we fix \\(a\\) as a constant. Other parameters:\n\n\n\nVariable\nValue\nUnits\n\n\n\n\n\\(X_0\\)\n\\(0\\)\ndimensionless\n\n\n\\(\\mu\\)\n\\(\\log(0.03)\\)\ndimensionless\n\n\n\\(\\sigma^2\\)\n\\(0.1\\)\ndimensionless\n\n\n\\(q\\)\n\\(2.5\\)\ndimensionless\n\n\n\\(b\\)\n\\(0.4\\)\ndimensionless\n\n\n\n\n\nCode\nRandom.seed!(1)\n\n# set parameters\n\nX₀ = 0\nμ = log(0.03)\nσ² = 0.1\nq = 2.5\nb = 0.4\nT = 50\n\n\n50\n\n\n\n\nCode\ny = rand(LogNormal(μ, σ²), T)\nplot(y; label=\"Non-Point Source Inflows\", color=:black, marker=(:x, 5), guidefontsize=18, tickfontsize=16, legendfontsize=14, linewidth=3, legend=:topright)\nxlabel!(L\"t\")\nylabel!(L\"y_t\")\nplot!(size=(600, 600))\nylims!((0.025, 0.042))\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Inflows \\(y_t\\) for this lake problem simulation.\n\n\n\n\n\nCode\nX₁ = zeros(T+1)\nX₂ = zeros(T+1)\n\nfor t = 1:T\n    X₁[t+1] = X₁[t] + y[t] + 0.025 + lake_P_cycling(X₁[t], q) - lake_P_out(X₁[t], b)\n    X₂[t+1] = X₂[t] + y[t] + 0.05 + lake_P_cycling(X₂[t], q) - lake_P_out(X₂[t], b)\nend\n\nplot((1:T+1) .- 1, X₁, color=:blue, label=L\"$a_t = 0.025$\", guidefontsize=18, tickfontsize=16, legendfontsize=16, linewidth=3)\nplot!((1:T+1) .- 1, X₂, color=:purple, label=L\"$a_t = 0.05$\", linewidth=3)\nxlabel!(L\"t\")\nylabel!(L\"X_t\")\nplot!(size=(600, 600))\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: State of the lake under two different constant release scenarios."
   },
   {
     "objectID": "slides/notebooks/economic-dispatch.html",
@@ -1411,6 +1915,6 @@
     "href": "schedule.html",
     "title": "BEE 4750: Environmental Systems Analysis",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nWed, Sep 06\nDissolved Oxygen\n\n\n\n\n\n\n\n\nFri, Sep 08\nUncertainty and Risk\n\n\n\n\n\n\n\n4\nMon, Sep 11\nMonte Carlo Simulation\n\n\n\n\n\n\n\n\nWed, Sep 13\nMonte Carlo Error\n\n\n\n\n\n\n\n\nFri, Sep 15\nLab: Monte Carlo\n\n\n\n\n\n\n\n5\nMon, Sep 18\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nWed, Sep 20\nPrescriptive Modeling II\n\n\n\n\n\n\n\n\nFri, Sep 22\nIntroduction to Optimization\n\n\n\n\n\n\n\n6\nMon, Sep 25\nExample: Resource and Land Allocation\n\n\n\n\n\n\n\n\nWed, Sep 27\nLab: Optimization with JuMP.jl"
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nWed, Sep 06\nModeling Dissolved Oxygen\n\n\n\n\n\n\n\n\nFri, Sep 08\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n4\nMon, Sep 11\nUncertainty and Risk\n\n\n\n\n\n\n\n\nWed, Sep 13\nMonte Carlo Simulation\n\n\n\n\n\n\n\n\nFri, Sep 15\nLab: Monte Carlo\n\n\n\n\n\n\n\n5\nMon, Sep 18\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nWed, Sep 20\nPrescriptive Modeling II\n\n\n\n\n\n\n\n\nFri, Sep 22\nIntroduction to Optimization\n\n\n\n\n\n\n\n6\nMon, Sep 25\nExample: Resource and Land Allocation\n\n\n\n\n\n\n\n\nWed, Sep 27\nLab: Optimization with JuMP.jl"
   }
 ]

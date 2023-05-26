@@ -210,6 +210,10 @@ Think about this as a multi-box problem:
 - Multiple sections as "multi-box" model: outflows from one box become inflows/initial conditions for another.
 - Assigning blame/responsibility in an interdependent system is not straightforward!
 
+## Simulation Framework Overview
+
+![Simulation Workflow Diagram](images/simulation-workflow.svg)
+
 # Upcoming Schedule
 
 ## Next Classes

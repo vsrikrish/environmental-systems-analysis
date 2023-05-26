@@ -259,11 +259,18 @@
     "text": "Key Points\n\nSimulation involves running the model over space/time.\nMultiple sections as “multi-box” model: outflows from one box become inflows/initial conditions for another.\nAssigning blame/responsibility in an interdependent system is not straightforward!"
   },
   {
+    "objectID": "slides/lecture03-3.html#simulation-framework-overview",
+    "href": "slides/lecture03-3.html#simulation-framework-overview",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Simulation Framework Overview",
+    "text": "Simulation Framework Overview\n\nSimulation Workflow Diagram"
+  },
+  {
     "objectID": "slides/lecture03-3.html#next-classes",
     "href": "slides/lecture03-3.html#next-classes",
     "title": "Dissolved Oxygen Simulation",
     "section": "Next Classes",
-    "text": "Next Classes\nMonday: Uncertainty and Risk\nWednesday/Friday: Monte Carlo Simulation\nHomework: - HW1 due today! - HW2 link available on Ed (due in two weeks).\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Next Classes\nMonday: Uncertainty and Risk\nWednesday/Friday: Monte Carlo Simulation\nHomework:\n\nHW1 due today!\nHW2 link available on Ed (due in two weeks).\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture01-1.html#course-overview",
@@ -1552,6 +1559,181 @@
     "title": "Economic Dispatch with JuMP",
     "section": "Multiple-Period Dispatch",
     "text": "Multiple-Period Dispatch\nWhat changes for multiple periods?\n\nNeed to meet demand at every time period\nWe have additional ramping constraints: plants can only increase and decrease their output by so much from time to time, by \\(R_g\\).\n\n\nJuMP Implementation\n\n\nCode\nramp = [150, 200, 100, 250, 300]\ndemand = [1725, 1596, 1476, 1408, 1530, 1714, 1820, 1973, 2081, 2202, 2105, 2065, \n    2045, 2195, 2309, 2390, 2486, 2515, 2075, 2006, 1956, 1902, 1865, 1820]\nh = length(demand)\nT = 1:h\n\ndispatch2 = Model(HiGHS.Optimizer)\n@variable(dispatch2, gen_minpower[g] &lt;= y[g in G, t in T] &lt;= gen_maxpower[g])\n@objective(dispatch2, Min, sum(gen_varcost .* sum([y[:, t] for t in T])))\n@constraint(dispatch2, load[t in T], sum(y[:, t]) == demand[t])\n@constraint(dispatch2, rampup[g in G, t in 1:h-1], y[g, t+1] - y[g, t] &lt;= ramp[g])\n@constraint(dispatch2, rampdown[g in G, t in 1:h-1], y[g, t] - y[g, t+1] &lt;= ramp[g])\n\nlatex_formulation(dispatch2)\n\n\n\\[ \\begin{aligned}\n\\min\\quad & 2 y_{3,1} + 2 y_{3,2} + 2 y_{3,3} + 2 y_{3,4} + 2 y_{3,5} + 2 y_{3,6} + 2 y_{3,7} + 2 y_{3,8} + 2 y_{3,9} + 2 y_{3,10} + 2 y_{3,11} + 2 y_{3,12} + 2 y_{3,13} + 2 y_{3,14} + 2 y_{3,15} + 2 y_{3,16} + 2 y_{3,17} + 2 y_{3,18} + 2 y_{3,19} + 2 y_{3,20} + 2 y_{3,21} + 2 y_{3,22} + 2 y_{3,23} + 2 y_{3,24} + 21.5 y_{4,1} + 21.5 y_{4,2} + 21.5 y_{4,3} + 21.5 y_{4,4} + 21.5 y_{4,5} + 21.5 y_{4,6} + 21.5 y_{4,7} + 21.5 y_{4,8} + 21.5 y_{4,9} + 21.5 y_{4,10} + 21.5 y_{4,11} + 21.5 y_{4,12} + 21.5 y_{4,13} + 21.5 y_{4,14} + 21.5 y_{4,15} + 21.5 y_{4,16} + 21.5 y_{4,17} + 21.5 y_{4,18} + 21.5 y_{4,19} + 21.5 y_{4,20} + 21.5 y_{4,21} + 21.5 y_{4,22} + 21.5 y_{4,23} + 21.5 y_{4,24} + 23 y_{5,1} + 23 y_{5,2} + 23 y_{5,3} + 23 y_{5,4} + 23 y_{5,5} + 23 y_{5,6} + 23 y_{5,7} + 23 y_{5,8} + 23 y_{5,9} + 23 y_{5,10} + 23 y_{5,11} + 23 y_{5,12} + 23 y_{5,13} + 23 y_{5,14} + 23 y_{5,15} + 23 y_{5,16} + 23 y_{5,17} + 23 y_{5,18} + 23 y_{5,19} + 23 y_{5,20} + 23 y_{5,21} + 23 y_{5,22} + 23 y_{5,23} + 23 y_{5,24}\\\\\n\\text{Subject to} \\quad & y_{1,1} + y_{2,1} + y_{3,1} + y_{4,1} + y_{5,1} = 1725.0\\\\\n& y_{1,2} + y_{2,2} + y_{3,2} + y_{4,2} + y_{5,2} = 1596.0\\\\\n& y_{1,3} + y_{2,3} + y_{3,3} + y_{4,3} + y_{5,3} = 1476.0\\\\\n& y_{1,4} + y_{2,4} + y_{3,4} + y_{4,4} + y_{5,4} = 1408.0\\\\\n& y_{1,5} + y_{2,5} + y_{3,5} + y_{4,5} + y_{5,5} = 1530.0\\\\\n& y_{1,6} + y_{2,6} + y_{3,6} + y_{4,6} + y_{5,6} = 1714.0\\\\\n& y_{1,7} + y_{2,7} + y_{3,7} + y_{4,7} + y_{5,7} = 1820.0\\\\\n& y_{1,8} + y_{2,8} + y_{3,8} + y_{4,8} + y_{5,8} = 1973.0\\\\\n& y_{1,9} + y_{2,9} + y_{3,9} + y_{4,9} + y_{5,9} = 2081.0\\\\\n& y_{1,10} + y_{2,10} + y_{3,10} + y_{4,10} + y_{5,10} = 2202.0\\\\\n& y_{1,11} + y_{2,11} + y_{3,11} + y_{4,11} + y_{5,11} = 2105.0\\\\\n& y_{1,12} + y_{2,12} + y_{3,12} + y_{4,12} + y_{5,12} = 2065.0\\\\\n& y_{1,13} + y_{2,13} + y_{3,13} + y_{4,13} + y_{5,13} = 2045.0\\\\\n& y_{1,14} + y_{2,14} + y_{3,14} + y_{4,14} + y_{5,14} = 2195.0\\\\\n& y_{1,15} + y_{2,15} + y_{3,15} + y_{4,15} + y_{5,15} = 2309.0\\\\\n& y_{1,16} + y_{2,16} + y_{3,16} + y_{4,16} + y_{5,16} = 2390.0\\\\\n& y_{1,17} + y_{2,17} + y_{3,17} + y_{4,17} + y_{5,17} = 2486.0\\\\\n& y_{1,18} + y_{2,18} + y_{3,18} + y_{4,18} + y_{5,18} = 2515.0\\\\\n& y_{1,19} + y_{2,19} + y_{3,19} + y_{4,19} + y_{5,19} = 2075.0\\\\\n& y_{1,20} + y_{2,20} + y_{3,20} + y_{4,20} + y_{5,20} = 2006.0\\\\\n& y_{1,21} + y_{2,21} + y_{3,21} + y_{4,21} + y_{5,21} = 1956.0\\\\\n& y_{1,22} + y_{2,22} + y_{3,22} + y_{4,22} + y_{5,22} = 1902.0\\\\\n& y_{1,23} + y_{2,23} + y_{3,23} + y_{4,23} + y_{5,23} = 1865.0\\\\\n& y_{1,24} + y_{2,24} + y_{3,24} + y_{4,24} + y_{5,24} = 1820.0\\\\\n& -y_{1,1} + y_{1,2} \\leq 150.0\\\\\n& -y_{2,1} + y_{2,2} \\leq 200.0\\\\\n& -y_{3,1} + y_{3,2} \\leq 100.0\\\\\n& -y_{4,1} + y_{4,2} \\leq 250.0\\\\\n& -y_{5,1} + y_{5,2} \\leq 300.0\\\\\n& -y_{1,2} + y_{1,3} \\leq 150.0\\\\\n& -y_{2,2} + y_{2,3} \\leq 200.0\\\\\n& -y_{3,2} + y_{3,3} \\leq 100.0\\\\\n& -y_{4,2} + y_{4,3} \\leq 250.0\\\\\n& -y_{5,2} + y_{5,3} \\leq 300.0\\\\\n& -y_{1,3} + y_{1,4} \\leq 150.0\\\\\n& -y_{2,3} + y_{2,4} \\leq 200.0\\\\\n& -y_{3,3} + y_{3,4} \\leq 100.0\\\\\n& -y_{4,3} + y_{4,4} \\leq 250.0\\\\\n& -y_{5,3} + y_{5,4} \\leq 300.0\\\\\n& -y_{1,4} + y_{1,5} \\leq 150.0\\\\\n& -y_{2,4} + y_{2,5} \\leq 200.0\\\\\n& -y_{3,4} + y_{3,5} \\leq 100.0\\\\\n& -y_{4,4} + y_{4,5} \\leq 250.0\\\\\n& -y_{5,4} + y_{5,5} \\leq 300.0\\\\\n& -y_{1,5} + y_{1,6} \\leq 150.0\\\\\n& -y_{2,5} + y_{2,6} \\leq 200.0\\\\\n& -y_{3,5} + y_{3,6} \\leq 100.0\\\\\n& -y_{4,5} + y_{4,6} \\leq 250.0\\\\\n& -y_{5,5} + y_{5,6} \\leq 300.0\\\\\n& -y_{1,6} + y_{1,7} \\leq 150.0\\\\\n& -y_{2,6} + y_{2,7} \\leq 200.0\\\\\n& -y_{3,6} + y_{3,7} \\leq 100.0\\\\\n& -y_{4,6} + y_{4,7} \\leq 250.0\\\\\n& -y_{5,6} + y_{5,7} \\leq 300.0\\\\\n& -y_{1,7} + y_{1,8} \\leq 150.0\\\\\n& -y_{2,7} + y_{2,8} \\leq 200.0\\\\\n& -y_{3,7} + y_{3,8} \\leq 100.0\\\\\n& -y_{4,7} + y_{4,8} \\leq 250.0\\\\\n& -y_{5,7} + y_{5,8} \\leq 300.0\\\\\n& -y_{1,8} + y_{1,9} \\leq 150.0\\\\\n& -y_{2,8} + y_{2,9} \\leq 200.0\\\\\n& -y_{3,8} + y_{3,9} \\leq 100.0\\\\\n& -y_{4,8} + y_{4,9} \\leq 250.0\\\\\n& -y_{5,8} + y_{5,9} \\leq 300.0\\\\\n& -y_{1,9} + y_{1,10} \\leq 150.0\\\\\n& -y_{2,9} + y_{2,10} \\leq 200.0\\\\\n& -y_{3,9} + y_{3,10} \\leq 100.0\\\\\n& -y_{4,9} + y_{4,10} \\leq 250.0\\\\\n& -y_{5,9} + y_{5,10} \\leq 300.0\\\\\n& -y_{1,10} + y_{1,11} \\leq 150.0\\\\\n& -y_{2,10} + y_{2,11} \\leq 200.0\\\\\n& -y_{3,10} + y_{3,11} \\leq 100.0\\\\\n& -y_{4,10} + y_{4,11} \\leq 250.0\\\\\n& -y_{5,10} + y_{5,11} \\leq 300.0\\\\\n& -y_{1,11} + y_{1,12} \\leq 150.0\\\\\n& -y_{2,11} + y_{2,12} \\leq 200.0\\\\\n& -y_{3,11} + y_{3,12} \\leq 100.0\\\\\n& -y_{4,11} + y_{4,12} \\leq 250.0\\\\\n& -y_{5,11} + y_{5,12} \\leq 300.0\\\\\n& -y_{1,12} + y_{1,13} \\leq 150.0\\\\\n& -y_{2,12} + y_{2,13} \\leq 200.0\\\\\n& -y_{3,12} + y_{3,13} \\leq 100.0\\\\\n& -y_{4,12} + y_{4,13} \\leq 250.0\\\\\n& -y_{5,12} + y_{5,13} \\leq 300.0\\\\\n& -y_{1,13} + y_{1,14} \\leq 150.0\\\\\n& -y_{2,13} + y_{2,14} \\leq 200.0\\\\\n& -y_{3,13} + y_{3,14} \\leq 100.0\\\\\n& -y_{4,13} + y_{4,14} \\leq 250.0\\\\\n& -y_{5,13} + y_{5,14} \\leq 300.0\\\\\n& -y_{1,14} + y_{1,15} \\leq 150.0\\\\\n& -y_{2,14} + y_{2,15} \\leq 200.0\\\\\n& -y_{3,14} + y_{3,15} \\leq 100.0\\\\\n& -y_{4,14} + y_{4,15} \\leq 250.0\\\\\n& -y_{5,14} + y_{5,15} \\leq 300.0\\\\\n& -y_{1,15} + y_{1,16} \\leq 150.0\\\\\n& -y_{2,15} + y_{2,16} \\leq 200.0\\\\\n& -y_{3,15} + y_{3,16} \\leq 100.0\\\\\n& -y_{4,15} + y_{4,16} \\leq 250.0\\\\\n& -y_{5,15} + y_{5,16} \\leq 300.0\\\\\n& -y_{1,16} + y_{1,17} \\leq 150.0\\\\\n& -y_{2,16} + y_{2,17} \\leq 200.0\\\\\n& -y_{3,16} + y_{3,17} \\leq 100.0\\\\\n& -y_{4,16} + y_{4,17} \\leq 250.0\\\\\n& -y_{5,16} + y_{5,17} \\leq 300.0\\\\\n& -y_{1,17} + y_{1,18} \\leq 150.0\\\\\n& -y_{2,17} + y_{2,18} \\leq 200.0\\\\\n& -y_{3,17} + y_{3,18} \\leq 100.0\\\\\n& -y_{4,17} + y_{4,18} \\leq 250.0\\\\\n& -y_{5,17} + y_{5,18} \\leq 300.0\\\\\n& -y_{1,18} + y_{1,19} \\leq 150.0\\\\\n& -y_{2,18} + y_{2,19} \\leq 200.0\\\\\n& -y_{3,18} + y_{3,19} \\leq 100.0\\\\\n& -y_{4,18} + y_{4,19} \\leq 250.0\\\\\n& -y_{5,18} + y_{5,19} \\leq 300.0\\\\\n& -y_{1,19} + y_{1,20} \\leq 150.0\\\\\n& -y_{2,19} + y_{2,20} \\leq 200.0\\\\\n& -y_{3,19} + y_{3,20} \\leq 100.0\\\\\n& -y_{4,19} + y_{4,20} \\leq 250.0\\\\\n& -y_{5,19} + y_{5,20} \\leq 300.0\\\\\n& -y_{1,20} + y_{1,21} \\leq 150.0\\\\\n& -y_{2,20} + y_{2,21} \\leq 200.0\\\\\n& -y_{3,20} + y_{3,21} \\leq 100.0\\\\\n& -y_{4,20} + y_{4,21} \\leq 250.0\\\\\n& -y_{5,20} + y_{5,21} \\leq 300.0\\\\\n& -y_{1,21} + y_{1,22} \\leq 150.0\\\\\n& -y_{2,21} + y_{2,22} \\leq 200.0\\\\\n& -y_{3,21} + y_{3,22} \\leq 100.0\\\\\n& -y_{4,21} + y_{4,22} \\leq 250.0\\\\\n& -y_{5,21} + y_{5,22} \\leq 300.0\\\\\n& -y_{1,22} + y_{1,23} \\leq 150.0\\\\\n& -y_{2,22} + y_{2,23} \\leq 200.0\\\\\n& -y_{3,22} + y_{3,23} \\leq 100.0\\\\\n& -y_{4,22} + y_{4,23} \\leq 250.0\\\\\n& -y_{5,22} + y_{5,23} \\leq 300.0\\\\\n& -y_{1,23} + y_{1,24} \\leq 150.0\\\\\n& -y_{2,23} + y_{2,24} \\leq 200.0\\\\\n& -y_{3,23} + y_{3,24} \\leq 100.0\\\\\n& -y_{4,23} + y_{4,24} \\leq 250.0\\\\\n& -y_{5,23} + y_{5,24} \\leq 300.0\\\\\n& y_{1,1} - y_{1,2} \\leq 150.0\\\\\n& y_{2,1} - y_{2,2} \\leq 200.0\\\\\n& y_{3,1} - y_{3,2} \\leq 100.0\\\\\n& y_{4,1} - y_{4,2} \\leq 250.0\\\\\n& y_{5,1} - y_{5,2} \\leq 300.0\\\\\n& y_{1,2} - y_{1,3} \\leq 150.0\\\\\n& y_{2,2} - y_{2,3} \\leq 200.0\\\\\n& y_{3,2} - y_{3,3} \\leq 100.0\\\\\n& y_{4,2} - y_{4,3} \\leq 250.0\\\\\n& y_{5,2} - y_{5,3} \\leq 300.0\\\\\n& y_{1,3} - y_{1,4} \\leq 150.0\\\\\n& y_{2,3} - y_{2,4} \\leq 200.0\\\\\n& y_{3,3} - y_{3,4} \\leq 100.0\\\\\n& y_{4,3} - y_{4,4} \\leq 250.0\\\\\n& y_{5,3} - y_{5,4} \\leq 300.0\\\\\n& y_{1,4} - y_{1,5} \\leq 150.0\\\\\n& y_{2,4} - y_{2,5} \\leq 200.0\\\\\n& y_{3,4} - y_{3,5} \\leq 100.0\\\\\n& y_{4,4} - y_{4,5} \\leq 250.0\\\\\n& y_{5,4} - y_{5,5} \\leq 300.0\\\\\n& y_{1,5} - y_{1,6} \\leq 150.0\\\\\n& y_{2,5} - y_{2,6} \\leq 200.0\\\\\n& y_{3,5} - y_{3,6} \\leq 100.0\\\\\n& y_{4,5} - y_{4,6} \\leq 250.0\\\\\n& y_{5,5} - y_{5,6} \\leq 300.0\\\\\n& y_{1,6} - y_{1,7} \\leq 150.0\\\\\n& y_{2,6} - y_{2,7} \\leq 200.0\\\\\n& y_{3,6} - y_{3,7} \\leq 100.0\\\\\n& y_{4,6} - y_{4,7} \\leq 250.0\\\\\n& y_{5,6} - y_{5,7} \\leq 300.0\\\\\n& y_{1,7} - y_{1,8} \\leq 150.0\\\\\n& y_{2,7} - y_{2,8} \\leq 200.0\\\\\n& y_{3,7} - y_{3,8} \\leq 100.0\\\\\n& y_{4,7} - y_{4,8} \\leq 250.0\\\\\n& y_{5,7} - y_{5,8} \\leq 300.0\\\\\n& y_{1,8} - y_{1,9} \\leq 150.0\\\\\n& y_{2,8} - y_{2,9} \\leq 200.0\\\\\n& y_{3,8} - y_{3,9} \\leq 100.0\\\\\n& y_{4,8} - y_{4,9} \\leq 250.0\\\\\n& y_{5,8} - y_{5,9} \\leq 300.0\\\\\n& y_{1,9} - y_{1,10} \\leq 150.0\\\\\n& y_{2,9} - y_{2,10} \\leq 200.0\\\\\n& y_{3,9} - y_{3,10} \\leq 100.0\\\\\n& y_{4,9} - y_{4,10} \\leq 250.0\\\\\n& y_{5,9} - y_{5,10} \\leq 300.0\\\\\n& y_{1,10} - y_{1,11} \\leq 150.0\\\\\n& y_{2,10} - y_{2,11} \\leq 200.0\\\\\n& y_{3,10} - y_{3,11} \\leq 100.0\\\\\n& y_{4,10} - y_{4,11} \\leq 250.0\\\\\n& y_{5,10} - y_{5,11} \\leq 300.0\\\\\n& y_{1,11} - y_{1,12} \\leq 150.0\\\\\n& y_{2,11} - y_{2,12} \\leq 200.0\\\\\n& y_{3,11} - y_{3,12} \\leq 100.0\\\\\n& y_{4,11} - y_{4,12} \\leq 250.0\\\\\n& y_{5,11} - y_{5,12} \\leq 300.0\\\\\n& y_{1,12} - y_{1,13} \\leq 150.0\\\\\n& y_{2,12} - y_{2,13} \\leq 200.0\\\\\n& y_{3,12} - y_{3,13} \\leq 100.0\\\\\n& y_{4,12} - y_{4,13} \\leq 250.0\\\\\n& y_{5,12} - y_{5,13} \\leq 300.0\\\\\n& y_{1,13} - y_{1,14} \\leq 150.0\\\\\n& y_{2,13} - y_{2,14} \\leq 200.0\\\\\n& y_{3,13} - y_{3,14} \\leq 100.0\\\\\n& y_{4,13} - y_{4,14} \\leq 250.0\\\\\n& y_{5,13} - y_{5,14} \\leq 300.0\\\\\n& y_{1,14} - y_{1,15} \\leq 150.0\\\\\n& y_{2,14} - y_{2,15} \\leq 200.0\\\\\n& y_{3,14} - y_{3,15} \\leq 100.0\\\\\n& y_{4,14} - y_{4,15} \\leq 250.0\\\\\n& y_{5,14} - y_{5,15} \\leq 300.0\\\\\n& y_{1,15} - y_{1,16} \\leq 150.0\\\\\n& y_{2,15} - y_{2,16} \\leq 200.0\\\\\n& y_{3,15} - y_{3,16} \\leq 100.0\\\\\n& y_{4,15} - y_{4,16} \\leq 250.0\\\\\n& y_{5,15} - y_{5,16} \\leq 300.0\\\\\n& y_{1,16} - y_{1,17} \\leq 150.0\\\\\n& y_{2,16} - y_{2,17} \\leq 200.0\\\\\n& y_{3,16} - y_{3,17} \\leq 100.0\\\\\n& y_{4,16} - y_{4,17} \\leq 250.0\\\\\n& y_{5,16} - y_{5,17} \\leq 300.0\\\\\n& y_{1,17} - y_{1,18} \\leq 150.0\\\\\n& y_{2,17} - y_{2,18} \\leq 200.0\\\\\n& y_{3,17} - y_{3,18} \\leq 100.0\\\\\n& y_{4,17} - y_{4,18} \\leq 250.0\\\\\n& y_{5,17} - y_{5,18} \\leq 300.0\\\\\n& y_{1,18} - y_{1,19} \\leq 150.0\\\\\n& y_{2,18} - y_{2,19} \\leq 200.0\\\\\n& y_{3,18} - y_{3,19} \\leq 100.0\\\\\n& y_{4,18} - y_{4,19} \\leq 250.0\\\\\n& y_{5,18} - y_{5,19} \\leq 300.0\\\\\n& y_{1,19} - y_{1,20} \\leq 150.0\\\\\n& y_{2,19} - y_{2,20} \\leq 200.0\\\\\n& y_{3,19} - y_{3,20} \\leq 100.0\\\\\n& y_{4,19} - y_{4,20} \\leq 250.0\\\\\n& y_{5,19} - y_{5,20} \\leq 300.0\\\\\n& y_{1,20} - y_{1,21} \\leq 150.0\\\\\n& y_{2,20} - y_{2,21} \\leq 200.0\\\\\n& y_{3,20} - y_{3,21} \\leq 100.0\\\\\n& y_{4,20} - y_{4,21} \\leq 250.0\\\\\n& y_{5,20} - y_{5,21} \\leq 300.0\\\\\n& y_{1,21} - y_{1,22} \\leq 150.0\\\\\n& y_{2,21} - y_{2,22} \\leq 200.0\\\\\n& y_{3,21} - y_{3,22} \\leq 100.0\\\\\n& y_{4,21} - y_{4,22} \\leq 250.0\\\\\n& y_{5,21} - y_{5,22} \\leq 300.0\\\\\n& y_{1,22} - y_{1,23} \\leq 150.0\\\\\n& y_{2,22} - y_{2,23} \\leq 200.0\\\\\n& y_{3,22} - y_{3,23} \\leq 100.0\\\\\n& y_{4,22} - y_{4,23} \\leq 250.0\\\\\n& y_{5,22} - y_{5,23} \\leq 300.0\\\\\n& y_{1,23} - y_{1,24} \\leq 150.0\\\\\n& y_{2,23} - y_{2,24} \\leq 200.0\\\\\n& y_{3,23} - y_{3,24} \\leq 100.0\\\\\n& y_{4,23} - y_{4,24} \\leq 250.0\\\\\n& y_{5,23} - y_{5,24} \\leq 300.0\\\\\n& y_{1,1} \\geq 0.0\\\\\n& y_{2,1} \\geq 0.0\\\\\n& y_{3,1} \\geq 200.0\\\\\n& y_{4,1} \\geq 160.0\\\\\n& y_{5,1} \\geq 40.0\\\\\n& y_{1,2} \\geq 0.0\\\\\n& y_{2,2} \\geq 0.0\\\\\n& y_{3,2} \\geq 200.0\\\\\n& y_{4,2} \\geq 160.0\\\\\n& y_{5,2} \\geq 40.0\\\\\n& y_{1,3} \\geq 0.0\\\\\n& y_{2,3} \\geq 0.0\\\\\n& y_{3,3} \\geq 200.0\\\\\n& y_{4,3} \\geq 160.0\\\\\n& y_{5,3} \\geq 40.0\\\\\n& y_{1,4} \\geq 0.0\\\\\n& y_{2,4} \\geq 0.0\\\\\n& y_{3,4} \\geq 200.0\\\\\n& y_{4,4} \\geq 160.0\\\\\n& y_{5,4} \\geq 40.0\\\\\n& y_{1,5} \\geq 0.0\\\\\n& y_{2,5} \\geq 0.0\\\\\n& y_{3,5} \\geq 200.0\\\\\n& y_{4,5} \\geq 160.0\\\\\n& y_{5,5} \\geq 40.0\\\\\n& y_{1,6} \\geq 0.0\\\\\n& y_{2,6} \\geq 0.0\\\\\n& y_{3,6} \\geq 200.0\\\\\n& y_{4,6} \\geq 160.0\\\\\n& y_{5,6} \\geq 40.0\\\\\n& y_{1,7} \\geq 0.0\\\\\n& y_{2,7} \\geq 0.0\\\\\n& y_{3,7} \\geq 200.0\\\\\n& y_{4,7} \\geq 160.0\\\\\n& y_{5,7} \\geq 40.0\\\\\n& y_{1,8} \\geq 0.0\\\\\n& y_{2,8} \\geq 0.0\\\\\n& y_{3,8} \\geq 200.0\\\\\n& y_{4,8} \\geq 160.0\\\\\n& y_{5,8} \\geq 40.0\\\\\n& y_{1,9} \\geq 0.0\\\\\n& y_{2,9} \\geq 0.0\\\\\n& y_{3,9} \\geq 200.0\\\\\n& y_{4,9} \\geq 160.0\\\\\n& y_{5,9} \\geq 40.0\\\\\n& y_{1,10} \\geq 0.0\\\\\n& y_{2,10} \\geq 0.0\\\\\n& y_{3,10} \\geq 200.0\\\\\n& y_{4,10} \\geq 160.0\\\\\n& y_{5,10} \\geq 40.0\\\\\n& y_{1,11} \\geq 0.0\\\\\n& y_{2,11} \\geq 0.0\\\\\n& y_{3,11} \\geq 200.0\\\\\n& y_{4,11} \\geq 160.0\\\\\n& y_{5,11} \\geq 40.0\\\\\n& y_{1,12} \\geq 0.0\\\\\n& y_{2,12} \\geq 0.0\\\\\n& y_{3,12} \\geq 200.0\\\\\n& y_{4,12} \\geq 160.0\\\\\n& y_{5,12} \\geq 40.0\\\\\n& y_{1,13} \\geq 0.0\\\\\n& y_{2,13} \\geq 0.0\\\\\n& y_{3,13} \\geq 200.0\\\\\n& y_{4,13} \\geq 160.0\\\\\n& y_{5,13} \\geq 40.0\\\\\n& y_{1,14} \\geq 0.0\\\\\n& y_{2,14} \\geq 0.0\\\\\n& y_{3,14} \\geq 200.0\\\\\n& y_{4,14} \\geq 160.0\\\\\n& y_{5,14} \\geq 40.0\\\\\n& y_{1,15} \\geq 0.0\\\\\n& y_{2,15} \\geq 0.0\\\\\n& y_{3,15} \\geq 200.0\\\\\n& y_{4,15} \\geq 160.0\\\\\n& y_{5,15} \\geq 40.0\\\\\n& y_{1,16} \\geq 0.0\\\\\n& y_{2,16} \\geq 0.0\\\\\n& y_{3,16} \\geq 200.0\\\\\n& y_{4,16} \\geq 160.0\\\\\n& y_{5,16} \\geq 40.0\\\\\n& y_{1,17} \\geq 0.0\\\\\n& y_{2,17} \\geq 0.0\\\\\n& y_{3,17} \\geq 200.0\\\\\n& y_{4,17} \\geq 160.0\\\\\n& y_{5,17} \\geq 40.0\\\\\n& y_{1,18} \\geq 0.0\\\\\n& y_{2,18} \\geq 0.0\\\\\n& y_{3,18} \\geq 200.0\\\\\n& y_{4,18} \\geq 160.0\\\\\n& y_{5,18} \\geq 40.0\\\\\n& y_{1,19} \\geq 0.0\\\\\n& y_{2,19} \\geq 0.0\\\\\n& y_{3,19} \\geq 200.0\\\\\n& y_{4,19} \\geq 160.0\\\\\n& y_{5,19} \\geq 40.0\\\\\n& y_{1,20} \\geq 0.0\\\\\n& y_{2,20} \\geq 0.0\\\\\n& y_{3,20} \\geq 200.0\\\\\n& y_{4,20} \\geq 160.0\\\\\n& y_{5,20} \\geq 40.0\\\\\n& y_{1,21} \\geq 0.0\\\\\n& y_{2,21} \\geq 0.0\\\\\n& y_{3,21} \\geq 200.0\\\\\n& y_{4,21} \\geq 160.0\\\\\n& y_{5,21} \\geq 40.0\\\\\n& y_{1,22} \\geq 0.0\\\\\n& y_{2,22} \\geq 0.0\\\\\n& y_{3,22} \\geq 200.0\\\\\n& y_{4,22} \\geq 160.0\\\\\n& y_{5,22} \\geq 40.0\\\\\n& y_{1,23} \\geq 0.0\\\\\n& y_{2,23} \\geq 0.0\\\\\n& y_{3,23} \\geq 200.0\\\\\n& y_{4,23} \\geq 160.0\\\\\n& y_{5,23} \\geq 40.0\\\\\n& y_{1,24} \\geq 0.0\\\\\n& y_{2,24} \\geq 0.0\\\\\n& y_{3,24} \\geq 200.0\\\\\n& y_{4,24} \\geq 160.0\\\\\n& y_{5,24} \\geq 40.0\\\\\n& y_{1,1} \\leq 150.0\\\\\n& y_{2,1} \\leq 200.0\\\\\n& y_{3,1} \\leq 1000.0\\\\\n& y_{4,1} \\leq 700.0\\\\\n& y_{5,1} \\leq 500.0\\\\\n& y_{1,2} \\leq 150.0\\\\\n& y_{2,2} \\leq 200.0\\\\\n& y_{3,2} \\leq 1000.0\\\\\n& y_{4,2} \\leq 700.0\\\\\n& y_{5,2} \\leq 500.0\\\\\n& y_{1,3} \\leq 150.0\\\\\n& y_{2,3} \\leq 200.0\\\\\n& y_{3,3} \\leq 1000.0\\\\\n& y_{4,3} \\leq 700.0\\\\\n& y_{5,3} \\leq 500.0\\\\\n& y_{1,4} \\leq 150.0\\\\\n& y_{2,4} \\leq 200.0\\\\\n& y_{3,4} \\leq 1000.0\\\\\n& y_{4,4} \\leq 700.0\\\\\n& y_{5,4} \\leq 500.0\\\\\n& y_{1,5} \\leq 150.0\\\\\n& y_{2,5} \\leq 200.0\\\\\n& y_{3,5} \\leq 1000.0\\\\\n& y_{4,5} \\leq 700.0\\\\\n& y_{5,5} \\leq 500.0\\\\\n& y_{1,6} \\leq 150.0\\\\\n& y_{2,6} \\leq 200.0\\\\\n& y_{3,6} \\leq 1000.0\\\\\n& y_{4,6} \\leq 700.0\\\\\n& y_{5,6} \\leq 500.0\\\\\n& y_{1,7} \\leq 150.0\\\\\n& y_{2,7} \\leq 200.0\\\\\n& y_{3,7} \\leq 1000.0\\\\\n& y_{4,7} \\leq 700.0\\\\\n& y_{5,7} \\leq 500.0\\\\\n& y_{1,8} \\leq 150.0\\\\\n& y_{2,8} \\leq 200.0\\\\\n& y_{3,8} \\leq 1000.0\\\\\n& y_{4,8} \\leq 700.0\\\\\n& y_{5,8} \\leq 500.0\\\\\n& y_{1,9} \\leq 150.0\\\\\n& y_{2,9} \\leq 200.0\\\\\n& y_{3,9} \\leq 1000.0\\\\\n& y_{4,9} \\leq 700.0\\\\\n& y_{5,9} \\leq 500.0\\\\\n& y_{1,10} \\leq 150.0\\\\\n& y_{2,10} \\leq 200.0\\\\\n& y_{3,10} \\leq 1000.0\\\\\n& y_{4,10} \\leq 700.0\\\\\n& y_{5,10} \\leq 500.0\\\\\n& y_{1,11} \\leq 150.0\\\\\n& y_{2,11} \\leq 200.0\\\\\n& y_{3,11} \\leq 1000.0\\\\\n& y_{4,11} \\leq 700.0\\\\\n& y_{5,11} \\leq 500.0\\\\\n& y_{1,12} \\leq 150.0\\\\\n& y_{2,12} \\leq 200.0\\\\\n& y_{3,12} \\leq 1000.0\\\\\n& y_{4,12} \\leq 700.0\\\\\n& y_{5,12} \\leq 500.0\\\\\n& y_{1,13} \\leq 150.0\\\\\n& y_{2,13} \\leq 200.0\\\\\n& y_{3,13} \\leq 1000.0\\\\\n& y_{4,13} \\leq 700.0\\\\\n& y_{5,13} \\leq 500.0\\\\\n& y_{1,14} \\leq 150.0\\\\\n& y_{2,14} \\leq 200.0\\\\\n& y_{3,14} \\leq 1000.0\\\\\n& y_{4,14} \\leq 700.0\\\\\n& y_{5,14} \\leq 500.0\\\\\n& y_{1,15} \\leq 150.0\\\\\n& y_{2,15} \\leq 200.0\\\\\n& y_{3,15} \\leq 1000.0\\\\\n& y_{4,15} \\leq 700.0\\\\\n& y_{5,15} \\leq 500.0\\\\\n& y_{1,16} \\leq 150.0\\\\\n& y_{2,16} \\leq 200.0\\\\\n& y_{3,16} \\leq 1000.0\\\\\n& y_{4,16} \\leq 700.0\\\\\n& y_{5,16} \\leq 500.0\\\\\n& y_{1,17} \\leq 150.0\\\\\n& y_{2,17} \\leq 200.0\\\\\n& y_{3,17} \\leq 1000.0\\\\\n& y_{4,17} \\leq 700.0\\\\\n& y_{5,17} \\leq 500.0\\\\\n& y_{1,18} \\leq 150.0\\\\\n& y_{2,18} \\leq 200.0\\\\\n& y_{3,18} \\leq 1000.0\\\\\n& y_{4,18} \\leq 700.0\\\\\n& y_{5,18} \\leq 500.0\\\\\n& y_{1,19} \\leq 150.0\\\\\n& y_{2,19} \\leq 200.0\\\\\n& y_{3,19} \\leq 1000.0\\\\\n& y_{4,19} \\leq 700.0\\\\\n& y_{5,19} \\leq 500.0\\\\\n& y_{1,20} \\leq 150.0\\\\\n& y_{2,20} \\leq 200.0\\\\\n& y_{3,20} \\leq 1000.0\\\\\n& y_{4,20} \\leq 700.0\\\\\n& y_{5,20} \\leq 500.0\\\\\n& y_{1,21} \\leq 150.0\\\\\n& y_{2,21} \\leq 200.0\\\\\n& y_{3,21} \\leq 1000.0\\\\\n& y_{4,21} \\leq 700.0\\\\\n& y_{5,21} \\leq 500.0\\\\\n& y_{1,22} \\leq 150.0\\\\\n& y_{2,22} \\leq 200.0\\\\\n& y_{3,22} \\leq 1000.0\\\\\n& y_{4,22} \\leq 700.0\\\\\n& y_{5,22} \\leq 500.0\\\\\n& y_{1,23} \\leq 150.0\\\\\n& y_{2,23} \\leq 200.0\\\\\n& y_{3,23} \\leq 1000.0\\\\\n& y_{4,23} \\leq 700.0\\\\\n& y_{5,23} \\leq 500.0\\\\\n& y_{1,24} \\leq 150.0\\\\\n& y_{2,24} \\leq 200.0\\\\\n& y_{3,24} \\leq 1000.0\\\\\n& y_{4,24} \\leq 700.0\\\\\n& y_{5,24} \\leq 500.0\\\\\n\\end{aligned} \\]\n\n\n\n\nCode\n\nset_silent(dispatch2)\noptimize!(dispatch2)\n\ngen = value.(y).data\n\n\n5×24 Matrix{Float64}:\n  150.0   150.0  150.0  128.0  150.0  …   150.0   150.0   150.0   150.0\n  200.0   200.0  200.0  200.0  200.0      200.0   200.0   200.0   200.0\n 1000.0  1000.0  926.0  880.0  980.0     1000.0  1000.0  1000.0  1000.0\n  335.0   206.0  160.0  160.0  160.0      566.0   512.0   475.0   430.0\n   40.0    40.0   40.0   40.0   40.0       40.0    40.0    40.0    40.0\n\n\n\n\nCode\nareaplot(gen', \n    label=permutedims(gen_names), \n    xlabel = \"Hour\", \n    ylabel =\"Generated Electricity (MW)\", \n    color_palette=:tol_muted, \n    size=(1200, 600), \n    left_margin=6mm, \n    bottom_margin=6mm,\n    grid=:false,\n    legend = :outerright, ylim=(0, 2800),\n    legendfontsize=20, tickfontsize=20, \n    guidefontsize=20\n)\nplot!(demand, color=:red, \n    label=\"demand\", linestyle=:dash,\n    linewidth=5)\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\np = plot(gen', \n    label=permutedims(gen_names), \n    xlabel = \"Hour\", \n    ylabel =\"Generated Electricity (MW)\", \n    color_palette=:tol_muted, \n    linewidth=5,\n    size=(1200, 600), left_margin=6mm, \n    bottom_margin=6mm,\n    legendfontsize=20, tickfontsize=20, \n    guidefontsize=20,\n    legend=:outerright\n)\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotice that even though hydro is effectively zero-cost, we reduce dispatched hydropower in hour 4 because coal is at its minimum generating capacity and nuclear can’t be ramped down further. These constraints complicate the simple merit order that we previously saw.\nThese constraints also play a major role in systems with high levels of renewable penetration. For example, the so-called California “duck curve” is created by the challenges of ramping generation between the early afternoon, when solar generation is at its maximum, and in the evening, when solar generation is decreasing and demand increases rapidly.\n\n\n\nCalifornia Duck Curve"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#last-class",
+    "href": "slides/lecture04-1.html#last-class",
+    "title": "Uncertainty and Risk",
+    "section": "Last Class",
+    "text": "Last Class\n\nSimulation involves running a model to evaluate dynamics.\nAllows us to look at how system behaves under different conditions and/or parameter values.\nThink of analogy to experimentation.\nLooked at example of dissolved oxygen."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#simulation-workflow-overview",
+    "href": "slides/lecture04-1.html#simulation-workflow-overview",
+    "title": "Uncertainty and Risk",
+    "section": "Simulation Workflow Overview",
+    "text": "Simulation Workflow Overview\n\nSimulation Workflow Diagram"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#questions",
+    "href": "slides/lecture04-1.html#questions",
+    "title": "Uncertainty and Risk",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#systems-and-uncertainty",
+    "href": "slides/lecture04-1.html#systems-and-uncertainty",
+    "title": "Uncertainty and Risk",
+    "section": "Systems and Uncertainty",
+    "text": "Systems and Uncertainty\n\n\nDeterministic systems models can be subject to uncertainties due to the separation between the “internals” of the system and the “external” environment.\n\n\n\n\nConceptual Schematic of a Systems Model"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#reminder-all-models-are-wrong-but-some-are-useful",
+    "href": "slides/lecture04-1.html#reminder-all-models-are-wrong-but-some-are-useful",
+    "title": "Uncertainty and Risk",
+    "section": "Reminder: “All Models Are Wrong, But Some Are Useful”",
+    "text": "Reminder: “All Models Are Wrong, But Some Are Useful”\n\n\nEvery systems model simplifies or neglects certain aspects of the system!\nEven if appropriate, this results in uncertainty about how results translate to the real system.\n\n\n\n\nConceptual Schematic of a Systems Model"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#what-is-uncertainty",
+    "href": "slides/lecture04-1.html#what-is-uncertainty",
+    "title": "Uncertainty and Risk",
+    "section": "What is Uncertainty?",
+    "text": "What is Uncertainty?\nGlib Answer: A lack of certainty!\n\nMore Seriously: Uncertainty refers to an inability to exactly describe current or future values or states."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#types-of-uncertainty",
+    "href": "slides/lecture04-1.html#types-of-uncertainty",
+    "title": "Uncertainty and Risk",
+    "section": "Types of Uncertainty",
+    "text": "Types of Uncertainty\nTwo (broad) types of uncertainties:\n\nAleatory uncertainty, or uncertainties resulting from randomness;\nEpistemic uncertainty, or uncertainties resulting from lack of knowledge."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#on-epistemic-uncertainty",
+    "href": "slides/lecture04-1.html#on-epistemic-uncertainty",
+    "title": "Uncertainty and Risk",
+    "section": "On Epistemic Uncertainty",
+    "text": "On Epistemic Uncertainty\n\nXKCD cartoon 2440: Epistemic Uncertainty\nSource: https://xkcd.com/2440"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#probability",
+    "href": "slides/lecture04-1.html#probability",
+    "title": "Uncertainty and Risk",
+    "section": "Probability",
+    "text": "Probability\nWe often represent uncertainty using probabilities.\nWhat is probability?"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#what-is-probability",
+    "href": "slides/lecture04-1.html#what-is-probability",
+    "title": "Uncertainty and Risk",
+    "section": "What Is Probability?",
+    "text": "What Is Probability?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#two-definitions-of-probability",
+    "href": "slides/lecture04-1.html#two-definitions-of-probability",
+    "title": "Uncertainty and Risk",
+    "section": "Two Definitions of Probability",
+    "text": "Two Definitions of Probability\n\nLong-run frequency of an event (frequentist)\nDegree of belief that a proposition is true (Bayesian)\n\nThe frequentist definition concerns what would happen with a large enough number of repeated trials.\nThe Bayesian definition concerns the odds that you should bet on an outcome."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#probability-distributions",
+    "href": "slides/lecture04-1.html#probability-distributions",
+    "title": "Uncertainty and Risk",
+    "section": "Probability Distributions",
+    "text": "Probability Distributions\nWe often represent probability using distributions — more on this next time.\nThe choice of distributions can often play a large role in outcomes."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#neglecting-correlations",
+    "href": "slides/lecture04-1.html#neglecting-correlations",
+    "title": "Uncertainty and Risk",
+    "section": "Neglecting Correlations",
+    "text": "Neglecting Correlations\nFor example, an often key concern is whether uncertainties are correlated: do certain outcomes tend to occur in combination?\nIf this is the case, it can bias results to assume independence."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#correlated-climate-uncertainties",
+    "href": "slides/lecture04-1.html#correlated-climate-uncertainties",
+    "title": "Uncertainty and Risk",
+    "section": "Correlated Climate Uncertainties",
+    "text": "Correlated Climate Uncertainties\nConsider projections of future climate change for a certain emissions trajectory.\nThere are several key (uncertain) parameters affecting how:\n\ncarbon is cycled by the Earth system\nCO2 in the atmosphere results in warming."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#correlated-climate-uncertainties-1",
+    "href": "slides/lecture04-1.html#correlated-climate-uncertainties-1",
+    "title": "Uncertainty and Risk",
+    "section": "Correlated Climate Uncertainties",
+    "text": "Correlated Climate Uncertainties\n\n\n\nEquilibrium Climate Sensitivity\nOcean Heat Diffusivity\nAerosol Cooling Factor\nCarbon Sink Respiration Sensitivity\n\n\n\n\n\nCorrelated climate parameter estimates\n\n\n\nSource: Errickson et al (2021)"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#impact-of-neglecting-climate-correlations",
+    "href": "slides/lecture04-1.html#impact-of-neglecting-climate-correlations",
+    "title": "Uncertainty and Risk",
+    "section": "Impact of Neglecting Climate Correlations",
+    "text": "Impact of Neglecting Climate Correlations\n\n\nNeglecting these correlations can change the distribution of hindcasted and projected temperatures.\n\n\n\n\nImpact of ignoring parameter correlations on modeled temperatures\n\n\n\nSource: Errickson et al (2021)"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#systems-and-risk",
+    "href": "slides/lecture04-1.html#systems-and-risk",
+    "title": "Uncertainty and Risk",
+    "section": "Systems and Risk",
+    "text": "Systems and Risk\nDesigning and managing environmental systems is often about minimizing or managing risk:\n\nMaintaining clean air/water;\nPower grid reliabiliy standards;\nFlooding/other hazards;\nClimate change mitigation/adaptation."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#what-is-risk",
+    "href": "slides/lecture04-1.html#what-is-risk",
+    "title": "Uncertainty and Risk",
+    "section": "What is Risk?",
+    "text": "What is Risk?\nThe Society for Risk Analysis definition:\n\n\n“risk” involves uncertainty about the effects/implications of an activity with respect to something that humans value (such as health, well-being, wealth, property or the environment), often focusing on negative, undesirable consequences."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#ipcc-definition-of-risk",
+    "href": "slides/lecture04-1.html#ipcc-definition-of-risk",
+    "title": "Uncertainty and Risk",
+    "section": "IPCC Definition of Risk",
+    "text": "IPCC Definition of Risk\n\n\n…the potential for consequences where something of value is at stake and where the outcome is uncertain, recognizing the diversity of values. Risk is often represented as probability of occurrence of hazardous events or trends multiplied by the impacts if these events or trends occur.\n\n\n— Oppenheimer et al (2014)"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#so-what-is-risk",
+    "href": "slides/lecture04-1.html#so-what-is-risk",
+    "title": "Uncertainty and Risk",
+    "section": "So What is Risk?",
+    "text": "So What is Risk?\nImportant: “Risk” is not just another words for probability, but:\n\nInvolves uncertainty;\nUndesireable outcomes;\nEffects matter, not just the events themselves."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#components-of-risk",
+    "href": "slides/lecture04-1.html#components-of-risk",
+    "title": "Uncertainty and Risk",
+    "section": "Components of Risk",
+    "text": "Components of Risk\n\n\nMultiple components which contribute to risk:\n\nProbability of a hazard;\nExposure to that hazard;\nVulnerability to outcomes;\nSocioeconomic responses.\n\n\n\n\n\nOverview of the Components of Risk\n\n\n\nSource: Simpson et al (2021)"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#risk-management-example-well-contamination",
+    "href": "slides/lecture04-1.html#risk-management-example-well-contamination",
+    "title": "Uncertainty and Risk",
+    "section": "Risk Management Example: Well Contamination",
+    "text": "Risk Management Example: Well Contamination\nConsider the potential contamination of well water. How could we mitigate risk by:\n\n\nreducing hazards:\nreducing exposure:\nreducing vulnerability:\ninfluencing responses:"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#systems-and-risk-management",
+    "href": "slides/lecture04-1.html#systems-and-risk-management",
+    "title": "Uncertainty and Risk",
+    "section": "Systems and Risk Management",
+    "text": "Systems and Risk Management\nRisk management is often a key consideration in systems analysis. For example, consider regulatory standards.\n\nOften a tradeoff between strictness of a regulation and costs of compliance.\nSystems modeling is a key way to understand\n\nthe impacts of changing a regulation\nthe probability of failure to meet standards."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#key-points-1",
+    "href": "slides/lecture04-1.html#key-points-1",
+    "title": "Uncertainty and Risk",
+    "section": "Key Points",
+    "text": "Key Points\n\nUncertainties are a fundamental part of systems modeling and analysis.\nNeed to be thoughtful about the choices that were made in modeling and how they impact outcomes.\nProbabilities: more on this next class, but be careful about distributions and correlations!\nSystems analysis also often about understanding/managing risk."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#next-classes",
+    "href": "slides/lecture04-1.html#next-classes",
+    "title": "Uncertainty and Risk",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: Probability and Monte Carlo (briefly!)\nFriday: Lab on Monte Carlo.\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "about.html",

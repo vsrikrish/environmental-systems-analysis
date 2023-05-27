@@ -879,7 +879,7 @@
     "href": "slides/lecture03-1.html#what-is-simulation",
     "title": "Simulating Systems and Box Models",
     "section": "What is Simulation?",
-    "text": "What is Simulation?\nSimulation: evaluating a model to understand how a system might evolve under a particular set of conditions."
+    "text": "What is Simulation?\nSimulation: evaluating a model to understand how a system might evolve under a particular set of conditions.\nThink of simulation as data generation (or generative modeling).\nThe model represents a particular data-generating process."
   },
   {
     "objectID": "slides/lecture03-1.html#why-simulate-systems",
@@ -1145,7 +1145,7 @@
     "href": "slides/lecture02-1.html#key-takeaways-1",
     "title": "Understanding Systems with Models",
     "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nMathematical models allow us to understand how external inputs combine with internal system dynamics to produce outputs.\nModels can be prescriptive or descriptive depending on goal of analysis.\nFor most interesting problems, cannot solve analytically and need to use numerical methods."
+    "text": "Key Takeaways\n\nMathematical models allow us to understand how external inputs combine with internal system dynamics to produce outputs.\nModels can be prescriptive or descriptive depending on goal of analysis.\nFor most interesting problems, cannot solve analytically and need to use numerical methods.\nSimulation models: Generate data by evaluating model to represent system dynamics.\nOptimization model: Find parameters which maximize/minimize some criterion."
   },
   {
     "objectID": "slides/lecture02-1.html#key-takeaways-2",

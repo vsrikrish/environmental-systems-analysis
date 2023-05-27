@@ -180,6 +180,7 @@ scatter!([0], [3], color=:black, legend=false, markersize=10)
 :::
 ::::
 
+
 ## Analytic vs. Numerical Solutions
 
 Mathematical models can be solved:
@@ -239,6 +240,8 @@ They claim that their model has *precisely* predicted case counts for a few mont
 - Mathematical models allow us to understand how external inputs combine with internal system dynamics to produce outputs.
 - Models can be **prescriptive** or **descriptive** depending on goal of analysis.
 - For most interesting problems, cannot solve analytically and need to use numerical methods.
+- **Simulation** models: Generate data by evaluating model to represent system dynamics.
+- **Optimization** model: Find parameters which maximize/minimize some criterion.
 
 ## Key Takeaways
 

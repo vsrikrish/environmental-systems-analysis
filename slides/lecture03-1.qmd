@@ -64,6 +64,10 @@ using Measures
 
 **Simulation**: evaluating a model to understand how a system might evolve under a particular set of conditions.
 
+Think of simulation as *data generation* (or **generative** modeling).
+
+The model represents a particular data-generating process.
+
 
 ## Why Simulate Systems?
 

@@ -1736,6 +1736,188 @@
     "text": "Next Classes\nWednesday: Probability and Monte Carlo (briefly!)\nFriday: Lab on Monte Carlo.\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
+    "objectID": "slides/lecture04-2.html#last-class",
+    "href": "slides/lecture04-2.html#last-class",
+    "title": "Monte Carlo Simulation",
+    "section": "Last Class",
+    "text": "Last Class\n\nUsed dissolved oxygen model to simulate dynamics.\nCompeting consumption/aeration processes result in “sag” curve downstream of waste release.\nResults in difficulty assigning responsibility when dealing with multiple releases.\nWhen simulating with multiple boxes/initial conditions, remember to track all relevant state variables and update!"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#questions",
+    "href": "slides/lecture04-2.html#questions",
+    "title": "Monte Carlo Simulation",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#systems-and-uncertainty",
+    "href": "slides/lecture04-2.html#systems-and-uncertainty",
+    "title": "Monte Carlo Simulation",
+    "section": "Systems and Uncertainty",
+    "text": "Systems and Uncertainty\n\n\nDeterministic systems models can be subject to uncertainties due to the separation between the “internals” of the system and the “external” environment.\n\n\n\n\nConceptual Schematic of a Systems Model"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#definition-of-probability",
+    "href": "slides/lecture04-2.html#definition-of-probability",
+    "title": "Monte Carlo Simulation",
+    "section": "Definition of Probability",
+    "text": "Definition of Probability\nWe often deal with uncertainty using probabilities.\nProbability is:\n\nLong-run frequency of an event (frequentist)\nDegree of belief that a proposition is true (Bayesian)\n\nThe distinction isn’t essential for our purposes, but might be in the future…"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#probability-distributions",
+    "href": "slides/lecture04-2.html#probability-distributions",
+    "title": "Monte Carlo Simulation",
+    "section": "Probability Distributions",
+    "text": "Probability Distributions\nThe likelihood of possible values of an unknown quantity are often represented as a probability distribution.\nProbability distributions associate a probability to every event under consideration and have to follow certain rules (for example, total probability = 1)."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#selecting-a-distribution",
+    "href": "slides/lecture04-2.html#selecting-a-distribution",
+    "title": "Monte Carlo Simulation",
+    "section": "Selecting a Distribution",
+    "text": "Selecting a Distribution\nThe specification of distributions can strongly influence the analysis."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#selecting-a-distribution-1",
+    "href": "slides/lecture04-2.html#selecting-a-distribution-1",
+    "title": "Monte Carlo Simulation",
+    "section": "Selecting a Distribution",
+    "text": "Selecting a Distribution\nA distribution implicitly answers questions like:\n\nWhat is the most probable event? How much more likely is it than the others?\nAre larger or smaller events more, less, or equally probable?\nHow probable are extreme events?\nAre different events correlated, or are they independent?"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#key-features-of-probability-distributions",
+    "href": "slides/lecture04-2.html#key-features-of-probability-distributions",
+    "title": "Monte Carlo Simulation",
+    "section": "Key Features of Probability Distributions",
+    "text": "Key Features of Probability Distributions\n\nMean/Mode (what events are “typical”)\nSkew (are larger or smaller events more or equally probable)\nVariance (how spread out is the distribution around the mode)\nTail Probabilities (how probable are extreme events)"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#probability-distribution-tails",
+    "href": "slides/lecture04-2.html#probability-distribution-tails",
+    "title": "Monte Carlo Simulation",
+    "section": "Probability Distribution Tails",
+    "text": "Probability Distribution Tails\n\n\nThe tails of distributions represent the probability of high-impact outcomes.\nKey consideration: Small changes to these (low) probabilities can greatly influence risk."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#stochastic-simulation",
+    "href": "slides/lecture04-2.html#stochastic-simulation",
+    "title": "Monte Carlo Simulation",
+    "section": "Stochastic Simulation",
+    "text": "Stochastic Simulation\nMonte Carlo simulation: Propagating random samples through a model.\n\n\n\n\n\n\n\nG\n\n  \n\na\n\n Probability  Distribution   \n\nb\n\n Random  Samples   \n\na-&gt;b\n\n  Sample   \n\nc\n\n Model   \n\nb-&gt;c\n\n  Input   \n\nd\n\n Outputs   \n\nc-&gt;d\n\n  Simulate"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#goals-of-monte-carlo",
+    "href": "slides/lecture04-2.html#goals-of-monte-carlo",
+    "title": "Monte Carlo Simulation",
+    "section": "Goals of Monte Carlo",
+    "text": "Goals of Monte Carlo\nMonte Carlo is a broad method, which can be used to:\n\nObtain probability distributions of outputs;\nEstimate deterministic quantities (Monte Carlo estimation)."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#monte-carlo-estimation",
+    "href": "slides/lecture04-2.html#monte-carlo-estimation",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo Estimation",
+    "text": "Monte Carlo Estimation\nMonte Carlo estimation involves framing the quantity of interest as a summary statistic (such as an expected value)."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#mc-example-finding-pi",
+    "href": "slides/lecture04-2.html#mc-example-finding-pi",
+    "title": "Monte Carlo Simulation",
+    "section": "MC Example: Finding \\(\\pi\\)",
+    "text": "MC Example: Finding \\(\\pi\\)\n\n\nFinding \\(\\pi\\) by sampling random values from the unit square and computing the fraction in the unit circle. This is an example of Monte Carlo integration.\n\\[\\frac{\\text{Area of Circle}}{\\text{Area of Square}} = \\frac{\\pi}{4}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#mc-example-dice",
+    "href": "slides/lecture04-2.html#mc-example-dice",
+    "title": "Monte Carlo Simulation",
+    "section": "MC Example: Dice",
+    "text": "MC Example: Dice\n\n\nWhat is the probability of rolling 4 dice for a total of 19?\nCan simulate dice rolls and find the frequency of 19s among the samples."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#monte-carlo-estimation-1",
+    "href": "slides/lecture04-2.html#monte-carlo-estimation-1",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo Estimation",
+    "text": "Monte Carlo Estimation\nThis type of estimation can be repeated with any simulation model that has a stochastic component.\nFor example, consider our dissolved oxygen model. Suppose that we have a probability distribution for the inflow DO.\nHow could we compute the probability of DO falling below the regulatory standard somewhere downstream?"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#why-monte-carlo-works",
+    "href": "slides/lecture04-2.html#why-monte-carlo-works",
+    "title": "Monte Carlo Simulation",
+    "section": "Why Monte Carlo Works",
+    "text": "Why Monte Carlo Works\nWe can formalize this common use of Monte Carlo estimation as the computation of the expected value of a random quantity \\(Y\\), \\(\\mu = \\mathbb{E}[Y]\\).\nTo do this, generate \\(n\\) independent and identically distributed values \\(Y_1, \\ldots, Y_n\\). Then the sample estimate is\n\\[\\tilde{\\mu} = \\frac{1}{n}\\sum_{i=1}^n Y_i\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#monte-carlo-formally",
+    "href": "slides/lecture04-2.html#monte-carlo-formally",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo (Formally)",
+    "text": "Monte Carlo (Formally)\nMore generally, we want to compute some quantity \\(Y=f(X)\\), where \\(X\\) is distributed according to some probability distribution \\(p(x)\\) and \\(f(x)\\) is a real-valued function over a domain \\(D\\).\nThen \\[\\mu = \\mathbb{E}(Y) = \\int_D f(x)p(x)dx.\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#the-law-of-large-numbers",
+    "href": "slides/lecture04-2.html#the-law-of-large-numbers",
+    "title": "Monte Carlo Simulation",
+    "section": "The Law of Large Numbers",
+    "text": "The Law of Large Numbers\nIf\n\n\\(Y\\) is a random variable and its expectation exists and\n\\(Y_1, \\ldots, Y_n\\) are independently and identically distributed\n\nThen by the weak law of large numbers:\n\\[\\lim_{n \\to \\infty} \\mathbb{P}\\left(\\left|\\tilde{\\mu}_n - \\mu\\right| \\leq \\varepsilon \\right) = 1\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#the-law-of-large-numbers-1",
+    "href": "slides/lecture04-2.html#the-law-of-large-numbers-1",
+    "title": "Monte Carlo Simulation",
+    "section": "The Law of Large Numbers",
+    "text": "The Law of Large Numbers\nIn other words, eventually we will get within an arbitrary error of the true expectation. But how large is large enough?"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#monte-carlo-sample-mean",
+    "href": "slides/lecture04-2.html#monte-carlo-sample-mean",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo Sample Mean",
+    "text": "Monte Carlo Sample Mean\nNotice that the sample mean \\(\\tilde{\\mu}_n\\) is itself a random variable.\nWith some assumptions (the mean of \\(Y\\) exists and \\(Y\\) has finite variance), the expected Monte Carlo sample mean \\(\\mathbb{E}[\\tilde{\\mu}_n]\\) is\n\\[\\frac{1}{n}\\sum_{i=1}^n \\mathbb{E}[Y_i] = \\frac{1}{n} n \\mu = \\mu\\]\nThis means that the Monte Carlo estimate is an unbiased estimate of the mean."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#monte-carlo-error",
+    "href": "slides/lecture04-2.html#monte-carlo-error",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo Error",
+    "text": "Monte Carlo Error\nWe’d like to know more about the error of this estimate for a given sample size. The variance of this estimator is\n\\[\\tilde{\\sigma}_n^2 = \\text{Var}\\left(\\tilde{\\mu}_n\\right) = \\mathbb{E}\\left((\\tilde{\\mu}_n - \\mu)^2\\right) = \\frac{\\sigma_Y^2}{n}\\]\nSo as \\(n\\) increases, the standard error decreases:\n\\[\\tilde{\\sigma}_n = \\frac{\\sigma_Y}{\\sqrt{n}}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#monte-carlo-error-1",
+    "href": "slides/lecture04-2.html#monte-carlo-error-1",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo Error",
+    "text": "Monte Carlo Error\nIn other words, if we want to decrease the Monte Carlo error by 10x, we need 100x additional samples. This is not an ideal method for high levels of accuracy.\n\n\n\nMonte Carlo is an extremely bad method. It should only be used when all alternative methods are worse.\n\n\n— Sokal, Monte Carlo Methods in Statistical Mechanics, 1996"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#monte-carlo-confidence-intervals",
+    "href": "slides/lecture04-2.html#monte-carlo-confidence-intervals",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo Confidence Intervals",
+    "text": "Monte Carlo Confidence Intervals\nThis error estimate lets us compute confidence intervals for the MC estimate (details on the website).\nBasic Idea: The Central Limit Theorem says that with enough samples, the errors are normally distributed:\n\\[\\left\\|\\tilde{\\mu}_n - \\mu\\right\\| \\to \\mathcal{N}\\left(0, \\frac{\\sigma_Y^2}{n}\\right)\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#monte-carlo-confidence-intervals-1",
+    "href": "slides/lecture04-2.html#monte-carlo-confidence-intervals-1",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo Confidence Intervals",
+    "text": "Monte Carlo Confidence Intervals\nThis means that we can construct confidence intervals using the inverse cumulative distribution function for the normal distribution.\nThe \\(\\alpha\\)-confidence interval is: \\[\\tilde{\\mu}_n \\pm \\Phi^{-1}\\left(1 - \\frac{\\alpha}{2}\\right) \\frac{\\sigma_Y}{\\sqrt{n}}\\]\nFor example, the 95% confidence interval is \\(\\tilde{\\mu}_n \\pm 1.96 \\sqrt{\\sigma_Y}{\\sqrt{n}}\\)."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#implications-of-monte-carlo-error",
+    "href": "slides/lecture04-2.html#implications-of-monte-carlo-error",
+    "title": "Monte Carlo Simulation",
+    "section": "Implications of Monte Carlo Error",
+    "text": "Implications of Monte Carlo Error\nConverging at a rate of \\(1/\\sqrt{n}\\) is not great. But:\n\nAll models are wrong, and so there always exists some irreducible model error.\nWe often need a lot of simulations. Do we have enough computational power?"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#when-to-use-monte-carlo",
+    "href": "slides/lecture04-2.html#when-to-use-monte-carlo",
+    "title": "Monte Carlo Simulation",
+    "section": "When To Use Monte Carlo?",
+    "text": "When To Use Monte Carlo?\nIf you can compute your answers analytically, you probably should.\nBut for real problems, we often can’t, and problems that are analytically tractable are often so stylized that we want to test them across a variety of uncertainties to make sure we didn’t over-simplify.\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About This Website",

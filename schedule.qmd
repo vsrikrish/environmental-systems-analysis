@@ -19,7 +19,7 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 |      | Wed, Sep 06 | Modeling Dissolved Oxygen | [{{< fa sharp presentation-screen >}}](slides/lecture03-2.qmd){target="_blank"} | | | |
 |      | Fri, Sep 08 | Dissolved Oxygen Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture03-3.qmd){target="_blank"} | [{{< fa sharp pen-field >}}](hw/hw02/hw02.qmd) | | | 
 | 4    | Mon, Sep 11 | Uncertainty and Risk | [{{< fa sharp presentation-screen >}}](slides/lecture04-1.qmd){target="_blank"} | | | |
-|      | Wed, Sep 13 | Monte Carlo Simulation | | | | |
+|      | Wed, Sep 13 | Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture04-2.qmd){target="_blank"} | | | |
 |      | Fri, Sep 15 | Lab: Monte Carlo | | [{{< fa sharp laptop-code >}}](labs/lab02/lab02.qmd) | | |
 | 5    | Mon, Sep 18 | Prescriptive Modeling | | | | |
 |      | Wed, Sep 20 | Prescriptive Modeling II | | | | |

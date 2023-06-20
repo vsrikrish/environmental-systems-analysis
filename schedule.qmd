@@ -15,16 +15,17 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 | 2    | Mon, Aug 28 | Modeling Systems | [{{< fa sharp presentation-screen >}}](slides/lecture02-1.qmd){target="_blank"} | | | |
 |      | Wed, Aug 30 | Example: Wastewater Transport | [{{< fa sharp presentation-screen >}}](slides/lecture02-2.qmd){target="_blank"} | | | | 
 |      | Fri, Sep 01 | Example: Shallow Lake Eutrophication | [{{< fa sharp presentation-screen >}}](slides/lecture02-3.qmd){target="_blank"} | | | |
-| 3    | Mon, Sep 04 | Simulating Systems and Box Models | [{{< fa sharp presentation-screen >}}](slides/lecture03-1.qmd){target="_blank"} | | | |
-|      | Wed, Sep 06 | Modeling Dissolved Oxygen | [{{< fa sharp presentation-screen >}}](slides/lecture03-2.qmd){target="_blank"} | | | |
-|      | Fri, Sep 08 | Dissolved Oxygen Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture03-3.qmd){target="_blank"} | [{{< fa sharp pen-field >}}](hw/hw02/hw02.qmd) | | | 
-| 4    | Mon, Sep 11 | Uncertainty and Risk | [{{< fa sharp presentation-screen >}}](slides/lecture04-1.qmd){target="_blank"} | | | |
-|      | Wed, Sep 13 | Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture04-2.qmd){target="_blank"} | | | |
-|      | Fri, Sep 15 | Lab: Monte Carlo | | [{{< fa sharp laptop-code >}}](labs/lab02/lab02.qmd) | | |
-| 5    | Mon, Sep 18 | Prescriptive Modeling | | | | |
-|      | Wed, Sep 20 | Prescriptive Modeling II | | | | |
-|      | Fri, Sep 22 | Introduction to Optimization | | | | |
-| 6    | Mon, Sep 25 | Example: Resource and Land Allocation | | | | |
-|      | Wed, Sep 27 | Lab: Optimization with JuMP.jl | | | | |
+| 3    | Mon, Sep 04 | **No Class: Labor Day** | | | |
+|       | Wed, Sep 06 | Simulating Systems and Box Models | [{{< fa sharp presentation-screen >}}](slides/lecture03-1.qmd){target="_blank"} | | | |
+|      | Fri, Sep 08 | Modeling Dissolved Oxygen | [{{< fa sharp presentation-screen >}}](slides/lecture03-2.qmd){target="_blank"} | | | |
+|   4   | Mon, Sep 11 | Dissolved Oxygen Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture03-3.qmd){target="_blank"} | | [{{< fa sharp pen-field >}}](hw/hw02/hw02.qmd) | | | 
+|     | Wed, Sep 13 | Uncertainty and Risk | [{{< fa sharp presentation-screen >}}](slides/lecture04-1.qmd){target="_blank"} | | | |
+|      | Fri, Sep 15 | Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture04-2.qmd){target="_blank"} | | | |
+|  5    | Mon, Sep 18 | Lab: Monte Carlo | | [{{< fa sharp laptop-code >}}](labs/lab02/lab02.qmd) | | |
+|     | Wed, Sep 20 | Prescriptive Modeling | | | | |
+|      | Fri, Sep 22 | Prescriptive Modeling II | | | | |
+|  6    | Mon, Sep 25 | Introduction to Optimization | | | | |
+|     | Wed, Sep 27 | Example: Resource and Land Allocation | | | | |
+|      | Fri, Sep 29 | Lab: Optimization with JuMP.jl | | | | |
 
 :::

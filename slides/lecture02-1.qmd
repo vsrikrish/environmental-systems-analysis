@@ -240,6 +240,9 @@ They claim that their model has *precisely* predicted case counts for a few mont
 - Mathematical models allow us to understand how external inputs combine with internal system dynamics to produce outputs.
 - Models can be **prescriptive** or **descriptive** depending on goal of analysis.
 - For most interesting problems, cannot solve analytically and need to use numerical methods.
+
+## Key Takeaways
+
 - **Simulation** models: Generate data by evaluating model to represent system dynamics.
 - **Optimization** model: Find parameters which maximize/minimize some criterion.
 

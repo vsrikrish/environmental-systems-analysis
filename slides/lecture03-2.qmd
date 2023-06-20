@@ -1,6 +1,6 @@
 ---
-title: "Building A Dissolved Oxygen Model"
-subtitle: "Lecture 08"
+title: "Simulating Systems and Box Models"
+subtitle: "Lecture 07"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"
@@ -32,277 +32,273 @@ execute:
     freeze: auto
 ---
 
+```{julia}
+#| echo: false
+#| output: false
+
+import Pkg
+Pkg.activate(".")
+Pkg.instantiate()
+
+using Plots
+using LaTeXStrings
+using Measures
+```
+
 # Review and Questions
 
-## Last Class
+## Lake Eutrophication Example
 
-- Model-based simulation as a way to understand system dynamics and response.
-- Box models: mass-balance in some region of the domain
-- Can generalize single box models by:
-    - Adding more complexity;
-    - combining multiple boxes.
-
-## Why Simulate?
-
-1. System involves complex, nonlinear dynamics that may not be analytically tractable.
-2. Setting up and running a real-world experiment is not possible.
-3. State depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.
-4. Need to understand range of system performance across rarely-seen conditions.  
+- Nonlinear system dynamics can result in unexpected behaviors
+    - Bifurcations
+    - Tipping Points
+- Be careful about planning against particular parameter values or focusing on one process.
 
 ## Questions
 
 {{< include _poll-prompt.qmd >}}
 
-# Dissolved Oxygen Overview
+# Simulating Systems
 
-## Fate & Transport Modeling
+## What is Simulation?
 
-**How do nutrients and other quantities move through environmental mediums?**
+**Simulation**: evaluating a model to understand how a system might evolve under a particular set of conditions.
 
-What can make fate & transport modeling more complex?
+Think of simulation as *data generation* (or **generative** modeling).
 
-::: {.fragment .fade-in}
-- Multiple points of inflow;
-- More complex growth/decay dynamics.
-- Stochasticity/randomness.
+The model represents a particular data-generating process.
+
+
+## Why Simulate Systems?
+
+::: {.incremental}
+1. System involves complex, nonlinear dynamics that may not be analytically tractable.
+2. Setting up and running a real-world experiment is not possible.
+3. State depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.
+4. Need to understand range of system performance across rarely-seen conditions.  
 :::
 
-## Dissolved Oxygen
+## Simulating the Shallow Lake Model
+
+For the shallow lake model
+
+$$X_{t+1} = X_t + a_t + y_t + \frac{X_t^q}{1 + X_t^q} - bX_t, \quad
+y_t \sim \text{LogNormal}(\mu, \sigma^2).
+$$
+
+we need to simulate because:
+
+1. inflows $a_t, y_t$ can change over time (non-steady state);
+2. state $X_{t+1}$ depends on $X_t$.
+
+## What Do We Need To Simulate The Lake Model?
+
+{{< include _poll-prompt.qmd >}}
+
+## Lake Model Simulation: Parameters
+
+
+| Variable | Value | Units |
+|:--------:|:--------|:-----|
+| $X_0$ | $0$ | dimensionless |
+| $\mu$ | $\log(0.03)$ | dimensionless |
+| $\sigma^2$| $0.1$ | dimensionless |
+| $q$ | $2.5$ | dimensionless |
+| $b$ | $0.4$ | dimensionless
+
+## Lake Model Simulation: Results
 
 :::: {.columns}
 ::: {.column width=50%}
-Dissolved oxygen (DO) is the free, non-compound oxygen present in water or other liquids.
-
-Freshwater can only hold small amounts, and this capacity is regulated by temperature.
+{{< embed notebooks/shallow-lake.ipynb#fig-lake-inflows >}}
 :::
 
 ::: {.column width=50%}
-
-![Dissolved Oxygen by temperature](https://www.fondriest.com/environmental-measurements/wp-content/uploads/2013/11/dissolvedoxygen_river-levels.jpg){width=80%}
-
-::: {.caption}
-Source: [fondriest.com](https://www.fondriest.com/environmental-measurements/parameters/water-quality/dissolved-oxygen/)
-:::
+{{< embed notebooks/shallow-lake.ipynb#fig-lake-state >}}
 :::
 ::::
 
-## Temperature Impact on DO
+## Simulating Multiple Objectives
 
-![Dissolved Oxygen and Temperature Plot](https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/do_temp_0.png)
+Simulation also facilitates analyses of multiple outcomes of interest, which can involve tradeoffs.
 
-::: {.caption}
-Source: [usgs.gov](https://www.usgs.gov/special-topics/water-science-school/science/dissolved-oxygen-and-water)
+For example:
+
+::: {.incremental}
+- **Electric power system**: CO$_2$ emissions and cost;
+- **Reservoir operations**: hydropower potential, water supply, flood risk.
 :::
 
-## Dissolved Oxygen and Life
+# Box Models
+
+## What Is A Box Model?
+
+**Box models** are a common building block of simulation models. 
 
 :::: {.columns}
 ::: {.column width=40%}
+Box models are all about mass-balance (mass $m$), assume well-mixed within box. 
 
-Dissolved oxygen is an important nutrient for aquatic life. 
-
-**Hypoxia** occurs when DO levels are $< 2$ mg/L.
+Can be steady-state $(\dot{m} = 0)$ or not.
 
 :::
-
-::: {.column width=50%}
-
-![Minimum DO requirements for freshwater fish](https://www.fondriest.com/environmental-measurements/wp-content/uploads/2013/11/dissolvedoxygen_levels-fresh.jpg){width=45%}
-:::
-
-:::{.column width=10%}
-
-::: {.caption}
-Source: [fondriest.com](https://www.fondriest.com/environmental-measurements/parameters/water-quality/dissolved-oxygen/)
-:::
+::: {.column width=60%}
+![Steady-State Box Example](images/airshed-box.svg)
 :::
 ::::
 
+## Box Models and Simulation
 
-## Factors Influencing DO
+Many simulation models are built by:
 
-- Temperature, Pressure, Depth
-- Salinity
-- Mixing
-- Plant and Microbial Life
-- Organic Matter
+1. Dividing the domain into individual boxes (1-D, 2-D, or 3-D);
+2. Starting from initial box:
+    1. Simulate change to stock within box;
+    2. Obtain outflow as inflow into adjacent boxes;
+    3. Move onto next box;
+3. If needed (*e.g.* non-steady-state), repeat for each time step.
 
-## Impact of Paris On Seine DO, 1874
+## Box Model Applications
 
-![Dissolved Oxygen Downstream of Paris, 1874](https://www.researchgate.net/publication/325721176/figure/fig10/AS:962439298445322@1606474818380/Longitudinal-profiles-x-axis-in-km-downstream-of-Paris-center-of-dissolved-oxygen_W640.jpg)
+Some applications of box models include:
 
-::: {.caption}
-Source: Dmitrieva, T., et al. (2018). <https://doi.org/10.1007/s12685-018-0216-7>
-:::
+- Water balance/hydrologic flow models;
+- Climate models (ocean heat/CO$_2$ uptake through "box" layers)
+- Airsheds
 
-## DO Regulatory Standards
+## Box Model Example: Airsheds
 
-**Objective**: Keep DO *above* the regulatory standard.
+Let's look at a simple steady-state box model of an airshed.
 
-In NY (via [Westlaw](https://govt.westlaw.com/nycrr/Document/I4ed90412cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default)&bhcp=1)): 
 
-- DO levels may not fall below 3 mg/L
-- DO may not be below 4.8 mg/L for an extended period
+| Variable | Meaning | Units |
+|:--------:|:-------:|:------|
+| $m$ | mass of some air pollutant | g |
+| $C$ | concentration in box | g/m$^3$ |
+| $S, D$ | source, deposition rate within the box | g/s |
+| $u$  | wind speed | m/s |
+| $L, W, H$ | box dimensions | m |
 
-# Modeling Dissolved Oxygen
+## Steady-State Airshed Box Model
 
-## Oxygen Balance in Rivers and Streams
-
-![Processes influencing oxygen balance in moving freshwater](images/do-processes.svg){height=100%}
-
-## Selecting a Metric for DO Fluxes
-
-Typically use **oxygen demand** (OD): 
-
-- measure of the concentration of oxidizable materials in a water sample
-- metric for organic waste contamination
-- reflects how oxygen will be depleted in a given segment
-
-But there are several different processes affecting total OD!
-
-## Biochemical Oxygen Demand (BOD)
-
-Oxygen used by microbes during aerobic decomposition of organic materials:
-$$\text{Organic Matter} + \text{O}_2 \rightarrow \text{CO}_2 +  \text{H}_2\text{O} + \text{NO}_3 + \text{SO}_2 + \text{Residuals}$$
-
-Broadly speaking, we care about two types of BOD: **Carbonaceous BOD** and **Nitrogenous BOD**.
-
-## Carbonaceous BOD (CBOD)
-
-Oxygen consumed during microbial decomposition of carbon compounds, *e.g.*:
-$$\text{C}_a\text{H}_b\text{O}_c + d\text{O}_2 \rightarrow e\text{H}_2\text{O} + f\text{CO}_2$$
-
-## Nitrogenous BOD (NBOD)
-
-Oxygen consumed during microbial decomposition of nitrogen compounds:
-$$2\text{NH}_2^+ + 4\text{O}_2 \rightarrow 2\text{H}_2\text{O} + 4\text{H}^+ + 2\text{NO}_3^-$$
-
-## BOD and Time
-
-Moreover, BOD is differentiated based on time frame, *e.g.*:
-
-- BOD<sub>5</sub>: oxygen demand over 5 days
-- BOD<sub>20</sub>: oxygen demand over 20 days
-
-## DO Modeling Needs
-
-Need a model that will predict DO as a function of CBOD, NBOD.
-
-Use a *fate and transport* modeling approach: how are relevant quantities moved downstream?
-
-**Note**: Can't assume homogeneous processes.
-
-## Modeling DO
-
-:::: {.columns}
-::: {.column width=30%}
-So what do we do?
-
-Start by assuming *steady-state* waste in each section (or box...).
-
-:::
-::: {.column width=70%}
-
-![Processes influencing oxygen balance in moving freshwater](images/do-processes.svg)
-:::
-::::
-
-## Modeling DO
-
-:::: {.columns}
-::: {.column width=30%}
-
-We'll track the mass balance in terms of rates (not absolute mass).
-
-What happens to an element of water?
-:::
-::: {.column width=70%}
-
-![Processes influencing oxygen balance in moving freshwater](images/do-processes.svg)
-:::
-::::
-
-## Steady-State Waste, DO Mass Balance
-
-Let $U$ be the river velocity (km/d), $x$ the distance downstream from a waste release site in km, and $C(x)$ the DO concentration at $x$ in mg/L. 
+Steady-state box &Rightarrow; $\dot{m} = 0$.
 
 \begin{align}
-U \frac{dC}{dx} &= \text{Change in DO} \\[0.5em]
-&= \text{Reaeration} + \text{Photosynthesis} - \text{Respiration}  \\[0.5em]
-& \qquad - \text{Benthal Uptake} - \text{CBOD} - \text{NBOD}
-
+0 &= m_\text{in} - m_\text{out} + S - D \\[0.5em]
+&\class{\fragment}{{} = (u WH) C_\text{in} - (u WH) C + S - D } \\[0.5em]
 \end{align}
 
-## BOD Oxygen Uptake
-
-Assume deoxygenation from waste decomposition is first-order (rate $k$):
-
-$$\begin{aligned}
-\frac{dM}{dt} &= -kM \\\\
-\Rightarrow M &= M_0 \exp(-kt)
-\end{aligned}$$
-
-
 ::: {.fragment .fade-in}
-But our equations are formulated in terms of distance:
-
-$$M = M_0 \exp(-kx/U)$$
-
+Solving for $C$:
+$$C = C_{in} + \frac{S-D}{uWH}$$
 :::
 
+## Non-Steady State Box Model
 
-## BOD Oxygen Uptake
+Now let's assume some process affecting $m$ depends on time.
 
-For biochemical organics, if $k_c$ is the deoxygenation rate (d$^{-1}$);
+For example: let's say we care about an air pollutant which has a first-order decay rate $k$, so $L(t) = -km_\text{box}(t)$.
 
-$$B(x) = B_0 \exp(-k_c x / U);$$
+$$\Rightarrow \dot{m} = m_\text{in} - m_\text{out} + S - km_\text{box}(t)$$
 
-For nitrification, if $k_n$ is the deoxygenation rate (d$^{-1}$):
+## Non-Steady State Solution
 
-$$N(x) = N_0 \exp(-k_n x / U).$$
+\begin{gather}
+&\dot{m} = \frac{d(CV)}{dt} = \overbrace{(u WH) C_\text{in}}^{\text{inflow}} - \overbrace{(u WH) C}^{\text{outflow}} + \overbrace{S - D}^{\text{net emissions}} - \overbrace{kCV}^{\text{mass decay}} \\[0.5em]
+&\class{fragment}{{} \frac{dC}{dt} = \underbrace{\frac{u WH}{V} C_\text{in} + \frac{S - D}{V}}_{\Large =P} - \underbrace{\left(\frac{u WH}{V} + k\right)}_{\Large =l} C} \\[0.5em]
+&\class{fragment}{{} \frac{dC}{dt} = P - l C}
+\end{gather}
 
-## Steady-State Waste, DO Mass Balance
+## Non-Steady State Solution
 
-So the corresponding oxygen uptake rates are 
-$$k_c B(x) = k_c B_0 \exp(-k_c x / U)$$
- and 
+\begin{gather}
+&\frac{dC}{dt} = P - l C \\[0.5em]
+&\class{fragment}{{} \int \frac{dC}{P-lC} = \int dt} \\[0.5em] 
+&\class{fragment}{{} -\frac{1}{l} \ln\left(P-lC\right) = t + A} \\[0.5em] 
+&\class{fragment}{{} \underbrace{C(0) = C_0}_\text{initial condition} \Rightarrow A = -\frac{1}{l} \ln\left(P-lC_0\right)}
+\end{gather}
 
- $$k_n N(x) = k_n N_0 \exp(-k_n x / U).$$
+## Non-Steady State Solution
 
+\begin{gather}
+&-\frac{1}{l} \ln\left(P-lC\right) = t - \frac{1}{l} \ln\left(P-lC_0\right) \\[0.5em] 
+&\class{fragment}{{} -\frac{1}{l} \ln\left(\frac{P-lC}{P-lC_0}\right) = t} \\[0.5em] 
+&\class{fragment}{{} C = -\frac{1}{l} \left(P - e^{-lt}\left(P-lC_0\right)\right)} \\[0.5em] 
+&\class{fragment}{{} C(t) = C_0 e^{-lt} + \frac{P}{l}\left(1 - e^{-lt}\right) } 
+\end{gather}
 
-## Steady-State Waste, DO Mass Balance
+## Non-Steady State Solution
 
-Other processes:
+$$C(t) = \color{red}C_0 e^{-lt} \color{black}+ \color{blue}\frac{P}{l}\left(1 - e^{-lt}\right)$$
 
-- Reaeration, assume a simple linear model based on difference from saturation level $C_s$: $k_a (C_s - C)$
+:::: {.columns}
+::: {.column width=60%}
+```{julia}
+#| echo: false
 
-- Assume measured, constant values for photosynthesis ($P_s$), respiration ($R$), benthal uptake ($S_B$)
+C₀ = 2
+T = 10
+k = 4
+l = 0.8
+P = 4
 
-## Steady-State Waste, DO Mass Balance
+C₁ = C₀ .* exp.(-l * (0:0.01:T))
+C₂ = (P / l) * (1 .- exp.(-l * (0:0.01:T)))
+C = C₁ .+ C₂
 
-Putting it all together:
+plot(0:0.01:T, C₁, color=:red, linewidth=3, guidefontsize=18, tickfontsize=16, legendfontsize=18, legend=:right, label="Initial Transient")
+plot!(0:0.01:T, C₂, linewidth=3, color=:blue, label="Steady-State Approach")
+plot!(0:0.01:T, C, linewidth=3, color=:black, label="Box Concentration")
+xlabel!(L"t")
+ylabel!(L"C")
+plot!(size=(600, 400), bottom_margin=10mm, left_margin=4mm, yticks=:false, xticks=:false)
+```
+:::
+::: {.column width=40%}
+- Initial condition is **transient** (decays to zero eventually);
+- Concentration converges to a steady-state solution.
 
-$$\begin{aligned}
-U \frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B \\\\
-&\quad - k_cB_0\exp\left(\frac{-k_cx}{U}\right) - k_n N_0\exp\left(\frac{-k_nx}{U}\right)
-\end{aligned}$$
+:::
+::::
 
-# Key Points
+## Time-Varying Flows
 
-## Key Points
+Can also incorporate more complex in/outflow dynamics:
 
-- Dissolved oxygen (DO) is essential for water quality and aquatic life.
-- Commonly regulated to keep DO above a minimum threshold.
-- DO impacted by a number of factors, notably organic waste decomposition and nitrification.
-- We derived a first-order equation for DO using mass-balance and fate & transport principles.
+- stochastic/dynamic in advection (wind speed);
+- Inflow/outflow concentrations varying over time
+
+## Multiple Boxes
+
+To make this into a multi-box model, we can string together boxes (so the outflow from box 1 becomes the inflow for box 2).
+
+We'll see an example of this next class.
+
+**Key point for now**: there is a computational/approximation tradeoff when deciding on box resolution.
+
+# Key Takeaways
+
+## Key Takeaways: Simulation
+
+- Simulation: Use model to evaluate system dynamics/outputs under different conditions.
+- Simulation &hArr; Descriptive Modeling
+- Simulation useful as a proxy for "real-world" experiments or future projections
+
+## Key Takeaways: Box Models
+
+- Building block for many simulation models.
+- Boxes are $n$-d "chunks" of the system domain.
+- Box Models &hArr; Mass/Energy Balance.
+- Non-Steady State Box Models can often be decomposed into a transient portion and an equilibrium/steady-state portion.
+- Can combine multiple boxes together to create more complex models.
 
 # Upcoming Schedule
 
 ## Next Classes
 
-**Friday**: Use DO model for simulation.
+**Wednesday**: Building Dissolved Oxygen Model
 
-**Next Week**: Uncertainty, Probability (Monte Carlo) and Risk Analysis
+**Friday**: Dissolved Oxygen Simulation
 
 **Homework**:
 - HW1 due Friday

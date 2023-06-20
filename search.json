@@ -142,135 +142,191 @@
   {
     "objectID": "slides/lecture03-3.html#last-class",
     "href": "slides/lecture03-3.html#last-class",
-    "title": "Dissolved Oxygen Simulation",
+    "title": "Building A Dissolved Oxygen Model",
     "section": "Last Class",
-    "text": "Last Class\n\n\n\nDissolved Oxygen: essential quantity for aquatic life\nMinimum concentration regulated\nUsed mass-balance to derive first-order equation\n\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+    "text": "Last Class\n\nModel-based simulation as a way to understand system dynamics and response.\nBox models: mass-balance in some region of the domain\nCan generalize single box models by:\n\nAdding more complexity;\ncombining multiple boxes."
   },
   {
-    "objectID": "slides/lecture03-3.html#do-concentration-equation",
-    "href": "slides/lecture03-3.html#do-concentration-equation",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "DO Concentration Equation",
-    "text": "DO Concentration Equation\n\\[\\begin{align}\n\\overbrace{U \\frac{dC}{dx}}^{\\text{Concentration Change}} &= \\overbrace{k_a (C_s - C)}^{\\text{Reaeration}} + \\overbrace{P - R - S_B}^{\\text{Constants}} \\\\[0.5em]\n&\\quad - \\underbrace{k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right)}_{\\text{CBOD}} - \\underbrace{k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)}_{\\text{NBOD}}\n\\end{align}\\]"
+    "objectID": "slides/lecture03-3.html#why-simulate",
+    "href": "slides/lecture03-3.html#why-simulate",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Why Simulate?",
+    "text": "Why Simulate?\n\nSystem involves complex, nonlinear dynamics that may not be analytically tractable.\nSetting up and running a real-world experiment is not possible.\nState depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.\nNeed to understand range of system performance across rarely-seen conditions."
   },
   {
     "objectID": "slides/lecture03-3.html#questions",
     "href": "slides/lecture03-3.html#questions",
-    "title": "Dissolved Oxygen Simulation",
+    "title": "Building A Dissolved Oxygen Model",
     "section": "Questions",
     "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture03-3.html#steady-state-mass-balance-solution",
-    "href": "slides/lecture03-3.html#steady-state-mass-balance-solution",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Steady-State Mass-Balance Solution",
-    "text": "Steady-State Mass-Balance Solution\n\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1), \\\\[1em]\n\n\\alpha_1 &= \\exp\\left(-\\frac{k_a x}{U}\\right) \\\\[0.25em]\n\\alpha_2 &= \\left(\\frac{k_c}{k_a-k_c}\\right)\\left[\\exp\\left(\\frac{-k_c x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right] \\\\[0.25em]\n\\alpha_3 &= \\left(\\frac{k_n}{k_a-k_n}\\right)\\left[\\exp\\left(\\frac{-k_n x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right]\n\\end{align}\\]"
+    "objectID": "slides/lecture03-3.html#fate-transport-modeling",
+    "href": "slides/lecture03-3.html#fate-transport-modeling",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Fate & Transport Modeling",
+    "text": "Fate & Transport Modeling\nHow do nutrients and other quantities move through environmental mediums?\nWhat can make fate & transport modeling more complex?\n\n\nMultiple points of inflow;\nMore complex growth/decay dynamics.\nStochasticity/randomness."
   },
   {
-    "objectID": "slides/lecture03-3.html#steady-state-mass-balance-solution-1",
-    "href": "slides/lecture03-3.html#steady-state-mass-balance-solution-1",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Steady-State Mass-Balance Solution",
-    "text": "Steady-State Mass-Balance Solution\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 \\\\[0.5em]\n& \\qquad + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1),\n\\end{align}\\]\nNote: Usually, these models ignore \\(P\\), \\(R\\), and \\(S_B\\).\nWhy do you think that might be?"
+    "objectID": "slides/lecture03-3.html#dissolved-oxygen",
+    "href": "slides/lecture03-3.html#dissolved-oxygen",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Dissolved Oxygen",
+    "text": "Dissolved Oxygen\n\n\nDissolved oxygen (DO) is the free, non-compound oxygen present in water or other liquids.\nFreshwater can only hold small amounts, and this capacity is regulated by temperature.\n\n\n\n\nDissolved Oxygen by temperature\n\n\n\nSource: fondriest.com"
   },
   {
-    "objectID": "slides/lecture03-3.html#dissolved-oxygen-sag-curve",
-    "href": "slides/lecture03-3.html#dissolved-oxygen-sag-curve",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Dissolved Oxygen “Sag” Curve",
-    "text": "Dissolved Oxygen “Sag” Curve\n\n\nDissolved oxygen concentrations downstream of a waste release “sag” and then start to recover as CBOD and NBOD decrease.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Sag curve for dissolved oxygen."
+    "objectID": "slides/lecture03-3.html#temperature-impact-on-do",
+    "href": "slides/lecture03-3.html#temperature-impact-on-do",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Temperature Impact on DO",
+    "text": "Temperature Impact on DO\n\nDissolved Oxygen and Temperature Plot\nSource: usgs.gov"
   },
   {
-    "objectID": "slides/lecture03-3.html#how-to-simulate",
-    "href": "slides/lecture03-3.html#how-to-simulate",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "How To Simulate",
-    "text": "How To Simulate\nSo far, this is only different from our single-box airshed in terms of the number of processes.\nSingle equation, straightforward to evaluate across many values of \\(x\\) with a loop:\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = (y -&gt; dissolved_oxygen(y, parameters)).(x)"
+    "objectID": "slides/lecture03-3.html#dissolved-oxygen-and-life",
+    "href": "slides/lecture03-3.html#dissolved-oxygen-and-life",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Dissolved Oxygen and Life",
+    "text": "Dissolved Oxygen and Life\n\n\nDissolved oxygen is an important nutrient for aquatic life.\nHypoxia occurs when DO levels are \\(&lt; 2\\) mg/L.\n\n\n\n\nMinimum DO requirements for freshwater fish\n\n\n\n\nSource: fondriest.com"
   },
   {
-    "objectID": "slides/lecture03-3.html#single-discharge-example",
-    "href": "slides/lecture03-3.html#single-discharge-example",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Single-Discharge Example",
-    "text": "Single-Discharge Example\n\n\n\n\n\n\n\n\n\nParameter\nRiver\nWaste\nGeneral\n\n\n\n\nVolume (m3/d)\n100,000\n10,000\n—\n\n\nDO (mg/L)\n6.4\n4.2\n—\n\n\nCBOD (mg/L)\n5\n49\n—\n\n\nNBOD (mg/L)\n5\n27\n—\n\n\n\\(C_s\\) (mg/L)\n—\n—\n7\n\n\n\\(k_a\\), \\(k_c\\), \\(k_n\\)\n—\n—\n0.8, 0.5, 0.4"
+    "objectID": "slides/lecture03-3.html#factors-influencing-do",
+    "href": "slides/lecture03-3.html#factors-influencing-do",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Factors Influencing DO",
+    "text": "Factors Influencing DO\n\nTemperature, Pressure, Depth\nSalinity\nMixing\nPlant and Microbial Life\nOrganic Matter"
   },
   {
-    "objectID": "slides/lecture03-3.html#single-discharge-example-initial-condition",
-    "href": "slides/lecture03-3.html#single-discharge-example-initial-condition",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Single-Discharge Example: Initial Condition",
-    "text": "Single-Discharge Example: Initial Condition\nHow do we find the initial state (\\(x=0\\))?\n\nNeed to compute the mixed concentrations of DO, CBOD, and NBOD (\\(Q\\) is the flow volume):\n\\[C_0 = C_\\text{mixed} = \\frac{C_\\text{river} \\times Q_\\text{river} + C_\\text{waste} \\times Q_\\text{waste}}{Q_\\text{river} + Q_\\text{waste}}\\]"
+    "objectID": "slides/lecture03-3.html#impact-of-paris-on-seine-do-1874",
+    "href": "slides/lecture03-3.html#impact-of-paris-on-seine-do-1874",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Impact of Paris On Seine DO, 1874",
+    "text": "Impact of Paris On Seine DO, 1874\n\nDissolved Oxygen Downstream of Paris, 1874\nSource: Dmitrieva, T., et al. (2018). https://doi.org/10.1007/s12685-018-0216-7"
   },
   {
-    "objectID": "slides/lecture03-3.html#single-discharge-example-initial-condition-1",
-    "href": "slides/lecture03-3.html#single-discharge-example-initial-condition-1",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Single-Discharge Example: Initial Condition",
-    "text": "Single-Discharge Example: Initial Condition\nSo the initial values:\n\\[C_0 = 6.2 \\ \\text{mg/L}\\]\n\\[B_0 = 9 \\ \\text{mg/L}\\]\n\\[N_0 = 7 \\ \\text{mg/L}\\]"
+    "objectID": "slides/lecture03-3.html#do-regulatory-standards",
+    "href": "slides/lecture03-3.html#do-regulatory-standards",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "DO Regulatory Standards",
+    "text": "DO Regulatory Standards\nObjective: Keep DO above the regulatory standard.\nIn NY (via Westlaw):\n\nDO levels may not fall below 3 mg/L\nDO may not be below 4.8 mg/L for an extended period"
   },
   {
-    "objectID": "slides/lecture03-3.html#single-discharge-example-simulation",
-    "href": "slides/lecture03-3.html#single-discharge-example-simulation",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Single-Discharge Example: Simulation",
-    "text": "Single-Discharge Example: Simulation\nNow we can compute \\(C(x)\\) (river velocity \\(U = 5\\) km/d).\n\n\nfunction dissolved_oxygen(x, Cs, C0, B0, N0, ka, kc, kn, U)\n    α1 = exp(-ka * x / U)\n    α2 = (kc / (ka - kc)) * (exp(-kc * x / U) - α1)\n    α3 = (kn / (ka - kn)) * (exp(-kn * x / U) - α1)\n    C = (Cs * (1 - α1)) + (C0 * α1) - (B0 * α2) - (N0 * α3)\n    return C\nend\n\nx = 0:0.1:20\nC = (y -&gt; dissolved_oxygen(y, Cs, C0, B0, N0, ka, kc, kn, U)).(x)"
+    "objectID": "slides/lecture03-3.html#oxygen-balance-in-rivers-and-streams",
+    "href": "slides/lecture03-3.html#oxygen-balance-in-rivers-and-streams",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Oxygen Balance in Rivers and Streams",
+    "text": "Oxygen Balance in Rivers and Streams\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
   },
   {
-    "objectID": "slides/lecture03-3.html#single-discharge-example-simulation-1",
-    "href": "slides/lecture03-3.html#single-discharge-example-simulation-1",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Single-Discharge Example: Simulation",
-    "text": "Single-Discharge Example: Simulation\n\n\n\n\nCode\nplot(x, C; linewidth=3, \n    label=\"Dissolved Oxygen\", \n    tickfontsize=16, \n    guidefontsize=16, \n    legendfontsize=16)\nxlabel!(L\"$x$ (km)\")\nylabel!(\"DO Concentration (mg/L)\")\nhline!([3], color=:red, \n    linestyle=:dash, \n    label=\"Regulatory Standard\")\nplot!(size=(500, 500))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Single-Release Dissolved Oxygen Example"
+    "objectID": "slides/lecture03-3.html#selecting-a-metric-for-do-fluxes",
+    "href": "slides/lecture03-3.html#selecting-a-metric-for-do-fluxes",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Selecting a Metric for DO Fluxes",
+    "text": "Selecting a Metric for DO Fluxes\nTypically use oxygen demand (OD):\n\nmeasure of the concentration of oxidizable materials in a water sample\nmetric for organic waste contamination\nreflects how oxygen will be depleted in a given segment\n\nBut there are several different processes affecting total OD!"
   },
   {
-    "objectID": "slides/lecture03-3.html#multiple-discharges",
-    "href": "slides/lecture03-3.html#multiple-discharges",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Multiple Discharges",
-    "text": "Multiple Discharges\nWhat happens if we have multiple discharge sites?\n\nSchematic for Multiple Discharge Example"
+    "objectID": "slides/lecture03-3.html#biochemical-oxygen-demand-bod",
+    "href": "slides/lecture03-3.html#biochemical-oxygen-demand-bod",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Biochemical Oxygen Demand (BOD)",
+    "text": "Biochemical Oxygen Demand (BOD)\nOxygen used by microbes during aerobic decomposition of organic materials: \\[\\text{Organic Matter} + \\text{O}_2 \\rightarrow \\text{CO}_2 +  \\text{H}_2\\text{O} + \\text{NO}_3 + \\text{SO}_2 + \\text{Residuals}\\]\nBroadly speaking, we care about two types of BOD: Carbonaceous BOD and Nitrogenous BOD."
   },
   {
-    "objectID": "slides/lecture03-3.html#multiple-discharges-1",
-    "href": "slides/lecture03-3.html#multiple-discharges-1",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Multiple Discharges",
-    "text": "Multiple Discharges\n\n\nThink about this as a multi-box problem:\n\nBox 1: From Release 1 to Release 2\nBox 2: From Release 2 to End\n\n\n\n\n\nMultiple Discharge Boxes"
+    "objectID": "slides/lecture03-3.html#carbonaceous-bod-cbod",
+    "href": "slides/lecture03-3.html#carbonaceous-bod-cbod",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Carbonaceous BOD (CBOD)",
+    "text": "Carbonaceous BOD (CBOD)\nOxygen consumed during microbial decomposition of carbon compounds, e.g.: \\[\\text{C}_a\\text{H}_b\\text{O}_c + d\\text{O}_2 \\rightarrow e\\text{H}_2\\text{O} + f\\text{CO}_2\\]"
   },
   {
-    "objectID": "slides/lecture03-3.html#multiple-discharges-2",
-    "href": "slides/lecture03-3.html#multiple-discharges-2",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Multiple Discharges",
-    "text": "Multiple Discharges\n\n\n\nDynamics within each box are like single-release example;\nMake sure to get new initial conditions from relevant outflows!\n\n\n\n\n\nMultiple Discharge Boxes"
+    "objectID": "slides/lecture03-3.html#nitrogenous-bod-nbod",
+    "href": "slides/lecture03-3.html#nitrogenous-bod-nbod",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Nitrogenous BOD (NBOD)",
+    "text": "Nitrogenous BOD (NBOD)\nOxygen consumed during microbial decomposition of nitrogen compounds: \\[2\\text{NH}_2^+ + 4\\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O} + 4\\text{H}^+ + 2\\text{NO}_3^-\\]"
   },
   {
-    "objectID": "slides/lecture03-3.html#multiple-discharges-3",
-    "href": "slides/lecture03-3.html#multiple-discharges-3",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Multiple Discharges",
-    "text": "Multiple Discharges\nQuestion: Who would you penalize for lack of compliance?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Multi-Release Dissolved Oxygen Example"
+    "objectID": "slides/lecture03-3.html#bod-and-time",
+    "href": "slides/lecture03-3.html#bod-and-time",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "BOD and Time",
+    "text": "BOD and Time\nMoreover, BOD is differentiated based on time frame, e.g.:\n\nBOD5: oxygen demand over 5 days\nBOD20: oxygen demand over 20 days"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#do-modeling-needs",
+    "href": "slides/lecture03-3.html#do-modeling-needs",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "DO Modeling Needs",
+    "text": "DO Modeling Needs\nNeed a model that will predict DO as a function of CBOD, NBOD.\nUse a fate and transport modeling approach: how are relevant quantities moved downstream?\nNote: Can’t assume homogeneous processes."
+  },
+  {
+    "objectID": "slides/lecture03-3.html#modeling-do",
+    "href": "slides/lecture03-3.html#modeling-do",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Modeling DO",
+    "text": "Modeling DO\n\n\nSo what do we do?\nStart by assuming steady-state waste in each section (or box…).\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#modeling-do-1",
+    "href": "slides/lecture03-3.html#modeling-do-1",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Modeling DO",
+    "text": "Modeling DO\n\n\nWe’ll track the mass balance in terms of rates (not absolute mass).\nWhat happens to an element of water?\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#steady-state-waste-do-mass-balance",
+    "href": "slides/lecture03-3.html#steady-state-waste-do-mass-balance",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nLet \\(U\\) be the river velocity (km/d), \\(x\\) the distance downstream from a waste release site in km, and \\(C(x)\\) the DO concentration at \\(x\\) in mg/L.\n\\[\\begin{align}\nU \\frac{dC}{dx} &= \\text{Change in DO} \\\\[0.5em]\n&= \\text{Reaeration} + \\text{Photosynthesis} - \\text{Respiration}  \\\\[0.5em]\n& \\qquad - \\text{Benthal Uptake} - \\text{CBOD} - \\text{NBOD}\n\n\\end{align}\\]"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#bod-oxygen-uptake",
+    "href": "slides/lecture03-3.html#bod-oxygen-uptake",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "BOD Oxygen Uptake",
+    "text": "BOD Oxygen Uptake\nAssume deoxygenation from waste decomposition is first-order (rate \\(k\\)):\n\\[\\begin{aligned}\n\\frac{dM}{dt} &= -kM \\\\\\\\\n\\Rightarrow M &= M_0 \\exp(-kt)\n\\end{aligned}\\]\n\nBut our equations are formulated in terms of distance:\n\\[M = M_0 \\exp(-kx/U)\\]"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#bod-oxygen-uptake-1",
+    "href": "slides/lecture03-3.html#bod-oxygen-uptake-1",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "BOD Oxygen Uptake",
+    "text": "BOD Oxygen Uptake\nFor biochemical organics, if \\(k_c\\) is the deoxygenation rate (d\\(^{-1}\\));\n\\[B(x) = B_0 \\exp(-k_c x / U);\\]\nFor nitrification, if \\(k_n\\) is the deoxygenation rate (d\\(^{-1}\\)):\n\\[N(x) = N_0 \\exp(-k_n x / U).\\]"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#steady-state-waste-do-mass-balance-1",
+    "href": "slides/lecture03-3.html#steady-state-waste-do-mass-balance-1",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nSo the corresponding oxygen uptake rates are \\[k_c B(x) = k_c B_0 \\exp(-k_c x / U)\\] and\n\\[k_n N(x) = k_n N_0 \\exp(-k_n x / U).\\]"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#steady-state-waste-do-mass-balance-2",
+    "href": "slides/lecture03-3.html#steady-state-waste-do-mass-balance-2",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nOther processes:\n\nReaeration, assume a simple linear model based on difference from saturation level \\(C_s\\): \\(k_a (C_s - C)\\)\nAssume measured, constant values for photosynthesis (\\(P_s\\)), respiration (\\(R\\)), benthal uptake (\\(S_B\\))"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#steady-state-waste-do-mass-balance-3",
+    "href": "slides/lecture03-3.html#steady-state-waste-do-mass-balance-3",
+    "title": "Building A Dissolved Oxygen Model",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nPutting it all together:\n\\[\\begin{aligned}\nU \\frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B \\\\\\\\\n&\\quad - k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right) - k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)\n\\end{aligned}\\]"
   },
   {
     "objectID": "slides/lecture03-3.html#key-points-1",
     "href": "slides/lecture03-3.html#key-points-1",
-    "title": "Dissolved Oxygen Simulation",
+    "title": "Building A Dissolved Oxygen Model",
     "section": "Key Points",
-    "text": "Key Points\n\nSimulation involves running the model over space/time.\nMultiple sections as “multi-box” model: outflows from one box become inflows/initial conditions for another.\nAssigning blame/responsibility in an interdependent system is not straightforward!"
-  },
-  {
-    "objectID": "slides/lecture03-3.html#simulation-framework-overview",
-    "href": "slides/lecture03-3.html#simulation-framework-overview",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Simulation Framework Overview",
-    "text": "Simulation Framework Overview\n\nSimulation Workflow Diagram"
+    "text": "Key Points\n\nDissolved oxygen (DO) is essential for water quality and aquatic life.\nCommonly regulated to keep DO above a minimum threshold.\nDO impacted by a number of factors, notably organic waste decomposition and nitrification.\nWe derived a first-order equation for DO using mass-balance and fate & transport principles."
   },
   {
     "objectID": "slides/lecture03-3.html#next-classes",
     "href": "slides/lecture03-3.html#next-classes",
-    "title": "Dissolved Oxygen Simulation",
+    "title": "Building A Dissolved Oxygen Model",
     "section": "Next Classes",
-    "text": "Next Classes\nMonday: Uncertainty and Risk\nWednesday/Friday: Monte Carlo Simulation\nHomework:\n\nHW1 due today!\nHW2 link available on Ed (due in two weeks).\n\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Next Classes\nFriday: Use DO model for simulation.\nNext Week: Uncertainty, Probability (Monte Carlo) and Risk Analysis\nHomework: - HW1 due Friday - HW2 assigned Friday (on simulation for dissolved oxygen and risk)\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture01-1.html#course-overview",
@@ -469,193 +525,172 @@
     "text": "Next Classes\nWednesday: Introduction to Systems Analysis\nFriday: Work on Lab 1.\n\nPreparation:\n\nLab 1 link is available on Ed. Click it to accept the lab before class.\n\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
-    "objectID": "slides/lecture03-2.html#last-class",
-    "href": "slides/lecture03-2.html#last-class",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Last Class",
-    "text": "Last Class\n\nModel-based simulation as a way to understand system dynamics and response.\nBox models: mass-balance in some region of the domain\nCan generalize single box models by:\n\nAdding more complexity;\ncombining multiple boxes."
-  },
-  {
-    "objectID": "slides/lecture03-2.html#why-simulate",
-    "href": "slides/lecture03-2.html#why-simulate",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Why Simulate?",
-    "text": "Why Simulate?\n\nSystem involves complex, nonlinear dynamics that may not be analytically tractable.\nSetting up and running a real-world experiment is not possible.\nState depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.\nNeed to understand range of system performance across rarely-seen conditions."
+    "objectID": "slides/lecture03-2.html#lake-eutrophication-example",
+    "href": "slides/lecture03-2.html#lake-eutrophication-example",
+    "title": "Simulating Systems and Box Models",
+    "section": "Lake Eutrophication Example",
+    "text": "Lake Eutrophication Example\n\nNonlinear system dynamics can result in unexpected behaviors\n\nBifurcations\nTipping Points\n\nBe careful about planning against particular parameter values or focusing on one process."
   },
   {
     "objectID": "slides/lecture03-2.html#questions",
     "href": "slides/lecture03-2.html#questions",
-    "title": "Building A Dissolved Oxygen Model",
+    "title": "Simulating Systems and Box Models",
     "section": "Questions",
     "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture03-2.html#fate-transport-modeling",
-    "href": "slides/lecture03-2.html#fate-transport-modeling",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Fate & Transport Modeling",
-    "text": "Fate & Transport Modeling\nHow do nutrients and other quantities move through environmental mediums?\nWhat can make fate & transport modeling more complex?\n\n\nMultiple points of inflow;\nMore complex growth/decay dynamics.\nStochasticity/randomness."
+    "objectID": "slides/lecture03-2.html#what-is-simulation",
+    "href": "slides/lecture03-2.html#what-is-simulation",
+    "title": "Simulating Systems and Box Models",
+    "section": "What is Simulation?",
+    "text": "What is Simulation?\nSimulation: evaluating a model to understand how a system might evolve under a particular set of conditions.\nThink of simulation as data generation (or generative modeling).\nThe model represents a particular data-generating process."
   },
   {
-    "objectID": "slides/lecture03-2.html#dissolved-oxygen",
-    "href": "slides/lecture03-2.html#dissolved-oxygen",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Dissolved Oxygen",
-    "text": "Dissolved Oxygen\n\n\nDissolved oxygen (DO) is the free, non-compound oxygen present in water or other liquids.\nFreshwater can only hold small amounts, and this capacity is regulated by temperature.\n\n\n\n\nDissolved Oxygen by temperature\n\n\n\nSource: fondriest.com"
+    "objectID": "slides/lecture03-2.html#why-simulate-systems",
+    "href": "slides/lecture03-2.html#why-simulate-systems",
+    "title": "Simulating Systems and Box Models",
+    "section": "Why Simulate Systems?",
+    "text": "Why Simulate Systems?\n\n\nSystem involves complex, nonlinear dynamics that may not be analytically tractable.\nSetting up and running a real-world experiment is not possible.\nState depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.\nNeed to understand range of system performance across rarely-seen conditions."
   },
   {
-    "objectID": "slides/lecture03-2.html#temperature-impact-on-do",
-    "href": "slides/lecture03-2.html#temperature-impact-on-do",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Temperature Impact on DO",
-    "text": "Temperature Impact on DO\n\nDissolved Oxygen and Temperature Plot\nSource: usgs.gov"
+    "objectID": "slides/lecture03-2.html#simulating-the-shallow-lake-model",
+    "href": "slides/lecture03-2.html#simulating-the-shallow-lake-model",
+    "title": "Simulating Systems and Box Models",
+    "section": "Simulating the Shallow Lake Model",
+    "text": "Simulating the Shallow Lake Model\nFor the shallow lake model\n\\[X_{t+1} = X_t + a_t + y_t + \\frac{X_t^q}{1 + X_t^q} - bX_t, \\quad\ny_t \\sim \\text{LogNormal}(\\mu, \\sigma^2).\n\\]\nwe need to simulate because:\n\ninflows \\(a_t, y_t\\) can change over time (non-steady state);\nstate \\(X_{t+1}\\) depends on \\(X_t\\)."
   },
   {
-    "objectID": "slides/lecture03-2.html#dissolved-oxygen-and-life",
-    "href": "slides/lecture03-2.html#dissolved-oxygen-and-life",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Dissolved Oxygen and Life",
-    "text": "Dissolved Oxygen and Life\n\n\nDissolved oxygen is an important nutrient for aquatic life.\nHypoxia occurs when DO levels are \\(&lt; 2\\) mg/L.\n\n\n\n\nMinimum DO requirements for freshwater fish\n\n\n\n\nSource: fondriest.com"
+    "objectID": "slides/lecture03-2.html#what-do-we-need-to-simulate-the-lake-model",
+    "href": "slides/lecture03-2.html#what-do-we-need-to-simulate-the-lake-model",
+    "title": "Simulating Systems and Box Models",
+    "section": "What Do We Need To Simulate The Lake Model?",
+    "text": "What Do We Need To Simulate The Lake Model?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture03-2.html#factors-influencing-do",
-    "href": "slides/lecture03-2.html#factors-influencing-do",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Factors Influencing DO",
-    "text": "Factors Influencing DO\n\nTemperature, Pressure, Depth\nSalinity\nMixing\nPlant and Microbial Life\nOrganic Matter"
+    "objectID": "slides/lecture03-2.html#lake-model-simulation-parameters",
+    "href": "slides/lecture03-2.html#lake-model-simulation-parameters",
+    "title": "Simulating Systems and Box Models",
+    "section": "Lake Model Simulation: Parameters",
+    "text": "Lake Model Simulation: Parameters\n\n\n\nVariable\nValue\nUnits\n\n\n\n\n\\(X_0\\)\n\\(0\\)\ndimensionless\n\n\n\\(\\mu\\)\n\\(\\log(0.03)\\)\ndimensionless\n\n\n\\(\\sigma^2\\)\n\\(0.1\\)\ndimensionless\n\n\n\\(q\\)\n\\(2.5\\)\ndimensionless\n\n\n\\(b\\)\n\\(0.4\\)\ndimensionless"
   },
   {
-    "objectID": "slides/lecture03-2.html#impact-of-paris-on-seine-do-1874",
-    "href": "slides/lecture03-2.html#impact-of-paris-on-seine-do-1874",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Impact of Paris On Seine DO, 1874",
-    "text": "Impact of Paris On Seine DO, 1874\n\nDissolved Oxygen Downstream of Paris, 1874\nSource: Dmitrieva, T., et al. (2018). https://doi.org/10.1007/s12685-018-0216-7"
+    "objectID": "slides/lecture03-2.html#lake-model-simulation-results",
+    "href": "slides/lecture03-2.html#lake-model-simulation-results",
+    "title": "Simulating Systems and Box Models",
+    "section": "Lake Model Simulation: Results",
+    "text": "Lake Model Simulation: Results\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Inflows \\(y_t\\) for this lake problem simulation.\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: State of the lake under two different constant release scenarios."
   },
   {
-    "objectID": "slides/lecture03-2.html#do-regulatory-standards",
-    "href": "slides/lecture03-2.html#do-regulatory-standards",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "DO Regulatory Standards",
-    "text": "DO Regulatory Standards\nObjective: Keep DO above the regulatory standard.\nIn NY (via Westlaw):\n\nDO levels may not fall below 3 mg/L\nDO may not be below 4.8 mg/L for an extended period"
+    "objectID": "slides/lecture03-2.html#simulating-multiple-objectives",
+    "href": "slides/lecture03-2.html#simulating-multiple-objectives",
+    "title": "Simulating Systems and Box Models",
+    "section": "Simulating Multiple Objectives",
+    "text": "Simulating Multiple Objectives\nSimulation also facilitates analyses of multiple outcomes of interest, which can involve tradeoffs.\nFor example:\n\n\nElectric power system: CO\\(_2\\) emissions and cost;\nReservoir operations: hydropower potential, water supply, flood risk."
   },
   {
-    "objectID": "slides/lecture03-2.html#oxygen-balance-in-rivers-and-streams",
-    "href": "slides/lecture03-2.html#oxygen-balance-in-rivers-and-streams",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Oxygen Balance in Rivers and Streams",
-    "text": "Oxygen Balance in Rivers and Streams\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+    "objectID": "slides/lecture03-2.html#what-is-a-box-model",
+    "href": "slides/lecture03-2.html#what-is-a-box-model",
+    "title": "Simulating Systems and Box Models",
+    "section": "What Is A Box Model?",
+    "text": "What Is A Box Model?\nBox models are a common building block of simulation models.\n\n\nBox models are all about mass-balance (mass \\(m\\)), assume well-mixed within box.\nCan be steady-state \\((\\dot{m} = 0)\\) or not.\n\n\n\n\nSteady-State Box Example"
   },
   {
-    "objectID": "slides/lecture03-2.html#selecting-a-metric-for-do-fluxes",
-    "href": "slides/lecture03-2.html#selecting-a-metric-for-do-fluxes",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Selecting a Metric for DO Fluxes",
-    "text": "Selecting a Metric for DO Fluxes\nTypically use oxygen demand (OD):\n\nmeasure of the concentration of oxidizable materials in a water sample\nmetric for organic waste contamination\nreflects how oxygen will be depleted in a given segment\n\nBut there are several different processes affecting total OD!"
+    "objectID": "slides/lecture03-2.html#box-models-and-simulation",
+    "href": "slides/lecture03-2.html#box-models-and-simulation",
+    "title": "Simulating Systems and Box Models",
+    "section": "Box Models and Simulation",
+    "text": "Box Models and Simulation\nMany simulation models are built by:\n\nDividing the domain into individual boxes (1-D, 2-D, or 3-D);\nStarting from initial box:\n\nSimulate change to stock within box;\nObtain outflow as inflow into adjacent boxes;\nMove onto next box;\n\nIf needed (e.g. non-steady-state), repeat for each time step."
   },
   {
-    "objectID": "slides/lecture03-2.html#biochemical-oxygen-demand-bod",
-    "href": "slides/lecture03-2.html#biochemical-oxygen-demand-bod",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Biochemical Oxygen Demand (BOD)",
-    "text": "Biochemical Oxygen Demand (BOD)\nOxygen used by microbes during aerobic decomposition of organic materials: \\[\\text{Organic Matter} + \\text{O}_2 \\rightarrow \\text{CO}_2 +  \\text{H}_2\\text{O} + \\text{NO}_3 + \\text{SO}_2 + \\text{Residuals}\\]\nBroadly speaking, we care about two types of BOD: Carbonaceous BOD and Nitrogenous BOD."
+    "objectID": "slides/lecture03-2.html#box-model-applications",
+    "href": "slides/lecture03-2.html#box-model-applications",
+    "title": "Simulating Systems and Box Models",
+    "section": "Box Model Applications",
+    "text": "Box Model Applications\nSome applications of box models include:\n\nWater balance/hydrologic flow models;\nClimate models (ocean heat/CO\\(_2\\) uptake through “box” layers)\nAirsheds"
   },
   {
-    "objectID": "slides/lecture03-2.html#carbonaceous-bod-cbod",
-    "href": "slides/lecture03-2.html#carbonaceous-bod-cbod",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Carbonaceous BOD (CBOD)",
-    "text": "Carbonaceous BOD (CBOD)\nOxygen consumed during microbial decomposition of carbon compounds, e.g.: \\[\\text{C}_a\\text{H}_b\\text{O}_c + d\\text{O}_2 \\rightarrow e\\text{H}_2\\text{O} + f\\text{CO}_2\\]"
+    "objectID": "slides/lecture03-2.html#box-model-example-airsheds",
+    "href": "slides/lecture03-2.html#box-model-example-airsheds",
+    "title": "Simulating Systems and Box Models",
+    "section": "Box Model Example: Airsheds",
+    "text": "Box Model Example: Airsheds\nLet’s look at a simple steady-state box model of an airshed.\n\n\n\nVariable\nMeaning\nUnits\n\n\n\n\n\\(m\\)\nmass of some air pollutant\ng\n\n\n\\(C\\)\nconcentration in box\ng/m\\(^3\\)\n\n\n\\(S, D\\)\nsource, deposition rate within the box\ng/s\n\n\n\\(u\\)\nwind speed\nm/s\n\n\n\\(L, W, H\\)\nbox dimensions\nm"
   },
   {
-    "objectID": "slides/lecture03-2.html#nitrogenous-bod-nbod",
-    "href": "slides/lecture03-2.html#nitrogenous-bod-nbod",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Nitrogenous BOD (NBOD)",
-    "text": "Nitrogenous BOD (NBOD)\nOxygen consumed during microbial decomposition of nitrogen compounds: \\[2\\text{NH}_2^+ + 4\\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O} + 4\\text{H}^+ + 2\\text{NO}_3^-\\]"
+    "objectID": "slides/lecture03-2.html#steady-state-airshed-box-model",
+    "href": "slides/lecture03-2.html#steady-state-airshed-box-model",
+    "title": "Simulating Systems and Box Models",
+    "section": "Steady-State Airshed Box Model",
+    "text": "Steady-State Airshed Box Model\nSteady-state box ⇒ \\(\\dot{m} = 0\\).\n\\[\\begin{align}\n0 &= m_\\text{in} - m_\\text{out} + S - D \\\\[0.5em]\n&\\class{\\fragment}{{} = (u WH) C_\\text{in} - (u WH) C + S - D } \\\\[0.5em]\n\\end{align}\\]\n\nSolving for \\(C\\): \\[C = C_{in} + \\frac{S-D}{uWH}\\]"
   },
   {
-    "objectID": "slides/lecture03-2.html#bod-and-time",
-    "href": "slides/lecture03-2.html#bod-and-time",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "BOD and Time",
-    "text": "BOD and Time\nMoreover, BOD is differentiated based on time frame, e.g.:\n\nBOD5: oxygen demand over 5 days\nBOD20: oxygen demand over 20 days"
+    "objectID": "slides/lecture03-2.html#non-steady-state-box-model",
+    "href": "slides/lecture03-2.html#non-steady-state-box-model",
+    "title": "Simulating Systems and Box Models",
+    "section": "Non-Steady State Box Model",
+    "text": "Non-Steady State Box Model\nNow let’s assume some process affecting \\(m\\) depends on time.\nFor example: let’s say we care about an air pollutant which has a first-order decay rate \\(k\\), so \\(L(t) = -km_\\text{box}(t)\\).\n\\[\\Rightarrow \\dot{m} = m_\\text{in} - m_\\text{out} + S - km_\\text{box}(t)\\]"
   },
   {
-    "objectID": "slides/lecture03-2.html#do-modeling-needs",
-    "href": "slides/lecture03-2.html#do-modeling-needs",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "DO Modeling Needs",
-    "text": "DO Modeling Needs\nNeed a model that will predict DO as a function of CBOD, NBOD.\nUse a fate and transport modeling approach: how are relevant quantities moved downstream?\nNote: Can’t assume homogeneous processes."
+    "objectID": "slides/lecture03-2.html#non-steady-state-solution",
+    "href": "slides/lecture03-2.html#non-steady-state-solution",
+    "title": "Simulating Systems and Box Models",
+    "section": "Non-Steady State Solution",
+    "text": "Non-Steady State Solution\n\\[\\begin{gather}\n&\\dot{m} = \\frac{d(CV)}{dt} = \\overbrace{(u WH) C_\\text{in}}^{\\text{inflow}} - \\overbrace{(u WH) C}^{\\text{outflow}} + \\overbrace{S - D}^{\\text{net emissions}} - \\overbrace{kCV}^{\\text{mass decay}} \\\\[0.5em]\n&\\class{fragment}{{} \\frac{dC}{dt} = \\underbrace{\\frac{u WH}{V} C_\\text{in} + \\frac{S - D}{V}}_{\\Large =P} - \\underbrace{\\left(\\frac{u WH}{V} + k\\right)}_{\\Large =l} C} \\\\[0.5em]\n&\\class{fragment}{{} \\frac{dC}{dt} = P - l C}\n\\end{gather}\\]"
   },
   {
-    "objectID": "slides/lecture03-2.html#modeling-do",
-    "href": "slides/lecture03-2.html#modeling-do",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Modeling DO",
-    "text": "Modeling DO\n\n\nSo what do we do?\nStart by assuming steady-state waste in each section (or box…).\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+    "objectID": "slides/lecture03-2.html#non-steady-state-solution-1",
+    "href": "slides/lecture03-2.html#non-steady-state-solution-1",
+    "title": "Simulating Systems and Box Models",
+    "section": "Non-Steady State Solution",
+    "text": "Non-Steady State Solution\n\\[\\begin{gather}\n&\\frac{dC}{dt} = P - l C \\\\[0.5em]\n&\\class{fragment}{{} \\int \\frac{dC}{P-lC} = \\int dt} \\\\[0.5em]\n&\\class{fragment}{{} -\\frac{1}{l} \\ln\\left(P-lC\\right) = t + A} \\\\[0.5em]\n&\\class{fragment}{{} \\underbrace{C(0) = C_0}_\\text{initial condition} \\Rightarrow A = -\\frac{1}{l} \\ln\\left(P-lC_0\\right)}\n\\end{gather}\\]"
   },
   {
-    "objectID": "slides/lecture03-2.html#modeling-do-1",
-    "href": "slides/lecture03-2.html#modeling-do-1",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Modeling DO",
-    "text": "Modeling DO\n\n\nWe’ll track the mass balance in terms of rates (not absolute mass).\nWhat happens to an element of water?\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+    "objectID": "slides/lecture03-2.html#non-steady-state-solution-2",
+    "href": "slides/lecture03-2.html#non-steady-state-solution-2",
+    "title": "Simulating Systems and Box Models",
+    "section": "Non-Steady State Solution",
+    "text": "Non-Steady State Solution\n\\[\\begin{gather}\n&-\\frac{1}{l} \\ln\\left(P-lC\\right) = t - \\frac{1}{l} \\ln\\left(P-lC_0\\right) \\\\[0.5em]\n&\\class{fragment}{{} -\\frac{1}{l} \\ln\\left(\\frac{P-lC}{P-lC_0}\\right) = t} \\\\[0.5em]\n&\\class{fragment}{{} C = -\\frac{1}{l} \\left(P - e^{-lt}\\left(P-lC_0\\right)\\right)} \\\\[0.5em]\n&\\class{fragment}{{} C(t) = C_0 e^{-lt} + \\frac{P}{l}\\left(1 - e^{-lt}\\right) }\n\\end{gather}\\]"
   },
   {
-    "objectID": "slides/lecture03-2.html#steady-state-waste-do-mass-balance",
-    "href": "slides/lecture03-2.html#steady-state-waste-do-mass-balance",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Steady-State Waste, DO Mass Balance",
-    "text": "Steady-State Waste, DO Mass Balance\nLet \\(U\\) be the river velocity (km/d), \\(x\\) the distance downstream from a waste release site in km, and \\(C(x)\\) the DO concentration at \\(x\\) in mg/L.\n\\[\\begin{align}\nU \\frac{dC}{dx} &= \\text{Change in DO} \\\\[0.5em]\n&= \\text{Reaeration} + \\text{Photosynthesis} - \\text{Respiration}  \\\\[0.5em]\n& \\qquad - \\text{Benthal Uptake} - \\text{CBOD} - \\text{NBOD}\n\n\\end{align}\\]"
+    "objectID": "slides/lecture03-2.html#non-steady-state-solution-3",
+    "href": "slides/lecture03-2.html#non-steady-state-solution-3",
+    "title": "Simulating Systems and Box Models",
+    "section": "Non-Steady State Solution",
+    "text": "Non-Steady State Solution\n\\[C(t) = \\color{red}C_0 e^{-lt} \\color{black}+ \\color{blue}\\frac{P}{l}\\left(1 - e^{-lt}\\right)\\]\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitial condition is transient (decays to zero eventually);\nConcentration converges to a steady-state solution."
   },
   {
-    "objectID": "slides/lecture03-2.html#bod-oxygen-uptake",
-    "href": "slides/lecture03-2.html#bod-oxygen-uptake",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "BOD Oxygen Uptake",
-    "text": "BOD Oxygen Uptake\nAssume deoxygenation from waste decomposition is first-order (rate \\(k\\)):\n\\[\\begin{aligned}\n\\frac{dM}{dt} &= -kM \\\\\\\\\n\\Rightarrow M &= M_0 \\exp(-kt)\n\\end{aligned}\\]\n\nBut our equations are formulated in terms of distance:\n\\[M = M_0 \\exp(-kx/U)\\]"
+    "objectID": "slides/lecture03-2.html#time-varying-flows",
+    "href": "slides/lecture03-2.html#time-varying-flows",
+    "title": "Simulating Systems and Box Models",
+    "section": "Time-Varying Flows",
+    "text": "Time-Varying Flows\nCan also incorporate more complex in/outflow dynamics:\n\nstochastic/dynamic in advection (wind speed);\nInflow/outflow concentrations varying over time"
   },
   {
-    "objectID": "slides/lecture03-2.html#bod-oxygen-uptake-1",
-    "href": "slides/lecture03-2.html#bod-oxygen-uptake-1",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "BOD Oxygen Uptake",
-    "text": "BOD Oxygen Uptake\nFor biochemical organics, if \\(k_c\\) is the deoxygenation rate (d\\(^{-1}\\));\n\\[B(x) = B_0 \\exp(-k_c x / U);\\]\nFor nitrification, if \\(k_n\\) is the deoxygenation rate (d\\(^{-1}\\)):\n\\[N(x) = N_0 \\exp(-k_n x / U).\\]"
+    "objectID": "slides/lecture03-2.html#multiple-boxes",
+    "href": "slides/lecture03-2.html#multiple-boxes",
+    "title": "Simulating Systems and Box Models",
+    "section": "Multiple Boxes",
+    "text": "Multiple Boxes\nTo make this into a multi-box model, we can string together boxes (so the outflow from box 1 becomes the inflow for box 2).\nWe’ll see an example of this next class.\nKey point for now: there is a computational/approximation tradeoff when deciding on box resolution."
   },
   {
-    "objectID": "slides/lecture03-2.html#steady-state-waste-do-mass-balance-1",
-    "href": "slides/lecture03-2.html#steady-state-waste-do-mass-balance-1",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Steady-State Waste, DO Mass Balance",
-    "text": "Steady-State Waste, DO Mass Balance\nSo the corresponding oxygen uptake rates are \\[k_c B(x) = k_c B_0 \\exp(-k_c x / U)\\] and\n\\[k_n N(x) = k_n N_0 \\exp(-k_n x / U).\\]"
+    "objectID": "slides/lecture03-2.html#key-takeaways-simulation",
+    "href": "slides/lecture03-2.html#key-takeaways-simulation",
+    "title": "Simulating Systems and Box Models",
+    "section": "Key Takeaways: Simulation",
+    "text": "Key Takeaways: Simulation\n\nSimulation: Use model to evaluate system dynamics/outputs under different conditions.\nSimulation ⇔ Descriptive Modeling\nSimulation useful as a proxy for “real-world” experiments or future projections"
   },
   {
-    "objectID": "slides/lecture03-2.html#steady-state-waste-do-mass-balance-2",
-    "href": "slides/lecture03-2.html#steady-state-waste-do-mass-balance-2",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Steady-State Waste, DO Mass Balance",
-    "text": "Steady-State Waste, DO Mass Balance\nOther processes:\n\nReaeration, assume a simple linear model based on difference from saturation level \\(C_s\\): \\(k_a (C_s - C)\\)\nAssume measured, constant values for photosynthesis (\\(P_s\\)), respiration (\\(R\\)), benthal uptake (\\(S_B\\))"
-  },
-  {
-    "objectID": "slides/lecture03-2.html#steady-state-waste-do-mass-balance-3",
-    "href": "slides/lecture03-2.html#steady-state-waste-do-mass-balance-3",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Steady-State Waste, DO Mass Balance",
-    "text": "Steady-State Waste, DO Mass Balance\nPutting it all together:\n\\[\\begin{aligned}\nU \\frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B \\\\\\\\\n&\\quad - k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right) - k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "slides/lecture03-2.html#key-points-1",
-    "href": "slides/lecture03-2.html#key-points-1",
-    "title": "Building A Dissolved Oxygen Model",
-    "section": "Key Points",
-    "text": "Key Points\n\nDissolved oxygen (DO) is essential for water quality and aquatic life.\nCommonly regulated to keep DO above a minimum threshold.\nDO impacted by a number of factors, notably organic waste decomposition and nitrification.\nWe derived a first-order equation for DO using mass-balance and fate & transport principles."
+    "objectID": "slides/lecture03-2.html#key-takeaways-box-models",
+    "href": "slides/lecture03-2.html#key-takeaways-box-models",
+    "title": "Simulating Systems and Box Models",
+    "section": "Key Takeaways: Box Models",
+    "text": "Key Takeaways: Box Models\n\nBuilding block for many simulation models.\nBoxes are \\(n\\)-d “chunks” of the system domain.\nBox Models ⇔ Mass/Energy Balance.\nNon-Steady State Box Models can often be decomposed into a transient portion and an equilibrium/steady-state portion.\nCan combine multiple boxes together to create more complex models."
   },
   {
     "objectID": "slides/lecture03-2.html#next-classes",
     "href": "slides/lecture03-2.html#next-classes",
-    "title": "Building A Dissolved Oxygen Model",
+    "title": "Simulating Systems and Box Models",
     "section": "Next Classes",
-    "text": "Next Classes\nFriday: Use DO model for simulation.\nNext Week: Uncertainty, Probability (Monte Carlo) and Risk Analysis\nHomework: - HW1 due Friday - HW2 assigned Friday (on simulation for dissolved oxygen and risk)\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Next Classes\nWednesday: Building Dissolved Oxygen Model\nFriday: Dissolved Oxygen Simulation\nHomework: - HW1 due Friday - HW2 assigned Friday (on simulation for dissolved oxygen and risk)\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture01-2.html#what-is-a-system",
@@ -861,174 +896,6 @@
     "text": "Next Classes\nMonday: Modeling Systems\nWednesday/Friday: Examples of Systems Models\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
-    "objectID": "slides/lecture03-1.html#lake-eutrophication-example",
-    "href": "slides/lecture03-1.html#lake-eutrophication-example",
-    "title": "Simulating Systems and Box Models",
-    "section": "Lake Eutrophication Example",
-    "text": "Lake Eutrophication Example\n\nNonlinear system dynamics can result in unexpected behaviors\n\nBifurcations\nTipping Points\n\nBe careful about planning against particular parameter values or focusing on one process."
-  },
-  {
-    "objectID": "slides/lecture03-1.html#questions",
-    "href": "slides/lecture03-1.html#questions",
-    "title": "Simulating Systems and Box Models",
-    "section": "Questions",
-    "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
-    "objectID": "slides/lecture03-1.html#what-is-simulation",
-    "href": "slides/lecture03-1.html#what-is-simulation",
-    "title": "Simulating Systems and Box Models",
-    "section": "What is Simulation?",
-    "text": "What is Simulation?\nSimulation: evaluating a model to understand how a system might evolve under a particular set of conditions.\nThink of simulation as data generation (or generative modeling).\nThe model represents a particular data-generating process."
-  },
-  {
-    "objectID": "slides/lecture03-1.html#why-simulate-systems",
-    "href": "slides/lecture03-1.html#why-simulate-systems",
-    "title": "Simulating Systems and Box Models",
-    "section": "Why Simulate Systems?",
-    "text": "Why Simulate Systems?\n\n\nSystem involves complex, nonlinear dynamics that may not be analytically tractable.\nSetting up and running a real-world experiment is not possible.\nState depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.\nNeed to understand range of system performance across rarely-seen conditions."
-  },
-  {
-    "objectID": "slides/lecture03-1.html#simulating-the-shallow-lake-model",
-    "href": "slides/lecture03-1.html#simulating-the-shallow-lake-model",
-    "title": "Simulating Systems and Box Models",
-    "section": "Simulating the Shallow Lake Model",
-    "text": "Simulating the Shallow Lake Model\nFor the shallow lake model\n\\[X_{t+1} = X_t + a_t + y_t + \\frac{X_t^q}{1 + X_t^q} - bX_t, \\quad\ny_t \\sim \\text{LogNormal}(\\mu, \\sigma^2).\n\\]\nwe need to simulate because:\n\ninflows \\(a_t, y_t\\) can change over time (non-steady state);\nstate \\(X_{t+1}\\) depends on \\(X_t\\)."
-  },
-  {
-    "objectID": "slides/lecture03-1.html#what-do-we-need-to-simulate-the-lake-model",
-    "href": "slides/lecture03-1.html#what-do-we-need-to-simulate-the-lake-model",
-    "title": "Simulating Systems and Box Models",
-    "section": "What Do We Need To Simulate The Lake Model?",
-    "text": "What Do We Need To Simulate The Lake Model?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
-    "objectID": "slides/lecture03-1.html#lake-model-simulation-parameters",
-    "href": "slides/lecture03-1.html#lake-model-simulation-parameters",
-    "title": "Simulating Systems and Box Models",
-    "section": "Lake Model Simulation: Parameters",
-    "text": "Lake Model Simulation: Parameters\n\n\n\nVariable\nValue\nUnits\n\n\n\n\n\\(X_0\\)\n\\(0\\)\ndimensionless\n\n\n\\(\\mu\\)\n\\(\\log(0.03)\\)\ndimensionless\n\n\n\\(\\sigma^2\\)\n\\(0.1\\)\ndimensionless\n\n\n\\(q\\)\n\\(2.5\\)\ndimensionless\n\n\n\\(b\\)\n\\(0.4\\)\ndimensionless"
-  },
-  {
-    "objectID": "slides/lecture03-1.html#lake-model-simulation-results",
-    "href": "slides/lecture03-1.html#lake-model-simulation-results",
-    "title": "Simulating Systems and Box Models",
-    "section": "Lake Model Simulation: Results",
-    "text": "Lake Model Simulation: Results\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Inflows \\(y_t\\) for this lake problem simulation.\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: State of the lake under two different constant release scenarios."
-  },
-  {
-    "objectID": "slides/lecture03-1.html#simulating-multiple-objectives",
-    "href": "slides/lecture03-1.html#simulating-multiple-objectives",
-    "title": "Simulating Systems and Box Models",
-    "section": "Simulating Multiple Objectives",
-    "text": "Simulating Multiple Objectives\nSimulation also facilitates analyses of multiple outcomes of interest, which can involve tradeoffs.\nFor example:\n\n\nElectric power system: CO\\(_2\\) emissions and cost;\nReservoir operations: hydropower potential, water supply, flood risk."
-  },
-  {
-    "objectID": "slides/lecture03-1.html#what-is-a-box-model",
-    "href": "slides/lecture03-1.html#what-is-a-box-model",
-    "title": "Simulating Systems and Box Models",
-    "section": "What Is A Box Model?",
-    "text": "What Is A Box Model?\nBox models are a common building block of simulation models.\n\n\nBox models are all about mass-balance (mass \\(m\\)), assume well-mixed within box.\nCan be steady-state \\((\\dot{m} = 0)\\) or not.\n\n\n\n\nSteady-State Box Example"
-  },
-  {
-    "objectID": "slides/lecture03-1.html#box-models-and-simulation",
-    "href": "slides/lecture03-1.html#box-models-and-simulation",
-    "title": "Simulating Systems and Box Models",
-    "section": "Box Models and Simulation",
-    "text": "Box Models and Simulation\nMany simulation models are built by:\n\nDividing the domain into individual boxes (1-D, 2-D, or 3-D);\nStarting from initial box:\n\nSimulate change to stock within box;\nObtain outflow as inflow into adjacent boxes;\nMove onto next box;\n\nIf needed (e.g. non-steady-state), repeat for each time step."
-  },
-  {
-    "objectID": "slides/lecture03-1.html#box-model-applications",
-    "href": "slides/lecture03-1.html#box-model-applications",
-    "title": "Simulating Systems and Box Models",
-    "section": "Box Model Applications",
-    "text": "Box Model Applications\nSome applications of box models include:\n\nWater balance/hydrologic flow models;\nClimate models (ocean heat/CO\\(_2\\) uptake through “box” layers)\nAirsheds"
-  },
-  {
-    "objectID": "slides/lecture03-1.html#box-model-example-airsheds",
-    "href": "slides/lecture03-1.html#box-model-example-airsheds",
-    "title": "Simulating Systems and Box Models",
-    "section": "Box Model Example: Airsheds",
-    "text": "Box Model Example: Airsheds\nLet’s look at a simple steady-state box model of an airshed.\n\n\n\nVariable\nMeaning\nUnits\n\n\n\n\n\\(m\\)\nmass of some air pollutant\ng\n\n\n\\(C\\)\nconcentration in box\ng/m\\(^3\\)\n\n\n\\(S, D\\)\nsource, deposition rate within the box\ng/s\n\n\n\\(u\\)\nwind speed\nm/s\n\n\n\\(L, W, H\\)\nbox dimensions\nm"
-  },
-  {
-    "objectID": "slides/lecture03-1.html#steady-state-airshed-box-model",
-    "href": "slides/lecture03-1.html#steady-state-airshed-box-model",
-    "title": "Simulating Systems and Box Models",
-    "section": "Steady-State Airshed Box Model",
-    "text": "Steady-State Airshed Box Model\nSteady-state box ⇒ \\(\\dot{m} = 0\\).\n\\[\\begin{align}\n0 &= m_\\text{in} - m_\\text{out} + S - D \\\\[0.5em]\n&\\class{\\fragment}{{} = (u WH) C_\\text{in} - (u WH) C + S - D } \\\\[0.5em]\n\\end{align}\\]\n\nSolving for \\(C\\): \\[C = C_{in} + \\frac{S-D}{uWH}\\]"
-  },
-  {
-    "objectID": "slides/lecture03-1.html#non-steady-state-box-model",
-    "href": "slides/lecture03-1.html#non-steady-state-box-model",
-    "title": "Simulating Systems and Box Models",
-    "section": "Non-Steady State Box Model",
-    "text": "Non-Steady State Box Model\nNow let’s assume some process affecting \\(m\\) depends on time.\nFor example: let’s say we care about an air pollutant which has a first-order decay rate \\(k\\), so \\(L(t) = -km_\\text{box}(t)\\).\n\\[\\Rightarrow \\dot{m} = m_\\text{in} - m_\\text{out} + S - km_\\text{box}(t)\\]"
-  },
-  {
-    "objectID": "slides/lecture03-1.html#non-steady-state-solution",
-    "href": "slides/lecture03-1.html#non-steady-state-solution",
-    "title": "Simulating Systems and Box Models",
-    "section": "Non-Steady State Solution",
-    "text": "Non-Steady State Solution\n\\[\\begin{gather}\n&\\dot{m} = \\frac{d(CV)}{dt} = \\overbrace{(u WH) C_\\text{in}}^{\\text{inflow}} - \\overbrace{(u WH) C}^{\\text{outflow}} + \\overbrace{S - D}^{\\text{net emissions}} - \\overbrace{kCV}^{\\text{mass decay}} \\\\[0.5em]\n&\\class{fragment}{{} \\frac{dC}{dt} = \\underbrace{\\frac{u WH}{V} C_\\text{in} + \\frac{S - D}{V}}_{\\Large =P} - \\underbrace{\\left(\\frac{u WH}{V} + k\\right)}_{\\Large =l} C} \\\\[0.5em]\n&\\class{fragment}{{} \\frac{dC}{dt} = P - l C}\n\\end{gather}\\]"
-  },
-  {
-    "objectID": "slides/lecture03-1.html#non-steady-state-solution-1",
-    "href": "slides/lecture03-1.html#non-steady-state-solution-1",
-    "title": "Simulating Systems and Box Models",
-    "section": "Non-Steady State Solution",
-    "text": "Non-Steady State Solution\n\\[\\begin{gather}\n&\\frac{dC}{dt} = P - l C \\\\[0.5em]\n&\\class{fragment}{{} \\int \\frac{dC}{P-lC} = \\int dt} \\\\[0.5em]\n&\\class{fragment}{{} -\\frac{1}{l} \\ln\\left(P-lC\\right) = t + A} \\\\[0.5em]\n&\\class{fragment}{{} \\underbrace{C(0) = C_0}_\\text{initial condition} \\Rightarrow A = -\\frac{1}{l} \\ln\\left(P-lC_0\\right)}\n\\end{gather}\\]"
-  },
-  {
-    "objectID": "slides/lecture03-1.html#non-steady-state-solution-2",
-    "href": "slides/lecture03-1.html#non-steady-state-solution-2",
-    "title": "Simulating Systems and Box Models",
-    "section": "Non-Steady State Solution",
-    "text": "Non-Steady State Solution\n\\[\\begin{gather}\n&-\\frac{1}{l} \\ln\\left(P-lC\\right) = t - \\frac{1}{l} \\ln\\left(P-lC_0\\right) \\\\[0.5em]\n&\\class{fragment}{{} -\\frac{1}{l} \\ln\\left(\\frac{P-lC}{P-lC_0}\\right) = t} \\\\[0.5em]\n&\\class{fragment}{{} C = -\\frac{1}{l} \\left(P - e^{-lt}\\left(P-lC_0\\right)\\right)} \\\\[0.5em]\n&\\class{fragment}{{} C(t) = C_0 e^{-lt} + \\frac{P}{l}\\left(1 - e^{-lt}\\right) }\n\\end{gather}\\]"
-  },
-  {
-    "objectID": "slides/lecture03-1.html#non-steady-state-solution-3",
-    "href": "slides/lecture03-1.html#non-steady-state-solution-3",
-    "title": "Simulating Systems and Box Models",
-    "section": "Non-Steady State Solution",
-    "text": "Non-Steady State Solution\n\\[C(t) = \\color{red}C_0 e^{-lt} \\color{black}+ \\color{blue}\\frac{P}{l}\\left(1 - e^{-lt}\\right)\\]\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInitial condition is transient (decays to zero eventually);\nConcentration converges to a steady-state solution."
-  },
-  {
-    "objectID": "slides/lecture03-1.html#time-varying-flows",
-    "href": "slides/lecture03-1.html#time-varying-flows",
-    "title": "Simulating Systems and Box Models",
-    "section": "Time-Varying Flows",
-    "text": "Time-Varying Flows\nCan also incorporate more complex in/outflow dynamics:\n\nstochastic/dynamic in advection (wind speed);\nInflow/outflow concentrations varying over time"
-  },
-  {
-    "objectID": "slides/lecture03-1.html#multiple-boxes",
-    "href": "slides/lecture03-1.html#multiple-boxes",
-    "title": "Simulating Systems and Box Models",
-    "section": "Multiple Boxes",
-    "text": "Multiple Boxes\nTo make this into a multi-box model, we can string together boxes (so the outflow from box 1 becomes the inflow for box 2).\nWe’ll see an example of this next class.\nKey point for now: there is a computational/approximation tradeoff when deciding on box resolution."
-  },
-  {
-    "objectID": "slides/lecture03-1.html#key-takeaways-simulation",
-    "href": "slides/lecture03-1.html#key-takeaways-simulation",
-    "title": "Simulating Systems and Box Models",
-    "section": "Key Takeaways: Simulation",
-    "text": "Key Takeaways: Simulation\n\nSimulation: Use model to evaluate system dynamics/outputs under different conditions.\nSimulation ⇔ Descriptive Modeling\nSimulation useful as a proxy for “real-world” experiments or future projections"
-  },
-  {
-    "objectID": "slides/lecture03-1.html#key-takeaways-box-models",
-    "href": "slides/lecture03-1.html#key-takeaways-box-models",
-    "title": "Simulating Systems and Box Models",
-    "section": "Key Takeaways: Box Models",
-    "text": "Key Takeaways: Box Models\n\nBuilding block for many simulation models.\nBoxes are \\(n\\)-d “chunks” of the system domain.\nBox Models ⇔ Mass/Energy Balance.\nNon-Steady State Box Models can often be decomposed into a transient portion and an equilibrium/steady-state portion.\nCan combine multiple boxes together to create more complex models."
-  },
-  {
-    "objectID": "slides/lecture03-1.html#next-classes",
-    "href": "slides/lecture03-1.html#next-classes",
-    "title": "Simulating Systems and Box Models",
-    "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Building Dissolved Oxygen Model\nFriday: Dissolved Oxygen Simulation\nHomework: - HW1 due Friday - HW2 assigned Friday (on simulation for dissolved oxygen and risk)\n\n\nBEE 4750, Environmental Systems Analysis"
-  },
-  {
     "objectID": "slides/lecture02-1.html#what-is-a-system",
     "href": "slides/lecture02-1.html#what-is-a-system",
     "title": "Understanding Systems with Models",
@@ -1145,11 +1012,18 @@
     "href": "slides/lecture02-1.html#key-takeaways-1",
     "title": "Understanding Systems with Models",
     "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nMathematical models allow us to understand how external inputs combine with internal system dynamics to produce outputs.\nModels can be prescriptive or descriptive depending on goal of analysis.\nFor most interesting problems, cannot solve analytically and need to use numerical methods.\nSimulation models: Generate data by evaluating model to represent system dynamics.\nOptimization model: Find parameters which maximize/minimize some criterion."
+    "text": "Key Takeaways\n\nMathematical models allow us to understand how external inputs combine with internal system dynamics to produce outputs.\nModels can be prescriptive or descriptive depending on goal of analysis.\nFor most interesting problems, cannot solve analytically and need to use numerical methods."
   },
   {
     "objectID": "slides/lecture02-1.html#key-takeaways-2",
     "href": "slides/lecture02-1.html#key-takeaways-2",
+    "title": "Understanding Systems with Models",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nSimulation models: Generate data by evaluating model to represent system dynamics.\nOptimization model: Find parameters which maximize/minimize some criterion."
+  },
+  {
+    "objectID": "slides/lecture02-1.html#key-takeaways-3",
+    "href": "slides/lecture02-1.html#key-takeaways-3",
     "title": "Understanding Systems with Models",
     "section": "Key Takeaways",
     "text": "Key Takeaways\n\nAll models are at best approximations: be conscious of what assumptions you’ve made and how they might change the modeled outcomes (you will be asked to do this on homeworks)."
@@ -1563,359 +1437,492 @@
   {
     "objectID": "slides/lecture04-1.html#last-class",
     "href": "slides/lecture04-1.html#last-class",
-    "title": "Uncertainty and Risk",
+    "title": "Dissolved Oxygen Simulation",
     "section": "Last Class",
-    "text": "Last Class\n\nSimulation involves running a model to evaluate dynamics.\nAllows us to look at how system behaves under different conditions and/or parameter values.\nThink of analogy to experimentation.\nLooked at example of dissolved oxygen."
+    "text": "Last Class\n\n\n\nDissolved Oxygen: essential quantity for aquatic life\nMinimum concentration regulated\nUsed mass-balance to derive first-order equation\n\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
   },
   {
-    "objectID": "slides/lecture04-1.html#simulation-workflow-overview",
-    "href": "slides/lecture04-1.html#simulation-workflow-overview",
-    "title": "Uncertainty and Risk",
-    "section": "Simulation Workflow Overview",
-    "text": "Simulation Workflow Overview\n\nSimulation Workflow Diagram"
+    "objectID": "slides/lecture04-1.html#do-concentration-equation",
+    "href": "slides/lecture04-1.html#do-concentration-equation",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "DO Concentration Equation",
+    "text": "DO Concentration Equation\n\\[\\begin{align}\n\\overbrace{U \\frac{dC}{dx}}^{\\text{Concentration Change}} &= \\overbrace{k_a (C_s - C)}^{\\text{Reaeration}} + \\overbrace{P - R - S_B}^{\\text{Constants}} \\\\[0.5em]\n&\\quad - \\underbrace{k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right)}_{\\text{CBOD}} - \\underbrace{k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)}_{\\text{NBOD}}\n\\end{align}\\]"
   },
   {
     "objectID": "slides/lecture04-1.html#questions",
     "href": "slides/lecture04-1.html#questions",
-    "title": "Uncertainty and Risk",
-    "section": "Questions?",
-    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture04-1.html#systems-and-uncertainty",
-    "href": "slides/lecture04-1.html#systems-and-uncertainty",
-    "title": "Uncertainty and Risk",
-    "section": "Systems and Uncertainty",
-    "text": "Systems and Uncertainty\n\n\nDeterministic systems models can be subject to uncertainties due to the separation between the “internals” of the system and the “external” environment.\n\n\n\n\nConceptual Schematic of a Systems Model"
+    "objectID": "slides/lecture04-1.html#steady-state-mass-balance-solution",
+    "href": "slides/lecture04-1.html#steady-state-mass-balance-solution",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Steady-State Mass-Balance Solution",
+    "text": "Steady-State Mass-Balance Solution\n\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1), \\\\[1em]\n\n\\alpha_1 &= \\exp\\left(-\\frac{k_a x}{U}\\right) \\\\[0.25em]\n\\alpha_2 &= \\left(\\frac{k_c}{k_a-k_c}\\right)\\left[\\exp\\left(\\frac{-k_c x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right] \\\\[0.25em]\n\\alpha_3 &= \\left(\\frac{k_n}{k_a-k_n}\\right)\\left[\\exp\\left(\\frac{-k_n x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right]\n\\end{align}\\]"
   },
   {
-    "objectID": "slides/lecture04-1.html#reminder-all-models-are-wrong-but-some-are-useful",
-    "href": "slides/lecture04-1.html#reminder-all-models-are-wrong-but-some-are-useful",
-    "title": "Uncertainty and Risk",
-    "section": "Reminder: “All Models Are Wrong, But Some Are Useful”",
-    "text": "Reminder: “All Models Are Wrong, But Some Are Useful”\n\n\nEvery systems model simplifies or neglects certain aspects of the system!\nEven if appropriate, this results in uncertainty about how results translate to the real system.\n\n\n\n\nConceptual Schematic of a Systems Model"
+    "objectID": "slides/lecture04-1.html#steady-state-mass-balance-solution-1",
+    "href": "slides/lecture04-1.html#steady-state-mass-balance-solution-1",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Steady-State Mass-Balance Solution",
+    "text": "Steady-State Mass-Balance Solution\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 \\\\[0.5em]\n& \\qquad + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1),\n\\end{align}\\]\nNote: Usually, these models ignore \\(P\\), \\(R\\), and \\(S_B\\).\nWhy do you think that might be?"
   },
   {
-    "objectID": "slides/lecture04-1.html#what-is-uncertainty",
-    "href": "slides/lecture04-1.html#what-is-uncertainty",
-    "title": "Uncertainty and Risk",
-    "section": "What is Uncertainty?",
-    "text": "What is Uncertainty?\nGlib Answer: A lack of certainty!\n\nMore Seriously: Uncertainty refers to an inability to exactly describe current or future values or states."
+    "objectID": "slides/lecture04-1.html#dissolved-oxygen-sag-curve",
+    "href": "slides/lecture04-1.html#dissolved-oxygen-sag-curve",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Dissolved Oxygen “Sag” Curve",
+    "text": "Dissolved Oxygen “Sag” Curve\n\n\nDissolved oxygen concentrations downstream of a waste release “sag” and then start to recover as CBOD and NBOD decrease.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Sag curve for dissolved oxygen."
   },
   {
-    "objectID": "slides/lecture04-1.html#types-of-uncertainty",
-    "href": "slides/lecture04-1.html#types-of-uncertainty",
-    "title": "Uncertainty and Risk",
-    "section": "Types of Uncertainty",
-    "text": "Types of Uncertainty\nTwo (broad) types of uncertainties:\n\nAleatory uncertainty, or uncertainties resulting from randomness;\nEpistemic uncertainty, or uncertainties resulting from lack of knowledge."
+    "objectID": "slides/lecture04-1.html#how-to-simulate",
+    "href": "slides/lecture04-1.html#how-to-simulate",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "How To Simulate",
+    "text": "How To Simulate\nSo far, this is only different from our single-box airshed in terms of the number of processes.\nSingle equation, straightforward to evaluate across many values of \\(x\\) with a loop:\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = (y -&gt; dissolved_oxygen(y, parameters)).(x)"
   },
   {
-    "objectID": "slides/lecture04-1.html#on-epistemic-uncertainty",
-    "href": "slides/lecture04-1.html#on-epistemic-uncertainty",
-    "title": "Uncertainty and Risk",
-    "section": "On Epistemic Uncertainty",
-    "text": "On Epistemic Uncertainty\n\nXKCD cartoon 2440: Epistemic Uncertainty\nSource: https://xkcd.com/2440"
+    "objectID": "slides/lecture04-1.html#single-discharge-example",
+    "href": "slides/lecture04-1.html#single-discharge-example",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Single-Discharge Example",
+    "text": "Single-Discharge Example\n\n\n\n\n\n\n\n\n\nParameter\nRiver\nWaste\nGeneral\n\n\n\n\nVolume (m3/d)\n100,000\n10,000\n—\n\n\nDO (mg/L)\n6.4\n4.2\n—\n\n\nCBOD (mg/L)\n5\n49\n—\n\n\nNBOD (mg/L)\n5\n27\n—\n\n\n\\(C_s\\) (mg/L)\n—\n—\n7\n\n\n\\(k_a\\), \\(k_c\\), \\(k_n\\)\n—\n—\n0.8, 0.5, 0.4"
   },
   {
-    "objectID": "slides/lecture04-1.html#probability",
-    "href": "slides/lecture04-1.html#probability",
-    "title": "Uncertainty and Risk",
-    "section": "Probability",
-    "text": "Probability\nWe often represent uncertainty using probabilities.\nWhat is probability?"
+    "objectID": "slides/lecture04-1.html#single-discharge-example-initial-condition",
+    "href": "slides/lecture04-1.html#single-discharge-example-initial-condition",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Single-Discharge Example: Initial Condition",
+    "text": "Single-Discharge Example: Initial Condition\nHow do we find the initial state (\\(x=0\\))?\n\nNeed to compute the mixed concentrations of DO, CBOD, and NBOD (\\(Q\\) is the flow volume):\n\\[C_0 = C_\\text{mixed} = \\frac{C_\\text{river} \\times Q_\\text{river} + C_\\text{waste} \\times Q_\\text{waste}}{Q_\\text{river} + Q_\\text{waste}}\\]"
   },
   {
-    "objectID": "slides/lecture04-1.html#what-is-probability",
-    "href": "slides/lecture04-1.html#what-is-probability",
-    "title": "Uncertainty and Risk",
-    "section": "What Is Probability?",
-    "text": "What Is Probability?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+    "objectID": "slides/lecture04-1.html#single-discharge-example-initial-condition-1",
+    "href": "slides/lecture04-1.html#single-discharge-example-initial-condition-1",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Single-Discharge Example: Initial Condition",
+    "text": "Single-Discharge Example: Initial Condition\nSo the initial values:\n\\[C_0 = 6.2 \\ \\text{mg/L}\\]\n\\[B_0 = 9 \\ \\text{mg/L}\\]\n\\[N_0 = 7 \\ \\text{mg/L}\\]"
   },
   {
-    "objectID": "slides/lecture04-1.html#two-definitions-of-probability",
-    "href": "slides/lecture04-1.html#two-definitions-of-probability",
-    "title": "Uncertainty and Risk",
-    "section": "Two Definitions of Probability",
-    "text": "Two Definitions of Probability\n\nLong-run frequency of an event (frequentist)\nDegree of belief that a proposition is true (Bayesian)\n\nThe frequentist definition concerns what would happen with a large enough number of repeated trials.\nThe Bayesian definition concerns the odds that you should bet on an outcome."
+    "objectID": "slides/lecture04-1.html#single-discharge-example-simulation",
+    "href": "slides/lecture04-1.html#single-discharge-example-simulation",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Single-Discharge Example: Simulation",
+    "text": "Single-Discharge Example: Simulation\nNow we can compute \\(C(x)\\) (river velocity \\(U = 5\\) km/d).\n\n\nfunction dissolved_oxygen(x, Cs, C0, B0, N0, ka, kc, kn, U)\n    α1 = exp(-ka * x / U)\n    α2 = (kc / (ka - kc)) * (exp(-kc * x / U) - α1)\n    α3 = (kn / (ka - kn)) * (exp(-kn * x / U) - α1)\n    C = (Cs * (1 - α1)) + (C0 * α1) - (B0 * α2) - (N0 * α3)\n    return C\nend\n\nx = 0:0.1:20\nC = (y -&gt; dissolved_oxygen(y, Cs, C0, B0, N0, ka, kc, kn, U)).(x)"
   },
   {
-    "objectID": "slides/lecture04-1.html#probability-distributions",
-    "href": "slides/lecture04-1.html#probability-distributions",
-    "title": "Uncertainty and Risk",
-    "section": "Probability Distributions",
-    "text": "Probability Distributions\nWe often represent probability using distributions — more on this next time.\nThe choice of distributions can often play a large role in outcomes."
+    "objectID": "slides/lecture04-1.html#single-discharge-example-simulation-1",
+    "href": "slides/lecture04-1.html#single-discharge-example-simulation-1",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Single-Discharge Example: Simulation",
+    "text": "Single-Discharge Example: Simulation\n\n\n\n\nCode\nplot(x, C; linewidth=3, \n    label=\"Dissolved Oxygen\", \n    tickfontsize=16, \n    guidefontsize=16, \n    legendfontsize=16)\nxlabel!(L\"$x$ (km)\")\nylabel!(\"DO Concentration (mg/L)\")\nhline!([3], color=:red, \n    linestyle=:dash, \n    label=\"Regulatory Standard\")\nplot!(size=(500, 500))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Single-Release Dissolved Oxygen Example"
   },
   {
-    "objectID": "slides/lecture04-1.html#neglecting-correlations",
-    "href": "slides/lecture04-1.html#neglecting-correlations",
-    "title": "Uncertainty and Risk",
-    "section": "Neglecting Correlations",
-    "text": "Neglecting Correlations\nFor example, an often key concern is whether uncertainties are correlated: do certain outcomes tend to occur in combination?\nIf this is the case, it can bias results to assume independence."
+    "objectID": "slides/lecture04-1.html#multiple-discharges",
+    "href": "slides/lecture04-1.html#multiple-discharges",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Multiple Discharges",
+    "text": "Multiple Discharges\nWhat happens if we have multiple discharge sites?\n\nSchematic for Multiple Discharge Example"
   },
   {
-    "objectID": "slides/lecture04-1.html#correlated-climate-uncertainties",
-    "href": "slides/lecture04-1.html#correlated-climate-uncertainties",
-    "title": "Uncertainty and Risk",
-    "section": "Correlated Climate Uncertainties",
-    "text": "Correlated Climate Uncertainties\nConsider projections of future climate change for a certain emissions trajectory.\nThere are several key (uncertain) parameters affecting how:\n\ncarbon is cycled by the Earth system\nCO2 in the atmosphere results in warming."
+    "objectID": "slides/lecture04-1.html#multiple-discharges-1",
+    "href": "slides/lecture04-1.html#multiple-discharges-1",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Multiple Discharges",
+    "text": "Multiple Discharges\n\n\nThink about this as a multi-box problem:\n\nBox 1: From Release 1 to Release 2\nBox 2: From Release 2 to End\n\n\n\n\n\nMultiple Discharge Boxes"
   },
   {
-    "objectID": "slides/lecture04-1.html#correlated-climate-uncertainties-1",
-    "href": "slides/lecture04-1.html#correlated-climate-uncertainties-1",
-    "title": "Uncertainty and Risk",
-    "section": "Correlated Climate Uncertainties",
-    "text": "Correlated Climate Uncertainties\n\n\n\nEquilibrium Climate Sensitivity\nOcean Heat Diffusivity\nAerosol Cooling Factor\nCarbon Sink Respiration Sensitivity\n\n\n\n\n\nCorrelated climate parameter estimates\n\n\n\nSource: Errickson et al (2021)"
+    "objectID": "slides/lecture04-1.html#multiple-discharges-2",
+    "href": "slides/lecture04-1.html#multiple-discharges-2",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Multiple Discharges",
+    "text": "Multiple Discharges\n\n\n\nDynamics within each box are like single-release example;\nMake sure to get new initial conditions from relevant outflows!\n\n\n\n\n\nMultiple Discharge Boxes"
   },
   {
-    "objectID": "slides/lecture04-1.html#impact-of-neglecting-climate-correlations",
-    "href": "slides/lecture04-1.html#impact-of-neglecting-climate-correlations",
-    "title": "Uncertainty and Risk",
-    "section": "Impact of Neglecting Climate Correlations",
-    "text": "Impact of Neglecting Climate Correlations\n\n\nNeglecting these correlations can change the distribution of hindcasted and projected temperatures.\n\n\n\n\nImpact of ignoring parameter correlations on modeled temperatures\n\n\n\nSource: Errickson et al (2021)"
-  },
-  {
-    "objectID": "slides/lecture04-1.html#systems-and-risk",
-    "href": "slides/lecture04-1.html#systems-and-risk",
-    "title": "Uncertainty and Risk",
-    "section": "Systems and Risk",
-    "text": "Systems and Risk\nDesigning and managing environmental systems is often about minimizing or managing risk:\n\nMaintaining clean air/water;\nPower grid reliabiliy standards;\nFlooding/other hazards;\nClimate change mitigation/adaptation."
-  },
-  {
-    "objectID": "slides/lecture04-1.html#what-is-risk",
-    "href": "slides/lecture04-1.html#what-is-risk",
-    "title": "Uncertainty and Risk",
-    "section": "What is Risk?",
-    "text": "What is Risk?\nThe Society for Risk Analysis definition:\n\n\n“risk” involves uncertainty about the effects/implications of an activity with respect to something that humans value (such as health, well-being, wealth, property or the environment), often focusing on negative, undesirable consequences."
-  },
-  {
-    "objectID": "slides/lecture04-1.html#ipcc-definition-of-risk",
-    "href": "slides/lecture04-1.html#ipcc-definition-of-risk",
-    "title": "Uncertainty and Risk",
-    "section": "IPCC Definition of Risk",
-    "text": "IPCC Definition of Risk\n\n\n…the potential for consequences where something of value is at stake and where the outcome is uncertain, recognizing the diversity of values. Risk is often represented as probability of occurrence of hazardous events or trends multiplied by the impacts if these events or trends occur.\n\n\n— Oppenheimer et al (2014)"
-  },
-  {
-    "objectID": "slides/lecture04-1.html#so-what-is-risk",
-    "href": "slides/lecture04-1.html#so-what-is-risk",
-    "title": "Uncertainty and Risk",
-    "section": "So What is Risk?",
-    "text": "So What is Risk?\nImportant: “Risk” is not just another words for probability, but:\n\nInvolves uncertainty;\nUndesireable outcomes;\nEffects matter, not just the events themselves."
-  },
-  {
-    "objectID": "slides/lecture04-1.html#components-of-risk",
-    "href": "slides/lecture04-1.html#components-of-risk",
-    "title": "Uncertainty and Risk",
-    "section": "Components of Risk",
-    "text": "Components of Risk\n\n\nMultiple components which contribute to risk:\n\nProbability of a hazard;\nExposure to that hazard;\nVulnerability to outcomes;\nSocioeconomic responses.\n\n\n\n\n\nOverview of the Components of Risk\n\n\n\nSource: Simpson et al (2021)"
-  },
-  {
-    "objectID": "slides/lecture04-1.html#risk-management-example-well-contamination",
-    "href": "slides/lecture04-1.html#risk-management-example-well-contamination",
-    "title": "Uncertainty and Risk",
-    "section": "Risk Management Example: Well Contamination",
-    "text": "Risk Management Example: Well Contamination\nConsider the potential contamination of well water. How could we mitigate risk by:\n\n\nreducing hazards:\nreducing exposure:\nreducing vulnerability:\ninfluencing responses:"
-  },
-  {
-    "objectID": "slides/lecture04-1.html#systems-and-risk-management",
-    "href": "slides/lecture04-1.html#systems-and-risk-management",
-    "title": "Uncertainty and Risk",
-    "section": "Systems and Risk Management",
-    "text": "Systems and Risk Management\nRisk management is often a key consideration in systems analysis. For example, consider regulatory standards.\n\nOften a tradeoff between strictness of a regulation and costs of compliance.\nSystems modeling is a key way to understand\n\nthe impacts of changing a regulation\nthe probability of failure to meet standards."
+    "objectID": "slides/lecture04-1.html#multiple-discharges-3",
+    "href": "slides/lecture04-1.html#multiple-discharges-3",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Multiple Discharges",
+    "text": "Multiple Discharges\nQuestion: Who would you penalize for lack of compliance?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Multi-Release Dissolved Oxygen Example"
   },
   {
     "objectID": "slides/lecture04-1.html#key-points-1",
     "href": "slides/lecture04-1.html#key-points-1",
-    "title": "Uncertainty and Risk",
+    "title": "Dissolved Oxygen Simulation",
     "section": "Key Points",
-    "text": "Key Points\n\nUncertainties are a fundamental part of systems modeling and analysis.\nNeed to be thoughtful about the choices that were made in modeling and how they impact outcomes.\nProbabilities: more on this next class, but be careful about distributions and correlations!\nSystems analysis also often about understanding/managing risk."
+    "text": "Key Points\n\nSimulation involves running the model over space/time.\nMultiple sections as “multi-box” model: outflows from one box become inflows/initial conditions for another.\nAssigning blame/responsibility in an interdependent system is not straightforward!"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#simulation-framework-overview",
+    "href": "slides/lecture04-1.html#simulation-framework-overview",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Simulation Framework Overview",
+    "text": "Simulation Framework Overview\n\nSimulation Workflow Diagram"
   },
   {
     "objectID": "slides/lecture04-1.html#next-classes",
     "href": "slides/lecture04-1.html#next-classes",
-    "title": "Uncertainty and Risk",
+    "title": "Dissolved Oxygen Simulation",
     "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Probability and Monte Carlo (briefly!)\nFriday: Lab on Monte Carlo.\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Next Classes\nMonday: Uncertainty and Risk\nWednesday/Friday: Monte Carlo Simulation\nHomework:\n\nHW1 due today!\nHW2 link available on Ed (due in two weeks).\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
-    "objectID": "slides/lecture04-2.html#last-class",
-    "href": "slides/lecture04-2.html#last-class",
+    "objectID": "slides/lecture04-3.html#last-class",
+    "href": "slides/lecture04-3.html#last-class",
     "title": "Monte Carlo Simulation",
     "section": "Last Class",
     "text": "Last Class\n\nUsed dissolved oxygen model to simulate dynamics.\nCompeting consumption/aeration processes result in “sag” curve downstream of waste release.\nResults in difficulty assigning responsibility when dealing with multiple releases.\nWhen simulating with multiple boxes/initial conditions, remember to track all relevant state variables and update!"
   },
   {
+    "objectID": "slides/lecture04-3.html#questions",
+    "href": "slides/lecture04-3.html#questions",
+    "title": "Monte Carlo Simulation",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#systems-and-uncertainty",
+    "href": "slides/lecture04-3.html#systems-and-uncertainty",
+    "title": "Monte Carlo Simulation",
+    "section": "Systems and Uncertainty",
+    "text": "Systems and Uncertainty\n\n\nDeterministic systems models can be subject to uncertainties due to the separation between the “internals” of the system and the “external” environment.\n\n\n\n\nConceptual Schematic of a Systems Model"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#definition-of-probability",
+    "href": "slides/lecture04-3.html#definition-of-probability",
+    "title": "Monte Carlo Simulation",
+    "section": "Definition of Probability",
+    "text": "Definition of Probability\nWe often deal with uncertainty using probabilities.\nProbability is:\n\nLong-run frequency of an event (frequentist)\nDegree of belief that a proposition is true (Bayesian)\n\nThe distinction isn’t essential for our purposes, but might be in the future…"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#probability-distributions",
+    "href": "slides/lecture04-3.html#probability-distributions",
+    "title": "Monte Carlo Simulation",
+    "section": "Probability Distributions",
+    "text": "Probability Distributions\nThe likelihood of possible values of an unknown quantity are often represented as a probability distribution.\nProbability distributions associate a probability to every event under consideration and have to follow certain rules (for example, total probability = 1)."
+  },
+  {
+    "objectID": "slides/lecture04-3.html#selecting-a-distribution",
+    "href": "slides/lecture04-3.html#selecting-a-distribution",
+    "title": "Monte Carlo Simulation",
+    "section": "Selecting a Distribution",
+    "text": "Selecting a Distribution\nThe specification of distributions can strongly influence the analysis."
+  },
+  {
+    "objectID": "slides/lecture04-3.html#selecting-a-distribution-1",
+    "href": "slides/lecture04-3.html#selecting-a-distribution-1",
+    "title": "Monte Carlo Simulation",
+    "section": "Selecting a Distribution",
+    "text": "Selecting a Distribution\nA distribution implicitly answers questions like:\n\nWhat is the most probable event? How much more likely is it than the others?\nAre larger or smaller events more, less, or equally probable?\nHow probable are extreme events?\nAre different events correlated, or are they independent?"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#key-features-of-probability-distributions",
+    "href": "slides/lecture04-3.html#key-features-of-probability-distributions",
+    "title": "Monte Carlo Simulation",
+    "section": "Key Features of Probability Distributions",
+    "text": "Key Features of Probability Distributions\n\nMean/Mode (what events are “typical”)\nSkew (are larger or smaller events more or equally probable)\nVariance (how spread out is the distribution around the mode)\nTail Probabilities (how probable are extreme events)"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#probability-distribution-tails",
+    "href": "slides/lecture04-3.html#probability-distribution-tails",
+    "title": "Monte Carlo Simulation",
+    "section": "Probability Distribution Tails",
+    "text": "Probability Distribution Tails\n\n\nThe tails of distributions represent the probability of high-impact outcomes.\nKey consideration: Small changes to these (low) probabilities can greatly influence risk."
+  },
+  {
+    "objectID": "slides/lecture04-3.html#stochastic-simulation",
+    "href": "slides/lecture04-3.html#stochastic-simulation",
+    "title": "Monte Carlo Simulation",
+    "section": "Stochastic Simulation",
+    "text": "Stochastic Simulation\nMonte Carlo simulation: Propagating random samples through a model.\n\n\n\n\n\n\n\nG\n\n  \n\na\n\n Probability  Distribution   \n\nb\n\n Random  Samples   \n\na-&gt;b\n\n  Sample   \n\nc\n\n Model   \n\nb-&gt;c\n\n  Input   \n\nd\n\n Outputs   \n\nc-&gt;d\n\n  Simulate"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#goals-of-monte-carlo",
+    "href": "slides/lecture04-3.html#goals-of-monte-carlo",
+    "title": "Monte Carlo Simulation",
+    "section": "Goals of Monte Carlo",
+    "text": "Goals of Monte Carlo\nMonte Carlo is a broad method, which can be used to:\n\nObtain probability distributions of outputs;\nEstimate deterministic quantities (Monte Carlo estimation)."
+  },
+  {
+    "objectID": "slides/lecture04-3.html#monte-carlo-estimation",
+    "href": "slides/lecture04-3.html#monte-carlo-estimation",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo Estimation",
+    "text": "Monte Carlo Estimation\nMonte Carlo estimation involves framing the quantity of interest as a summary statistic (such as an expected value)."
+  },
+  {
+    "objectID": "slides/lecture04-3.html#mc-example-finding-pi",
+    "href": "slides/lecture04-3.html#mc-example-finding-pi",
+    "title": "Monte Carlo Simulation",
+    "section": "MC Example: Finding \\(\\pi\\)",
+    "text": "MC Example: Finding \\(\\pi\\)\n\n\nFinding \\(\\pi\\) by sampling random values from the unit square and computing the fraction in the unit circle. This is an example of Monte Carlo integration.\n\\[\\frac{\\text{Area of Circle}}{\\text{Area of Square}} = \\frac{\\pi}{4}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#mc-example-dice",
+    "href": "slides/lecture04-3.html#mc-example-dice",
+    "title": "Monte Carlo Simulation",
+    "section": "MC Example: Dice",
+    "text": "MC Example: Dice\n\n\nWhat is the probability of rolling 4 dice for a total of 19?\nCan simulate dice rolls and find the frequency of 19s among the samples."
+  },
+  {
+    "objectID": "slides/lecture04-3.html#monte-carlo-estimation-1",
+    "href": "slides/lecture04-3.html#monte-carlo-estimation-1",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo Estimation",
+    "text": "Monte Carlo Estimation\nThis type of estimation can be repeated with any simulation model that has a stochastic component.\nFor example, consider our dissolved oxygen model. Suppose that we have a probability distribution for the inflow DO.\nHow could we compute the probability of DO falling below the regulatory standard somewhere downstream?"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#why-monte-carlo-works",
+    "href": "slides/lecture04-3.html#why-monte-carlo-works",
+    "title": "Monte Carlo Simulation",
+    "section": "Why Monte Carlo Works",
+    "text": "Why Monte Carlo Works\nWe can formalize this common use of Monte Carlo estimation as the computation of the expected value of a random quantity \\(Y\\), \\(\\mu = \\mathbb{E}[Y]\\).\nTo do this, generate \\(n\\) independent and identically distributed values \\(Y_1, \\ldots, Y_n\\). Then the sample estimate is\n\\[\\tilde{\\mu} = \\frac{1}{n}\\sum_{i=1}^n Y_i\\]"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#monte-carlo-formally",
+    "href": "slides/lecture04-3.html#monte-carlo-formally",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo (Formally)",
+    "text": "Monte Carlo (Formally)\nMore generally, we want to compute some quantity \\(Y=f(X)\\), where \\(X\\) is distributed according to some probability distribution \\(p(x)\\) and \\(f(x)\\) is a real-valued function over a domain \\(D\\).\nThen \\[\\mu = \\mathbb{E}(Y) = \\int_D f(x)p(x)dx.\\]"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#the-law-of-large-numbers",
+    "href": "slides/lecture04-3.html#the-law-of-large-numbers",
+    "title": "Monte Carlo Simulation",
+    "section": "The Law of Large Numbers",
+    "text": "The Law of Large Numbers\nIf\n\n\\(Y\\) is a random variable and its expectation exists and\n\\(Y_1, \\ldots, Y_n\\) are independently and identically distributed\n\nThen by the weak law of large numbers:\n\\[\\lim_{n \\to \\infty} \\mathbb{P}\\left(\\left|\\tilde{\\mu}_n - \\mu\\right| \\leq \\varepsilon \\right) = 1\\]"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#the-law-of-large-numbers-1",
+    "href": "slides/lecture04-3.html#the-law-of-large-numbers-1",
+    "title": "Monte Carlo Simulation",
+    "section": "The Law of Large Numbers",
+    "text": "The Law of Large Numbers\nIn other words, eventually we will get within an arbitrary error of the true expectation. But how large is large enough?"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#monte-carlo-sample-mean",
+    "href": "slides/lecture04-3.html#monte-carlo-sample-mean",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo Sample Mean",
+    "text": "Monte Carlo Sample Mean\nNotice that the sample mean \\(\\tilde{\\mu}_n\\) is itself a random variable.\nWith some assumptions (the mean of \\(Y\\) exists and \\(Y\\) has finite variance), the expected Monte Carlo sample mean \\(\\mathbb{E}[\\tilde{\\mu}_n]\\) is\n\\[\\frac{1}{n}\\sum_{i=1}^n \\mathbb{E}[Y_i] = \\frac{1}{n} n \\mu = \\mu\\]\nThis means that the Monte Carlo estimate is an unbiased estimate of the mean."
+  },
+  {
+    "objectID": "slides/lecture04-3.html#monte-carlo-error",
+    "href": "slides/lecture04-3.html#monte-carlo-error",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo Error",
+    "text": "Monte Carlo Error\nWe’d like to know more about the error of this estimate for a given sample size. The variance of this estimator is\n\\[\\tilde{\\sigma}_n^2 = \\text{Var}\\left(\\tilde{\\mu}_n\\right) = \\mathbb{E}\\left((\\tilde{\\mu}_n - \\mu)^2\\right) = \\frac{\\sigma_Y^2}{n}\\]\nSo as \\(n\\) increases, the standard error decreases:\n\\[\\tilde{\\sigma}_n = \\frac{\\sigma_Y}{\\sqrt{n}}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#monte-carlo-error-1",
+    "href": "slides/lecture04-3.html#monte-carlo-error-1",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo Error",
+    "text": "Monte Carlo Error\nIn other words, if we want to decrease the Monte Carlo error by 10x, we need 100x additional samples. This is not an ideal method for high levels of accuracy.\n\n\n\nMonte Carlo is an extremely bad method. It should only be used when all alternative methods are worse.\n\n\n— Sokal, Monte Carlo Methods in Statistical Mechanics, 1996"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#monte-carlo-confidence-intervals",
+    "href": "slides/lecture04-3.html#monte-carlo-confidence-intervals",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo Confidence Intervals",
+    "text": "Monte Carlo Confidence Intervals\nThis error estimate lets us compute confidence intervals for the MC estimate (details on the website).\nBasic Idea: The Central Limit Theorem says that with enough samples, the errors are normally distributed:\n\\[\\left\\|\\tilde{\\mu}_n - \\mu\\right\\| \\to \\mathcal{N}\\left(0, \\frac{\\sigma_Y^2}{n}\\right)\\]"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#monte-carlo-confidence-intervals-1",
+    "href": "slides/lecture04-3.html#monte-carlo-confidence-intervals-1",
+    "title": "Monte Carlo Simulation",
+    "section": "Monte Carlo Confidence Intervals",
+    "text": "Monte Carlo Confidence Intervals\nThis means that we can construct confidence intervals using the inverse cumulative distribution function for the normal distribution.\nThe \\(\\alpha\\)-confidence interval is: \\[\\tilde{\\mu}_n \\pm \\Phi^{-1}\\left(1 - \\frac{\\alpha}{2}\\right) \\frac{\\sigma_Y}{\\sqrt{n}}\\]\nFor example, the 95% confidence interval is \\(\\tilde{\\mu}_n \\pm 1.96 \\sqrt{\\sigma_Y}{\\sqrt{n}}\\)."
+  },
+  {
+    "objectID": "slides/lecture04-3.html#implications-of-monte-carlo-error",
+    "href": "slides/lecture04-3.html#implications-of-monte-carlo-error",
+    "title": "Monte Carlo Simulation",
+    "section": "Implications of Monte Carlo Error",
+    "text": "Implications of Monte Carlo Error\nConverging at a rate of \\(1/\\sqrt{n}\\) is not great. But:\n\nAll models are wrong, and so there always exists some irreducible model error.\nWe often need a lot of simulations. Do we have enough computational power?"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#when-to-use-monte-carlo",
+    "href": "slides/lecture04-3.html#when-to-use-monte-carlo",
+    "title": "Monte Carlo Simulation",
+    "section": "When To Use Monte Carlo?",
+    "text": "When To Use Monte Carlo?\nIf you can compute your answers analytically, you probably should.\nBut for real problems, we often can’t, and problems that are analytically tractable are often so stylized that we want to test them across a variety of uncertainties to make sure we didn’t over-simplify.\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#last-class",
+    "href": "slides/lecture04-2.html#last-class",
+    "title": "Uncertainty and Risk",
+    "section": "Last Class",
+    "text": "Last Class\n\nSimulation involves running a model to evaluate dynamics.\nAllows us to look at how system behaves under different conditions and/or parameter values.\nThink of analogy to experimentation.\nLooked at example of dissolved oxygen."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#simulation-workflow-overview",
+    "href": "slides/lecture04-2.html#simulation-workflow-overview",
+    "title": "Uncertainty and Risk",
+    "section": "Simulation Workflow Overview",
+    "text": "Simulation Workflow Overview\n\nSimulation Workflow Diagram"
+  },
+  {
     "objectID": "slides/lecture04-2.html#questions",
     "href": "slides/lecture04-2.html#questions",
-    "title": "Monte Carlo Simulation",
+    "title": "Uncertainty and Risk",
     "section": "Questions?",
     "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
     "objectID": "slides/lecture04-2.html#systems-and-uncertainty",
     "href": "slides/lecture04-2.html#systems-and-uncertainty",
-    "title": "Monte Carlo Simulation",
+    "title": "Uncertainty and Risk",
     "section": "Systems and Uncertainty",
     "text": "Systems and Uncertainty\n\n\nDeterministic systems models can be subject to uncertainties due to the separation between the “internals” of the system and the “external” environment.\n\n\n\n\nConceptual Schematic of a Systems Model"
   },
   {
-    "objectID": "slides/lecture04-2.html#definition-of-probability",
-    "href": "slides/lecture04-2.html#definition-of-probability",
-    "title": "Monte Carlo Simulation",
-    "section": "Definition of Probability",
-    "text": "Definition of Probability\nWe often deal with uncertainty using probabilities.\nProbability is:\n\nLong-run frequency of an event (frequentist)\nDegree of belief that a proposition is true (Bayesian)\n\nThe distinction isn’t essential for our purposes, but might be in the future…"
+    "objectID": "slides/lecture04-2.html#reminder-all-models-are-wrong-but-some-are-useful",
+    "href": "slides/lecture04-2.html#reminder-all-models-are-wrong-but-some-are-useful",
+    "title": "Uncertainty and Risk",
+    "section": "Reminder: “All Models Are Wrong, But Some Are Useful”",
+    "text": "Reminder: “All Models Are Wrong, But Some Are Useful”\n\n\nEvery systems model simplifies or neglects certain aspects of the system!\nEven if appropriate, this results in uncertainty about how results translate to the real system.\n\n\n\n\nConceptual Schematic of a Systems Model"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#what-is-uncertainty",
+    "href": "slides/lecture04-2.html#what-is-uncertainty",
+    "title": "Uncertainty and Risk",
+    "section": "What is Uncertainty?",
+    "text": "What is Uncertainty?\nGlib Answer: A lack of certainty!\n\nMore Seriously: Uncertainty refers to an inability to exactly describe current or future values or states."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#types-of-uncertainty",
+    "href": "slides/lecture04-2.html#types-of-uncertainty",
+    "title": "Uncertainty and Risk",
+    "section": "Types of Uncertainty",
+    "text": "Types of Uncertainty\nTwo (broad) types of uncertainties:\n\nAleatory uncertainty, or uncertainties resulting from randomness;\nEpistemic uncertainty, or uncertainties resulting from lack of knowledge."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#on-epistemic-uncertainty",
+    "href": "slides/lecture04-2.html#on-epistemic-uncertainty",
+    "title": "Uncertainty and Risk",
+    "section": "On Epistemic Uncertainty",
+    "text": "On Epistemic Uncertainty\n\nXKCD cartoon 2440: Epistemic Uncertainty\nSource: https://xkcd.com/2440"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#probability",
+    "href": "slides/lecture04-2.html#probability",
+    "title": "Uncertainty and Risk",
+    "section": "Probability",
+    "text": "Probability\nWe often represent uncertainty using probabilities.\nWhat is probability?"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#what-is-probability",
+    "href": "slides/lecture04-2.html#what-is-probability",
+    "title": "Uncertainty and Risk",
+    "section": "What Is Probability?",
+    "text": "What Is Probability?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#two-definitions-of-probability",
+    "href": "slides/lecture04-2.html#two-definitions-of-probability",
+    "title": "Uncertainty and Risk",
+    "section": "Two Definitions of Probability",
+    "text": "Two Definitions of Probability\n\nLong-run frequency of an event (frequentist)\nDegree of belief that a proposition is true (Bayesian)\n\nThe frequentist definition concerns what would happen with a large enough number of repeated trials.\nThe Bayesian definition concerns the odds that you should bet on an outcome."
   },
   {
     "objectID": "slides/lecture04-2.html#probability-distributions",
     "href": "slides/lecture04-2.html#probability-distributions",
-    "title": "Monte Carlo Simulation",
+    "title": "Uncertainty and Risk",
     "section": "Probability Distributions",
-    "text": "Probability Distributions\nThe likelihood of possible values of an unknown quantity are often represented as a probability distribution.\nProbability distributions associate a probability to every event under consideration and have to follow certain rules (for example, total probability = 1)."
+    "text": "Probability Distributions\nWe often represent probability using distributions — more on this next time.\nThe choice of distributions can often play a large role in outcomes."
   },
   {
-    "objectID": "slides/lecture04-2.html#selecting-a-distribution",
-    "href": "slides/lecture04-2.html#selecting-a-distribution",
-    "title": "Monte Carlo Simulation",
-    "section": "Selecting a Distribution",
-    "text": "Selecting a Distribution\nThe specification of distributions can strongly influence the analysis."
+    "objectID": "slides/lecture04-2.html#neglecting-correlations",
+    "href": "slides/lecture04-2.html#neglecting-correlations",
+    "title": "Uncertainty and Risk",
+    "section": "Neglecting Correlations",
+    "text": "Neglecting Correlations\nFor example, an often key concern is whether uncertainties are correlated: do certain outcomes tend to occur in combination?\nIf this is the case, it can bias results to assume independence."
   },
   {
-    "objectID": "slides/lecture04-2.html#selecting-a-distribution-1",
-    "href": "slides/lecture04-2.html#selecting-a-distribution-1",
-    "title": "Monte Carlo Simulation",
-    "section": "Selecting a Distribution",
-    "text": "Selecting a Distribution\nA distribution implicitly answers questions like:\n\nWhat is the most probable event? How much more likely is it than the others?\nAre larger or smaller events more, less, or equally probable?\nHow probable are extreme events?\nAre different events correlated, or are they independent?"
+    "objectID": "slides/lecture04-2.html#correlated-climate-uncertainties",
+    "href": "slides/lecture04-2.html#correlated-climate-uncertainties",
+    "title": "Uncertainty and Risk",
+    "section": "Correlated Climate Uncertainties",
+    "text": "Correlated Climate Uncertainties\nConsider projections of future climate change for a certain emissions trajectory.\nThere are several key (uncertain) parameters affecting how:\n\ncarbon is cycled by the Earth system\nCO2 in the atmosphere results in warming."
   },
   {
-    "objectID": "slides/lecture04-2.html#key-features-of-probability-distributions",
-    "href": "slides/lecture04-2.html#key-features-of-probability-distributions",
-    "title": "Monte Carlo Simulation",
-    "section": "Key Features of Probability Distributions",
-    "text": "Key Features of Probability Distributions\n\nMean/Mode (what events are “typical”)\nSkew (are larger or smaller events more or equally probable)\nVariance (how spread out is the distribution around the mode)\nTail Probabilities (how probable are extreme events)"
+    "objectID": "slides/lecture04-2.html#correlated-climate-uncertainties-1",
+    "href": "slides/lecture04-2.html#correlated-climate-uncertainties-1",
+    "title": "Uncertainty and Risk",
+    "section": "Correlated Climate Uncertainties",
+    "text": "Correlated Climate Uncertainties\n\n\n\nEquilibrium Climate Sensitivity\nOcean Heat Diffusivity\nAerosol Cooling Factor\nCarbon Sink Respiration Sensitivity\n\n\n\n\n\nCorrelated climate parameter estimates\n\n\n\nSource: Errickson et al (2021)"
   },
   {
-    "objectID": "slides/lecture04-2.html#probability-distribution-tails",
-    "href": "slides/lecture04-2.html#probability-distribution-tails",
-    "title": "Monte Carlo Simulation",
-    "section": "Probability Distribution Tails",
-    "text": "Probability Distribution Tails\n\n\nThe tails of distributions represent the probability of high-impact outcomes.\nKey consideration: Small changes to these (low) probabilities can greatly influence risk."
+    "objectID": "slides/lecture04-2.html#impact-of-neglecting-climate-correlations",
+    "href": "slides/lecture04-2.html#impact-of-neglecting-climate-correlations",
+    "title": "Uncertainty and Risk",
+    "section": "Impact of Neglecting Climate Correlations",
+    "text": "Impact of Neglecting Climate Correlations\n\n\nNeglecting these correlations can change the distribution of hindcasted and projected temperatures.\n\n\n\n\nImpact of ignoring parameter correlations on modeled temperatures\n\n\n\nSource: Errickson et al (2021)"
   },
   {
-    "objectID": "slides/lecture04-2.html#stochastic-simulation",
-    "href": "slides/lecture04-2.html#stochastic-simulation",
-    "title": "Monte Carlo Simulation",
-    "section": "Stochastic Simulation",
-    "text": "Stochastic Simulation\nMonte Carlo simulation: Propagating random samples through a model.\n\n\n\n\n\n\n\nG\n\n  \n\na\n\n Probability  Distribution   \n\nb\n\n Random  Samples   \n\na-&gt;b\n\n  Sample   \n\nc\n\n Model   \n\nb-&gt;c\n\n  Input   \n\nd\n\n Outputs   \n\nc-&gt;d\n\n  Simulate"
+    "objectID": "slides/lecture04-2.html#systems-and-risk",
+    "href": "slides/lecture04-2.html#systems-and-risk",
+    "title": "Uncertainty and Risk",
+    "section": "Systems and Risk",
+    "text": "Systems and Risk\nDesigning and managing environmental systems is often about minimizing or managing risk:\n\nMaintaining clean air/water;\nPower grid reliabiliy standards;\nFlooding/other hazards;\nClimate change mitigation/adaptation."
   },
   {
-    "objectID": "slides/lecture04-2.html#goals-of-monte-carlo",
-    "href": "slides/lecture04-2.html#goals-of-monte-carlo",
-    "title": "Monte Carlo Simulation",
-    "section": "Goals of Monte Carlo",
-    "text": "Goals of Monte Carlo\nMonte Carlo is a broad method, which can be used to:\n\nObtain probability distributions of outputs;\nEstimate deterministic quantities (Monte Carlo estimation)."
+    "objectID": "slides/lecture04-2.html#what-is-risk",
+    "href": "slides/lecture04-2.html#what-is-risk",
+    "title": "Uncertainty and Risk",
+    "section": "What is Risk?",
+    "text": "What is Risk?\nThe Society for Risk Analysis definition:\n\n\n“risk” involves uncertainty about the effects/implications of an activity with respect to something that humans value (such as health, well-being, wealth, property or the environment), often focusing on negative, undesirable consequences."
   },
   {
-    "objectID": "slides/lecture04-2.html#monte-carlo-estimation",
-    "href": "slides/lecture04-2.html#monte-carlo-estimation",
-    "title": "Monte Carlo Simulation",
-    "section": "Monte Carlo Estimation",
-    "text": "Monte Carlo Estimation\nMonte Carlo estimation involves framing the quantity of interest as a summary statistic (such as an expected value)."
+    "objectID": "slides/lecture04-2.html#ipcc-definition-of-risk",
+    "href": "slides/lecture04-2.html#ipcc-definition-of-risk",
+    "title": "Uncertainty and Risk",
+    "section": "IPCC Definition of Risk",
+    "text": "IPCC Definition of Risk\n\n\n…the potential for consequences where something of value is at stake and where the outcome is uncertain, recognizing the diversity of values. Risk is often represented as probability of occurrence of hazardous events or trends multiplied by the impacts if these events or trends occur.\n\n\n— Oppenheimer et al (2014)"
   },
   {
-    "objectID": "slides/lecture04-2.html#mc-example-finding-pi",
-    "href": "slides/lecture04-2.html#mc-example-finding-pi",
-    "title": "Monte Carlo Simulation",
-    "section": "MC Example: Finding \\(\\pi\\)",
-    "text": "MC Example: Finding \\(\\pi\\)\n\n\nFinding \\(\\pi\\) by sampling random values from the unit square and computing the fraction in the unit circle. This is an example of Monte Carlo integration.\n\\[\\frac{\\text{Area of Circle}}{\\text{Area of Square}} = \\frac{\\pi}{4}\\]"
+    "objectID": "slides/lecture04-2.html#so-what-is-risk",
+    "href": "slides/lecture04-2.html#so-what-is-risk",
+    "title": "Uncertainty and Risk",
+    "section": "So What is Risk?",
+    "text": "So What is Risk?\nImportant: “Risk” is not just another words for probability, but:\n\nInvolves uncertainty;\nUndesireable outcomes;\nEffects matter, not just the events themselves."
   },
   {
-    "objectID": "slides/lecture04-2.html#mc-example-dice",
-    "href": "slides/lecture04-2.html#mc-example-dice",
-    "title": "Monte Carlo Simulation",
-    "section": "MC Example: Dice",
-    "text": "MC Example: Dice\n\n\nWhat is the probability of rolling 4 dice for a total of 19?\nCan simulate dice rolls and find the frequency of 19s among the samples."
+    "objectID": "slides/lecture04-2.html#components-of-risk",
+    "href": "slides/lecture04-2.html#components-of-risk",
+    "title": "Uncertainty and Risk",
+    "section": "Components of Risk",
+    "text": "Components of Risk\n\n\nMultiple components which contribute to risk:\n\nProbability of a hazard;\nExposure to that hazard;\nVulnerability to outcomes;\nSocioeconomic responses.\n\n\n\n\n\nOverview of the Components of Risk\n\n\n\nSource: Simpson et al (2021)"
   },
   {
-    "objectID": "slides/lecture04-2.html#monte-carlo-estimation-1",
-    "href": "slides/lecture04-2.html#monte-carlo-estimation-1",
-    "title": "Monte Carlo Simulation",
-    "section": "Monte Carlo Estimation",
-    "text": "Monte Carlo Estimation\nThis type of estimation can be repeated with any simulation model that has a stochastic component.\nFor example, consider our dissolved oxygen model. Suppose that we have a probability distribution for the inflow DO.\nHow could we compute the probability of DO falling below the regulatory standard somewhere downstream?"
+    "objectID": "slides/lecture04-2.html#risk-management-example-well-contamination",
+    "href": "slides/lecture04-2.html#risk-management-example-well-contamination",
+    "title": "Uncertainty and Risk",
+    "section": "Risk Management Example: Well Contamination",
+    "text": "Risk Management Example: Well Contamination\nConsider the potential contamination of well water. How could we mitigate risk by:\n\n\nreducing hazards:\nreducing exposure:\nreducing vulnerability:\ninfluencing responses:"
   },
   {
-    "objectID": "slides/lecture04-2.html#why-monte-carlo-works",
-    "href": "slides/lecture04-2.html#why-monte-carlo-works",
-    "title": "Monte Carlo Simulation",
-    "section": "Why Monte Carlo Works",
-    "text": "Why Monte Carlo Works\nWe can formalize this common use of Monte Carlo estimation as the computation of the expected value of a random quantity \\(Y\\), \\(\\mu = \\mathbb{E}[Y]\\).\nTo do this, generate \\(n\\) independent and identically distributed values \\(Y_1, \\ldots, Y_n\\). Then the sample estimate is\n\\[\\tilde{\\mu} = \\frac{1}{n}\\sum_{i=1}^n Y_i\\]"
+    "objectID": "slides/lecture04-2.html#systems-and-risk-management",
+    "href": "slides/lecture04-2.html#systems-and-risk-management",
+    "title": "Uncertainty and Risk",
+    "section": "Systems and Risk Management",
+    "text": "Systems and Risk Management\nRisk management is often a key consideration in systems analysis. For example, consider regulatory standards.\n\nOften a tradeoff between strictness of a regulation and costs of compliance.\nSystems modeling is a key way to understand\n\nthe impacts of changing a regulation\nthe probability of failure to meet standards."
   },
   {
-    "objectID": "slides/lecture04-2.html#monte-carlo-formally",
-    "href": "slides/lecture04-2.html#monte-carlo-formally",
-    "title": "Monte Carlo Simulation",
-    "section": "Monte Carlo (Formally)",
-    "text": "Monte Carlo (Formally)\nMore generally, we want to compute some quantity \\(Y=f(X)\\), where \\(X\\) is distributed according to some probability distribution \\(p(x)\\) and \\(f(x)\\) is a real-valued function over a domain \\(D\\).\nThen \\[\\mu = \\mathbb{E}(Y) = \\int_D f(x)p(x)dx.\\]"
+    "objectID": "slides/lecture04-2.html#key-points-1",
+    "href": "slides/lecture04-2.html#key-points-1",
+    "title": "Uncertainty and Risk",
+    "section": "Key Points",
+    "text": "Key Points\n\nUncertainties are a fundamental part of systems modeling and analysis.\nNeed to be thoughtful about the choices that were made in modeling and how they impact outcomes.\nProbabilities: more on this next class, but be careful about distributions and correlations!\nSystems analysis also often about understanding/managing risk."
   },
   {
-    "objectID": "slides/lecture04-2.html#the-law-of-large-numbers",
-    "href": "slides/lecture04-2.html#the-law-of-large-numbers",
-    "title": "Monte Carlo Simulation",
-    "section": "The Law of Large Numbers",
-    "text": "The Law of Large Numbers\nIf\n\n\\(Y\\) is a random variable and its expectation exists and\n\\(Y_1, \\ldots, Y_n\\) are independently and identically distributed\n\nThen by the weak law of large numbers:\n\\[\\lim_{n \\to \\infty} \\mathbb{P}\\left(\\left|\\tilde{\\mu}_n - \\mu\\right| \\leq \\varepsilon \\right) = 1\\]"
-  },
-  {
-    "objectID": "slides/lecture04-2.html#the-law-of-large-numbers-1",
-    "href": "slides/lecture04-2.html#the-law-of-large-numbers-1",
-    "title": "Monte Carlo Simulation",
-    "section": "The Law of Large Numbers",
-    "text": "The Law of Large Numbers\nIn other words, eventually we will get within an arbitrary error of the true expectation. But how large is large enough?"
-  },
-  {
-    "objectID": "slides/lecture04-2.html#monte-carlo-sample-mean",
-    "href": "slides/lecture04-2.html#monte-carlo-sample-mean",
-    "title": "Monte Carlo Simulation",
-    "section": "Monte Carlo Sample Mean",
-    "text": "Monte Carlo Sample Mean\nNotice that the sample mean \\(\\tilde{\\mu}_n\\) is itself a random variable.\nWith some assumptions (the mean of \\(Y\\) exists and \\(Y\\) has finite variance), the expected Monte Carlo sample mean \\(\\mathbb{E}[\\tilde{\\mu}_n]\\) is\n\\[\\frac{1}{n}\\sum_{i=1}^n \\mathbb{E}[Y_i] = \\frac{1}{n} n \\mu = \\mu\\]\nThis means that the Monte Carlo estimate is an unbiased estimate of the mean."
-  },
-  {
-    "objectID": "slides/lecture04-2.html#monte-carlo-error",
-    "href": "slides/lecture04-2.html#monte-carlo-error",
-    "title": "Monte Carlo Simulation",
-    "section": "Monte Carlo Error",
-    "text": "Monte Carlo Error\nWe’d like to know more about the error of this estimate for a given sample size. The variance of this estimator is\n\\[\\tilde{\\sigma}_n^2 = \\text{Var}\\left(\\tilde{\\mu}_n\\right) = \\mathbb{E}\\left((\\tilde{\\mu}_n - \\mu)^2\\right) = \\frac{\\sigma_Y^2}{n}\\]\nSo as \\(n\\) increases, the standard error decreases:\n\\[\\tilde{\\sigma}_n = \\frac{\\sigma_Y}{\\sqrt{n}}\\]"
-  },
-  {
-    "objectID": "slides/lecture04-2.html#monte-carlo-error-1",
-    "href": "slides/lecture04-2.html#monte-carlo-error-1",
-    "title": "Monte Carlo Simulation",
-    "section": "Monte Carlo Error",
-    "text": "Monte Carlo Error\nIn other words, if we want to decrease the Monte Carlo error by 10x, we need 100x additional samples. This is not an ideal method for high levels of accuracy.\n\n\n\nMonte Carlo is an extremely bad method. It should only be used when all alternative methods are worse.\n\n\n— Sokal, Monte Carlo Methods in Statistical Mechanics, 1996"
-  },
-  {
-    "objectID": "slides/lecture04-2.html#monte-carlo-confidence-intervals",
-    "href": "slides/lecture04-2.html#monte-carlo-confidence-intervals",
-    "title": "Monte Carlo Simulation",
-    "section": "Monte Carlo Confidence Intervals",
-    "text": "Monte Carlo Confidence Intervals\nThis error estimate lets us compute confidence intervals for the MC estimate (details on the website).\nBasic Idea: The Central Limit Theorem says that with enough samples, the errors are normally distributed:\n\\[\\left\\|\\tilde{\\mu}_n - \\mu\\right\\| \\to \\mathcal{N}\\left(0, \\frac{\\sigma_Y^2}{n}\\right)\\]"
-  },
-  {
-    "objectID": "slides/lecture04-2.html#monte-carlo-confidence-intervals-1",
-    "href": "slides/lecture04-2.html#monte-carlo-confidence-intervals-1",
-    "title": "Monte Carlo Simulation",
-    "section": "Monte Carlo Confidence Intervals",
-    "text": "Monte Carlo Confidence Intervals\nThis means that we can construct confidence intervals using the inverse cumulative distribution function for the normal distribution.\nThe \\(\\alpha\\)-confidence interval is: \\[\\tilde{\\mu}_n \\pm \\Phi^{-1}\\left(1 - \\frac{\\alpha}{2}\\right) \\frac{\\sigma_Y}{\\sqrt{n}}\\]\nFor example, the 95% confidence interval is \\(\\tilde{\\mu}_n \\pm 1.96 \\sqrt{\\sigma_Y}{\\sqrt{n}}\\)."
-  },
-  {
-    "objectID": "slides/lecture04-2.html#implications-of-monte-carlo-error",
-    "href": "slides/lecture04-2.html#implications-of-monte-carlo-error",
-    "title": "Monte Carlo Simulation",
-    "section": "Implications of Monte Carlo Error",
-    "text": "Implications of Monte Carlo Error\nConverging at a rate of \\(1/\\sqrt{n}\\) is not great. But:\n\nAll models are wrong, and so there always exists some irreducible model error.\nWe often need a lot of simulations. Do we have enough computational power?"
-  },
-  {
-    "objectID": "slides/lecture04-2.html#when-to-use-monte-carlo",
-    "href": "slides/lecture04-2.html#when-to-use-monte-carlo",
-    "title": "Monte Carlo Simulation",
-    "section": "When To Use Monte Carlo?",
-    "text": "When To Use Monte Carlo?\nIf you can compute your answers analytically, you probably should.\nBut for real problems, we often can’t, and problems that are analytically tractable are often so stylized that we want to test them across a variety of uncertainties to make sure we didn’t over-simplify.\n\n\nBEE 4750, Environmental Systems Analysis"
+    "objectID": "slides/lecture04-2.html#next-classes",
+    "href": "slides/lecture04-2.html#next-classes",
+    "title": "Uncertainty and Risk",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: Probability and Monte Carlo (briefly!)\nFriday: Lab on Monte Carlo.\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "about.html",
@@ -2279,6 +2286,6 @@
     "href": "schedule.html",
     "title": "BEE 4750: Environmental Systems Analysis",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nWed, Sep 06\nModeling Dissolved Oxygen\n\n\n\n\n\n\n\n\nFri, Sep 08\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n4\nMon, Sep 11\nUncertainty and Risk\n\n\n\n\n\n\n\n\nWed, Sep 13\nMonte Carlo Simulation\n\n\n\n\n\n\n\n\nFri, Sep 15\nLab: Monte Carlo\n\n\n\n\n\n\n\n5\nMon, Sep 18\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nWed, Sep 20\nPrescriptive Modeling II\n\n\n\n\n\n\n\n\nFri, Sep 22\nIntroduction to Optimization\n\n\n\n\n\n\n\n6\nMon, Sep 25\nExample: Resource and Land Allocation\n\n\n\n\n\n\n\n\nWed, Sep 27\nLab: Optimization with JuMP.jl"
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 06\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nFri, Sep 08\nModeling Dissolved Oxygen\n\n\n\n\n\n\n\n4\nMon, Sep 11\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n\nWed, Sep 13\nUncertainty and Risk\n\n\n\n\n\n\n\n\nFri, Sep 15\nMonte Carlo Simulation\n\n\n\n\n\n\n\n5\nMon, Sep 18\nLab: Monte Carlo\n\n\n\n\n\n\n\n\nWed, Sep 20\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nFri, Sep 22\nPrescriptive Modeling II\n\n\n\n\n\n\n\n6\nMon, Sep 25\nIntroduction to Optimization\n\n\n\n\n\n\n\n\nWed, Sep 27\nExample: Resource and Land Allocation\n\n\n\n\n\n\n\n\nFri, Sep 29\nLab: Optimization with JuMP.jl"
   }
 ]

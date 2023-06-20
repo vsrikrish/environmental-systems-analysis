@@ -1733,7 +1733,7 @@
     "href": "slides/lecture04-3.html#monte-carlo-confidence-intervals-1",
     "title": "Monte Carlo Simulation",
     "section": "Monte Carlo Confidence Intervals",
-    "text": "Monte Carlo Confidence Intervals\nThis means that we can construct confidence intervals using the inverse cumulative distribution function for the normal distribution.\nThe \\(\\alpha\\)-confidence interval is: \\[\\tilde{\\mu}_n \\pm \\Phi^{-1}\\left(1 - \\frac{\\alpha}{2}\\right) \\frac{\\sigma_Y}{\\sqrt{n}}\\]\nFor example, the 95% confidence interval is \\(\\tilde{\\mu}_n \\pm 1.96 \\sqrt{\\sigma_Y}{\\sqrt{n}}\\)."
+    "text": "Monte Carlo Confidence Intervals\nCan construct confidence intervals using the inverse cumulative distribution function for the normal distribution. The \\(\\alpha\\)-confidence interval is: \\[\\tilde{\\mu}_n \\pm \\Phi^{-1}\\left(1 - \\frac{\\alpha}{2}\\right) \\frac{\\sigma_Y}{\\sqrt{n}}\\]\nFor example, the 95% confidence interval is \\(\\tilde{\\mu}_n \\pm 1.96 \\sqrt{\\sigma_Y}{\\sqrt{n}}\\)."
   },
   {
     "objectID": "slides/lecture04-3.html#implications-of-monte-carlo-error",

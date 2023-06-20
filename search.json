@@ -1740,14 +1740,7 @@
     "href": "slides/lecture04-3.html#implications-of-monte-carlo-error",
     "title": "Monte Carlo Simulation",
     "section": "Implications of Monte Carlo Error",
-    "text": "Implications of Monte Carlo Error\nConverging at a rate of \\(1/\\sqrt{n}\\) is not great. But:\n\nAll models are wrong, and so there always exists some irreducible model error.\nWe often need a lot of simulations. Do we have enough computational power?"
-  },
-  {
-    "objectID": "slides/lecture04-3.html#when-to-use-monte-carlo",
-    "href": "slides/lecture04-3.html#when-to-use-monte-carlo",
-    "title": "Monte Carlo Simulation",
-    "section": "When To Use Monte Carlo?",
-    "text": "When To Use Monte Carlo?\nIf you can compute your answers analytically, you probably should.\nBut for real problems, we often can’t, and problems that are analytically tractable are often so stylized that we want to test them across a variety of uncertainties to make sure we didn’t over-simplify."
+    "text": "Implications of Monte Carlo Error\nConverging at a rate of \\(1/\\sqrt{n}\\) is not great. But:\n\nAll models are wrong, and so there always exists some irreducible model error.\nWe often need a lot of simulations. Do we have enough computational power?\n\n–\nIf you can compute your answer analytically, you probably should. But often this is difficult if not impossible without many simplifying assumptions."
   },
   {
     "objectID": "slides/lecture04-3.html#key-takeaways-1",

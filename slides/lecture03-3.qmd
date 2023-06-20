@@ -300,10 +300,8 @@ U \frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B \\\\
 
 ## Next Classes
 
-**Friday**: Use DO model for simulation.
-
-**Next Week**: Uncertainty, Probability (Monte Carlo) and Risk Analysis
+**Next Week**: Use DO model for simulation, uncertainty, and Monte Carlo.
 
 **Homework**:
-- HW1 due Friday
-- HW2 assigned Friday (on simulation for dissolved oxygen and risk)
+- HW1 due **today**.
+- HW2 assigned Monday (on simulation for dissolved oxygen and risk)

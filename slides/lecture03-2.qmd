@@ -296,10 +296,8 @@ We'll see an example of this next class.
 
 ## Next Classes
 
-**Wednesday**: Building Dissolved Oxygen Model
-
-**Friday**: Dissolved Oxygen Simulation
+**Friday**: Building a Model for Dissolved Oxygen
 
 **Homework**:
 - HW1 due Friday
-- HW2 assigned Friday (on simulation for dissolved oxygen and risk)
+- HW2 assigned Monday (on simulation for dissolved oxygen and risk)

@@ -432,3 +432,21 @@ Converging at a rate of $1/\sqrt{n}$ is not great. But:
 If you can compute your answers analytically, you probably should. 
 
 **But for real problems, we often can't**, and problems that are analytically tractable are often so stylized that we want to test them across a variety of uncertainties to make sure we didn't over-simplify.
+
+# Key Takeaways
+
+## Key Takeaways
+
+- Choice of probability distribution can have large impacts on uncertainty and risk estimates: **try not to use distributions just because they're convenient.**
+- **Monte Carlo**: Estimate expected values of functions using simulation.
+- Monte Carlo error is on the order $1/\sqrt{n}$, so not great if more direct approaches are available and tractable.
+
+# Upcoming Schedule
+
+## Next Classes
+
+**Monday**: Lab on Monte Carlo.
+
+**Wednesday/Friday**: Introduction to Decision-Making and Prescriptive Modeling 
+
+**Homework**: Should be able to do most of HW2 (last question(s) on uncertainty may require Monday's lab).

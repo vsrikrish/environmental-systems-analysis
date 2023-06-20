@@ -218,11 +218,8 @@ Think about this as a multi-box problem:
 
 ## Next Classes
 
-**Monday**: Uncertainty and Risk
-
-**Wednesday/Friday**: Monte Carlo Simulation
+**Wednesday/Friday**: Uncertainty and Monte Carlo Simulation
 
 **Homework**:
 
-- HW1 due **today!**
 - HW2 link available on Ed (due in two weeks).

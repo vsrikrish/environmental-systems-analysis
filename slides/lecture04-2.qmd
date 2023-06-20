@@ -275,6 +275,6 @@ Risk management is often a key consideration in systems analysis. For example, c
 
 ## Next Classes
 
-**Wednesday**: Probability and Monte Carlo (briefly!)
+**Friday**: Probability and Monte Carlo
 
-**Friday**: Lab on Monte Carlo.
+**Next Week**: Lab on Monte Carlo.

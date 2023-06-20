@@ -311,9 +311,7 @@ What are the implications for management?
 
 # Upcoming Schedule
 
-## Next Classes
+## Next Class
 
-**Monday**: Simulating Systems; Box Models.
-
-**Wednesday**: Dissolved Oxygen Simulation
+**Wednesday**: Simulating Systems; Box Models.
 

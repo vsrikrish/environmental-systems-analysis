@@ -326,7 +326,7 @@
     "href": "slides/lecture03-3.html#next-classes",
     "title": "Building A Dissolved Oxygen Model",
     "section": "Next Classes",
-    "text": "Next Classes\nFriday: Use DO model for simulation.\nNext Week: Uncertainty, Probability (Monte Carlo) and Risk Analysis\nHomework: - HW1 due Friday - HW2 assigned Friday (on simulation for dissolved oxygen and risk)\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Next Classes\nNext Week: Use DO model for simulation, uncertainty, and Monte Carlo.\nHomework: - HW1 due today. - HW2 assigned Monday (on simulation for dissolved oxygen and risk)\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture01-1.html#course-overview",
@@ -690,7 +690,7 @@
     "href": "slides/lecture03-2.html#next-classes",
     "title": "Simulating Systems and Box Models",
     "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Building Dissolved Oxygen Model\nFriday: Dissolved Oxygen Simulation\nHomework: - HW1 due Friday - HW2 assigned Friday (on simulation for dissolved oxygen and risk)\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Next Classes\nFriday: Building a Model for Dissolved Oxygen\nHomework: - HW1 due Friday - HW2 assigned Monday (on simulation for dissolved oxygen and risk)\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture01-2.html#what-is-a-system",
@@ -1096,7 +1096,7 @@
     "href": "slides/lecture02-3.html#shallow-lake-model-runoff",
     "title": "Eutrophication Modeling Example",
     "section": "Shallow Lake Model: Runoff",
-    "text": "Shallow Lake Model: Runoff\n\nRandom runoffs \\(y_t\\) are sampled from a LogNormal distribution.\n\n\nFigure 1: Lognormal Distributions"
+    "text": "Shallow Lake Model: Runoff\n\nRandom runoffs \\(y_t\\) are sampled from a LogNormal distribution.\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Lognormal Distributions"
   },
   {
     "objectID": "slides/lecture02-3.html#shallow-lake-model-p-dynamics",
@@ -1197,11 +1197,11 @@
     "text": "Key Takeaways\n\nNonlinear system dynamics (e.g. bifurcations, but also feedbacks) can complicate management.\nImportant to bear these in mind: many methods we will see involve finding a solution under assumptions about parameters.\nWhat do we do about random external forcings? Will talk about later…"
   },
   {
-    "objectID": "slides/lecture02-3.html#next-classes",
-    "href": "slides/lecture02-3.html#next-classes",
+    "objectID": "slides/lecture02-3.html#next-class",
+    "href": "slides/lecture02-3.html#next-class",
     "title": "Eutrophication Modeling Example",
-    "section": "Next Classes",
-    "text": "Next Classes\nMonday: Simulating Systems; Box Models.\nWednesday: Dissolved Oxygen Simulation\n\n\nBEE 4750, Environmental Systems Analysis"
+    "section": "Next Class",
+    "text": "Next Class\nWednesday: Simulating Systems; Box Models.\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture02-2.html#mathematical-models",
@@ -1565,7 +1565,7 @@
     "href": "slides/lecture04-1.html#next-classes",
     "title": "Dissolved Oxygen Simulation",
     "section": "Next Classes",
-    "text": "Next Classes\nMonday: Uncertainty and Risk\nWednesday/Friday: Monte Carlo Simulation\nHomework:\n\nHW1 due today!\nHW2 link available on Ed (due in two weeks).\n\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Next Classes\nWednesday/Friday: Uncertainty and Monte Carlo Simulation\nHomework:\n\nHW2 link available on Ed (due in two weeks).\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture04-3.html#last-class",
@@ -1747,7 +1747,21 @@
     "href": "slides/lecture04-3.html#when-to-use-monte-carlo",
     "title": "Monte Carlo Simulation",
     "section": "When To Use Monte Carlo?",
-    "text": "When To Use Monte Carlo?\nIf you can compute your answers analytically, you probably should.\nBut for real problems, we often can’t, and problems that are analytically tractable are often so stylized that we want to test them across a variety of uncertainties to make sure we didn’t over-simplify.\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "When To Use Monte Carlo?\nIf you can compute your answers analytically, you probably should.\nBut for real problems, we often can’t, and problems that are analytically tractable are often so stylized that we want to test them across a variety of uncertainties to make sure we didn’t over-simplify."
+  },
+  {
+    "objectID": "slides/lecture04-3.html#key-takeaways-1",
+    "href": "slides/lecture04-3.html#key-takeaways-1",
+    "title": "Monte Carlo Simulation",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nChoice of probability distribution can have large impacts on uncertainty and risk estimates: try not to use distributions just because they’re convenient.\nMonte Carlo: Estimate expected values of functions using simulation.\nMonte Carlo error is on the order \\(1/\\sqrt{n}\\), so not great if more direct approaches are available and tractable."
+  },
+  {
+    "objectID": "slides/lecture04-3.html#next-classes",
+    "href": "slides/lecture04-3.html#next-classes",
+    "title": "Monte Carlo Simulation",
+    "section": "Next Classes",
+    "text": "Next Classes\nMonday: Lab on Monte Carlo.\nWednesday/Friday: Introduction to Decision-Making and Prescriptive Modeling\nHomework: Should be able to do most of HW2 (last question(s) on uncertainty may require Monday’s lab).\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture04-2.html#last-class",
@@ -1922,7 +1936,7 @@
     "href": "slides/lecture04-2.html#next-classes",
     "title": "Uncertainty and Risk",
     "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Probability and Monte Carlo (briefly!)\nFriday: Lab on Monte Carlo.\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Next Classes\nFriday: Probability and Monte Carlo\nNext Week: Lab on Monte Carlo.\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "about.html",

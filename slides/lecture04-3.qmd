@@ -405,15 +405,15 @@ In other words, if we want to decrease the Monte Carlo error by 10x, we need 100
 
 ## Monte Carlo Confidence Intervals
 
-This error estimate lets us compute confidence intervals for the MC estimate (details on [the website](https://viveks.me/environmental-systems-analysis/supplemental/mc-confidence.qmd)).
+This error estimate lets us compute confidence intervals for the MC estimate.
 
 **Basic Idea**: The *Central Limit Theorem* says that with enough samples, the errors are normally distributed:
 
 $$\left\|\tilde{\mu}_n - \mu\right\| \to \mathcal{N}\left(0, \frac{\sigma_Y^2}{n}\right)$$
 
-## Monte Carlo Confidence Intervals
+So we can construct confidence intervals using the inverse cumulative distribution function for the normal distribution.
 
-This means that we can construct confidence intervals using the inverse cumulative distribution function for the normal distribution.
+## Monte Carlo Confidence Intervals
 
 The $\alpha$-confidence interval is:
 $$\tilde{\mu}_n \pm \Phi^{-1}\left(1 - \frac{\alpha}{2}\right) \frac{\sigma_Y}{\sqrt{n}}$$
@@ -427,11 +427,9 @@ Converging at a rate of $1/\sqrt{n}$ is not great. But:
 - All models are wrong, and so there always exists some irreducible model error. 
 - We often need a lot of simulations. Do we have enough computational power?
 
-## When To Use Monte Carlo?
+--
 
-If you can compute your answers analytically, you probably should. 
-
-**But for real problems, we often can't**, and problems that are analytically tractable are often so stylized that we want to test them across a variety of uncertainties to make sure we didn't over-simplify.
+If you can compute your answer analytically, you probably should. But often this is difficult if not impossible without many simplifying assumptions.
 
 # Key Takeaways
 

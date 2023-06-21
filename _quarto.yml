@@ -77,6 +77,8 @@ website:
             text: Making Plots
           - href: tutorials/latex-notebook.qmd
             text: Math in Notebooks
+          - href: tutorials/julia-jump.qmd
+            text: Solving Linear Programs
       - section: "Supplemental Notes"
       - section: Resources
         contents:
@@ -104,6 +106,7 @@ format:
     citation-location: margin
     code-annotations: select
     html-math-method: mathjax
+    include-in-header: mathjax-config.html
 
 bibliography: references.bib
 csl: _assets/references/american-geophysical-union.csl

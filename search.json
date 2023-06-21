@@ -896,6 +896,167 @@
     "text": "Next Classes\nMonday: Modeling Systems\nWednesday/Friday: Examples of Systems Models\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
+    "objectID": "slides/lecture05-2.html#last-classes",
+    "href": "slides/lecture05-2.html#last-classes",
+    "title": "Prescriptive Modeling",
+    "section": "Last Classes",
+    "text": "Last Classes\n\nSimulation modeling as a means for data generation.\nUncertainty and Monte Carlo"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#questions",
+    "href": "slides/lecture05-2.html#questions",
+    "title": "Prescriptive Modeling",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#wastewater-model-revisited",
+    "href": "slides/lecture05-2.html#wastewater-model-revisited",
+    "title": "Prescriptive Modeling",
+    "section": "Wastewater Model Revisited",
+    "text": "Wastewater Model Revisited\n\nDiagram of CRUD release from two factoriesConsider the wastewater model from Lecture 5."
+  },
+  {
+    "objectID": "slides/lecture05-2.html#wastewater-model-revisited-1",
+    "href": "slides/lecture05-2.html#wastewater-model-revisited-1",
+    "title": "Prescriptive Modeling",
+    "section": "Wastewater Model Revisited",
+    "text": "Wastewater Model Revisited\nEnvironmental authorities have sampled water from the river and determined that concentrations exceed the legal standard (1 mg/L).\nWe want to design a CRUD removal plan to get back in compliance."
+  },
+  {
+    "objectID": "slides/lecture05-2.html#prescriptive-modeling",
+    "href": "slides/lecture05-2.html#prescriptive-modeling",
+    "title": "Prescriptive Modeling",
+    "section": "Prescriptive Modeling",
+    "text": "Prescriptive Modeling\nIf we want to design a treatment strategy, we are now in the world of prescriptive modeling.\nRecall: Precriptive modeling is intended to specify an action, policy, or decision.\n\n\nDescriptive modeling question: “What happens if I do something?”\nPrescriptive modeling question: “What should I do?”"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#decision-models",
+    "href": "slides/lecture05-2.html#decision-models",
+    "title": "Prescriptive Modeling",
+    "section": "Decision Models",
+    "text": "Decision Models\nTo make a decision, we need certain pieces of information which:\n\ndefine decision options (or alternatives);\nprovide one or more objectives to assess performance;\nspecify constraints to tell us what decisions are possible or acceptable."
+  },
+  {
+    "objectID": "slides/lecture05-2.html#objectives",
+    "href": "slides/lecture05-2.html#objectives",
+    "title": "Prescriptive Modeling",
+    "section": "Objectives",
+    "text": "Objectives\nTypical objectives can include:\n\nMinimizing costs (or maximizing profits);\nMinimizing environmental impacts;\nMaximizing some other performance metric."
+  },
+  {
+    "objectID": "slides/lecture05-2.html#constraints",
+    "href": "slides/lecture05-2.html#constraints",
+    "title": "Prescriptive Modeling",
+    "section": "Constraints",
+    "text": "Constraints\nConstraints often come from engineering or societal restrictions.\n\nRegulatory limits on pollution;\nSupply constraints;\nBudgetary constraints;\nEngineering constraints."
+  },
+  {
+    "objectID": "slides/lecture05-2.html#decision-model-for-the-wastewater-model",
+    "href": "slides/lecture05-2.html#decision-model-for-the-wastewater-model",
+    "title": "Prescriptive Modeling",
+    "section": "Decision Model for the Wastewater Model",
+    "text": "Decision Model for the Wastewater Model\nLet’s apply this framework to the CRUD release problem.\n\nWhat might our objective be?\nWhat constraints do we have?"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#formulating-an-objective",
+    "href": "slides/lecture05-2.html#formulating-an-objective",
+    "title": "Prescriptive Modeling",
+    "section": "Formulating an Objective",
+    "text": "Formulating an Objective\nLet’s say that our objective is to minimize costs, and relevant constraints include the regulatory standard.\n\nTreating CRUD costs \\(\\$50 E^2 \\text{ per } 1000 \\ \\text{m}^3,\\) where \\(E\\) is the treatment efficiency."
+  },
+  {
+    "objectID": "slides/lecture05-2.html#formulating-an-objective-1",
+    "href": "slides/lecture05-2.html#formulating-an-objective-1",
+    "title": "Prescriptive Modeling",
+    "section": "Formulating an Objective",
+    "text": "Formulating an Objective\n\nDiagram of CRUD release from two factoriesThis makes the daily treatment cost \\[C(E_1, E_2) = 50(100)E_1^2 + 50(60)E_2^2 = 5000E_1^2 + 3000E_2^2.\\]"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#formulating-an-objective-2",
+    "href": "slides/lecture05-2.html#formulating-an-objective-2",
+    "title": "Prescriptive Modeling",
+    "section": "Formulating an Objective",
+    "text": "Formulating an Objective\nDaily Treatment Cost:\n\\[C(E_1, E_2) = 50(100)E_1^2 + 50(60)E_2^2 = 5000E_1^2 + 3000E_2^2.\\]\nThen if the objective is to minimize the cost, we write:\n\\[\\min_{E_1, E_2} 5000E_1^2 + 3000E_2^2.\\]"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#developing-constraints",
+    "href": "slides/lecture05-2.html#developing-constraints",
+    "title": "Prescriptive Modeling",
+    "section": "Developing Constraints",
+    "text": "Developing Constraints\nBut we can’t choose just any \\(E_1\\) and \\(E_2\\) to minimize the cost, or we would just choose \\(E_1=E_2=0\\).\n\nFor example, we need to comply with the regulatory standard:\nCRUD concentration \\(&lt; 1\\) mg/l."
+  },
+  {
+    "objectID": "slides/lecture05-2.html#developing-constraints-1",
+    "href": "slides/lecture05-2.html#developing-constraints-1",
+    "title": "Prescriptive Modeling",
+    "section": "Developing Constraints",
+    "text": "Developing Constraints\nWhat information can we bring to bear?\n\nRecall (from a while ago) our assumption that CRUD decays as it moves downriver.\n\n\nSince we know that the concentrations are highest at the points of discharge, we can check whether each of those points is in compliance with the standard."
+  },
+  {
+    "objectID": "slides/lecture05-2.html#mass-balance-at-release-1",
+    "href": "slides/lecture05-2.html#mass-balance-at-release-1",
+    "title": "Prescriptive Modeling",
+    "section": "Mass Balance at Release 1",
+    "text": "Mass Balance at Release 1\n\nTotal CRUD after factory 1 release: \\(\\color{blue}\\text{100} + \\color{red} 1000(1-E_1) \\color{black} \\ \\text{kg/d}\\)"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#mass-balance-at-release-1-1",
+    "href": "slides/lecture05-2.html#mass-balance-at-release-1-1",
+    "title": "Prescriptive Modeling",
+    "section": "Mass Balance at Release 1",
+    "text": "Mass Balance at Release 1\n\nTotal CRUD after factory 1 release: \\(\\color{blue}\\text{100} + \\color{red} 1000(1-E_1) \\color{black} \\ \\text{kg/d}\\)\nOur standard is \\(1 \\ \\text{mg/L} = 10^{-3} \\ \\text{kg/m}^3\\)\nThe volume of the inflow is \\(\\color{blue}500,000 + \\color{red}100,000 \\color{black}= 600,000 \\ \\text{m}^3\\text{/d}\\).\n\nSo the constraint until we hit Release 2 is: \\[100 + 1000(1-E_1) \\leq 600 \\Rightarrow \\boxed{1000E_1 \\geq 500}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#mass-balance-at-release-2",
+    "href": "slides/lecture05-2.html#mass-balance-at-release-2",
+    "title": "Prescriptive Modeling",
+    "section": "Mass Balance at Release 2",
+    "text": "Mass Balance at Release 2\n\nWe had derived that the CRUD concentration at release 2 is:\n\\[(1100 - 1000E_1) \\exp(-0.18) + 1200(1 - E_2) \\ \\text{kg/d}.\\]"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#constraint-at-release-2",
+    "href": "slides/lecture05-2.html#constraint-at-release-2",
+    "title": "Prescriptive Modeling",
+    "section": "Constraint at Release 2",
+    "text": "Constraint at Release 2\nThe volume at release 2 is \\(660,000 \\ \\text{m}^3\\text{/d}\\), so the constraint is:\n\\[(1100 - 1000E_1) \\exp(-0.18) + 1200(1 - E_2) \\leq 660.\\]"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#constraint-at-release-2-1",
+    "href": "slides/lecture05-2.html#constraint-at-release-2-1",
+    "title": "Prescriptive Modeling",
+    "section": "Constraint at Release 2",
+    "text": "Constraint at Release 2\nSimplifying:\n\\[\\begin{aligned}\n(1100 - 1000E_1) \\exp(-0.18) + 1200(1 - E_2) &\\leq 660  \\\\\\\\\n(1100 - 1000E_1) 0.835 + 1200(1 - E_2) &\\leq 660  \\\\\\\\\n2119 - 835E_1 - 1200E_2 &\\leq 660\n\\end{aligned}\\]\n\\[\\boxed{835E_1 + 1200E_2 \\geq 1459}\\]"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#model-formulation",
+    "href": "slides/lecture05-2.html#model-formulation",
+    "title": "Prescriptive Modeling",
+    "section": "Model Formulation",
+    "text": "Model Formulation\nCombining our objective and our regulatory constraints:\n\\[\\begin{alignat}{2}\n& \\min_{E_1, E_2} & 5000E_1^2 + 3000E_2^2 \\notag \\\\\\\\\n& \\text{subject to:} & 1000 E_1  &\\geq 500 \\notag \\\\\n& & 35E_1 + 1200E_2  &\\geq 1459 \\notag\n\\end{alignat}\\]\n\nIs this complete?"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#model-formulation-1",
+    "href": "slides/lecture05-2.html#model-formulation-1",
+    "title": "Prescriptive Modeling",
+    "section": "Model Formulation",
+    "text": "Model Formulation\n\\[\\begin{alignat}{3}\n& \\min_{E_1, E_2} &\\quad  5000E_1^2 + 3000E_2^2 &  \\\\\\\\\n& \\text{subject to:} & 1000 E_1 &\\geq 500 \\\\\n& & 835E_1 + 1200E_2 &\\geq 1459 \\\\\n& & \\color{purple}E_1, E_2 &\\;\\color{purple}\\geq 0 \\\\\n& & \\color{purple}E_1, E_2 &\\;\\color{purple}\\leq 1\n\\end{alignat}\\]"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#key-takeaways-1",
+    "href": "slides/lecture05-2.html#key-takeaways-1",
+    "title": "Prescriptive Modeling",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nPrescriptive modeling involves decision models.\nKey components of a decision model:\n\nObjectives;\nConstraints.\n\nNeed to bring to bear relevant engineering, economic, and environmental information to formulate these."
+  },
+  {
+    "objectID": "slides/lecture05-2.html#next-classes",
+    "href": "slides/lecture05-2.html#next-classes",
+    "title": "Prescriptive Modeling",
+    "section": "Next Classes",
+    "text": "Next Classes\nFriday: How do we solve this problem (and many others)?\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
     "objectID": "slides/lecture02-1.html#what-is-a-system",
     "href": "slides/lecture02-1.html#what-is-a-system",
     "title": "Understanding Systems with Models",

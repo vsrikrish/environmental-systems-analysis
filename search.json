@@ -896,6 +896,160 @@
     "text": "Next Classes\nMonday: Modeling Systems\nWednesday/Friday: Examples of Systems Models\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
+    "objectID": "slides/lecture05-3.html#last-class",
+    "href": "slides/lecture05-3.html#last-class",
+    "title": "Introduction to Optimization",
+    "section": "Last Class",
+    "text": "Last Class\n\nDecision models involve objectives and constraints.\nObjective:\n\nHow are we assessing performance? (the metric)\nDo we want to maximize or minimize?\n\nConstraints:\n\nWhat are eligible decisions?\nEngineering restrictions, performance or regulatory standards, etc."
+  },
+  {
+    "objectID": "slides/lecture05-3.html#questions",
+    "href": "slides/lecture05-3.html#questions",
+    "title": "Introduction to Optimization",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#wastewater-treatment-model",
+    "href": "slides/lecture05-3.html#wastewater-treatment-model",
+    "title": "Introduction to Optimization",
+    "section": "Wastewater Treatment Model",
+    "text": "Wastewater Treatment Model\nLast class, we derived the following model for the treatment of wastewater from two point releases:\n\\[\\begin{alignat}{3}\n& \\min_{E_1, E_2} &\\quad  5000E_1^2 + 3000E_2^2 &  \\\\\\\\\n& \\text{subject to:} & 1000 E_1 &\\geq 500 \\\\\n& & 835E_1 + 1200E_2 &\\geq 1459 \\\\\n& & E_1, E_2 &\\;\\geq 0 \\\\\n& & E_1, E_2 &\\;\\leq 1\n\\end{alignat}\\]"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#solving-this-problem",
+    "href": "slides/lecture05-3.html#solving-this-problem",
+    "title": "Introduction to Optimization",
+    "section": "Solving This Problem",
+    "text": "Solving This Problem\n\n\nWe can solve this graphically (see the JuMP tutorial for example code):"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#the-solution",
+    "href": "slides/lecture05-3.html#the-solution",
+    "title": "Introduction to Optimization",
+    "section": "The Solution",
+    "text": "The Solution\nSo the solution occurs at the intersection of the two constraints, where:\n\\[E_1 = 0.5, E_2 = 0.85\\]\nand the cost of this treatment plan is\n\\[C(0.5, 0.85) = \\$ 3417.\\]\n\nDoes this solution make sense?"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#waste-load-allocation",
+    "href": "slides/lecture05-3.html#waste-load-allocation",
+    "title": "Introduction to Optimization",
+    "section": "Waste Load Allocation",
+    "text": "Waste Load Allocation\nThis is an example of a waste load allocation problem.\nKey question: How do we restrict waste discharges to control or limit environmental impact?"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#waste-load-allocation-schematic",
+    "href": "slides/lecture05-3.html#waste-load-allocation-schematic",
+    "title": "Introduction to Optimization",
+    "section": "Waste Load Allocation Schematic",
+    "text": "Waste Load Allocation Schematic\n\nEnvironmental Systems Model SchematicEach source is allocated a “load” they can discharge based on waste fate and transport."
+  },
+  {
+    "objectID": "slides/lecture05-3.html#waste-load-allocation-model",
+    "href": "slides/lecture05-3.html#waste-load-allocation-model",
+    "title": "Introduction to Optimization",
+    "section": "Waste Load Allocation Model",
+    "text": "Waste Load Allocation Model\nWaste loads affect quality \\(Q\\) based on fate & transport model:\n\\[Q=f(W_1, W_2, \\ldots, W_n)\\]\n\nSo the general form for a prescriptive waste load allocation model:\n\\[\\begin{aligned}\n\\text{determine} & \\quad  W_1, W_2, \\ldots, W_n \\notag \\\\\\\\\n\\text{subject to:} & \\quad f(W_1, W_2, \\ldots, W_n) \\geq Q^* \\notag\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#components-of-an-optimization-model",
+    "href": "slides/lecture05-3.html#components-of-an-optimization-model",
+    "title": "Introduction to Optimization",
+    "section": "Components of an Optimization Model",
+    "text": "Components of an Optimization Model\n\nObjective Function: The “target” function to be optimized.\nDecision Variables: Variables which can be changed to affect objective.\nConstraints: Limits on decision variable values.\nFeasible Solution: Decision variable values satisfying constraints.\nOptimal Solution: The “best” feasible solution or solutions (with respect to the objective)"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#how-do-we-solve-an-optimization-problem",
+    "href": "slides/lecture05-3.html#how-do-we-solve-an-optimization-problem",
+    "title": "Introduction to Optimization",
+    "section": "How Do We Solve An Optimization Problem?",
+    "text": "How Do We Solve An Optimization Problem?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#solution-approach-1-trial-and-error",
+    "href": "slides/lecture05-3.html#solution-approach-1-trial-and-error",
+    "title": "Introduction to Optimization",
+    "section": "Solution Approach 1: Trial and Error",
+    "text": "Solution Approach 1: Trial and Error\nWhat are some challenges to trial and error?\n\n\nMany possible solutions (infinitely many when a problem is continuous)\nFeasible region may not be intuitive\nHow do we know when we’ve found an optimal solution?"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#solution-approach-2-generalized-search-algorithms",
+    "href": "slides/lecture05-3.html#solution-approach-2-generalized-search-algorithms",
+    "title": "Introduction to Optimization",
+    "section": "Solution Approach 2: Generalized Search Algorithms",
+    "text": "Solution Approach 2: Generalized Search Algorithms\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nMost search algorithms look for critical points to find candidate optima. Then the “best” of the critical points is the global optimum."
+  },
+  {
+    "objectID": "slides/lecture05-3.html#solution-approach-2-generalized-search-algorithms-1",
+    "href": "slides/lecture05-3.html#solution-approach-2-generalized-search-algorithms-1",
+    "title": "Introduction to Optimization",
+    "section": "Solution Approach 2: Generalized Search Algorithms",
+    "text": "Solution Approach 2: Generalized Search Algorithms\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nTwo common approaches:\n\nGradient-based methods\nEvolutionary algorithms"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#solution-approach-2-generalized-search-algorithms-2",
+    "href": "slides/lecture05-3.html#solution-approach-2-generalized-search-algorithms-2",
+    "title": "Introduction to Optimization",
+    "section": "Solution Approach 2: Generalized Search Algorithms",
+    "text": "Solution Approach 2: Generalized Search Algorithms\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nThese methods work pretty well, but can require a lot of evaluations and/or may get stuck at local optima."
+  },
+  {
+    "objectID": "slides/lecture05-3.html#constrained-optimization",
+    "href": "slides/lecture05-3.html#constrained-optimization",
+    "title": "Introduction to Optimization",
+    "section": "Constrained Optimization",
+    "text": "Constrained Optimization\n\n\n\n\n\nFunction with Multiple Minima and a Constraint\n\n\n\nNow, notice the effect of a constraint!\nFor a constrained problem, we also have to look along the constraint to see if that creates a solution."
+  },
+  {
+    "objectID": "slides/lecture05-3.html#lagrange-multipliers",
+    "href": "slides/lecture05-3.html#lagrange-multipliers",
+    "title": "Introduction to Optimization",
+    "section": "Lagrange Multipliers",
+    "text": "Lagrange Multipliers\nWe can solve some constrained problems using Lagrange Multipliers!\nRecall (maybe) that the Lagrange Multipliers method requires equality constraints. But we can easily create those with “dummy” variables."
+  },
+  {
+    "objectID": "slides/lecture05-3.html#using-equality-constraints",
+    "href": "slides/lecture05-3.html#using-equality-constraints",
+    "title": "Introduction to Optimization",
+    "section": "Using Equality Constraints",
+    "text": "Using Equality Constraints\n\n\nOriginal Problem\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 \\geq A \\notag \\\\\n& && x_2 \\leq B \\notag\n\\end{aligned}\n\\]\n\nWith Dummy Variables\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 - S_1^2 = A \\notag \\\\\n& && x_2 + S_2^2 = B \\notag\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#using-lagrange-multipliers",
+    "href": "slides/lecture05-3.html#using-lagrange-multipliers",
+    "title": "Introduction to Optimization",
+    "section": "Using Lagrange Multipliers",
+    "text": "Using Lagrange Multipliers\nThen the Lagrangian function becomes:\n\\[\nH(\\mathbf{x}, S_1, S_2, \\lambda_1, \\lambda_2) = f(\\mathbf{x}) - \\lambda_1(x_1 - S_1^2 - A) - \\lambda_2(x_2 + S_2^2 - B)\n\\]\nwhere \\(\\lambda_1\\), \\(\\lambda_2\\) are penalties for violating the constraints.\nThe \\(\\lambda_i\\) are the eponymous Lagrange multipliers."
+  },
+  {
+    "objectID": "slides/lecture05-3.html#using-lagrange-multipliers-1",
+    "href": "slides/lecture05-3.html#using-lagrange-multipliers-1",
+    "title": "Introduction to Optimization",
+    "section": "Using Lagrange Multipliers",
+    "text": "Using Lagrange Multipliers\nNext step: locate possible optima where the partial derivatives of the Lagrangian are zero.\n\\[\\frac{\\partial H(\\cdot)}{\\partial \\cdot} = 0\\]\nThis is actually many equations, even though our original problem was low-dimensional, and can be slow to solve."
+  },
+  {
+    "objectID": "slides/lecture05-3.html#key-takeaways-1",
+    "href": "slides/lecture05-3.html#key-takeaways-1",
+    "title": "Introduction to Optimization",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nWe solve decision models through optimization.\nDecision models have a standard structure:\n\nDecision Variables\nObjective\nConstraints\n\nGoal: find “best” solution with respect to the objective that is feasible."
+  },
+  {
+    "objectID": "slides/lecture05-3.html#key-takeaways-2",
+    "href": "slides/lecture05-3.html#key-takeaways-2",
+    "title": "Introduction to Optimization",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nWe discussed several approaches to optimization, all of which have some restrictions.\nConstraints add complexity, since we need to consider the constraint for optima."
+  },
+  {
+    "objectID": "slides/lecture05-3.html#next-classes",
+    "href": "slides/lecture05-3.html#next-classes",
+    "title": "Introduction to Optimization",
+    "section": "Next Classes",
+    "text": "Next Classes\nMonday: Solving linear models (linear programming)\nWednesday: Example of formulating and solving a linear program.\nFriday: Lab on linear programming in Julia.\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
     "objectID": "slides/lecture05-2.html#last-classes",
     "href": "slides/lecture05-2.html#last-classes",
     "title": "Prescriptive Modeling",
@@ -977,7 +1131,7 @@
     "href": "slides/lecture05-2.html#formulating-an-objective-2",
     "title": "Prescriptive Modeling",
     "section": "Formulating an Objective",
-    "text": "Formulating an Objective\nDaily Treatment Cost:\n\\[C(E_1, E_2) = 50(100)E_1^2 + 50(60)E_2^2 = 5000E_1^2 + 3000E_2^2.\\]\nThen if the objective is to minimize the cost, we write:\n\\[\\min_{E_1, E_2} 5000E_1^2 + 3000E_2^2.\\]"
+    "text": "Formulating an Objective\nDaily Treatment Cost (the metric):\n\\[C(E_1, E_2) = 50(100)E_1^2 + 50(60)E_2^2 = 5000E_1^2 + 3000E_2^2.\\]\nThen if the objective is to minimize the cost, we write:\n\\[\\min_{E_1, E_2} 5000E_1^2 + 3000E_2^2.\\]"
   },
   {
     "objectID": "slides/lecture05-2.html#developing-constraints",
@@ -1005,7 +1159,7 @@
     "href": "slides/lecture05-2.html#mass-balance-at-release-1-1",
     "title": "Prescriptive Modeling",
     "section": "Mass Balance at Release 1",
-    "text": "Mass Balance at Release 1\n\nTotal CRUD after factory 1 release: \\(\\color{blue}\\text{100} + \\color{red} 1000(1-E_1) \\color{black} \\ \\text{kg/d}\\)\nOur standard is \\(1 \\ \\text{mg/L} = 10^{-3} \\ \\text{kg/m}^3\\)\nThe volume of the inflow is \\(\\color{blue}500,000 + \\color{red}100,000 \\color{black}= 600,000 \\ \\text{m}^3\\text{/d}\\).\n\nSo the constraint until we hit Release 2 is: \\[100 + 1000(1-E_1) \\leq 600 \\Rightarrow \\boxed{1000E_1 \\geq 500}\n\\]"
+    "text": "Mass Balance at Release 1\n\nTotal CRUD after factory 1 release: \\(\\color{blue}\\text{100} + \\color{red} 1000(1-E_1) \\color{black} \\ \\text{kg/d}\\)\nOur standard is \\(1 \\ \\text{mg/L} = 10^{-3} \\ \\text{kg/m}^3\\)\nThe volume of the inflow is \\(600,000 \\ \\text{m}^3\\text{/d}\\).\n\nSo the constraint until we hit Release 2 is: \\[100 + 1000(1-E_1) \\leq 600 \\Rightarrow \\boxed{1000E_1 \\geq 500}\n\\]"
   },
   {
     "objectID": "slides/lecture05-2.html#mass-balance-at-release-2",
@@ -1026,7 +1180,7 @@
     "href": "slides/lecture05-2.html#constraint-at-release-2-1",
     "title": "Prescriptive Modeling",
     "section": "Constraint at Release 2",
-    "text": "Constraint at Release 2\nSimplifying:\n\\[\\begin{aligned}\n(1100 - 1000E_1) \\exp(-0.18) + 1200(1 - E_2) &\\leq 660  \\\\\\\\\n(1100 - 1000E_1) 0.835 + 1200(1 - E_2) &\\leq 660  \\\\\\\\\n2119 - 835E_1 - 1200E_2 &\\leq 660\n\\end{aligned}\\]\n\\[\\boxed{835E_1 + 1200E_2 \\geq 1459}\\]"
+    "text": "Constraint at Release 2\nSimplifying:\n\\[\\begin{aligned}\n(1100 - 1000E_1) \\exp(-0.18) + 1200(1 - E_2) &\\leq 660  \\\\\\\\\n(1100 - 1000E_1) 0.835 + 1200(1 - E_2) &\\leq 660  \\\\\\\\\n2119 - 835E_1 - 1200E_2 &\\leq 660\n\\end{aligned}\\]\n\\[\\Rightarrow \\boxed{835E_1 + 1200E_2 \\geq 1459}\\]"
   },
   {
     "objectID": "slides/lecture05-2.html#model-formulation",
@@ -1040,7 +1194,7 @@
     "href": "slides/lecture05-2.html#model-formulation-1",
     "title": "Prescriptive Modeling",
     "section": "Model Formulation",
-    "text": "Model Formulation\n\\[\\begin{alignat}{3}\n& \\min_{E_1, E_2} &\\quad  5000E_1^2 + 3000E_2^2 &  \\\\\\\\\n& \\text{subject to:} & 1000 E_1 &\\geq 500 \\\\\n& & 835E_1 + 1200E_2 &\\geq 1459 \\\\\n& & \\color{purple}E_1, E_2 &\\;\\color{purple}\\geq 0 \\\\\n& & \\color{purple}E_1, E_2 &\\;\\color{purple}\\leq 1\n\\end{alignat}\\]"
+    "text": "Model Formulation\n\\[\\begin{alignat}{3}\n& \\min_{E_1, E_2} &\\quad  5000E_1^2 + 3000E_2^2 &  \\\\\\\\\n& \\text{subject to:} & 1000 E_1 &\\geq 500 \\\\\n& & 835E_1 + 1200E_2 &\\geq 1459 \\\\\n& & \\color{purple}E_1, E_2 &\\;\\color{purple}\\geq 0 \\\\\n& & \\color{purple}E_1, E_2 &\\;\\color{purple}\\leq 1\n\\end{alignat}\\]\nThe"
   },
   {
     "objectID": "slides/lecture05-2.html#key-takeaways-1",
@@ -2296,6 +2450,41 @@
     "text": "Using LaTeX in Figures\nYou may want to use LaTeX in figures, for example if your \\(x\\)-axis should have a title like \\(x\\). To do this, load the LaTeXStrings package and precede the relevant LaTeX-formatted string (within in-line dollar signs $) with L, as in:\n\nusing Plots\nusing LaTeXStrings\n\nx = -2π:0.01:2π  \nplot(x, exp.(sin.(x)), xlabel=L\"$x$\", ylabel=L\"$e^{\\sin(x)}$\", legend=false)"
   },
   {
+    "objectID": "tutorials/julia-jump.html",
+    "href": "tutorials/julia-jump.html",
+    "title": "Tutorial: Linear Optimization in Julia",
+    "section": "",
+    "text": "using Plots\nusing JuMP\nusing HiGHS"
+  },
+  {
+    "objectID": "tutorials/julia-jump.html#overview",
+    "href": "tutorials/julia-jump.html#overview",
+    "title": "Tutorial: Linear Optimization in Julia",
+    "section": "Overview",
+    "text": "Overview\nThis tutorial will demonstrate how to solve linear optimization problems graphically and using the JuMP package in Julia. It draws heavily from this tutorial by Jesse D. Jenkins and Michael R. Davidson.\nJuMP (“Julia for Mathematical Programming”) is an open-source Julia package that adds functionality for formulating and solving a variety of optimization problems. One advantage of JuMP is that its syntax matches the typical mathematical formalism used to specify optimization problems. We will use JuMP in this class for our optimization work.\n\n\n\n\n\n\nRead the Documentation!\n\n\n\nMake sure that you take a look at the JuMP documentation whenever you have a question or want to find out how to do something that we don’t discuss in any of our tutorials or lectures (or how to do it better!)."
+  },
+  {
+    "objectID": "tutorials/julia-jump.html#setup",
+    "href": "tutorials/julia-jump.html#setup",
+    "title": "Tutorial: Linear Optimization in Julia",
+    "section": "Setup",
+    "text": "Setup\nHere we will outline the basic steps for configuring JuMP, though you can also refer to the official Installation Guide.\nIf JuMP is not already in your environment (it will be for any of your assignments, but may not be if you’re doing something independently), you will need to install it. You will also need to select a solver and install the relevant package. Some of these are commercial, while others are open source. Solvers are also not typically universal, as different types of optimization problems use different algorithms, so be aware of what problem you’re trying to solve instead of just blindly copying code from one task to another.\nFor example, for the linear programming example, we will use the HiGHS solver via the HiGHS.jl package. As seen on the solver table, HiGHS is open source (via the MIT license) and can solve linear programs (LP) and mixed-integer linear programs (MILP), as well as quadratic programs (which we won’t discuss in this course)."
+  },
+  {
+    "objectID": "tutorials/julia-jump.html#linear-programming-example-how-many-widgets-should-a-factory-produce",
+    "href": "tutorials/julia-jump.html#linear-programming-example-how-many-widgets-should-a-factory-produce",
+    "title": "Tutorial: Linear Optimization in Julia",
+    "section": "Linear Programming Example: How Many Widgets Should A Factory Produce?",
+    "text": "Linear Programming Example: How Many Widgets Should A Factory Produce?\n\nDefining The Problem\nSuppose we own a factory that can produce two types of widgets:\n\nWidget A generates a profit of \\(p_A = \\$100\\) per widget; and\nWidget B generates a profit of \\(p_B = \\$75\\) per widget.\n\nLet \\(x\\) be the number of units of widget A that we want to produce, and \\(y\\) the number of units of widget B. Our goal is to maximize our total profit \\(p_Ax + p_By\\). This is the objective function. We express this objective using the equation \\[\\begin{equation}\n\\max_{x, y} 100x + 75y. \\label{eq:objective}\n\\end{equation}\\]\nThis isn’t a very interesting problem yet! We would simply build as much of both widgets as we could, because there are no constraints on our ability to produce. To make this more realistic, let’s suppose that both widgets are produced using the same raw material \\(M\\), of which we can only procure 300 units. Then, if:\n\nWidget A requires 40 units of \\(M\\) per widget, and\nWidget B requires 20 units of \\(M\\) per widget, we arrive at the following material constraint: \\[\\begin{equation}\n40x + 20y \\leq 300. \\label{eq:constraint1}\n\\end{equation}\\]\n\nBut we might have another constraint: time! Each widget may take a different amount of labor to produce. For example, let’s say that\n\nWidget A takes 6 hours to produce and\nWidget B takes 12 hours to produce. Further, there are only 80 hours per work that can be allocated to widget production. This becomes the time constraint \\[\\begin{equation}\n6x + 12y \\leq 80. \\label{eq:constraint2}\n\\end{equation}\\]\n\nFinally, we cannot build a negative number of either type of widget. This is known as a non-negativity constraint, and can be expressed as\n\\[\\begin{align}\nx &\\geq 0 \\label{eq:constraintx} \\\\\ny &\\geq 0 \\label{eq:constrainty}\n\\end{align}\\]\nConsolidating equations \\(\\eqref{eq:objective}\\)–\\(\\eqref{eq:constrainty}\\) gives us the following constrained optimization problem:\n\\[\\begin{equation}\n\\begin{aligned}\n& \\max_{x, y} & 100x + 75y\\\\\n&\\text{subject to} & \\\\\n& & 40x + 20y \\leq 300\\\\\n& & 6x + 12y \\leq 80\\\\\n& & x \\geq 0\\\\\n& & y \\geq 0\n\\end{aligned} \\label{eq:widget}\n\\end{equation}\\]\n\n\nVisualizing the Problem\nLet’s do some plotting to examine the geometry of our optimization problem. We can do this using the Plots.jl package in Julia.\n\n## set up objective function parameters and variables\npa = 100\npb = 75\na = range(0, 8, step=0.25)\nb = range(0, 8, step=0.25)\n\n## define objective function\nf(a, b) = pa * a + pb * b\n\n## start plotting\ncontour(a,b,(a,b)-&gt;f(a,b),nlevels=15, c=:heat, linewidth=10, colorbar = false, contour_labels = true) # objective function contours\ntitle!(\"Factory Optimization Problem\") # add title\nxaxis!(\"x=Widget A\", lims=(0, maximum(a))) # add x-axis title and limits\nyaxis!(\"y=Widget B\", lims=(0, maximum(b))) # add y-axis title and limits\nxticks!(0:maximum(a)) # set x-axis ticks\nyticks!(0:maximum(b)) # set y-axis ticks\nareaplot!(a[a.&lt;=11], (300 .- 40*a)./20, legend=false, opacity=0.3) # plot materials constraint feasible region\nareaplot!(a[a.&lt;=8], (80 .- 6*a)./12, legend=false, opacity=0.3) # plot time constraint feasible region\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Decision space for the widget linear program \\(\\eqref{eq:widget}\\). The gradient contours for the objective function are shown, as well as the constraints.\n\n\n\nWe can see exactly where the solution will be in Figure 1, at the intersection of the feasible regions imposed by the two constraints!\n\n\n\n\n\n\nObjective Function Gradient and Solution Uniqueness\n\n\n\nWhat would happen if one of the constraints were parallel to the level sets of the objective function?\n\n\nLet’s now use JuMP to identify the location of this point (though we could also solve for it using linear algebra)."
+  },
+  {
+    "objectID": "tutorials/julia-jump.html#solving-this-problem-using-jump",
+    "href": "tutorials/julia-jump.html#solving-this-problem-using-jump",
+    "title": "Tutorial: Linear Optimization in Julia",
+    "section": "Solving This Problem Using JuMP",
+    "text": "Solving This Problem Using JuMP\n\nSetting Up the Model and Solver\nTo solve our problem, first we need to define the model. The model object has lots of attributes, including the variables, constraints, solver options, etc. We create a new model using the Model() function. Since we are using the HiGHS solver, we need to tell JuMP to use the HiGHS.Optimizer solver function.\n\nfactory_model = Model(HiGHS.Optimizer) \n\nThere are a bunch of attributes and options that we could set, but we won’t in this example. If needed, look at the HiGHS.jl documentation.\n\nDefine Variables\nDecision variables (\\(x\\) and \\(y\\) in this case) in JuMP are defined using the @variable macro. The first argument passed to @variable() is the model object, in this case, factory_model, and the second argument are bounds on that variable, created using &gt;= and &lt;=. JuMP will interpret the bound specification to obtain the variable name. In this case, our only bounds directly on the variables are the non-negativity constraints.\n\n@variable(factory_model, x &gt;= 0)\n@variable(factory_model, y &gt;= 0)\n\nIf we had a free (or unbounded) variable \\(z\\), we could declare that variable using @variable(model, z). JuMP also requires unique names for each variable, or it will throw an error. This is one place where it’s nice that Julia lets us use sub- and superscripts in variable names!\nIf we did want to modify the bounds after defining the variable, we could do so using the set_lower_bound and set_upper_bound functions, or we could remove them using delete_lower_bound and delete_upper_bound.\nFinally, if we want to see all of the variables associated with a model, we can use the all_variables function to obtain an array.\n\nall_variables(factory_model)\n\n2-element Vector{VariableRef}:\n x\n y\n\n\n\n\n\nDefine Constraints\nWhen defining variables, we were able to declare constraints on their values by specifying upper and lower bounds. However, we also have other constraints, which involve multiple decision variables. These are specified using the @constraint macro. Unlike variables, we also need to pass names for each constraint. We will use time for the time constraint and materials for the materials constraint. These names must be unique.\n\n@constraint(factory_model, time, 6x + 12y &lt;= 80) # specify the time constraint\n@constraint(factory_model, materials, 40x + 20y &lt;= 300) # materials constraint\n\n\n\nDefine Objective Function\nSo far, we’ve defined the feasible region of the decision-variable domain by setting the constraints. But we need to specify our objective function to know what we are trying to minimize or maximize over this region. We define the objective function using the @objective macro. In addition to specifying the model objective and the function, we need to tell JuMP whether we want to minimize or maximize.\n\n@objective(factory_model, Max, 100x + 75y)\n\n\n\nLooking At The Full Model\nNow, let’s look at the model specification. print() will print out a formatted version of the model; in a notebook (or on this page), that will be marked up with LaTeX, in a REPL terminal, it will not be.\n\nprint(factory_model)\n\n\\[ \\begin{aligned}\n\\max\\quad & 100 x + 75 y\\\\\n\\text{Subject to} \\quad & 6 x + 12 y \\leq 80\\\\\n& 40 x + 20 y \\leq 300\\\\\n& x \\geq 0\\\\\n& y \\geq 0\\\\\n\\end{aligned} \\]\n\n\nIf you want a LaTeX-marked up version in the REPL, use latex_formulation().\nWe won’t go into detail here, but there are other ways to define the model, which are detailed in the JuMP documentation. For example, we can specify multiple variables using @variables. Similarly, we can use @constraints to define multiple constraints at once. Or we can use loops to define multiple constraints or constraints involving many variables. We can also specify the model in vectorized syntax, which is similar to how linear programs are specified in MATLAB.\n\n\nSolve the Model\nNow it’s time to solve the model and find the optimal values \\((x^*, y^*)\\). Since we specified the solver when we initialized factory_model, all we have to do is call the optimize! function.\n\noptimize!(factory_model)\n\nRunning HiGHS 1.5.3 [date: 1970-01-01, git hash: 45a127b78]\nCopyright (c) 2023 HiGHS under MIT licence terms\nPresolving model\n2 rows, 2 cols, 4 nonzeros\n2 rows, 2 cols, 4 nonzeros\nPresolve : Reductions: rows 2(-0); columns 2(-0); elements 4(-0) - Not reduced\nProblem not reduced by presolve: solving the LP\nUsing EKK dual simplex solver - serial\n  Iteration        Objective     Infeasibilities num(sum)\n          0    -1.0937489944e+01 Ph1: 2(4.125); Du: 2(10.9375) 0s\n          2     8.4722222222e+02 Pr: 0(0) 0s\nModel   status      : Optimal\nSimplex   iterations: 2\nObjective value     :  8.4722222222e+02\nHiGHS run time      :          0.00\n\n\n\n\nQuery the Solution\nTo find the optimal values of our decision variables, we need to query the values of the variables using value.(). We use value.() (the vectorized version of value()) because JuMP stores decision variables differently depending on their number and how they were defined. Uses the dot-syntax here works with any model specification, while the plain value() will not work if a queried decision variable is stored as a vector.\n\nvalue.(x)\n\n5.555555555555554\n\n\n\nvalue.(y)\n\n3.8888888888888897\n\n\nSo we can see that our optimal inputs are \\[(x^*, y^*) = (5.56, 3.89)\\] (and we’ll pretend that we can manufacture and sell parts of widgets).\n\n\nVisualize the Solution\nLet’s take our previous plot and add the solution point to make sure that we got the solution we expected.\n\ncontour(a,b,(a,b)-&gt;f(a,b),nlevels=15, c=:heat, linewidth=10, colorbar = false, contour_labels = true) # objective function contours\ntitle!(\"Factory Optimization Problem\") # add title\nxaxis!(\"x=Widget A\", lims=(0, maximum(a))) # add x-axis title and limits\nyaxis!(\"y=Widget B\", lims=(0, maximum(b))) # add y-axis title and limits\nxticks!(0:maximum(a)) # set x-axis ticks\nyticks!(0:maximum(b)) # set y-axis ticks\nareaplot!(a, (300 .- 40*a)./20, legend=false, opacity=0.3) # plot materials constraint feasible region\nareaplot!(a, (80 .- 6*a)./12, legend=false, opacity=0.3) # plot time constraint feasible region\n\n## now we plot the solution that we obtained\nscatter!([value.(x)],[value.(y)], markercolor=\"blue\", markersize=5)\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Solution for the widget problem \\(\\eqref{eq:widget}\\). The blue dot shows the optimal solution.\n\n\n\nAs shown in Figure 2, the optimal solution \\[(x^*, y^*)\\] is exactly where we deduced it would be geometrically.\n\n\nOther Stuff We Can Do\nWe can also use value.() to evaluate our constraints without manually using the equations.\n\nvalue.(time)\n\n80.0\n\n\n\nvalue.(materials)\n\n300.0\n\n\nWhat if we also want the optimal objective value? We can obtain this using objective_value().\n\nobjective_value(factory_model)\n\n847.2222222222221\n\n\nWe could also define other expressions via the @expression macro as functions of the decision variables and evaluate those. For example, let’s say that we wanted to know the total number of widgets we’d produce under our optimal allocation of resources.\n\n@expression(factory_model, total_widgets, x+y)\nvalue.(total_widgets)\n\n9.444444444444443\n\n\n\n\nDual Solutions\nWe can identify if our model has a dual solution by calling has_duals().\n\nhas_duals(factory_model)\n\ntrue\n\n\nIf we want to know the dual solution associated with a constraint, we use the shadow_price() function.\n\n\n\n\n\n\nNaming Constraints\n\n\n\nModifying constraints and querying for dual solutions is the reason why it’s important to give constraints individual names.\n\n\n\nshadow_price(time)\n\n2.777777777777777\n\n\n\nshadow_price(materials)\n\n2.0833333333333335\n\n\nIf the binding constraint was a variable bound, we could also query that shadow price by calling reduced_cost() on the variable.\n\nreduced_cost(x)\n\n-0.0\n\n\n\nreduced_cost(y)\n\n-0.0\n\n\nIn this case, the relevant shadow prices are zero because the optimum is in the interior of the domain. If we had added a strong enough upper bound on the value(s) of one or both of our decision variables (say, \\(x \\leq 4\\)), then this would be non-zero."
+  },
+  {
     "objectID": "tutorials/julia-plots.html",
     "href": "tutorials/julia-plots.html",
     "title": "Tutorial: Making Plots with Julia",
@@ -2454,6 +2643,6 @@
     "href": "schedule.html",
     "title": "BEE 4750: Environmental Systems Analysis",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 06\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nFri, Sep 08\nModeling Dissolved Oxygen\n\n\n\n\n\n\n\n4\nMon, Sep 11\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n\nWed, Sep 13\nUncertainty and Risk\n\n\n\n\n\n\n\n\nFri, Sep 15\nMonte Carlo Simulation\n\n\n\n\n\n\n\n5\nMon, Sep 18\nLab: Monte Carlo\n\n\n\n\n\n\n\n\nWed, Sep 20\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nFri, Sep 22\nPrescriptive Modeling II\n\n\n\n\n\n\n\n6\nMon, Sep 25\nIntroduction to Optimization\n\n\n\n\n\n\n\n\nWed, Sep 27\nExample: Resource and Land Allocation\n\n\n\n\n\n\n\n\nFri, Sep 29\nLab: Optimization with JuMP.jl"
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 06\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nFri, Sep 08\nModeling Dissolved Oxygen\n\n\n\n\n\n\n\n4\nMon, Sep 11\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n\nWed, Sep 13\nUncertainty and Risk\n\n\n\n\n\n\n\n\nFri, Sep 15\nMonte Carlo Simulation\n\n\n\n\n\n\n\n5\nMon, Sep 18\nLab: Monte Carlo\n\n\n\n\n\n\n\n\nWed, Sep 20\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nFri, Sep 22\nIntroduction to Optimization\n\n\n\n\n\n\n\n6\nMon, Sep 25\nLinear Programming\n\n\n\n\n\n\n\n\nWed, Sep 27\nExample: Resource and Land Allocation\n\n\n\n\n\n\n\n\nFri, Sep 29\nLab: Optimization with JuMP.jl"
   }
 ]

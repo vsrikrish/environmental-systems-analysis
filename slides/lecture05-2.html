@@ -323,10 +323,9 @@
   <!-- Mathjax 3 config -->
   <script>
   window.MathJax = {
-      chtml: {
-        scale: 0.9,                      
+      {
         minScale: 0.5
-      },
+      }
     };
     MathJax = {
     options: {
@@ -467,7 +466,7 @@
 </section>
 <section id="formulating-an-objective-2" class="slide level2">
 <h2>Formulating an Objective</h2>
-<p>Daily Treatment Cost:</p>
+<p>Daily Treatment Cost (the <strong>metric</strong>):</p>
 <p><span class="math display">\[C(E_1, E_2) = 50(100)E_1^2 + 50(60)E_2^2 = 5000E_1^2 + 3000E_2^2.\]</span></p>
 <p>Then if the objective is to minimize the cost, we write:</p>
 <p><span class="math display">\[\min_{E_1, E_2} 5000E_1^2 + 3000E_2^2.\]</span></p>
@@ -500,7 +499,7 @@
 <ul>
 <li>Total CRUD after factory 1 release: <span class="math inline">\(\color{blue}\text{100} + \color{red} 1000(1-E_1) \color{black} \ \text{kg/d}\)</span></li>
 <li>Our standard is <span class="math inline">\(1 \ \text{mg/L} = 10^{-3} \ \text{kg/m}^3\)</span></li>
-<li>The volume of the inflow is <span class="math inline">\(\color{blue}500,000 + \color{red}100,000 \color{black}= 600,000 \ \text{m}^3\text{/d}\)</span>.</li>
+<li>The volume of the inflow is <span class="math inline">\(600,000 \ \text{m}^3\text{/d}\)</span>.</li>
 </ul>
 <p>So the constraint until we hit Release 2 is: <span class="math display">\[100 + 1000(1-E_1) \leq 600 \Rightarrow \boxed{1000E_1 \geq 500}
 \]</span></p>
@@ -524,7 +523,7 @@
 (1100 - 1000E_1) 0.835 + 1200(1 - E_2) &amp;\leq 660  \\\\
 2119 - 835E_1 - 1200E_2 &amp;\leq 660
 \end{aligned}\]</span></p>
-<p><span class="math display">\[\boxed{835E_1 + 1200E_2 \geq 1459}\]</span></p>
+<p><span class="math display">\[\Rightarrow \boxed{835E_1 + 1200E_2 \geq 1459}\]</span></p>
 </section>
 <section id="model-formulation" class="slide level2">
 <h2>Model Formulation</h2>
@@ -547,6 +546,7 @@
 &amp; &amp; \color{purple}E_1, E_2 &amp;\;\color{purple}\geq 0 \\
 &amp; &amp; \color{purple}E_1, E_2 &amp;\;\color{purple}\leq 1
 \end{alignat}\]</span></p>
+<p>The</p>
 </section></section>
 <section>
 <section id="key-takeaways" class="title-slide slide level1 center">

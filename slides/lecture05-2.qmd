@@ -145,7 +145,7 @@ $$C(E_1, E_2) = 50(100)E_1^2 + 50(60)E_2^2 = 5000E_1^2 + 3000E_2^2.$$
 
 ## Formulating an Objective
 
-Daily Treatment Cost: 
+Daily Treatment Cost (the **metric**): 
 
 $$C(E_1, E_2) = 50(100)E_1^2 + 50(60)E_2^2 = 5000E_1^2 + 3000E_2^2.$$
 
@@ -186,7 +186,7 @@ Total CRUD after factory 1 release: $\color{blue}\text{100} + \color{red} 1000(1
 
 - Total CRUD after factory 1 release: $\color{blue}\text{100} + \color{red} 1000(1-E_1) \color{black} \ \text{kg/d}$
 - Our standard is $1 \ \text{mg/L} = 10^{-3} \ \text{kg/m}^3$
-- The volume of the inflow is $\color{blue}500,000 + \color{red}100,000 \color{black}= 600,000 \ \text{m}^3\text{/d}$.
+- The volume of the inflow is $600,000 \ \text{m}^3\text{/d}$.
 
 So the constraint until we hit Release 2 is: 
 $$100 + 1000(1-E_1) \leq 600 \Rightarrow \boxed{1000E_1 \geq 500}
@@ -216,7 +216,7 @@ $$\begin{aligned}
 2119 - 835E_1 - 1200E_2 &\leq 660
 \end{aligned}$$
 
-$$\boxed{835E_1 + 1200E_2 \geq 1459}$$
+$$\Rightarrow \boxed{835E_1 + 1200E_2 \geq 1459}$$
 
 ## Model Formulation
 
@@ -242,6 +242,8 @@ $$\begin{alignat}{3}
 & & \color{purple}E_1, E_2 &\;\color{purple}\geq 0 \\
 & & \color{purple}E_1, E_2 &\;\color{purple}\leq 1
 \end{alignat}$$
+
+The 
 
 # Key Takeaways
 

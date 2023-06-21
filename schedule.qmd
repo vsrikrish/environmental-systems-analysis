@@ -23,8 +23,8 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 |      | Fri, Sep 15 | Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture04-3.qmd){target="_blank"} | | | |
 |  5    | Mon, Sep 18 | Lab: Monte Carlo | | [{{< fa sharp laptop-code >}}](labs/lab02/lab02.qmd) | | |
 |     | Wed, Sep 20 | Prescriptive Modeling | [{{< fa sharp presentation-screen >}}](slides/lecture05-2.qmd){target="_blank"} | | | |
-|      | Fri, Sep 22 | Prescriptive Modeling II | | | | |
-|  6    | Mon, Sep 25 | Introduction to Optimization | | | | |
+|      | Fri, Sep 22 | Introduction to Optimization | [{{< fa sharp presentation-screen >}}](slides/lecture05-3.qmd){target="_blank"} | | | |
+|  6    | Mon, Sep 25 | Linear Programming | | | | |
 |     | Wed, Sep 27 | Example: Resource and Land Allocation | | | | |
 |      | Fri, Sep 29 | Lab: Optimization with JuMP.jl | | | | |
 

@@ -251,85 +251,6 @@ These methods work pretty well, but can require a lot of evaluations and/or may 
 
 ::::
 
-## Constrained Optimization
-
-:::: {.columns}
-::: {.column width=50%}
-
-![Function with Multiple Minima and a Constraint](images/multiple-optima-constrained.svg)
-:::
-
-::: {.column width=50%}
-Now, notice the effect of a constraint!
-
-
-For a constrained problem, we also have to look along the constraint to see if that creates a solution.
-:::
-
-::::
-
-## Lagrange Multipliers
-
-We can solve some constrained problems using Lagrange Multipliers!
-
-
-Recall (maybe) that the Lagrange Multipliers method requires *equality* constraints. But we can easily create those with "dummy" variables.
-
-## Using Equality Constraints
-
-:::: {.columns}
-::: {.column width=50%}
-
-**Original Problem**
-
-
-$$
-\begin{aligned}
-& \min &&f(x_1, x_2) \notag \\\\
-& \text{subject to:} && x_1 \geq A \notag \\
-& && x_2 \leq B \notag
-\end{aligned}
-$$
-:::
-
-::: {.column width=50%}
-
-**With Dummy Variables**
-
-
-$$
-\begin{aligned}
-& \min &&f(x_1, x_2) \notag \\\\
-& \text{subject to:} && x_1 - S_1^2 = A \notag \\
-& && x_2 + S_2^2 = B \notag
-\end{aligned}
-$$
-:::
-::::
-
-## Using Lagrange Multipliers
-
-Then the Lagrangian function becomes:
-
-
-$$
-H(\mathbf{x}, S_1, S_2, \lambda_1, \lambda_2) = f(\mathbf{x}) - \lambda_1(x_1 - S_1^2 - A) - \lambda_2(x_2 + S_2^2 - B)
-$$
-
-
-where $\lambda_1$, $\lambda_2$ are penalties for violating the constraints.
-
-
-The $\lambda_i$ are the eponymous *Lagrange multipliers*.
-
-## Using Lagrange Multipliers
-
-
-Next step: locate possible optima where the partial derivatives of the Lagrangian are zero.
-
-$$\frac{\partial H(\cdot)}{\partial \cdot} = 0$$
-
-This is actually many equations, even though our original problem was low-dimensional, and can be slow to solve.
 
 # Key Takeaways
 
@@ -342,16 +263,11 @@ This is actually many equations, even though our original problem was low-dimens
   - Constraints
 - **Goal**: find "best" solution with respect to the objective that is feasible.
 
-## Key Takeaways
-
-- We discussed several approaches to optimization, all of which have some restrictions.
-- Constraints add complexity, since we need to consider the constraint for optima.
-
 # Upcoming Schedule
 
 ## Next Classes
 
-**Monday**: Solving linear models (linear programming)
+**Monday**: Constrained optimization and solving linear models (linear programming)
 
 **Wednesday**: Example of formulating and solving a linear program.
 

@@ -411,8 +411,6 @@ This error estimate lets us compute confidence intervals for the MC estimate.
 
 $$\left\|\tilde{\mu}_n - \mu\right\| \to \mathcal{N}\left(0, \frac{\sigma_Y^2}{n}\right)$$
 
-So we can construct confidence intervals using the inverse cumulative distribution function for the normal distribution.
-
 ## Monte Carlo Confidence Intervals
 
 The $\alpha$-confidence interval is:
@@ -427,9 +425,11 @@ Converging at a rate of $1/\sqrt{n}$ is not great. But:
 - All models are wrong, and so there always exists some irreducible model error. 
 - We often need a lot of simulations. Do we have enough computational power?
 
---
+## Implications of Monte Carlo Error
 
-If you can compute your answer analytically, you probably should. But often this is difficult if not impossible without many simplifying assumptions.
+If you can compute your answer analytically, you probably should. 
+
+But often this is difficult if not impossible without many simplifying assumptions.
 
 # Key Takeaways
 

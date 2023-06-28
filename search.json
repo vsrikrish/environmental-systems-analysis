@@ -46,14 +46,35 @@
     "href": "hw/hw01/hw01.html#overview",
     "title": "BEE 4750 Homework 1: Introduction to Using Julia",
     "section": "Overview",
-    "text": "Overview\n\nInstructions\n\nProblems 1-3 consist of a series of code snippets for you to interpret and debug. For Problems 1 and 2, you will be asked to identify relevant error(s) and fix the code. For Problem 3, the code works as intended; your goal is to identify the code’s purpose by following its logic.\nProblem 4 asks you to convert a verbal description of a wastewater treatment system into a Julia function, and then to use that function to explore the impact of different wastewater allocation strategies.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nusing Plots\nusing GraphRecipes\nusing LaTeXStrings"
+    "text": "Overview\n\nInstructions\n\nProblems 1-3 consist of a series of code snippets for you to interpret and debug. For Problems 1 and 2, you will be asked to identify relevant error(s) and fix the code. For Problem 3, the code works as intended; your goal is to identify the code’s purpose by following its logic.\nProblem 4 asks you to convert a verbal description of a wastewater treatment system into a Julia function, and then to use that function to explore the impact of different wastewater allocation strategies.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nusing Plots\nusing GraphRecipes\nusing LaTeXStrings\n\n[ Info: Precompiling GeometryBasicsExt [b238bd29-021f-5edc-8b0e-16b9cda5f63a]"
   },
   {
     "objectID": "hw/hw01/hw01.html#problems-total-100-points",
     "href": "hw/hw01/hw01.html#problems-total-100-points",
     "title": "BEE 4750 Homework 1: Introduction to Using Julia",
     "section": "Problems (Total: 100 Points)",
-    "text": "Problems (Total: 100 Points)\n\nProblem 1 (20 points)\nYou’ve been tasked with writing code to identify the minimum value in an array. You cannot use a predefined function. Your colleague suggested the function below, but it does not return the minimum value.\n\nfunction minimum(array)\n    min_value = 0\n    for i in 1:length(array)\n        if array[i] &lt; min_value\n            min_value = array[i]\n        end\n    end\n    return min_value\nend\n\narray_values = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\n@show minimum(array_values);\n\nminimum(array_values) = 0\n\n\n\nProblem 1.1 (10 points)\nDescribe the logic error.\n\n\nProblem 1.2 (5 points)\nWrite a fixed version of the function.\n\n\nProblem 1.3 (5 points)\nUse your fixed function to find the minimum value of array_values.\n\n\n\nProblem 2 (20 points)\nYour team is trying to compute the average grade for your class, but the following code produces an error.\n\nstudent_grades = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\nfunction class_average(grades)\n  average_grade = mean(student_grades)\n  return average_grade\nend\n\n@show average_grade;\n\nLoadError: UndefVarError: average_grade not defined\n\n\n\nProblem 2.1 (10 points)\nDescribe the logic and/or syntax error.\n\n\nProblem 2.2 (5 points)\nWrite a fixed version of the code.\n\n\nProblem 2.3 (5 points)\nUse your fixed code to compute the average grade for the class.\n\n\n\nProblem 3 (20 points)\nYou’ve been handed some code to analyze. The original coder was not very considerate of other potential users: the function is called mystery_function and there are no comments explaining the purpose of the code. It appears to take in an array and return some numbers, and you’ve been assured that the code works as intended.\n\nfunction mystery_function(values)\n    y = []\n    for v in values\n        if !(v in y)\n            append!(y, v)\n        end\n    end\n    return y\nend\n\nlist_of_values = [1, 2, 3, 4, 3, 4, 2, 1]\n@show mystery_function(list_of_values);\n\nmystery_function(list_of_values) = Any[1, 2, 3, 4]\n\n\n\nProblem 3.1 (10 points)\nExplain the purpose of mystery_function.\n\n\nProblem 3.2 (10 points)\nAdd comments to the code, explaining why and how it works. Refer to “Best Practices for Writing Code Comments”, and remember that bad comments can be just as bad as no comments at all. You do not need to add comments to every line (in fact, this is very bad practice), but you should note the purpose of every “section” of code, and add comments explaining any code sequences that you don’t immediately understand.\n\n\n\nProblem 4 (40 points)\nCheap Plastic Products, Inc. is operating a plant that produces \\(100 \\text{m}^3\\text{/day}\\) of wastewater that is discharged into Pristine Brook. The wastewater contains \\(1 \\text{kg/m}^3\\) of YUK, a toxic substance. The US Environmental Protection Agency has imposed an effluent standard on the plant prohibiting discharge of more than \\(20 \\text{kg/day}\\) of YUK into Pristine Brook.\nCheap Plastic Products has analyzed two methods for reducing its discharges of YUK. Method 1 is land disposal, which costs \\(X_1^2/20\\) dollars per day, where \\(X_1\\) is the amount of wastewater disposed of on the land (\\(\\text{m}^3\\text{/day}\\)). With this method, 20% of the YUK applied to the land will eventually drain into the stream (i.e., 80% of the YUK is removed by the soil).\nMethod 2 is a chemical treatment procedure which costs $1.50 per \\(\\text{m}^3\\) of wastewater treated. The chemical treatment has an efficiency of \\(e= 1 - 0.005X_2\\), where \\(X_2\\) is the quantity of wastewater (\\(\\text{m}^3\\text{/day}\\)) treated. For example, if \\(X_2 = 50 \\text{m}^3\\text{/day}\\), then \\(e = 1 - 0.005(50) = 0.75\\), so that 75% of the YUK is removed.\nCheap Plastic Products is wondering how to allocate their wastewater between these three disposal and treatment methods (land disposal, and chemical treatment, and land disposal) to meet the effluent standard while keeping costs manageable.\n\nProblem 4.1 (10 points)\nThe flow of wastewater through this treatment system is shown in Figure 1. Modify the edge labels (by editing the edge_labels dictionary in the code producing Figure 1) to show how the wastewater allocations result in the final YUK discharge into Pristine Brook. For the edge_label dictionary, the tuple \\((i, j)\\) corresponds to the arrow going from node \\(i\\) to node \\(j\\). The syntax for any entry is (i, j) =&gt; \"label text\", and the label text can include mathematical notation if the string is prefaced with an L, as in L\"x_1\" will produce \\(x_1\\).\n\nusing GraphRecipes, Plots\n\nA = [0 1 1 1;\n    0 0 0 1;\n    0 0 0 1;\n    0 0 0 0]\n\nnames = [\"Plant\", \"Land Treatment\", \"Chem Treatment\", \"Pristine Brook\"]\n# modify this dictionary to add labels\nedge_labels = Dict((1, 2) =&gt; \"\", (1,3) =&gt; \"\", (1, 4) =&gt; \"\",(2, 4) =&gt; \"\",(3, 4) =&gt; \"\")\nshapes=[:hexagon, :rect, :rect, :hexagon]\nxpos = [0, -1.5, -0.25, 1]\nypos = [1, 0, 0, -1]\n\ngraphplot(A, names=names,edgelabel=edge_labels, markersize=0.15, markershapes=shapes, markercolor=:white, x=xpos, y=ypos)\n\n\n\n\nFigure 1: System diagram of the wastewater treatment options in Problem 4.\n\n\n\n\n\n\nProblem 4.2 (10 points)\nFormulate a mathematical model for the treatment cost and the amount of YUK that will be discharged into Pristine Brook based on the wastewater allocations. This is best done with some equations and supporting text explaining the derivation. Make sure you include, as additional equations in the model, any needed constraints on relevant values. You can find some basics on writing mathematical equations using the LaTeX typesetting syntax here, and a cheatsheet with LaTeX commands can be found on the course website’s Resources page.\n\n\nProblem 4.3 (10 points)\nImplement this systems model as a Julia function which computes the resulting YUK concentration and cost for a particular treatment plan. You can return multiple values from a function with a tuple, as in:\n\nfunction multiple_return_values(x, y)\n    return (x+y, x*y)\nend\n\na, b = multiple_return_values(2, 5)\n@show a;\n@show b;\n\na = 7\nb = 10\n\n\nMake sure you comment your code appropriately to make it clear what is going on and why.\n\n\nProblem 4.4 (10 points)\nUse your function to experiment with some different combinations of wastewater discharge and treatment. Can you find one that satisfies the YUK effluent standard? What was the cost? You don’t have to find an “optimal” solution to this problem, but what do you think would be needed to find a better solution?"
+    "text": "Problems (Total: 100 Points)\n\nProblem 1 (20 points)\nYou’ve been tasked with writing code to identify the minimum value in an array. You cannot use a predefined function. Your colleague suggested the function below, but it does not return the minimum value.\n\nfunction minimum(array)\n    min_value = 0\n    for i in 1:length(array)\n        if array[i] &lt; min_value\n            min_value = array[i]\n        end\n    end\n    return min_value\nend\n\narray_values = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\n@show minimum(array_values);\n\nminimum(array_values) = 0\n\n\n\nProblem 1.1 (10 points)\nDescribe the logic error.\n\n\nProblem 1.2 (5 points)\nWrite a fixed version of the function.\n\n\nProblem 1.3 (5 points)\nUse your fixed function to find the minimum value of array_values.\n\n\n\nProblem 2 (20 points)\nYour team is trying to compute the average grade for your class, but the following code produces an error.\n\n\nstudent_grades = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\nfunction class_average(grades)\n  average_grade = mean(student_grades)\n  return average_grade\nend\n\n@show average_grade;\n\nLoadError: UndefVarError: `average_grade` not defined\n\n\n\nProblem 2.1 (10 points)\nDescribe the logic and/or syntax error.\n\n\nProblem 2.2 (5 points)\nWrite a fixed version of the code.\n\n\nProblem 2.3 (5 points)\nUse your fixed code to compute the average grade for the class.\n\n\nProblem 3 (20 points)\nYou’ve been handed some code to analyze. The original coder was not very considerate of other potential users: the function is called mystery_function and there are no comments explaining the purpose of the code. It appears to take in an array and return some numbers, and you’ve been assured that the code works as intended.\n\n\nfunction mystery_function(values)\n    y = []\n    for v in values\n        if !(v in y)\n            append!(y, v)\n        end\n    end\n    return y\nend\n\nlist_of_values = [1, 2, 3, 4, 3, 4, 2, 1]\n@show mystery_function(list_of_values);\n\nmystery_function(list_of_values) = Any[1, 2, 3, 4]\n\n\n\nProblem 3.1 (10 points)\nExplain the purpose of mystery_function.\n\n\nProblem 3.2 (10 points)\nAdd comments to the code, explaining why and how it works. Refer to “Best Practices for Writing Code Comments”, and remember that bad comments can be just as bad as no comments at all. You do not need to add comments to every line (in fact, this is very bad practice), but you should note the purpose of every “section” of code, and add comments explaining any code sequences that you don’t immediately understand.\n\n\nProblem 4 (40 points)\nCheap Plastic Products, Inc. is operating a plant that produces \\(100 \\text{m}^3\\text{/day}\\) of wastewater that is discharged into Pristine Brook. The wastewater contains \\(1 \\text{kg/m}^3\\) of YUK, a toxic substance. The US Environmental Protection Agency has imposed an effluent standard on the plant prohibiting discharge of more than \\(20 \\text{kg/day}\\) of YUK into Pristine Brook.\nCheap Plastic Products has analyzed two methods for reducing its discharges of YUK. Method 1 is land disposal, which costs \\(X_1^2/20\\) dollars per day, where \\(X_1\\) is the amount of wastewater disposed of on the land (\\(\\text{m}^3\\text{/day}\\)). With this method, 20% of the YUK applied to the land will eventually drain into the stream (i.e., 80% of the YUK is removed by the soil).\nMethod 2 is a chemical treatment procedure which costs $1.50 per \\(\\text{m}^3\\) of wastewater treated. The chemical treatment has an efficiency of \\(e= 1 - 0.005X_2\\), where \\(X_2\\) is the quantity of wastewater (\\(\\text{m}^3\\text{/day}\\)) treated. For example, if \\(X_2 = 50 \\text{m}^3\\text{/day}\\), then \\(e = 1 - 0.005(50) = 0.75\\), so that 75% of the YUK is removed.\nCheap Plastic Products is wondering how to allocate their wastewater between these three disposal and treatment methods (land disposal, and chemical treatment, and land disposal) to meet the effluent standard while keeping costs manageable.\n\n\nProblem 4.1 (10 points)\nThe flow of wastewater through this treatment system is shown in Figure 1. Modify the edge labels (by editing the edge_labels dictionary in the code producing Figure 1) to show how the wastewater allocations result in the final YUK discharge into Pristine Brook. For the edge_label dictionary, the tuple \\((i, j)\\) corresponds to the arrow going from node \\(i\\) to node \\(j\\). The syntax for any entry is (i, j) =&gt; \"label text\", and the label text can include mathematical notation if the string is prefaced with an L, as in L\"x_1\" will produce \\(x_1\\).\n\n\nusing GraphRecipes, Plots\n\nA = [0 1 1 1;\n    0 0 0 1;\n    0 0 0 1;\n    0 0 0 0]\n\nnames = [\"Plant\", \"Land Treatment\", \"Chem Treatment\", \"Pristine Brook\"]\n# modify this dictionary to add labels\nedge_labels = Dict((1, 2) =&gt; \"\", (1,3) =&gt; \"\", (1, 4) =&gt; \"\",(2, 4) =&gt; \"\",(3, 4) =&gt; \"\")\nshapes=[:hexagon, :rect, :rect, :hexagon]\nxpos = [0, -1.5, -0.25, 1]\nypos = [1, 0, 0, -1]\n\ngraphplot(A, names=names,edgelabel=edge_labels, markersize=0.15, markershapes=shapes, markercolor=:white, x=xpos, y=ypos)\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: System diagram of the wastewater treatment options in Problem 4.\n\n\n\n\nProblem 4.2 (10 points)\nFormulate a mathematical model for the treatment cost and the amount of YUK that will be discharged into Pristine Brook based on the wastewater allocations. This is best done with some equations and supporting text explaining the derivation. Make sure you include, as additional equations in the model, any needed constraints on relevant values. You can find some basics on writing mathematical equations using the LaTeX typesetting syntax here, and a cheatsheet with LaTeX commands can be found on the course website’s Resources page.\n\n\nProblem 4.3 (10 points)\nImplement this systems model as a Julia function which computes the resulting YUK concentration and cost for a particular treatment plan. You can return multiple values from a function with a tuple, as in:\n\n\nfunction multiple_return_values(x, y)\n    return (x+y, x*y)\nend\n\na, b = multiple_return_values(2, 5)\n@show a;\n@show b;\n\na = 7\nb = 10\n\n\nMake sure you comment your code appropriately to make it clear what is going on and why.\n\nProblem 4.4 (10 points)\nUse your function to experiment with some different combinations of wastewater discharge and treatment. Can you find one that satisfies the YUK effluent standard? What was the cost? You don’t have to find an “optimal” solution to this problem, but what do you think would be needed to find a better solution?"
+  },
+  {
+    "objectID": "hw/hw02/hw02.html",
+    "href": "hw/hw02/hw02.html",
+    "title": "BEE 4750 Homework 2: Gaussian Plumes",
+    "section": "",
+    "text": "Due Date\n\n\n\nFriday, 9/22/23, 9:00pm"
+  },
+  {
+    "objectID": "hw/hw02/hw02.html#overview",
+    "href": "hw/hw02/hw02.html#overview",
+    "title": "BEE 4750 Homework 2: Gaussian Plumes",
+    "section": "Overview",
+    "text": "Overview\n\nInstructions\n\nProblems 1-3 consist of a series of code snippets for you to interpret and debug. For Problems 1 and 2, you will be asked to identify relevant error(s) and fix the code. For Problem 3, the code works as intended; your goal is to identify the code’s purpose by following its logic.\nProblem 4 asks you to convert a verbal description of a wastewater treatment system into a Julia function, and then to use that function to explore the impact of different wastewater allocation strategies.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nusing Plots\nusing LaTeXStrings\nusing DataFrames"
+  },
+  {
+    "objectID": "hw/hw02/hw02.html#problems-total-100-points",
+    "href": "hw/hw02/hw02.html#problems-total-100-points",
+    "title": "BEE 4750 Homework 2: Gaussian Plumes",
+    "section": "Problems (Total: 100 Points)",
+    "text": "Problems (Total: 100 Points)\n\nProblem 1 (40 points)\nA ground-level receptor is located 1.5 km downwind from the center-line of a chimney emitting 2 kg/s of SO2. The chimney is 100m high and the plume initially rises another 10m being advected downwind. We want to know what\n\n\nProblem 1.1 (20 points)\nWrite a function gaussian_plume to simulate the SO2 concentration at ground level (mg/m3). The gaussian_plume function should accept the following inputs:\n\nthe displacement from the source \\(x\\) and \\(y\\), where \\(x\\) is the distance downwind (km) and \\(y\\) is the distance crosswind (km);\nthe wind speed \\(u\\) (m/s);\nthe SO2 emissions rate \\(Q\\) (g/s);\nthe effective height of the source \\(H\\) (m);\nthe atmospheric stability class (1–6);\nthe table of dispersion coefficients turb_coef, which is provided for you below as a DataFrame.\n\n\n\n# set up coefficients in matrix form\nturb_coef = [\n    213.0  440.8 1.041 9.27  459.7 2.094 -9.6\n    156.0  106.6 1.149 3.3   108.2 1.098 2.0\n    104.0  61.0  0.911 0.0   61.0  0.911 0.0\n    68.0   33.2  0.725 -1.7  44.5  0.516 -13.0\n    50.5   22.8  0.675 -1.3  55.4  0.305 -34.0\n    34.0   14.35 0.740 -0.35 62.6  0.180 -48.6 \n]\n# now convert to DataFrame with names\n# column names ending with 1 refer to coefficients for x &lt; 1km, column names ending with 2 refer to coefficients for x &gt; 1km \nturb_coef = DataFrame(turb_coef, [\"a\", \"c1\", \"d1\", \"f1\", \"c2\", \"d2\", \"f2\"])\n\n6×7 DataFrame\n\n\n\nRow\na\nc1\nd1\nf1\nc2\nd2\nf2\n\n\n\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\n\n\n\n\n1\n213.0\n440.8\n1.041\n9.27\n459.7\n2.094\n-9.6\n\n\n2\n156.0\n106.6\n1.149\n3.3\n108.2\n1.098\n2.0\n\n\n3\n104.0\n61.0\n0.911\n0.0\n61.0\n0.911\n0.0\n\n\n4\n68.0\n33.2\n0.725\n-1.7\n44.5\n0.516\n-13.0\n\n\n5\n50.5\n22.8\n0.675\n-1.3\n55.4\n0.305\n-34.0\n\n\n6\n34.0\n14.35\n0.74\n-0.35\n62.6\n0.18\n-48.6\n\n\n\n\n\n\n\n\n\n\n\n\nDataFrames\n\n\n\nA DataFrame is the standard data structure in Julia for working with tabular data (if you’ve used Python, you can compare it to pandas). Since turb_coef is a DataFrame, you can access elements with syntax like turb_coef[1, :c] (to access the first element of a column named c).\n\n\n\n\n\n\n\n\nPass Data To Functions When Possible\n\n\n\nRemember to pass turb_coef to gaussian_plums as an argument — this is generally good Julia (and broader programming) style and improves performance.\n\n\n\nProblem 1.2 (10 points)\nAssume the wind is blowing at 5 m/s. Use your function to calculate the SO2 concentration 600 m downwind, both along the centerline and 1 km crosswind, for the neutral (cloudy-day) atmospheric stability class (D/4).\n\n\nProblem 1.3 (10 points)\nFind the exposure standard in the United States for SO2 (make sure to cite where you found it!). How do your results from Problem 1.2 compare?\n\n\nProblem 2 (35 points)\n\n\nProblem 2.1 (10 points)\nPlot (using s heatmap) the SO2 concentration over a 5km downwind by 5km crosswind (relative to the plume source) region for the neutral (cloudy-day) atmospheric stability class (D/4).\n\n\n\n\n\n\nUsing Comprehensions to Apply Functions Across Inputs\n\n\n\nWriting loops in Julia outside of functions can be finicky due to issues of scope (the details aren’t important, but this has to do with how Julia compiles code for performance). A solution is to use a comprehension. For example, to apply a function f over all combinations of two vectors x and y,\n[f(i, j) for i in x for j in y]\nwill return a 2d array of outputs of f.\n\n\n\n\nProblem 2.2 (10 points)\nMake the same plot for each stability class.\n\n\nProblem 2.3 (10 points)\nFor the neutral stability class, make the same plot for the following wind speeds: 5m/s, 10m/s, 15m/s, 20m/s.\n\n\nProblem 2.4 (5 points)\nCompare your results from Problems 2.2 and 2.3, What can you conclude about the impact of atmospheric stability vs. wind speed for pollutant dispersion?\n\n\nProblem 3 (25 points)\nSuppose we have two sources, with the following characteristics (distance relative to a ground-level receptor):\n\n\n\n\n\n\n\n\n\n\nEmissions rate (kg/s)\nHeight (m)\nInitial Plume Rise (m)\nUpwind Distance (km)\nCrosswind Distance (km)\n\n\n\n\n1\n75\n10\n1.5\n2\n\n\n100\n60\n15\n0.75\n1\n\n\n\n\n\nProblem 3.1 (15 points)\nIf the wind blows at 10 m/s, what is the worst possible concentration of SO2 at the receptor? Under what atmospheric conditions might these occur?\n\n\nProblem 3.2 (10 points)\nHow does this compare to the exposure standard you found for Problem 1.3? If a control is needed, what information might you need to make a decision about how to allocate those reductions across the two sources?"
   },
   {
     "objectID": "resources/github.html",
@@ -994,41 +1015,6 @@
     "text": "Solution Approach 2: Generalized Search Algorithms\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nThese methods work pretty well, but can require a lot of evaluations and/or may get stuck at local optima."
   },
   {
-    "objectID": "slides/lecture05-3.html#constrained-optimization",
-    "href": "slides/lecture05-3.html#constrained-optimization",
-    "title": "Introduction to Optimization",
-    "section": "Constrained Optimization",
-    "text": "Constrained Optimization\n\n\n\n\n\nFunction with Multiple Minima and a Constraint\n\n\n\nNow, notice the effect of a constraint!\nFor a constrained problem, we also have to look along the constraint to see if that creates a solution."
-  },
-  {
-    "objectID": "slides/lecture05-3.html#lagrange-multipliers",
-    "href": "slides/lecture05-3.html#lagrange-multipliers",
-    "title": "Introduction to Optimization",
-    "section": "Lagrange Multipliers",
-    "text": "Lagrange Multipliers\nWe can solve some constrained problems using Lagrange Multipliers!\nRecall (maybe) that the Lagrange Multipliers method requires equality constraints. But we can easily create those with “dummy” variables."
-  },
-  {
-    "objectID": "slides/lecture05-3.html#using-equality-constraints",
-    "href": "slides/lecture05-3.html#using-equality-constraints",
-    "title": "Introduction to Optimization",
-    "section": "Using Equality Constraints",
-    "text": "Using Equality Constraints\n\n\nOriginal Problem\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 \\geq A \\notag \\\\\n& && x_2 \\leq B \\notag\n\\end{aligned}\n\\]\n\nWith Dummy Variables\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 - S_1^2 = A \\notag \\\\\n& && x_2 + S_2^2 = B \\notag\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#using-lagrange-multipliers",
-    "href": "slides/lecture05-3.html#using-lagrange-multipliers",
-    "title": "Introduction to Optimization",
-    "section": "Using Lagrange Multipliers",
-    "text": "Using Lagrange Multipliers\nThen the Lagrangian function becomes:\n\\[\nH(\\mathbf{x}, S_1, S_2, \\lambda_1, \\lambda_2) = f(\\mathbf{x}) - \\lambda_1(x_1 - S_1^2 - A) - \\lambda_2(x_2 + S_2^2 - B)\n\\]\nwhere \\(\\lambda_1\\), \\(\\lambda_2\\) are penalties for violating the constraints.\nThe \\(\\lambda_i\\) are the eponymous Lagrange multipliers."
-  },
-  {
-    "objectID": "slides/lecture05-3.html#using-lagrange-multipliers-1",
-    "href": "slides/lecture05-3.html#using-lagrange-multipliers-1",
-    "title": "Introduction to Optimization",
-    "section": "Using Lagrange Multipliers",
-    "text": "Using Lagrange Multipliers\nNext step: locate possible optima where the partial derivatives of the Lagrangian are zero.\n\\[\\frac{\\partial H(\\cdot)}{\\partial \\cdot} = 0\\]\nThis is actually many equations, even though our original problem was low-dimensional, and can be slow to solve."
-  },
-  {
     "objectID": "slides/lecture05-3.html#key-takeaways-1",
     "href": "slides/lecture05-3.html#key-takeaways-1",
     "title": "Introduction to Optimization",
@@ -1036,18 +1022,11 @@
     "text": "Key Takeaways\n\nWe solve decision models through optimization.\nDecision models have a standard structure:\n\nDecision Variables\nObjective\nConstraints\n\nGoal: find “best” solution with respect to the objective that is feasible."
   },
   {
-    "objectID": "slides/lecture05-3.html#key-takeaways-2",
-    "href": "slides/lecture05-3.html#key-takeaways-2",
-    "title": "Introduction to Optimization",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nWe discussed several approaches to optimization, all of which have some restrictions.\nConstraints add complexity, since we need to consider the constraint for optima."
-  },
-  {
     "objectID": "slides/lecture05-3.html#next-classes",
     "href": "slides/lecture05-3.html#next-classes",
     "title": "Introduction to Optimization",
     "section": "Next Classes",
-    "text": "Next Classes\nMonday: Solving linear models (linear programming)\nWednesday: Example of formulating and solving a linear program.\nFriday: Lab on linear programming in Julia.\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Next Classes\nMonday: Constrained optimization and solving linear models (linear programming)\nWednesday: Example of formulating and solving a linear program.\nFriday: Lab on linear programming in Julia.\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture05-2.html#last-classes",
@@ -1673,6 +1652,146 @@
     "text": "Next Classes\nFriday: Lake Eutrophication Example\nMonday: Simulating Dissolved Oxygen Dynamics\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
+    "objectID": "slides/lecture06-2.html#last-class",
+    "href": "slides/lecture06-2.html#last-class",
+    "title": "Linear Programming",
+    "section": "Last Class",
+    "text": "Last Class\n\nOptimization for solving decision problems.\nUsed graphical method to identify solution for low (2-d) decision problem.\nDiscussed trial and error and search algorithms.\nFor unconstrained problems, gradient-based methods can get “stuck” at local optima.\nEvolutionary algorithms can require many iterations and evaluations."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#questions",
+    "href": "slides/lecture06-2.html#questions",
+    "title": "Linear Programming",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#unconstrained-optimization",
+    "href": "slides/lecture06-2.html#unconstrained-optimization",
+    "title": "Linear Programming",
+    "section": "Unconstrained Optimization",
+    "text": "Unconstrained Optimization\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nWithout constraints, our goal is to find extrema of the function.\nCan do this using the structure of the objective (gradient) or through stochastic search (Monte Carlo)."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#constrained-optimization-1",
+    "href": "slides/lecture06-2.html#constrained-optimization-1",
+    "title": "Linear Programming",
+    "section": "Constrained Optimization",
+    "text": "Constrained Optimization\n\n\n\n\n\nFunction with Multiple Minima and a Constraint\n\n\n\nNow, notice the effect of a constraint!\nFor a constrained problem, we also have to look along the constraint to see if that creates a solution."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#lagrange-multipliers",
+    "href": "slides/lecture06-2.html#lagrange-multipliers",
+    "title": "Linear Programming",
+    "section": "Lagrange Multipliers",
+    "text": "Lagrange Multipliers\nWe can solve some constrained problems using Lagrange Multipliers!\nRecall (maybe) that the Lagrange Multipliers method requires equality constraints. But we can easily create those with “dummy” variables."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#using-equality-constraints",
+    "href": "slides/lecture06-2.html#using-equality-constraints",
+    "title": "Linear Programming",
+    "section": "Using Equality Constraints",
+    "text": "Using Equality Constraints\n\n\nOriginal Problem\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 \\geq A \\notag \\\\\n& && x_2 \\leq B \\notag\n\\end{aligned}\n\\]\n\nWith Dummy Variables\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 - S_1^2 = A \\notag \\\\\n& && x_2 + S_2^2 = B \\notag\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#using-lagrange-multipliers",
+    "href": "slides/lecture06-2.html#using-lagrange-multipliers",
+    "title": "Linear Programming",
+    "section": "Using Lagrange Multipliers",
+    "text": "Using Lagrange Multipliers\nThen the Lagrangian function becomes:\n\\[\nH(\\mathbf{x}, S_1, S_2, \\lambda_1, \\lambda_2) = f(\\mathbf{x}) - \\lambda_1(x_1 - S_1^2 - A) - \\lambda_2(x_2 + S_2^2 - B)\n\\]\nwhere \\(\\lambda_1\\), \\(\\lambda_2\\) are penalties for violating the constraints.\nThe \\(\\lambda_i\\) are the eponymous Lagrange multipliers."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#using-lagrange-multipliers-1",
+    "href": "slides/lecture06-2.html#using-lagrange-multipliers-1",
+    "title": "Linear Programming",
+    "section": "Using Lagrange Multipliers",
+    "text": "Using Lagrange Multipliers\nNext step: locate possible optima where the partial derivatives of the Lagrangian are zero.\n\\[\\frac{\\partial H(\\cdot)}{\\partial \\cdot} = 0\\]\nThis is actually many equations, even though our original problem was low-dimensional, and can be slow to solve."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#using-lagrange-multiplers",
+    "href": "slides/lecture06-2.html#using-lagrange-multiplers",
+    "title": "Linear Programming",
+    "section": "Using Lagrange Multiplers",
+    "text": "Using Lagrange Multiplers\nDespite these challenges, Lagrange Multiplers are at the core of many advanced search algorithms."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#what-is-linear-programming",
+    "href": "slides/lecture06-2.html#what-is-linear-programming",
+    "title": "Linear Programming",
+    "section": "What is Linear Programming?",
+    "text": "What is Linear Programming?\nLinear programming refers to optimization for linear models.\nAs we will see over the next few weeks, linear models are:\n\nrelatively simple (which lets us solve and analyze them “easily”);\nsurprisingly applicable to many contexts!"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#linear-functions",
+    "href": "slides/lecture06-2.html#linear-functions",
+    "title": "Linear Programming",
+    "section": "Linear Functions",
+    "text": "Linear Functions\nRecall that a function \\(f(x_1, \\ldots, x_n)\\) is linear if \\[f(x_1, \\ldots, x_n) = a_1x_1 + a_2x_2 + \\ldots + a_n x_n.\\]\n\nThe key is that linear models are very simple geometrically:\n\nDefine hyperplanes;\nConstant derivatives/gradients."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#linear-programs",
+    "href": "slides/lecture06-2.html#linear-programs",
+    "title": "Linear Programming",
+    "section": "Linear Programs",
+    "text": "Linear Programs\nA linear program (LP), or a linear optimization model, has the following characteristics:\n\nLinearity: The objective function and constraints are all linear;\nDivisibility: The decision variables are continuous (they can be fractional levels);\nCertainty: The problem is deterministic."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#linearization",
+    "href": "slides/lecture06-2.html#linearization",
+    "title": "Linear Programming",
+    "section": "Linearization",
+    "text": "Linearization\n\n\nLinear models are useful because we can linearize nonlinear functions.\nWhen we linearize components of an LP, this is called the linear relaxation of the original problem."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#linearization-1",
+    "href": "slides/lecture06-2.html#linearization-1",
+    "title": "Linear Programming",
+    "section": "Linearization",
+    "text": "Linearization\n\n\nNote that the linearization is often quite sensitive to the points that are used to find the slope.\nSo this is best done when you have a rough idea of the variable range of interest."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#why-is-solving-lps-straightforward",
+    "href": "slides/lecture06-2.html#why-is-solving-lps-straightforward",
+    "title": "Linear Programming",
+    "section": "Why Is Solving LPs Straightforward?",
+    "text": "Why Is Solving LPs Straightforward?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll solutions must exist on the boundary of the feasible region (which must be a polytope)."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#why-is-solving-lps-straightforward-1",
+    "href": "slides/lecture06-2.html#why-is-solving-lps-straightforward-1",
+    "title": "Linear Programming",
+    "section": "Why Is Solving LPs Straightforward?",
+    "text": "Why Is Solving LPs Straightforward?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMore specifically:\n\nan optimum solution must occur at the intersection of constraints;\ncan focus on finding and analyzing the corners."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#why-is-solving-lps-straightforward-2",
+    "href": "slides/lecture06-2.html#why-is-solving-lps-straightforward-2",
+    "title": "Linear Programming",
+    "section": "Why Is Solving LPs Straightforward?",
+    "text": "Why Is Solving LPs Straightforward?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is the basis of all simplex methods for solving LPs.\nThese methods go back to George Dantzig in the 1940s and are still widely used today."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#example-solving-an-lp",
+    "href": "slides/lecture06-2.html#example-solving-an-lp",
+    "title": "Linear Programming",
+    "section": "Example: Solving an LP",
+    "text": "Example: Solving an LP\n\n\n\\[\\begin{alignedat}{3}\n& \\max_{x_1, x_2} &  230x_1 + 120x_2 &  \\\\\\\\\n& \\text{subject to:} & &\\\\\n& & 0.9x_1 + 0.5x_2 &\\leq 600 \\\\\n& & x_1 + x_2 &\\leq 1000 \\\\\n& & x_1, x_2 &\\geq 0\n\\end{alignedat}\\]"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#example-solving-an-lp-1",
+    "href": "slides/lecture06-2.html#example-solving-an-lp-1",
+    "title": "Linear Programming",
+    "section": "Example: Solving an LP",
+    "text": "Example: Solving an LP\n\n\n\\[\\begin{alignedat}{3}\n& \\max_{x_1, x_2} &  230x_1 + 120x_2 &  \\\\\n& \\text{subject to:} & &\\\\\n& & 0.9x_1 + 0.5x_2 &\\leq 600 \\\\\n& & x_1 + x_2 &\\leq 1000 \\\\\n& & x_1, x_2 &\\geq 0\n\\end{alignedat}\\]"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#examining-corner-points",
+    "href": "slides/lecture06-2.html#examining-corner-points",
+    "title": "Linear Programming",
+    "section": "Examining Corner Points",
+    "text": "Examining Corner Points\n\n\n\n\n\nCorner \\((x_1, x_2)\\)\nObjective\n\n\n\n\n\\((0,0)\\)\n\\(0\\)\n\n\n\\((0, 1000)\\)\n\\(12000\\)\n\n\n\\((667, 0)\\)\n\\(153410\\)\n\n\n\\((250, 750)\\)\n\\(147500\\)\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
     "objectID": "slides/notebooks/dissolved-oxygen.html",
     "href": "slides/notebooks/dissolved-oxygen.html",
     "title": "BEE 4750 - Fall 2023",
@@ -2041,21 +2160,28 @@
     "href": "slides/lecture04-3.html#monte-carlo-confidence-intervals",
     "title": "Monte Carlo Simulation",
     "section": "Monte Carlo Confidence Intervals",
-    "text": "Monte Carlo Confidence Intervals\nThis error estimate lets us compute confidence intervals for the MC estimate (details on the website).\nBasic Idea: The Central Limit Theorem says that with enough samples, the errors are normally distributed:\n\\[\\left\\|\\tilde{\\mu}_n - \\mu\\right\\| \\to \\mathcal{N}\\left(0, \\frac{\\sigma_Y^2}{n}\\right)\\]"
+    "text": "Monte Carlo Confidence Intervals\nThis error estimate lets us compute confidence intervals for the MC estimate.\nBasic Idea: The Central Limit Theorem says that with enough samples, the errors are normally distributed:\n\\[\\left\\|\\tilde{\\mu}_n - \\mu\\right\\| \\to \\mathcal{N}\\left(0, \\frac{\\sigma_Y^2}{n}\\right)\\]"
   },
   {
     "objectID": "slides/lecture04-3.html#monte-carlo-confidence-intervals-1",
     "href": "slides/lecture04-3.html#monte-carlo-confidence-intervals-1",
     "title": "Monte Carlo Simulation",
     "section": "Monte Carlo Confidence Intervals",
-    "text": "Monte Carlo Confidence Intervals\nCan construct confidence intervals using the inverse cumulative distribution function for the normal distribution. The \\(\\alpha\\)-confidence interval is: \\[\\tilde{\\mu}_n \\pm \\Phi^{-1}\\left(1 - \\frac{\\alpha}{2}\\right) \\frac{\\sigma_Y}{\\sqrt{n}}\\]\nFor example, the 95% confidence interval is \\(\\tilde{\\mu}_n \\pm 1.96 \\sqrt{\\sigma_Y}{\\sqrt{n}}\\)."
+    "text": "Monte Carlo Confidence Intervals\nThe \\(\\alpha\\)-confidence interval is: \\[\\tilde{\\mu}_n \\pm \\Phi^{-1}\\left(1 - \\frac{\\alpha}{2}\\right) \\frac{\\sigma_Y}{\\sqrt{n}}\\]\nFor example, the 95% confidence interval is \\(\\tilde{\\mu}_n \\pm 1.96 \\sqrt{\\sigma_Y}{\\sqrt{n}}\\)."
   },
   {
     "objectID": "slides/lecture04-3.html#implications-of-monte-carlo-error",
     "href": "slides/lecture04-3.html#implications-of-monte-carlo-error",
     "title": "Monte Carlo Simulation",
     "section": "Implications of Monte Carlo Error",
-    "text": "Implications of Monte Carlo Error\nConverging at a rate of \\(1/\\sqrt{n}\\) is not great. But:\n\nAll models are wrong, and so there always exists some irreducible model error.\nWe often need a lot of simulations. Do we have enough computational power?\n\n–\nIf you can compute your answer analytically, you probably should. But often this is difficult if not impossible without many simplifying assumptions."
+    "text": "Implications of Monte Carlo Error\nConverging at a rate of \\(1/\\sqrt{n}\\) is not great. But:\n\nAll models are wrong, and so there always exists some irreducible model error.\nWe often need a lot of simulations. Do we have enough computational power?"
+  },
+  {
+    "objectID": "slides/lecture04-3.html#implications-of-monte-carlo-error-1",
+    "href": "slides/lecture04-3.html#implications-of-monte-carlo-error-1",
+    "title": "Monte Carlo Simulation",
+    "section": "Implications of Monte Carlo Error",
+    "text": "Implications of Monte Carlo Error\nIf you can compute your answer analytically, you probably should.\nBut often this is difficult if not impossible without many simplifying assumptions."
   },
   {
     "objectID": "slides/lecture04-3.html#key-takeaways-1",

@@ -4,3 +4,6 @@
 [submodule "labs/lab01"]
 	path = labs/lab01
 	url = https://github.com/BEE4750/lab01.git
+[submodule "hw/hw02"]
+	path = hw/hw02
+	url = https://github.com/BEE4750/hw02.git

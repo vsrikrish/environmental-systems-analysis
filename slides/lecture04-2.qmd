@@ -1,5 +1,5 @@
 ---
-title: "Uncertainty and Risk"
+title: "Dissolved Oxygen Simulation"
 subtitle: "Lecture 10"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
@@ -38,243 +38,188 @@ execute:
 
 ## Last Class
 
-- Simulation involves running a model to evaluate dynamics.
-- Allows us to look at how system behaves under different conditions and/or parameter values.
-- Think of analogy to experimentation.
-- Looked at example of dissolved oxygen.
+:::: {.columns}
+::: {.column width=40%}
+- Dissolved Oxygen: essential quantity for aquatic life
+- Minimum concentration regulated
+- Used mass-balance to derive first-order equation
+:::
 
-## Simulation Workflow Overview
+::: {.column width=60%}
 
-![Simulation Workflow Diagram](images/simulation-workflow.svg)
+![Processes influencing oxygen balance in moving freshwater](images/do-processes.svg){height=100%}
 
-## Questions?
+:::
+::::
+
+## DO Concentration Equation
+
+\begin{align} 
+\overbrace{U \frac{dC}{dx}}^{\text{Concentration Change}} &= \overbrace{k_a (C_s - C)}^{\text{Reaeration}} + \overbrace{P - R - S_B}^{\text{Constants}} \\[0.5em]
+&\quad - \underbrace{k_cB_0\exp\left(\frac{-k_cx}{U}\right)}_{\text{CBOD}} - \underbrace{k_n N_0\exp\left(\frac{-k_nx}{U}\right)}_{\text{NBOD}}
+\end{align}
+
+## Questions
 
 {{< include _poll-prompt.qmd >}}
 
-# Uncertainty and Systems Analysis
+# Dissolved Oxygen Simulation
 
-## Systems and Uncertainty
+## Steady-State Mass-Balance Solution
 
-:::: {.columns}
-::: {.column width=50%}
-Deterministic systems models can be subject to uncertainties due to the separation between the "internals" of the system and the "external" environment.
+::: {.small-math}
+\begin{align}
+C(x) &= C_s(1 - \alpha_1) + C_0 \alpha_1 - B_0 \alpha_2 - N_0 \alpha_3 + \left(\frac{P-R-S_B}{k_a}\right) (1-\alpha_1), \\[1em]
+
+\alpha_1 &= \exp\left(-\frac{k_a x}{U}\right) \\[0.25em] 
+\alpha_2 &= \left(\frac{k_c}{k_a-k_c}\right)\left[\exp\left(\frac{-k_c x}{U}\right) - \exp\left(\frac{-k_ax}{U}\right)\right] \\[0.25em]
+\alpha_3 &= \left(\frac{k_n}{k_a-k_n}\right)\left[\exp\left(\frac{-k_n x}{U}\right) - \exp\left(\frac{-k_ax}{U}\right)\right]
+\end{align}
 :::
 
-::: {.column width=50%}
-![Conceptual Schematic of a Systems Model](images/system-conceptual.svg)
+## Steady-State Mass-Balance Solution
+
+\begin{align}
+C(x) &= C_s(1 - \alpha_1) + C_0 \alpha_1 - B_0 \alpha_2 - N_0 \alpha_3 \\[0.5em]
+& \qquad + \left(\frac{P-R-S_B}{k_a}\right) (1-\alpha_1),
+\end{align}
+
+**Note**: Usually, these models ignore $P$, $R$, and $S_B$.
+
+Why do you think that might be?
+
+## Dissolved Oxygen "Sag" Curve
+
+:::: {.columns}
+::: {.column width=40%}
+
+Dissolved oxygen concentrations downstream of a waste release "sag" and then start to recover as CBOD and NBOD decrease.
+
+:::
+::: {.column width=60%}
+
+{{< embed notebooks/dissolved-oxygen.ipynb#fig-do-single >}}
+
 :::
 ::::
 
-## Reminder: "All Models Are Wrong, But Some Are Useful"
+## How To Simulate
 
-:::: {.columns}
-::: {.column width=50%}
-*Every* systems model simplifies or neglects certain aspects of the system!
+So far, this is only different from our single-box airshed in terms of the number of processes.
 
-Even if appropriate, this results in uncertainty about how results translate to the real system.
+Single equation, straightforward to evaluate across many values of $x$ with a loop:
 
-:::
+```julia
+x = 0:x_step:x_max # array from 0 to x_max in stepsize x_step
 
-::: {.column width=50%}
-![Conceptual Schematic of a Systems Model](images/system-conceptual.svg)
-:::
-::::
+# evaluate DO function over every x with fixed parameters
+C = (y -> dissolved_oxygen(y, parameters)).(x) 
+```
 
-## What is Uncertainty?
+## Single-Discharge Example
 
-**Glib Answer**: *A lack of certainty!*
+| Parameter | River | Waste | General |
+|:---------:|:-----:|:-----:|:-------:|
+| Volume (m^3^/d)	 		| 100,000 | 10,000  | --- |
+| DO (mg/L)           		 	| 6.4 	   | 4.2 	 | --- |
+| CBOD	(mg/L)	 		        | 5  		   | 49 	 | --- |
+| NBOD	(mg/L)	 		        | 5 	   | 27 | --- |
+| $C_s$ (mg/L)                    | ---              | ---         | 7 |
+| $k_a$, $k_c$, $k_n$       | ---              | ---         | 0.8, 0.5, 0.4 |   
+
+## Single-Discharge Example: Initial Condition
+
+How do we find the initial state ($x=0$)?
 
 ::: {.fragment .fade-in}
-**More Seriously**: Uncertainty refers to an inability to exactly describe current or future values or states.
+Need to compute the mixed concentrations of DO, CBOD, and NBOD ($Q$ is the flow volume):
+
+$$C_0 = C_\text{mixed} = \frac{C_\text{river} \times Q_\text{river} + C_\text{waste} \times Q_\text{waste}}{Q_\text{river} + Q_\text{waste}}$$
 :::
 
-## Types of Uncertainty
+## Single-Discharge Example: Initial Condition
 
-Two (broad) types of uncertainties:
+So the initial values:
 
-- **Aleatory** uncertainty, or uncertainties resulting from randomness;
-- **Epistemic** uncertainty, or uncertainties resulting from lack of knowledge. 
+$$C_0 = 6.2 \ \text{mg/L}$$
 
-## On Epistemic Uncertainty
+$$B_0 = 9 \ \text{mg/L}$$
 
-![XKCD cartoon 2440: Epistemic Uncertainty](https://imgs.xkcd.com/comics/epistemic_uncertainty.png)
+$$N_0 = 7 \ \text{mg/L}$$
 
-::: {.caption}
-Source: <https://xkcd.com/2440>
-:::
+## Single-Discharge Example: Simulation
 
-## Probability
+Now we can compute $C(x)$ (river velocity $U = 5$ km/d).
 
-We often represent uncertainty using *probabilities*.
+{{< embed notebooks/dissolved-oxygen.ipynb#do-sim >}}
 
-What is probability?
+## Single-Discharge Example: Simulation
 
-## What Is Probability?
+{{< embed notebooks/dissolved-oxygen.ipynb#fig-do-sim >}}
 
-{{< include _poll-prompt.qmd >}}
+# Simulating Multiple Discharges
 
-## Two Definitions of Probability
+## Multiple Discharges
 
-1. Long-run frequency of an event (**frequentist**)
-2. Degree of belief that a proposition is true (**Bayesian**)
+What happens if we have multiple discharge sites?
 
-The frequentist definition concerns what would happen with a large enough number of repeated trials. 
+![Schematic for Multiple Discharge Example](images/do-multi-release.svg)
 
-The Bayesian definition concerns the odds that you should bet on an outcome. 
-
-## Probability Distributions
-
-We often represent probability using distributions --- more on this next time.
-
-The choice of distributions can often play a large role in outcomes.
-
-## Neglecting Correlations
-
-For example, an often key concern is whether uncertainties are **correlated**: do certain outcomes tend to occur in combination?
-
-If this is the case, it can bias results to assume independence.
-
-## Correlated Climate Uncertainties
-
-Consider projections of future climate change for a certain emissions trajectory. 
-
-There are several key (uncertain) parameters affecting how:
-
-- carbon is cycled by the Earth system
-- CO<sub>2</sub> in the atmosphere results in warming.
-
-## Correlated Climate Uncertainties
+## Multiple Discharges
 
 :::: {.columns}
-::: {.column width=50%}
+::: {.column width=35%}
+Think about this as a multi-box problem:
 
-- Equilibrium Climate Sensitivity
-- Ocean Heat Diffusivity
-- Aerosol Cooling Factor
-- Carbon Sink Respiration Sensitivity
-
+- **Box 1**: From Release 1 to Release 2
+- **Box 2**: From Release 2 to End
 :::
 
-::: {.column width=50%}
-![Correlated climate parameter estimates](images/climate-correlate.svg)
+::: {.column width=65%}
+![Multiple Discharge Boxes](images/do-multi-box.svg)
 
-::: {.caption}
-Source: [Errickson et al (2021)](https://doi.org/10.1038/s41586-021-03386-6)
-:::
 :::
 ::::
 
-## Impact of Neglecting Climate Correlations
+
+## Multiple Discharges
 
 :::: {.columns}
-::: {.column width=30%}
-Neglecting these correlations can change the distribution of hindcasted and projected temperatures.
-
+::: {.column width=35%}
+- Dynamics within each box are like single-release example;
+- Make sure to get new initial conditions from relevant outflows!
 :::
 
-::: {.column width=70%}
-![Impact of ignoring parameter correlations on modeled temperatures](images/temperature-projections.svg)
+::: {.column width=65%}
+![Multiple Discharge Boxes](images/do-multi-box.svg)
 
-::: {.caption}
-Source: [Errickson et al (2021)](https://doi.org/10.1038/s41586-021-03386-6)
-:::
 :::
 ::::
 
-# Risk
+## Multiple Discharges
 
-## Systems and Risk
+**Question**: Who would you penalize for lack of compliance?
 
-Designing and managing environmental systems is often about **minimizing or managing risk**:
-
-- Maintaining clean air/water;
-- Power grid reliabiliy standards;
-- Flooding/other hazards;
-- Climate change mitigation/adaptation.
-
-## What is Risk?
-
-The [*Society for Risk Analysis* definition](https://www.sra.org/wp-content/uploads/2020/04/SRA-Glossary-FINAL.pdf): 
-
-::: {.quote}
-
-> "risk" involves uncertainty about the effects/implications of an activity with respect to something that humans value (such as health, well-being, wealth, property or the environment), often focusing on negative, undesirable consequences.
-
-:::
-
-## IPCC Definition of Risk
-
-::: {.quote}
-
-> ...the potential for consequences where something of value is at stake and where the outcome is uncertain, recognizing the diversity of values. Risk is often represented as probability of occurrence of hazardous events or trends multiplied by the impacts if these events or trends occur.
-
-::: {.cite}
---- [Oppenheimer et al (2014)](https://www.ipcc.ch/site/assets/uploads/2018/02/WGIIAR5-Chap19_FINAL.pdf)
-:::
-:::
-
-## So What is Risk?
-
-**Important**: "Risk" is not just another words for probability, but:
-
-- Involves uncertainty;
-- Undesireable outcomes;
-- Effects matter, not just the events themselves.
-
-## Components of Risk
-
-::: {.columns}
-::: {.column width=50%}
-Multiple components which contribute to risk:
-
-- Probability of a **hazard**;
-- **Exposure** to that hazard;
-- **Vulnerability** to outcomes;
-- Socioeconomic **responses**.
-:::
-
-::: {.column width=50%}
-![Overview of the Components of Risk](images/simpson_risk.svg)
-
-::: {.caption}
-Source: [Simpson et al (2021)](https://doi.org/10.1016/j.oneear.2021.03.005)
-:::
-:::
-::::
-
-## Risk Management Example: Well Contamination
-
-Consider the potential contamination of well water. How could we mitigate risk by:
-
-::: {.incremental}
-- reducing **hazards**:
-- reducing **exposure**:
-- reducing **vulnerability**:
-- influencing **responses**:
-:::
-
-## Systems and Risk Management
-
-Risk management is often a key consideration in systems analysis. For example, consider regulatory standards.
-
-- Often a tradeoff between strictness of a regulation and costs of compliance.
-- Systems modeling is a key way to understand 
-    - the impacts of changing a regulation
-    - the probability of failure to meet standards.
+{{< embed notebooks/dissolved-oxygen.ipynb#fig-do-multi >}}
 
 # Key Points
 
 ## Key Points
 
-- Uncertainties are a fundamental part of systems modeling and analysis.
-- Need to be thoughtful about the choices that were made in modeling and how they impact outcomes.
-- Probabilities: more on this next class, but be careful about distributions and correlations!
-- Systems analysis also often about understanding/managing risk.
+- Simulation involves running the model over space/time.
+- Multiple sections as "multi-box" model: outflows from one box become inflows/initial conditions for another.
+- Assigning blame/responsibility in an interdependent system is not straightforward!
+
+## Simulation Framework Overview
+
+![Simulation Workflow Diagram](images/simulation-workflow.svg)
 
 # Upcoming Schedule
 
 ## Next Classes
 
-**Friday**: Probability and Monte Carlo
+**Wednesday/Friday**: Uncertainty and Monte Carlo Simulation
 
-**Next Week**: Lab on Monte Carlo.
+**Homework**:
+
+- HW2 link available on Ed (due in two weeks).

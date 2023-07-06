@@ -1,6 +1,6 @@
 ---
 title: "Linear Programming"
-subtitle: "Lecture 16"
+subtitle: "Lecture 15"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"

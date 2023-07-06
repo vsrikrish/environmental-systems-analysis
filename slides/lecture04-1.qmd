@@ -1,5 +1,5 @@
 ---
-title: "Dissolved Oxygen Simulation"
+title: "Dissolved Oxygen"
 subtitle: "Lecture 09"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
@@ -27,8 +27,6 @@ format:
         html-math-method: mathjax
         include-in-header: mathjax-config.html
         date-format: long
-        highlight-style: tango
-        code-line-numbers: false
 
 execute:
     freeze: auto
@@ -38,188 +36,272 @@ execute:
 
 ## Last Class
 
-:::: {.columns}
-::: {.column width=40%}
-- Dissolved Oxygen: essential quantity for aquatic life
-- Minimum concentration regulated
-- Used mass-balance to derive first-order equation
-:::
+- Model-based simulation as a way to understand system dynamics and response.
+- Box models: mass-balance in some region of the domain
+- Can generalize single box models by:
+    - Adding more complexity;
+    - combining multiple boxes.
 
-::: {.column width=60%}
+## Why Simulate?
 
-![Processes influencing oxygen balance in moving freshwater](images/do-processes.svg){height=100%}
-
-:::
-::::
-
-## DO Concentration Equation
-
-\begin{align} 
-\overbrace{U \frac{dC}{dx}}^{\text{Concentration Change}} &= \overbrace{k_a (C_s - C)}^{\text{Reaeration}} + \overbrace{P - R - S_B}^{\text{Constants}} \\[0.5em]
-&\quad - \underbrace{k_cB_0\exp\left(\frac{-k_cx}{U}\right)}_{\text{CBOD}} - \underbrace{k_n N_0\exp\left(\frac{-k_nx}{U}\right)}_{\text{NBOD}}
-\end{align}
+1. System involves complex, nonlinear dynamics that may not be analytically tractable.
+2. Setting up and running a real-world experiment is not possible.
+3. State depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.
+4. Need to understand range of system performance across rarely-seen conditions.  
 
 ## Questions
 
 {{< include _poll-prompt.qmd >}}
 
-# Dissolved Oxygen Simulation
+# Dissolved Oxygen Overview
 
-## Steady-State Mass-Balance Solution
+## Fate & Transport Modeling
 
-::: {.small-math}
-\begin{align}
-C(x) &= C_s(1 - \alpha_1) + C_0 \alpha_1 - B_0 \alpha_2 - N_0 \alpha_3 + \left(\frac{P-R-S_B}{k_a}\right) (1-\alpha_1), \\[1em]
+**How do nutrients and other quantities move through environmental mediums?**
 
-\alpha_1 &= \exp\left(-\frac{k_a x}{U}\right) \\[0.25em] 
-\alpha_2 &= \left(\frac{k_c}{k_a-k_c}\right)\left[\exp\left(\frac{-k_c x}{U}\right) - \exp\left(\frac{-k_ax}{U}\right)\right] \\[0.25em]
-\alpha_3 &= \left(\frac{k_n}{k_a-k_n}\right)\left[\exp\left(\frac{-k_n x}{U}\right) - \exp\left(\frac{-k_ax}{U}\right)\right]
-\end{align}
+What can make fate & transport modeling more complex?
+
+::: {.fragment .fade-in}
+- Multiple points of inflow;
+- More complex growth/decay dynamics.
+- Stochasticity/randomness.
 :::
 
-## Steady-State Mass-Balance Solution
+## Dissolved Oxygen
 
-\begin{align}
-C(x) &= C_s(1 - \alpha_1) + C_0 \alpha_1 - B_0 \alpha_2 - N_0 \alpha_3 \\[0.5em]
-& \qquad + \left(\frac{P-R-S_B}{k_a}\right) (1-\alpha_1),
-\end{align}
+:::: {.columns}
+::: {.column width=50%}
+Dissolved oxygen (DO) is the free, non-compound oxygen present in water or other liquids.
 
-**Note**: Usually, these models ignore $P$, $R$, and $S_B$.
+Freshwater can only hold small amounts, and this capacity is regulated by temperature.
+:::
 
-Why do you think that might be?
+::: {.column width=50%}
 
-## Dissolved Oxygen "Sag" Curve
+![Dissolved Oxygen by temperature](https://www.fondriest.com/environmental-measurements/wp-content/uploads/2013/11/dissolvedoxygen_river-levels.jpg){width=80%}
+
+::: {.caption}
+Source: [fondriest.com](https://www.fondriest.com/environmental-measurements/parameters/water-quality/dissolved-oxygen/)
+:::
+:::
+::::
+
+## Temperature Impact on DO
+
+![Dissolved Oxygen and Temperature Plot](https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/do_temp_0.png)
+
+::: {.caption}
+Source: [usgs.gov](https://www.usgs.gov/special-topics/water-science-school/science/dissolved-oxygen-and-water)
+:::
+
+## Dissolved Oxygen and Life
 
 :::: {.columns}
 ::: {.column width=40%}
 
-Dissolved oxygen concentrations downstream of a waste release "sag" and then start to recover as CBOD and NBOD decrease.
+Dissolved oxygen is an important nutrient for aquatic life. 
+
+**Hypoxia** occurs when DO levels are $< 2$ mg/L.
 
 :::
-::: {.column width=60%}
 
-{{< embed notebooks/dissolved-oxygen.ipynb#fig-do-single >}}
+::: {.column width=50%}
 
+![Minimum DO requirements for freshwater fish](https://www.fondriest.com/environmental-measurements/wp-content/uploads/2013/11/dissolvedoxygen_levels-fresh.jpg){width=45%}
+:::
+
+:::{.column width=10%}
+
+::: {.caption}
+Source: [fondriest.com](https://www.fondriest.com/environmental-measurements/parameters/water-quality/dissolved-oxygen/)
+:::
 :::
 ::::
 
-## How To Simulate
 
-So far, this is only different from our single-box airshed in terms of the number of processes.
+## Factors Influencing DO
 
-Single equation, straightforward to evaluate across many values of $x$ with a loop:
+- Temperature, Pressure, Depth
+- Salinity
+- Mixing
+- Plant and Microbial Life
+- Organic Matter
 
-```julia
-x = 0:x_step:x_max # array from 0 to x_max in stepsize x_step
+## Impact of Paris On Seine DO, 1874
 
-# evaluate DO function over every x with fixed parameters
-C = (y -> dissolved_oxygen(y, parameters)).(x) 
-```
+![Dissolved Oxygen Downstream of Paris, 1874](https://www.researchgate.net/publication/325721176/figure/fig10/AS:962439298445322@1606474818380/Longitudinal-profiles-x-axis-in-km-downstream-of-Paris-center-of-dissolved-oxygen_W640.jpg)
 
-## Single-Discharge Example
+::: {.caption}
+Source: Dmitrieva, T., et al. (2018). <https://doi.org/10.1007/s12685-018-0216-7>
+:::
 
-| Parameter | River | Waste | General |
-|:---------:|:-----:|:-----:|:-------:|
-| Volume (m^3^/d)	 		| 100,000 | 10,000  | --- |
-| DO (mg/L)           		 	| 6.4 	   | 4.2 	 | --- |
-| CBOD	(mg/L)	 		        | 5  		   | 49 	 | --- |
-| NBOD	(mg/L)	 		        | 5 	   | 27 | --- |
-| $C_s$ (mg/L)                    | ---              | ---         | 7 |
-| $k_a$, $k_c$, $k_n$       | ---              | ---         | 0.8, 0.5, 0.4 |   
+## DO Regulatory Standards
 
-## Single-Discharge Example: Initial Condition
+**Objective**: Keep DO *above* the regulatory standard.
 
-How do we find the initial state ($x=0$)?
+In NY (via [Westlaw](https://govt.westlaw.com/nycrr/Document/I4ed90412cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default)&bhcp=1)): 
+
+- DO levels may not fall below 3 mg/L
+- DO may not be below 4.8 mg/L for an extended period
+
+# Modeling Dissolved Oxygen
+
+## Oxygen Balance in Rivers and Streams
+
+![Processes influencing oxygen balance in moving freshwater](images/do-processes.svg){height=100%}
+
+## Selecting a Metric for DO Fluxes
+
+Typically use **oxygen demand** (OD): 
+
+- measure of the concentration of oxidizable materials in a water sample
+- metric for organic waste contamination
+- reflects how oxygen will be depleted in a given segment
+
+But there are several different processes affecting total OD!
+
+## Biochemical Oxygen Demand (BOD)
+
+Oxygen used by microbes during aerobic decomposition of organic materials:
+$$\text{Organic Matter} + \text{O}_2 \rightarrow \text{CO}_2 +  \text{H}_2\text{O} + \text{NO}_3 + \text{SO}_2 + \text{Residuals}$$
+
+Broadly speaking, we care about two types of BOD: **Carbonaceous BOD** and **Nitrogenous BOD**.
+
+## Carbonaceous BOD (CBOD)
+
+Oxygen consumed during microbial decomposition of carbon compounds, *e.g.*:
+$$\text{C}_a\text{H}_b\text{O}_c + d\text{O}_2 \rightarrow e\text{H}_2\text{O} + f\text{CO}_2$$
+
+## Nitrogenous BOD (NBOD)
+
+Oxygen consumed during microbial decomposition of nitrogen compounds:
+$$2\text{NH}_2^+ + 4\text{O}_2 \rightarrow 2\text{H}_2\text{O} + 4\text{H}^+ + 2\text{NO}_3^-$$
+
+## BOD and Time
+
+Moreover, BOD is differentiated based on time frame, *e.g.*:
+
+- BOD<sub>5</sub>: oxygen demand over 5 days
+- BOD<sub>20</sub>: oxygen demand over 20 days
+
+## DO Modeling Needs
+
+Need a model that will predict DO as a function of CBOD, NBOD.
+
+Use a *fate and transport* modeling approach: how are relevant quantities moved downstream?
+
+**Note**: Can't assume homogeneous processes.
+
+## Modeling DO
+
+:::: {.columns}
+::: {.column width=30%}
+So what do we do?
+
+Start by assuming *steady-state* waste in each section (or box...).
+
+:::
+::: {.column width=70%}
+
+![Processes influencing oxygen balance in moving freshwater](images/do-processes.svg)
+:::
+::::
+
+## Modeling DO
+
+:::: {.columns}
+::: {.column width=30%}
+
+We'll track the mass balance in terms of rates (not absolute mass).
+
+What happens to an element of water?
+:::
+::: {.column width=70%}
+
+![Processes influencing oxygen balance in moving freshwater](images/do-processes.svg)
+:::
+::::
+
+## Steady-State Waste, DO Mass Balance
+
+Let $U$ be the river velocity (km/d), $x$ the distance downstream from a waste release site in km, and $C(x)$ the DO concentration at $x$ in mg/L. 
+
+\begin{align}
+U \frac{dC}{dx} &= \text{Change in DO} \\[0.5em]
+&= \text{Reaeration} + \text{Photosynthesis} - \text{Respiration}  \\[0.5em]
+& \qquad - \text{Benthal Uptake} - \text{CBOD} - \text{NBOD}
+
+\end{align}
+
+## BOD Oxygen Uptake
+
+Assume deoxygenation from waste decomposition is first-order (rate $k$):
+
+$$\begin{aligned}
+\frac{dM}{dt} &= -kM \\\\
+\Rightarrow M &= M_0 \exp(-kt)
+\end{aligned}$$
+
 
 ::: {.fragment .fade-in}
-Need to compute the mixed concentrations of DO, CBOD, and NBOD ($Q$ is the flow volume):
+But our equations are formulated in terms of distance:
 
-$$C_0 = C_\text{mixed} = \frac{C_\text{river} \times Q_\text{river} + C_\text{waste} \times Q_\text{waste}}{Q_\text{river} + Q_\text{waste}}$$
-:::
-
-## Single-Discharge Example: Initial Condition
-
-So the initial values:
-
-$$C_0 = 6.2 \ \text{mg/L}$$
-
-$$B_0 = 9 \ \text{mg/L}$$
-
-$$N_0 = 7 \ \text{mg/L}$$
-
-## Single-Discharge Example: Simulation
-
-Now we can compute $C(x)$ (river velocity $U = 5$ km/d).
-
-{{< embed notebooks/dissolved-oxygen.ipynb#do-sim >}}
-
-## Single-Discharge Example: Simulation
-
-{{< embed notebooks/dissolved-oxygen.ipynb#fig-do-sim >}}
-
-# Simulating Multiple Discharges
-
-## Multiple Discharges
-
-What happens if we have multiple discharge sites?
-
-![Schematic for Multiple Discharge Example](images/do-multi-release.svg)
-
-## Multiple Discharges
-
-:::: {.columns}
-::: {.column width=35%}
-Think about this as a multi-box problem:
-
-- **Box 1**: From Release 1 to Release 2
-- **Box 2**: From Release 2 to End
-:::
-
-::: {.column width=65%}
-![Multiple Discharge Boxes](images/do-multi-box.svg)
+$$M = M_0 \exp(-kx/U)$$
 
 :::
-::::
 
 
-## Multiple Discharges
+## BOD Oxygen Uptake
 
-:::: {.columns}
-::: {.column width=35%}
-- Dynamics within each box are like single-release example;
-- Make sure to get new initial conditions from relevant outflows!
-:::
+For biochemical organics, if $k_c$ is the deoxygenation rate (d$^{-1}$);
 
-::: {.column width=65%}
-![Multiple Discharge Boxes](images/do-multi-box.svg)
+$$B(x) = B_0 \exp(-k_c x / U);$$
 
-:::
-::::
+For nitrification, if $k_n$ is the deoxygenation rate (d$^{-1}$):
 
-## Multiple Discharges
+$$N(x) = N_0 \exp(-k_n x / U).$$
 
-**Question**: Who would you penalize for lack of compliance?
+## Steady-State Waste, DO Mass Balance
 
-{{< embed notebooks/dissolved-oxygen.ipynb#fig-do-multi >}}
+So the corresponding oxygen uptake rates are 
+$$k_c B(x) = k_c B_0 \exp(-k_c x / U)$$
+ and 
+
+ $$k_n N(x) = k_n N_0 \exp(-k_n x / U).$$
+
+
+## Steady-State Waste, DO Mass Balance
+
+Other processes:
+
+- Reaeration, assume a simple linear model based on difference from saturation level $C_s$: $k_a (C_s - C)$
+
+- Assume measured, constant values for photosynthesis ($P_s$), respiration ($R$), benthal uptake ($S_B$)
+
+## Steady-State Waste, DO Mass Balance
+
+Putting it all together:
+
+$$\begin{aligned}
+U \frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B \\\\
+&\quad - k_cB_0\exp\left(\frac{-k_cx}{U}\right) - k_n N_0\exp\left(\frac{-k_nx}{U}\right)
+\end{aligned}$$
 
 # Key Points
 
 ## Key Points
 
-- Simulation involves running the model over space/time.
-- Multiple sections as "multi-box" model: outflows from one box become inflows/initial conditions for another.
-- Assigning blame/responsibility in an interdependent system is not straightforward!
-
-## Simulation Framework Overview
-
-![Simulation Workflow Diagram](images/simulation-workflow.svg)
+- Dissolved oxygen (DO) is essential for water quality and aquatic life.
+- Commonly regulated to keep DO above a minimum threshold.
+- DO impacted by a number of factors, notably organic waste decomposition and nitrification.
+- We derived a first-order equation for DO using mass-balance and fate & transport principles.
 
 # Upcoming Schedule
 
 ## Next Classes
 
-**Wednesday/Friday**: Uncertainty and Monte Carlo Simulation
+**Next Week**: Use DO model for simulation, uncertainty, and Monte Carlo.
 
 **Homework**:
-
-- HW2 link available on Ed (due in two weeks).
+- HW1 due **today**.
+- HW2 assigned Monday (on simulation for dissolved oxygen and risk)

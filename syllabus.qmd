@@ -84,11 +84,12 @@ Environmental systems involve multiple interacting processes, uncertainties, and
 
 At the end of this class, students will:
 
-1. Establish system boundaries and distinguish between exogenous and endogenous processes;
-2. Develop mathematical models of environmental systems;
-3. Determine strategies for managing systems using optimization;
-4. Identify the  trade-offs  that  result  from  competing  objectives  in  environmental  decision -making; 
-5. Analyze environmental system risk and vulnerabilities.
+1. Construct mathematical models of environmental systems;
+2. Use systems models to simulate dynamics and outcomes;
+3. Analyze environmental system risk and vulnerabilities.
+4. Determine strategies for managing systems using optimization;
+5. Identify the  trade-offs  that  result  from  competing  objectives  in  environmental  decision -making; 
+6. Evaluate modeled outcomes with respect to model assumptions and limits.
 
 ## Prerequisites & Preparation
 

@@ -6,7 +6,7 @@ project:
 website:
   page-navigation: true
   title: "BEE 4750 - Fall 2023"
-  description: "Homepage for BEE 4750/5750, Environmental Systems Analysis, at Cornell University, Fall 2023."
+  description: "Homepage for BEE 4750/57e50, Environmental Systems Analysis, at Cornell University, Fall 2023."
   site-url: "https://viveks.me/environmental-systems-analysis"
 
   repo-url: https://github.com/vsrikrish/environmental-systems-analysis
@@ -113,6 +113,4 @@ csl: _assets/references/american-geophysical-union.csl
 
 jupyter: julia-1.9
 execute:
-  freeze: auto
-  
-
+  freeze: auto  

@@ -179,6 +179,13 @@ Let's look at a simple steady-state box model of an airshed.
 | $u$  | wind speed | m/s |
 | $L, W, H$ | box dimensions | m |
 
+## Selecting Box Dimensions
+
+What is relevant for the box dimensions $L$, $W$, and $H$? Primarily the assumption(s) about mixing.
+
+- Mixing height: is there an atmospheric inversion which limits mixing height?
+- Homogeneity of input/output flows and emissions.
+
 ## Steady-State Airshed Box Model
 
 Steady-state box &Rightarrow; $\dot{m} = 0$.
@@ -270,11 +277,17 @@ Can also incorporate more complex in/outflow dynamics:
 
 ## Multiple Boxes
 
-To make this into a multi-box model, we can string together boxes (so the outflow from box 1 becomes the inflow for box 2).
+To make this into a multi-box model, we can string together boxes to account for fluxes between them.
 
-We'll see an example of this next class.
+But this lets us account for spatially-heterogeneous flows.
 
-**Key point for now**: there is a computational/approximation tradeoff when deciding on box resolution.
+**Example**: Two-box "simple" climate models which model the ocean and atmosphere as separate boxes.
+
+## Resolution/Complexity Tradeoff
+
+More boxes (*higher resolution*) typically allows us to simulate more detailed dynamics.
+
+But each box needs to be resolved in sequence to generate fluxes, so more boxes results in greater computational complexity.
 
 # Key Takeaways
 
@@ -283,6 +296,24 @@ We'll see an example of this next class.
 - Simulation: Use model to evaluate system dynamics/outputs under different conditions.
 - Simulation &hArr; Descriptive Modeling
 - Simulation useful as a proxy for "real-world" experiments or future projections
+
+## Simulation Workflow
+
+```{dot}
+//| label: fig-simulation
+//| fig-height: 6
+
+digraph G {
+    fontname="sans-serif"
+    layout=dot
+    "Initial Box" -> "Inflows"
+    "Inflows" -> "Mixing/Bulk System"
+    "Mixing/Bulk System" -> "Fate & Transport"
+    "Fate & Transport" -> "Outflows"
+    "Outflows" -> "Inflows" [color = red, label="Repeat for Next Box", fontcolor=red]
+    "Outflows" -> "Initial Box" [color=brown, label="Repeat for Next Time Step", fontcolor=brown]
+}
+```
 
 ## Key Takeaways: Box Models
 
@@ -299,5 +330,6 @@ We'll see an example of this next class.
 **Friday**: Building a Model for Dissolved Oxygen
 
 **Homework**:
+
 - HW1 due Friday
 - HW2 assigned Monday (on simulation for dissolved oxygen and risk)

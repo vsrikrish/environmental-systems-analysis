@@ -12,7 +12,7 @@
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2023-09-08">
-  <title>BEE 4750 - Fall 2023 - Plume Dispersion Models</title>
+  <title>BEE 4750 - Fall 2023 - Air Pollution and Gaussian Plumes</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -339,7 +339,7 @@
     }
   };
   </script>
-<meta property="og:title" content="BEE 4750 - Fall 2023 - Plume Dispersion Models">
+<meta property="og:title" content="BEE 4750 - Fall 2023 - Air Pollution and Gaussian Plumes">
 <meta property="og:description" content="Lecture 08">
 <meta property="og:site-name" content="BEE 4750 - Fall 2023">
 </head>
@@ -348,7 +348,7 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-    <h1 class="title">Plume Dispersion Models</h1>
+    <h1 class="title">Air Pollution and Gaussian Plumes</h1>
   <hr>
 <p class="subtitle">Lecture 08</p>
 <p class="date">September 8, 2023</p>
@@ -357,7 +357,8 @@
 <h2 id="toc-title">Overview</h2>
 <ul>
 <li><a href="#/review-and-questions" id="/toc-review-and-questions">Review and Questions</a></li>
-<li><a href="#/plume-dispersion" id="/toc-plume-dispersion">Plume Dispersion</a></li>
+<li><a href="#/air-pollution-overview" id="/toc-air-pollution-overview">Air Pollution Overview</a></li>
+<li><a href="#/gaussian-plumes" id="/toc-gaussian-plumes">Gaussian Plumes</a></li>
 <li><a href="#/dispersion" id="/toc-dispersion">Dispersion</a></li>
 </ul>
 </nav>
@@ -390,8 +391,41 @@
 </div>
 </section></section>
 <section>
-<section id="plume-dispersion" class="title-slide slide level1 center">
-<h1>Plume Dispersion</h1>
+<section id="air-pollution-overview" class="title-slide slide level1 center">
+<h1>Air Pollution Overview</h1>
+
+</section>
+<section id="criteria-air-pollutants" class="slide level2">
+<h2>Criteria Air Pollutants</h2>
+
+<img data-src="https://deq.utah.gov/wp-content/uploads/AQversion2.jpg" class="r-stretch quarto-figure-center"><p class="caption">Criteria Air Pollutants</p><div class="caption">
+<p>Source: <a href="https://deq.utah.gov/communication/news/ask-an-environmental-scientist-what-air-pollutants-does-deq-test-for">Utah Department of Environmental Quality</a></p>
+</div>
+</section>
+<section id="greenhouse-effect" class="slide level2">
+<h2>Greenhouse Effect</h2>
+
+<img data-src="https://www.nrdc.org/sites/default/files/styles/large_200/public/greenhouseeffect_graphic1_2400x1742.png.webp?itok=mrb8APE5" class="r-stretch quarto-figure-center"><p class="caption">Greenhouse Effect</p><div class="caption">
+<p>Source: <a href="https://www.nrdc.org/stories/greenhouse-effect-101#causes">Natural Resources Defense Council</a></p>
+</div>
+</section>
+<section id="greenhouse-gas-overview" class="slide level2">
+<h2>Greenhouse Gas Overview</h2>
+
+<img data-src="https://www.nrdc.org/sites/default/files/styles/medium_200/public/media-uploads/greenhouseeffect_graphic2_2400x1800_0.png.webp?itok=wE-4Gm4h" class="r-stretch quarto-figure-center"><p class="caption">Greenhouse Gas Contributions to Warming</p><div class="caption">
+<p>Source: <a href="https://www.nrdc.org/stories/greenhouse-effect-101#gases">Natural Resources Defense Council</a></p>
+</div>
+</section>
+<section id="clean-air-act-impacts" class="slide level2">
+<h2>Clean Air Act Impacts</h2>
+
+<img data-src="https://media.rff.org/images/clean_air_PR.width-1480.png" class="r-stretch quarto-figure-center"><p class="caption">Effects of the Clean Air Act</p><div class="caption">
+<p>Source: <a href="https://www.rff.org/news/press-releases/clean-air-act-successes-and-challenges-1970/">Resources for the Future</a></p>
+</div>
+</section></section>
+<section>
+<section id="gaussian-plumes" class="title-slide slide level1 center">
+<h1>Gaussian Plumes</h1>
 
 </section>
 <section id="some-approaches-for-modeling-air-pollution" class="slide level2">
@@ -709,14 +743,6 @@ C(x,y,z) = &amp;\frac{Q}{2\pi u \sigma_y \sigma_z} \exp\left(\frac{-y^2}{2\sigma
 </div>
 </div>
 </div>
-</section>
-<section id="estimating-dispersion-spread-4" class="slide level2">
-<h2>Estimating Dispersion “Spread”</h2>
-<p>Then take estimates for <span class="math inline">\(\sigma_y\)</span> and <span class="math inline">\(\sigma_z\)</span> and plug into plume dispersion equation</p>
-<p><span class="math display">\[\begin{aligned}
-C(x,y,z) = &amp;\frac{Q}{2\pi u {\color{red}\sigma_y \sigma_z}} \exp\left(\frac{-y^2}{2{\color{red}\sigma_y^2}} \right) \times \\\\
-&amp; \quad \left[\exp\left(\frac{-(z-H)^2}{2{\color{red}\sigma_z^2}}\right) + \exp\left(\frac{-(z+H)^2}{2{\color{red}\sigma_z^2}}\right) \right]
-\end{aligned}\]</span></p>
 
 <div class="footer footer-default">
 <p><a href="https://viveks.me/environmental-systems-analysis">BEE 4750, Environmental Systems Analysis</a></p>

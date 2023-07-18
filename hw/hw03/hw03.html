@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BEE 4750 - Fall 2023 - BEE 4750: Environmental Systems Analysis</title>
+<title>BEE 4750 - Fall 2023 - BEE 4750 Homework 3: Dissolved Oxygen</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./syllabus.html" rel="next">
-<link href="./index.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,9 +104,12 @@ window.MathJax = {
 </script>
 
 
-<meta property="og:title" content="BEE 4750 - Fall 2023 - BEE 4750: Environmental Systems Analysis">
+<meta property="og:title" content="BEE 4750 - Fall 2023 - BEE 4750 Homework 3: Dissolved Oxygen">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://viveks.me/environmental-systems-analysis/hw/hw03/figures/river_diagram.png">
 <meta property="og:site-name" content="BEE 4750 - Fall 2023">
+<meta property="og:image:height" content="655">
+<meta property="og:image:width" content="1454">
 </head>
 
 <body class="nav-sidebar docked">
@@ -86,7 +121,9 @@ window.MathJax = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Course Information</a></li><li class="breadcrumb-item"><a href="./schedule.html">Schedule</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      {{&lt; var course.number &gt;}}
+      </li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -100,11 +137,11 @@ window.MathJax = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./_assets/logos/cornell-reduced-red.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../_assets/logos/cornell-reduced-red.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">BEE 4750/5750</a> 
+      <a href="../../">BEE 4750/5750</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/vsrikrish/environmental-systems-analysis" title="Github Repository" class="quarto-navigation-tool px-1" aria-label="Github Repository"><i class="bi bi-github"></i></a>
     <a href="https://canvas.cornell.edu" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-journal-check"></i></a>
@@ -122,28 +159,28 @@ window.MathJax = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Course Information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./schedule.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../schedule.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../../syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
@@ -151,7 +188,7 @@ window.MathJax = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./hw.html" class="sidebar-item-text sidebar-link">
+            <a href="../../hw.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -160,7 +197,7 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hw/hw01/hw01.html" class="sidebar-item-text sidebar-link">
+  <a href="../../hw/hw01/hw01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework 1</span></a>
   </div>
 </li>
@@ -168,7 +205,7 @@ window.MathJax = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./labs.html" class="sidebar-item-text sidebar-link">
+            <a href="../../labs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Labs</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -177,7 +214,7 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/lab01/lab01.html" class="sidebar-item-text sidebar-link">
+  <a href="../../labs/lab01/lab01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 1</span></a>
   </div>
 </li>
@@ -189,13 +226,13 @@ window.MathJax = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../../setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tools Setup</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./faq.html" class="sidebar-item-text sidebar-link">
+  <a href="../../faq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FAQ</span></a>
   </div>
 </li>
@@ -210,25 +247,25 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/julia-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tutorials/julia-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Julia Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/julia-plots.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tutorials/julia-plots.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Making Plots</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/latex-notebook.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tutorials/latex-notebook.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Math in Notebooks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorials/julia-jump.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tutorials/julia-jump.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solving Linear Programs</span></a>
   </div>
 </li>
@@ -249,25 +286,25 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources/julia.html" class="sidebar-item-text sidebar-link">
+  <a href="../../resources/julia.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Julia</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources/github.html" class="sidebar-item-text sidebar-link">
+  <a href="../../resources/github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources/markdown.html" class="sidebar-item-text sidebar-link">
+  <a href="../../resources/markdown.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Markdown</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources/optimization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../resources/optimization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Optimization and Decision-Making</span></a>
   </div>
 </li>
@@ -279,14 +316,30 @@ window.MathJax = {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#load-environment" id="toc-load-environment" class="nav-link" data-scroll-target="#load-environment">Load Environment</a></li>
+  </ul></li>
+  <li><a href="#problems-total-100-points" id="toc-problems-total-100-points" class="nav-link" data-scroll-target="#problems-total-100-points">Problems (Total: 100 Points)</a>
+  <ul class="collapse">
+  <li><a href="#problem-1-60-points" id="toc-problem-1-60-points" class="nav-link" data-scroll-target="#problem-1-60-points">Problem 1 (60 points)</a></li>
+  <li><a href="#problem-2-40-points" id="toc-problem-2-40-points" class="nav-link" data-scroll-target="#problem-2-40-points">Problem 2 (40 points)</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/hw/hw03/hw03.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="hw03.ipynb" download="hw03.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">BEE 4750: Environmental Systems Analysis</h1>
+<h1 class="title">BEE 4750 Homework 3: Dissolved Oxygen</h1>
 </div>
 
 
@@ -301,225 +354,173 @@ window.MathJax = {
 
 </header>
 
-<p>This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.</p>
-<div class="column-screen-inset-right">
-<table class="table">
-<colgroup>
-<col style="width: 5%">
-<col style="width: 10%">
-<col style="width: 25%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-</colgroup>
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Due Date
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Friday, 10/06/23, 9:00pm</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you are enrolled in the course, make sure that you use the GitHub Classroom link provided in Ed Discussion, or you may not be able to get help if you run into problems.</p>
+<p>Otherwise, you can <a href="https://github.com/BEE4750/hw03">find the Github repository here</a>.</p>
+</div>
+</div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<section id="instructions" class="level3">
+<h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
+<ul>
+<li>Problems 1-3 consist of a series of code snippets for you to interpret and debug. For Problems 1 and 2, you will be asked to identify relevant error(s) and fix the code. For Problem 3, the code works as intended; your goal is to identify the code’s purpose by following its logic.</li>
+<li>Problem 4 asks you to convert a verbal description of a wastewater treatment system into a Julia function, and then to use that function to explore the impact of different wastewater allocation strategies.</li>
+</ul>
+</section>
+<section id="load-environment" class="level3">
+<h3 class="anchored" data-anchor-id="load-environment">Load Environment</h3>
+<p>The following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.</p>
+<div id="dc4bc787" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="pp">@__DIR__</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="65f119b3" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LaTeXStrings</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Distributions</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">PDMats</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="problems-total-100-points" class="level2">
+<h2 class="anchored" data-anchor-id="problems-total-100-points">Problems (Total: 100 Points)</h2>
+<section id="problem-1-60-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-1-60-points">Problem 1 (60 points)</h3>
+<p>A river which flows at 6 km/d is receiving waste discharges from two sources which are 15 km apart, as shown in <a href="#fig-river" class="quarto-xref">Figure&nbsp;1</a>. The oxygen reaeration rate is 0.55 day<sup>-1</sup>, and the decay rates of CBOD and NBOD are are 0.55 and 0.25 day<sup>-1</sup>, respectively. The river’s saturated dissolved oxygen concentration is 10m g/L.</p>
+<div id="fig-river" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/river_diagram.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Schematic of the system in Problem 1</figcaption>
+</figure>
+</div>
+</section>
+<section id="problem-1.1-20-points" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-1.1-20-points">Problem 1.1 (20 points)</h4>
+<p>If the characteristics of the river inflow and waste discharges are given in <a href="#tbl-river" class="quarto-xref">Table&nbsp;1</a>, plot the dissolved oxygen concentration in the river from the first waste stream to 50km downstream.</p>
+<div id="tbl-river" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Table&nbsp;1: River inflow and waste stream characteristics for Problem 1.</caption>
 <thead>
 <tr class="header">
-<th style="text-align: center;">Week</th>
-<th style="text-align: left;">Date</th>
-<th style="text-align: left;">Topic</th>
-<th style="text-align: center;">Slides</th>
-<th style="text-align: center;">Lab</th>
-<th style="text-align: center;">HW</th>
-<th style="text-align: center;">Project</th>
-<th style="text-align: center;"></th>
+<th style="text-align: center;">Parameter</th>
+<th style="text-align: right;">River Inflow</th>
+<th style="text-align: right;">Waste Stream 1</th>
+<th style="text-align: right;">Waste Stream 2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">Mon, Aug 21</td>
-<td style="text-align: left;">Welcome to BEE 4750!</td>
-<td style="text-align: center;"><a href="./slides/lecture01-1.html" target="_blank"><i class="fa-sharp fa-presentation-screen" aria-label="presentation-screen"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">Inflow</td>
+<td style="text-align: right;">100,000 m<sup>3</sup>/d</td>
+<td style="text-align: right;">10,000 m<sup>3</sup>/d</td>
+<td style="text-align: right;">15,000 m<sup>3</sup>/d</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Wed, Aug 23</td>
-<td style="text-align: left;">Introduction to Systems Analysis</td>
-<td style="text-align: center;"><a href="./slides/lecture01-2.html" target="_blank"><i class="fa-sharp fa-presentation-screen" aria-label="presentation-screen"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">DO Concentration</td>
+<td style="text-align: right;">7.5 mg/L</td>
+<td style="text-align: right;">5 mg/L</td>
+<td style="text-align: right;">5 mg/L</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Fri, Aug 25</td>
-<td style="text-align: left;">Lab: Julia and GitHub Setup</td>
-<td style="text-align: center;"><a href="./slides/lecture01-3.html" target="_blank"><i class="fa-sharp fa-presentation-screen" aria-label="presentation-screen"></i></a></td>
-<td style="text-align: center;"><a href="./labs/lab01/lab01.html"><i class="fa-sharp fa-laptop-code" aria-label="laptop-code"></i></a></td>
-<td style="text-align: center;"><a href="./hw/hw01/hw01.html"><i class="fa-sharp fa-pen-field" title="HW1" aria-label="pen-field"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">CBOD</td>
+<td style="text-align: right;">5 mg/L</td>
+<td style="text-align: right;">50 mg/L</td>
+<td style="text-align: right;">45 mg/L</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: left;">Mon, Aug 28</td>
-<td style="text-align: left;">Modeling Systems</td>
-<td style="text-align: center;"><a href="./slides/lecture02-1.html" target="_blank"><i class="fa-sharp fa-presentation-screen" aria-label="presentation-screen"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Wed, Aug 30</td>
-<td style="text-align: left;">Example: Wastewater Transport</td>
-<td style="text-align: center;"><a href="./slides/lecture02-2.html" target="_blank"><i class="fa-sharp fa-presentation-screen" aria-label="presentation-screen"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Fri, Sep 01</td>
-<td style="text-align: left;">Example: Shallow Lake Eutrophication</td>
-<td style="text-align: center;"><a href="./slides/lecture02-3.html" target="_blank"><i class="fa-sharp fa-presentation-screen" aria-label="presentation-screen"></i></a></td>
-<td style="text-align: center;"><span style="color:#6EB43F"><i class="fa-sharp fa-check-to-slot" aria-label="check-to-slot"></i></span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">Mon, Sep 04</td>
-<td style="text-align: left;"><strong>No Class: Labor Day</strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Wed, Sep 06</td>
-<td style="text-align: left;">Simulating Systems and Box Models</td>
-<td style="text-align: center;"><a href="./slides/lecture03-2.html" target="_blank"><i class="fa-sharp fa-presentation-screen" aria-label="presentation-screen"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Fri, Sep 08</td>
-<td style="text-align: left;">Plume Dispersion Models</td>
-<td style="text-align: center;"><a href="./slides/lecture03-3.html" target="_blank"><i class="fa-sharp fa-presentation-screen" aria-label="presentation-screen"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span style="color:#6EB43F"><i class="fa-sharp fa-check-to-slot" aria-label="check-to-slot"></i></span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: left;">Mon, Sep 11</td>
-<td style="text-align: left;">Uncertainty and Risk</td>
-<td style="text-align: center;"><a href="./slides/lecture04-1.html" target="_blank"><i class="fa-sharp fa-presentation-screen" aria-label="presentation-screen"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="./hw/hw02/hw02.html"><i class="fa-sharp fa-pen-field" aria-label="pen-field"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Wed, Sep 13</td>
-<td style="text-align: left;">Monte Carlo Simulation</td>
-<td style="text-align: center;"><a href="./slides/lecture04-2.html" target="_blank"><i class="fa-sharp fa-presentation-screen" aria-label="presentation-screen"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Fri, Sep 15</td>
-<td style="text-align: left;">Lab: Monte Carlo</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="labs/lab02/lab02.qmd"><i class="fa-sharp fa-laptop-code" aria-label="laptop-code"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: left;">Mon, Sep 18</td>
-<td style="text-align: left;">Dissolved Oxygen</td>
-<td style="text-align: center;"><a href="./slides/lecture05-1.html" target="_blank"><i class="fa-sharp fa-presentation-screen" aria-label="presentation-screen"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Wed, Sep 20</td>
-<td style="text-align: left;">Dissolved Oxygen Simulation</td>
-<td style="text-align: center;"><a href="./slides/lecture05-2.html" target="_blank"><i class="fa-sharp fa-presentation-screen" aria-label="presentation-screen"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Fri, Sep 22</td>
-<td style="text-align: left;">Prescriptive Modeling</td>
-<td style="text-align: center;"><a href="./slides/lecture05-3.html" target="_blank"><i class="fa-sharp fa-presentation-screen" aria-label="presentation-screen"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span style="color:#6EB43F"><i class="fa-sharp fa-check-to-slot" aria-label="check-to-slot"></i></span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">6</td>
-<td style="text-align: left;">Mon, Sep 25</td>
-<td style="text-align: left;">Introduction to Optimization</td>
-<td style="text-align: center;"><a href="./slides/lecture06-1.html" target="_blank"><i class="fa-sharp fa-presentation-screen" aria-label="presentation-screen"></i></a></td>
-<td style="text-align: center;"><span style="color:#6EB43F"><i class="fa-sharp fa-check-to-slot" aria-label="check-to-slot"></i></span></td>
-<td style="text-align: center;"><a href="./hw/hw03/hw03.html"><i class="fa-sharp fa-pen-field" aria-label="pen-field"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Wed, Sep 27</td>
-<td style="text-align: left;">Linear Programming</td>
-<td style="text-align: center;"><a href="./slides/lecture06-2.html" target="_blank"><i class="fa-sharp fa-presentation-screen" aria-label="presentation-screen"></i></a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Fri, Sep 29</td>
-<td style="text-align: left;">Example: Resource and Land Allocation</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">7</td>
-<td style="text-align: left;">Mon, Oct 1</td>
-<td style="text-align: left;">Lab: Optimization with JuMP.jl</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">NBOD</td>
+<td style="text-align: right;">5 mg/L</td>
+<td style="text-align: right;">35 mg/L</td>
+<td style="text-align: right;">35 mg/L</td>
 </tr>
 </tbody>
 </table>
 </div>
+</section>
+<section id="problem-1.2-10-points" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-1.2-10-points">Problem 1.2 (10 points)</h4>
+<p>Under the assumptions of Problem 1.1, determine the distance from waste stream 2 it will take for the dissolved oxygen concentration of the river to recover to 6 mg/L.</p>
+</section>
+<section id="problem-1.3-10-points" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-1.3-10-points">Problem 1.3 (10 points)</h4>
+<p>What is the minimum level of treatment (% removal of organic waste) for waste stream 2 that will ensure that the dissolved oxygen concentration never drops below 4 mg/L, assuming that waste stream 1 remains untreated?</p>
+</section>
+<section id="problem-1.4-10-points" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-1.4-10-points">Problem 1.4 (10 points)</h4>
+<p>If both waste streams are treated equally, what is the minimum level of treatment (% removal of organic waste) for the two sources required to ensure that the dissolved oxygen concentration never drops below 4 mg/L?</p>
+</section>
+<section id="problem-1.5-10-points" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-1.5-10-points">Problem 1.5 (10 points)</h4>
+<p>Suppose you are responsible for designing a waste treatment plan for discharges into the river, with a regulatory mandate to keep the dissolved oxygen concentration above 4 mg/L. Discuss whether you’d opt to treat waste stream 2 alone or both waste streams equally. What other information might you need to make a conclusion, if any?</p>
+</section>
+<section id="problem-2-40-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-2-40-points">Problem 2 (40 points)</h3>
+</section>
+<section id="problem-2.1-15-points" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-2.1-15-points">Problem 2.1 (15 points)</h4>
+<p>Suppose now that the CBOD and NBOD values of the river inflow are uncertain. Suppose that your estimates of CBOD vary uniformly between 4 mg/L and 7 mg/L, and NBOD estimates vary uniformly between 3 mg/L and 8 mg/L.</p>
+<p>If you assume these values are independent, what is the probability that the strategy you selected in Problem 1.5 will fail to keep the dissolved oxygen concentration above 4 mg/L? How did you decide how many samples to use to determine this probability?</p>
+</section>
+<section id="problem-2.2-15-points" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-2.2-15-points">Problem 2.2 (15 points)</h4>
+<p>Now suppose that CBOD and NBOD values are correlated: specifically, they have a correlation coefficient of 0.7. How does that impact the probability of maintaining a dissolved oxygen concentration above 4 mg/L under the treatment strategy you selected in Problem 1.5? How did you decide how many samples to use to determine this probability?</p>
+<p>You can use the <code>sample_correlated_uniform()</code> function defined below to produce correlated uniform samples.</p>
+</section>
+<div id="4c43c70b" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This function samples n correlated variates distributed over </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Uniform(a[1], a[2]) and Uniform(b[1], b[2]) with correlation coefficient</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># corr_coef. The bounds on each uniform distribution should be passed as a vector</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># or a tuple.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">sample_correlated_uniform</span>(n, a, b, corr_coef<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># set up a multivariate normal with each marginal variance of 1 </span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># and the right correlation</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    mvnorm <span class="op">=</span> <span class="fu">MvNormal</span>([<span class="fl">0</span>, <span class="fl">0</span>], <span class="fu">PDMat</span>([<span class="fl">1</span> corr_coef; corr_coef <span class="fl">1</span>])) </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># sample from the multivariate normal, the marginal distributions </span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># are a standard normal</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    norm_samples <span class="op">=</span> <span class="fu">rand</span>(mvnorm, n)<span class="ch">' </span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># convert samples to a uniform distribution using the pdf of a standard Normal</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    unif_samples <span class="op">=</span> <span class="fu">cdf</span>.(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span>), norm_samples) </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># transform the samples to have the right range</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    samples <span class="op">=</span> (unif_samples <span class="op">.*</span> [a[<span class="fl">2</span>] <span class="op">-</span> a[<span class="fl">1</span>] b[<span class="fl">2</span>] <span class="op">-</span> b[<span class="fl">1</span>]]) <span class="op">.+</span> [a[<span class="fl">1</span>] b[<span class="fl">1</span>]]</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> samples</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>sample_correlated_uniform (generic function with 2 methods)</code></pre>
+</div>
+</div>
+<section id="problem-2.3-10-points" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-2.3-10-points">Problem 2.3 (10 points)</h4>
+<p>Discuss how the presence of uncertainty and dependence between variables might affect your decision-making process. Does the impact of the correlation between the CBOD and NBOD inputs in Problem 2.2 make sense to you? Would you stick with the same strategy as Problem 1.5? What other information might you need to make this assessment, if any?</p>
+</section>
+</section>
+<section id="references" class="level2 cell markdown">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>List any external references consulted, including classmates.</p>
+</section>
 
 
 
@@ -852,25 +853,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./syllabus.html" class="pagination-link">
-        <span class="nav-page-text">Syllabus</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Content <i class="fa-solid fa-copyright" aria-label="copyright"></i> 2023 by <a href="https://viveks.me">Vivek Srikrishnan</a>. See the <a href="./about.html">About page</a> for credit information.<br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0)</a></div>   
+    <div class="nav-footer-left">Content <i class="fa-solid fa-copyright" aria-label="copyright"></i> 2023 by <a href="https://viveks.me">Vivek Srikrishnan</a>. See the <a href="../../about.html">About page</a> for credit information.<br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0)</a></div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/schedule.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    </div>
     <div class="nav-footer-right">Made with <a href="https://julialang.org">Julia</a> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://www.github.com/vsrikrish/environmental-systems-analysis">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></div>
   </div>
 </footer>

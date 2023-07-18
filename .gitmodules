@@ -7,3 +7,6 @@
 [submodule "hw/hw02"]
 	path = hw/hw02
 	url = https://github.com/BEE4750/hw02.git
+[submodule "hw/hw03"]
+	path = hw/hw03
+	url = https://github.com/BEE4750/hw03.git

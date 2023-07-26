@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with Julia and GitHub"
-subtitle: "Lecture 03"
+subtitle: "Lab 01"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"

@@ -1,6 +1,6 @@
 ---
 title: "Simulating Systems and Box Models"
-subtitle: "Lecture 07"
+subtitle: "Lecture 06"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"

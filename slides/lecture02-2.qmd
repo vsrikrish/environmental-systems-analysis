@@ -1,6 +1,6 @@
 ---
 title: "Wastewater Modeling Example"
-subtitle: "Lecture 05"
+subtitle: "Lecture 04"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"

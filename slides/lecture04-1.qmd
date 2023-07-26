@@ -1,6 +1,6 @@
 ---
-title: "Uncertainty and Risk"
-subtitle: "Lecture 09"
+title: "Plume Models: Dispersion and Examples"
+subtitle: "Lecture 08"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"
@@ -27,242 +27,368 @@ format:
         html-math-method: mathjax
         include-in-header: mathjax-config.html
         date-format: long
-        highlight-style: tango
-        code-line-numbers: false
 
 execute:
     freeze: auto
 ---
 
+```{julia}
+import Pkg
+Pkg.activate(".")
+Pkg.instantiate()
+```
+
+```{julia}
+using DataFrames
+using Plots
+using LaTeXStrings
+using Measures
+```
+
 # Review and Questions
 
-## Last Class
+## Gaussian Plume for Air Pollution Dispersion
 
-- Simulation involves running a model to evaluate dynamics.
-- Allows us to look at how system behaves under different conditions and/or parameter values.
-- Think of analogy to experimentation.
-- Looked at example of dissolved oxygen.
+- Used for point sources.
+- Typically for continuous emissions from an elevated source.
 
-## Simulation Workflow Overview
+## Gaussian Plume Model
 
-![Simulation Workflow Diagram](images/simulation-workflow.svg)
-
-## Questions?
-
-{{< include _poll-prompt.qmd >}}
-
-# Uncertainty and Systems Analysis
-
-## Systems and Uncertainty
-
-:::: {.columns}
-::: {.column width=50%}
-Deterministic systems models can be subject to uncertainties due to the separation between the "internals" of the system and the "external" environment.
-:::
-
-::: {.column width=50%}
-![Conceptual Schematic of a Systems Model](images/system-conceptual.svg)
-:::
-::::
-
-## Reminder: "All Models Are Wrong, But Some Are Useful"
-
-:::: {.columns}
-::: {.column width=50%}
-*Every* systems model simplifies or neglects certain aspects of the system!
-
-Even if appropriate, this results in uncertainty about how results translate to the real system.
-
-:::
-
-::: {.column width=50%}
-![Conceptual Schematic of a Systems Model](images/system-conceptual.svg)
-:::
-::::
-
-## What is Uncertainty?
-
-**Glib Answer**: *A lack of certainty!*
-
-::: {.fragment .fade-in}
-**More Seriously**: Uncertainty refers to an inability to exactly describe current or future values or states.
-:::
-
-## Types of Uncertainty
-
-Two (broad) types of uncertainties:
-
-- **Aleatory** uncertainty, or uncertainties resulting from randomness;
-- **Epistemic** uncertainty, or uncertainties resulting from lack of knowledge. 
+| Variable | Meaning | 
+|:--------:|:--------|
+| $C$ | Concentration (g/m$^3$) | 
+| $Q$ | Emissions Rate (g/s) | 
+| $H$ | Effective Source Height (m) | 
+| $u$ | Wind Speed (m/s) |
+| $y, z$ | Crosswind, Vertical Distance (m)
 
 
-## Probability
+## Gaussian Plume Model
 
-We often represent uncertainty using *probabilities*.
+![Gaussian Plume Distribution](figures/air-pollution-plume-dist.png)
 
-What is probability?
 
-## What Is Probability?
+## Gaussian Plume Model With Ground Reflection
+
+$$\begin{aligned}
+C(x,y,z) = &\frac{Q}{2\pi u \sigma_y \sigma_z} \exp\left(\frac{-y^2}{2\sigma_y^2} \right) \times \\\\
+& \quad \left[\exp\left(\frac{-(z-H)^2}{2\sigma_z^2}\right) + \exp\left(\frac{-(z+H)^2}{2\sigma_z^2}\right) \right]
+\end{aligned}$$
+
+
+## Questions
 
 {{< include _poll-prompt.qmd >}}
 
-## Two Definitions of Probability
+# Dispersion
 
-1. Long-run frequency of an event (**frequentist**)
-2. Degree of belief that a proposition is true (**Bayesian**)
+## Estimating Dispersion "Spread"
 
-The frequentist definition concerns what would happen with a large enough number of repeated trials. 
+Values of $\sigma_y$ and $\sigma_z$ matter substantially for modeling plume spread downwind. What influences them?
 
-The Bayesian definition concerns the odds that you should bet on an outcome. 
+## Estimating Dispersion "Spread"
 
-## Probability Distributions
+**Main contribution**: atmospheric stability
 
-We often represent probability using distributions --- more on this next time.
+- Greater stability &Rightarrow; less vertical/cross-wind dispersion.
 
-The choice of distributions can often play a large role in outcomes.
+- Pasquill (1961): Six stability classes.
 
-## Neglecting Correlations
+## Estimating Dispersion "Spread"
 
-For example, an often key concern is whether uncertainties are **correlated**: do certain outcomes tend to occur in combination?
+Contributors to atmospheric stability:
 
-If this is the case, it can bias results to assume independence.
+- Temperature gradient
+- Wind speed
+- Solar radiation
+- Cloud cover
+- Richardson number (buoyancy / flow shear)
 
-## Correlated Climate Uncertainties
+## Atmospheric Stability Classes
 
-Consider projections of future climate change for a certain emissions trajectory. 
+Class | Stability | Description |
+:----:|:----------|:-----------|
+A | Extremely unstable | Sunny summer day 
+B | Moderately unstable | Sunny & warm |
+C | Slightly unstable | Partly cloudy day |
+D | Neutral | Cloudy day or night |
+E | Slightly stable | Partly cloudy night |
+F | Moderately stable | Clear night |
 
-There are several key (uncertain) parameters affecting how:
+::: {.caption}
+Source: <https://courses.ecampus.oregonstate.edu/ne581/eleven/>
+:::
 
-- carbon is cycled by the Earth system
-- CO<sub>2</sub> in the atmosphere results in warming.
+## Estimating Dispersion "Spread"
 
-## Correlated Climate Uncertainties
+$$\begin{aligned}
+\sigma_y &= ax^{0.894} \\
+\sigma_z &= cx^d + f
+\end{aligned}$$
+
+![Dispersion Coefficients](figures/plume-dispersion.png)
+
+::: {.caption}
+Source: <https://courses.washington.edu/cee490/DISPCOEF4WP.htm>
+:::
+
+**Note**: here $x$ is in km, while in the plume equation $y$, $z$ are in m!
+
+
+## Estimating Dispersion "Spread"
+
+Then take estimates for $\sigma_y$ and $\sigma_z$ and plug into plume dispersion equation
+
+$$\begin{aligned}
+C(x,y,z) = &\frac{Q}{2\pi u {\color{red}\sigma_y \sigma_z}} \exp\left(\frac{-y^2}{2{\color{red}\sigma_y^2}} \right) \times \\\\
+& \quad \left[\exp\left(\frac{-(z-H)^2}{2{\color{red}\sigma_z^2}}\right) + \exp\left(\frac{-(z+H)^2}{2{\color{red}\sigma_z^2}}\right) \right]
+\end{aligned}$$
+
+# Plume Model Example
+
+## Example
+
+A 100m tall chimney emits HCl at a rate of 1.75 kg/s. The plume rises 10m before being convected horizontally by the wind. A housing development is planned near the chimney, and environmental authorities want to map the HCl concentration within a 5km x 1km region downwind under
+
+- neutral, moderately stable, and moderately unstable atmospheric conditions, 
+- and under 5 m/s and 20 m/s winds?
+
+## Plume Equation
+
+\begin{aligned}
+C(x,y,z) = &\frac{Q}{2\pi u \sigma_y \sigma_z} \exp\left(\frac{-y^2}{2\sigma_y^2} \right) \times \\\\
+& \quad \left[\exp\left(\frac{-(z-H)^2}{2\sigma_z^2}\right) + \exp\left(\frac{-(z+H)^2}{2\sigma_z^2}\right) \right]
+\end{aligned}
+
+## Plume Equation (Ground Level)
+
+\begin{aligned}
+C(x,y) = &\frac{Q}{\pi u \sigma_y \sigma_z} \exp\left(\frac{-y^2}{2\sigma_y^2} \right) \exp\left(\frac{-H^2}{2\sigma_z^2}\right)
+\end{aligned}
+
+## Key Variables
+
+- $Q$: 1750 g/s
+- $H$: 110 m
+- $u$: 5 or 20 m/s
+- $x$: 0 to 3000 m (need to pick a step size)
+- $y$: 0 to 1000 m (need to pick a step size)
+
+## Calculate Dispersion Spread
+
+Neutral, moderately stable, moderately unstable atmospheric conditions &Rightarrow; Classes D, B, F
+
+Get the coefficients off the table and put them into the regression equations for $\sigma_y$ and $\sigma_z$.
+
+**Key thing**: $\sigma_z$ dispersion changes once we pass 1000m downwind ($x$-direction).
+
+Now we can write a simulation model.
+
+## Simulation Model "Pseudocode"
+
+You'll do this for real for homework, but here's a brief sketch:
+
+- Pick a resolution/grid size (we'll use 10m) and set up $x$ and $y$ grids;
+- For each wind speed and stability class:
+    - Loop over each grid point and compute $\sigma_y$, $\sigma_z$;
+    - Use plume equation to compute concentration.
+
+## Simulation Model "Pseudocode"
+
+There are more or less efficient or "stylish" ways to write this code, but don't worry about that for this class, just make sure your code is readable and documented to help with debugging!
+
+## Julia vs. Matlab/Python
+
+**The good news**: Unlike in Python, loops in Julia are really well-optimized.
+
+## Julia vs. Matlab/Python
+
+**The bad news**: There can be some weird issue with scope when doing something this (which you might in Python or Matlab):
+
+```julia
+C = zeros(10)
+
+for i in eachindex(C)
+    C[i] = f(i)
+end
+```
+
+## Julia vs. Matlab/Python
+
+Instead, try broadcasting over inputs:
+
+```julia
+I = 1:10
+C = f.(I)
+```
+
+or use a *comprehension*:
+```julia
+C = [f(i) for i in I]
+```
+
+## Neutral Conditions
+
+```{julia}
+#| output: false
+
+# set up coefficients in matrix form
+turb_coef = [
+    213.0  440.8 1.041 9.27  459.7 2.094 -9.6
+    156.0  106.6 1.149 3.3   108.2 1.098 2.0
+    104.0  61.0  0.911 0.0   61.0  0.911 0.0
+    68.0   33.2  0.725 -1.7  44.5  0.516 -13.0
+    50.5   22.8  0.675 -1.3  55.4  0.305 -34.0
+    34.0   14.35 0.740 -0.35 62.6  0.180 -48.6 
+]
+# now convert to DataFrame with names
+# column names ending with 1 refer to coefficients for x < 1km, column names ending with 2 refer to coefficients for x > 1km 
+turb_coef = DataFrame(turb_coef, ["a", "c1", "d1", "f1", "c2", "d2", "f2"])
+```
+
+```{julia}
+#| output: false
+
+function gaussian_plume(x, y, sy, sz, Q, H, u)
+    C = (Q / (π * u * sy * sz)) * exp(-y^2 / (2 * sy^2)) * exp(-H^2 / (2 * sz^2))
+    return C
+end
+
+function simulate_plume(X, Y, turb_class, Q, H, u; turb_coef = turb_coef)
+    sy = turb_coef[turb_class, "a"] .* (X./1000).^0.894
+    sz = ifelse.(X .< 1000, turb_coef[turb_class, "c1"] .* (X./1000).^turb_coef[turb_class, "d1"] .+ turb_coef[turb_class, "f1"], turb_coef[turb_class, "c2"] .* (X./1000).^turb_coef[turb_class, "d2"] .+ turb_coef[turb_class, "f2"])
+    C = [gaussian_plume(X[j], Y[i], sy[j], sz[j], Q, H, u) for i in eachindex(Y), j in eachindex(X)]
+    return C
+end
+
+X = 0:10:5000
+Y = -500:10:500
+```
+
+Color values are HCl concentrations in $\mu$g.
 
 :::: {.columns}
 ::: {.column width=50%}
+```{julia}
+#| label: fig-heatmap-5-D
+#| fig-cap: "Neutral Conditions"
 
-- Equilibrium Climate Sensitivity
-- Ocean Heat Diffusivity
-- Aerosol Cooling Factor
-- Carbon Sink Respiration Sensitivity
+turb_class = 4
 
+C = simulate_plume(X, Y, turb_class, 1750, 110, 5)
+heatmap(X, Y, C .* 1000, c=:thermal, clim=(0, 2.3), xlabel=L"$x$ (m)", ylabel=L"$y$ (m)", tickfontsize=12, guidefontsize=14, leftmargin=10mm, rightmargin=5mm, bottommargin=2mm)
+plot!(size=(650, 350))
+```
+::: {.caption}
+5 m/s wind
+:::
 :::
 
 ::: {.column width=50%}
-![Correlated climate parameter estimates](images/climate-correlate.svg)
+```{julia}
+#| label: fig-heatmap-10-D
+#| fig-cap: "Neutral Conditions"
 
+turb_class = 4
+
+C = simulate_plume(X, Y, turb_class, 1750, 110, 10)
+heatmap(X, Y, C .* 1000, c=:thermal, clim=(0, 2.3), xlabel=L"$x$ (m)", ylabel=L"$y$ (m)", tickfontsize=12, guidefontsize=14, leftmargin=10mm, rightmargin=5mm, bottommargin=2mm)
+plot!(size=(650, 350))
+
+```
 ::: {.caption}
-Source: [Errickson et al (2021)](https://doi.org/10.1038/s41586-021-03386-6)
+10 m/s wind
 :::
 :::
 ::::
 
-## Impact of Neglecting Climate Correlations
+## Moderately Stable Conditions
+
+Color values are HCl concentrations in $\mu$g.
 
 :::: {.columns}
-::: {.column width=30%}
-Neglecting these correlations can change the distribution of hindcasted and projected temperatures.
+::: {.column width=50%}
+```{julia}
+#| label: fig-heatmap-5-F
+#| fig-cap: "Neutral Conditions"
 
+turb_class = 6
+
+C = simulate_plume(X, Y, turb_class, 1750, 110, 5)
+heatmap(X, Y, C .* 1000, c=:thermal, clim=(0, 0.15), xlabel=L"$x$ (m)", ylabel=L"$y$ (m)", tickfontsize=12, guidefontsize=14, leftmargin=10mm, rightmargin=5mm, bottommargin=2mm)
+plot!(size=(650, 350))
+```
+::: {.caption}
+5 m/s wind
+:::
 :::
 
-::: {.column width=70%}
-![Impact of ignoring parameter correlations on modeled temperatures](images/temperature-projections.svg)
+::: {.column width=50%}
+```{julia}
+#| label: fig-heatmap-10-F
+#| fig-cap: "Neutral Conditions"
 
+turb_class = 6
+
+C = simulate_plume(X, Y, turb_class, 1750, 110, 10)
+heatmap(X, Y, C .* 1000, c=:thermal, clim=(0, 0.15), xlabel=L"$x$ (m)", ylabel=L"$y$ (m)", tickfontsize=12, guidefontsize=14, leftmargin=10mm, rightmargin=5mm, bottommargin=2mm)
+plot!(size=(650, 350))
+
+```
 ::: {.caption}
-Source: [Errickson et al (2021)](https://doi.org/10.1038/s41586-021-03386-6)
+10 m/s wind
 :::
 :::
 ::::
 
-# Risk
+## Moderately Unstable Conditions
 
-## Systems and Risk
+Color values are HCl concentrations in $\mu$g.
 
-Designing and managing environmental systems is often about **minimizing or managing risk**:
-
-- Maintaining clean air/water;
-- Power grid reliabiliy standards;
-- Flooding/other hazards;
-- Climate change mitigation/adaptation.
-
-## What is Risk?
-
-The [*Society for Risk Analysis* definition](https://www.sra.org/wp-content/uploads/2020/04/SRA-Glossary-FINAL.pdf): 
-
-::: {.quote}
-
-> "risk" involves uncertainty about the effects/implications of an activity with respect to something that humans value (such as health, well-being, wealth, property or the environment), often focusing on negative, undesirable consequences.
-
-:::
-
-## IPCC Definition of Risk
-
-::: {.quote}
-
-> ...the potential for consequences where something of value is at stake and where the outcome is uncertain, recognizing the diversity of values. Risk is often represented as probability of occurrence of hazardous events or trends multiplied by the impacts if these events or trends occur.
-
-::: {.cite}
---- [Oppenheimer et al (2014)](https://www.ipcc.ch/site/assets/uploads/2018/02/WGIIAR5-Chap19_FINAL.pdf)
-:::
-:::
-
-## So What is Risk?
-
-**Important**: "Risk" is not just another words for probability, but:
-
-- Involves uncertainty;
-- Undesireable outcomes;
-- Effects matter, not just the events themselves.
-
-## Components of Risk
-
-::: {.columns}
+:::: {.columns}
 ::: {.column width=50%}
-Multiple components which contribute to risk:
+```{julia}
+#| label: fig-heatmap-5-B
+#| fig-cap: "Neutral Conditions"
 
-- Probability of a **hazard**;
-- **Exposure** to that hazard;
-- **Vulnerability** to outcomes;
-- Socioeconomic **responses**.
-:::
+turb_class = 2
 
-::: {.column width=50%}
-![Overview of the Components of Risk](images/simpson_risk.svg)
-
+C = simulate_plume(X, Y, turb_class, 1750, 110, 5)
+heatmap(X, Y, C .* 1000, c=:thermal, clim=(0, 4.25), xlabel=L"$x$ (m)", ylabel=L"$y$ (m)", tickfontsize=12, guidefontsize=14, leftmargin=10mm, rightmargin=5mm, bottommargin=2mm)
+plot!(size=(650, 350))
+```
 ::: {.caption}
-Source: [Simpson et al (2021)](https://doi.org/10.1016/j.oneear.2021.03.005)
+5 m/s wind
+:::
+:::
+
+::: {.column width=50%}
+```{julia}
+#| label: fig-heatmap-10-B
+#| fig-cap: "Neutral Conditions"
+
+turb_class = 2
+
+C = simulate_plume(X, Y, turb_class, 1750, 110, 10)
+heatmap(X, Y, C .* 1000, c=:thermal, clim=(0, 4.25), xlabel=L"$x$ (m)", ylabel=L"$y$ (m)", tickfontsize=12, guidefontsize=14, leftmargin=10mm, rightmargin=5mm, bottommargin=2mm)
+plot!(size=(650, 350))
+
+```
+::: {.caption}
+10 m/s wind
 :::
 :::
 ::::
 
-## Risk Management Example: Well Contamination
+# Key Takeaways
 
-Consider the potential contamination of well water. How could we mitigate risk by:
+## Key Takeaways
 
-::: {.incremental}
-- reducing **hazards**:
-- reducing **exposure**:
-- reducing **vulnerability**:
-- influencing **responses**:
-:::
-
-## Systems and Risk Management
-
-Risk management is often a key consideration in systems analysis. For example, consider regulatory standards.
-
-- Often a tradeoff between strictness of a regulation and costs of compliance.
-- Systems modeling is a key way to understand 
-    - the impacts of changing a regulation
-    - the probability of failure to meet standards.
-
-# Key Points
-
-## Key Points
-
-- Uncertainties are a fundamental part of systems modeling and analysis.
-- Need to be thoughtful about the choices that were made in modeling and how they impact outcomes.
-- Probabilities: more on this next class, but be careful about distributions and correlations!
-- Systems analysis also often about understanding/managing risk.
+- Atmospheric stability plays a major role in pollution dispersion.
+- Can use simulation modeling to evaluate concentrations of a contaminant over a spatial domain.
+- Key choice: resolution
+- Then "loop" (or in Julia, broadcast/use a comprehension) over the spatial grid.
+- **Important**: this all assumed a fixed wind speed and stability.
 
 # Upcoming Schedule
 

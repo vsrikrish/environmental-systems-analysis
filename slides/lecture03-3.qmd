@@ -1,6 +1,6 @@
 ---
 title: "Plume Dispersion Models"
-subtitle: "Lecture 08"
+subtitle: "Lecture 07"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"
@@ -39,11 +39,48 @@ execute:
 - Mass-balance over a spatial "box"
 - Can combine multiple boxes together to represent processes over larger spatial domains
 
+## Simulation Workflow
+
+```{dot}
+//| label: fig-simulation
+//| fig-height: 6
+
+digraph G {
+    fontname="sans-serif"
+    layout=dot
+    "Initial Box" -> "Inflows"
+    "Inflows" -> "Mixing/Bulk System"
+    "Mixing/Bulk System" -> "Fate & Transport"
+    "Fate & Transport" -> "Outflows"
+    "Outflows" -> "Inflows" [color = red, label="Repeat for Next Box", fontcolor=red]
+    "Outflows" -> "Initial Box" [color=brown, label="Repeat for Next Time Step", fontcolor=brown]
+}
+```
+
+
 ## Questions
 
 {{< include _poll-prompt.qmd >}}
 
 # Plume Dispersion
+
+## Criteria Air Pollutants
+
+- Pollutants which have an ambient air quality standard.
+- Most common examples:
+    - PM2.5, PM10
+    - O~3~
+    - CO
+    - SO~2~
+    - NO~2~
+
+## Impact of the Clean Air Act
+
+![Decoupling of GDP and Air Pollution](https://media.rff.org/images/clean_air_PR.width-1480.png)
+
+::: {.caption}
+Source: [Resources for the Future](https://www.rff.org/news/press-releases/clean-air-act-successes-and-challenges-1970/)
+:::
 
 ## Some Approaches For Modeling Air Pollution
 
@@ -111,7 +148,7 @@ C(x,y,z) = \frac{Q}{2\pi u \sigma_y \sigma_z} \exp\left[-\frac{1}{2} \left(\frac
 
 ## Gaussian Plume Derivation
 
-Use the **advective-diffusion equation** to describe the mass-balance:
+Use the **advective-diffusion equation** to describe the mass-balance of a small air parcel :
 
 $$ \frac{\partial C}{\partial t} + \color{blue}\overbrace{[D + K] \nabla^2 C}^\text{diffusion} \color{black} - \color{red}\overbrace{\overrightarrow{u} \cdot \overrightarrow{\nabla} C}^\text{advection}$$
 
@@ -258,66 +295,19 @@ C(x,y,z) = &\frac{Q}{2\pi u \sigma_y \sigma_z} \exp\left(\frac{-y^2}{2\sigma_y^2
 4. No reactions
 5. Smooth ground (avoids turbulent eddies and other reflections)
 
-# Dispersion
+# Key Takeaways
 
-## Estimating Dispersion "Spread"
+## Key Takeaways
 
-Values of $\sigma_y$ and $\sigma_z$ matter substantially for modeling plume spread downwind. What influences them?
+- Plume models are commonly used for point sources and point receptors.
+- **Gaussian plumes**: continuous emissions from an elevated source.
+- F&T determined by advection and diffusion/turbulence.
+- However, number of critical assumptions.
 
-## Estimating Dispersion "Spread"
+# Upcoming Schedule
 
-**Main contribution**: atmospheric stability
+## Next Classes
 
-Pasquill (1961): Six stability classes, A -> F.
+**Monday**: Gaussian Plume Dispersion and Example
 
-## Estimating Dispersion "Spread"
-
-Contributors to atmospheric stability:
-
-- Temperature gradient
-- Wind speed
-- Solar radiation
-- Cloud cover
-- Richardson number (buoyancy / flow shear)
-
-## Atmospheric Stability Classes
-
-Class | Stability | Description |
-:----:|:----------|:-----------|
-A | Extremely unstable | Sunny summer day 
-B | Moderately unstable | Sunny & warm |
-C | Slightly unstable | Partly cloudy day |
-D | Neutral | Cloudy day or night |
-E | Slightly stable | Partly cloudy night |
-F | Moderately unstable | Clear night |
-
-::: {.caption}
-Source: <https://courses.ecampus.oregonstate.edu/ne581/eleven/>
-:::
-
-## Estimating Dispersion "Spread"
-
-:::: {.columns}
-::: {.column width=20%}
-$$\begin{aligned}
-\sigma_y &= ax^b \\
-\sigma_z &= cx^d + f
-\end{aligned}$$
-:::
-::: {.column width=80%}
-![Dispersion Coefficients](figures/plume-dispersion.png)
-
-::: {.caption}
-Source: <https://courses.washington.edu/cee490/DISPCOEF4WP.htm>
-:::
-:::
-::::
-
-## Estimating Dispersion "Spread"
-
-Then take estimates for $\sigma_y$ and $\sigma_z$ and plug into plume dispersion equation
-
-$$\begin{aligned}
-C(x,y,z) = &\frac{Q}{2\pi u {\color{red}\sigma_y \sigma_z}} \exp\left(\frac{-y^2}{2{\color{red}\sigma_y^2}} \right) \times \\\\
-& \quad \left[\exp\left(\frac{-(z-H)^2}{2{\color{red}\sigma_z^2}}\right) + \exp\left(\frac{-(z+H)^2}{2{\color{red}\sigma_z^2}}\right) \right]
-\end{aligned}$$
+**Wednesday/Friday**: Uncertainty, Risk and Monte Carlo

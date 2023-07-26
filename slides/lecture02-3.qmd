@@ -1,6 +1,6 @@
 ---
 title: "Eutrophication Modeling Example"
-subtitle: "Lecture 06"
+subtitle: "Lecture 05"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"

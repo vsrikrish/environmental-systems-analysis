@@ -18,15 +18,17 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 | 3    | Mon, Sep 04 | **No Class: Labor Day** | | | |
 |       | Wed, Sep 06 | Simulating Systems and Box Models | [{{< fa sharp presentation-screen >}}](slides/lecture03-2.qmd){target="_blank"} | | | |
 |       | Fri, Sep 08 | Plume Dispersion Models | [{{< fa sharp presentation-screen >}}](slides/lecture03-3.qmd){target="_blank"} | |  [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | |
-|  4   | Mon, Sep 11 | Uncertainty and Risk |  [{{< fa sharp presentation-screen >}}](slides/lecture04-1.qmd){target="_blank"} | | [{{< fa sharp pen-field >}}](hw/hw02/hw02.qmd) | |
-|   | Wed, Sep 13 | Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture04-2.qmd){target="_blank"} | | | |
-|    | Fri, Sep 15 | Lab: Monte Carlo | | [{{< fa sharp laptop-code >}}](labs/lab02/lab02.qmd) | | |
-|  5   | Mon, Sep 18 | Dissolved Oxygen | [{{< fa sharp presentation-screen >}}](slides/lecture05-1.qmd){target="_blank"} | | | | 
-|     | Wed, Sep 20 | Dissolved Oxygen Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture05-2.qmd){target="_blank"} | | | |
-|     | Fri, Sep 22 | Prescriptive Modeling | [{{< fa sharp presentation-screen >}}](slides/lecture05-3.qmd){target="_blank"}  | | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"}  | |
-|  6  | Mon, Sep 25 | Introduction to Optimization | [{{< fa sharp presentation-screen >}}](slides/lecture06-1.qmd){target="_blank"} | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} |  [{{< fa sharp pen-field >}}](hw/hw03/hw03.qmd) | |
-|      | Wed, Sep 27 | Linear Programming | [{{< fa sharp presentation-screen >}}](slides/lecture06-2.qmd){target="_blank"} |  | | |
-|     | Fri, Sep 29 | Example: Resource and Land Allocation | | | | |
-|   7   | Mon, Oct 1 | Lab: Optimization with JuMP.jl | | | | |
+| 4   | Mon, Sep 11 | Plume Dispersion Models | [{{< fa sharp presentation-screen >}}](slides/lecture04-1.qmd){target="_blank"} | |  [{{< fa sharp pen-field >}}](hw/hw02/hw02.qmd) | |
+|    | Wed, Sep 13 | Uncertainty and Risk |  [{{< fa sharp presentation-screen >}}](slides/lecture04-2.qmd){target="_blank"} | | | |
+|   | Fri, Sep 15 | Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture04-3.qmd){target="_blank"} | | | |
+|  5  | Mon, Sep 18 | Lab: Monte Carlo | | [{{< fa sharp laptop-code >}}](labs/lab02/lab02.qmd) | | |
+|     | Wed, Sep 20 | Dissolved Oxygen | [{{< fa sharp presentation-screen >}}](slides/lecture05-2.qmd){target="_blank"} | | | | 
+|     | Fri, Sep 22 | Dissolved Oxygen Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture05-3.qmd){target="_blank"} | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} |  [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | |
+|  6  | Mon, Sep 25 | Prescriptive Modeling | [{{< fa sharp presentation-screen >}}](slides/lecture06-1.qmd){target="_blank"}  | | [{{< fa sharp pen-field >}}](hw/hw03/hw03.qmd) | |
+|   | Wed, Sep 27 | Introduction to Optimization | [{{< fa sharp presentation-screen >}}](slides/lecture06-2.qmd){target="_blank"} | |   | |
+|      | Fri, Sep 29 | Linear Programming | [{{< fa sharp presentation-screen >}}](slides/lecture06-3.qmd){target="_blank"} |  | | |
+|  7   | Mon, Oct 02 | LP Example: Resource Allocation | [{{< fa sharp presentation-screen >}}](slides/lecture07-1.qmd){target="_blank"} | | | |
+|      | Wed, Oct 04 | **Guest Lecture**: Diana Hackett | | | | |
+|      | Fri, Oct 06 | Lab: Optimization with JuMP.jl | | [{{< fa sharp laptop-code >}}](labs/lab03/lab03.qmd) | | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} |
 
 :::

@@ -196,11 +196,32 @@
     "text": "Box Models\n\nMass-balance over a spatial “box”\nCan combine multiple boxes together to represent processes over larger spatial domains"
   },
   {
+    "objectID": "slides/lecture03-3.html#simulation-workflow",
+    "href": "slides/lecture03-3.html#simulation-workflow",
+    "title": "Plume Dispersion Models",
+    "section": "Simulation Workflow",
+    "text": "Simulation Workflow\n\n\n\n\n\n\n\n\nG\n\n  \n\nInitial Box\n\n Initial Box   \n\nInflows\n\n Inflows   \n\nInitial Box-&gt;Inflows\n\n    \n\nMixing/Bulk System\n\n Mixing/Bulk System   \n\nInflows-&gt;Mixing/Bulk System\n\n    \n\nFate & Transport\n\n Fate & Transport   \n\nMixing/Bulk System-&gt;Fate & Transport\n\n    \n\nOutflows\n\n Outflows   \n\nFate & Transport-&gt;Outflows\n\n    \n\nOutflows-&gt;Initial Box\n\n  Repeat for Next Time Step   \n\nOutflows-&gt;Inflows\n\n  Repeat for Next Box  \n\n\nFigure 1: ?(caption)"
+  },
+  {
     "objectID": "slides/lecture03-3.html#questions",
     "href": "slides/lecture03-3.html#questions",
     "title": "Plume Dispersion Models",
     "section": "Questions",
     "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#criteria-air-pollutants",
+    "href": "slides/lecture03-3.html#criteria-air-pollutants",
+    "title": "Plume Dispersion Models",
+    "section": "Criteria Air Pollutants",
+    "text": "Criteria Air Pollutants\n\nPollutants which have an ambient air quality standard.\nMost common examples:\n\nPM2.5, PM10\nO3\nCO\nSO2\nNO2"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#impact-of-the-clean-air-act",
+    "href": "slides/lecture03-3.html#impact-of-the-clean-air-act",
+    "title": "Plume Dispersion Models",
+    "section": "Impact of the Clean Air Act",
+    "text": "Impact of the Clean Air Act\n\nDecoupling of GDP and Air Pollution\nSource: Resources for the Future"
   },
   {
     "objectID": "slides/lecture03-3.html#some-approaches-for-modeling-air-pollution",
@@ -270,7 +291,7 @@
     "href": "slides/lecture03-3.html#gaussian-plume-derivation",
     "title": "Plume Dispersion Models",
     "section": "Gaussian Plume Derivation",
-    "text": "Gaussian Plume Derivation\nUse the advective-diffusion equation to describe the mass-balance:\n\\[ \\frac{\\partial C}{\\partial t} + \\color{blue}\\overbrace{[D + K] \\nabla^2 C}^\\text{diffusion} \\color{black} - \\color{red}\\overbrace{\\overrightarrow{u} \\cdot \\overrightarrow{\\nabla} C}^\\text{advection}\\]\n\n\\(D\\) is the diffusion coefficient\n\\(K\\) is the dispersion coefficient (turbulent mixing)"
+    "text": "Gaussian Plume Derivation\nUse the advective-diffusion equation to describe the mass-balance of a small air parcel :\n\\[ \\frac{\\partial C}{\\partial t} + \\color{blue}\\overbrace{[D + K] \\nabla^2 C}^\\text{diffusion} \\color{black} - \\color{red}\\overbrace{\\overrightarrow{u} \\cdot \\overrightarrow{\\nabla} C}^\\text{advection}\\]\n\n\\(D\\) is the diffusion coefficient\n\\(K\\) is the dispersion coefficient (turbulent mixing)"
   },
   {
     "objectID": "slides/lecture03-3.html#diffusive-flux",
@@ -357,46 +378,18 @@
     "text": "Final Model Assumptions\nAssumptions:\n\nSteady-State\nConstant wind velocity and direction\nWind &gt;&gt; dispersion in \\(x\\)-direction\nNo reactions\nSmooth ground (avoids turbulent eddies and other reflections)"
   },
   {
-    "objectID": "slides/lecture03-3.html#estimating-dispersion-spread",
-    "href": "slides/lecture03-3.html#estimating-dispersion-spread",
+    "objectID": "slides/lecture03-3.html#key-takeaways-1",
+    "href": "slides/lecture03-3.html#key-takeaways-1",
     "title": "Plume Dispersion Models",
-    "section": "Estimating Dispersion “Spread”",
-    "text": "Estimating Dispersion “Spread”\nValues of \\(\\sigma_y\\) and \\(\\sigma_z\\) matter substantially for modeling plume spread downwind. What influences them?"
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nPlume models are commonly used for point sources and point receptors.\nGaussian plumes: continuous emissions from an elevated source.\nF&T determined by advection and diffusion/turbulence.\nHowever, number of critical assumptions."
   },
   {
-    "objectID": "slides/lecture03-3.html#estimating-dispersion-spread-1",
-    "href": "slides/lecture03-3.html#estimating-dispersion-spread-1",
+    "objectID": "slides/lecture03-3.html#next-classes",
+    "href": "slides/lecture03-3.html#next-classes",
     "title": "Plume Dispersion Models",
-    "section": "Estimating Dispersion “Spread”",
-    "text": "Estimating Dispersion “Spread”\nMain contribution: atmospheric stability\nPasquill (1961): Six stability classes, A -&gt; F."
-  },
-  {
-    "objectID": "slides/lecture03-3.html#estimating-dispersion-spread-2",
-    "href": "slides/lecture03-3.html#estimating-dispersion-spread-2",
-    "title": "Plume Dispersion Models",
-    "section": "Estimating Dispersion “Spread”",
-    "text": "Estimating Dispersion “Spread”\nContributors to atmospheric stability:\n\nTemperature gradient\nWind speed\nSolar radiation\nCloud cover\nRichardson number (buoyancy / flow shear)"
-  },
-  {
-    "objectID": "slides/lecture03-3.html#atmospheric-stability-classes",
-    "href": "slides/lecture03-3.html#atmospheric-stability-classes",
-    "title": "Plume Dispersion Models",
-    "section": "Atmospheric Stability Classes",
-    "text": "Atmospheric Stability Classes\n\n\n\nClass\nStability\nDescription\n\n\n\n\nA\nExtremely unstable\nSunny summer day\n\n\nB\nModerately unstable\nSunny & warm\n\n\nC\nSlightly unstable\nPartly cloudy day\n\n\nD\nNeutral\nCloudy day or night\n\n\nE\nSlightly stable\nPartly cloudy night\n\n\nF\nModerately unstable\nClear night\n\n\n\n\nSource: https://courses.ecampus.oregonstate.edu/ne581/eleven/"
-  },
-  {
-    "objectID": "slides/lecture03-3.html#estimating-dispersion-spread-3",
-    "href": "slides/lecture03-3.html#estimating-dispersion-spread-3",
-    "title": "Plume Dispersion Models",
-    "section": "Estimating Dispersion “Spread”",
-    "text": "Estimating Dispersion “Spread”\n\n\n\\[\\begin{aligned}\n\\sigma_y &= ax^b \\\\\n\\sigma_z &= cx^d + f\n\\end{aligned}\\]\n\n\n\n\nDispersion Coefficients\n\n\n\nSource: https://courses.washington.edu/cee490/DISPCOEF4WP.htm"
-  },
-  {
-    "objectID": "slides/lecture03-3.html#estimating-dispersion-spread-4",
-    "href": "slides/lecture03-3.html#estimating-dispersion-spread-4",
-    "title": "Plume Dispersion Models",
-    "section": "Estimating Dispersion “Spread”",
-    "text": "Estimating Dispersion “Spread”\nThen take estimates for \\(\\sigma_y\\) and \\(\\sigma_z\\) and plug into plume dispersion equation\n\\[\\begin{aligned}\nC(x,y,z) = &\\frac{Q}{2\\pi u {\\color{red}\\sigma_y \\sigma_z}} \\exp\\left(\\frac{-y^2}{2{\\color{red}\\sigma_y^2}} \\right) \\times \\\\\\\\\n& \\quad \\left[\\exp\\left(\\frac{-(z-H)^2}{2{\\color{red}\\sigma_z^2}}\\right) + \\exp\\left(\\frac{-(z+H)^2}{2{\\color{red}\\sigma_z^2}}\\right) \\right]\n\\end{aligned}\\]\n\n\nBEE 4750, Environmental Systems Analysis"
+    "section": "Next Classes",
+    "text": "Next Classes\nMonday: Gaussian Plume Dispersion and Example\nWednesday/Friday: Uncertainty, Risk and Monte Carlo\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture01-1.html#course-overview",
@@ -686,6 +679,13 @@
     "text": "Box Model Example: Airsheds\nLet’s look at a simple steady-state box model of an airshed.\n\n\n\nVariable\nMeaning\nUnits\n\n\n\n\n\\(m\\)\nmass of some air pollutant\ng\n\n\n\\(C\\)\nconcentration in box\ng/m\\(^3\\)\n\n\n\\(S, D\\)\nsource, deposition rate within the box\ng/s\n\n\n\\(u\\)\nwind speed\nm/s\n\n\n\\(L, W, H\\)\nbox dimensions\nm"
   },
   {
+    "objectID": "slides/lecture03-2.html#selecting-box-dimensions",
+    "href": "slides/lecture03-2.html#selecting-box-dimensions",
+    "title": "Simulating Systems and Box Models",
+    "section": "Selecting Box Dimensions",
+    "text": "Selecting Box Dimensions\nWhat is relevant for the box dimensions \\(L\\), \\(W\\), and \\(H\\)? Primarily the assumption(s) about mixing.\n\nMixing height: is there an atmospheric inversion which limits mixing height?\nHomogeneity of input/output flows and emissions."
+  },
+  {
     "objectID": "slides/lecture03-2.html#steady-state-airshed-box-model",
     "href": "slides/lecture03-2.html#steady-state-airshed-box-model",
     "title": "Simulating Systems and Box Models",
@@ -739,7 +739,14 @@
     "href": "slides/lecture03-2.html#multiple-boxes",
     "title": "Simulating Systems and Box Models",
     "section": "Multiple Boxes",
-    "text": "Multiple Boxes\nTo make this into a multi-box model, we can string together boxes (so the outflow from box 1 becomes the inflow for box 2).\nWe’ll see an example of this next class.\nKey point for now: there is a computational/approximation tradeoff when deciding on box resolution."
+    "text": "Multiple Boxes\nTo make this into a multi-box model, we can string together boxes to account for fluxes between them.\nBut this lets us account for spatially-heterogeneous flows.\nExample: Two-box “simple” climate models which model the ocean and atmosphere as separate boxes."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#resolutioncomplexity-tradeoff",
+    "href": "slides/lecture03-2.html#resolutioncomplexity-tradeoff",
+    "title": "Simulating Systems and Box Models",
+    "section": "Resolution/Complexity Tradeoff",
+    "text": "Resolution/Complexity Tradeoff\nMore boxes (higher resolution) typically allows us to simulate more detailed dynamics.\nBut each box needs to be resolved in sequence to generate fluxes, so more boxes results in greater computational complexity."
   },
   {
     "objectID": "slides/lecture03-2.html#key-takeaways-simulation",
@@ -747,6 +754,13 @@
     "title": "Simulating Systems and Box Models",
     "section": "Key Takeaways: Simulation",
     "text": "Key Takeaways: Simulation\n\nSimulation: Use model to evaluate system dynamics/outputs under different conditions.\nSimulation ⇔ Descriptive Modeling\nSimulation useful as a proxy for “real-world” experiments or future projections"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#simulation-workflow",
+    "href": "slides/lecture03-2.html#simulation-workflow",
+    "title": "Simulating Systems and Box Models",
+    "section": "Simulation Workflow",
+    "text": "Simulation Workflow\n\n\n\n\n\n\n\n\nG\n\n  \n\nInitial Box\n\n Initial Box   \n\nInflows\n\n Inflows   \n\nInitial Box-&gt;Inflows\n\n    \n\nMixing/Bulk System\n\n Mixing/Bulk System   \n\nInflows-&gt;Mixing/Bulk System\n\n    \n\nFate & Transport\n\n Fate & Transport   \n\nMixing/Bulk System-&gt;Fate & Transport\n\n    \n\nOutflows\n\n Outflows   \n\nFate & Transport-&gt;Outflows\n\n    \n\nOutflows-&gt;Initial Box\n\n  Repeat for Next Time Step   \n\nOutflows-&gt;Inflows\n\n  Repeat for Next Box  \n\n\nFigure 3: ?(caption)"
   },
   {
     "objectID": "slides/lecture03-2.html#key-takeaways-box-models",
@@ -760,7 +774,7 @@
     "href": "slides/lecture03-2.html#next-classes",
     "title": "Simulating Systems and Box Models",
     "section": "Next Classes",
-    "text": "Next Classes\nFriday: Building a Model for Dissolved Oxygen\nHomework: - HW1 due Friday - HW2 assigned Monday (on simulation for dissolved oxygen and risk)\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Next Classes\nFriday: Building a Model for Dissolved Oxygen\nHomework:\n\nHW1 due Friday\nHW2 assigned Monday (on simulation for dissolved oxygen and risk)\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture01-2.html#what-is-a-system",
@@ -966,508 +980,536 @@
     "text": "Next Classes\nMonday: Modeling Systems\nWednesday/Friday: Examples of Systems Models\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
-    "objectID": "slides/lecture05-3.html#last-classes",
-    "href": "slides/lecture05-3.html#last-classes",
-    "title": "Prescriptive Modeling",
-    "section": "Last Classes",
-    "text": "Last Classes\n\nSimulation modeling as a means for data generation.\nUncertainty and Monte Carlo"
+    "objectID": "slides/lecture07-1.html#last-class",
+    "href": "slides/lecture07-1.html#last-class",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Last Class",
+    "text": "Last Class\nA linear program (LP), has the following characteristics:\n\nLinearity: The objective function and constraints are all linear;\nDivisibility: The decision variables are continuous (they can be fractional levels);\nCertainty: The problem is deterministic."
   },
   {
-    "objectID": "slides/lecture05-3.html#questions",
-    "href": "slides/lecture05-3.html#questions",
-    "title": "Prescriptive Modeling",
+    "objectID": "slides/lecture07-1.html#simplex-method",
+    "href": "slides/lecture07-1.html#simplex-method",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Simplex Method",
+    "text": "Simplex Method\n\n\nSolutions to LPs must occur at intersections of constraints, which is the key insight for the simplex method."
+  },
+  {
+    "objectID": "slides/lecture07-1.html#questions",
+    "href": "slides/lecture07-1.html#questions",
+    "title": "LP Example: Optimizing Resource Allocation",
     "section": "Questions?",
     "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture05-3.html#wastewater-model-revisited",
-    "href": "slides/lecture05-3.html#wastewater-model-revisited",
-    "title": "Prescriptive Modeling",
-    "section": "Wastewater Model Revisited",
-    "text": "Wastewater Model Revisited\n\nDiagram of CRUD release from two factoriesConsider the wastewater model from Lecture 5."
+    "objectID": "slides/lecture07-1.html#resource-allocation-problems",
+    "href": "slides/lecture07-1.html#resource-allocation-problems",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Resource Allocation Problems",
+    "text": "Resource Allocation Problems\nResource Allocation Problems are a broad category of prescriptive environmental modeling.\n\nResource Allocation Schematic"
   },
   {
-    "objectID": "slides/lecture05-3.html#wastewater-model-revisited-1",
-    "href": "slides/lecture05-3.html#wastewater-model-revisited-1",
-    "title": "Prescriptive Modeling",
-    "section": "Wastewater Model Revisited",
-    "text": "Wastewater Model Revisited\nEnvironmental authorities have sampled water from the river and determined that concentrations exceed the legal standard (1 mg/L).\nWe want to design a CRUD removal plan to get back in compliance."
+    "objectID": "slides/lecture07-1.html#example-pesticide-application",
+    "href": "slides/lecture07-1.html#example-pesticide-application",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Example: Pesticide Application",
+    "text": "Example: Pesticide Application\nA farmer has access to a pesticide which can be used on corn, soybeans, and wheat fields, and costs $70/ha-yr to apply."
   },
   {
-    "objectID": "slides/lecture05-3.html#prescriptive-modeling",
-    "href": "slides/lecture05-3.html#prescriptive-modeling",
-    "title": "Prescriptive Modeling",
-    "section": "Prescriptive Modeling",
-    "text": "Prescriptive Modeling\nIf we want to design a treatment strategy, we are now in the world of prescriptive modeling.\nRecall: Precriptive modeling is intended to specify an action, policy, or decision.\n\n\nDescriptive modeling question: “What happens if I do something?”\nPrescriptive modeling question: “What should I do?”"
+    "objectID": "slides/lecture07-1.html#example-pesticide-application-1",
+    "href": "slides/lecture07-1.html#example-pesticide-application-1",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Example: Pesticide Application",
+    "text": "Example: Pesticide Application\nThe following crop yields can be obtained:\n\n\n\n\n\n\n\n\n\nApplication Rate (kg/ha)\nSoybean (kg/ha)\nWheat (kg/ha)\nCorn (kg/ha)\n\n\n\n\n0\n2900\n3500\n5900\n\n\n1\n3800\n4100\n6700\n\n\n2\n4400\n4200\n7900"
   },
   {
-    "objectID": "slides/lecture05-3.html#decision-models",
-    "href": "slides/lecture05-3.html#decision-models",
-    "title": "Prescriptive Modeling",
-    "section": "Decision Models",
-    "text": "Decision Models\nTo make a decision, we need certain pieces of information which:\n\ndefine decision options (or alternatives);\nprovide one or more objectives to assess performance;\nspecify constraints to tell us what decisions are possible or acceptable."
+    "objectID": "slides/lecture07-1.html#example-pesticide-application-2",
+    "href": "slides/lecture07-1.html#example-pesticide-application-2",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Example: Pesticide Application",
+    "text": "Example: Pesticide Application\nProduction costs, excluding pesticide, and selling prices:\n\n\n\nCrop\nProduction Cost ($/ha-yr)\nSelling Price ($/kg)\n\n\n\n\nSoybeans\n350\n0.36\n\n\nWheat\n280\n0.27\n\n\nCorn\n390\n0.22"
   },
   {
-    "objectID": "slides/lecture05-3.html#objectives",
-    "href": "slides/lecture05-3.html#objectives",
-    "title": "Prescriptive Modeling",
-    "section": "Objectives",
-    "text": "Objectives\nTypical objectives can include:\n\nMinimizing costs (or maximizing profits);\nMinimizing environmental impacts;\nMaximizing some other performance metric."
+    "objectID": "slides/lecture07-1.html#example-pesticide-application-3",
+    "href": "slides/lecture07-1.html#example-pesticide-application-3",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Example: Pesticide Application",
+    "text": "Example: Pesticide Application\nRecently, environmental authorities have declared that farms cannot have an average application rate on soybeans, wheat, and corn which exceeds 0.8, 0.7, and 0.6 kg/ha, respectively.\nQuestion: How should the farmer plant crops and apply pesticides to maximize profits over 130 total ha while remaining in regulatory compliance if demand for each crop this year is 250,000 kg?"
   },
   {
-    "objectID": "slides/lecture05-3.html#constraints",
-    "href": "slides/lecture05-3.html#constraints",
-    "title": "Prescriptive Modeling",
+    "objectID": "slides/lecture07-1.html#decision-variables",
+    "href": "slides/lecture07-1.html#decision-variables",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Decision Variables",
+    "text": "Decision Variables\nThe first step is to establish notation for our decision variables."
+  },
+  {
+    "objectID": "slides/lecture07-1.html#what-are-our-decision-variables",
+    "href": "slides/lecture07-1.html#what-are-our-decision-variables",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "What Are Our Decision Variables?",
+    "text": "What Are Our Decision Variables?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture07-1.html#decision-variables-1",
+    "href": "slides/lecture07-1.html#decision-variables-1",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Decision Variables",
+    "text": "Decision Variables\n\n\n\n\n\n\n\nVariable\nMeaning\n\n\n\n\n\\(S_j\\)\nha planted with soybeans and treated with pesticide rate \\(j=0,1,2\\) kg\n\n\n\\(W_j\\)\nha planted with wheat and treated with pesticide rate \\(j=0,1,2\\) kg\n\n\n\\(C_j\\)\nha planted with corn and treated with pesticide rate \\(j=0,1,2\\) kg"
+  },
+  {
+    "objectID": "slides/lecture07-1.html#objective-function",
+    "href": "slides/lecture07-1.html#objective-function",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Objective Function",
+    "text": "Objective Function\nNext, let’s formulate the objective function.\nThe farmer’s goal is to maximize profits.\nTake some time to work on this."
+  },
+  {
+    "objectID": "slides/lecture07-1.html#objective-function-1",
+    "href": "slides/lecture07-1.html#objective-function-1",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Objective Function",
+    "text": "Objective Function\nKey: Compute profit for each ha by crop and pesticide rate.\n\\[Z = \\sum_{\\text{crop}, i} \\left[ (\\text{yield} \\times \\text{selling price}) - \\text{total cost} \\right]\\]\n\nAfter some algebra:\n\\[\\begin{align*}\nZ &= 694 S_0 + 948 S_1 + 1164 S_2 \\\\[0.25em]\n& \\qquad + 665 W_0 + 757 W_1 + 784 W_2 \\\\[0.25em]\n& \\qquad + 908 C_0 + 1014 C_1 + 1278 C_2\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/lecture07-1.html#objective-function-vector-notation",
+    "href": "slides/lecture07-1.html#objective-function-vector-notation",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Objective Function (Vector Notation)",
+    "text": "Objective Function (Vector Notation)\n\n\nOriginal: \\[\\begin{align*}\nZ &= 694 S_0 + 948 S_1 + 1164 S_2 \\\\[0.25em]\n& + 665 W_0 + 757 W_1 + 784 W_2 \\\\[0.25em]\n& + 908 C_0 + 1014 C_1 + 1278 C_2\n\\end{align*}\\]\n\nVectorized: \\[\\begin{align*}\nZ &= \\mathbf{S} \\begin{pmatrix}694 \\\\ 948 \\\\ 1164 \\end{pmatrix} + \\mathbf{W} \\begin{pmatrix}665 \\\\ 757 \\\\ 784 \\end{pmatrix} \\\\[0.25em]\n& + \\mathbf{C} \\begin{pmatrix}908 \\\\ 1014 \\\\ 1278 \\end{pmatrix}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/lecture07-1.html#constraints",
+    "href": "slides/lecture07-1.html#constraints",
+    "title": "LP Example: Optimizing Resource Allocation",
     "section": "Constraints",
-    "text": "Constraints\nConstraints often come from engineering or societal restrictions.\n\nRegulatory limits on pollution;\nSupply constraints;\nBudgetary constraints;\nEngineering constraints."
+    "text": "Constraints\nFinally, we need to establish our constraints."
   },
   {
-    "objectID": "slides/lecture05-3.html#decision-model-for-the-wastewater-model",
-    "href": "slides/lecture05-3.html#decision-model-for-the-wastewater-model",
-    "title": "Prescriptive Modeling",
-    "section": "Decision Model for the Wastewater Model",
-    "text": "Decision Model for the Wastewater Model\nLet’s apply this framework to the CRUD release problem.\n\nWhat might our objective be?\nWhat constraints do we have?"
+    "objectID": "slides/lecture07-1.html#what-are-our-constraints",
+    "href": "slides/lecture07-1.html#what-are-our-constraints",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "What Are Our Constraints?",
+    "text": "What Are Our Constraints?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture05-3.html#formulating-an-objective",
-    "href": "slides/lecture05-3.html#formulating-an-objective",
-    "title": "Prescriptive Modeling",
-    "section": "Formulating an Objective",
-    "text": "Formulating an Objective\nLet’s say that our objective is to minimize costs, and relevant constraints include the regulatory standard.\n\nTreating CRUD costs \\(\\$50 E^2 \\text{ per } 1000 \\ \\text{m}^3,\\) where \\(E\\) is the treatment efficiency."
+    "objectID": "slides/lecture07-1.html#what-are-our-constraints-1",
+    "href": "slides/lecture07-1.html#what-are-our-constraints-1",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "What Are Our Constraints?",
+    "text": "What Are Our Constraints?\n\nLand Area: total farmland cannot exceed 130 ha\nDemand: No reason to grow more than 250,000 kg of any crop.\nRegulation: Limits on average pesticide application for each crop.\nNon-negativity: No land allocation can be less than 0."
   },
   {
-    "objectID": "slides/lecture05-3.html#formulating-an-objective-1",
-    "href": "slides/lecture05-3.html#formulating-an-objective-1",
-    "title": "Prescriptive Modeling",
-    "section": "Formulating an Objective",
-    "text": "Formulating an Objective\n\nDiagram of CRUD release from two factoriesThis makes the daily treatment cost \\[C(E_1, E_2) = 50(100)E_1^2 + 50(60)E_2^2 = 5000E_1^2 + 3000E_2^2.\\]"
+    "objectID": "slides/lecture07-1.html#land-area-constraint",
+    "href": "slides/lecture07-1.html#land-area-constraint",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Land Area Constraint",
+    "text": "Land Area Constraint\n\\[\\sum_j S_j + C_j + W_j \\leq 130\\]\nCan write this out more fully, but as you will see, JuMP.jl can handle these compact formulations (which makes debugging easier)."
   },
   {
-    "objectID": "slides/lecture05-3.html#formulating-an-objective-2",
-    "href": "slides/lecture05-3.html#formulating-an-objective-2",
-    "title": "Prescriptive Modeling",
-    "section": "Formulating an Objective",
-    "text": "Formulating an Objective\nDaily Treatment Cost (the metric):\n\\[C(E_1, E_2) = 50(100)E_1^2 + 50(60)E_2^2 = 5000E_1^2 + 3000E_2^2.\\]\nThen if the objective is to minimize the cost, we write:\n\\[\\min_{E_1, E_2} 5000E_1^2 + 3000E_2^2.\\]"
+    "objectID": "slides/lecture07-1.html#demand-constraints",
+    "href": "slides/lecture07-1.html#demand-constraints",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Demand Constraints",
+    "text": "Demand Constraints\n\\[\\begin{alignat*}{3}\n\\text{Soybeans}:& \\qquad &\\mathbf{S} \\begin{pmatrix}2900 \\\\ 3800 \\\\ 4400 \\end{pmatrix} \\leq 250000 \\\\ \\text{Wheat}:& \\qquad &\\mathbf{W} \\begin{pmatrix}3500 \\\\ 4100 \\\\ 4200 \\end{pmatrix} \\leq 250000 \\\\\n\\text{Corn}:& \\qquad &\\mathbf{C} \\begin{pmatrix}5900 \\\\ 6700 \\\\ 7200 \\end{pmatrix} \\leq 250000\n\\end{alignat*}\\]"
   },
   {
-    "objectID": "slides/lecture05-3.html#developing-constraints",
-    "href": "slides/lecture05-3.html#developing-constraints",
-    "title": "Prescriptive Modeling",
-    "section": "Developing Constraints",
-    "text": "Developing Constraints\nBut we can’t choose just any \\(E_1\\) and \\(E_2\\) to minimize the cost, or we would just choose \\(E_1=E_2=0\\).\n\nFor example, we need to comply with the regulatory standard:\nCRUD concentration \\(&lt; 1\\) mg/l."
+    "objectID": "slides/lecture07-1.html#regulatory-constraints",
+    "href": "slides/lecture07-1.html#regulatory-constraints",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Regulatory Constraints",
+    "text": "Regulatory Constraints\nFor soybeans:\n\\[\\frac{S_1 + 2 S_2}{S_0 + S_1 + S_2} \\leq 0.8\\]\n\nIs this an acceptable constraint?"
   },
   {
-    "objectID": "slides/lecture05-3.html#developing-constraints-1",
-    "href": "slides/lecture05-3.html#developing-constraints-1",
-    "title": "Prescriptive Modeling",
-    "section": "Developing Constraints",
-    "text": "Developing Constraints\nWhat information can we bring to bear?\n\nRecall (from a while ago) our assumption that CRUD decays as it moves downriver.\n\n\nSince we know that the concentrations are highest at the points of discharge, we can check whether each of those points is in compliance with the standard."
+    "objectID": "slides/lecture07-1.html#regulatory-constraints-1",
+    "href": "slides/lecture07-1.html#regulatory-constraints-1",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Regulatory Constraints",
+    "text": "Regulatory Constraints\nThese need to be linear for a linear program.\n\n\\[\\begin{align*}\n& \\frac{S_1 + 2 S_2}{S_0 + S_1 + S_2} \\leq 0.8 \\\\\\\\\n& \\quad \\Rightarrow S_1 + 2S_2 \\leq 0.8 (S_0 + S_1 + S_2) \\\\\\\\\n& \\quad \\Rightarrow -0.8 S_0 + 0.2 S_1 + 1.2 S_2 \\leq 0\n\\end{align*}\\]"
   },
   {
-    "objectID": "slides/lecture05-3.html#mass-balance-at-release-1",
-    "href": "slides/lecture05-3.html#mass-balance-at-release-1",
-    "title": "Prescriptive Modeling",
-    "section": "Mass Balance at Release 1",
-    "text": "Mass Balance at Release 1\n\nTotal CRUD after factory 1 release: \\(\\color{blue}\\text{100} + \\color{red} 1000(1-E_1) \\color{black} \\ \\text{kg/d}\\)"
+    "objectID": "slides/lecture07-1.html#regulatory-constraints-2",
+    "href": "slides/lecture07-1.html#regulatory-constraints-2",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Regulatory Constraints",
+    "text": "Regulatory Constraints\nSimilarly for wheat and corn:\n\\[\\begin{align*}\n-0.7 W_0 + 0.3 W_1 + 1.3 W_2 & \\leq 0 \\\\\\\\\n-0.6 C_0 + 0.4 C_1 + 1.4 C_2 & \\leq 0\n\\end{align*}\\]"
   },
   {
-    "objectID": "slides/lecture05-3.html#mass-balance-at-release-1-1",
-    "href": "slides/lecture05-3.html#mass-balance-at-release-1-1",
-    "title": "Prescriptive Modeling",
-    "section": "Mass Balance at Release 1",
-    "text": "Mass Balance at Release 1\n\nTotal CRUD after factory 1 release: \\(\\color{blue}\\text{100} + \\color{red} 1000(1-E_1) \\color{black} \\ \\text{kg/d}\\)\nOur standard is \\(1 \\ \\text{mg/L} = 10^{-3} \\ \\text{kg/m}^3\\)\nThe volume of the inflow is \\(600,000 \\ \\text{m}^3\\text{/d}\\).\n\nSo the constraint until we hit Release 2 is: \\[100 + 1000(1-E_1) \\leq 600 \\Rightarrow \\boxed{1000E_1 \\geq 500}\n\\]"
+    "objectID": "slides/lecture07-1.html#non-negativity-constraints",
+    "href": "slides/lecture07-1.html#non-negativity-constraints",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Non-Negativity Constraints",
+    "text": "Non-Negativity Constraints\nThese are straightforward, but neglecting them can lead to numerical issues:\n\\[S_j, W_j, C_j \\geq 0.\\]"
   },
   {
-    "objectID": "slides/lecture05-3.html#mass-balance-at-release-2",
-    "href": "slides/lecture05-3.html#mass-balance-at-release-2",
-    "title": "Prescriptive Modeling",
-    "section": "Mass Balance at Release 2",
-    "text": "Mass Balance at Release 2\n\nWe had derived that the CRUD concentration at release 2 is:\n\\[(1100 - 1000E_1) \\exp(-0.18) + 1200(1 - E_2) \\ \\text{kg/d}.\\]"
+    "objectID": "slides/lecture07-1.html#final-model-standard-form",
+    "href": "slides/lecture07-1.html#final-model-standard-form",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Final Model (Standard Form)",
+    "text": "Final Model (Standard Form)\n\n\\[\\begin{align}\n\\max_{S_j, W_j, C_j} \\quad & 694 S_0 + 948 S_1 + 1164 S_2  + 665 W_0 + 757 W_1 + 784 W_2  \\tag{1} \\\\[-1em] & \\qquad + 908 C_0 + 1014 C_1 + 1278 C_2 \\\\[0.5em]\n\\text{subject to:} \\quad & S_0 + S_1 + S_2 + W_0 + W_1 + W_2 + C_0 + C_1 + C_2 \\leq 130 \\tag{2} \\\\\n& 2900 S_0 + 3800 S_1 + 4400 S_2 \\leq 250000 \\tag{3a} \\\\\n& 3500 W_0 + 4100 W_1 + 4200 W_2 \\leq 250000 \\tag{3b}\\\\\n& 5900 C_0 + 6700 C_1 + 7200 C_2 \\leq 250000 \\tag{3c}\\\\\n& -0.8 S_0 + 0.2 S_1 + 1.2 S_2 \\leq 0 \\tag{4a}\\\\\n& -0.7 W_0 + 0.3 W_1 + 1.3 W_2  \\leq 0 \\tag{4b}\\\\\n& -0.6 C_0 + 0.4 C_1 + 1.4 C_2  \\leq 0 \\tag{4c}\\\\\n& S_j, W_j, C_j \\geq 0 \\tag{5}\n\\end{align}\\]"
   },
   {
-    "objectID": "slides/lecture05-3.html#constraint-at-release-2",
-    "href": "slides/lecture05-3.html#constraint-at-release-2",
-    "title": "Prescriptive Modeling",
-    "section": "Constraint at Release 2",
-    "text": "Constraint at Release 2\nThe volume at release 2 is \\(660,000 \\ \\text{m}^3\\text{/d}\\), so the constraint is:\n\\[(1100 - 1000E_1) \\exp(-0.18) + 1200(1 - E_2) \\leq 660.\\]"
+    "objectID": "slides/lecture07-1.html#solution",
+    "href": "slides/lecture07-1.html#solution",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Solution",
+    "text": "Solution\n\n\n\n\n\n\n\n\n\nPesticide Application (kg/ha-yr)\nSoybeans (ha)\nWheat (ha)\nCorn (ha)\n\n\n\n\n0\n13.8\n26.9\n6.7\n\n\n1\n55.2\n0\n15.7\n\n\n2\n0\n11.5\n0\n\n\n\nThis solution has an objective value of $117,549."
   },
   {
-    "objectID": "slides/lecture05-3.html#constraint-at-release-2-1",
-    "href": "slides/lecture05-3.html#constraint-at-release-2-1",
-    "title": "Prescriptive Modeling",
-    "section": "Constraint at Release 2",
-    "text": "Constraint at Release 2\nSimplifying:\n\\[\\begin{aligned}\n(1100 - 1000E_1) \\exp(-0.18) + 1200(1 - E_2) &\\leq 660  \\\\\\\\\n(1100 - 1000E_1) 0.835 + 1200(1 - E_2) &\\leq 660  \\\\\\\\\n2119 - 835E_1 - 1200E_2 &\\leq 660\n\\end{aligned}\\]\n\\[\\Rightarrow \\boxed{835E_1 + 1200E_2 \\geq 1459}\\]"
+    "objectID": "slides/lecture07-1.html#shadow-prices",
+    "href": "slides/lecture07-1.html#shadow-prices",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Shadow Prices",
+    "text": "Shadow Prices\nThe following constraints have non-zero shadow prices:\n\nArea (\\(729\\))\nSoy Demand (\\(4.6 \\times 10^{-2}\\))\nWheat Demand (\\(4.5 \\times 10^{-2}\\))\nSoy Pesticide (\\(212\\))\nWheat Pesticide (\\(92\\))\nCorn Pesticide (\\(140\\))"
   },
   {
-    "objectID": "slides/lecture05-3.html#model-formulation",
-    "href": "slides/lecture05-3.html#model-formulation",
-    "title": "Prescriptive Modeling",
-    "section": "Model Formulation",
-    "text": "Model Formulation\nCombining our objective and our regulatory constraints:\n\\[\\begin{alignat}{2}\n& \\min_{E_1, E_2} & 5000E_1^2 + 3000E_2^2 \\notag \\\\\\\\\n& \\text{subject to:} & 1000 E_1  &\\geq 500 \\notag \\\\\n& & 35E_1 + 1200E_2  &\\geq 1459 \\notag\n\\end{alignat}\\]\n\nIs this complete?"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#model-formulation-1",
-    "href": "slides/lecture05-3.html#model-formulation-1",
-    "title": "Prescriptive Modeling",
-    "section": "Model Formulation",
-    "text": "Model Formulation\n\\[\\begin{alignat}{3}\n& \\min_{E_1, E_2} &\\quad  5000E_1^2 + 3000E_2^2 &  \\\\\\\\\n& \\text{subject to:} & 1000 E_1 &\\geq 500 \\\\\n& & 835E_1 + 1200E_2 &\\geq 1459 \\\\\n& & \\color{purple}E_1, E_2 &\\;\\color{purple}\\geq 0 \\\\\n& & \\color{purple}E_1, E_2 &\\;\\color{purple}\\leq 1\n\\end{alignat}\\]\nThe"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#key-takeaways-1",
-    "href": "slides/lecture05-3.html#key-takeaways-1",
-    "title": "Prescriptive Modeling",
+    "objectID": "slides/lecture07-1.html#key-takeaways-1",
+    "href": "slides/lecture07-1.html#key-takeaways-1",
+    "title": "LP Example: Optimizing Resource Allocation",
     "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nPrescriptive modeling involves decision models.\nKey components of a decision model:\n\nObjectives;\nConstraints.\n\nNeed to bring to bear relevant engineering, economic, and environmental information to formulate these."
+    "text": "Key Takeaways\n\nResource allocation problems can be formulated as mathematical programs (in this case, linear)\nSaw example of formulating objective and constraints\nCan learn about which constraints matter the most from shadow prices."
   },
   {
-    "objectID": "slides/lecture05-3.html#next-classes",
-    "href": "slides/lecture05-3.html#next-classes",
-    "title": "Prescriptive Modeling",
+    "objectID": "slides/lecture07-1.html#next-classes",
+    "href": "slides/lecture07-1.html#next-classes",
+    "title": "LP Example: Optimizing Resource Allocation",
     "section": "Next Classes",
-    "text": "Next Classes\nNext Week: How do we solve this decision problem (and many others)?"
+    "text": "Next Classes\nWednesday: Guest lecture by Diana Hackett (Mann librarian) on regulations research.\nFriday: Lab on linear programming in Julia.\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
-    "objectID": "slides/lecture05-3.html#assessments",
-    "href": "slides/lecture05-3.html#assessments",
-    "title": "Prescriptive Modeling",
-    "section": "Assessments",
-    "text": "Assessments\n\nHW 2 due today.\nHW 3 assigned Monday.\nLab 2 due Monday (hopefully already done).\n\n\n\nBEE 4750, Environmental Systems Analysis"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#last-class",
-    "href": "slides/lecture05-2.html#last-class",
+    "objectID": "slides/lecture05-3.html#last-class",
+    "href": "slides/lecture05-3.html#last-class",
     "title": "Dissolved Oxygen Simulation",
     "section": "Last Class",
     "text": "Last Class\n\n\n\nDissolved Oxygen: essential quantity for aquatic life\nMinimum concentration regulated\nUsed mass-balance to derive first-order equation\n\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
   },
   {
-    "objectID": "slides/lecture05-2.html#do-concentration-equation",
-    "href": "slides/lecture05-2.html#do-concentration-equation",
+    "objectID": "slides/lecture05-3.html#do-concentration-equation",
+    "href": "slides/lecture05-3.html#do-concentration-equation",
     "title": "Dissolved Oxygen Simulation",
     "section": "DO Concentration Equation",
     "text": "DO Concentration Equation\n\\[\\begin{align}\n\\overbrace{U \\frac{dC}{dx}}^{\\text{Concentration Change}} &= \\overbrace{k_a (C_s - C)}^{\\text{Reaeration}} + \\overbrace{P - R - S_B}^{\\text{Constants}} \\\\[0.5em]\n&\\quad - \\underbrace{k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right)}_{\\text{CBOD}} - \\underbrace{k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)}_{\\text{NBOD}}\n\\end{align}\\]"
   },
   {
-    "objectID": "slides/lecture05-2.html#questions",
-    "href": "slides/lecture05-2.html#questions",
+    "objectID": "slides/lecture05-3.html#questions",
+    "href": "slides/lecture05-3.html#questions",
     "title": "Dissolved Oxygen Simulation",
     "section": "Questions",
     "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture05-2.html#steady-state-mass-balance-solution",
-    "href": "slides/lecture05-2.html#steady-state-mass-balance-solution",
+    "objectID": "slides/lecture05-3.html#steady-state-mass-balance-solution",
+    "href": "slides/lecture05-3.html#steady-state-mass-balance-solution",
     "title": "Dissolved Oxygen Simulation",
     "section": "Steady-State Mass-Balance Solution",
     "text": "Steady-State Mass-Balance Solution\n\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1), \\\\[1em]\n\n\\alpha_1 &= \\exp\\left(-\\frac{k_a x}{U}\\right) \\\\[0.25em]\n\\alpha_2 &= \\left(\\frac{k_c}{k_a-k_c}\\right)\\left[\\exp\\left(\\frac{-k_c x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right] \\\\[0.25em]\n\\alpha_3 &= \\left(\\frac{k_n}{k_a-k_n}\\right)\\left[\\exp\\left(\\frac{-k_n x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right]\n\\end{align}\\]"
   },
   {
-    "objectID": "slides/lecture05-2.html#steady-state-mass-balance-solution-1",
-    "href": "slides/lecture05-2.html#steady-state-mass-balance-solution-1",
+    "objectID": "slides/lecture05-3.html#steady-state-mass-balance-solution-1",
+    "href": "slides/lecture05-3.html#steady-state-mass-balance-solution-1",
     "title": "Dissolved Oxygen Simulation",
     "section": "Steady-State Mass-Balance Solution",
     "text": "Steady-State Mass-Balance Solution\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 \\\\[0.5em]\n& \\qquad + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1),\n\\end{align}\\]\nNote: Usually, these models ignore \\(P\\), \\(R\\), and \\(S_B\\).\nWhy do you think that might be?"
   },
   {
-    "objectID": "slides/lecture05-2.html#dissolved-oxygen-sag-curve",
-    "href": "slides/lecture05-2.html#dissolved-oxygen-sag-curve",
+    "objectID": "slides/lecture05-3.html#dissolved-oxygen-sag-curve",
+    "href": "slides/lecture05-3.html#dissolved-oxygen-sag-curve",
     "title": "Dissolved Oxygen Simulation",
     "section": "Dissolved Oxygen “Sag” Curve",
     "text": "Dissolved Oxygen “Sag” Curve\n\n\nDissolved oxygen concentrations downstream of a waste release “sag” and then start to recover as CBOD and NBOD decrease.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Sag curve for dissolved oxygen."
   },
   {
-    "objectID": "slides/lecture05-2.html#how-to-simulate",
-    "href": "slides/lecture05-2.html#how-to-simulate",
+    "objectID": "slides/lecture05-3.html#how-to-simulate",
+    "href": "slides/lecture05-3.html#how-to-simulate",
     "title": "Dissolved Oxygen Simulation",
     "section": "How To Simulate",
     "text": "How To Simulate\nSo far, this is only different from our single-box airshed in terms of the number of processes.\nSingle equation, straightforward to evaluate across many values of \\(x\\) with a loop:\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = (y -&gt; dissolved_oxygen(y, parameters)).(x)"
   },
   {
-    "objectID": "slides/lecture05-2.html#single-discharge-example",
-    "href": "slides/lecture05-2.html#single-discharge-example",
+    "objectID": "slides/lecture05-3.html#single-discharge-example",
+    "href": "slides/lecture05-3.html#single-discharge-example",
     "title": "Dissolved Oxygen Simulation",
     "section": "Single-Discharge Example",
     "text": "Single-Discharge Example\n\n\n\n\n\n\n\n\n\nParameter\nRiver\nWaste\nGeneral\n\n\n\n\nVolume (m3/d)\n100,000\n10,000\n—\n\n\nDO (mg/L)\n6.4\n4.2\n—\n\n\nCBOD (mg/L)\n5\n49\n—\n\n\nNBOD (mg/L)\n5\n27\n—\n\n\n\\(C_s\\) (mg/L)\n—\n—\n7\n\n\n\\(k_a\\), \\(k_c\\), \\(k_n\\)\n—\n—\n0.8, 0.5, 0.4"
   },
   {
-    "objectID": "slides/lecture05-2.html#single-discharge-example-initial-condition",
-    "href": "slides/lecture05-2.html#single-discharge-example-initial-condition",
+    "objectID": "slides/lecture05-3.html#single-discharge-example-initial-condition",
+    "href": "slides/lecture05-3.html#single-discharge-example-initial-condition",
     "title": "Dissolved Oxygen Simulation",
     "section": "Single-Discharge Example: Initial Condition",
     "text": "Single-Discharge Example: Initial Condition\nHow do we find the initial state (\\(x=0\\))?\n\nNeed to compute the mixed concentrations of DO, CBOD, and NBOD (\\(Q\\) is the flow volume):\n\\[C_0 = C_\\text{mixed} = \\frac{C_\\text{river} \\times Q_\\text{river} + C_\\text{waste} \\times Q_\\text{waste}}{Q_\\text{river} + Q_\\text{waste}}\\]"
   },
   {
-    "objectID": "slides/lecture05-2.html#single-discharge-example-initial-condition-1",
-    "href": "slides/lecture05-2.html#single-discharge-example-initial-condition-1",
+    "objectID": "slides/lecture05-3.html#single-discharge-example-initial-condition-1",
+    "href": "slides/lecture05-3.html#single-discharge-example-initial-condition-1",
     "title": "Dissolved Oxygen Simulation",
     "section": "Single-Discharge Example: Initial Condition",
     "text": "Single-Discharge Example: Initial Condition\nSo the initial values:\n\\[C_0 = 6.2 \\ \\text{mg/L}\\]\n\\[B_0 = 9 \\ \\text{mg/L}\\]\n\\[N_0 = 7 \\ \\text{mg/L}\\]"
   },
   {
-    "objectID": "slides/lecture05-2.html#single-discharge-example-simulation",
-    "href": "slides/lecture05-2.html#single-discharge-example-simulation",
+    "objectID": "slides/lecture05-3.html#single-discharge-example-simulation",
+    "href": "slides/lecture05-3.html#single-discharge-example-simulation",
     "title": "Dissolved Oxygen Simulation",
     "section": "Single-Discharge Example: Simulation",
     "text": "Single-Discharge Example: Simulation\nNow we can compute \\(C(x)\\) (river velocity \\(U = 5\\) km/d).\n\n\nfunction dissolved_oxygen(x, Cs, C0, B0, N0, ka, kc, kn, U)\n    α1 = exp(-ka * x / U)\n    α2 = (kc / (ka - kc)) * (exp(-kc * x / U) - α1)\n    α3 = (kn / (ka - kn)) * (exp(-kn * x / U) - α1)\n    C = (Cs * (1 - α1)) + (C0 * α1) - (B0 * α2) - (N0 * α3)\n    return C\nend\n\nx = 0:0.1:20\nC = (y -&gt; dissolved_oxygen(y, Cs, C0, B0, N0, ka, kc, kn, U)).(x)"
   },
   {
-    "objectID": "slides/lecture05-2.html#single-discharge-example-simulation-1",
-    "href": "slides/lecture05-2.html#single-discharge-example-simulation-1",
+    "objectID": "slides/lecture05-3.html#single-discharge-example-simulation-1",
+    "href": "slides/lecture05-3.html#single-discharge-example-simulation-1",
     "title": "Dissolved Oxygen Simulation",
     "section": "Single-Discharge Example: Simulation",
     "text": "Single-Discharge Example: Simulation\n\n\n\n\nCode\nplot(x, C; linewidth=3, \n    label=\"Dissolved Oxygen\", \n    tickfontsize=16, \n    guidefontsize=16, \n    legendfontsize=16)\nxlabel!(L\"$x$ (km)\")\nylabel!(\"DO Concentration (mg/L)\")\nhline!([3], color=:red, \n    linestyle=:dash, \n    label=\"Regulatory Standard\")\nplot!(size=(500, 500))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Single-Release Dissolved Oxygen Example"
   },
   {
-    "objectID": "slides/lecture05-2.html#multiple-discharges",
-    "href": "slides/lecture05-2.html#multiple-discharges",
+    "objectID": "slides/lecture05-3.html#multiple-discharges",
+    "href": "slides/lecture05-3.html#multiple-discharges",
     "title": "Dissolved Oxygen Simulation",
     "section": "Multiple Discharges",
     "text": "Multiple Discharges\nWhat happens if we have multiple discharge sites?\n\nSchematic for Multiple Discharge Example"
   },
   {
-    "objectID": "slides/lecture05-2.html#multiple-discharges-1",
-    "href": "slides/lecture05-2.html#multiple-discharges-1",
+    "objectID": "slides/lecture05-3.html#multiple-discharges-1",
+    "href": "slides/lecture05-3.html#multiple-discharges-1",
     "title": "Dissolved Oxygen Simulation",
     "section": "Multiple Discharges",
     "text": "Multiple Discharges\n\n\nThink about this as a multi-box problem:\n\nBox 1: From Release 1 to Release 2\nBox 2: From Release 2 to End\n\n\n\n\n\nMultiple Discharge Boxes"
   },
   {
-    "objectID": "slides/lecture05-2.html#multiple-discharges-2",
-    "href": "slides/lecture05-2.html#multiple-discharges-2",
+    "objectID": "slides/lecture05-3.html#multiple-discharges-2",
+    "href": "slides/lecture05-3.html#multiple-discharges-2",
     "title": "Dissolved Oxygen Simulation",
     "section": "Multiple Discharges",
     "text": "Multiple Discharges\n\n\n\nDynamics within each box are like single-release example;\nMake sure to get new initial conditions from relevant outflows!\n\n\n\n\n\nMultiple Discharge Boxes"
   },
   {
-    "objectID": "slides/lecture05-2.html#multiple-discharges-3",
-    "href": "slides/lecture05-2.html#multiple-discharges-3",
+    "objectID": "slides/lecture05-3.html#multiple-discharges-3",
+    "href": "slides/lecture05-3.html#multiple-discharges-3",
     "title": "Dissolved Oxygen Simulation",
     "section": "Multiple Discharges",
     "text": "Multiple Discharges\nQuestion: Who would you penalize for lack of compliance?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Multi-Release Dissolved Oxygen Example"
   },
   {
-    "objectID": "slides/lecture05-2.html#key-points-1",
-    "href": "slides/lecture05-2.html#key-points-1",
+    "objectID": "slides/lecture05-3.html#key-points-1",
+    "href": "slides/lecture05-3.html#key-points-1",
     "title": "Dissolved Oxygen Simulation",
     "section": "Key Points",
     "text": "Key Points\n\nSimulation involves running the model over space/time.\nMultiple sections as “multi-box” model: outflows from one box become inflows/initial conditions for another.\nAssigning blame/responsibility in an interdependent system is not straightforward!"
   },
   {
-    "objectID": "slides/lecture05-2.html#simulation-framework-overview",
-    "href": "slides/lecture05-2.html#simulation-framework-overview",
+    "objectID": "slides/lecture05-3.html#simulation-framework-overview",
+    "href": "slides/lecture05-3.html#simulation-framework-overview",
     "title": "Dissolved Oxygen Simulation",
     "section": "Simulation Framework Overview",
     "text": "Simulation Framework Overview\n\nSimulation Workflow Diagram"
   },
   {
-    "objectID": "slides/lecture05-2.html#next-classes",
-    "href": "slides/lecture05-2.html#next-classes",
+    "objectID": "slides/lecture05-3.html#next-classes",
+    "href": "slides/lecture05-3.html#next-classes",
     "title": "Dissolved Oxygen Simulation",
     "section": "Next Classes",
-    "text": "Next Classes\nFriday: Prescriptive Modeling\nNext Week: Optimization and Linear Programming"
+    "text": "Next Classes\nNext week: Prescriptive modeling, optimization, and linear programming"
   },
   {
-    "objectID": "slides/lecture05-2.html#assessments",
-    "href": "slides/lecture05-2.html#assessments",
+    "objectID": "slides/lecture05-3.html#assessments",
+    "href": "slides/lecture05-3.html#assessments",
     "title": "Dissolved Oxygen Simulation",
     "section": "Assessments",
-    "text": "Assessments\n\nHW2 due Friday.\nLab2 due Monday.\n\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Assessments\n\nHW2 and Lab2 due tonight.\nHW3 assigned Monday, due 10/6.\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
-    "objectID": "slides/lecture05-1.html#last-class",
-    "href": "slides/lecture05-1.html#last-class",
+    "objectID": "slides/lecture05-2.html#last-class",
+    "href": "slides/lecture05-2.html#last-class",
     "title": "Dissolved Oxygen",
     "section": "Last Class",
     "text": "Last Class\n\nModel-based simulation as a way to understand system dynamics and response.\nBox models: mass-balance in some region of the domain\nCan generalize single box models by:\n\nAdding more complexity;\ncombining multiple boxes."
   },
   {
-    "objectID": "slides/lecture05-1.html#why-simulate",
-    "href": "slides/lecture05-1.html#why-simulate",
+    "objectID": "slides/lecture05-2.html#why-simulate",
+    "href": "slides/lecture05-2.html#why-simulate",
     "title": "Dissolved Oxygen",
     "section": "Why Simulate?",
     "text": "Why Simulate?\n\nSystem involves complex, nonlinear dynamics that may not be analytically tractable.\nSetting up and running a real-world experiment is not possible.\nState depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.\nNeed to understand range of system performance across rarely-seen conditions."
   },
   {
-    "objectID": "slides/lecture05-1.html#questions",
-    "href": "slides/lecture05-1.html#questions",
+    "objectID": "slides/lecture05-2.html#questions",
+    "href": "slides/lecture05-2.html#questions",
     "title": "Dissolved Oxygen",
     "section": "Questions",
     "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture05-1.html#fate-transport-modeling",
-    "href": "slides/lecture05-1.html#fate-transport-modeling",
+    "objectID": "slides/lecture05-2.html#fate-transport-modeling",
+    "href": "slides/lecture05-2.html#fate-transport-modeling",
     "title": "Dissolved Oxygen",
     "section": "Fate & Transport Modeling",
     "text": "Fate & Transport Modeling\nHow do nutrients and other quantities move through environmental mediums?\nWhat can make fate & transport modeling more complex?\n\n\nMultiple points of inflow;\nMore complex growth/decay dynamics.\nStochasticity/randomness."
   },
   {
-    "objectID": "slides/lecture05-1.html#dissolved-oxygen",
-    "href": "slides/lecture05-1.html#dissolved-oxygen",
+    "objectID": "slides/lecture05-2.html#dissolved-oxygen",
+    "href": "slides/lecture05-2.html#dissolved-oxygen",
     "title": "Dissolved Oxygen",
     "section": "Dissolved Oxygen",
     "text": "Dissolved Oxygen\n\n\nDissolved oxygen (DO) is the free, non-compound oxygen present in water or other liquids.\nFreshwater can only hold small amounts, and this capacity is regulated by temperature.\n\n\n\n\nDissolved Oxygen by temperature\n\n\n\nSource: fondriest.com"
   },
   {
-    "objectID": "slides/lecture05-1.html#temperature-impact-on-do",
-    "href": "slides/lecture05-1.html#temperature-impact-on-do",
+    "objectID": "slides/lecture05-2.html#temperature-impact-on-do",
+    "href": "slides/lecture05-2.html#temperature-impact-on-do",
     "title": "Dissolved Oxygen",
     "section": "Temperature Impact on DO",
     "text": "Temperature Impact on DO\n\nDissolved Oxygen and Temperature Plot\nSource: usgs.gov"
   },
   {
-    "objectID": "slides/lecture05-1.html#dissolved-oxygen-and-life",
-    "href": "slides/lecture05-1.html#dissolved-oxygen-and-life",
+    "objectID": "slides/lecture05-2.html#dissolved-oxygen-and-life",
+    "href": "slides/lecture05-2.html#dissolved-oxygen-and-life",
     "title": "Dissolved Oxygen",
     "section": "Dissolved Oxygen and Life",
     "text": "Dissolved Oxygen and Life\n\n\nDissolved oxygen is an important nutrient for aquatic life.\nHypoxia occurs when DO levels are \\(&lt; 2\\) mg/L.\n\n\n\n\nMinimum DO requirements for freshwater fish\n\n\n\n\nSource: fondriest.com"
   },
   {
-    "objectID": "slides/lecture05-1.html#factors-influencing-do",
-    "href": "slides/lecture05-1.html#factors-influencing-do",
+    "objectID": "slides/lecture05-2.html#factors-influencing-do",
+    "href": "slides/lecture05-2.html#factors-influencing-do",
     "title": "Dissolved Oxygen",
     "section": "Factors Influencing DO",
     "text": "Factors Influencing DO\n\nTemperature, Pressure, Depth\nSalinity\nMixing\nPlant and Microbial Life\nOrganic Matter"
   },
   {
-    "objectID": "slides/lecture05-1.html#impact-of-paris-on-seine-do-1874",
-    "href": "slides/lecture05-1.html#impact-of-paris-on-seine-do-1874",
+    "objectID": "slides/lecture05-2.html#impact-of-paris-on-seine-do-1874",
+    "href": "slides/lecture05-2.html#impact-of-paris-on-seine-do-1874",
     "title": "Dissolved Oxygen",
     "section": "Impact of Paris On Seine DO, 1874",
     "text": "Impact of Paris On Seine DO, 1874\n\nDissolved Oxygen Downstream of Paris, 1874\nSource: Dmitrieva, T., et al. (2018). https://doi.org/10.1007/s12685-018-0216-7"
   },
   {
-    "objectID": "slides/lecture05-1.html#do-regulatory-standards",
-    "href": "slides/lecture05-1.html#do-regulatory-standards",
+    "objectID": "slides/lecture05-2.html#do-regulatory-standards",
+    "href": "slides/lecture05-2.html#do-regulatory-standards",
     "title": "Dissolved Oxygen",
     "section": "DO Regulatory Standards",
     "text": "DO Regulatory Standards\nObjective: Keep DO above the regulatory standard.\nIn NY (via Westlaw):\n\nDO levels may not fall below 3 mg/L\nDO may not be below 4.8 mg/L for an extended period"
   },
   {
-    "objectID": "slides/lecture05-1.html#oxygen-balance-in-rivers-and-streams",
-    "href": "slides/lecture05-1.html#oxygen-balance-in-rivers-and-streams",
+    "objectID": "slides/lecture05-2.html#oxygen-balance-in-rivers-and-streams",
+    "href": "slides/lecture05-2.html#oxygen-balance-in-rivers-and-streams",
     "title": "Dissolved Oxygen",
     "section": "Oxygen Balance in Rivers and Streams",
     "text": "Oxygen Balance in Rivers and Streams\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
   },
   {
-    "objectID": "slides/lecture05-1.html#selecting-a-metric-for-do-fluxes",
-    "href": "slides/lecture05-1.html#selecting-a-metric-for-do-fluxes",
+    "objectID": "slides/lecture05-2.html#selecting-a-metric-for-do-fluxes",
+    "href": "slides/lecture05-2.html#selecting-a-metric-for-do-fluxes",
     "title": "Dissolved Oxygen",
     "section": "Selecting a Metric for DO Fluxes",
     "text": "Selecting a Metric for DO Fluxes\nTypically use oxygen demand (OD):\n\nmeasure of the concentration of oxidizable materials in a water sample\nmetric for organic waste contamination\nreflects how oxygen will be depleted in a given segment\n\nBut there are several different processes affecting total OD!"
   },
   {
-    "objectID": "slides/lecture05-1.html#biochemical-oxygen-demand-bod",
-    "href": "slides/lecture05-1.html#biochemical-oxygen-demand-bod",
+    "objectID": "slides/lecture05-2.html#biochemical-oxygen-demand-bod",
+    "href": "slides/lecture05-2.html#biochemical-oxygen-demand-bod",
     "title": "Dissolved Oxygen",
     "section": "Biochemical Oxygen Demand (BOD)",
     "text": "Biochemical Oxygen Demand (BOD)\nOxygen used by microbes during aerobic decomposition of organic materials: \\[\\text{Organic Matter} + \\text{O}_2 \\rightarrow \\text{CO}_2 +  \\text{H}_2\\text{O} + \\text{NO}_3 + \\text{SO}_2 + \\text{Residuals}\\]\nBroadly speaking, we care about two types of BOD: Carbonaceous BOD and Nitrogenous BOD."
   },
   {
-    "objectID": "slides/lecture05-1.html#carbonaceous-bod-cbod",
-    "href": "slides/lecture05-1.html#carbonaceous-bod-cbod",
+    "objectID": "slides/lecture05-2.html#carbonaceous-bod-cbod",
+    "href": "slides/lecture05-2.html#carbonaceous-bod-cbod",
     "title": "Dissolved Oxygen",
     "section": "Carbonaceous BOD (CBOD)",
     "text": "Carbonaceous BOD (CBOD)\nOxygen consumed during microbial decomposition of carbon compounds, e.g.: \\[\\text{C}_a\\text{H}_b\\text{O}_c + d\\text{O}_2 \\rightarrow e\\text{H}_2\\text{O} + f\\text{CO}_2\\]"
   },
   {
-    "objectID": "slides/lecture05-1.html#nitrogenous-bod-nbod",
-    "href": "slides/lecture05-1.html#nitrogenous-bod-nbod",
+    "objectID": "slides/lecture05-2.html#nitrogenous-bod-nbod",
+    "href": "slides/lecture05-2.html#nitrogenous-bod-nbod",
     "title": "Dissolved Oxygen",
     "section": "Nitrogenous BOD (NBOD)",
     "text": "Nitrogenous BOD (NBOD)\nOxygen consumed during microbial decomposition of nitrogen compounds: \\[2\\text{NH}_2^+ + 4\\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O} + 4\\text{H}^+ + 2\\text{NO}_3^-\\]"
   },
   {
-    "objectID": "slides/lecture05-1.html#bod-and-time",
-    "href": "slides/lecture05-1.html#bod-and-time",
+    "objectID": "slides/lecture05-2.html#bod-and-time",
+    "href": "slides/lecture05-2.html#bod-and-time",
     "title": "Dissolved Oxygen",
     "section": "BOD and Time",
     "text": "BOD and Time\nMoreover, BOD is differentiated based on time frame, e.g.:\n\nBOD5: oxygen demand over 5 days\nBOD20: oxygen demand over 20 days"
   },
   {
-    "objectID": "slides/lecture05-1.html#do-modeling-needs",
-    "href": "slides/lecture05-1.html#do-modeling-needs",
+    "objectID": "slides/lecture05-2.html#do-modeling-needs",
+    "href": "slides/lecture05-2.html#do-modeling-needs",
     "title": "Dissolved Oxygen",
     "section": "DO Modeling Needs",
     "text": "DO Modeling Needs\nNeed a model that will predict DO as a function of CBOD, NBOD.\nUse a fate and transport modeling approach: how are relevant quantities moved downstream?\nNote: Can’t assume homogeneous processes."
   },
   {
-    "objectID": "slides/lecture05-1.html#modeling-do",
-    "href": "slides/lecture05-1.html#modeling-do",
+    "objectID": "slides/lecture05-2.html#modeling-do",
+    "href": "slides/lecture05-2.html#modeling-do",
     "title": "Dissolved Oxygen",
     "section": "Modeling DO",
     "text": "Modeling DO\n\n\nSo what do we do?\nStart by assuming steady-state waste in each section (or box…).\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
   },
   {
-    "objectID": "slides/lecture05-1.html#modeling-do-1",
-    "href": "slides/lecture05-1.html#modeling-do-1",
+    "objectID": "slides/lecture05-2.html#modeling-do-1",
+    "href": "slides/lecture05-2.html#modeling-do-1",
     "title": "Dissolved Oxygen",
     "section": "Modeling DO",
     "text": "Modeling DO\n\n\nWe’ll track the mass balance in terms of rates (not absolute mass).\nWhat happens to an element of water?\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
   },
   {
-    "objectID": "slides/lecture05-1.html#steady-state-waste-do-mass-balance",
-    "href": "slides/lecture05-1.html#steady-state-waste-do-mass-balance",
+    "objectID": "slides/lecture05-2.html#steady-state-waste-do-mass-balance",
+    "href": "slides/lecture05-2.html#steady-state-waste-do-mass-balance",
     "title": "Dissolved Oxygen",
     "section": "Steady-State Waste, DO Mass Balance",
     "text": "Steady-State Waste, DO Mass Balance\nLet \\(U\\) be the river velocity (km/d), \\(x\\) the distance downstream from a waste release site in km, and \\(C(x)\\) the DO concentration at \\(x\\) in mg/L.\n\\[\\begin{align}\nU \\frac{dC}{dx} &= \\text{Change in DO} \\\\[0.5em]\n&= \\text{Reaeration} + \\text{Photosynthesis} - \\text{Respiration}  \\\\[0.5em]\n& \\qquad - \\text{Benthal Uptake} - \\text{CBOD} - \\text{NBOD}\n\n\\end{align}\\]"
   },
   {
-    "objectID": "slides/lecture05-1.html#bod-oxygen-uptake",
-    "href": "slides/lecture05-1.html#bod-oxygen-uptake",
+    "objectID": "slides/lecture05-2.html#bod-oxygen-uptake",
+    "href": "slides/lecture05-2.html#bod-oxygen-uptake",
     "title": "Dissolved Oxygen",
     "section": "BOD Oxygen Uptake",
     "text": "BOD Oxygen Uptake\nAssume deoxygenation from waste decomposition is first-order (rate \\(k\\)):\n\\[\\begin{aligned}\n\\frac{dM}{dt} &= -kM \\\\\\\\\n\\Rightarrow M &= M_0 \\exp(-kt)\n\\end{aligned}\\]\n\nBut our equations are formulated in terms of distance:\n\\[M = M_0 \\exp(-kx/U)\\]"
   },
   {
-    "objectID": "slides/lecture05-1.html#bod-oxygen-uptake-1",
-    "href": "slides/lecture05-1.html#bod-oxygen-uptake-1",
+    "objectID": "slides/lecture05-2.html#bod-oxygen-uptake-1",
+    "href": "slides/lecture05-2.html#bod-oxygen-uptake-1",
     "title": "Dissolved Oxygen",
     "section": "BOD Oxygen Uptake",
     "text": "BOD Oxygen Uptake\nFor biochemical organics, if \\(k_c\\) is the deoxygenation rate (d\\(^{-1}\\));\n\\[B(x) = B_0 \\exp(-k_c x / U);\\]\nFor nitrification, if \\(k_n\\) is the deoxygenation rate (d\\(^{-1}\\)):\n\\[N(x) = N_0 \\exp(-k_n x / U).\\]"
   },
   {
-    "objectID": "slides/lecture05-1.html#steady-state-waste-do-mass-balance-1",
-    "href": "slides/lecture05-1.html#steady-state-waste-do-mass-balance-1",
+    "objectID": "slides/lecture05-2.html#steady-state-waste-do-mass-balance-1",
+    "href": "slides/lecture05-2.html#steady-state-waste-do-mass-balance-1",
     "title": "Dissolved Oxygen",
     "section": "Steady-State Waste, DO Mass Balance",
     "text": "Steady-State Waste, DO Mass Balance\nSo the corresponding oxygen uptake rates are \\[k_c B(x) = k_c B_0 \\exp(-k_c x / U)\\] and\n\\[k_n N(x) = k_n N_0 \\exp(-k_n x / U).\\]"
   },
   {
-    "objectID": "slides/lecture05-1.html#steady-state-waste-do-mass-balance-2",
-    "href": "slides/lecture05-1.html#steady-state-waste-do-mass-balance-2",
+    "objectID": "slides/lecture05-2.html#steady-state-waste-do-mass-balance-2",
+    "href": "slides/lecture05-2.html#steady-state-waste-do-mass-balance-2",
     "title": "Dissolved Oxygen",
     "section": "Steady-State Waste, DO Mass Balance",
     "text": "Steady-State Waste, DO Mass Balance\nOther processes:\n\nReaeration, assume a simple linear model based on difference from saturation level \\(C_s\\): \\(k_a (C_s - C)\\)\nAssume measured, constant values for photosynthesis (\\(P_s\\)), respiration (\\(R\\)), benthal uptake (\\(S_B\\))"
   },
   {
-    "objectID": "slides/lecture05-1.html#steady-state-waste-do-mass-balance-3",
-    "href": "slides/lecture05-1.html#steady-state-waste-do-mass-balance-3",
+    "objectID": "slides/lecture05-2.html#steady-state-waste-do-mass-balance-3",
+    "href": "slides/lecture05-2.html#steady-state-waste-do-mass-balance-3",
     "title": "Dissolved Oxygen",
     "section": "Steady-State Waste, DO Mass Balance",
     "text": "Steady-State Waste, DO Mass Balance\nPutting it all together:\n\\[\\begin{aligned}\nU \\frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B \\\\\\\\\n&\\quad - k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right) - k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)\n\\end{aligned}\\]"
   },
   {
-    "objectID": "slides/lecture05-1.html#key-points-1",
-    "href": "slides/lecture05-1.html#key-points-1",
+    "objectID": "slides/lecture05-2.html#key-points-1",
+    "href": "slides/lecture05-2.html#key-points-1",
     "title": "Dissolved Oxygen",
     "section": "Key Points",
     "text": "Key Points\n\nDissolved oxygen (DO) is essential for water quality and aquatic life.\nCommonly regulated to keep DO above a minimum threshold.\nDO impacted by a number of factors, notably organic waste decomposition and nitrification.\nWe derived a first-order equation for DO using mass-balance and fate & transport principles."
   },
   {
-    "objectID": "slides/lecture05-1.html#next-classes",
-    "href": "slides/lecture05-1.html#next-classes",
+    "objectID": "slides/lecture05-2.html#next-classes",
+    "href": "slides/lecture05-2.html#next-classes",
     "title": "Dissolved Oxygen",
     "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Simulating DO dynamics.\nFriday: Prescriptive modeling."
+    "text": "Next Classes\nFriday: Simulating DO dynamics.\nNext Week: Prescriptive modeling and optimization."
   },
   {
-    "objectID": "slides/lecture05-1.html#assessments",
-    "href": "slides/lecture05-1.html#assessments",
+    "objectID": "slides/lecture05-2.html#assessments",
+    "href": "slides/lecture05-2.html#assessments",
     "title": "Dissolved Oxygen",
     "section": "Assessments",
-    "text": "Assessments\n\nHW2 due Friday.\nLab2 due next Monday.\n\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Assessments\n\nHW2 due Friday.\nLab2 also due Friday.\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture02-1.html#what-is-a-system",
@@ -1934,163 +1976,303 @@
   {
     "objectID": "slides/lecture06-2.html#last-class",
     "href": "slides/lecture06-2.html#last-class",
+    "title": "Introduction to Optimization",
+    "section": "Last Class",
+    "text": "Last Class\n\nDecision models involve objectives and constraints.\nObjective:\n\nHow are we assessing performance? (the metric)\nDo we want to maximize or minimize?\n\nConstraints:\n\nWhat are eligible decisions?\nEngineering restrictions, performance or regulatory standards, etc."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#questions",
+    "href": "slides/lecture06-2.html#questions",
+    "title": "Introduction to Optimization",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#wastewater-treatment-model",
+    "href": "slides/lecture06-2.html#wastewater-treatment-model",
+    "title": "Introduction to Optimization",
+    "section": "Wastewater Treatment Model",
+    "text": "Wastewater Treatment Model\nLast class, we derived the following model for the treatment of wastewater from two point releases:\n\\[\\begin{alignat}{3}\n& \\min_{E_1, E_2} &\\quad  5000E_1^2 + 3000E_2^2 &  \\\\\\\\\n& \\text{subject to:} & 1000 E_1 &\\geq 500 \\\\\n& & 835E_1 + 1200E_2 &\\geq 1459 \\\\\n& & E_1, E_2 &\\;\\geq 0 \\\\\n& & E_1, E_2 &\\;\\leq 1\n\\end{alignat}\\]"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#solving-this-problem",
+    "href": "slides/lecture06-2.html#solving-this-problem",
+    "title": "Introduction to Optimization",
+    "section": "Solving This Problem",
+    "text": "Solving This Problem\n\n\nWe can solve this graphically (see the JuMP tutorial for example code):"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#the-solution",
+    "href": "slides/lecture06-2.html#the-solution",
+    "title": "Introduction to Optimization",
+    "section": "The Solution",
+    "text": "The Solution\nSo the solution occurs at the intersection of the two constraints, where:\n\\[E_1 = 0.5, E_2 = 0.85\\]\nand the cost of this treatment plan is\n\\[C(0.5, 0.85) = \\$ 3417.\\]\n\nDoes this solution make sense?"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#waste-load-allocation",
+    "href": "slides/lecture06-2.html#waste-load-allocation",
+    "title": "Introduction to Optimization",
+    "section": "Waste Load Allocation",
+    "text": "Waste Load Allocation\nThis is an example of a waste load allocation problem.\nKey question: How do we restrict waste discharges to control or limit environmental impact?"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#waste-load-allocation-schematic",
+    "href": "slides/lecture06-2.html#waste-load-allocation-schematic",
+    "title": "Introduction to Optimization",
+    "section": "Waste Load Allocation Schematic",
+    "text": "Waste Load Allocation Schematic\n\nEnvironmental Systems Model SchematicEach source is allocated a “load” they can discharge based on waste fate and transport."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#waste-load-allocation-model",
+    "href": "slides/lecture06-2.html#waste-load-allocation-model",
+    "title": "Introduction to Optimization",
+    "section": "Waste Load Allocation Model",
+    "text": "Waste Load Allocation Model\nWaste loads affect quality \\(Q\\) based on fate & transport model:\n\\[Q=f(W_1, W_2, \\ldots, W_n)\\]\n\nSo the general form for a prescriptive waste load allocation model:\n\\[\\begin{aligned}\n\\text{determine} & \\quad  W_1, W_2, \\ldots, W_n \\notag \\\\\\\\\n\\text{subject to:} & \\quad f(W_1, W_2, \\ldots, W_n) \\geq Q^* \\notag\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#components-of-an-optimization-model",
+    "href": "slides/lecture06-2.html#components-of-an-optimization-model",
+    "title": "Introduction to Optimization",
+    "section": "Components of an Optimization Model",
+    "text": "Components of an Optimization Model\n\nObjective Function: The “target” function to be optimized.\nDecision Variables: Variables which can be changed to affect objective.\nConstraints: Limits on decision variable values.\nFeasible Solution: Decision variable values satisfying constraints.\nOptimal Solution: The “best” feasible solution or solutions (with respect to the objective)"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#how-do-we-solve-an-optimization-problem",
+    "href": "slides/lecture06-2.html#how-do-we-solve-an-optimization-problem",
+    "title": "Introduction to Optimization",
+    "section": "How Do We Solve An Optimization Problem?",
+    "text": "How Do We Solve An Optimization Problem?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#solution-approach-1-trial-and-error",
+    "href": "slides/lecture06-2.html#solution-approach-1-trial-and-error",
+    "title": "Introduction to Optimization",
+    "section": "Solution Approach 1: Trial and Error",
+    "text": "Solution Approach 1: Trial and Error\nWhat are some challenges to trial and error?\n\n\nMany possible solutions (infinitely many when a problem is continuous)\nFeasible region may not be intuitive\nHow do we know when we’ve found an optimal solution?"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#solution-approach-2-generalized-search-algorithms",
+    "href": "slides/lecture06-2.html#solution-approach-2-generalized-search-algorithms",
+    "title": "Introduction to Optimization",
+    "section": "Solution Approach 2: Generalized Search Algorithms",
+    "text": "Solution Approach 2: Generalized Search Algorithms\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nMost search algorithms look for critical points to find candidate optima. Then the “best” of the critical points is the global optimum."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#solution-approach-2-generalized-search-algorithms-1",
+    "href": "slides/lecture06-2.html#solution-approach-2-generalized-search-algorithms-1",
+    "title": "Introduction to Optimization",
+    "section": "Solution Approach 2: Generalized Search Algorithms",
+    "text": "Solution Approach 2: Generalized Search Algorithms\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nTwo common approaches:\n\nGradient-based methods\nEvolutionary algorithms"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#solution-approach-2-generalized-search-algorithms-2",
+    "href": "slides/lecture06-2.html#solution-approach-2-generalized-search-algorithms-2",
+    "title": "Introduction to Optimization",
+    "section": "Solution Approach 2: Generalized Search Algorithms",
+    "text": "Solution Approach 2: Generalized Search Algorithms\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nThese methods work pretty well, but can require a lot of evaluations and/or may get stuck at local optima."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#key-takeaways-1",
+    "href": "slides/lecture06-2.html#key-takeaways-1",
+    "title": "Introduction to Optimization",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nWe solve decision models through optimization.\nDecision models have a standard structure:\n\nDecision Variables\nObjective\nConstraints\n\nGoal: find “best” solution with respect to the objective that is feasible."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#next-classes",
+    "href": "slides/lecture06-2.html#next-classes",
+    "title": "Introduction to Optimization",
+    "section": "Next Classes",
+    "text": "Next Classes\nFriday: Constrained optimization and solving linear models (linear programming)\nMonday: Example of formulating and solving a linear program.\nWednesday: Guest lecture by Diana Hackett (Mann librarian) on regulations research.\nFriday: Lab on linear programming in Julia.\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
+    "objectID": "slides/lecture06-3.html#last-class",
+    "href": "slides/lecture06-3.html#last-class",
     "title": "Linear Programming",
     "section": "Last Class",
     "text": "Last Class\n\nOptimization for solving decision problems.\nUsed graphical method to identify solution for low (2-d) decision problem.\nDiscussed trial and error and search algorithms.\nFor unconstrained problems, gradient-based methods can get “stuck” at local optima.\nEvolutionary algorithms can require many iterations and evaluations."
   },
   {
-    "objectID": "slides/lecture06-2.html#questions",
-    "href": "slides/lecture06-2.html#questions",
+    "objectID": "slides/lecture06-3.html#questions",
+    "href": "slides/lecture06-3.html#questions",
     "title": "Linear Programming",
     "section": "Questions?",
     "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture06-2.html#unconstrained-optimization",
-    "href": "slides/lecture06-2.html#unconstrained-optimization",
+    "objectID": "slides/lecture06-3.html#unconstrained-optimization",
+    "href": "slides/lecture06-3.html#unconstrained-optimization",
     "title": "Linear Programming",
     "section": "Unconstrained Optimization",
     "text": "Unconstrained Optimization\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nWithout constraints, our goal is to find extrema of the function.\nCan do this using the structure of the objective (gradient) or through stochastic search (Monte Carlo)."
   },
   {
-    "objectID": "slides/lecture06-2.html#constrained-optimization-1",
-    "href": "slides/lecture06-2.html#constrained-optimization-1",
+    "objectID": "slides/lecture06-3.html#constrained-optimization-1",
+    "href": "slides/lecture06-3.html#constrained-optimization-1",
     "title": "Linear Programming",
     "section": "Constrained Optimization",
     "text": "Constrained Optimization\n\n\n\n\n\nFunction with Multiple Minima and a Constraint\n\n\n\nNow, notice the effect of a constraint!\nFor a constrained problem, we also have to look along the constraint to see if that creates a solution."
   },
   {
-    "objectID": "slides/lecture06-2.html#lagrange-multipliers",
-    "href": "slides/lecture06-2.html#lagrange-multipliers",
+    "objectID": "slides/lecture06-3.html#lagrange-multipliers",
+    "href": "slides/lecture06-3.html#lagrange-multipliers",
     "title": "Linear Programming",
     "section": "Lagrange Multipliers",
     "text": "Lagrange Multipliers\nWe can solve some constrained problems using Lagrange Multipliers!\nRecall (maybe) that the Lagrange Multipliers method requires equality constraints. But we can easily create those with “dummy” variables."
   },
   {
-    "objectID": "slides/lecture06-2.html#using-equality-constraints",
-    "href": "slides/lecture06-2.html#using-equality-constraints",
+    "objectID": "slides/lecture06-3.html#using-equality-constraints",
+    "href": "slides/lecture06-3.html#using-equality-constraints",
     "title": "Linear Programming",
     "section": "Using Equality Constraints",
     "text": "Using Equality Constraints\n\n\nOriginal Problem\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 \\geq A \\notag \\\\\n& && x_2 \\leq B \\notag\n\\end{aligned}\n\\]\n\nWith Dummy Variables\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 - S_1^2 = A \\notag \\\\\n& && x_2 + S_2^2 = B \\notag\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/lecture06-2.html#using-lagrange-multipliers",
-    "href": "slides/lecture06-2.html#using-lagrange-multipliers",
+    "objectID": "slides/lecture06-3.html#using-lagrange-multipliers",
+    "href": "slides/lecture06-3.html#using-lagrange-multipliers",
     "title": "Linear Programming",
     "section": "Using Lagrange Multipliers",
     "text": "Using Lagrange Multipliers\nThen the Lagrangian function becomes:\n\\[\nH(\\mathbf{x}, S_1, S_2, \\lambda_1, \\lambda_2) = f(\\mathbf{x}) - \\lambda_1(x_1 - S_1^2 - A) - \\lambda_2(x_2 + S_2^2 - B)\n\\]\nwhere \\(\\lambda_1\\), \\(\\lambda_2\\) are penalties for violating the constraints.\nThe \\(\\lambda_i\\) are the eponymous Lagrange multipliers."
   },
   {
-    "objectID": "slides/lecture06-2.html#using-lagrange-multipliers-1",
-    "href": "slides/lecture06-2.html#using-lagrange-multipliers-1",
+    "objectID": "slides/lecture06-3.html#using-lagrange-multipliers-1",
+    "href": "slides/lecture06-3.html#using-lagrange-multipliers-1",
     "title": "Linear Programming",
     "section": "Using Lagrange Multipliers",
     "text": "Using Lagrange Multipliers\nNext step: locate possible optima where the partial derivatives of the Lagrangian are zero.\n\\[\\frac{\\partial H(\\cdot)}{\\partial \\cdot} = 0\\]\nThis is actually many equations, even though our original problem was low-dimensional, and can be slow to solve."
   },
   {
-    "objectID": "slides/lecture06-2.html#using-lagrange-multiplers",
-    "href": "slides/lecture06-2.html#using-lagrange-multiplers",
+    "objectID": "slides/lecture06-3.html#using-lagrange-multiplers",
+    "href": "slides/lecture06-3.html#using-lagrange-multiplers",
     "title": "Linear Programming",
     "section": "Using Lagrange Multiplers",
     "text": "Using Lagrange Multiplers\nDespite these challenges, Lagrange Multiplers are at the core of many advanced search algorithms."
   },
   {
-    "objectID": "slides/lecture06-2.html#what-is-linear-programming",
-    "href": "slides/lecture06-2.html#what-is-linear-programming",
+    "objectID": "slides/lecture06-3.html#what-is-linear-programming",
+    "href": "slides/lecture06-3.html#what-is-linear-programming",
     "title": "Linear Programming",
     "section": "What is Linear Programming?",
     "text": "What is Linear Programming?\nLinear programming refers to optimization for linear models.\nAs we will see over the next few weeks, linear models are:\n\nrelatively simple (which lets us solve and analyze them “easily”);\nsurprisingly applicable to many contexts!"
   },
   {
-    "objectID": "slides/lecture06-2.html#linear-functions",
-    "href": "slides/lecture06-2.html#linear-functions",
+    "objectID": "slides/lecture06-3.html#linear-functions",
+    "href": "slides/lecture06-3.html#linear-functions",
     "title": "Linear Programming",
     "section": "Linear Functions",
     "text": "Linear Functions\nRecall that a function \\(f(x_1, \\ldots, x_n)\\) is linear if \\[f(x_1, \\ldots, x_n) = a_1x_1 + a_2x_2 + \\ldots + a_n x_n.\\]\n\nThe key is that linear models are very simple geometrically:\n\nDefine hyperplanes;\nConstant derivatives/gradients."
   },
   {
-    "objectID": "slides/lecture06-2.html#linear-programs",
-    "href": "slides/lecture06-2.html#linear-programs",
+    "objectID": "slides/lecture06-3.html#linear-programs",
+    "href": "slides/lecture06-3.html#linear-programs",
     "title": "Linear Programming",
     "section": "Linear Programs",
     "text": "Linear Programs\nA linear program (LP), or a linear optimization model, has the following characteristics:\n\nLinearity: The objective function and constraints are all linear;\nDivisibility: The decision variables are continuous (they can be fractional levels);\nCertainty: The problem is deterministic."
   },
   {
-    "objectID": "slides/lecture06-2.html#linearization",
-    "href": "slides/lecture06-2.html#linearization",
+    "objectID": "slides/lecture06-3.html#linearization",
+    "href": "slides/lecture06-3.html#linearization",
     "title": "Linear Programming",
     "section": "Linearization",
     "text": "Linearization\n\n\nLinear models are useful because we can linearize nonlinear functions.\nWhen we linearize components of an LP, this is called the linear relaxation of the original problem."
   },
   {
-    "objectID": "slides/lecture06-2.html#linearization-1",
-    "href": "slides/lecture06-2.html#linearization-1",
+    "objectID": "slides/lecture06-3.html#linearization-1",
+    "href": "slides/lecture06-3.html#linearization-1",
     "title": "Linear Programming",
     "section": "Linearization",
     "text": "Linearization\n\n\nNote that the linearization is often quite sensitive to the points that are used to find the slope.\nSo this is best done when you have a rough idea of the variable range of interest."
   },
   {
-    "objectID": "slides/lecture06-2.html#why-is-solving-lps-straightforward",
-    "href": "slides/lecture06-2.html#why-is-solving-lps-straightforward",
+    "objectID": "slides/lecture06-3.html#why-is-solving-lps-straightforward",
+    "href": "slides/lecture06-3.html#why-is-solving-lps-straightforward",
     "title": "Linear Programming",
     "section": "Why Is Solving LPs Straightforward?",
     "text": "Why Is Solving LPs Straightforward?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll solutions must exist on the boundary of the feasible region (which must be a polytope)."
   },
   {
-    "objectID": "slides/lecture06-2.html#why-is-solving-lps-straightforward-1",
-    "href": "slides/lecture06-2.html#why-is-solving-lps-straightforward-1",
+    "objectID": "slides/lecture06-3.html#why-is-solving-lps-straightforward-1",
+    "href": "slides/lecture06-3.html#why-is-solving-lps-straightforward-1",
     "title": "Linear Programming",
     "section": "Why Is Solving LPs Straightforward?",
     "text": "Why Is Solving LPs Straightforward?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMore specifically:\n\n\nan optimum solution must occur at the intersection of constraints;\ncan focus on finding and analyzing the corners."
   },
   {
-    "objectID": "slides/lecture06-2.html#why-is-solving-lps-straightforward-2",
-    "href": "slides/lecture06-2.html#why-is-solving-lps-straightforward-2",
+    "objectID": "slides/lecture06-3.html#why-is-solving-lps-straightforward-2",
+    "href": "slides/lecture06-3.html#why-is-solving-lps-straightforward-2",
     "title": "Linear Programming",
     "section": "Why Is Solving LPs Straightforward?",
     "text": "Why Is Solving LPs Straightforward?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is the basis of all simplex methods for solving LPs.\nThese methods go back to George Dantzig in the 1940s and are still widely used today."
   },
   {
-    "objectID": "slides/lecture06-2.html#example-solving-an-lp",
-    "href": "slides/lecture06-2.html#example-solving-an-lp",
+    "objectID": "slides/lecture06-3.html#example-solving-an-lp",
+    "href": "slides/lecture06-3.html#example-solving-an-lp",
     "title": "Linear Programming",
     "section": "Example: Solving an LP",
     "text": "Example: Solving an LP\n\n\n\\[\\begin{alignedat}{3}\n& \\max_{x_1, x_2} &  230x_1 + 120x_2 &  \\\\\\\\\n& \\text{subject to:} & &\\\\\n& & 0.9x_1 + 0.5x_2 &\\leq 600 \\\\\n& & x_1 + x_2 &\\leq 1000 \\\\\n& & x_1, x_2 &\\geq 0\n\\end{alignedat}\\]"
   },
   {
-    "objectID": "slides/lecture06-2.html#example-solving-an-lp-1",
-    "href": "slides/lecture06-2.html#example-solving-an-lp-1",
+    "objectID": "slides/lecture06-3.html#example-solving-an-lp-1",
+    "href": "slides/lecture06-3.html#example-solving-an-lp-1",
     "title": "Linear Programming",
     "section": "Example: Solving an LP",
     "text": "Example: Solving an LP\n\n\n\\[\\begin{alignedat}{3}\n& \\max_{x_1, x_2} &  230x_1 + 120x_2 &  \\\\\\\\\n& \\text{subject to:} & &\\\\\n& & 0.9x_1 + 0.5x_2 &\\leq 600 \\\\\n& & x_1 + x_2 &\\leq 1000 \\\\\n& & x_1, x_2 &\\geq 0\n\\end{alignedat}\\]"
   },
   {
-    "objectID": "slides/lecture06-2.html#examining-corner-points",
-    "href": "slides/lecture06-2.html#examining-corner-points",
+    "objectID": "slides/lecture06-3.html#examining-corner-points",
+    "href": "slides/lecture06-3.html#examining-corner-points",
     "title": "Linear Programming",
     "section": "Examining Corner Points",
     "text": "Examining Corner Points\n\n\n\n\n\nCorner \\((x_1, x_2)\\)\nObjective\n\n\n\n\n\\((0,0)\\)\n\\(0\\)\n\n\n\\((0, 1000)\\)\n\\(12000\\)\n\n\n\\((667, 0)\\)\n\\(153410\\)\n\n\n\\((250, 750)\\)\n\\(147500\\)"
   },
   {
-    "objectID": "slides/lecture06-2.html#solving-an-lp",
-    "href": "slides/lecture06-2.html#solving-an-lp",
+    "objectID": "slides/lecture06-3.html#solving-an-lp",
+    "href": "slides/lecture06-3.html#solving-an-lp",
     "title": "Linear Programming",
     "section": "Solving an LP",
     "text": "Solving an LP\nManually checking the corner points is all well and good for this simple example, but does it scale well?\n\nLP solvers (often based off the simplex method) automate this process."
   },
   {
-    "objectID": "slides/lecture06-2.html#key-takeaways-1",
-    "href": "slides/lecture06-2.html#key-takeaways-1",
+    "objectID": "slides/lecture06-3.html#binding-constraints",
+    "href": "slides/lecture06-3.html#binding-constraints",
     "title": "Linear Programming",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nTrial and error: not a great approach!\nSearch algorithms: better!\nLinear Programs: straightforward to solve!\nFor an LP, an optimum must occur at a corner of the feasible polytope."
+    "section": "Binding Constraints",
+    "text": "Binding Constraints\nA solution will be found at one of the corner points of the feasible polytope.\nThis means that at this solution, one or more constraints are binding: if we relaxed the constraint by weakening it, we could improve the solution."
   },
   {
-    "objectID": "slides/lecture06-2.html#next-classes",
-    "href": "slides/lecture06-2.html#next-classes",
+    "objectID": "slides/lecture06-3.html#binding-constraints-1",
+    "href": "slides/lecture06-3.html#binding-constraints-1",
+    "title": "Linear Programming",
+    "section": "Binding Constraints",
+    "text": "Binding Constraints\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe binding constraints are\n\n\\(x_1 \\geq 0\\)\n\\(0.9 x_1 + 0.5 x_2 \\leq 600\\),\n\nbut not\n\n\\(x_1 + x_2 \\leq 1000\\)."
+  },
+  {
+    "objectID": "slides/lecture06-3.html#shadow-prices-1",
+    "href": "slides/lecture06-3.html#shadow-prices-1",
+    "title": "Linear Programming",
+    "section": "Shadow Prices",
+    "text": "Shadow Prices\nThe marginal cost of a constraint is the amount by which the solution would improve if the constraint capacity was relaxed by one unit.\nThis is also referred to as the shadow price (these are also called the dual variables of the constraint).\nNon-zero shadow prices tell us that the constraint is binding, and their values rank which constraints are most influential."
+  },
+  {
+    "objectID": "slides/lecture06-3.html#shadow-prices-are-lagrange-multipliers",
+    "href": "slides/lecture06-3.html#shadow-prices-are-lagrange-multipliers",
+    "title": "Linear Programming",
+    "section": "Shadow Prices are Lagrange Multipliers",
+    "text": "Shadow Prices are Lagrange Multipliers\nThe shadow prices are the Lagrange Multipliers of the optimization problem.\nIf our inequality constraints \\(X \\geq A\\) and \\(X \\leq B\\) are written as \\(X - S_1^2 = A\\) and \\(X + S_2^2 = B\\):\n\\[H(X, S_1 S_2, \\lambda_1, \\lambda_2) = Z(X) - \\lambda_1(X - S_1^2 - A) - \\lambda_2(X + S_2^2 - B),\\]\n\\[\\Rightarrow \\qquad \\frac{\\partial H}{\\partial A} = \\lambda_1, \\qquad \\frac{\\partial H}{\\partial B} = \\lambda_2.\\]"
+  },
+  {
+    "objectID": "slides/lecture06-3.html#key-takeaways-1",
+    "href": "slides/lecture06-3.html#key-takeaways-1",
+    "title": "Linear Programming",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nTrial and error: not a great approach!\nSearch algorithms: better!\nLinear Programs: straightforward to solve!\nFor an LP, an optimum must occur at a corner of the feasible polytope.\nShadow prices (dual variables) of the constraints are the rate by which the solution would improve if the constraints were relaxed."
+  },
+  {
+    "objectID": "slides/lecture06-3.html#next-classes",
+    "href": "slides/lecture06-3.html#next-classes",
     "title": "Linear Programming",
     "section": "Next Classes",
-    "text": "Next Classes\nFriday: Example of formulating and solving an LP\nMonday: Lab on solving LPs in Julia with JuMP.jl\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Next Classes\nMonday: Example of formulating and solving an LP\nWednesday: Guest lecture by Diana Hackett (Mann librarian) on regulations research.\nFriday: Lab on linear programming in Julia.\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/notebooks/dissolved-oxygen.html",
@@ -2170,487 +2352,718 @@
     "text": "Multiple-Period Dispatch\nWhat changes for multiple periods?\n\nNeed to meet demand at every time period\nWe have additional ramping constraints: plants can only increase and decrease their output by so much from time to time, by \\(R_g\\).\n\n\nJuMP Implementation\n\n\nCode\nramp = [150, 200, 100, 250, 300]\ndemand = [1725, 1596, 1476, 1408, 1530, 1714, 1820, 1973, 2081, 2202, 2105, 2065, \n    2045, 2195, 2309, 2390, 2486, 2515, 2075, 2006, 1956, 1902, 1865, 1820]\nh = length(demand)\nT = 1:h\n\ndispatch2 = Model(HiGHS.Optimizer)\n@variable(dispatch2, gen_minpower[g] &lt;= y[g in G, t in T] &lt;= gen_maxpower[g])\n@objective(dispatch2, Min, sum(gen_varcost .* sum([y[:, t] for t in T])))\n@constraint(dispatch2, load[t in T], sum(y[:, t]) == demand[t])\n@constraint(dispatch2, rampup[g in G, t in 1:h-1], y[g, t+1] - y[g, t] &lt;= ramp[g])\n@constraint(dispatch2, rampdown[g in G, t in 1:h-1], y[g, t] - y[g, t+1] &lt;= ramp[g])\n\nlatex_formulation(dispatch2)\n\n\n\\[ \\begin{aligned}\n\\min\\quad & 2 y_{3,1} + 2 y_{3,2} + 2 y_{3,3} + 2 y_{3,4} + 2 y_{3,5} + 2 y_{3,6} + 2 y_{3,7} + 2 y_{3,8} + 2 y_{3,9} + 2 y_{3,10} + 2 y_{3,11} + 2 y_{3,12} + 2 y_{3,13} + 2 y_{3,14} + 2 y_{3,15} + 2 y_{3,16} + 2 y_{3,17} + 2 y_{3,18} + 2 y_{3,19} + 2 y_{3,20} + 2 y_{3,21} + 2 y_{3,22} + 2 y_{3,23} + 2 y_{3,24} + 21.5 y_{4,1} + 21.5 y_{4,2} + 21.5 y_{4,3} + 21.5 y_{4,4} + 21.5 y_{4,5} + 21.5 y_{4,6} + 21.5 y_{4,7} + 21.5 y_{4,8} + 21.5 y_{4,9} + 21.5 y_{4,10} + 21.5 y_{4,11} + 21.5 y_{4,12} + 21.5 y_{4,13} + 21.5 y_{4,14} + 21.5 y_{4,15} + 21.5 y_{4,16} + 21.5 y_{4,17} + 21.5 y_{4,18} + 21.5 y_{4,19} + 21.5 y_{4,20} + 21.5 y_{4,21} + 21.5 y_{4,22} + 21.5 y_{4,23} + 21.5 y_{4,24} + 23 y_{5,1} + 23 y_{5,2} + 23 y_{5,3} + 23 y_{5,4} + 23 y_{5,5} + 23 y_{5,6} + 23 y_{5,7} + 23 y_{5,8} + 23 y_{5,9} + 23 y_{5,10} + 23 y_{5,11} + 23 y_{5,12} + 23 y_{5,13} + 23 y_{5,14} + 23 y_{5,15} + 23 y_{5,16} + 23 y_{5,17} + 23 y_{5,18} + 23 y_{5,19} + 23 y_{5,20} + 23 y_{5,21} + 23 y_{5,22} + 23 y_{5,23} + 23 y_{5,24}\\\\\n\\text{Subject to} \\quad & y_{1,1} + y_{2,1} + y_{3,1} + y_{4,1} + y_{5,1} = 1725.0\\\\\n& y_{1,2} + y_{2,2} + y_{3,2} + y_{4,2} + y_{5,2} = 1596.0\\\\\n& y_{1,3} + y_{2,3} + y_{3,3} + y_{4,3} + y_{5,3} = 1476.0\\\\\n& y_{1,4} + y_{2,4} + y_{3,4} + y_{4,4} + y_{5,4} = 1408.0\\\\\n& y_{1,5} + y_{2,5} + y_{3,5} + y_{4,5} + y_{5,5} = 1530.0\\\\\n& y_{1,6} + y_{2,6} + y_{3,6} + y_{4,6} + y_{5,6} = 1714.0\\\\\n& y_{1,7} + y_{2,7} + y_{3,7} + y_{4,7} + y_{5,7} = 1820.0\\\\\n& y_{1,8} + y_{2,8} + y_{3,8} + y_{4,8} + y_{5,8} = 1973.0\\\\\n& y_{1,9} + y_{2,9} + y_{3,9} + y_{4,9} + y_{5,9} = 2081.0\\\\\n& y_{1,10} + y_{2,10} + y_{3,10} + y_{4,10} + y_{5,10} = 2202.0\\\\\n& y_{1,11} + y_{2,11} + y_{3,11} + y_{4,11} + y_{5,11} = 2105.0\\\\\n& y_{1,12} + y_{2,12} + y_{3,12} + y_{4,12} + y_{5,12} = 2065.0\\\\\n& y_{1,13} + y_{2,13} + y_{3,13} + y_{4,13} + y_{5,13} = 2045.0\\\\\n& y_{1,14} + y_{2,14} + y_{3,14} + y_{4,14} + y_{5,14} = 2195.0\\\\\n& y_{1,15} + y_{2,15} + y_{3,15} + y_{4,15} + y_{5,15} = 2309.0\\\\\n& y_{1,16} + y_{2,16} + y_{3,16} + y_{4,16} + y_{5,16} = 2390.0\\\\\n& y_{1,17} + y_{2,17} + y_{3,17} + y_{4,17} + y_{5,17} = 2486.0\\\\\n& y_{1,18} + y_{2,18} + y_{3,18} + y_{4,18} + y_{5,18} = 2515.0\\\\\n& y_{1,19} + y_{2,19} + y_{3,19} + y_{4,19} + y_{5,19} = 2075.0\\\\\n& y_{1,20} + y_{2,20} + y_{3,20} + y_{4,20} + y_{5,20} = 2006.0\\\\\n& y_{1,21} + y_{2,21} + y_{3,21} + y_{4,21} + y_{5,21} = 1956.0\\\\\n& y_{1,22} + y_{2,22} + y_{3,22} + y_{4,22} + y_{5,22} = 1902.0\\\\\n& y_{1,23} + y_{2,23} + y_{3,23} + y_{4,23} + y_{5,23} = 1865.0\\\\\n& y_{1,24} + y_{2,24} + y_{3,24} + y_{4,24} + y_{5,24} = 1820.0\\\\\n& -y_{1,1} + y_{1,2} \\leq 150.0\\\\\n& -y_{2,1} + y_{2,2} \\leq 200.0\\\\\n& -y_{3,1} + y_{3,2} \\leq 100.0\\\\\n& -y_{4,1} + y_{4,2} \\leq 250.0\\\\\n& -y_{5,1} + y_{5,2} \\leq 300.0\\\\\n& -y_{1,2} + y_{1,3} \\leq 150.0\\\\\n& -y_{2,2} + y_{2,3} \\leq 200.0\\\\\n& -y_{3,2} + y_{3,3} \\leq 100.0\\\\\n& -y_{4,2} + y_{4,3} \\leq 250.0\\\\\n& -y_{5,2} + y_{5,3} \\leq 300.0\\\\\n& -y_{1,3} + y_{1,4} \\leq 150.0\\\\\n& -y_{2,3} + y_{2,4} \\leq 200.0\\\\\n& -y_{3,3} + y_{3,4} \\leq 100.0\\\\\n& -y_{4,3} + y_{4,4} \\leq 250.0\\\\\n& -y_{5,3} + y_{5,4} \\leq 300.0\\\\\n& -y_{1,4} + y_{1,5} \\leq 150.0\\\\\n& -y_{2,4} + y_{2,5} \\leq 200.0\\\\\n& -y_{3,4} + y_{3,5} \\leq 100.0\\\\\n& -y_{4,4} + y_{4,5} \\leq 250.0\\\\\n& -y_{5,4} + y_{5,5} \\leq 300.0\\\\\n& -y_{1,5} + y_{1,6} \\leq 150.0\\\\\n& -y_{2,5} + y_{2,6} \\leq 200.0\\\\\n& -y_{3,5} + y_{3,6} \\leq 100.0\\\\\n& -y_{4,5} + y_{4,6} \\leq 250.0\\\\\n& -y_{5,5} + y_{5,6} \\leq 300.0\\\\\n& -y_{1,6} + y_{1,7} \\leq 150.0\\\\\n& -y_{2,6} + y_{2,7} \\leq 200.0\\\\\n& -y_{3,6} + y_{3,7} \\leq 100.0\\\\\n& -y_{4,6} + y_{4,7} \\leq 250.0\\\\\n& -y_{5,6} + y_{5,7} \\leq 300.0\\\\\n& -y_{1,7} + y_{1,8} \\leq 150.0\\\\\n& -y_{2,7} + y_{2,8} \\leq 200.0\\\\\n& -y_{3,7} + y_{3,8} \\leq 100.0\\\\\n& -y_{4,7} + y_{4,8} \\leq 250.0\\\\\n& -y_{5,7} + y_{5,8} \\leq 300.0\\\\\n& -y_{1,8} + y_{1,9} \\leq 150.0\\\\\n& -y_{2,8} + y_{2,9} \\leq 200.0\\\\\n& -y_{3,8} + y_{3,9} \\leq 100.0\\\\\n& -y_{4,8} + y_{4,9} \\leq 250.0\\\\\n& -y_{5,8} + y_{5,9} \\leq 300.0\\\\\n& -y_{1,9} + y_{1,10} \\leq 150.0\\\\\n& -y_{2,9} + y_{2,10} \\leq 200.0\\\\\n& -y_{3,9} + y_{3,10} \\leq 100.0\\\\\n& -y_{4,9} + y_{4,10} \\leq 250.0\\\\\n& -y_{5,9} + y_{5,10} \\leq 300.0\\\\\n& -y_{1,10} + y_{1,11} \\leq 150.0\\\\\n& -y_{2,10} + y_{2,11} \\leq 200.0\\\\\n& -y_{3,10} + y_{3,11} \\leq 100.0\\\\\n& -y_{4,10} + y_{4,11} \\leq 250.0\\\\\n& -y_{5,10} + y_{5,11} \\leq 300.0\\\\\n& -y_{1,11} + y_{1,12} \\leq 150.0\\\\\n& -y_{2,11} + y_{2,12} \\leq 200.0\\\\\n& -y_{3,11} + y_{3,12} \\leq 100.0\\\\\n& -y_{4,11} + y_{4,12} \\leq 250.0\\\\\n& -y_{5,11} + y_{5,12} \\leq 300.0\\\\\n& -y_{1,12} + y_{1,13} \\leq 150.0\\\\\n& -y_{2,12} + y_{2,13} \\leq 200.0\\\\\n& -y_{3,12} + y_{3,13} \\leq 100.0\\\\\n& -y_{4,12} + y_{4,13} \\leq 250.0\\\\\n& -y_{5,12} + y_{5,13} \\leq 300.0\\\\\n& -y_{1,13} + y_{1,14} \\leq 150.0\\\\\n& -y_{2,13} + y_{2,14} \\leq 200.0\\\\\n& -y_{3,13} + y_{3,14} \\leq 100.0\\\\\n& -y_{4,13} + y_{4,14} \\leq 250.0\\\\\n& -y_{5,13} + y_{5,14} \\leq 300.0\\\\\n& -y_{1,14} + y_{1,15} \\leq 150.0\\\\\n& -y_{2,14} + y_{2,15} \\leq 200.0\\\\\n& -y_{3,14} + y_{3,15} \\leq 100.0\\\\\n& -y_{4,14} + y_{4,15} \\leq 250.0\\\\\n& -y_{5,14} + y_{5,15} \\leq 300.0\\\\\n& -y_{1,15} + y_{1,16} \\leq 150.0\\\\\n& -y_{2,15} + y_{2,16} \\leq 200.0\\\\\n& -y_{3,15} + y_{3,16} \\leq 100.0\\\\\n& -y_{4,15} + y_{4,16} \\leq 250.0\\\\\n& -y_{5,15} + y_{5,16} \\leq 300.0\\\\\n& -y_{1,16} + y_{1,17} \\leq 150.0\\\\\n& -y_{2,16} + y_{2,17} \\leq 200.0\\\\\n& -y_{3,16} + y_{3,17} \\leq 100.0\\\\\n& -y_{4,16} + y_{4,17} \\leq 250.0\\\\\n& -y_{5,16} + y_{5,17} \\leq 300.0\\\\\n& -y_{1,17} + y_{1,18} \\leq 150.0\\\\\n& -y_{2,17} + y_{2,18} \\leq 200.0\\\\\n& -y_{3,17} + y_{3,18} \\leq 100.0\\\\\n& -y_{4,17} + y_{4,18} \\leq 250.0\\\\\n& -y_{5,17} + y_{5,18} \\leq 300.0\\\\\n& -y_{1,18} + y_{1,19} \\leq 150.0\\\\\n& -y_{2,18} + y_{2,19} \\leq 200.0\\\\\n& -y_{3,18} + y_{3,19} \\leq 100.0\\\\\n& -y_{4,18} + y_{4,19} \\leq 250.0\\\\\n& -y_{5,18} + y_{5,19} \\leq 300.0\\\\\n& -y_{1,19} + y_{1,20} \\leq 150.0\\\\\n& -y_{2,19} + y_{2,20} \\leq 200.0\\\\\n& -y_{3,19} + y_{3,20} \\leq 100.0\\\\\n& -y_{4,19} + y_{4,20} \\leq 250.0\\\\\n& -y_{5,19} + y_{5,20} \\leq 300.0\\\\\n& -y_{1,20} + y_{1,21} \\leq 150.0\\\\\n& -y_{2,20} + y_{2,21} \\leq 200.0\\\\\n& -y_{3,20} + y_{3,21} \\leq 100.0\\\\\n& -y_{4,20} + y_{4,21} \\leq 250.0\\\\\n& -y_{5,20} + y_{5,21} \\leq 300.0\\\\\n& -y_{1,21} + y_{1,22} \\leq 150.0\\\\\n& -y_{2,21} + y_{2,22} \\leq 200.0\\\\\n& -y_{3,21} + y_{3,22} \\leq 100.0\\\\\n& -y_{4,21} + y_{4,22} \\leq 250.0\\\\\n& -y_{5,21} + y_{5,22} \\leq 300.0\\\\\n& -y_{1,22} + y_{1,23} \\leq 150.0\\\\\n& -y_{2,22} + y_{2,23} \\leq 200.0\\\\\n& -y_{3,22} + y_{3,23} \\leq 100.0\\\\\n& -y_{4,22} + y_{4,23} \\leq 250.0\\\\\n& -y_{5,22} + y_{5,23} \\leq 300.0\\\\\n& -y_{1,23} + y_{1,24} \\leq 150.0\\\\\n& -y_{2,23} + y_{2,24} \\leq 200.0\\\\\n& -y_{3,23} + y_{3,24} \\leq 100.0\\\\\n& -y_{4,23} + y_{4,24} \\leq 250.0\\\\\n& -y_{5,23} + y_{5,24} \\leq 300.0\\\\\n& y_{1,1} - y_{1,2} \\leq 150.0\\\\\n& y_{2,1} - y_{2,2} \\leq 200.0\\\\\n& y_{3,1} - y_{3,2} \\leq 100.0\\\\\n& y_{4,1} - y_{4,2} \\leq 250.0\\\\\n& y_{5,1} - y_{5,2} \\leq 300.0\\\\\n& y_{1,2} - y_{1,3} \\leq 150.0\\\\\n& y_{2,2} - y_{2,3} \\leq 200.0\\\\\n& y_{3,2} - y_{3,3} \\leq 100.0\\\\\n& y_{4,2} - y_{4,3} \\leq 250.0\\\\\n& y_{5,2} - y_{5,3} \\leq 300.0\\\\\n& y_{1,3} - y_{1,4} \\leq 150.0\\\\\n& y_{2,3} - y_{2,4} \\leq 200.0\\\\\n& y_{3,3} - y_{3,4} \\leq 100.0\\\\\n& y_{4,3} - y_{4,4} \\leq 250.0\\\\\n& y_{5,3} - y_{5,4} \\leq 300.0\\\\\n& y_{1,4} - y_{1,5} \\leq 150.0\\\\\n& y_{2,4} - y_{2,5} \\leq 200.0\\\\\n& y_{3,4} - y_{3,5} \\leq 100.0\\\\\n& y_{4,4} - y_{4,5} \\leq 250.0\\\\\n& y_{5,4} - y_{5,5} \\leq 300.0\\\\\n& y_{1,5} - y_{1,6} \\leq 150.0\\\\\n& y_{2,5} - y_{2,6} \\leq 200.0\\\\\n& y_{3,5} - y_{3,6} \\leq 100.0\\\\\n& y_{4,5} - y_{4,6} \\leq 250.0\\\\\n& y_{5,5} - y_{5,6} \\leq 300.0\\\\\n& y_{1,6} - y_{1,7} \\leq 150.0\\\\\n& y_{2,6} - y_{2,7} \\leq 200.0\\\\\n& y_{3,6} - y_{3,7} \\leq 100.0\\\\\n& y_{4,6} - y_{4,7} \\leq 250.0\\\\\n& y_{5,6} - y_{5,7} \\leq 300.0\\\\\n& y_{1,7} - y_{1,8} \\leq 150.0\\\\\n& y_{2,7} - y_{2,8} \\leq 200.0\\\\\n& y_{3,7} - y_{3,8} \\leq 100.0\\\\\n& y_{4,7} - y_{4,8} \\leq 250.0\\\\\n& y_{5,7} - y_{5,8} \\leq 300.0\\\\\n& y_{1,8} - y_{1,9} \\leq 150.0\\\\\n& y_{2,8} - y_{2,9} \\leq 200.0\\\\\n& y_{3,8} - y_{3,9} \\leq 100.0\\\\\n& y_{4,8} - y_{4,9} \\leq 250.0\\\\\n& y_{5,8} - y_{5,9} \\leq 300.0\\\\\n& y_{1,9} - y_{1,10} \\leq 150.0\\\\\n& y_{2,9} - y_{2,10} \\leq 200.0\\\\\n& y_{3,9} - y_{3,10} \\leq 100.0\\\\\n& y_{4,9} - y_{4,10} \\leq 250.0\\\\\n& y_{5,9} - y_{5,10} \\leq 300.0\\\\\n& y_{1,10} - y_{1,11} \\leq 150.0\\\\\n& y_{2,10} - y_{2,11} \\leq 200.0\\\\\n& y_{3,10} - y_{3,11} \\leq 100.0\\\\\n& y_{4,10} - y_{4,11} \\leq 250.0\\\\\n& y_{5,10} - y_{5,11} \\leq 300.0\\\\\n& y_{1,11} - y_{1,12} \\leq 150.0\\\\\n& y_{2,11} - y_{2,12} \\leq 200.0\\\\\n& y_{3,11} - y_{3,12} \\leq 100.0\\\\\n& y_{4,11} - y_{4,12} \\leq 250.0\\\\\n& y_{5,11} - y_{5,12} \\leq 300.0\\\\\n& y_{1,12} - y_{1,13} \\leq 150.0\\\\\n& y_{2,12} - y_{2,13} \\leq 200.0\\\\\n& y_{3,12} - y_{3,13} \\leq 100.0\\\\\n& y_{4,12} - y_{4,13} \\leq 250.0\\\\\n& y_{5,12} - y_{5,13} \\leq 300.0\\\\\n& y_{1,13} - y_{1,14} \\leq 150.0\\\\\n& y_{2,13} - y_{2,14} \\leq 200.0\\\\\n& y_{3,13} - y_{3,14} \\leq 100.0\\\\\n& y_{4,13} - y_{4,14} \\leq 250.0\\\\\n& y_{5,13} - y_{5,14} \\leq 300.0\\\\\n& y_{1,14} - y_{1,15} \\leq 150.0\\\\\n& y_{2,14} - y_{2,15} \\leq 200.0\\\\\n& y_{3,14} - y_{3,15} \\leq 100.0\\\\\n& y_{4,14} - y_{4,15} \\leq 250.0\\\\\n& y_{5,14} - y_{5,15} \\leq 300.0\\\\\n& y_{1,15} - y_{1,16} \\leq 150.0\\\\\n& y_{2,15} - y_{2,16} \\leq 200.0\\\\\n& y_{3,15} - y_{3,16} \\leq 100.0\\\\\n& y_{4,15} - y_{4,16} \\leq 250.0\\\\\n& y_{5,15} - y_{5,16} \\leq 300.0\\\\\n& y_{1,16} - y_{1,17} \\leq 150.0\\\\\n& y_{2,16} - y_{2,17} \\leq 200.0\\\\\n& y_{3,16} - y_{3,17} \\leq 100.0\\\\\n& y_{4,16} - y_{4,17} \\leq 250.0\\\\\n& y_{5,16} - y_{5,17} \\leq 300.0\\\\\n& y_{1,17} - y_{1,18} \\leq 150.0\\\\\n& y_{2,17} - y_{2,18} \\leq 200.0\\\\\n& y_{3,17} - y_{3,18} \\leq 100.0\\\\\n& y_{4,17} - y_{4,18} \\leq 250.0\\\\\n& y_{5,17} - y_{5,18} \\leq 300.0\\\\\n& y_{1,18} - y_{1,19} \\leq 150.0\\\\\n& y_{2,18} - y_{2,19} \\leq 200.0\\\\\n& y_{3,18} - y_{3,19} \\leq 100.0\\\\\n& y_{4,18} - y_{4,19} \\leq 250.0\\\\\n& y_{5,18} - y_{5,19} \\leq 300.0\\\\\n& y_{1,19} - y_{1,20} \\leq 150.0\\\\\n& y_{2,19} - y_{2,20} \\leq 200.0\\\\\n& y_{3,19} - y_{3,20} \\leq 100.0\\\\\n& y_{4,19} - y_{4,20} \\leq 250.0\\\\\n& y_{5,19} - y_{5,20} \\leq 300.0\\\\\n& y_{1,20} - y_{1,21} \\leq 150.0\\\\\n& y_{2,20} - y_{2,21} \\leq 200.0\\\\\n& y_{3,20} - y_{3,21} \\leq 100.0\\\\\n& y_{4,20} - y_{4,21} \\leq 250.0\\\\\n& y_{5,20} - y_{5,21} \\leq 300.0\\\\\n& y_{1,21} - y_{1,22} \\leq 150.0\\\\\n& y_{2,21} - y_{2,22} \\leq 200.0\\\\\n& y_{3,21} - y_{3,22} \\leq 100.0\\\\\n& y_{4,21} - y_{4,22} \\leq 250.0\\\\\n& y_{5,21} - y_{5,22} \\leq 300.0\\\\\n& y_{1,22} - y_{1,23} \\leq 150.0\\\\\n& y_{2,22} - y_{2,23} \\leq 200.0\\\\\n& y_{3,22} - y_{3,23} \\leq 100.0\\\\\n& y_{4,22} - y_{4,23} \\leq 250.0\\\\\n& y_{5,22} - y_{5,23} \\leq 300.0\\\\\n& y_{1,23} - y_{1,24} \\leq 150.0\\\\\n& y_{2,23} - y_{2,24} \\leq 200.0\\\\\n& y_{3,23} - y_{3,24} \\leq 100.0\\\\\n& y_{4,23} - y_{4,24} \\leq 250.0\\\\\n& y_{5,23} - y_{5,24} \\leq 300.0\\\\\n& y_{1,1} \\geq 0.0\\\\\n& y_{2,1} \\geq 0.0\\\\\n& y_{3,1} \\geq 200.0\\\\\n& y_{4,1} \\geq 160.0\\\\\n& y_{5,1} \\geq 40.0\\\\\n& y_{1,2} \\geq 0.0\\\\\n& y_{2,2} \\geq 0.0\\\\\n& y_{3,2} \\geq 200.0\\\\\n& y_{4,2} \\geq 160.0\\\\\n& y_{5,2} \\geq 40.0\\\\\n& y_{1,3} \\geq 0.0\\\\\n& y_{2,3} \\geq 0.0\\\\\n& y_{3,3} \\geq 200.0\\\\\n& y_{4,3} \\geq 160.0\\\\\n& y_{5,3} \\geq 40.0\\\\\n& y_{1,4} \\geq 0.0\\\\\n& y_{2,4} \\geq 0.0\\\\\n& y_{3,4} \\geq 200.0\\\\\n& y_{4,4} \\geq 160.0\\\\\n& y_{5,4} \\geq 40.0\\\\\n& y_{1,5} \\geq 0.0\\\\\n& y_{2,5} \\geq 0.0\\\\\n& y_{3,5} \\geq 200.0\\\\\n& y_{4,5} \\geq 160.0\\\\\n& y_{5,5} \\geq 40.0\\\\\n& y_{1,6} \\geq 0.0\\\\\n& y_{2,6} \\geq 0.0\\\\\n& y_{3,6} \\geq 200.0\\\\\n& y_{4,6} \\geq 160.0\\\\\n& y_{5,6} \\geq 40.0\\\\\n& y_{1,7} \\geq 0.0\\\\\n& y_{2,7} \\geq 0.0\\\\\n& y_{3,7} \\geq 200.0\\\\\n& y_{4,7} \\geq 160.0\\\\\n& y_{5,7} \\geq 40.0\\\\\n& y_{1,8} \\geq 0.0\\\\\n& y_{2,8} \\geq 0.0\\\\\n& y_{3,8} \\geq 200.0\\\\\n& y_{4,8} \\geq 160.0\\\\\n& y_{5,8} \\geq 40.0\\\\\n& y_{1,9} \\geq 0.0\\\\\n& y_{2,9} \\geq 0.0\\\\\n& y_{3,9} \\geq 200.0\\\\\n& y_{4,9} \\geq 160.0\\\\\n& y_{5,9} \\geq 40.0\\\\\n& y_{1,10} \\geq 0.0\\\\\n& y_{2,10} \\geq 0.0\\\\\n& y_{3,10} \\geq 200.0\\\\\n& y_{4,10} \\geq 160.0\\\\\n& y_{5,10} \\geq 40.0\\\\\n& y_{1,11} \\geq 0.0\\\\\n& y_{2,11} \\geq 0.0\\\\\n& y_{3,11} \\geq 200.0\\\\\n& y_{4,11} \\geq 160.0\\\\\n& y_{5,11} \\geq 40.0\\\\\n& y_{1,12} \\geq 0.0\\\\\n& y_{2,12} \\geq 0.0\\\\\n& y_{3,12} \\geq 200.0\\\\\n& y_{4,12} \\geq 160.0\\\\\n& y_{5,12} \\geq 40.0\\\\\n& y_{1,13} \\geq 0.0\\\\\n& y_{2,13} \\geq 0.0\\\\\n& y_{3,13} \\geq 200.0\\\\\n& y_{4,13} \\geq 160.0\\\\\n& y_{5,13} \\geq 40.0\\\\\n& y_{1,14} \\geq 0.0\\\\\n& y_{2,14} \\geq 0.0\\\\\n& y_{3,14} \\geq 200.0\\\\\n& y_{4,14} \\geq 160.0\\\\\n& y_{5,14} \\geq 40.0\\\\\n& y_{1,15} \\geq 0.0\\\\\n& y_{2,15} \\geq 0.0\\\\\n& y_{3,15} \\geq 200.0\\\\\n& y_{4,15} \\geq 160.0\\\\\n& y_{5,15} \\geq 40.0\\\\\n& y_{1,16} \\geq 0.0\\\\\n& y_{2,16} \\geq 0.0\\\\\n& y_{3,16} \\geq 200.0\\\\\n& y_{4,16} \\geq 160.0\\\\\n& y_{5,16} \\geq 40.0\\\\\n& y_{1,17} \\geq 0.0\\\\\n& y_{2,17} \\geq 0.0\\\\\n& y_{3,17} \\geq 200.0\\\\\n& y_{4,17} \\geq 160.0\\\\\n& y_{5,17} \\geq 40.0\\\\\n& y_{1,18} \\geq 0.0\\\\\n& y_{2,18} \\geq 0.0\\\\\n& y_{3,18} \\geq 200.0\\\\\n& y_{4,18} \\geq 160.0\\\\\n& y_{5,18} \\geq 40.0\\\\\n& y_{1,19} \\geq 0.0\\\\\n& y_{2,19} \\geq 0.0\\\\\n& y_{3,19} \\geq 200.0\\\\\n& y_{4,19} \\geq 160.0\\\\\n& y_{5,19} \\geq 40.0\\\\\n& y_{1,20} \\geq 0.0\\\\\n& y_{2,20} \\geq 0.0\\\\\n& y_{3,20} \\geq 200.0\\\\\n& y_{4,20} \\geq 160.0\\\\\n& y_{5,20} \\geq 40.0\\\\\n& y_{1,21} \\geq 0.0\\\\\n& y_{2,21} \\geq 0.0\\\\\n& y_{3,21} \\geq 200.0\\\\\n& y_{4,21} \\geq 160.0\\\\\n& y_{5,21} \\geq 40.0\\\\\n& y_{1,22} \\geq 0.0\\\\\n& y_{2,22} \\geq 0.0\\\\\n& y_{3,22} \\geq 200.0\\\\\n& y_{4,22} \\geq 160.0\\\\\n& y_{5,22} \\geq 40.0\\\\\n& y_{1,23} \\geq 0.0\\\\\n& y_{2,23} \\geq 0.0\\\\\n& y_{3,23} \\geq 200.0\\\\\n& y_{4,23} \\geq 160.0\\\\\n& y_{5,23} \\geq 40.0\\\\\n& y_{1,24} \\geq 0.0\\\\\n& y_{2,24} \\geq 0.0\\\\\n& y_{3,24} \\geq 200.0\\\\\n& y_{4,24} \\geq 160.0\\\\\n& y_{5,24} \\geq 40.0\\\\\n& y_{1,1} \\leq 150.0\\\\\n& y_{2,1} \\leq 200.0\\\\\n& y_{3,1} \\leq 1000.0\\\\\n& y_{4,1} \\leq 700.0\\\\\n& y_{5,1} \\leq 500.0\\\\\n& y_{1,2} \\leq 150.0\\\\\n& y_{2,2} \\leq 200.0\\\\\n& y_{3,2} \\leq 1000.0\\\\\n& y_{4,2} \\leq 700.0\\\\\n& y_{5,2} \\leq 500.0\\\\\n& y_{1,3} \\leq 150.0\\\\\n& y_{2,3} \\leq 200.0\\\\\n& y_{3,3} \\leq 1000.0\\\\\n& y_{4,3} \\leq 700.0\\\\\n& y_{5,3} \\leq 500.0\\\\\n& y_{1,4} \\leq 150.0\\\\\n& y_{2,4} \\leq 200.0\\\\\n& y_{3,4} \\leq 1000.0\\\\\n& y_{4,4} \\leq 700.0\\\\\n& y_{5,4} \\leq 500.0\\\\\n& y_{1,5} \\leq 150.0\\\\\n& y_{2,5} \\leq 200.0\\\\\n& y_{3,5} \\leq 1000.0\\\\\n& y_{4,5} \\leq 700.0\\\\\n& y_{5,5} \\leq 500.0\\\\\n& y_{1,6} \\leq 150.0\\\\\n& y_{2,6} \\leq 200.0\\\\\n& y_{3,6} \\leq 1000.0\\\\\n& y_{4,6} \\leq 700.0\\\\\n& y_{5,6} \\leq 500.0\\\\\n& y_{1,7} \\leq 150.0\\\\\n& y_{2,7} \\leq 200.0\\\\\n& y_{3,7} \\leq 1000.0\\\\\n& y_{4,7} \\leq 700.0\\\\\n& y_{5,7} \\leq 500.0\\\\\n& y_{1,8} \\leq 150.0\\\\\n& y_{2,8} \\leq 200.0\\\\\n& y_{3,8} \\leq 1000.0\\\\\n& y_{4,8} \\leq 700.0\\\\\n& y_{5,8} \\leq 500.0\\\\\n& y_{1,9} \\leq 150.0\\\\\n& y_{2,9} \\leq 200.0\\\\\n& y_{3,9} \\leq 1000.0\\\\\n& y_{4,9} \\leq 700.0\\\\\n& y_{5,9} \\leq 500.0\\\\\n& y_{1,10} \\leq 150.0\\\\\n& y_{2,10} \\leq 200.0\\\\\n& y_{3,10} \\leq 1000.0\\\\\n& y_{4,10} \\leq 700.0\\\\\n& y_{5,10} \\leq 500.0\\\\\n& y_{1,11} \\leq 150.0\\\\\n& y_{2,11} \\leq 200.0\\\\\n& y_{3,11} \\leq 1000.0\\\\\n& y_{4,11} \\leq 700.0\\\\\n& y_{5,11} \\leq 500.0\\\\\n& y_{1,12} \\leq 150.0\\\\\n& y_{2,12} \\leq 200.0\\\\\n& y_{3,12} \\leq 1000.0\\\\\n& y_{4,12} \\leq 700.0\\\\\n& y_{5,12} \\leq 500.0\\\\\n& y_{1,13} \\leq 150.0\\\\\n& y_{2,13} \\leq 200.0\\\\\n& y_{3,13} \\leq 1000.0\\\\\n& y_{4,13} \\leq 700.0\\\\\n& y_{5,13} \\leq 500.0\\\\\n& y_{1,14} \\leq 150.0\\\\\n& y_{2,14} \\leq 200.0\\\\\n& y_{3,14} \\leq 1000.0\\\\\n& y_{4,14} \\leq 700.0\\\\\n& y_{5,14} \\leq 500.0\\\\\n& y_{1,15} \\leq 150.0\\\\\n& y_{2,15} \\leq 200.0\\\\\n& y_{3,15} \\leq 1000.0\\\\\n& y_{4,15} \\leq 700.0\\\\\n& y_{5,15} \\leq 500.0\\\\\n& y_{1,16} \\leq 150.0\\\\\n& y_{2,16} \\leq 200.0\\\\\n& y_{3,16} \\leq 1000.0\\\\\n& y_{4,16} \\leq 700.0\\\\\n& y_{5,16} \\leq 500.0\\\\\n& y_{1,17} \\leq 150.0\\\\\n& y_{2,17} \\leq 200.0\\\\\n& y_{3,17} \\leq 1000.0\\\\\n& y_{4,17} \\leq 700.0\\\\\n& y_{5,17} \\leq 500.0\\\\\n& y_{1,18} \\leq 150.0\\\\\n& y_{2,18} \\leq 200.0\\\\\n& y_{3,18} \\leq 1000.0\\\\\n& y_{4,18} \\leq 700.0\\\\\n& y_{5,18} \\leq 500.0\\\\\n& y_{1,19} \\leq 150.0\\\\\n& y_{2,19} \\leq 200.0\\\\\n& y_{3,19} \\leq 1000.0\\\\\n& y_{4,19} \\leq 700.0\\\\\n& y_{5,19} \\leq 500.0\\\\\n& y_{1,20} \\leq 150.0\\\\\n& y_{2,20} \\leq 200.0\\\\\n& y_{3,20} \\leq 1000.0\\\\\n& y_{4,20} \\leq 700.0\\\\\n& y_{5,20} \\leq 500.0\\\\\n& y_{1,21} \\leq 150.0\\\\\n& y_{2,21} \\leq 200.0\\\\\n& y_{3,21} \\leq 1000.0\\\\\n& y_{4,21} \\leq 700.0\\\\\n& y_{5,21} \\leq 500.0\\\\\n& y_{1,22} \\leq 150.0\\\\\n& y_{2,22} \\leq 200.0\\\\\n& y_{3,22} \\leq 1000.0\\\\\n& y_{4,22} \\leq 700.0\\\\\n& y_{5,22} \\leq 500.0\\\\\n& y_{1,23} \\leq 150.0\\\\\n& y_{2,23} \\leq 200.0\\\\\n& y_{3,23} \\leq 1000.0\\\\\n& y_{4,23} \\leq 700.0\\\\\n& y_{5,23} \\leq 500.0\\\\\n& y_{1,24} \\leq 150.0\\\\\n& y_{2,24} \\leq 200.0\\\\\n& y_{3,24} \\leq 1000.0\\\\\n& y_{4,24} \\leq 700.0\\\\\n& y_{5,24} \\leq 500.0\\\\\n\\end{aligned} \\]\n\n\n\n\nCode\n\nset_silent(dispatch2)\noptimize!(dispatch2)\n\ngen = value.(y).data\n\n\n5×24 Matrix{Float64}:\n  150.0   150.0  150.0  128.0  150.0  …   150.0   150.0   150.0   150.0\n  200.0   200.0  200.0  200.0  200.0      200.0   200.0   200.0   200.0\n 1000.0  1000.0  926.0  880.0  980.0     1000.0  1000.0  1000.0  1000.0\n  335.0   206.0  160.0  160.0  160.0      566.0   512.0   475.0   430.0\n   40.0    40.0   40.0   40.0   40.0       40.0    40.0    40.0    40.0\n\n\n\n\nCode\nareaplot(gen', \n    label=permutedims(gen_names), \n    xlabel = \"Hour\", \n    ylabel =\"Generated Electricity (MW)\", \n    color_palette=:tol_muted, \n    size=(1200, 600), \n    left_margin=6mm, \n    bottom_margin=6mm,\n    grid=:false,\n    legend = :outerright, ylim=(0, 2800),\n    legendfontsize=20, tickfontsize=20, \n    guidefontsize=20\n)\nplot!(demand, color=:red, \n    label=\"demand\", linestyle=:dash,\n    linewidth=5)\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\np = plot(gen', \n    label=permutedims(gen_names), \n    xlabel = \"Hour\", \n    ylabel =\"Generated Electricity (MW)\", \n    color_palette=:tol_muted, \n    linewidth=5,\n    size=(1200, 600), left_margin=6mm, \n    bottom_margin=6mm,\n    legendfontsize=20, tickfontsize=20, \n    guidefontsize=20,\n    legend=:outerright\n)\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotice that even though hydro is effectively zero-cost, we reduce dispatched hydropower in hour 4 because coal is at its minimum generating capacity and nuclear can’t be ramped down further. These constraints complicate the simple merit order that we previously saw.\nThese constraints also play a major role in systems with high levels of renewable penetration. For example, the so-called California “duck curve” is created by the challenges of ramping generation between the early afternoon, when solar generation is at its maximum, and in the evening, when solar generation is decreasing and demand increases rapidly.\n\n\n\nCalifornia Duck Curve"
   },
   {
-    "objectID": "slides/lecture04-1.html#last-class",
-    "href": "slides/lecture04-1.html#last-class",
-    "title": "Uncertainty and Risk",
-    "section": "Last Class",
-    "text": "Last Class\n\nSimulation involves running a model to evaluate dynamics.\nAllows us to look at how system behaves under different conditions and/or parameter values.\nThink of analogy to experimentation.\nLooked at example of dissolved oxygen."
+    "objectID": "slides/lecture04-1.html#gaussian-plume-for-air-pollution-dispersion",
+    "href": "slides/lecture04-1.html#gaussian-plume-for-air-pollution-dispersion",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Gaussian Plume for Air Pollution Dispersion",
+    "text": "Gaussian Plume for Air Pollution Dispersion\n\nUsed for point sources.\nTypically for continuous emissions from an elevated source."
   },
   {
-    "objectID": "slides/lecture04-1.html#simulation-workflow-overview",
-    "href": "slides/lecture04-1.html#simulation-workflow-overview",
-    "title": "Uncertainty and Risk",
-    "section": "Simulation Workflow Overview",
-    "text": "Simulation Workflow Overview\n\nSimulation Workflow Diagram"
+    "objectID": "slides/lecture04-1.html#gaussian-plume-model",
+    "href": "slides/lecture04-1.html#gaussian-plume-model",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Gaussian Plume Model",
+    "text": "Gaussian Plume Model\n\n\n\nVariable\nMeaning\n\n\n\n\n\\(C\\)\nConcentration (g/m\\(^3\\))\n\n\n\\(Q\\)\nEmissions Rate (g/s)\n\n\n\\(H\\)\nEffective Source Height (m)\n\n\n\\(u\\)\nWind Speed (m/s)\n\n\n\\(y, z\\)\nCrosswind, Vertical Distance (m)"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#gaussian-plume-model-1",
+    "href": "slides/lecture04-1.html#gaussian-plume-model-1",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Gaussian Plume Model",
+    "text": "Gaussian Plume Model\n\nGaussian Plume Distribution"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#gaussian-plume-model-with-ground-reflection",
+    "href": "slides/lecture04-1.html#gaussian-plume-model-with-ground-reflection",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Gaussian Plume Model With Ground Reflection",
+    "text": "Gaussian Plume Model With Ground Reflection\n\\[\\begin{aligned}\nC(x,y,z) = &\\frac{Q}{2\\pi u \\sigma_y \\sigma_z} \\exp\\left(\\frac{-y^2}{2\\sigma_y^2} \\right) \\times \\\\\\\\\n& \\quad \\left[\\exp\\left(\\frac{-(z-H)^2}{2\\sigma_z^2}\\right) + \\exp\\left(\\frac{-(z+H)^2}{2\\sigma_z^2}\\right) \\right]\n\\end{aligned}\\]"
   },
   {
     "objectID": "slides/lecture04-1.html#questions",
     "href": "slides/lecture04-1.html#questions",
-    "title": "Uncertainty and Risk",
-    "section": "Questions?",
-    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture04-1.html#systems-and-uncertainty",
-    "href": "slides/lecture04-1.html#systems-and-uncertainty",
-    "title": "Uncertainty and Risk",
-    "section": "Systems and Uncertainty",
-    "text": "Systems and Uncertainty\n\n\nDeterministic systems models can be subject to uncertainties due to the separation between the “internals” of the system and the “external” environment.\n\n\n\n\nConceptual Schematic of a Systems Model"
+    "objectID": "slides/lecture04-1.html#estimating-dispersion-spread",
+    "href": "slides/lecture04-1.html#estimating-dispersion-spread",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Estimating Dispersion “Spread”",
+    "text": "Estimating Dispersion “Spread”\nValues of \\(\\sigma_y\\) and \\(\\sigma_z\\) matter substantially for modeling plume spread downwind. What influences them?"
   },
   {
-    "objectID": "slides/lecture04-1.html#reminder-all-models-are-wrong-but-some-are-useful",
-    "href": "slides/lecture04-1.html#reminder-all-models-are-wrong-but-some-are-useful",
-    "title": "Uncertainty and Risk",
-    "section": "Reminder: “All Models Are Wrong, But Some Are Useful”",
-    "text": "Reminder: “All Models Are Wrong, But Some Are Useful”\n\n\nEvery systems model simplifies or neglects certain aspects of the system!\nEven if appropriate, this results in uncertainty about how results translate to the real system.\n\n\n\n\nConceptual Schematic of a Systems Model"
+    "objectID": "slides/lecture04-1.html#estimating-dispersion-spread-1",
+    "href": "slides/lecture04-1.html#estimating-dispersion-spread-1",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Estimating Dispersion “Spread”",
+    "text": "Estimating Dispersion “Spread”\nMain contribution: atmospheric stability\n\nGreater stability ⇒ less vertical/cross-wind dispersion.\nPasquill (1961): Six stability classes."
   },
   {
-    "objectID": "slides/lecture04-1.html#what-is-uncertainty",
-    "href": "slides/lecture04-1.html#what-is-uncertainty",
-    "title": "Uncertainty and Risk",
-    "section": "What is Uncertainty?",
-    "text": "What is Uncertainty?\nGlib Answer: A lack of certainty!\n\nMore Seriously: Uncertainty refers to an inability to exactly describe current or future values or states."
+    "objectID": "slides/lecture04-1.html#estimating-dispersion-spread-2",
+    "href": "slides/lecture04-1.html#estimating-dispersion-spread-2",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Estimating Dispersion “Spread”",
+    "text": "Estimating Dispersion “Spread”\nContributors to atmospheric stability:\n\nTemperature gradient\nWind speed\nSolar radiation\nCloud cover\nRichardson number (buoyancy / flow shear)"
   },
   {
-    "objectID": "slides/lecture04-1.html#types-of-uncertainty",
-    "href": "slides/lecture04-1.html#types-of-uncertainty",
-    "title": "Uncertainty and Risk",
-    "section": "Types of Uncertainty",
-    "text": "Types of Uncertainty\nTwo (broad) types of uncertainties:\n\nAleatory uncertainty, or uncertainties resulting from randomness;\nEpistemic uncertainty, or uncertainties resulting from lack of knowledge."
+    "objectID": "slides/lecture04-1.html#atmospheric-stability-classes",
+    "href": "slides/lecture04-1.html#atmospheric-stability-classes",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Atmospheric Stability Classes",
+    "text": "Atmospheric Stability Classes\n\n\n\nClass\nStability\nDescription\n\n\n\n\nA\nExtremely unstable\nSunny summer day\n\n\nB\nModerately unstable\nSunny & warm\n\n\nC\nSlightly unstable\nPartly cloudy day\n\n\nD\nNeutral\nCloudy day or night\n\n\nE\nSlightly stable\nPartly cloudy night\n\n\nF\nModerately stable\nClear night\n\n\n\n\nSource: https://courses.ecampus.oregonstate.edu/ne581/eleven/"
   },
   {
-    "objectID": "slides/lecture04-1.html#probability",
-    "href": "slides/lecture04-1.html#probability",
-    "title": "Uncertainty and Risk",
-    "section": "Probability",
-    "text": "Probability\nWe often represent uncertainty using probabilities.\nWhat is probability?"
+    "objectID": "slides/lecture04-1.html#estimating-dispersion-spread-3",
+    "href": "slides/lecture04-1.html#estimating-dispersion-spread-3",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Estimating Dispersion “Spread”",
+    "text": "Estimating Dispersion “Spread”\n\\[\\begin{aligned}\n\\sigma_y &= ax^{0.894} \\\\\n\\sigma_z &= cx^d + f\n\\end{aligned}\\]\n\nDispersion Coefficients\nSource: https://courses.washington.edu/cee490/DISPCOEF4WP.htm\n\nNote: here \\(x\\) is in km, while in the plume equation \\(y\\), \\(z\\) are in m!"
   },
   {
-    "objectID": "slides/lecture04-1.html#what-is-probability",
-    "href": "slides/lecture04-1.html#what-is-probability",
-    "title": "Uncertainty and Risk",
-    "section": "What Is Probability?",
-    "text": "What Is Probability?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+    "objectID": "slides/lecture04-1.html#estimating-dispersion-spread-4",
+    "href": "slides/lecture04-1.html#estimating-dispersion-spread-4",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Estimating Dispersion “Spread”",
+    "text": "Estimating Dispersion “Spread”\nThen take estimates for \\(\\sigma_y\\) and \\(\\sigma_z\\) and plug into plume dispersion equation\n\\[\\begin{aligned}\nC(x,y,z) = &\\frac{Q}{2\\pi u {\\color{red}\\sigma_y \\sigma_z}} \\exp\\left(\\frac{-y^2}{2{\\color{red}\\sigma_y^2}} \\right) \\times \\\\\\\\\n& \\quad \\left[\\exp\\left(\\frac{-(z-H)^2}{2{\\color{red}\\sigma_z^2}}\\right) + \\exp\\left(\\frac{-(z+H)^2}{2{\\color{red}\\sigma_z^2}}\\right) \\right]\n\\end{aligned}\\]"
   },
   {
-    "objectID": "slides/lecture04-1.html#two-definitions-of-probability",
-    "href": "slides/lecture04-1.html#two-definitions-of-probability",
-    "title": "Uncertainty and Risk",
-    "section": "Two Definitions of Probability",
-    "text": "Two Definitions of Probability\n\nLong-run frequency of an event (frequentist)\nDegree of belief that a proposition is true (Bayesian)\n\nThe frequentist definition concerns what would happen with a large enough number of repeated trials.\nThe Bayesian definition concerns the odds that you should bet on an outcome."
+    "objectID": "slides/lecture04-1.html#example",
+    "href": "slides/lecture04-1.html#example",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Example",
+    "text": "Example\nA 100m tall chimney emits HCl at a rate of 1.75 kg/s. The plume rises 10m before being convected horizontally by the wind. A housing development is planned near the chimney, and environmental authorities want to map the HCl concentration within a 5km x 1km region downwind under\n\nneutral, moderately stable, and moderately unstable atmospheric conditions,\nand under 5 m/s and 20 m/s winds?"
   },
   {
-    "objectID": "slides/lecture04-1.html#probability-distributions",
-    "href": "slides/lecture04-1.html#probability-distributions",
-    "title": "Uncertainty and Risk",
-    "section": "Probability Distributions",
-    "text": "Probability Distributions\nWe often represent probability using distributions — more on this next time.\nThe choice of distributions can often play a large role in outcomes."
+    "objectID": "slides/lecture04-1.html#plume-equation",
+    "href": "slides/lecture04-1.html#plume-equation",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Plume Equation",
+    "text": "Plume Equation\n\\[\\begin{aligned}\nC(x,y,z) = &\\frac{Q}{2\\pi u \\sigma_y \\sigma_z} \\exp\\left(\\frac{-y^2}{2\\sigma_y^2} \\right) \\times \\\\\\\\\n& \\quad \\left[\\exp\\left(\\frac{-(z-H)^2}{2\\sigma_z^2}\\right) + \\exp\\left(\\frac{-(z+H)^2}{2\\sigma_z^2}\\right) \\right]\n\\end{aligned}\\]"
   },
   {
-    "objectID": "slides/lecture04-1.html#neglecting-correlations",
-    "href": "slides/lecture04-1.html#neglecting-correlations",
-    "title": "Uncertainty and Risk",
-    "section": "Neglecting Correlations",
-    "text": "Neglecting Correlations\nFor example, an often key concern is whether uncertainties are correlated: do certain outcomes tend to occur in combination?\nIf this is the case, it can bias results to assume independence."
+    "objectID": "slides/lecture04-1.html#plume-equation-ground-level",
+    "href": "slides/lecture04-1.html#plume-equation-ground-level",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Plume Equation (Ground Level)",
+    "text": "Plume Equation (Ground Level)\n\\[\\begin{aligned}\nC(x,y) = &\\frac{Q}{\\pi u \\sigma_y \\sigma_z} \\exp\\left(\\frac{-y^2}{2\\sigma_y^2} \\right) \\exp\\left(\\frac{-H^2}{2\\sigma_z^2}\\right)\n\\end{aligned}\\]"
   },
   {
-    "objectID": "slides/lecture04-1.html#correlated-climate-uncertainties",
-    "href": "slides/lecture04-1.html#correlated-climate-uncertainties",
-    "title": "Uncertainty and Risk",
-    "section": "Correlated Climate Uncertainties",
-    "text": "Correlated Climate Uncertainties\nConsider projections of future climate change for a certain emissions trajectory.\nThere are several key (uncertain) parameters affecting how:\n\ncarbon is cycled by the Earth system\nCO2 in the atmosphere results in warming."
+    "objectID": "slides/lecture04-1.html#key-variables",
+    "href": "slides/lecture04-1.html#key-variables",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Key Variables",
+    "text": "Key Variables\n\n\\(Q\\): 1750 g/s\n\\(H\\): 110 m\n\\(u\\): 5 or 20 m/s\n\\(x\\): 0 to 3000 m (need to pick a step size)\n\\(y\\): 0 to 1000 m (need to pick a step size)"
   },
   {
-    "objectID": "slides/lecture04-1.html#correlated-climate-uncertainties-1",
-    "href": "slides/lecture04-1.html#correlated-climate-uncertainties-1",
-    "title": "Uncertainty and Risk",
-    "section": "Correlated Climate Uncertainties",
-    "text": "Correlated Climate Uncertainties\n\n\n\nEquilibrium Climate Sensitivity\nOcean Heat Diffusivity\nAerosol Cooling Factor\nCarbon Sink Respiration Sensitivity\n\n\n\n\n\nCorrelated climate parameter estimates\n\n\n\nSource: Errickson et al (2021)"
+    "objectID": "slides/lecture04-1.html#calculate-dispersion-spread",
+    "href": "slides/lecture04-1.html#calculate-dispersion-spread",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Calculate Dispersion Spread",
+    "text": "Calculate Dispersion Spread\nNeutral, moderately stable, moderately unstable atmospheric conditions ⇒ Classes D, B, F\nGet the coefficients off the table and put them into the regression equations for \\(\\sigma_y\\) and \\(\\sigma_z\\).\nKey thing: \\(\\sigma_z\\) dispersion changes once we pass 1000m downwind (\\(x\\)-direction).\nNow we can write a simulation model."
   },
   {
-    "objectID": "slides/lecture04-1.html#impact-of-neglecting-climate-correlations",
-    "href": "slides/lecture04-1.html#impact-of-neglecting-climate-correlations",
-    "title": "Uncertainty and Risk",
-    "section": "Impact of Neglecting Climate Correlations",
-    "text": "Impact of Neglecting Climate Correlations\n\n\nNeglecting these correlations can change the distribution of hindcasted and projected temperatures.\n\n\n\n\nImpact of ignoring parameter correlations on modeled temperatures\n\n\n\nSource: Errickson et al (2021)"
+    "objectID": "slides/lecture04-1.html#simulation-model-pseudocode",
+    "href": "slides/lecture04-1.html#simulation-model-pseudocode",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Simulation Model “Pseudocode”",
+    "text": "Simulation Model “Pseudocode”\nYou’ll do this for real for homework, but here’s a brief sketch:\n\nPick a resolution/grid size (we’ll use 10m) and set up \\(x\\) and \\(y\\) grids;\nFor each wind speed and stability class:\n\nLoop over each grid point and compute \\(\\sigma_y\\), \\(\\sigma_z\\);\nUse plume equation to compute concentration."
   },
   {
-    "objectID": "slides/lecture04-1.html#systems-and-risk",
-    "href": "slides/lecture04-1.html#systems-and-risk",
-    "title": "Uncertainty and Risk",
-    "section": "Systems and Risk",
-    "text": "Systems and Risk\nDesigning and managing environmental systems is often about minimizing or managing risk:\n\nMaintaining clean air/water;\nPower grid reliabiliy standards;\nFlooding/other hazards;\nClimate change mitigation/adaptation."
+    "objectID": "slides/lecture04-1.html#simulation-model-pseudocode-1",
+    "href": "slides/lecture04-1.html#simulation-model-pseudocode-1",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Simulation Model “Pseudocode”",
+    "text": "Simulation Model “Pseudocode”\nThere are more or less efficient or “stylish” ways to write this code, but don’t worry about that for this class, just make sure your code is readable and documented to help with debugging!"
   },
   {
-    "objectID": "slides/lecture04-1.html#what-is-risk",
-    "href": "slides/lecture04-1.html#what-is-risk",
-    "title": "Uncertainty and Risk",
-    "section": "What is Risk?",
-    "text": "What is Risk?\nThe Society for Risk Analysis definition:\n\n\n“risk” involves uncertainty about the effects/implications of an activity with respect to something that humans value (such as health, well-being, wealth, property or the environment), often focusing on negative, undesirable consequences."
+    "objectID": "slides/lecture04-1.html#julia-vs.-matlabpython",
+    "href": "slides/lecture04-1.html#julia-vs.-matlabpython",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Julia vs. Matlab/Python",
+    "text": "Julia vs. Matlab/Python\nThe good news: Unlike in Python, loops in Julia are really well-optimized."
   },
   {
-    "objectID": "slides/lecture04-1.html#ipcc-definition-of-risk",
-    "href": "slides/lecture04-1.html#ipcc-definition-of-risk",
-    "title": "Uncertainty and Risk",
-    "section": "IPCC Definition of Risk",
-    "text": "IPCC Definition of Risk\n\n\n…the potential for consequences where something of value is at stake and where the outcome is uncertain, recognizing the diversity of values. Risk is often represented as probability of occurrence of hazardous events or trends multiplied by the impacts if these events or trends occur.\n\n\n— Oppenheimer et al (2014)"
+    "objectID": "slides/lecture04-1.html#julia-vs.-matlabpython-1",
+    "href": "slides/lecture04-1.html#julia-vs.-matlabpython-1",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Julia vs. Matlab/Python",
+    "text": "Julia vs. Matlab/Python\nThe bad news: There can be some weird issue with scope when doing something this (which you might in Python or Matlab):\nC = zeros(10)\n\nfor i in eachindex(C)\n    C[i] = f(i)\nend"
   },
   {
-    "objectID": "slides/lecture04-1.html#so-what-is-risk",
-    "href": "slides/lecture04-1.html#so-what-is-risk",
-    "title": "Uncertainty and Risk",
-    "section": "So What is Risk?",
-    "text": "So What is Risk?\nImportant: “Risk” is not just another words for probability, but:\n\nInvolves uncertainty;\nUndesireable outcomes;\nEffects matter, not just the events themselves."
+    "objectID": "slides/lecture04-1.html#julia-vs.-matlabpython-2",
+    "href": "slides/lecture04-1.html#julia-vs.-matlabpython-2",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Julia vs. Matlab/Python",
+    "text": "Julia vs. Matlab/Python\nInstead, try broadcasting over inputs:\nI = 1:10\nC = f.(I)\nor use a comprehension:\nC = [f(i) for i in I]"
   },
   {
-    "objectID": "slides/lecture04-1.html#components-of-risk",
-    "href": "slides/lecture04-1.html#components-of-risk",
-    "title": "Uncertainty and Risk",
-    "section": "Components of Risk",
-    "text": "Components of Risk\n\n\nMultiple components which contribute to risk:\n\nProbability of a hazard;\nExposure to that hazard;\nVulnerability to outcomes;\nSocioeconomic responses.\n\n\n\n\n\nOverview of the Components of Risk\n\n\n\nSource: Simpson et al (2021)"
+    "objectID": "slides/lecture04-1.html#neutral-conditions",
+    "href": "slides/lecture04-1.html#neutral-conditions",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Neutral Conditions",
+    "text": "Neutral Conditions\nColor values are HCl concentrations in \\(\\mu\\)g.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Neutral Conditions\n\n\n\n\n5 m/s wind\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Neutral Conditions\n\n\n\n\n10 m/s wind"
   },
   {
-    "objectID": "slides/lecture04-1.html#risk-management-example-well-contamination",
-    "href": "slides/lecture04-1.html#risk-management-example-well-contamination",
-    "title": "Uncertainty and Risk",
-    "section": "Risk Management Example: Well Contamination",
-    "text": "Risk Management Example: Well Contamination\nConsider the potential contamination of well water. How could we mitigate risk by:\n\n\nreducing hazards:\nreducing exposure:\nreducing vulnerability:\ninfluencing responses:"
+    "objectID": "slides/lecture04-1.html#moderately-stable-conditions",
+    "href": "slides/lecture04-1.html#moderately-stable-conditions",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Moderately Stable Conditions",
+    "text": "Moderately Stable Conditions\nColor values are HCl concentrations in \\(\\mu\\)g.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Neutral Conditions\n\n\n\n\n5 m/s wind\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Neutral Conditions\n\n\n\n\n10 m/s wind"
   },
   {
-    "objectID": "slides/lecture04-1.html#systems-and-risk-management",
-    "href": "slides/lecture04-1.html#systems-and-risk-management",
-    "title": "Uncertainty and Risk",
-    "section": "Systems and Risk Management",
-    "text": "Systems and Risk Management\nRisk management is often a key consideration in systems analysis. For example, consider regulatory standards.\n\nOften a tradeoff between strictness of a regulation and costs of compliance.\nSystems modeling is a key way to understand\n\nthe impacts of changing a regulation\nthe probability of failure to meet standards."
+    "objectID": "slides/lecture04-1.html#moderately-unstable-conditions",
+    "href": "slides/lecture04-1.html#moderately-unstable-conditions",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Moderately Unstable Conditions",
+    "text": "Moderately Unstable Conditions\nColor values are HCl concentrations in \\(\\mu\\)g.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Neutral Conditions\n\n\n\n\n5 m/s wind\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Neutral Conditions\n\n\n\n\n10 m/s wind"
   },
   {
-    "objectID": "slides/lecture04-1.html#key-points-1",
-    "href": "slides/lecture04-1.html#key-points-1",
-    "title": "Uncertainty and Risk",
-    "section": "Key Points",
-    "text": "Key Points\n\nUncertainties are a fundamental part of systems modeling and analysis.\nNeed to be thoughtful about the choices that were made in modeling and how they impact outcomes.\nProbabilities: more on this next class, but be careful about distributions and correlations!\nSystems analysis also often about understanding/managing risk."
+    "objectID": "slides/lecture04-1.html#key-takeaways-1",
+    "href": "slides/lecture04-1.html#key-takeaways-1",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nAtmospheric stability plays a major role in pollution dispersion.\nCan use simulation modeling to evaluate concentrations of a contaminant over a spatial domain.\nKey choice: resolution\nThen “loop” (or in Julia, broadcast/use a comprehension) over the spatial grid.\nImportant: this all assumed a fixed wind speed and stability."
   },
   {
     "objectID": "slides/lecture04-1.html#next-classes",
     "href": "slides/lecture04-1.html#next-classes",
-    "title": "Uncertainty and Risk",
+    "title": "Plume Models: Dispersion and Examples",
     "section": "Next Classes",
     "text": "Next Classes\nWednesday: Probability and Monte Carlo\nFriday: Lab on Monte Carlo."
   },
   {
     "objectID": "slides/lecture04-1.html#assessments",
     "href": "slides/lecture04-1.html#assessments",
-    "title": "Uncertainty and Risk",
+    "title": "Plume Models: Dispersion and Examples",
     "section": "Assessments",
     "text": "Assessments\n\nHW2 on simulating Gaussian plume dispersion released today.\nDue 9/22.\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
-    "objectID": "slides/lecture06-1.html#last-class",
-    "href": "slides/lecture06-1.html#last-class",
-    "title": "Introduction to Optimization",
-    "section": "Last Class",
-    "text": "Last Class\n\nDecision models involve objectives and constraints.\nObjective:\n\nHow are we assessing performance? (the metric)\nDo we want to maximize or minimize?\n\nConstraints:\n\nWhat are eligible decisions?\nEngineering restrictions, performance or regulatory standards, etc."
-  },
-  {
-    "objectID": "slides/lecture06-1.html#questions",
-    "href": "slides/lecture06-1.html#questions",
-    "title": "Introduction to Optimization",
-    "section": "Questions?",
-    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
-    "objectID": "slides/lecture06-1.html#wastewater-treatment-model",
-    "href": "slides/lecture06-1.html#wastewater-treatment-model",
-    "title": "Introduction to Optimization",
-    "section": "Wastewater Treatment Model",
-    "text": "Wastewater Treatment Model\nLast class, we derived the following model for the treatment of wastewater from two point releases:\n\\[\\begin{alignat}{3}\n& \\min_{E_1, E_2} &\\quad  5000E_1^2 + 3000E_2^2 &  \\\\\\\\\n& \\text{subject to:} & 1000 E_1 &\\geq 500 \\\\\n& & 835E_1 + 1200E_2 &\\geq 1459 \\\\\n& & E_1, E_2 &\\;\\geq 0 \\\\\n& & E_1, E_2 &\\;\\leq 1\n\\end{alignat}\\]"
-  },
-  {
-    "objectID": "slides/lecture06-1.html#solving-this-problem",
-    "href": "slides/lecture06-1.html#solving-this-problem",
-    "title": "Introduction to Optimization",
-    "section": "Solving This Problem",
-    "text": "Solving This Problem\n\n\nWe can solve this graphically (see the JuMP tutorial for example code):"
-  },
-  {
-    "objectID": "slides/lecture06-1.html#the-solution",
-    "href": "slides/lecture06-1.html#the-solution",
-    "title": "Introduction to Optimization",
-    "section": "The Solution",
-    "text": "The Solution\nSo the solution occurs at the intersection of the two constraints, where:\n\\[E_1 = 0.5, E_2 = 0.85\\]\nand the cost of this treatment plan is\n\\[C(0.5, 0.85) = \\$ 3417.\\]\n\nDoes this solution make sense?"
-  },
-  {
-    "objectID": "slides/lecture06-1.html#waste-load-allocation",
-    "href": "slides/lecture06-1.html#waste-load-allocation",
-    "title": "Introduction to Optimization",
-    "section": "Waste Load Allocation",
-    "text": "Waste Load Allocation\nThis is an example of a waste load allocation problem.\nKey question: How do we restrict waste discharges to control or limit environmental impact?"
-  },
-  {
-    "objectID": "slides/lecture06-1.html#waste-load-allocation-schematic",
-    "href": "slides/lecture06-1.html#waste-load-allocation-schematic",
-    "title": "Introduction to Optimization",
-    "section": "Waste Load Allocation Schematic",
-    "text": "Waste Load Allocation Schematic\n\nEnvironmental Systems Model SchematicEach source is allocated a “load” they can discharge based on waste fate and transport."
-  },
-  {
-    "objectID": "slides/lecture06-1.html#waste-load-allocation-model",
-    "href": "slides/lecture06-1.html#waste-load-allocation-model",
-    "title": "Introduction to Optimization",
-    "section": "Waste Load Allocation Model",
-    "text": "Waste Load Allocation Model\nWaste loads affect quality \\(Q\\) based on fate & transport model:\n\\[Q=f(W_1, W_2, \\ldots, W_n)\\]\n\nSo the general form for a prescriptive waste load allocation model:\n\\[\\begin{aligned}\n\\text{determine} & \\quad  W_1, W_2, \\ldots, W_n \\notag \\\\\\\\\n\\text{subject to:} & \\quad f(W_1, W_2, \\ldots, W_n) \\geq Q^* \\notag\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "slides/lecture06-1.html#components-of-an-optimization-model",
-    "href": "slides/lecture06-1.html#components-of-an-optimization-model",
-    "title": "Introduction to Optimization",
-    "section": "Components of an Optimization Model",
-    "text": "Components of an Optimization Model\n\nObjective Function: The “target” function to be optimized.\nDecision Variables: Variables which can be changed to affect objective.\nConstraints: Limits on decision variable values.\nFeasible Solution: Decision variable values satisfying constraints.\nOptimal Solution: The “best” feasible solution or solutions (with respect to the objective)"
-  },
-  {
-    "objectID": "slides/lecture06-1.html#how-do-we-solve-an-optimization-problem",
-    "href": "slides/lecture06-1.html#how-do-we-solve-an-optimization-problem",
-    "title": "Introduction to Optimization",
-    "section": "How Do We Solve An Optimization Problem?",
-    "text": "How Do We Solve An Optimization Problem?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
-    "objectID": "slides/lecture06-1.html#solution-approach-1-trial-and-error",
-    "href": "slides/lecture06-1.html#solution-approach-1-trial-and-error",
-    "title": "Introduction to Optimization",
-    "section": "Solution Approach 1: Trial and Error",
-    "text": "Solution Approach 1: Trial and Error\nWhat are some challenges to trial and error?\n\n\nMany possible solutions (infinitely many when a problem is continuous)\nFeasible region may not be intuitive\nHow do we know when we’ve found an optimal solution?"
-  },
-  {
-    "objectID": "slides/lecture06-1.html#solution-approach-2-generalized-search-algorithms",
-    "href": "slides/lecture06-1.html#solution-approach-2-generalized-search-algorithms",
-    "title": "Introduction to Optimization",
-    "section": "Solution Approach 2: Generalized Search Algorithms",
-    "text": "Solution Approach 2: Generalized Search Algorithms\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nMost search algorithms look for critical points to find candidate optima. Then the “best” of the critical points is the global optimum."
-  },
-  {
-    "objectID": "slides/lecture06-1.html#solution-approach-2-generalized-search-algorithms-1",
-    "href": "slides/lecture06-1.html#solution-approach-2-generalized-search-algorithms-1",
-    "title": "Introduction to Optimization",
-    "section": "Solution Approach 2: Generalized Search Algorithms",
-    "text": "Solution Approach 2: Generalized Search Algorithms\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nTwo common approaches:\n\nGradient-based methods\nEvolutionary algorithms"
-  },
-  {
-    "objectID": "slides/lecture06-1.html#solution-approach-2-generalized-search-algorithms-2",
-    "href": "slides/lecture06-1.html#solution-approach-2-generalized-search-algorithms-2",
-    "title": "Introduction to Optimization",
-    "section": "Solution Approach 2: Generalized Search Algorithms",
-    "text": "Solution Approach 2: Generalized Search Algorithms\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nThese methods work pretty well, but can require a lot of evaluations and/or may get stuck at local optima."
-  },
-  {
-    "objectID": "slides/lecture06-1.html#key-takeaways-1",
-    "href": "slides/lecture06-1.html#key-takeaways-1",
-    "title": "Introduction to Optimization",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nWe solve decision models through optimization.\nDecision models have a standard structure:\n\nDecision Variables\nObjective\nConstraints\n\nGoal: find “best” solution with respect to the objective that is feasible."
-  },
-  {
-    "objectID": "slides/lecture06-1.html#next-classes",
-    "href": "slides/lecture06-1.html#next-classes",
-    "title": "Introduction to Optimization",
-    "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Constrained optimization and solving linear models (linear programming)\nFriday: Example of formulating and solving a linear program.\nMonday: Lab on linear programming in Julia."
-  },
-  {
-    "objectID": "slides/lecture06-1.html#assessments",
-    "href": "slides/lecture06-1.html#assessments",
-    "title": "Introduction to Optimization",
-    "section": "Assessments",
-    "text": "Assessments\n\nHW3 released today on dissolved oxygen simulation.\nDue 10/5.\n\n\n\nBEE 4750, Environmental Systems Analysis"
-  },
-  {
-    "objectID": "slides/lecture04-2.html#systems-and-uncertainty",
-    "href": "slides/lecture04-2.html#systems-and-uncertainty",
+    "objectID": "slides/lecture04-3.html#systems-and-uncertainty",
+    "href": "slides/lecture04-3.html#systems-and-uncertainty",
     "title": "Monte Carlo Simulation",
     "section": "Systems and Uncertainty",
     "text": "Systems and Uncertainty\n\n\nUncertainties arise due to the separation between the “internals” of the system and the “external” environment.\n\n\n\n\nConceptual Schematic of a Systems Model"
   },
   {
-    "objectID": "slides/lecture04-2.html#two-definitions-of-probability",
-    "href": "slides/lecture04-2.html#two-definitions-of-probability",
+    "objectID": "slides/lecture04-3.html#two-definitions-of-probability",
+    "href": "slides/lecture04-3.html#two-definitions-of-probability",
     "title": "Monte Carlo Simulation",
     "section": "Two Definitions of Probability",
     "text": "Two Definitions of Probability\n\nLong-run frequency of an event (frequentist)\nDegree of belief that a proposition is true (Bayesian)"
   },
   {
-    "objectID": "slides/lecture04-2.html#questions",
-    "href": "slides/lecture04-2.html#questions",
+    "objectID": "slides/lecture04-3.html#questions",
+    "href": "slides/lecture04-3.html#questions",
     "title": "Monte Carlo Simulation",
     "section": "Questions?",
     "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture04-2.html#probability-distributions",
-    "href": "slides/lecture04-2.html#probability-distributions",
+    "objectID": "slides/lecture04-3.html#probability-distributions",
+    "href": "slides/lecture04-3.html#probability-distributions",
     "title": "Monte Carlo Simulation",
     "section": "Probability Distributions",
     "text": "Probability Distributions\nThe likelihood of possible values of an unknown quantity are often represented as a probability distribution.\nProbability distributions associate a probability to every event under consideration and have to follow certain rules (for example, total probability = 1)."
   },
   {
-    "objectID": "slides/lecture04-2.html#selecting-a-distribution",
-    "href": "slides/lecture04-2.html#selecting-a-distribution",
+    "objectID": "slides/lecture04-3.html#selecting-a-distribution",
+    "href": "slides/lecture04-3.html#selecting-a-distribution",
     "title": "Monte Carlo Simulation",
     "section": "Selecting a Distribution",
     "text": "Selecting a Distribution\nThe specification of distributions can strongly influence the analysis."
   },
   {
-    "objectID": "slides/lecture04-2.html#selecting-a-distribution-1",
-    "href": "slides/lecture04-2.html#selecting-a-distribution-1",
+    "objectID": "slides/lecture04-3.html#selecting-a-distribution-1",
+    "href": "slides/lecture04-3.html#selecting-a-distribution-1",
     "title": "Monte Carlo Simulation",
     "section": "Selecting a Distribution",
     "text": "Selecting a Distribution\nA distribution implicitly answers questions like:\n\nWhat is the most probable event? How much more likely is it than the others?\nAre larger or smaller events more, less, or equally probable?\nHow probable are extreme events?\nAre different events correlated, or are they independent?"
   },
   {
-    "objectID": "slides/lecture04-2.html#key-features-of-probability-distributions",
-    "href": "slides/lecture04-2.html#key-features-of-probability-distributions",
+    "objectID": "slides/lecture04-3.html#key-features-of-probability-distributions",
+    "href": "slides/lecture04-3.html#key-features-of-probability-distributions",
     "title": "Monte Carlo Simulation",
     "section": "Key Features of Probability Distributions",
     "text": "Key Features of Probability Distributions\n\nMean/Mode (what events are “typical”)\nSkew (are larger or smaller events more or equally probable)\nVariance (how spread out is the distribution around the mode)\nTail Probabilities (how probable are extreme events)"
   },
   {
-    "objectID": "slides/lecture04-2.html#probability-distribution-tails",
-    "href": "slides/lecture04-2.html#probability-distribution-tails",
+    "objectID": "slides/lecture04-3.html#probability-distribution-tails",
+    "href": "slides/lecture04-3.html#probability-distribution-tails",
     "title": "Monte Carlo Simulation",
     "section": "Probability Distribution Tails",
     "text": "Probability Distribution Tails\n\n\nThe tails of distributions represent the probability of high-impact outcomes.\nKey consideration: Small changes to these (low) probabilities can greatly influence risk."
   },
   {
-    "objectID": "slides/lecture04-2.html#stochastic-simulation",
-    "href": "slides/lecture04-2.html#stochastic-simulation",
+    "objectID": "slides/lecture04-3.html#stochastic-simulation",
+    "href": "slides/lecture04-3.html#stochastic-simulation",
     "title": "Monte Carlo Simulation",
     "section": "Stochastic Simulation",
     "text": "Stochastic Simulation\nMonte Carlo simulation: Propagating random samples through a model.\n\n\n\n\n\n\n\nG\n\n  \n\na\n\n Probability  Distribution   \n\nb\n\n Random  Samples   \n\na-&gt;b\n\n  Sample   \n\nc\n\n Model   \n\nb-&gt;c\n\n  Input   \n\nd\n\n Outputs   \n\nc-&gt;d\n\n  Simulate"
   },
   {
-    "objectID": "slides/lecture04-2.html#goals-of-monte-carlo",
-    "href": "slides/lecture04-2.html#goals-of-monte-carlo",
+    "objectID": "slides/lecture04-3.html#goals-of-monte-carlo",
+    "href": "slides/lecture04-3.html#goals-of-monte-carlo",
     "title": "Monte Carlo Simulation",
     "section": "Goals of Monte Carlo",
     "text": "Goals of Monte Carlo\nMonte Carlo is a broad method, which can be used to:\n\nObtain probability distributions of outputs;\nEstimate deterministic quantities (Monte Carlo estimation)."
   },
   {
-    "objectID": "slides/lecture04-2.html#monte-carlo-estimation",
-    "href": "slides/lecture04-2.html#monte-carlo-estimation",
+    "objectID": "slides/lecture04-3.html#monte-carlo-estimation",
+    "href": "slides/lecture04-3.html#monte-carlo-estimation",
     "title": "Monte Carlo Simulation",
     "section": "Monte Carlo Estimation",
     "text": "Monte Carlo Estimation\nMonte Carlo estimation involves framing the quantity of interest as a summary statistic (such as an expected value)."
   },
   {
-    "objectID": "slides/lecture04-2.html#mc-example-finding-pi",
-    "href": "slides/lecture04-2.html#mc-example-finding-pi",
+    "objectID": "slides/lecture04-3.html#mc-example-finding-pi",
+    "href": "slides/lecture04-3.html#mc-example-finding-pi",
     "title": "Monte Carlo Simulation",
     "section": "MC Example: Finding \\(\\pi\\)",
     "text": "MC Example: Finding \\(\\pi\\)\n\n\nFinding \\(\\pi\\) by sampling random values from the unit square and computing the fraction in the unit circle. This is an example of Monte Carlo integration.\n\\[\\frac{\\text{Area of Circle}}{\\text{Area of Square}} = \\frac{\\pi}{4}\\]"
   },
   {
-    "objectID": "slides/lecture04-2.html#mc-example-dice",
-    "href": "slides/lecture04-2.html#mc-example-dice",
+    "objectID": "slides/lecture04-3.html#mc-example-dice",
+    "href": "slides/lecture04-3.html#mc-example-dice",
     "title": "Monte Carlo Simulation",
     "section": "MC Example: Dice",
     "text": "MC Example: Dice\n\n\nWhat is the probability of rolling 4 dice for a total of 19?\nCan simulate dice rolls and find the frequency of 19s among the samples."
   },
   {
-    "objectID": "slides/lecture04-2.html#monte-carlo-estimation-1",
-    "href": "slides/lecture04-2.html#monte-carlo-estimation-1",
+    "objectID": "slides/lecture04-3.html#monte-carlo-estimation-1",
+    "href": "slides/lecture04-3.html#monte-carlo-estimation-1",
     "title": "Monte Carlo Simulation",
     "section": "Monte Carlo Estimation",
     "text": "Monte Carlo Estimation\nThis type of estimation can be repeated with any simulation model that has a stochastic component.\nFor example, consider our dissolved oxygen model. Suppose that we have a probability distribution for the inflow DO.\nHow could we compute the probability of DO falling below the regulatory standard somewhere downstream?"
   },
   {
-    "objectID": "slides/lecture04-2.html#why-monte-carlo-works",
-    "href": "slides/lecture04-2.html#why-monte-carlo-works",
+    "objectID": "slides/lecture04-3.html#why-monte-carlo-works",
+    "href": "slides/lecture04-3.html#why-monte-carlo-works",
     "title": "Monte Carlo Simulation",
     "section": "Why Monte Carlo Works",
     "text": "Why Monte Carlo Works\nWe can formalize this common use of Monte Carlo estimation as the computation of the expected value of a random quantity \\(Y\\), \\(\\mu = \\mathbb{E}[Y]\\).\nTo do this, generate \\(n\\) independent and identically distributed values \\(Y_1, \\ldots, Y_n\\). Then the sample estimate is\n\\[\\tilde{\\mu} = \\frac{1}{n}\\sum_{i=1}^n Y_i\\]"
   },
   {
-    "objectID": "slides/lecture04-2.html#monte-carlo-formally",
-    "href": "slides/lecture04-2.html#monte-carlo-formally",
+    "objectID": "slides/lecture04-3.html#monte-carlo-formally",
+    "href": "slides/lecture04-3.html#monte-carlo-formally",
     "title": "Monte Carlo Simulation",
     "section": "Monte Carlo (Formally)",
     "text": "Monte Carlo (Formally)\nMore generally, we want to compute some quantity \\(Y=f(X)\\), where \\(X\\) is distributed according to some probability distribution \\(p(x)\\) and \\(f(x)\\) is a real-valued function over a domain \\(D\\).\nThen \\[\\mu = \\mathbb{E}(Y) = \\int_D f(x)p(x)dx.\\]"
   },
   {
-    "objectID": "slides/lecture04-2.html#the-law-of-large-numbers",
-    "href": "slides/lecture04-2.html#the-law-of-large-numbers",
+    "objectID": "slides/lecture04-3.html#the-law-of-large-numbers",
+    "href": "slides/lecture04-3.html#the-law-of-large-numbers",
     "title": "Monte Carlo Simulation",
     "section": "The Law of Large Numbers",
     "text": "The Law of Large Numbers\nIf\n\n\\(Y\\) is a random variable and its expectation exists and\n\\(Y_1, \\ldots, Y_n\\) are independently and identically distributed\n\nThen by the weak law of large numbers:\n\\[\\lim_{n \\to \\infty} \\mathbb{P}\\left(\\left|\\tilde{\\mu}_n - \\mu\\right| \\leq \\varepsilon \\right) = 1\\]"
   },
   {
-    "objectID": "slides/lecture04-2.html#the-law-of-large-numbers-1",
-    "href": "slides/lecture04-2.html#the-law-of-large-numbers-1",
+    "objectID": "slides/lecture04-3.html#the-law-of-large-numbers-1",
+    "href": "slides/lecture04-3.html#the-law-of-large-numbers-1",
     "title": "Monte Carlo Simulation",
     "section": "The Law of Large Numbers",
     "text": "The Law of Large Numbers\nIn other words, eventually we will get within an arbitrary error of the true expectation. But how large is large enough?"
   },
   {
-    "objectID": "slides/lecture04-2.html#monte-carlo-sample-mean",
-    "href": "slides/lecture04-2.html#monte-carlo-sample-mean",
+    "objectID": "slides/lecture04-3.html#monte-carlo-sample-mean",
+    "href": "slides/lecture04-3.html#monte-carlo-sample-mean",
     "title": "Monte Carlo Simulation",
     "section": "Monte Carlo Sample Mean",
     "text": "Monte Carlo Sample Mean\nNotice that the sample mean \\(\\tilde{\\mu}_n\\) is itself a random variable.\nWith some assumptions (the mean of \\(Y\\) exists and \\(Y\\) has finite variance), the expected Monte Carlo sample mean \\(\\mathbb{E}[\\tilde{\\mu}_n]\\) is\n\\[\\frac{1}{n}\\sum_{i=1}^n \\mathbb{E}[Y_i] = \\frac{1}{n} n \\mu = \\mu\\]\nThis means that the Monte Carlo estimate is an unbiased estimate of the mean."
   },
   {
-    "objectID": "slides/lecture04-2.html#monte-carlo-error",
-    "href": "slides/lecture04-2.html#monte-carlo-error",
+    "objectID": "slides/lecture04-3.html#monte-carlo-error",
+    "href": "slides/lecture04-3.html#monte-carlo-error",
     "title": "Monte Carlo Simulation",
     "section": "Monte Carlo Error",
     "text": "Monte Carlo Error\nWe’d like to know more about the error of this estimate for a given sample size. The variance of this estimator is\n\\[\\tilde{\\sigma}_n^2 = \\text{Var}\\left(\\tilde{\\mu}_n\\right) = \\mathbb{E}\\left((\\tilde{\\mu}_n - \\mu)^2\\right) = \\frac{\\sigma_Y^2}{n}\\]\nSo as \\(n\\) increases, the standard error decreases:\n\\[\\tilde{\\sigma}_n = \\frac{\\sigma_Y}{\\sqrt{n}}\\]"
   },
   {
-    "objectID": "slides/lecture04-2.html#monte-carlo-error-1",
-    "href": "slides/lecture04-2.html#monte-carlo-error-1",
+    "objectID": "slides/lecture04-3.html#monte-carlo-error-1",
+    "href": "slides/lecture04-3.html#monte-carlo-error-1",
     "title": "Monte Carlo Simulation",
     "section": "Monte Carlo Error",
     "text": "Monte Carlo Error\nIn other words, if we want to decrease the Monte Carlo error by 10x, we need 100x additional samples. This is not an ideal method for high levels of accuracy.\n\n\n\nMonte Carlo is an extremely bad method. It should only be used when all alternative methods are worse.\n\n\n— Sokal, Monte Carlo Methods in Statistical Mechanics, 1996"
   },
   {
-    "objectID": "slides/lecture04-2.html#monte-carlo-confidence-intervals",
-    "href": "slides/lecture04-2.html#monte-carlo-confidence-intervals",
+    "objectID": "slides/lecture04-3.html#monte-carlo-confidence-intervals",
+    "href": "slides/lecture04-3.html#monte-carlo-confidence-intervals",
     "title": "Monte Carlo Simulation",
     "section": "Monte Carlo Confidence Intervals",
     "text": "Monte Carlo Confidence Intervals\nThis error estimate lets us compute confidence intervals for the MC estimate.\nBasic Idea: The Central Limit Theorem says that with enough samples, the errors are normally distributed:\n\\[\\left\\|\\tilde{\\mu}_n - \\mu\\right\\| \\to \\mathcal{N}\\left(0, \\frac{\\sigma_Y^2}{n}\\right)\\]"
   },
   {
-    "objectID": "slides/lecture04-2.html#monte-carlo-confidence-intervals-1",
-    "href": "slides/lecture04-2.html#monte-carlo-confidence-intervals-1",
+    "objectID": "slides/lecture04-3.html#monte-carlo-confidence-intervals-1",
+    "href": "slides/lecture04-3.html#monte-carlo-confidence-intervals-1",
     "title": "Monte Carlo Simulation",
     "section": "Monte Carlo Confidence Intervals",
     "text": "Monte Carlo Confidence Intervals\nThe \\(\\alpha\\)-confidence interval is: \\[\\tilde{\\mu}_n \\pm \\Phi^{-1}\\left(1 - \\frac{\\alpha}{2}\\right) \\frac{\\sigma_Y}{\\sqrt{n}}\\]\nFor example, the 95% confidence interval is \\[\\tilde{\\mu}_n \\pm 1.96 \\frac{\\sigma_Y}{\\sqrt{n}}.\\]"
   },
   {
-    "objectID": "slides/lecture04-2.html#implications-of-monte-carlo-error",
-    "href": "slides/lecture04-2.html#implications-of-monte-carlo-error",
+    "objectID": "slides/lecture04-3.html#implications-of-monte-carlo-error",
+    "href": "slides/lecture04-3.html#implications-of-monte-carlo-error",
     "title": "Monte Carlo Simulation",
     "section": "Implications of Monte Carlo Error",
     "text": "Implications of Monte Carlo Error\nConverging at a rate of \\(1/\\sqrt{n}\\) is not great. But:\n\nAll models are wrong, and so there always exists some irreducible model error.\nWe often need a lot of simulations. Do we have enough computational power?"
   },
   {
-    "objectID": "slides/lecture04-2.html#implications-of-monte-carlo-error-1",
-    "href": "slides/lecture04-2.html#implications-of-monte-carlo-error-1",
+    "objectID": "slides/lecture04-3.html#implications-of-monte-carlo-error-1",
+    "href": "slides/lecture04-3.html#implications-of-monte-carlo-error-1",
     "title": "Monte Carlo Simulation",
     "section": "Implications of Monte Carlo Error",
     "text": "Implications of Monte Carlo Error\nIf you can compute your answer analytically, you probably should.\nBut often this is difficult if not impossible without many simplifying assumptions."
   },
   {
-    "objectID": "slides/lecture04-2.html#key-takeaways-1",
-    "href": "slides/lecture04-2.html#key-takeaways-1",
+    "objectID": "slides/lecture04-3.html#key-takeaways-1",
+    "href": "slides/lecture04-3.html#key-takeaways-1",
     "title": "Monte Carlo Simulation",
     "section": "Key Takeaways",
     "text": "Key Takeaways\n\nChoice of probability distribution can have large impacts on uncertainty and risk estimates: try not to use distributions just because they’re convenient.\nMonte Carlo: Estimate expected values of functions using simulation.\nMonte Carlo error is on the order \\(1/\\sqrt{n}\\), so not great if more direct approaches are available and tractable."
   },
   {
-    "objectID": "slides/lecture04-2.html#next-classes",
-    "href": "slides/lecture04-2.html#next-classes",
+    "objectID": "slides/lecture04-3.html#next-classes",
+    "href": "slides/lecture04-3.html#next-classes",
     "title": "Monte Carlo Simulation",
     "section": "Next Classes",
-    "text": "Next Classes\nFriday: Lab on Monte Carlo.\nNext Week: Dissolved Oxygen modeling and simulation.\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Next Classes\nMonday: Lab on Monte Carlo.\nWednesday/Friday: Dissolved Oxygen modeling and simulation.\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#last-classes",
+    "href": "slides/lecture06-1.html#last-classes",
+    "title": "Prescriptive Modeling",
+    "section": "Last Classes",
+    "text": "Last Classes\n\nSimulation modeling as a means for data generation.\nUncertainty and Monte Carlo"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#questions",
+    "href": "slides/lecture06-1.html#questions",
+    "title": "Prescriptive Modeling",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#wastewater-model-revisited",
+    "href": "slides/lecture06-1.html#wastewater-model-revisited",
+    "title": "Prescriptive Modeling",
+    "section": "Wastewater Model Revisited",
+    "text": "Wastewater Model Revisited\n\nDiagram of CRUD release from two factoriesConsider the wastewater model from Lecture 5."
+  },
+  {
+    "objectID": "slides/lecture06-1.html#wastewater-model-revisited-1",
+    "href": "slides/lecture06-1.html#wastewater-model-revisited-1",
+    "title": "Prescriptive Modeling",
+    "section": "Wastewater Model Revisited",
+    "text": "Wastewater Model Revisited\nEnvironmental authorities have sampled water from the river and determined that concentrations exceed the legal standard (1 mg/L).\nWe want to design a CRUD removal plan to get back in compliance."
+  },
+  {
+    "objectID": "slides/lecture06-1.html#prescriptive-modeling",
+    "href": "slides/lecture06-1.html#prescriptive-modeling",
+    "title": "Prescriptive Modeling",
+    "section": "Prescriptive Modeling",
+    "text": "Prescriptive Modeling\nIf we want to design a treatment strategy, we are now in the world of prescriptive modeling.\nRecall: Precriptive modeling is intended to specify an action, policy, or decision.\n\n\nDescriptive modeling question: “What happens if I do something?”\nPrescriptive modeling question: “What should I do?”"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#decision-models",
+    "href": "slides/lecture06-1.html#decision-models",
+    "title": "Prescriptive Modeling",
+    "section": "Decision Models",
+    "text": "Decision Models\nTo make a decision, we need certain pieces of information which:\n\ndefine decision options (or alternatives);\nprovide one or more objectives to assess performance;\nspecify constraints to tell us what decisions are possible or acceptable."
+  },
+  {
+    "objectID": "slides/lecture06-1.html#objectives",
+    "href": "slides/lecture06-1.html#objectives",
+    "title": "Prescriptive Modeling",
+    "section": "Objectives",
+    "text": "Objectives\nTypical objectives can include:\n\nMinimizing costs (or maximizing profits);\nMinimizing environmental impacts;\nMaximizing some other performance metric."
+  },
+  {
+    "objectID": "slides/lecture06-1.html#constraints",
+    "href": "slides/lecture06-1.html#constraints",
+    "title": "Prescriptive Modeling",
+    "section": "Constraints",
+    "text": "Constraints\nConstraints often come from engineering or societal restrictions.\n\nRegulatory limits on pollution;\nSupply constraints;\nBudgetary constraints;\nEngineering constraints."
+  },
+  {
+    "objectID": "slides/lecture06-1.html#decision-model-for-the-wastewater-model",
+    "href": "slides/lecture06-1.html#decision-model-for-the-wastewater-model",
+    "title": "Prescriptive Modeling",
+    "section": "Decision Model for the Wastewater Model",
+    "text": "Decision Model for the Wastewater Model\nLet’s apply this framework to the CRUD release problem.\n\nWhat might our objective be?\nWhat constraints do we have?"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#formulating-an-objective",
+    "href": "slides/lecture06-1.html#formulating-an-objective",
+    "title": "Prescriptive Modeling",
+    "section": "Formulating an Objective",
+    "text": "Formulating an Objective\nLet’s say that our objective is to minimize costs, and relevant constraints include the regulatory standard.\n\nTreating CRUD costs \\(\\$50 E^2 \\text{ per } 1000 \\ \\text{m}^3,\\) where \\(E\\) is the treatment efficiency."
+  },
+  {
+    "objectID": "slides/lecture06-1.html#formulating-an-objective-1",
+    "href": "slides/lecture06-1.html#formulating-an-objective-1",
+    "title": "Prescriptive Modeling",
+    "section": "Formulating an Objective",
+    "text": "Formulating an Objective\n\nDiagram of CRUD release from two factoriesThis makes the daily treatment cost \\[C(E_1, E_2) = 50(100)E_1^2 + 50(60)E_2^2 = 5000E_1^2 + 3000E_2^2.\\]"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#formulating-an-objective-2",
+    "href": "slides/lecture06-1.html#formulating-an-objective-2",
+    "title": "Prescriptive Modeling",
+    "section": "Formulating an Objective",
+    "text": "Formulating an Objective\nDaily Treatment Cost (the metric):\n\\[C(E_1, E_2) = 50(100)E_1^2 + 50(60)E_2^2 = 5000E_1^2 + 3000E_2^2.\\]\nThen if the objective is to minimize the cost, we write:\n\\[\\min_{E_1, E_2} 5000E_1^2 + 3000E_2^2.\\]"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#developing-constraints",
+    "href": "slides/lecture06-1.html#developing-constraints",
+    "title": "Prescriptive Modeling",
+    "section": "Developing Constraints",
+    "text": "Developing Constraints\nBut we can’t choose just any \\(E_1\\) and \\(E_2\\) to minimize the cost, or we would just choose \\(E_1=E_2=0\\).\n\nFor example, we need to comply with the regulatory standard:\nCRUD concentration \\(&lt; 1\\) mg/l."
+  },
+  {
+    "objectID": "slides/lecture06-1.html#developing-constraints-1",
+    "href": "slides/lecture06-1.html#developing-constraints-1",
+    "title": "Prescriptive Modeling",
+    "section": "Developing Constraints",
+    "text": "Developing Constraints\nWhat information can we bring to bear?\n\nRecall (from a while ago) our assumption that CRUD decays as it moves downriver.\n\n\nSince we know that the concentrations are highest at the points of discharge, we can check whether each of those points is in compliance with the standard."
+  },
+  {
+    "objectID": "slides/lecture06-1.html#mass-balance-at-release-1",
+    "href": "slides/lecture06-1.html#mass-balance-at-release-1",
+    "title": "Prescriptive Modeling",
+    "section": "Mass Balance at Release 1",
+    "text": "Mass Balance at Release 1\n\nTotal CRUD after factory 1 release: \\(\\color{blue}\\text{100} + \\color{red} 1000(1-E_1) \\color{black} \\ \\text{kg/d}\\)"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#mass-balance-at-release-1-1",
+    "href": "slides/lecture06-1.html#mass-balance-at-release-1-1",
+    "title": "Prescriptive Modeling",
+    "section": "Mass Balance at Release 1",
+    "text": "Mass Balance at Release 1\n\nTotal CRUD after factory 1 release: \\(\\color{blue}\\text{100} + \\color{red} 1000(1-E_1) \\color{black} \\ \\text{kg/d}\\)\nOur standard is \\(1 \\ \\text{mg/L} = 10^{-3} \\ \\text{kg/m}^3\\)\nThe volume of the inflow is \\(600,000 \\ \\text{m}^3\\text{/d}\\).\n\nSo the constraint until we hit Release 2 is: \\[100 + 1000(1-E_1) \\leq 600 \\Rightarrow \\boxed{1000E_1 \\geq 500}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#mass-balance-at-release-2",
+    "href": "slides/lecture06-1.html#mass-balance-at-release-2",
+    "title": "Prescriptive Modeling",
+    "section": "Mass Balance at Release 2",
+    "text": "Mass Balance at Release 2\n\nWe had derived that the CRUD concentration at release 2 is:\n\\[(1100 - 1000E_1) \\exp(-0.18) + 1200(1 - E_2) \\ \\text{kg/d}.\\]"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#constraint-at-release-2",
+    "href": "slides/lecture06-1.html#constraint-at-release-2",
+    "title": "Prescriptive Modeling",
+    "section": "Constraint at Release 2",
+    "text": "Constraint at Release 2\nThe volume at release 2 is \\(660,000 \\ \\text{m}^3\\text{/d}\\), so the constraint is:\n\\[(1100 - 1000E_1) \\exp(-0.18) + 1200(1 - E_2) \\leq 660.\\]"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#constraint-at-release-2-1",
+    "href": "slides/lecture06-1.html#constraint-at-release-2-1",
+    "title": "Prescriptive Modeling",
+    "section": "Constraint at Release 2",
+    "text": "Constraint at Release 2\nSimplifying:\n\\[\\begin{aligned}\n(1100 - 1000E_1) \\exp(-0.18) + 1200(1 - E_2) &\\leq 660  \\\\\\\\\n(1100 - 1000E_1) 0.835 + 1200(1 - E_2) &\\leq 660  \\\\\\\\\n2119 - 835E_1 - 1200E_2 &\\leq 660\n\\end{aligned}\\]\n\\[\\Rightarrow \\boxed{835E_1 + 1200E_2 \\geq 1459}\\]"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#model-formulation",
+    "href": "slides/lecture06-1.html#model-formulation",
+    "title": "Prescriptive Modeling",
+    "section": "Model Formulation",
+    "text": "Model Formulation\nCombining our objective and our regulatory constraints:\n\\[\\begin{alignat}{2}\n& \\min_{E_1, E_2} & 5000E_1^2 + 3000E_2^2 \\notag \\\\\\\\\n& \\text{subject to:} & 1000 E_1  &\\geq 500 \\notag \\\\\n& & 35E_1 + 1200E_2  &\\geq 1459 \\notag\n\\end{alignat}\\]\n\nIs this complete?"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#model-formulation-1",
+    "href": "slides/lecture06-1.html#model-formulation-1",
+    "title": "Prescriptive Modeling",
+    "section": "Model Formulation",
+    "text": "Model Formulation\n\\[\\begin{alignat}{3}\n& \\min_{E_1, E_2} &\\quad  5000E_1^2 + 3000E_2^2 &  \\\\\\\\\n& \\text{subject to:} & 1000 E_1 &\\geq 500 \\\\\n& & 835E_1 + 1200E_2 &\\geq 1459 \\\\\n& & \\color{purple}E_1, E_2 &\\;\\color{purple}\\geq 0 \\\\\n& & \\color{purple}E_1, E_2 &\\;\\color{purple}\\leq 1\n\\end{alignat}\\]\nThe"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#key-takeaways-1",
+    "href": "slides/lecture06-1.html#key-takeaways-1",
+    "title": "Prescriptive Modeling",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nPrescriptive modeling involves decision models.\nKey components of a decision model:\n\nObjectives;\nConstraints.\n\nNeed to bring to bear relevant engineering, economic, and environmental information to formulate these."
+  },
+  {
+    "objectID": "slides/lecture06-1.html#next-classes",
+    "href": "slides/lecture06-1.html#next-classes",
+    "title": "Prescriptive Modeling",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: How do we solve this decision problem (and many others)?\nFriday: Introduction to linear programming."
+  },
+  {
+    "objectID": "slides/lecture06-1.html#assessments",
+    "href": "slides/lecture06-1.html#assessments",
+    "title": "Prescriptive Modeling",
+    "section": "Assessments",
+    "text": "Assessments\n\nHW 3 assigned today, due 10/6.\n\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#last-class",
+    "href": "slides/lecture04-2.html#last-class",
+    "title": "Uncertainty and Risk",
+    "section": "Last Class",
+    "text": "Last Class\n\nSimulation involves running a model to evaluate dynamics.\nAllows us to look at how system behaves under different conditions and/or parameter values.\nThink of analogy to experimentation.\nLooked at example of dissolved oxygen."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#simulation-workflow-overview",
+    "href": "slides/lecture04-2.html#simulation-workflow-overview",
+    "title": "Uncertainty and Risk",
+    "section": "Simulation Workflow Overview",
+    "text": "Simulation Workflow Overview\n\nSimulation Workflow Diagram"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#questions",
+    "href": "slides/lecture04-2.html#questions",
+    "title": "Uncertainty and Risk",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#systems-and-uncertainty",
+    "href": "slides/lecture04-2.html#systems-and-uncertainty",
+    "title": "Uncertainty and Risk",
+    "section": "Systems and Uncertainty",
+    "text": "Systems and Uncertainty\n\n\nDeterministic systems models can be subject to uncertainties due to the separation between the “internals” of the system and the “external” environment.\n\n\n\n\nConceptual Schematic of a Systems Model"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#reminder-all-models-are-wrong-but-some-are-useful",
+    "href": "slides/lecture04-2.html#reminder-all-models-are-wrong-but-some-are-useful",
+    "title": "Uncertainty and Risk",
+    "section": "Reminder: “All Models Are Wrong, But Some Are Useful”",
+    "text": "Reminder: “All Models Are Wrong, But Some Are Useful”\n\n\nEvery systems model simplifies or neglects certain aspects of the system!\nEven if appropriate, this results in uncertainty about how results translate to the real system.\n\n\n\n\nConceptual Schematic of a Systems Model"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#what-is-uncertainty",
+    "href": "slides/lecture04-2.html#what-is-uncertainty",
+    "title": "Uncertainty and Risk",
+    "section": "What is Uncertainty?",
+    "text": "What is Uncertainty?\nGlib Answer: A lack of certainty!\n\nMore Seriously: Uncertainty refers to an inability to exactly describe current or future values or states."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#types-of-uncertainty",
+    "href": "slides/lecture04-2.html#types-of-uncertainty",
+    "title": "Uncertainty and Risk",
+    "section": "Types of Uncertainty",
+    "text": "Types of Uncertainty\nTwo (broad) types of uncertainties:\n\nAleatory uncertainty, or uncertainties resulting from randomness;\nEpistemic uncertainty, or uncertainties resulting from lack of knowledge."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#probability",
+    "href": "slides/lecture04-2.html#probability",
+    "title": "Uncertainty and Risk",
+    "section": "Probability",
+    "text": "Probability\nWe often represent uncertainty using probabilities.\nWhat is probability?"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#what-is-probability",
+    "href": "slides/lecture04-2.html#what-is-probability",
+    "title": "Uncertainty and Risk",
+    "section": "What Is Probability?",
+    "text": "What Is Probability?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#two-definitions-of-probability",
+    "href": "slides/lecture04-2.html#two-definitions-of-probability",
+    "title": "Uncertainty and Risk",
+    "section": "Two Definitions of Probability",
+    "text": "Two Definitions of Probability\n\nLong-run frequency of an event (frequentist)\nDegree of belief that a proposition is true (Bayesian)\n\nThe frequentist definition concerns what would happen with a large enough number of repeated trials.\nThe Bayesian definition concerns the odds that you should bet on an outcome."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#probability-distributions",
+    "href": "slides/lecture04-2.html#probability-distributions",
+    "title": "Uncertainty and Risk",
+    "section": "Probability Distributions",
+    "text": "Probability Distributions\nWe often represent probability using distributions — more on this next time.\nThe choice of distributions can often play a large role in outcomes."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#neglecting-correlations",
+    "href": "slides/lecture04-2.html#neglecting-correlations",
+    "title": "Uncertainty and Risk",
+    "section": "Neglecting Correlations",
+    "text": "Neglecting Correlations\nFor example, an often key concern is whether uncertainties are correlated: do certain outcomes tend to occur in combination?\nIf this is the case, it can bias results to assume independence."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#correlated-climate-uncertainties",
+    "href": "slides/lecture04-2.html#correlated-climate-uncertainties",
+    "title": "Uncertainty and Risk",
+    "section": "Correlated Climate Uncertainties",
+    "text": "Correlated Climate Uncertainties\nConsider projections of future climate change for a certain emissions trajectory.\nThere are several key (uncertain) parameters affecting how:\n\ncarbon is cycled by the Earth system\nCO2 in the atmosphere results in warming."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#correlated-climate-uncertainties-1",
+    "href": "slides/lecture04-2.html#correlated-climate-uncertainties-1",
+    "title": "Uncertainty and Risk",
+    "section": "Correlated Climate Uncertainties",
+    "text": "Correlated Climate Uncertainties\n\n\n\nEquilibrium Climate Sensitivity\nOcean Heat Diffusivity\nAerosol Cooling Factor\nCarbon Sink Respiration Sensitivity\n\n\n\n\n\nCorrelated climate parameter estimates\n\n\n\nSource: Errickson et al (2021)"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#impact-of-neglecting-climate-correlations",
+    "href": "slides/lecture04-2.html#impact-of-neglecting-climate-correlations",
+    "title": "Uncertainty and Risk",
+    "section": "Impact of Neglecting Climate Correlations",
+    "text": "Impact of Neglecting Climate Correlations\n\n\nNeglecting these correlations can change the distribution of hindcasted and projected temperatures.\n\n\n\n\nImpact of ignoring parameter correlations on modeled temperatures\n\n\n\nSource: Errickson et al (2021)"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#systems-and-risk",
+    "href": "slides/lecture04-2.html#systems-and-risk",
+    "title": "Uncertainty and Risk",
+    "section": "Systems and Risk",
+    "text": "Systems and Risk\nDesigning and managing environmental systems is often about minimizing or managing risk:\n\nMaintaining clean air/water;\nPower grid reliabiliy standards;\nFlooding/other hazards;\nClimate change mitigation/adaptation."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#what-is-risk",
+    "href": "slides/lecture04-2.html#what-is-risk",
+    "title": "Uncertainty and Risk",
+    "section": "What is Risk?",
+    "text": "What is Risk?\nThe Society for Risk Analysis definition:\n\n\n“risk” involves uncertainty about the effects/implications of an activity with respect to something that humans value (such as health, well-being, wealth, property or the environment), often focusing on negative, undesirable consequences."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#ipcc-definition-of-risk",
+    "href": "slides/lecture04-2.html#ipcc-definition-of-risk",
+    "title": "Uncertainty and Risk",
+    "section": "IPCC Definition of Risk",
+    "text": "IPCC Definition of Risk\n\n\n…the potential for consequences where something of value is at stake and where the outcome is uncertain, recognizing the diversity of values. Risk is often represented as probability of occurrence of hazardous events or trends multiplied by the impacts if these events or trends occur.\n\n\n— Oppenheimer et al (2014)"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#so-what-is-risk",
+    "href": "slides/lecture04-2.html#so-what-is-risk",
+    "title": "Uncertainty and Risk",
+    "section": "So What is Risk?",
+    "text": "So What is Risk?\nImportant: “Risk” is not just another words for probability, but:\n\nInvolves uncertainty;\nUndesireable outcomes;\nEffects matter, not just the events themselves."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#components-of-risk",
+    "href": "slides/lecture04-2.html#components-of-risk",
+    "title": "Uncertainty and Risk",
+    "section": "Components of Risk",
+    "text": "Components of Risk\n\n\nMultiple components which contribute to risk:\n\nProbability of a hazard;\nExposure to that hazard;\nVulnerability to outcomes;\nSocioeconomic responses.\n\n\n\n\n\nOverview of the Components of Risk\n\n\n\nSource: Simpson et al (2021)"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#risk-management-example-well-contamination",
+    "href": "slides/lecture04-2.html#risk-management-example-well-contamination",
+    "title": "Uncertainty and Risk",
+    "section": "Risk Management Example: Well Contamination",
+    "text": "Risk Management Example: Well Contamination\nConsider the potential contamination of well water. How could we mitigate risk by:\n\n\nreducing hazards:\nreducing exposure:\nreducing vulnerability:\ninfluencing responses:"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#systems-and-risk-management",
+    "href": "slides/lecture04-2.html#systems-and-risk-management",
+    "title": "Uncertainty and Risk",
+    "section": "Systems and Risk Management",
+    "text": "Systems and Risk Management\nRisk management is often a key consideration in systems analysis. For example, consider regulatory standards.\n\nOften a tradeoff between strictness of a regulation and costs of compliance.\nSystems modeling is a key way to understand\n\nthe impacts of changing a regulation\nthe probability of failure to meet standards."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#key-points-1",
+    "href": "slides/lecture04-2.html#key-points-1",
+    "title": "Uncertainty and Risk",
+    "section": "Key Points",
+    "text": "Key Points\n\nUncertainties are a fundamental part of systems modeling and analysis.\nNeed to be thoughtful about the choices that were made in modeling and how they impact outcomes.\nProbabilities: more on this next class, but be careful about distributions and correlations!\nSystems analysis also often about understanding/managing risk."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#next-classes",
+    "href": "slides/lecture04-2.html#next-classes",
+    "title": "Uncertainty and Risk",
+    "section": "Next Classes",
+    "text": "Next Classes\nFriday: Monte Carlo simulation\nMonday: Lab on Monte Carlo\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "about.html",
@@ -3049,6 +3462,6 @@
     "href": "schedule.html",
     "title": "BEE 4750: Environmental Systems Analysis",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 06\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nFri, Sep 08\nPlume Dispersion Models\n\n\n\n\n\n\n\n4\nMon, Sep 11\nUncertainty and Risk\n\n\n\n\n\n\n\n\nWed, Sep 13\nMonte Carlo Simulation\n\n\n\n\n\n\n\n\nFri, Sep 15\nLab: Monte Carlo\n\n\n\n\n\n\n\n5\nMon, Sep 18\nDissolved Oxygen\n\n\n\n\n\n\n\n\nWed, Sep 20\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n\nFri, Sep 22\nPrescriptive Modeling\n\n\n\n\n\n\n\n6\nMon, Sep 25\nIntroduction to Optimization\n\n\n\n\n\n\n\n\nWed, Sep 27\nLinear Programming\n\n\n\n\n\n\n\n\nFri, Sep 29\nExample: Resource and Land Allocation\n\n\n\n\n\n\n\n7\nMon, Oct 1\nLab: Optimization with JuMP.jl"
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 06\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nFri, Sep 08\nPlume Dispersion Models\n\n\n\n\n\n\n\n4\nMon, Sep 11\nPlume Dispersion Models\n\n\n\n\n\n\n\n\nWed, Sep 13\nUncertainty and Risk\n\n\n\n\n\n\n\n\nFri, Sep 15\nMonte Carlo Simulation\n\n\n\n\n\n\n\n5\nMon, Sep 18\nLab: Monte Carlo\n\n\n\n\n\n\n\n\nWed, Sep 20\nDissolved Oxygen\n\n\n\n\n\n\n\n\nFri, Sep 22\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n6\nMon, Sep 25\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nWed, Sep 27\nIntroduction to Optimization\n\n\n\n\n\n\n\n\nFri, Sep 29\nLinear Programming\n\n\n\n\n\n\n\n7\nMon, Oct 02\nLP Example: Resource Allocation\n\n\n\n\n\n\n\n\nWed, Oct 04\nGuest Lecture: Diana Hackett\n\n\n\n\n\n\n\n\nFri, Oct 06\nLab: Optimization with JuMP.jl"
   }
 ]

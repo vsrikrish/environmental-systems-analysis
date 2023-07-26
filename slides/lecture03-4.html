@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.4.78">
 
   <meta name="author" content="Vivek Srikrishnan">
-  <meta name="dcterms.date" content="2023-09-25">
-  <title>BEE 4750 - Fall 2023 - Prescriptive Modeling</title>
+  <meta name="dcterms.date" content="2023-09-11">
+  <title>BEE 4750 - Fall 2023 - Plume Models: Dispersion and Examples</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -339,8 +339,8 @@
     }
   };
   </script>
-<meta property="og:title" content="BEE 4750 - Fall 2023 - Prescriptive Modeling">
-<meta property="og:description" content="Lecture 13">
+<meta property="og:title" content="BEE 4750 - Fall 2023 - Plume Models: Dispersion and Examples">
+<meta property="og:description" content="Lecture 09">
 <meta property="og:site-name" content="BEE 4750 - Fall 2023">
 </head>
 <body class="quarto-light">
@@ -348,18 +348,17 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-    <h1 class="title">Prescriptive Modeling</h1>
+    <h1 class="title">Plume Models: Dispersion and Examples</h1>
   <hr>
-<p class="subtitle">Lecture 13</p>
-<p class="date">September 25, 2023</p>
+<p class="subtitle">Lecture 09</p>
+<p class="date">September 11, 2023</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Overview</h2>
 <ul>
 <li><a href="#/review-and-questions" id="/toc-review-and-questions">Review and Questions</a></li>
-<li><a href="#/decision-problems" id="/toc-decision-problems">Decision Problems</a></li>
-<li><a href="#/key-takeaways" id="/toc-key-takeaways">Key Takeaways</a></li>
-<li><a href="#/upcoming-schedule" id="/toc-upcoming-schedule">Upcoming Schedule</a></li>
+<li><a href="#/dispersion" id="/toc-dispersion">Dispersion</a></li>
+<li><a href="#/example" id="/toc-example">Example</a></li>
 </ul>
 </nav>
 </section>
@@ -368,15 +367,59 @@
 <h1>Review and Questions</h1>
 
 </section>
-<section id="last-classes" class="slide level2">
-<h2>Last Classes</h2>
+<section id="gaussian-plume-for-air-pollution-dispersion" class="slide level2">
+<h2>Gaussian Plume for Air Pollution Dispersion</h2>
 <ul>
-<li>Simulation modeling as a means for data generation.</li>
-<li>Uncertainty and Monte Carlo</li>
+<li>Used for point sources.</li>
+<li>Typically for continuous emissions from an elevated source.</li>
 </ul>
 </section>
+<section id="gaussian-plume-model" class="slide level2">
+<h2>Gaussian Plume Model</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(C\)</span></td>
+<td style="text-align: left;">Concentration (g/m<span class="math inline">\(^3\)</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(Q\)</span></td>
+<td style="text-align: left;">Emissions Rate (g/s)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(H\)</span></td>
+<td style="text-align: left;">Effective Source Height (m)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(u\)</span></td>
+<td style="text-align: left;">Wind Speed (m/s)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(y, z\)</span></td>
+<td style="text-align: left;">Crosswind, Vertical Distance (m)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gaussian-plume-model-1" class="slide level2">
+<h2>Gaussian Plume Model</h2>
+
+<img data-src="figures/air-pollution-plume-dist.png" class="r-stretch quarto-figure-center"><p class="caption">Gaussian Plume Distribution</p></section>
+<section id="gaussian-plume-model-with-ground-reflection" class="slide level2">
+<h2>Gaussian Plume Model With Ground Reflection</h2>
+<p><span class="math display">\[\begin{aligned}
+C(x,y,z) = &amp;\frac{Q}{2\pi u \sigma_y \sigma_z} \exp\left(\frac{-y^2}{2\sigma_y^2} \right) \times \\\\
+&amp; \quad \left[\exp\left(\frac{-(z-H)^2}{2\sigma_z^2}\right) + \exp\left(\frac{-(z+H)^2}{2\sigma_z^2}\right) \right]
+\end{aligned}\]</span></p>
+</section>
 <section id="questions" class="slide level2">
-<h2>Questions?</h2>
+<h2>Questions</h2>
 <div class="columns center">
 <div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
@@ -391,200 +434,106 @@
 </div>
 </section></section>
 <section>
-<section id="decision-problems" class="title-slide slide level1 center">
-<h1>Decision Problems</h1>
+<section id="dispersion" class="title-slide slide level1 center">
+<h1>Dispersion</h1>
 
 </section>
-<section id="wastewater-model-revisited" class="slide level2">
-<h2>Wastewater Model Revisited</h2>
-
-<img data-src="images/river_diagram.png" class="r-stretch quarto-figure-center"><p class="caption">Diagram of CRUD release from two factories</p><p>Consider the wastewater model from <a href="lecture02-2.qmd">Lecture 5</a>.</p>
+<section id="estimating-dispersion-spread" class="slide level2">
+<h2>Estimating Dispersion “Spread”</h2>
+<p>Values of <span class="math inline">\(\sigma_y\)</span> and <span class="math inline">\(\sigma_z\)</span> matter substantially for modeling plume spread downwind. What influences them?</p>
 </section>
-<section id="wastewater-model-revisited-1" class="slide level2">
-<h2>Wastewater Model Revisited</h2>
-<p>Environmental authorities have sampled water from the river and determined that concentrations exceed the legal standard (1 mg/L).</p>
-<p>We want to design a CRUD removal plan to get back in compliance.</p>
-</section>
-<section id="prescriptive-modeling" class="slide level2">
-<h2>Prescriptive Modeling</h2>
-<p>If we want to design a treatment strategy, we are now in the world of <em>prescriptive modeling</em>.</p>
-<p><strong>Recall</strong>: Precriptive modeling is intended to specify an action, policy, or decision.</p>
-<div class="fragment fade-in">
+<section id="estimating-dispersion-spread-1" class="slide level2">
+<h2>Estimating Dispersion “Spread”</h2>
+<p><strong>Main contribution</strong>: atmospheric stability</p>
 <ul>
-<li>Descriptive modeling question: “What happens if I do something?”</li>
-<li>Prescriptive modeling question: “What should I do?”</li>
+<li><p>Greater stability ⇒ less vertical/cross-wind dispersion.</p></li>
+<li><p>Pasquill (1961): Six stability classes.</p></li>
 </ul>
+</section>
+<section id="estimating-dispersion-spread-2" class="slide level2">
+<h2>Estimating Dispersion “Spread”</h2>
+<p>Contributors to atmospheric stability:</p>
+<ul>
+<li>Temperature gradient</li>
+<li>Wind speed</li>
+<li>Solar radiation</li>
+<li>Cloud cover</li>
+<li>Richardson number (buoyancy / flow shear)</li>
+</ul>
+</section>
+<section id="atmospheric-stability-classes" class="slide level2">
+<h2>Atmospheric Stability Classes</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Class</th>
+<th style="text-align: left;">Stability</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: left;">Extremely unstable</td>
+<td style="text-align: left;">Sunny summer day</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B</td>
+<td style="text-align: left;">Moderately unstable</td>
+<td style="text-align: left;">Sunny &amp; warm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: left;">Slightly unstable</td>
+<td style="text-align: left;">Partly cloudy day</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D</td>
+<td style="text-align: left;">Neutral</td>
+<td style="text-align: left;">Cloudy day or night</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E</td>
+<td style="text-align: left;">Slightly stable</td>
+<td style="text-align: left;">Partly cloudy night</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">F</td>
+<td style="text-align: left;">Moderately unstable</td>
+<td style="text-align: left;">Clear night</td>
+</tr>
+</tbody>
+</table>
+<div class="caption">
+<p>Source: <a href="https://courses.ecampus.oregonstate.edu/ne581/eleven/" class="uri">https://courses.ecampus.oregonstate.edu/ne581/eleven/</a></p>
 </div>
 </section>
-<section id="decision-models" class="slide level2">
-<h2>Decision Models</h2>
-<p>To make a decision, we need certain pieces of information which:</p>
-<ul>
-<li>define decision options (or <strong>alternatives</strong>);</li>
-<li>provide one or more <strong>objectives</strong> to assess performance;</li>
-<li>specify <strong>constraints</strong> to tell us what decisions are possible or acceptable.</li>
-</ul>
-</section>
-<section id="objectives" class="slide level2">
-<h2>Objectives</h2>
-<p>Typical objectives can include:</p>
-<ul>
-<li>Minimizing costs (or maximizing profits);</li>
-<li>Minimizing environmental impacts;</li>
-<li>Maximizing some other performance metric.</li>
-</ul>
-</section>
-<section id="constraints" class="slide level2">
-<h2>Constraints</h2>
-<p>Constraints often come from engineering or societal restrictions.</p>
-<ul>
-<li>Regulatory limits on pollution;</li>
-<li>Supply constraints;</li>
-<li>Budgetary constraints;</li>
-<li>Engineering constraints.</li>
-</ul>
-</section>
-<section id="decision-model-for-the-wastewater-model" class="slide level2">
-<h2>Decision Model for the Wastewater Model</h2>
-<p>Let’s apply this framework to the CRUD release problem.</p>
-<ul>
-<li>What might our objective be?</li>
-<li>What constraints do we have?</li>
-</ul>
-</section>
-<section id="formulating-an-objective" class="slide level2">
-<h2>Formulating an Objective</h2>
-<p>Let’s say that our objective is to minimize costs, and relevant constraints include the regulatory standard.</p>
-<div class="fragment fade-in">
-<p>Treating CRUD costs <span class="math inline">\(\$50 E^2 \text{ per } 1000 \ \text{m}^3,\)</span> where <span class="math inline">\(E\)</span> is the treatment efficiency.</p>
-</div>
-</section>
-<section id="formulating-an-objective-1" class="slide level2">
-<h2>Formulating an Objective</h2>
-
-<img data-src="images/river_diagram.png" class="r-stretch quarto-figure-center"><p class="caption">Diagram of CRUD release from two factories</p><p>This makes the daily treatment cost <span class="math display">\[C(E_1, E_2) = 50(100)E_1^2 + 50(60)E_2^2 = 5000E_1^2 + 3000E_2^2.\]</span></p>
-</section>
-<section id="formulating-an-objective-2" class="slide level2">
-<h2>Formulating an Objective</h2>
-<p>Daily Treatment Cost (the <strong>metric</strong>):</p>
-<p><span class="math display">\[C(E_1, E_2) = 50(100)E_1^2 + 50(60)E_2^2 = 5000E_1^2 + 3000E_2^2.\]</span></p>
-<p>Then if the objective is to minimize the cost, we write:</p>
-<p><span class="math display">\[\min_{E_1, E_2} 5000E_1^2 + 3000E_2^2.\]</span></p>
-</section>
-<section id="developing-constraints" class="slide level2">
-<h2>Developing Constraints</h2>
-<p>But we can’t choose just any <span class="math inline">\(E_1\)</span> and <span class="math inline">\(E_2\)</span> to minimize the cost, or we would just choose <span class="math inline">\(E_1=E_2=0\)</span>.</p>
-<div class="fragment fade-in">
-<p>For example, we need to comply with the regulatory standard:</p>
-<p>CRUD concentration <span class="math inline">\(&lt; 1\)</span> mg/l.</p>
-</div>
-</section>
-<section id="developing-constraints-1" class="slide level2">
-<h2>Developing Constraints</h2>
-<p><strong>What information can we bring to bear?</strong></p>
-<div class="fragment fade-in">
-<p>Recall (from a while ago) our assumption that CRUD decays as it moves downriver.</p>
-</div>
-<div class="fragment fade-in">
-<p>Since we know that the concentrations are highest at the points of discharge, we can check whether each of those points is in compliance with the standard.</p>
-</div>
-</section>
-<section id="mass-balance-at-release-1" class="slide level2">
-<h2>Mass Balance at Release 1</h2>
-
-<img data-src="images/crud-release-1-treated.svg" class="r-stretch"><p>Total CRUD after factory 1 release: <span class="math inline">\(\color{blue}\text{100} + \color{red} 1000(1-E_1) \color{black} \ \text{kg/d}\)</span></p>
-</section>
-<section id="mass-balance-at-release-1-1" class="slide level2">
-<h2>Mass Balance at Release 1</h2>
-<ul>
-<li>Total CRUD after factory 1 release: <span class="math inline">\(\color{blue}\text{100} + \color{red} 1000(1-E_1) \color{black} \ \text{kg/d}\)</span></li>
-<li>Our standard is <span class="math inline">\(1 \ \text{mg/L} = 10^{-3} \ \text{kg/m}^3\)</span></li>
-<li>The volume of the inflow is <span class="math inline">\(600,000 \ \text{m}^3\text{/d}\)</span>.</li>
-</ul>
-<p>So the constraint until we hit Release 2 is: <span class="math display">\[100 + 1000(1-E_1) \leq 600 \Rightarrow \boxed{1000E_1 \geq 500}
-\]</span></p>
-</section>
-<section id="mass-balance-at-release-2" class="slide level2">
-<h2>Mass Balance at Release 2</h2>
-
-<img data-src="images/crud-release-2-treated.svg" class="r-stretch quarto-figure-center"><p>We had derived that the CRUD concentration at release 2 is:</p>
-<p><span class="math display">\[(1100 - 1000E_1) \exp(-0.18) + 1200(1 - E_2) \ \text{kg/d}.\]</span></p>
-</section>
-<section id="constraint-at-release-2" class="slide level2">
-<h2>Constraint at Release 2</h2>
-<p>The volume at release 2 is <span class="math inline">\(660,000 \ \text{m}^3\text{/d}\)</span>, so the constraint is:</p>
-<p><span class="math display">\[(1100 - 1000E_1) \exp(-0.18) + 1200(1 - E_2) \leq 660.\]</span></p>
-</section>
-<section id="constraint-at-release-2-1" class="slide level2">
-<h2>Constraint at Release 2</h2>
-<p>Simplifying:</p>
+<section id="estimating-dispersion-spread-3" class="slide level2">
+<h2>Estimating Dispersion “Spread”</h2>
 <p><span class="math display">\[\begin{aligned}
-(1100 - 1000E_1) \exp(-0.18) + 1200(1 - E_2) &amp;\leq 660  \\\\
-(1100 - 1000E_1) 0.835 + 1200(1 - E_2) &amp;\leq 660  \\\\
-2119 - 835E_1 - 1200E_2 &amp;\leq 660
+\sigma_y &amp;= ax^b \\
+\sigma_z &amp;= cx^d + f
 \end{aligned}\]</span></p>
-<p><span class="math display">\[\Rightarrow \boxed{835E_1 + 1200E_2 \geq 1459}\]</span></p>
-</section>
-<section id="model-formulation" class="slide level2">
-<h2>Model Formulation</h2>
-<p>Combining our objective and our regulatory constraints:</p>
-<p><span class="math display">\[\begin{alignat}{2}
-&amp; \min_{E_1, E_2} &amp; 5000E_1^2 + 3000E_2^2 \notag \\\\
-&amp; \text{subject to:} &amp; 1000 E_1  &amp;\geq 500 \notag \\
-&amp; &amp; 35E_1 + 1200E_2  &amp;\geq 1459 \notag
-\end{alignat}\]</span></p>
-<div class="fragment fade-in">
-<p><strong>Is this complete?</strong></p>
+
+<img data-src="figures/plume-dispersion.png" class="r-stretch quarto-figure-center"><p class="caption">Dispersion Coefficients</p><div class="caption">
+<p>Source: <a href="https://courses.washington.edu/cee490/DISPCOEF4WP.htm" class="uri">https://courses.washington.edu/cee490/DISPCOEF4WP.htm</a></p>
 </div>
 </section>
-<section id="model-formulation-1" class="slide level2">
-<h2>Model Formulation</h2>
-<p><span class="math display">\[\begin{alignat}{3}
-&amp; \min_{E_1, E_2} &amp;\quad  5000E_1^2 + 3000E_2^2 &amp;  \\\\
-&amp; \text{subject to:} &amp; 1000 E_1 &amp;\geq 500 \\
-&amp; &amp; 835E_1 + 1200E_2 &amp;\geq 1459 \\
-&amp; &amp; \color{purple}E_1, E_2 &amp;\;\color{purple}\geq 0 \\
-&amp; &amp; \color{purple}E_1, E_2 &amp;\;\color{purple}\leq 1
-\end{alignat}\]</span></p>
-<p>The</p>
+<section id="estimating-dispersion-spread-4" class="slide level2">
+<h2>Estimating Dispersion “Spread”</h2>
+<p>Then take estimates for <span class="math inline">\(\sigma_y\)</span> and <span class="math inline">\(\sigma_z\)</span> and plug into plume dispersion equation</p>
+<p><span class="math display">\[\begin{aligned}
+C(x,y,z) = &amp;\frac{Q}{2\pi u {\color{red}\sigma_y \sigma_z}} \exp\left(\frac{-y^2}{2{\color{red}\sigma_y^2}} \right) \times \\\\
+&amp; \quad \left[\exp\left(\frac{-(z-H)^2}{2{\color{red}\sigma_z^2}}\right) + \exp\left(\frac{-(z+H)^2}{2{\color{red}\sigma_z^2}}\right) \right]
+\end{aligned}\]</span></p>
 </section></section>
-<section>
-<section id="key-takeaways" class="title-slide slide level1 center">
-<h1>Key Takeaways</h1>
-
-</section>
-<section id="key-takeaways-1" class="slide level2">
-<h2>Key Takeaways</h2>
-<ul>
-<li>Prescriptive modeling involves <strong>decision models</strong>.</li>
-<li>Key components of a decision model:
-<ul>
-<li>Objectives;</li>
-<li>Constraints.</li>
-</ul></li>
-<li>Need to bring to bear relevant engineering, economic, and environmental information to formulate these.</li>
-</ul>
-</section></section>
-<section>
-<section id="upcoming-schedule" class="title-slide slide level1 center">
-<h1>Upcoming Schedule</h1>
-
-</section>
-<section id="next-classes" class="slide level2">
-<h2>Next Classes</h2>
-<p><strong>Wednesday</strong>: How do we solve this decision problem (and many others)?</p>
-<p><strong>Friday</strong>: Introduction to linear programming.</p>
-</section>
-<section id="assessments" class="slide level2">
-<h2>Assessments</h2>
-<ul>
-<li>HW 3 assigned today, due 10/6.</li>
-</ul>
+<section id="example" class="title-slide slide level1 center">
+<h1>Example</h1>
 
 <div class="footer footer-default">
 <p><a href="https://viveks.me/environmental-systems-analysis">BEE 4750, Environmental Systems Analysis</a></p>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 

@@ -2,174 +2,182 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/labs/lab01/lab01.html</loc>
-    <lastmod>2023-07-26T17:50:20.198Z</lastmod>
+    <lastmod>2023-07-28T20:32:33.112Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/hw/hw01/hw01.html</loc>
-    <lastmod>2023-07-26T17:50:21.490Z</lastmod>
+    <lastmod>2023-07-28T20:32:34.411Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/hw/hw03/hw03.html</loc>
-    <lastmod>2023-07-26T17:50:22.412Z</lastmod>
+    <lastmod>2023-07-28T20:32:35.588Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/hw/hw02/hw02.html</loc>
-    <lastmod>2023-07-26T17:50:23.347Z</lastmod>
+    <lastmod>2023-07-28T20:32:36.852Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/resources/github.html</loc>
-    <lastmod>2023-07-26T17:50:24.224Z</lastmod>
+    <lastmod>2023-07-28T20:32:37.916Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/resources/markdown.html</loc>
-    <lastmod>2023-07-26T17:50:24.670Z</lastmod>
+    <lastmod>2023-07-28T20:32:38.421Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/resources/optimization.html</loc>
-    <lastmod>2023-07-26T17:50:25.087Z</lastmod>
+    <lastmod>2023-07-28T20:32:38.898Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/resources/julia.html</loc>
-    <lastmod>2023-07-26T17:50:25.522Z</lastmod>
+    <lastmod>2023-07-28T20:32:39.430Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/labs.html</loc>
-    <lastmod>2023-07-26T17:50:25.955Z</lastmod>
+    <lastmod>2023-07-28T20:32:39.952Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/website.html</loc>
-    <lastmod>2023-07-26T17:50:26.343Z</lastmod>
+    <lastmod>2023-07-28T20:32:40.499Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/index.html</loc>
-    <lastmod>2023-07-26T17:50:26.775Z</lastmod>
+    <lastmod>2023-07-28T20:32:41.036Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture08-2.html</loc>
+    <lastmod>2023-07-28T20:32:43.552Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture03-3.html</loc>
-    <lastmod>2023-07-26T17:50:27.688Z</lastmod>
+    <lastmod>2023-07-28T20:32:44.576Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture01-1.html</loc>
-    <lastmod>2023-07-26T17:50:28.140Z</lastmod>
+    <lastmod>2023-07-28T20:32:45.521Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture03-2.html</loc>
-    <lastmod>2023-07-26T17:50:28.799Z</lastmod>
+    <lastmod>2023-07-28T20:32:46.400Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture01-2.html</loc>
-    <lastmod>2023-07-26T17:50:29.385Z</lastmod>
+    <lastmod>2023-07-28T20:32:46.987Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture01-3.html</loc>
-    <lastmod>2023-07-26T17:50:29.819Z</lastmod>
+    <lastmod>2023-07-28T20:32:47.534Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture07-1.html</loc>
-    <lastmod>2023-07-26T17:50:30.560Z</lastmod>
+    <lastmod>2023-07-28T20:32:48.520Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture05-3.html</loc>
-    <lastmod>2023-07-26T17:50:31.116Z</lastmod>
+    <lastmod>2023-07-28T20:32:49.230Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture05-2.html</loc>
-    <lastmod>2023-07-26T17:50:31.740Z</lastmod>
+    <lastmod>2023-07-28T20:32:49.959Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture02-1.html</loc>
-    <lastmod>2023-07-26T17:50:32.355Z</lastmod>
+    <lastmod>2023-07-28T20:32:50.534Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture02-3.html</loc>
-    <lastmod>2023-07-26T17:50:33.470Z</lastmod>
+    <lastmod>2023-07-28T20:32:51.859Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture02-2.html</loc>
-    <lastmod>2023-07-26T17:50:33.892Z</lastmod>
+    <lastmod>2023-07-28T20:32:52.346Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture06-2.html</loc>
-    <lastmod>2023-07-26T17:50:34.540Z</lastmod>
+    <lastmod>2023-07-28T20:32:53.166Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture06-3.html</loc>
-    <lastmod>2023-07-26T17:50:35.650Z</lastmod>
+    <lastmod>2023-07-28T20:32:54.828Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/notebooks/dissolved-oxygen.html</loc>
-    <lastmod>2023-07-26T17:50:36.535Z</lastmod>
+    <lastmod>2023-07-28T20:32:56.187Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/slides/notebooks/shallow-lake.out.html</loc>
+    <lastmod>2023-07-28T20:32:57.402Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/notebooks/shallow-lake.html</loc>
-    <lastmod>2023-07-26T17:50:38.125Z</lastmod>
+    <lastmod>2023-07-28T20:32:59.429Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/notebooks/economic-dispatch.html</loc>
-    <lastmod>2023-07-26T17:50:39.131Z</lastmod>
+    <lastmod>2023-07-28T20:33:00.753Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture04-1.html</loc>
-    <lastmod>2023-07-26T17:50:41.822Z</lastmod>
+    <lastmod>2023-07-28T20:33:04.104Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture04-3.html</loc>
-    <lastmod>2023-07-26T17:51:25.495Z</lastmod>
+    <lastmod>2023-07-28T20:34:03.530Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture06-1.html</loc>
-    <lastmod>2023-07-26T17:51:25.936Z</lastmod>
+    <lastmod>2023-07-28T20:34:04.077Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture04-2.html</loc>
-    <lastmod>2023-07-26T17:51:26.370Z</lastmod>
+    <lastmod>2023-07-28T20:34:04.650Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/about.html</loc>
-    <lastmod>2023-07-26T17:51:26.878Z</lastmod>
+    <lastmod>2023-07-28T20:34:05.305Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/rubrics/hw01.html</loc>
-    <lastmod>2023-07-26T17:51:27.368Z</lastmod>
+    <lastmod>2023-07-28T20:34:05.956Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/faq.html</loc>
-    <lastmod>2023-07-26T17:51:27.873Z</lastmod>
+    <lastmod>2023-07-28T20:34:06.591Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/tutorials/julia-basics.html</loc>
-    <lastmod>2023-07-26T17:51:29.358Z</lastmod>
+    <lastmod>2023-07-28T20:34:08.311Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/tutorials/latex-notebook.html</loc>
-    <lastmod>2023-07-26T17:51:29.941Z</lastmod>
+    <lastmod>2023-07-28T20:34:09.023Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/tutorials/julia-jump.html</loc>
-    <lastmod>2023-07-26T17:51:30.863Z</lastmod>
+    <lastmod>2023-07-28T20:34:10.196Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/tutorials/julia-plots.html</loc>
-    <lastmod>2023-07-26T17:51:32.448Z</lastmod>
+    <lastmod>2023-07-28T20:34:12.270Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/syllabus.html</loc>
-    <lastmod>2023-07-26T17:51:44.353Z</lastmod>
+    <lastmod>2023-07-28T20:34:26.410Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/hw.html</loc>
-    <lastmod>2023-07-26T17:51:44.825Z</lastmod>
+    <lastmod>2023-07-28T20:34:26.970Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/project.html</loc>
-    <lastmod>2023-07-26T17:51:45.245Z</lastmod>
+    <lastmod>2023-07-28T20:34:27.473Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/setup.html</loc>
-    <lastmod>2023-07-26T17:51:45.968Z</lastmod>
+    <lastmod>2023-07-28T20:34:28.320Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/schedule.html</loc>
-    <lastmod>2023-07-26T17:51:46.676Z</lastmod>
+    <lastmod>2023-07-28T20:34:29.178Z</lastmod>
   </url>
 </urlset>

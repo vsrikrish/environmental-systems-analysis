@@ -189,6 +189,174 @@
     "text": "Software Tools\n\nThis course will use the Julia programming language. Julia is a modern, free, open source language which is designed for scientific computing. No prior knowledge of Julia is required. My recommendation is to use Visual Studio Code with the official Julia extension for coding.\nAssignments will be distributed using GitHub Classroom. You should create a GitHub account, but we will walk through how to use it."
   },
   {
+    "objectID": "slides/lecture08-2.html#last-week",
+    "href": "slides/lecture08-2.html#last-week",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Last Week",
+    "text": "Last Week\n\nResource allocation problem as a linear program\nGuest lecture on regulation research\nLab on using JuMP.jl for solving LPs"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#questions",
+    "href": "slides/lecture08-2.html#questions",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#overview-of-electric-power-systems",
+    "href": "slides/lecture08-2.html#overview-of-electric-power-systems",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Overview of Electric Power Systems",
+    "text": "Overview of Electric Power Systems\n\nPower Systems Schematic\nSource: Wikipedia"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#decisions-problems-for-power-systems",
+    "href": "slides/lecture08-2.html#decisions-problems-for-power-systems",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Decisions Problems for Power Systems",
+    "text": "Decisions Problems for Power Systems\n\nDecision Problems for Power Systems by Time Scale\nAdapted from Perez-Arriaga, Ignacio J., Hugh Rudnick, and Michel Rivier (2009)"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#electricity-generation-by-source",
+    "href": "slides/lecture08-2.html#electricity-generation-by-source",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Electricity Generation by Source",
+    "text": "Electricity Generation by Source\n\nElectricity Generation in 2022 by Source\nSource: U.S. Energy Information Administration"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#capacity-expansion",
+    "href": "slides/lecture08-2.html#capacity-expansion",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Capacity Expansion",
+    "text": "Capacity Expansion\nCapacity expansion involves adding resources to generate or transmit electricity to meet anticipated demand (load) in the future.\nTypical objective: Minimize cost\nBut other constraints may apply, e.g. reducing CO2 emissions or increasing fuel diversity."
+  },
+  {
+    "objectID": "slides/lecture08-2.html#plant-types",
+    "href": "slides/lecture08-2.html#plant-types",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Plant Types",
+    "text": "Plant Types\nIn general, we have many fuel options:\n\nGas (combined cycle or simple cycle);\nCoal;\nNuclear;\nRenewables (wind, solar, hydro, geothermal)"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#simplified-example-generators",
+    "href": "slides/lecture08-2.html#simplified-example-generators",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Simplified Example: Generators",
+    "text": "Simplified Example: Generators\n\n\n\n\n\nGenerator\nFixed Cost ($)\nVariable Cost ($/MW)\n\n\n\n\nGeothermal\n450000\n0\n\n\nCoal\n220000\n21\n\n\nNG CCGT\n82000\n25\n\n\nNG CT\n65000\n35"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#simplified-example-demand",
+    "href": "slides/lecture08-2.html#simplified-example-demand",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Simplified Example: Demand",
+    "text": "Simplified Example: Demand\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Demand for 2020 in NYISO Zone C"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#simplified-example-load-duration-curve",
+    "href": "slides/lecture08-2.html#simplified-example-load-duration-curve",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Simplified Example: Load Duration Curve",
+    "text": "Simplified Example: Load Duration Curve\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Load Duration Curve for 2020 in NYISO Zone C"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#capacity-expansion-goal",
+    "href": "slides/lecture08-2.html#capacity-expansion-goal",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Capacity Expansion: Goal",
+    "text": "Capacity Expansion: Goal\nWe want to find the installed capacity of each technology that meets demand at all hours at minimal total cost.\n\nAlthough…\n\n\nFor some hours with extreme load, is it necessarily worth it to build new generation to meet those peaks?\nInstead, assign a high cost \\(NSECost\\) to non-served energy (NSE). In this case, let’s set \\(NSECost = \\$9000\\)/MWh"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#decision-variables",
+    "href": "slides/lecture08-2.html#decision-variables",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Decision Variables",
+    "text": "Decision Variables\nWhat are our variables?\n\n\n\n\n\n\n\n\nVariable\nMeaning\n\n\n\n\n\\(x_g\\)\ninstalled capacity (MW) from each generator type \\(g \\in \\mathcal{G}\\)\n\n\n\\(y_{g,t}\\)\nproduction (MW) from each generator type \\(g\\) in hour \\(t \\in \\mathcal{T}\\)\n\n\n\\(NSE_t\\)\nnon-served energy (MWh) in hour \\(t \\in \\mathcal{T}\\)"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#capacity-expansion-objective",
+    "href": "slides/lecture08-2.html#capacity-expansion-objective",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Capacity Expansion Objective",
+    "text": "Capacity Expansion Objective\n\\[\n\\begin{align}\n\\min_{x, y, NSE} Z &= {\\color{red}\\text{investment cost} } + {\\color{blue}\\text{operating cost} } \\\\\n&= {\\color{red} \\sum_{g \\in \\mathcal{G}} \\text{FixedCost}_g x_g} + {\\color{blue} \\sum_{t \\in \\mathcal{T}} \\sum_{g \\in \\mathcal{G}}  \\text{VarCost}_g y_{g,t} + \\sum_{t \\in \\mathcal{T}} \\text{NSECost} NSE_t}\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#what-are-our-constraints",
+    "href": "slides/lecture08-2.html#what-are-our-constraints",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "What Are Our Constraints?",
+    "text": "What Are Our Constraints?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#capacity-expansion-constraints",
+    "href": "slides/lecture08-2.html#capacity-expansion-constraints",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Capacity Expansion Constraints",
+    "text": "Capacity Expansion Constraints\n\nDemand: Sum of generated energy and non-served energy must equal demand \\(d_t\\).\nCapacity: Generator types cannot produce more electricity than their installed capacity.\nNon-negativity: All decision variables must be non-negative."
+  },
+  {
+    "objectID": "slides/lecture08-2.html#problem-formulation",
+    "href": "slides/lecture08-2.html#problem-formulation",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Problem Formulation",
+    "text": "Problem Formulation\n\\[\n\\begin{align}\n\\min_{x, y, NSE} \\quad & \\sum_{g \\in \\mathcal{G}} \\text{FixedCost}_g x_g + \\sum_{t \\in \\mathcal{T}} \\sum_{g \\in \\mathcal{G}} \\text{VarCost}_gy_{g,t} & \\\\\n& \\quad + \\sum_{t \\in \\mathcal{T}} \\text{NSECost} NSE_t & \\\\[0.5em]\n\\text {subject to:} \\quad & \\sum_{g \\in \\mathcal{G}} y_{g,t} + NSE_t = d_t & \\forall t \\in \\mathcal{T} \\\\[0.5em]\n& y_{g,t} \\leq x_g & \\forall g \\in {G},  \\forall t \\in \\mathcal{T} \\\\[0.5em]\n& x_g, y_{g,t}, NSE_t \\geq 0 & \\forall g \\in {G},  \\forall t \\in \\mathcal{T}\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#capacity-expansion-is-an-lp",
+    "href": "slides/lecture08-2.html#capacity-expansion-is-an-lp",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Capacity Expansion is an LP",
+    "text": "Capacity Expansion is an LP\n\nLinearity: costs assumed to scale linearly;\nDivisible: we model total installed capacity, not number of individual units\nCertainty: no uncertainty about renewables.\n\nReal problems can get much more complex, particularly if we try to model making decisions under renewable or load uncertainty."
+  },
+  {
+    "objectID": "slides/lecture08-2.html#what-does-this-problem-neglect",
+    "href": "slides/lecture08-2.html#what-does-this-problem-neglect",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "What Does This Problem Neglect?",
+    "text": "What Does This Problem Neglect?\n\nDiscrete decisions: is a plant on or off (this is called unit commitment)?\nIntertemporal constraints: Power plants can’t just “ramp” from producing low levels of power to high levels of power; there are real engineering limits.\nTransmission: We can generate all the power we want, but what if we can’t get it to where the demand is?"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#capacity-expansion-example-solution",
+    "href": "slides/lecture08-2.html#capacity-expansion-example-solution",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Capacity Expansion Example Solution",
+    "text": "Capacity Expansion Example Solution\n\n\n\n\n\n\n\n\n\n\n\n\nResource\nCapacity (MW)\nPercent_Cap (%)\nGenerated (GWh)\nPercent_Gen (%)\n\n\n\n\nGeothermal\n0.0\n0.0\n0.0\n0.0\n\n\nCoal\n0.0\n0.0\n0.0\n0.0\n\n\nNG CCGT\n2016.9\n72.5\n15157.7\n98.1\n\n\nNG CT\n733.0\n26.4\n292.2\n1.9\n\n\nNSE\n31.2\n1.1\n0.1\n0.0"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#when-do-generators-operate",
+    "href": "slides/lecture08-2.html#when-do-generators-operate",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "When Do Generators Operate?",
+    "text": "When Do Generators Operate?\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Results of Generating Capacity Expansion Example"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#what-else-could-we-add",
+    "href": "slides/lecture08-2.html#what-else-could-we-add",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "What Else Could We Add?",
+    "text": "What Else Could We Add?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#key-takeaways-1",
+    "href": "slides/lecture08-2.html#key-takeaways-1",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nCapacity Expansion is a foundational power systems decision problem.\nIs an LP with some basic assumptions.\nWe looked at a “greenfield” example: no existing plants.\nDecision problem becomes more complex with renewables (HW4) or “brownfield” (expanding existing fleet)."
+  },
+  {
+    "objectID": "slides/lecture08-2.html#next-classes",
+    "href": "slides/lecture08-2.html#next-classes",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Next Classes",
+    "text": "Next Classes\nFriday: Economic Dispatch\nNext Week: Mixed Integer Linear Programs and Applications"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#assessments",
+    "href": "slides/lecture08-2.html#assessments",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Assessments",
+    "text": "Assessments\n\nReleased HW4 early, due 10/22.\nLab3 due Friday.\n\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
     "objectID": "slides/lecture03-3.html#box-models",
     "href": "slides/lecture03-3.html#box-models",
     "title": "Plume Dispersion Models",
@@ -2282,6 +2450,41 @@
     "text": "---\ntitle: \"Dissolved Oxygen\"\nauthor: \"Vivek Srikrishnan\"\ndate: \"5/13/2023\"\nformat:\n  html:\n    code-fold: true\n  ipynb: default\njupyter: julia-1.9\n---\n\n\nimport Pkg\nPkg.activate(\"..\")\nPkg.instantiate()\n\n  Activating project at `~/Teaching/environmental-systems-analysis/website/slides`\n\n\n\nusing Plots\nusing Measures\nusing LaTeXStrings\n\nA first-order model for dissolved oxygen (DO) is\n\\[\\begin{align}\nU \\frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B - k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right) - k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)\n\\end{align}\\]\nwhich has solution\n\\[C(x) = C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1),\\]\nbut we’ll ignore \\(P\\), \\(R\\), and \\(S_B\\) as these just modify \\(C_s\\).\n\n## function to simulate DO given parameters\n\nfunction do_simulate(x, C0, B0, N0, ka, kn, kc, Cs, U)\n    B = B0 .* exp.(-kc .* x ./ U)\n    N = N0 .* exp.(-kn .* x ./ U)\n    alpha1 = exp.(-ka .* x ./ U)\n    alpha2 = (kc/(ka-kc)) .* (exp.(-kc .* x / U) - exp.(-ka .* x / U))\n    alpha3 = (kn/(ka-kn)) .* (exp.(-kn .* x / U) - exp.(-ka .* x / U))\n    C = Cs .* (1 .- alpha1) + (C0 .* alpha1) - (B0 .* alpha2) - (N0 .* alpha3)\n    return (C, B, N)\nend  \n\ndo_simulate (generic function with 1 method)\n\n\n\n\nka = 0.8\nkc = 0.4\nkn = 0.25\n\nx = 0:40\n\nC, B, N = do_simulate(x, 12, 10, 6, ka, kc, kn, 10, 6)\n\n([12.0, 11.00645310548937, 10.175859173274619, 9.485735592776512, 8.916529246889715, 8.451243511008714, 8.075112259659466, 7.7753149851202945, 7.540727870097758, 7.3617063020117754  …  8.192305787065738, 8.267173709636479, 8.339934969497461, 8.410487111173717, 8.47875989610827, 8.544710197112913, 8.608317593145037, 8.669580573208266, 8.72851326979175, 8.785142652415068], [10.0, 9.591894571091382, 9.200444146293233, 8.824969025845954, 8.464817248906142, 8.11936346150635, 7.788007830714049, 7.470175003104326, 7.1653131057378925, 6.872892787909723  …  2.748123805594897, 2.6359713811572676, 2.5283959580474646, 2.425210746356487, 2.326236579172927, 2.231301601484298, 2.140240971774475, 2.052896575799093, 1.9691167520419406, 1.8887560283756186], [6.0, 5.613041910189707, 5.251039914257685, 4.912384518467891, 4.595570030187892, 4.299187863442736, 4.0219202762138355, 3.7625345116383366, 3.5198773170601907, 3.292869816564159  …  0.7596426167345016, 0.7106509740828222, 0.6648189501740032, 0.6219427716691671, 0.5818318071864303, 0.5443077197364751, 0.5092036738201045, 0.47636359366246933, 0.44564146928600323, 0.4169007073368093])\n\n\n\np1 = plot(x, C, grid=false, color=:black, ylabel=\"DO/OD (mg/l)\", xlabel=\"Distance (km)\", label=\"DO\", linewidth=3, left_margin=8mm, top_margin=10mm, guidefontsize=16, legendfontsize=16, tickfontsize=14, xticks=:false, yticks=:false, legend=:right)\nplot!(x, B, color=:green, label=\"CBOD\", linestyle=:dash, linewidth=3)\nplot!(x, N, color=:blue, label=\"NBOD\", linestyle=:dash, linewidth=3)\nplot!(x, 10 * ones(length(x)), color=:purple, label=L\"C_s\", linestyle=:dot, linewidth=3)\n\nannotate!(1.5, 12.75, text(\"Waste Discharge\", pointsize=16, color=:red))\nvline!([0], color=:red, linewidth=2, label=:false)\nplot!(size=(700, 500))\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Sag curve for dissolved oxygen.\n\n\n\n\nC0 = 6.2\nB0 = 9\nN0 = 7\n\nka = 0.8\nkc = 0.5\nkn = 0.4\nCs = 7\nU = 5\n\n5\n\n\n\nfunction dissolved_oxygen(x, Cs, C0, B0, N0, ka, kc, kn, U)\n    α1 = exp(-ka * x / U)\n    α2 = (kc / (ka - kc)) * (exp(-kc * x / U) - α1)\n    α3 = (kn / (ka - kn)) * (exp(-kn * x / U) - α1)\n    C = (Cs * (1 - α1)) + (C0 * α1) - (B0 * α2) - (N0 * α3)\n    return C\nend\n\nx = 0:0.1:20\nC = (y -&gt; dissolved_oxygen(y, Cs, C0, B0, N0, ka, kc, kn, U)).(x)\n\n\n\nCode\nplot(x, C; linewidth=3, \n    label=\"Dissolved Oxygen\", \n    tickfontsize=16, \n    guidefontsize=16, \n    legendfontsize=16)\nxlabel!(L\"$x$ (km)\")\nylabel!(\"DO Concentration (mg/L)\")\nhline!([3], color=:red, \n    linestyle=:dash, \n    label=\"Regulatory Standard\")\nplot!(size=(500, 500))\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Single-Release Dissolved Oxygen Example\n\n\n\n\nQ1 = 100000\nQ2 = 20000\nQ3 = 25000\n\nx0 = 0\nx1 = 18\nx2 = 30\nx3 = 45\n\nC01 = 6\nB01 = 5\nN01 = 4.5\n\nC1, B1, N1 = do_simulate(x0:x1, C01, B01, N01, ka, kc, kn, 9, 6)\n\nC02 = (C1[length(C1)] * Q1 + 3 * Q2) / (Q1 + Q2)\nB02 = (B1[length(B1)] * Q1 + 55 * Q2) / (Q1 + Q2)\nN02 = (N1[length(N1)] * Q1 + 50 * Q2) / (Q1 + Q2)\n\nC2, B2, N2 = do_simulate(x0:(x2-x1), C02, B02, N02, ka, kc, kn, 9, 6)\n\nC03 = (C2[length(C2)] * (Q1 + Q2) + 4 * Q3) / (Q1 + Q2 + Q3)\nB03 = (B2[length(B2)] * (Q1 + Q2) + 40 * Q3) / (Q1 + Q2 + Q3)\nN03 = (N2[length(N2)] * (Q1 + Q2) + 30 * Q3) / (Q1 + Q2 + Q3)\n\nC3, B3, N3 = do_simulate(x0:(x3-x2), C03, B03, N03, ka, kc, kn, 9, 6)\n\nplot(x0:x1, C1, grid=false, color=:black, ylabel=\"DO (mg/L)\", xlabel=\"Distance (km)\", label=\"DO\", xticks=:false, yticks=:false, linewidth=3, left_margin=12mm, top_margin=10mm, bottom_margin=20mm, guidefontsize=16, tickfontsize=16, legendfontsize=16)\nplot!(x1:x2, C2, color=:black, label=false, linewidth=3)\nplot!(x2:x3, C3, color=:black, label=false, linewidth=3)\nplot!(size=(1200, 500))\n\nvline!([x0, x1, x2], color=:green, linewidth=3, label=\"Discharge\")\nhline!([3], color=:red, linewidth=3, label=\"Regulation\", linestyle=:dash)\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Multi-Release Dissolved Oxygen Example"
   },
   {
+    "objectID": "slides/notebooks/shallow-lake.out.html",
+    "href": "slides/notebooks/shallow-lake.out.html",
+    "title": "Shallow Lake Problem",
+    "section": "",
+    "text": "Vivek Srikrishnan\n2023-05-13\nusing Pkg\nPkg.activate(dirname(@__DIR__))\nPkg.instantiate()\nusing Plots\nusing LaTeXStrings\nusing Distributions\nusing Random"
+  },
+  {
+    "objectID": "slides/notebooks/shallow-lake.out.html#introduction",
+    "href": "slides/notebooks/shallow-lake.out.html#introduction",
+    "title": "Shallow Lake Problem",
+    "section": "Introduction",
+    "text": "Introduction\nSystems can exhibit complex, nonlinear dynamics, including (but not limited to):\n\nbifurcations;\nreinforcing and dampening feedbacks; and\ntipping points.\n\nIn this notebook, we’ll look at a simple model which has very complex dynamics: the shallow lake problem introduced by Carpenter et al. (1999)."
+  },
+  {
+    "objectID": "slides/notebooks/shallow-lake.out.html#the-shallow-lake-problem",
+    "href": "slides/notebooks/shallow-lake.out.html#the-shallow-lake-problem",
+    "title": "Shallow Lake Problem",
+    "section": "The Shallow Lake Problem",
+    "text": "The Shallow Lake Problem\n\nOverview\nEutrophication is a common environmental problem in which plants and algae feed on excess nutrients and become overabundant. The large mass of plants and algae have several noxious effects on the ecosystem, including:\n\nhypoxia (reduction in oxygen from the decomposition of organic matter), leading to “dead zones”;\nacidification (from the CO2 produced by decomposition);\nreduced sunlight (from an accumulation of surface algae);\nclogged water intakes; and\nreduction in recreational value and drinking water quality.\n\nIn lakes, eutrophication is often caused by excess input of nutrients (particularly phosphorous, P), which can come from point sources (such as industrial processes) and/or non-point sources (such as agricultural runoff). As the P releases are related to economic activity, we can view this (simplified) lake management problem from the perspective of a tradeoff between economic benefits and the health of the lake: while there are benefits to the activities which lead to P releases, there are recreational, aesthetic, and ecological benefits to maintaining the lake in a non-eutrophic (or oligotrophic) state.\n\n\nModel Formulation\nSuppose we have a town which emits phosphorous into a lake as a by-product of economic activity. The level of P in the lake at a given time \\(t\\) is given by \\(X_t\\) (for the purposes of this problem, we will just treat all values as dimensionless).\nThe level of controllable P release in year \\(t\\) is \\(a_t\\). The lake also receives random levels of phosphorous from non-point source runoff, which we denote by \\(y_t\\). We model these random runoffs using a lognormal distribution \\(LogNormal(\\mu, \\sigma^2)\\), which ensures that the runoffs cannot be negative.\nThere is also some nutrient cycling in the lake which naturally reduces phosphorous concentrations. This cycling is the result of accumulation in the sediment and turnover (water motion disturbing the sediment and carrying the nutrients upwards) and consumers, such as mussels. This cycling is dependent on the state \\(X_t\\), \\(\\frac{X_t^q}{1 + X_t^q}\\). The lake also loses some of its P each time period of its due to outflows and consumption, which we assume is linearly proportional to the state, \\(bX_t\\).\n\n\n\nShallow Lake Problem Diagram\n\n\nAs a result, the lake dynamics are given by:\n\\[X_{t+1} = X_t + a_t + y_t + \\frac{X_t^q}{1 + X_t^q} - bX_t, \\quad y_t \\sim LogNormal(\\mu, \\sigma^2),\\]\nwhere parameter interpretation is given in the table below.\n\n\n\nParameter\nDefinition\nUnits\n\n\n\n\n\\(X_t\\)\nP concentration in lake\ndimensionless\n\n\n\\(a_t\\)\npoint source P input\ndimensionless\n\n\n\\(y_t\\)\nnon-point source P input\ndimensionless\n\n\n\\(q\\)\nP recycling rate\ndimensionless\n\n\n\\(b\\)\nrate at which P is lost\ndimensionless\n\n\n\nLake problem parameters"
+  },
+  {
+    "objectID": "slides/notebooks/shallow-lake.out.html#lake-problem-dynamics",
+    "href": "slides/notebooks/shallow-lake.out.html#lake-problem-dynamics",
+    "title": "Shallow Lake Problem",
+    "section": "Lake Problem Dynamics",
+    "text": "Lake Problem Dynamics\nThis analysis is adapted from Quinn et al. (2017).\nFirst, let’s look at how the balance of P recycling and outflows affects the accumulation of P in the lake absent additional inputs (\\(a=y=0\\)).\n\n# define functions for lake recycling and outflows\nlake_P_cycling(x, q) = x.^q ./ (1 .+ x.^q);\nlake_P_out(x, b) = b .* x;\n\n# define range of lake states X\nx = 0:0.05:2.5;\n\n\n# plot recycling and outflows for selected values of b and q\np1 = plot(x, lake_P_cycling(x, 2.5), color=:black, linewidth=5,legend=:topleft, label=:false, ylabel=\"P Flux\", xlabel=L\"$X_t$\", tickfontsize=14, guidefontsize=16, legendfontsize=14, palette=:tol_muted, framestyle=:zerolines, grid=:false)\nplot!(x, lake_P_out(x, 0.6), linewidth=3, linestyle=:dash, label=L\"$b=0.6$\")\nplot!(x, lake_P_out(x, 0.4), linewidth=3, linestyle=:dash, label=L\"$b=0.4$\")\nplot!(x, lake_P_out(x, 0.2), linewidth=3, linestyle=:dash, label=L\"$b=0.2$\")\nquiver!([1], [0.35], quiver=([1], [0.4]), color=:red, linewidth=2)\nquiver!([0.4], [0.19], quiver=([-0.125], [-0.05]), color=:red, linewidth=2)\nquiver!([2.5], [0.97], quiver=([-0.125], [-0.05]), color=:red, linewidth=2)\nplot!(ylims=(-0.02, 1))\nplot!(size=(600, 600))\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBased on Figure 1, we can see that there are typically three equilibria: a stable equilibrium at \\(X=0\\), an unstable, oligotrophic equilibrium \\(X_o\\), and a stable, eutrophic equilibrium \\(X_e\\). When \\(X_t &lt; X_o\\), the lake tends towards a zero P level without external inputs, while when \\(X_t &gt; X_o\\), the lake will inevitably undergo eutrophication, as the P level will tend towards \\(X_e\\). This means that \\(X_t=X_o\\) corresponds to a tipping point: beyond that level, the lake will abruptly switch to a eutrophic state from which it cannot recover.\nThis lake is subject to a bifurcation depending on the values of \\(b\\) and \\(q\\). To see this, let’s fix \\(q=2.5\\), as in Figure 1. For \\(b=0.4\\), there are the two equilibria mentioned previously. However, when \\(b=0.2\\), there is only the unstable equilibrium \\(X=X_o\\) in addition to \\(X=0\\). For \\(b=0.6\\), the only equilibrium is \\(X=0\\), so any positive P input would result in eutrophication. This highlights the delicacy of systems which exhibit bifurcations: whether an equilibrium is stable or unstable, or even exists, can depend on a characteristic of the system which is often highly uncertain.\n\neq = [0, 0.67, 2.2]\nscatter!(p1, eq, (y -&gt; lake_P_cycling(y, 2.5)).(eq), label=\"Equilibria\", markersize=10, markercolor=:red)\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\np2 = plot(x, 0.05 .+ lake_P_cycling(x, 2.5), color=:black, linewidth=5,legend=:topleft, label=:false, ylabel=\"P Flux\", xlabel=L\"$X_t$\", tickfontsize=14, guidefontsize=16, legendfontsize=14, palette=:tol_muted, framestyle=:zerolines, grid=:false)\nplot!(x, lake_P_out(x, 0.6), linewidth=3, linestyle=:dash, label=L\"$b=0.6$\")\nplot!(x, lake_P_out(x, 0.4), linewidth=3, linestyle=:dash, label=L\"$b=0.4$\")\nplot!(x, lake_P_out(x, 0.2), linewidth=3, linestyle=:dash, label=L\"$b=0.2$\")\nplot!(size=(600, 600))"
+  },
+  {
+    "objectID": "slides/notebooks/shallow-lake.out.html#simulating-the-model-under-constant-inflows",
+    "href": "slides/notebooks/shallow-lake.out.html#simulating-the-model-under-constant-inflows",
+    "title": "Shallow Lake Problem",
+    "section": "Simulating The Model Under Constant Inflows",
+    "text": "Simulating The Model Under Constant Inflows\nLet’s simulate the model when we fix \\(a\\) as a constant. Other parameters:\n\n\n\nVariable\nValue\nUnits\n\n\n\n\n\\(X_0\\)\n\\(0\\)\ndimensionless\n\n\n\\(\\mu\\)\n\\(\\log(0.03)\\)\ndimensionless\n\n\n\\(\\sigma^2\\)\n\\(0.1\\)\ndimensionless\n\n\n\\(q\\)\n\\(2.5\\)\ndimensionless\n\n\n\\(b\\)\n\\(0.4\\)\ndimensionless\n\n\n\n\nRandom.seed!(1)\n\n# set parameters\n\nX₀ = 0\nμ = log(0.03)\nσ² = 0.1\nq = 2.5\nb = 0.4\nT = 50\n\n50\n\n\n\ny = rand(LogNormal(μ, σ²), T)\nplot(y; label=\"Non-Point Source Inflows\", color=:black, marker=(:x, 5), guidefontsize=18, tickfontsize=16, legendfontsize=14, linewidth=3, legend=:topright)\nxlabel!(L\"t\")\nylabel!(L\"y_t\")\nplot!(size=(600, 600))\nylims!((0.025, 0.042))\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX₁ = zeros(T+1)\nX₂ = zeros(T+1)\n\nfor t = 1:T\n    X₁[t+1] = X₁[t] + y[t] + 0.025 + lake_P_cycling(X₁[t], q) - lake_P_out(X₁[t], b)\n    X₂[t+1] = X₂[t] + y[t] + 0.05 + lake_P_cycling(X₂[t], q) - lake_P_out(X₂[t], b)\nend\n\nplot((1:T+1) .- 1, X₁, color=:blue, label=L\"$a_t = 0.025$\", guidefontsize=18, tickfontsize=16, legendfontsize=16, linewidth=3)\nplot!((1:T+1) .- 1, X₂, color=:purple, label=L\"$a_t = 0.05$\", linewidth=3)\nxlabel!(L\"t\")\nylabel!(L\"X_t\")\nplot!(size=(600, 600))\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCarpenter, S. R., Ludwig, D., & Brock, W. A. (1999). Management of eutrophication for lakes subject to potentially irreversible change. Ecol. Appl., 9(3), 751–771. https://doi.org/10.2307/2641327\nQuinn, J. D., Reed, P. M., & Keller, K. (2017). Direct policy search for robust multi-objective management of deeply uncertain socio-ecological tipping points. Environmental Modelling & Software, 92, 125–141. https://doi.org/10.1016/j.envsoft.2017.02.017"
+  },
+  {
     "objectID": "slides/notebooks/shallow-lake.html",
     "href": "slides/notebooks/shallow-lake.html",
     "title": "Shallow Lake Problem",
@@ -3462,6 +3665,6 @@
     "href": "schedule.html",
     "title": "BEE 4750: Environmental Systems Analysis",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 06\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nFri, Sep 08\nPlume Dispersion Models\n\n\n\n\n\n\n\n4\nMon, Sep 11\nPlume Dispersion Models\n\n\n\n\n\n\n\n\nWed, Sep 13\nUncertainty and Risk\n\n\n\n\n\n\n\n\nFri, Sep 15\nMonte Carlo Simulation\n\n\n\n\n\n\n\n5\nMon, Sep 18\nLab: Monte Carlo\n\n\n\n\n\n\n\n\nWed, Sep 20\nDissolved Oxygen\n\n\n\n\n\n\n\n\nFri, Sep 22\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n6\nMon, Sep 25\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nWed, Sep 27\nIntroduction to Optimization\n\n\n\n\n\n\n\n\nFri, Sep 29\nLinear Programming\n\n\n\n\n\n\n\n7\nMon, Oct 02\nLP Example: Resource Allocation\n\n\n\n\n\n\n\n\nWed, Oct 04\nGuest Lecture: Diana Hackett\n\n\n\n\n\n\n\n\nFri, Oct 06\nLab: Optimization with JuMP.jl"
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 06\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nFri, Sep 08\nPlume Dispersion Models\n\n\n\n\n\n\n\n4\nMon, Sep 11\nPlume Dispersion Models\n\n\n\n\n\n\n\n\nWed, Sep 13\nUncertainty and Risk\n\n\n\n\n\n\n\n\nFri, Sep 15\nMonte Carlo Simulation\n\n\n\n\n\n\n\n5\nMon, Sep 18\nLab: Monte Carlo\n\n\n\n\n\n\n\n\nWed, Sep 20\nDissolved Oxygen\n\n\n\n\n\n\n\n\nFri, Sep 22\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n6\nMon, Sep 25\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nWed, Sep 27\nIntroduction to Optimization\n\n\n\n\n\n\n\n\nFri, Sep 29\nLinear Programming\n\n\n\n\n\n\n\n7\nMon, Oct 02\nLP Example: Resource Allocation\n\n\n\n\n\n\n\n\nWed, Oct 04\nGuest Lecture: Diana Hackett\n\n\n\n\n\n\n\n\nFri, Oct 06\nLab: Optimization with JuMP.jl\n\n\n\n\n\n\n\n8\nMon, Oct 09\nNo Class: Indigeneous People’s Day\n\n\n\n\n\n\n\n\nWed, Oct 11\nPower Systems, Generating Capacity Expansion\n\n\n\n\n\n\n\n\nFri, Oct 13\nEconomic Dispatch\n\n\n\n\n\n\n\n9\nMon, Oct 16\nManaging Multiple Air Pollutant Sources\n\n\n\n\n\n\n\n\nWed, Oct 18\nLake Eutrophication\n\n\n\n\n\n\n\n\nFri, Oct 20\nLake Eutrophication II\n\n\n\n\n\n\n\n10\nMon, Oct 23\nMixed Integer Programming\n\n\n\n\n\n\n\n\nWed, Oct 25\nSolid Waste Management\n\n\n\n\n\n\n\n\nFri, Oct 27\nUnit Commitment"
   }
 ]

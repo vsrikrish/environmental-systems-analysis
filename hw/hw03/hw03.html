@@ -386,19 +386,19 @@ Due Date
 <section id="instructions" class="level3">
 <h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
 <ul>
-<li>Problems 1-3 consist of a series of code snippets for you to interpret and debug. For Problems 1 and 2, you will be asked to identify relevant error(s) and fix the code. For Problem 3, the code works as intended; your goal is to identify the code’s purpose by following its logic.</li>
-<li>Problem 4 asks you to convert a verbal description of a wastewater treatment system into a Julia function, and then to use that function to explore the impact of different wastewater allocation strategies.</li>
+<li>Problem 1 asks you to use a simulation model for dissolved oxygen to assess the impacts of two wastewater streams.</li>
+<li>Problem 2 involves a Monte Carlo analysis of dissolved oxygen concentrations under uncertain environmental conditions.</li>
 </ul>
 </section>
 <section id="load-environment" class="level3">
 <h3 class="anchored" data-anchor-id="load-environment">Load Environment</h3>
 <p>The following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.</p>
-<div id="dc4bc787" class="cell" data-execution_count="1">
+<div id="742fd1f7" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="pp">@__DIR__</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="65f119b3" class="cell" data-execution_count="2">
+<div id="901bb464" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LaTeXStrings</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Distributions</span></span>
@@ -490,7 +490,7 @@ Due Date
 <p>Now suppose that CBOD and NBOD values are correlated: specifically, they have a correlation coefficient of 0.7. How does that impact the probability of maintaining a dissolved oxygen concentration above 4 mg/L under the treatment strategy you selected in Problem 1.5? How did you decide how many samples to use to determine this probability?</p>
 <p>You can use the <code>sample_correlated_uniform()</code> function defined below to produce correlated uniform samples.</p>
 </section>
-<div id="4c43c70b" class="cell" data-execution_count="3">
+<div id="cde1d4ae" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This function samples n correlated variates distributed over </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Uniform(a[1], a[2]) and Uniform(b[1], b[2]) with correlation coefficient</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># corr_coef. The bounds on each uniform distribution should be passed as a vector</span></span>

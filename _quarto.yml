@@ -60,6 +60,12 @@ website:
         contents:
           - href: hw/hw01/hw01.qmd
             text: Homework 1
+          - href: hw/hw02/hw02.qmd
+            text: Homework 2
+          - href: hw/hw03/hw03.qmd
+            text: Homework 3
+          - href: hw/hw04/hw04.qmd
+            text: Homework 4
       - section: labs.qmd
         contents:
           - href: labs/lab01/lab01.qmd

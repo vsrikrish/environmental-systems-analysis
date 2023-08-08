@@ -52,9 +52,9 @@ This is a 3 credit course which is required for the Environmental Engineering ma
 ::: {.column width="30%"}
 ### TA
 
-- {{< fa sharp user title="Name" >}} [TBD]{.ms-1}
-- {{< fa sharp envelope title="Email" >}} [TBD]{.ms-1}
-- {{< fa sharp building title="Office" >}} [TBD]{.ms-2}
+- {{< fa sharp user title="Name" >}} [Gabriela Ackermann Logan]{.ms-1}
+- {{< fa sharp envelope title="Email" >}} [ga345@cornell.edu]{.ms-1}
+- {{< fa sharp building title="Office" >}} [319 Riley-Robb]{.ms-2}
 ::::
 
 ::: {.column width="30%"}
@@ -210,12 +210,6 @@ Please stay home if you're feeling sick! This is beneficial for both for your ow
 ### Mask Policies
 
 **Masks are encouraged but not required in the classroom**, per [university policy](https://covid.cornell.edu/updates/20220727-students-fall-semester.cfm). However, the University *strongly encourages* compliance with requests to mask from students, faculty, and staff who are concerned about the risk of infection. Please be respectful of these concerns and requests if you cannot wear a mask.
-
-::: {.callout-important}
-## Masks Will Be Required In My Office
-
-I will **require masks to be worn** in my office or during in-person office hours, as we are necessarily interacting in close quarters without great airflow. 
-:::
 
 ### Academic Integrity
 

@@ -109,7 +109,7 @@ execute:
 - Focus on "how" to apply methods and concepts from class
 - **If you can't bring a laptop to these classes, you can work with someone else**
 - Can work in groups, but must submit your own notebook
-- Due by **9:00 next Thursday (one week) after lab session**.
+- Due by **9:00 on the due date (usually Friday or one week) after lab session**.
 - Will drop one.
 
 
@@ -119,9 +119,8 @@ execute:
 - Roughly every other week (5-6 in total?)
 - Focus on new or extended applications and conceptual questions
 - Managed with GitHub Classroom
-- Due by **9:00pm** on the due date (usually Thursday)
-- Will not drop any of these; you have lots of time!
-
+- Due by **9:00pm** on the due date (usually Friday)
+- Will not drop any of these by default; you have lots of time!
 
 
 ## Final Project (40%)
@@ -135,9 +134,8 @@ execute:
 - **Proposal**: one page overview of system and model plan
 - **Regulatory Review**: 2--3 page report on relevant regulations
 - **Literature Review *(BEE 5750)***: 2 page synthesis of relevant literature
+- **Presentation**: Short overview of project (last week of classes)
 - **Poster**: Overview and results (due end of semester)
-
-
 
 
 ## Attendance

@@ -70,7 +70,8 @@ website:
         contents:
           - href: labs/lab01/lab01.qmd
             text: Lab 1
-      - section: project.qmd
+      - text: "Final Project" 
+        href: project.qmd
       - text: "Tools Setup"
         href: setup.qmd
       - text: "FAQ"

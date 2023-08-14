@@ -13,8 +13,12 @@ The final project gives you an opportunity to use and extend the methods we have
 
 ## Schedule
 
+Milestones which are only for BEE 5750 students are in *italics*.
+
 | Milestone | Instructions | Rubric | Due Date |
 |:---------:|:------------:|:-------:|:-----------|
-| Proposal | | | Fri, Feb 23 |
-| Regulations Report | | | Fri, Mar 29|
-| Poster | | | Wed, May 08 |
+| Proposal | | | Fri, Oct 06 |
+| Regulations Report | | | Fri, Nov 03 |
+| *Literature Review* | | | Fri, Dec 8 |
+| Presentation | | | Mon, Dec 4 - Fri, Dec 8 |
+| Poster | | | Fri, Dec 15 |

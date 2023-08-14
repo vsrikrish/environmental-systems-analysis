@@ -634,14 +634,14 @@
     "href": "slides/lecture01-1.html#labs-20",
     "title": "Welcome to BEE 4750!",
     "section": "Labs (20%)",
-    "text": "Labs (20%)\n\nIn-class guided activities, but may need some time after class to complete\nFocus on “how” to apply methods and concepts from class\nIf you can’t bring a laptop to these classes, you can work with someone else\nCan work in groups, but must submit your own notebook\nDue by 9:00 next Thursday (one week) after lab session.\nWill drop one."
+    "text": "Labs (20%)\n\nIn-class guided activities, but may need some time after class to complete\nFocus on “how” to apply methods and concepts from class\nIf you can’t bring a laptop to these classes, you can work with someone else\nCan work in groups, but must submit your own notebook\nDue by 9:00 on the due date (usually Friday or one week) after lab session.\nWill drop one."
   },
   {
     "objectID": "slides/lecture01-1.html#homework-assignments-40",
     "href": "slides/lecture01-1.html#homework-assignments-40",
     "title": "Welcome to BEE 4750!",
     "section": "Homework Assignments (40%)",
-    "text": "Homework Assignments (40%)\n\nRoughly every other week (5-6 in total?)\nFocus on new or extended applications and conceptual questions\nManaged with GitHub Classroom\nDue by 9:00pm on the due date (usually Thursday)\nWill not drop any of these; you have lots of time!"
+    "text": "Homework Assignments (40%)\n\nRoughly every other week (5-6 in total?)\nFocus on new or extended applications and conceptual questions\nManaged with GitHub Classroom\nDue by 9:00pm on the due date (usually Friday)\nWill not drop any of these by default; you have lots of time!"
   },
   {
     "objectID": "slides/lecture01-1.html#final-project-40",
@@ -655,7 +655,7 @@
     "href": "slides/lecture01-1.html#final-project-deliverables",
     "title": "Welcome to BEE 4750!",
     "section": "Final Project: Deliverables",
-    "text": "Final Project: Deliverables\n\nProposal: one page overview of system and model plan\nRegulatory Review: 2–3 page report on relevant regulations\nLiterature Review (BEE 5750): 2 page synthesis of relevant literature\nPoster: Overview and results (due end of semester)"
+    "text": "Final Project: Deliverables\n\nProposal: one page overview of system and model plan\nRegulatory Review: 2–3 page report on relevant regulations\nLiterature Review (BEE 5750): 2 page synthesis of relevant literature\nPresentation: Short overview of project (last week of classes)\nPoster: Overview and results (due end of semester)"
   },
   {
     "objectID": "slides/lecture01-1.html#attendance",
@@ -3644,7 +3644,7 @@
     "href": "project.html#schedule",
     "title": "Final Project",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\nMilestone\nInstructions\nRubric\nDue Date\n\n\n\n\nProposal\n\n\nFri, Feb 23\n\n\nRegulations Report\n\n\nFri, Mar 29\n\n\nPoster\n\n\nWed, May 08"
+    "text": "Schedule\nMilestones which are only for BEE 5750 students are in italics.\n\n\n\n\n\n\n\n\n\nMilestone\nInstructions\nRubric\nDue Date\n\n\n\n\nProposal\n\n\nFri, Oct 06\n\n\nRegulations Report\n\n\nFri, Nov 03\n\n\nLiterature Review\n\n\nFri, Dec 8\n\n\nPresentation\n\n\nMon, Dec 4 - Fri, Dec 8\n\n\nPoster\n\n\nFri, Dec 15"
   },
   {
     "objectID": "setup.html",

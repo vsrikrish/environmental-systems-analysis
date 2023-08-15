@@ -47,6 +47,7 @@ This is a 3 credit course which is required for the Environmental Engineering ma
 - {{< fa sharp user title="Name" >}} [[{{< var instructor.name_no_title >}}]({{< var instructor.url >}})]{.ms-1}
 - {{< fa sharp envelope title="Email" >}} [[{{< var instructor.email >}}](mailto:{{< var instructor.email >}})]{.ms-1}
 - {{< fa sharp building title="Office" >}} [{{< var instructor.office >}}]{.ms-2}
+- {{< fa sharp door-open title="Office Hours" >}}[MW 10-11am, R 11am-12pm]{.ms-1}
 :::
 
 ::: {.column width="30%"}
@@ -55,6 +56,7 @@ This is a 3 credit course which is required for the Environmental Engineering ma
 - {{< fa sharp user title="Name" >}} [Gabriela Ackermann Logan]{.ms-1}
 - {{< fa sharp envelope title="Email" >}} [ga345@cornell.edu]{.ms-1}
 - {{< fa sharp building title="Office" >}} [319 Riley-Robb]{.ms-2}
+- {{< fa sharp door-open title="Office Hours" >}} [TBA].{ms-1}
 ::::
 
 ::: {.column width="30%"}

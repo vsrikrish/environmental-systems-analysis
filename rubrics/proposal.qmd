@@ -13,6 +13,11 @@ pdf:
         - ../_assets/filters/columns-to-tables.lua
 ---
 
-The proposal will be graded on completion alone. More important is feedback.
+The proposal will be graded on completion. Full (10) points will be given for a proposal which is submitted on time and describes the system and main question, meets the formatting requirements and includes references and a systems diagram. Any citation format (AGU, IEEE, Chicago, etc) is acceptable so long as it is consistently applied.
 
-However, 10% will be deducted for every 24 hours that the proposal is submitted late, starting on the due date/time.
+However, the following deductions will be applied if the proposal does not meet these requirements:
+
+- 2 points off if the proposal is not appropriately referenced (citations missing or inconsistently formatted).
+- 1 point off if the proposal is incorrectly formatted (margins too small, different font, more than one page excluding references and figures);
+- 3 points off if no systems diagram is included;
+- 1 point off for each day the proposal is late (starting at the due date/time);

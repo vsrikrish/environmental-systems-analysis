@@ -1,0 +1,40 @@
+---
+title: Project Proposal Instructions
+format:
+    html: default
+    pdf:
+        documentclass: article
+        geometry:
+            - margin=1in  
+        include-in-header:
+            text: |
+                \renewcommand\toprule[2]\relax
+                \renewcommand\bottomrule[2]\relax
+        filters:
+            - ../_assets/filters/columns-to-tables.lua
+---
+
+## Overview
+
+The project proposal is intended to provide an initial idea of your project to formalize:
+
+- The scope of the systems model;
+- The specific design or management problem.
+
+The proposal is **not** binding: you can change aspects of the project later, for example, if you find that you cannot formulate your proposed problem appropriately or cannot find data. However, please discuss these changes with Prof. Srikrishnan as soon as possible to make sure the revised project satisfies the project requirement.
+
+While you may have to submit the proposal before we can discuss prescriptive problems in class, your project can focus on decision-making. Provide an idea of the decision problem you would like to study, and you will have the opportunity to refine your problem formulation through discussions with Prof. Srikrishnan and in the project update based on the course content.
+
+## Instructions
+
+- Your proposal should be no more than 1 page, ***not including figures or references***.
+- Provide a brief overview of the system you would like to analyze, a motivation for the choice, and the problem you will study. Your proposal should include:
+    - An overview of your system (including a diagram showing the control volume of your study, relevant metrics, and what exogenous factors you will consider).
+    - A rough idea of the experimental design, possible data sources and including what uncertainties you will consider.
+    - References for any sources consulted, including academic literature, websites, and news articles.
+- Include the name(s) of the project team at the top of the PDF.
+- The proposal should have the following format:
+    - 1 inch margins on each side;
+    - 12 point Calibri font;
+    - 1.5x line spacing.
+- Submit a PDF of the proposal to Gradescope by 9:00 PM on the due date. 

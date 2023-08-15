@@ -1,0 +1,18 @@
+---
+title: "Project Proposal Rubric"
+html: default
+pdf:
+    documentclass: article
+    geometry:
+        - margin=1in  
+    include-in-header:
+        text: |
+            \renewcommand\toprule[2]\relax
+            \renewcommand\bottomrule[2]\relax
+    filters:
+        - ../_assets/filters/columns-to-tables.lua
+---
+
+The proposal will be graded on completion alone. More important is feedback.
+
+However, 10% will be deducted for every 24 hours that the proposal is submitted late, starting on the due date/time.

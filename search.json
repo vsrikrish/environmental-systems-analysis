@@ -3574,7 +3574,7 @@
     "href": "syllabus.html#course-information",
     "title": "Syllabus",
     "section": "Course Information",
-    "text": "Course Information\n\n\n\nInstructor\n\n Vivek Srikrishnan\n viveks@cornell.edu\n 318 Riley-Robb\n\n\n\n\nTA\n\n Gabriela Ackermann Logan\n ga345@cornell.edu\n 319 Riley-Robb\n\n\n\n\nMeetings\n\n MWF\n 1:25-2:15pm\n 105 Riley-Robb\n\n\n\n\n\nCourse Description\nEnvironmental systems involve multiple interacting processes, uncertainties, and potentially conflicting objectives. These dynamics can complicate analyses which focus on a single component of the system, such as an individual pollution source, or a single outcome of interest. In this course, we will adopt a systems approach to environmental quality modeling and management, including applications in air and water pollution control and solid waste management. In particular, we will:\n\ndefine systems and their boundaries;\nsimulate system dynamics using computer models;\nformulate and solve decision problems for systems management;\nanalyze and assess risk;\nmake decisions under uncertainty; and\nexplore trade-offs across competing objectives."
+    "text": "Course Information\n\n\n\nInstructor\n\n Vivek Srikrishnan\n viveks@cornell.edu\n 318 Riley-Robb\nMW 10-11am, R 11am-12pm\n\n\n\n\nTA\n\n Gabriela Ackermann Logan\n ga345@cornell.edu\n 319 Riley-Robb\n [TBA].{ms-1}\n\n\n\n\nMeetings\n\n MWF\n 1:25-2:15pm\n 105 Riley-Robb\n\n\n\n\n\nCourse Description\nEnvironmental systems involve multiple interacting processes, uncertainties, and potentially conflicting objectives. These dynamics can complicate analyses which focus on a single component of the system, such as an individual pollution source, or a single outcome of interest. In this course, we will adopt a systems approach to environmental quality modeling and management, including applications in air and water pollution control and solid waste management. In particular, we will:\n\ndefine systems and their boundaries;\nsimulate system dynamics using computer models;\nformulate and solve decision problems for systems management;\nanalyze and assess risk;\nmake decisions under uncertainty; and\nexplore trade-offs across competing objectives."
   },
   {
     "objectID": "syllabus.html#learning-objectives",
@@ -3665,14 +3665,14 @@
     "href": "project.html#overall-instructions",
     "title": "Final Project",
     "section": "Overall Instructions",
-    "text": "Overall Instructions\n\nStudents in 4750 must work in groups of 2-3, while students in 5750 must work alone. If students would like help finding a group, please post on Ed Discussion or reach out to Professor Srikrishnan.\nEach project should focus on the design or management of a specific environmental system. A sign-up will be provided towards the middle of September on Ed Discussion for teams to document their proposed topic. The systems for different projects do not have to be unique, but each project should focus on a different aspect of the common system.\nThe goal of the project is to apply an understanding of the principles and methods from the class. As a result, a project should not replicate an example from class, but these can be starting points so long as the methods or examples are being meaningfully advanced in some way.\nCategories of environmental systems problems which are not explicitly discussed in class (such as lifecycle analysis) are perfectly fine so long as they are held to the same analytic standard as the methods from class.\nContact Professor Srikrishnan if you have any questions about your project, including its suitability. While you can change your project after the initial proposal, the later this is done in the semester, the less time you can spend on its conceptualization or execution, with possible impacts on your grade."
+    "text": "Overall Instructions\n\nStudents in 4750 should work in groups of 2-3, while students in 5750 must work alone."
   },
   {
     "objectID": "project.html#schedule",
     "href": "project.html#schedule",
     "title": "Final Project",
     "section": "Schedule",
-    "text": "Schedule\nMilestones which are only for BEE 4750 or 5750 students are in italics.\n\n\n\n\n\n\n\n\n\nMilestone\nPoints\nInstructions\nRubric\n\n\n\n\nProposal\n10\n\n\n\n\nRegulations Report\n20\n\n\n\n\nProject Update\n10\n\n\n\n\nLiterature Review (5750 only)\n20\n\n\n\n\nPresentation\n20\n\n\n\n\nPoster\n40\n\n\n\n\nTeam Evaluation (4750 only)\n10\n\nFri, Dec 15"
+    "text": "Schedule\nMilestones which are only for BEE 5750 students are in italics.\n\n\n\n\n\n\n\n\n\nMilestone\nInstructions\nRubric\nDue Date\n\n\n\n\nProposal\n\n\nFri, Oct 06\n\n\nRegulations Report\n\n\nFri, Nov 03\n\n\nLiterature Review\n\n\nFri, Dec 8\n\n\nPresentation\n\n\nMon, Dec 4 - Fri, Dec 8\n\n\nPoster\n\n\nFri, Dec 15"
   },
   {
     "objectID": "setup.html",

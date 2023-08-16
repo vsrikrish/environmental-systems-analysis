@@ -34,22 +34,17 @@ execute:
 
 # Welcome!
 
-## Instructors
+## Course Staff
 
-:::: {.columns}
-::: {.column width=50%}
-**Instructor**: Prof. Vivek Srikrishnan, <viveks@cornell.edu>
+**Instructor**: Vivek Srikrishnan, 318 Riley-Robb, <viveks@cornell.edu>
 
-- Office: 318 Riley-Robb
-- Office Hours: MW 10-11, R 11-12
+**TA**: Gabriela Ackermann Logan, 319 Riley-Robb, <ga345@cornell.edu>
+
+::: {.callout-important}
+Please include **BEE4750** in your email subject line! This will ensure it doesn't get lost in the shuffle.
+
+Better: Use Ed Discussion and reserve email for matters that are particular urgent and/or require privacy.
 :::
-::: {.column width=50%}
-**TA**: Gabriela Ackermann Logan, <ga345@cornell.edu>
-
-- Office: 319 RIley-Robb
-- Office Hours: T 10-11
-:::
-::::
 
 ## Course Overview
 

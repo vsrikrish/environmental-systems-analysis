@@ -16,7 +16,7 @@ This page contains information about and a schedule of the lab assignments for t
 
 | Lab | Instructions | Rubric | Due Date |
 |:----------:|:------------:|:------:|:---------|
-| Lab 1 | [{{< fa sharp laptop-code >}}](labs/lab01/lab01.html) | [{{< fa sharp file-check >}}](rubrics/lab01-rubric.html) | Sep 01, 2023 |
+| Lab 1 | [{{< fa sharp laptop-code >}}](labs/lab01/lab01.html) | [{{< fa sharp list-check >}}](rubrics/lab01-rubric.html) | Sep 01, 2023 |
 
 
 

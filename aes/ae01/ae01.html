@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.283">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>BEE 4750 - Fall 2023 - BEE 4750 Application Exercise 1: Setting Up GitHub and Julia</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<!-- MathJax 3 -->
+<script>
+window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta property="og:title" content="BEE 4750 - Fall 2023 - BEE 4750 Application Exercise 1: Setting Up GitHub and Julia">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://viveks.me/environmental-systems-analysis/aes/ae01/figures/vs-code-extensions.png">
+<meta property="og:site-name" content="BEE 4750 - Fall 2023">
+<meta property="og:image:height" content="67">
+<meta property="og:image:width" content="72">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">BEE 4750/5750</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../_assets/logos/cornell-reduced-red.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">BEE 4750/5750</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/vsrikrish/environmental-systems-analysis" title="Github Repository" class="quarto-navigation-tool px-1" aria-label="Github Repository"><i class="bi bi-github"></i></a>
+    <a href="https://canvas.cornell.edu" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-journal-check"></i></a>
+    <a href="https://edstem.org" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-chat-fill"></i></a>
+    <a href="https://gradescope.com" title="Gradescope" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-bar-chart-fill"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Course Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../hw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../hw/hw01/hw01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../hw/hw02/hw02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../hw/hw03/hw03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../hw/hw04/hw04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 4</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../labs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab01/lab01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final Project</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tools Setup</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tutorials/julia-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Julia Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tutorials/julia-plots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making Plots</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tutorials/latex-notebook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math in Notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tutorials/julia-jump.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solving Linear Programs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Supplemental Notes</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Resources</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../resources/julia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Julia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../resources/github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../resources/markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Markdown</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../resources/optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optimization and Decision-Making</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a>
+  <ul class="collapse">
+  <li><a href="#install-git" id="toc-install-git" class="nav-link" data-scroll-target="#install-git">Install Git</a></li>
+  <li><a href="#sec-install-julia" id="toc-sec-install-julia" class="nav-link" data-scroll-target="#sec-install-julia">Install Julia</a></li>
+  <li><a href="#sec-install-code" id="toc-sec-install-code" class="nav-link" data-scroll-target="#sec-install-code">Install and Set Up VS Code</a></li>
+  <li><a href="#sec-github" id="toc-sec-github" class="nav-link" data-scroll-target="#sec-github">Set Up GitHub</a></li>
+  <li><a href="#sec-notebook" id="toc-sec-notebook" class="nav-link" data-scroll-target="#sec-notebook">Open and Edit The Notebook</a></li>
+  <li><a href="#sec-export-pdf" id="toc-sec-export-pdf" class="nav-link" data-scroll-target="#sec-export-pdf">Export the Notebook</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/aes/ae01/ae01.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="ae01.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">BEE 4750 Application Exercise 1: Setting Up GitHub and Julia</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Due Date
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Friday, 8/1/23, 9:00pm</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>You can <a href="https://github.com/BEE4750/ae01">find the Github repository here</a>.</p>
+</div>
+</div>
+</div>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this application exercise, you will:</p>
+<ol type="1">
+<li>Install git and Julia;</li>
+<li>set up a GitHub account;</li>
+<li>“clone” a repository to your local machine;</li>
+<li>edit a Jupyter notebook; and</li>
+<li>write and run some basic code.</li>
+</ol>
+</section>
+<section id="tasks" class="level2">
+<h2 class="anchored" data-anchor-id="tasks">Tasks</h2>
+<p>Your tasks are:</p>
+<ol type="1">
+<li><a href="https://git-scm.com/downloads">Install <code>git</code></a> on your machine if necessary.</li>
+<li><a href="#sec-install-julia">Install Julia</a> using the <code>juliaup</code> tool.</li>
+<li><a href="#sec-install-code">Install and set up VS Code</a> if you don’t already have an editor you’d like to use. VS Code is an editor of choice for Julia, as it as a rich and well-supported Julia extension. If you have a different coding environment, please find instructions for how to set it up to edit Julia.</li>
+<li><a href="#sec-github">Set up a GitHub account and clone the application exercise repository</a>.</li>
+<li><a href="#sec-notebook">Open and edit the notebook</a>.</li>
+<li><a href="#sec-export-pdf">Export the notebook to a PDF</a>.</li>
+<li>Submit the PDF to Gradescope by the due date.</li>
+</ol>
+</section>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<section id="install-git" class="level3">
+<h3 class="anchored" data-anchor-id="install-git">Install Git</h3>
+<p>If you have already installed <code>git</code>, you don’t need to worry about this section. If you haven’t, <a href="https://git-scm.com/downloads">download</a> the appropriate version for your operating system.</p>
+<div class="callout callout-style-simple callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mac Versions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you have a Mac, be aware if you have an Apple Silicon (M1 or M2) Mac or an Intel Mac. Many of the installations you will go through in this exercise have different versions for each processor type, and the program may not work properly if you still the wrong version. There’s nothing that can’t be undone, but it’s easier to be install the correct version first!</p>
+</div>
+</div>
+</section>
+<section id="sec-install-julia" class="level3">
+<h3 class="anchored" data-anchor-id="sec-install-julia">Install Julia</h3>
+<p>I recommend installing Julia using the <code>juliaup</code> tool, which will let you easily manage versions in the future and works seamlessly with VS Code. The instructions can be found at the <a href="https://github.com/JuliaLang/juliaup">JuliaUp GitHub repository</a>, but we will summarize them here.</p>
+<section id="installing-juliaup-on-windows" class="level4">
+<h4 class="anchored" data-anchor-id="installing-juliaup-on-windows">Installing Juliaup on Windows</h4>
+<p>If your computer uses Windows, you can install Juliaup <a href="https://www.microsoft.com/store/apps/9NJNWW8PVKMN">from the Windows Store</a>.</p>
+</section>
+<section id="installing-juliaup-on-macos" class="level4">
+<h4 class="anchored" data-anchor-id="installing-juliaup-on-macos">Installing Juliaup on MacOS</h4>
+<p>If you have a Mac, open a terminal (such as the Terminal app) and enter:</p>
+<pre class="shell"><code>curl -fsSL https://install.julialang.org | sh</code></pre>
+</section>
+<section id="installing-julia-1.8.5" class="level4">
+<h4 class="anchored" data-anchor-id="installing-julia-1.8.5">Installing Julia 1.8.5</h4>
+<p>Once you install Juliaup, install Julia version 1.8.5 by opening a terminal (in MacOS or Linux) or the command line (in Windows) and entering:</p>
+<pre class="shell"><code>julia add 1.8.5
+julia default 1.8.5</code></pre>
+<p>This will install Julia 1.8.5 and make it the default version, which should maximize package compatibility throughout this course. Going forward, if you want to add new versions or change the default, you can <a href="https://github.com/JuliaLang/juliaup#using-juliaup">follow the Juliaup instructions</a>.</p>
+</section>
+</section>
+<section id="sec-install-code" class="level3">
+<h3 class="anchored" data-anchor-id="sec-install-code">Install and Set Up VS Code</h3>
+<p>You can skip this section if you already have a coding environment you like; just set it up to work with Julia. Otherwise, VS Code is as close to an officially supported editor for Julia as you can get. We will follow <a href="https://www.julia-vscode.org/docs/dev/gettingstarted/">this guide for setting up VS Code with Julia</a>.</p>
+<section id="installing-vs-code" class="level4">
+<h4 class="anchored" data-anchor-id="installing-vs-code">Installing VS Code</h4>
+<p>You can download it <a href="https://code.visualstudio.com/download">here</a>; open the downloaded file to install.</p>
+</section>
+<section id="install-the-julia-extension" class="level4">
+<h4 class="anchored" data-anchor-id="install-the-julia-extension">Install the Julia Extension</h4>
+<ol type="1">
+<li><p>Open VS Code.</p></li>
+<li><p>Select View and click Extensions to open the Extension View. This view can also be found on the sidebar with the following logo:</p>
+<p><img src="figures/vs-code-extensions.png" class="quarto-discovered-preview-image img-fluid" alt="VS Code Extensions View Logo">.</p></li>
+<li><p>Search for <code>julia</code> in the search box. Click the green install button.</p></li>
+<li><p>Restart VS Code once the installation is complete. It should automatically find your Julia installation; talk to Vivek if not.</p></li>
+</ol>
+<p>The Julia VS Code extension offers you some nice features. You can start a REPL (an interactive Julia coding environment) by opening the “Command Palette” (View -&gt; Command Palette, or CTRL/CMD+SHIFT+P) and typing “REPL” to bring up “Julia: Start REPL”. You can also create <code>*.jl</code> files to write Julia code and execute line by line. However, we will primarily use Jupyter notebooks in this class, but this might be useful for testing code or for your project.</p>
+</section>
+<section id="install-the-jupyter-notebook-extension" class="level4">
+<h4 class="anchored" data-anchor-id="install-the-jupyter-notebook-extension">Install the Jupyter Notebook Extension</h4>
+<p>The Jupyter Notebook extension allows you to export a Jupyter notebook to PDF or to HTML and then to PDF.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+PDF Export for Gradescope
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will need to export every notebook to a PDF for submission to Gradescope. Direct export to PDF requires a LaTeX installation. If you would like to go this route, please look at <a href="https://www.latex-project.org/get/">the LaTeX installation instructions for your operating system</a>.</p>
+<p>Otherwise, exporting to HTML and then using your browser to save the resulting page to a PDF is a perfect solution.</p>
+</div>
+</div>
+<p>Follow the same instructions as above, but search for <code>jupyter</code> and install the Jupyter extension. Restart VS Code.</p>
+</section>
+</section>
+<section id="sec-github" class="level3">
+<h3 class="anchored" data-anchor-id="sec-github">Set Up GitHub</h3>
+<section id="create-github-account" class="level4">
+<h4 class="anchored" data-anchor-id="create-github-account">Create GitHub Account</h4>
+<p>If you already have a GitHub account, you can use that for this course and do not need to create a new account.</p>
+<p>Otherwise, <a href="https://github.com/join">create an account</a>. It doesn’t have to be linked to your Cornell email or use your Cornell NetID.</p>
+<p>For labs and homework assignments (we will work on Lab 1 in class on Friday and Homework 1 is available), you should use the GitHub Classroom link to “accept” the assignment provided on Ed Discussion, which will give you your own GitHub repository for that assignment. The first time you click one of these links, you will need to link your place on the course roster with your GitHub account.</p>
+<p>When application exercises require notebook use (which is the case here, but will not always be), you can follow the workflow in these next steps, and will be prompted to do so in the instructions for that exercise.</p>
+<p>You can do almost everything that you will need to do for this course with GitHub directly through VS Code, or you can use the GitHub UI or the Terminal. We will assume in these instructions that you will just work through VS Code.</p>
+</section>
+<section id="clone-the-repository" class="level4">
+<h4 class="anchored" data-anchor-id="clone-the-repository">Clone the Repository</h4>
+<p>Once you have created your account, navigate to the <a href="https://github.com/BEE4750/ae01">GitHub repository for the assignment</a>. You will have your own repository for assignments that you accept through the GitHub Classroom links, but for now, let’s use this common repository. Click the green “Code” button (you should see the interface shown in <a href="#fig-github-clone">Figure&nbsp;1</a>), and copy the URL by clicking on the clipboard icon.</p>
+<div id="fig-github-clone" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/github-clone.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Code Clone Interface on GitHub</figcaption><p></p>
+</figure>
+</div>
+<p>Next, open a new VS Code window. You should see the following options (<a href="#fig-vscode-clone">Figure&nbsp;2</a>).</p>
+<div id="fig-vscode-clone" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/vs-code-clone.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: VS Code New Window</figcaption><p></p>
+</figure>
+</div>
+<p>Click “Clone Git Repository” and select “Clone from GitHub” when it pops up. Paste the URL for the repository into the search bar and select the repository that comes up. You will then be prompted to pick a location to save the repository. I recommend keeping a single master folder for the course, which can then be divided into <code>aes</code> (for application exercises), <code>labs</code>, and <code>hws</code>. For example:</p>
+<pre><code>BEE4750
+|---aes
+|---labs
+|---hws</code></pre>
+<p>Then, pick the appropriate subdirectory. When you clone the repository, it will automatically create a directory for the repository, so you do not need to create the <code>ae01</code> repository explicity. Just select <code>aes</code>.</p>
+<p>Once you do that, you will be prompted to open the new folder. The next time you want to work on the notebook, pick “Open Folder” from the initial VS Code New Window page and find the folder that was created (for example <code>aes/ae01</code>.) Opening a folder is recommended, as it will provide a more convenient interface for working with the entire repository, versus opening a single file.</p>
+<div class="callout callout-style-simple callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Working with GitHub Repositories
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this assignment, we’re only asking you to clone a Github repository. In Lab 1, you will be asked to “commit” and “push” your files to synchronize your local repository with your personal GitHub Classroom repository, which allows you to keep code updated. This is useful for ensuring that you have a backup of your files with tracked changes (for example, if you try to redo a problem but break something), and will make it easy to ask for help on Ed Discussion (just add a link to your repository with the current version of your code that isn’t working as intended).</p>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-notebook" class="level3">
+<h3 class="anchored" data-anchor-id="sec-notebook">Open and Edit The Notebook</h3>
+<section id="open-notebook-and-select-julia-kernel" class="level4">
+<h4 class="anchored" data-anchor-id="open-notebook-and-select-julia-kernel">Open Notebook and Select Julia Kernel</h4>
+<p>Open the <code>ae01.ipynb</code> file.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>.ipynb</code> files
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>.ipynb</code> extension is for Jupyter notebooks, and this should be the primary file type you work with on most assignments for this course.</p>
+<p>Jupyter notebooks consist of two types of “cells, which are editable areas”:</p>
+<ol type="1">
+<li>“Text” cells, in which you can write text using <a href="https://www.datacamp.com/tutorial/markdown-in-jupyter-notebook">Markdown</a>, which uses minimal styling to format text. You can see the “raw” Markdown for any cell by double clicking on it to make it editable. Text cells can also be used to format mathematics using <a href="https://viveks.me/environmental-systems-analysis/tutorials/latex-notebook.html">LaTeX syntax</a>, but no LaTeX is actually required for this to work.</li>
+<li>“Code” cells, which contain code which can be evaluated. The language of the code should match the kernel used for compilation (see below). A “play” button will appear next to a code cell which can be used to evaluate the cell’s contents. <strong>Be careful that running cells out of order can result in errors or bad results</strong>, as each cell is evaluated independently, so if a function or variable is specified in a prior cell which is not executed, a later cell which requires those values will not work properly. Before submitting, make sure to evaluate all cells in order (for example, using the “Run All” button at the top of the VS Code window).</li>
+</ol>
+</div>
+</div>
+<p>In the upper right corner, you should see an icon similar to <a href="#fig-kernel-select">Figure&nbsp;3</a> (but perhaps with different text).</p>
+<div id="fig-kernel-select" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/kernel-selection.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: Kernel Selection Button</figcaption><p></p>
+</figure>
+</div>
+<p>This is where you will click to select the “kernel” which is used to compile the Jupyter notebook. Click it, and you will be prompted to select a kernel. You likely need to select “Select Another Kernel…”, then “Julia Language Support,” and then “Julia 1.8 channel.”</p>
+</section>
+<section id="edit-notebook" class="level4">
+<h4 class="anchored" data-anchor-id="edit-notebook">Edit Notebook</h4>
+<p>Finally, let’s make some edits to the notebook.</p>
+<ol type="1">
+<li><p>Double click the text cell at the top of the notebook that includes the “<strong>Name</strong>:” and “<strong>ID</strong>:” prompts. Add your name and Cornell NetID.</p></li>
+<li><p>Create a code cell below this by hovering your cursor over the bottom of this text cell. You should see the following buttons pop up:</p>
+<img src="figures/new-cell.png" class="img-fluid" alt="Create New Cell">
+<p>Click on “+Code” and the new cell should appear.</p></li>
+<li><p>In this code cell, write a function to compute the square of a value <span class="math inline">\(x\)</span>. The code should have the following basic structure:</p></li>
+</ol>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the following is how you define a function </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># called "square_function" which accepts an input argument x.</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">square_function</span>(x)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># put your code here</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="co"># add in the variable or value that should be returned</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>square_function (generic function with 1 method)</code></pre>
+</div>
+</div>
+<p>Test your function by computing <span class="math inline">\(2^2\)</span> and <span class="math inline">\(4.5^2\)</span>. We’ve added a cell evaluating the <code>square_function(2)</code>; add one evaluating <code>square_function(4.5)</code>.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>The <code>@show</code> macro nicely formats output to include the name of the output that’s being shown. The line ends with a semi-colon (<code>;</code>) to suppress the direct output of the cell (which would be redundant, but isn’t a problem). Otherwise, the semi-colon is not mandatory; it only serves the purpose of suppressing output from a given line.</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> <span class="fu">square_function</span>(<span class="fl">2</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>square_function(2) = nothing</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-export-pdf" class="level3">
+<h3 class="anchored" data-anchor-id="sec-export-pdf">Export the Notebook</h3>
+<p>Congratulations, you’ve set up Julia and GitHub and learned the basics of working with Jupyter Notebooks! The last step is to export the notebook for submission to Gradescope.</p>
+<p>You should see the menu bar shown in <a href="#fig-notebook-menu">Figure&nbsp;4</a> at the top of the VS Code window.</p>
+<div id="fig-notebook-menu" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/vs-code-top-bar.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: Notebook Menu Bar</figcaption><p></p>
+</figure>
+</div>
+<ol type="1">
+<li>Click “Run All” at the top to execute all of the cells in order. <strong>Please do not forget to do this before exporting and submitting or you may lose points because your code has not been executed or may have errors</strong>.</li>
+<li>Click the ellipsis (“…”) and select “Export”. If you have LaTeX installed, you can click “PDF”; otherwise, click “HTML.” Save the file, and then when prompted, open the file. This should open the page in your browser; go to the print interface and save as a PDF. ::: {.callout-tip} When printing to PDF, long lines will run off the edge of code cells, which may result in comments or code being hidden. If you see this, go back to the notebook and break up long lines into shorter onces (for example, see the comment in the above code cell) to ensure key parts of your results aren’t missing. :::</li>
+</ol>
+<p>Great! That’s the basic workflow for every assignment in this course.</p>
+<p>Now you have your PDF that you can submit to Gradescope. Make sure that you tag pages corresponding to relevant problems to avoid a 10% penalty. For this exercise, tag page 1 for Problem 1 (submission of the PDF) and the page with your square function code for Problem 2.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Handle positioning of the toggle
+      window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+      for (let i=0; i<annoteTargets.length; i++) {
+        const annoteTarget = annoteTargets[i];
+        const targetCell = annoteTarget.getAttribute("data-target-cell");
+        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+        const contentFn = () => {
+          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          if (content) {
+            const tipContent = content.cloneNode(true);
+            tipContent.classList.add("code-annotation-tip-content");
+            return tipContent.outerHTML;
+          }
+        }
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          onShow: (instance) => {
+            selectCodeLines(instance.reference);
+            instance.reference.classList.add('code-annotation-active');
+            window.tippy.hideAll();
+          },
+          onHide: (instance) => {
+            unselectCodeLines();
+            instance.reference.classList.remove('code-annotation-active');
+          },
+          maxWidth: 300,
+          delay: [50, 0],
+          duration: [200, 0],
+          offset: [5, 10],
+          arrow: true,
+          trigger: 'click',
+          appendTo: function(el) {
+            return el.parentElement.parentElement.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto',
+          placement: 'right',
+          positionFixed: true,
+          popperOptions: {
+            modifiers: [
+            {
+              name: 'flip',
+              options: {
+                flipVariations: false, // true by default
+                allowedAutoPlacements: ['right'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
+              },
+            },
+            {
+              name: 'preventOverflow',
+              options: {
+                mainAxis: false,
+                altAxis: false
+              }
+            }
+            ]        
+          }      
+        };
+        window.tippy(annoteTarget, config); 
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Content <i class="fa-solid fa-copyright" aria-label="copyright"></i> 2023 by <a href="https://viveks.me">Vivek Srikrishnan</a>. See the <a href="../../about.html">About page</a> for credit information.<br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0)</a></div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">Made with <a href="https://julialang.org">Julia</a> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://www.github.com/vsrikrish/environmental-systems-analysis">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></div>
+  </div>
+</footer>
+
+
+
+</body></html>

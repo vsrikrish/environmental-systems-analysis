@@ -25,50 +25,70 @@ This tutorial will give some examples of plotting and plotting features in Julia
 * [Axis attributes](http://docs.juliaplots.org/latest/generated/attributes_axis/#Axis)
 * [Color names](http://juliagraphics.github.io/Colors.jl/stable/namedcolors/)
 
+## Making a Basic Plot
 
-## Demos
+Let's walk through making a basic line or scatter plot in Julia, using `Plots.jl`^[There are some other plotting libraries in Julia, but `Plots.jl` is a standard starting point. Feel free to experiment, though!]. 
+
+Since we'll be generating random numbers, let's import `Random.jl` to let us set a seed to reproduce the same plot in addition to `Plots.jl`.
 
 ```{julia}
 using Plots
+using LaTeXStrings
+using Measures
 using Random
 Random.seed!(1);
 ```
 
-### Line Plots
-To generate a basic line plot, use `plot`.
+First, to generate a basic line plot, use `plot()`:
 
 ```{julia}
 y = rand(5)
-plot(y, label="original data", legend=:topright)
+plot(y, label="original data", legend=:topleft)
 ```
 
+We could also explicitly pass $x$-axis coordinates by passing an array with these coordinates first, as in `plot(x, y, ...)`. If only one array is passed, `Plots.jl` will interpret the values as $y$ coordinates and use their indices for the $x$ positions.
 
-There's a lot of customization here that can occur, a lot of which is discussed in the docs or can be found with some Googling.
+Notice the use of the `label` and `legend` keywords to label the plot element and position the legend. To not label a particular plotting element, use `label=false`, and to turn off any legend (including a colorbar) from the plot, use `legend=false`.
 
-### Adding Plot Elements
+Now we can add some other lines and point markers. We will use `plot!` and `scatter!` to add another line and some points. 
 
-Now we can add some other lines and point markers.
+::: {.callout-tip}
+### Mutating Function
+
+The exclamation mark says that `plot!()` is a **mutating function**, which changes an existing variable instead of creating a new one. In this case, these functions change or add to an existing plot, instead of creating a new one.
+:::
+
+Notice the arguments in `plot!()` and `scatter!()`, which let us set properties for the line and scatterplot markers.
 
 ```{julia}
 y2 = rand(5)
 y3 = rand(5)
-plot!(y2, label="new data")
-scatter!(y3, label="even more data")
+plot!(y2, color=:red, linewidth=2, linestyle=:dot, label="new data")
+scatter!(y3, markercolor=:black, markershape=:square, markersize=5, label="even more data")
 ```
 
+Let's now add axis labels. We can use [LaTeX syntax](latex-notebook.html) to add mathematical markup elements to labels (such as superscripts, subscripts, Greek letters, and mathematical symbols) using the `LaTeXStrings.jl` package. If we indicate that a string should be interpreted as a LaTeXString using the `L"..."` syntax, it will render content inside `$..$` using LaTeX, as seen below.
 
-
-Remember that an exclamation mark (!) at the end of a function name means that function modifies an object in-place, so `plot!` and `scatter!` modify the current plotting object, they don't create a new plot.
+```{julia}
+xlabel!("Regular String (days)")
+ylabel!(L"LaTeX String $x_2$ (m$^3$)")
+```
 
 ### Removing Plot Elements
 
-Sometimes we want to remove legends, axes, grid lines, and ticks.
+Sometimes we want to remove legends, axes, grid lines, and/or ticks.
 
 ```{julia}
 plot!(legend=false, axis=false, grid=false, ticks=false)
 ```
 
+Notice that this unintentionally modified the image dimensions to move the axis labels off the page. If we wanted to keep them, we could modify the dimensions with `plot!(size=...)`.
 
+```{julia}
+plot!(size=(400, 400))
+```
+
+The lesson is that sometimes the `Plots.jl` defaults don't look ideal, and we need to adjust sizes and margins.
 
 ### Aspect Ratio
 
@@ -80,6 +100,9 @@ plot(v, ratio=1, legend=false)
 scatter!(v)
 ```
 
+## Plot Demos
+
+This section includes some examples of how to make other types of plots.
 
 ### Heatmaps
 
@@ -113,12 +136,26 @@ heatmap(A, c=mycolors, clim=(1,300))
 
 ### Plotting Areas Under Curves
 
+We can plot the area between a curve and the $x$-axis using `areaplot()`.
+
 ```{julia}
-y = rand(10)
-plot(y, fillrange= y.*0 .+ .5, label= "above/below 1/2", legend =:top)
+x = -3:.01:3
+areaplot(x, exp.(-x.^2/2)/√(2π),alpha=.25,legend=false)
+```
+
+We can also use this functionality for stacked area plots.
+
+```{julia}
+M = [1 2 3; 7 8 9; 4 5 6; 0 .5 1.5]
+areaplot(1:3, M, seriescolor = [:red :green :blue ], fillalpha = [0.2 0.3 0.4])
 ```
 
 
+The `fillrange` option lets us color the area between two arbitrary lines/curves if we only want to treat one of those curves as a boundary. `fillcolor` and `fillalpha` let you change the color and transparency of the filled area.
+```{julia}
+y = rand(10)
+plot(y, fillrange= y.*0 .+ .5, label= "above/below 1/2", fillcolor=:red, legend =:top)
+```
 
 ```{julia}
 x = LinRange(0,2,100)
@@ -127,34 +164,25 @@ y2 = exp.(1.3 .* x)
 plot(x, y1, fillrange = y2, fillalpha = 0.35, c = 1, label = "Confidence band", legend = :topleft)
 ```
 
-
-
-```{julia}
-x = -3:.01:3
-areaplot(x, exp.(-x.^2/2)/√(2π),alpha=.25,legend=false)
-```
-
-
-
-```{julia}
-M = [1 2 3; 7 8 9; 4 5 6; 0 .5 1.5]
-areaplot(1:3, M, seriescolor = [:red :green :blue ], fillalpha = [0.2 0.3 0.4])
-```
-
-
+We can also get more creative and color different parts of a curve differently. Here, we divide a normal distribution into 100 quantiles and alternate red and blue stripes. We'll do this using the `erfinv()` function from `SpecialFunctions.jl` to calculate the quantiles using the inverse cumulative distribution function, but there are other approaches using `Distributions.jl`.
 
 ```{julia}
 using SpecialFunctions
-f = x->exp(-x^2/2)/√(2π)
+
+# write a function for the normal distribution density
+f = x -> exp(-x^2/2)/√(2π)
+# get the edges of the quantiles
 δ = .01
-plot()
-x = √2 .* erfinv.(2 .*(δ/2 : δ : 1) .- 1)
+x = √2 .* erfinv.(2 .* (δ/2 : δ : 1) .- 1)
+# make the plot and draw the density line in black
 areaplot(x, f.(x), seriescolor=[ :red,:blue], legend=false)
 plot!(x, f.(x),c=:black)
 ```
 
 
 ### Plotting Shapes
+
+We can also draw shapes more directly, such as rectangles and circles.
 
 ```{julia}
 rectangle(w, h, x, y) = Shape(x .+ [0,w,w,0], y .+ [0,0,h,h])
@@ -192,7 +220,20 @@ dat = DataFrame(a = 1:10, b = 10 .+ rand(10), c = 10 .* rand(10))
 
 
 
-### Editing Plots Manually
+### Log-Scaled Axes
+
+```{julia}
+xx = .1:.1:10
+plot(xx.^2, xaxis=:log, yaxis=:log)
+```
+
+
+
+```{julia}
+plot(exp.(x), yaxis=:log)
+```
+
+## Editing Plots Manually
 
 ```{julia}
 pl = plot(1:4,[1, 4, 9, 16])
@@ -214,20 +255,5 @@ pl[:size]=(300,200)
 
 ```{julia}
 pl
-```
-
-
-
-### Log-Scaled Axes
-
-```{julia}
-xx = .1:.1:10
-plot(xx.^2, xaxis=:log, yaxis=:log)
-```
-
-
-
-```{julia}
-plot(exp.(x), yaxis=:log)
 ```
 

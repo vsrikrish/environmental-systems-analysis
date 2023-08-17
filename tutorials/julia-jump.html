@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.283">
+<meta name="generator" content="quarto-1.4.78">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -570,11 +570,11 @@ y &amp;\geq 0 \label{eq:constrainty}
 <path clip-path="url(#clip112)" d="M181.719 395.513 L258.564 420.612 L335.409 445.711 L412.254 470.809 L489.099 495.908 L565.944 521.007 L642.789 546.106 L719.634 571.205 L796.479 596.304 L873.323 621.402 L950.168 646.501 L1027.01 671.6 L1103.86 696.699 L1180.7 721.798 L1257.55 746.896 L1334.39 771.995 L1411.24 797.094 L1488.08 822.193 L1564.93 847.292 L1641.77 872.391 L1718.62 897.489 L1795.46 922.588 L1872.31 947.687 L1949.15 972.786 L2026 997.885 L2102.84 1022.98 L2179.69 1048.08 L2256.53 1073.18 L2333.38 1098.28 L2410.22 1123.38 L2487.07 1148.48 L2563.91 1173.58 L2640.76 1198.68 L2640.76 1734.12 L2563.91 1734.12 L2487.07 1734.12 L2410.22 1734.12 L2333.38 1734.12 L2256.53 1734.12 L2179.69 1734.12 L2102.84 1734.12 L2026 1734.12 L1949.15 1734.12 L1872.31 1734.12 L1795.46 1734.12 L1718.62 1734.12 L1641.77 1734.12 L1564.93 1734.12 L1488.08 1734.12 L1411.24 1734.12 L1334.39 1734.12 L1257.55 1734.12 L1180.7 1734.12 L1103.86 1734.12 L1027.01 1734.12 L950.168 1734.12 L873.323 1734.12 L796.479 1734.12 L719.634 1734.12 L642.789 1734.12 L565.944 1734.12 L489.099 1734.12 L412.254 1734.12 L335.409 1734.12 L258.564 1734.12 L181.719 1734.12  Z" fill="#3da44d" fill-rule="evenodd" fill-opacity="0.3"></path>
 <polyline clip-path="url(#clip112)" style="stroke:#3da44d; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:0.3; fill:none" points="181.719,395.513 258.564,420.612 335.409,445.711 412.254,470.809 489.099,495.908 565.944,521.007 642.789,546.106 719.634,571.205 796.479,596.304 873.323,621.402 950.168,646.501 1027.01,671.6 1103.86,696.699 1180.7,721.798 1257.55,746.896 1334.39,771.995 1411.24,797.094 1488.08,822.193 1564.93,847.292 1641.77,872.391 1718.62,897.489 1795.46,922.588 1872.31,947.687 1949.15,972.786 2026,997.885 2102.84,1022.98 2179.69,1048.08 2256.53,1073.18 2333.38,1098.28 2410.22,1123.38 2487.07,1148.48 2563.91,1173.58 2640.76,1198.68 "></polyline>
 </svg>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Decision space for the widget linear program <span class="math inline">\(\eqref{eq:widget}\)</span>. The gradient contours for the objective function are shown, as well as the constraints.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Decision space for the widget linear program <span class="math inline">\(\eqref{eq:widget}\)</span>. The gradient contours for the objective function are shown, as well as the constraints.</figcaption>
 </figure>
 </div>
 </div>
-<p>We can see exactly where the solution will be in <a href="#fig-widget-space">Figure&nbsp;1</a>, at the intersection of the feasible regions imposed by the two constraints!</p>
+<p>We can see exactly where the solution will be in <a href="#fig-widget-space" class="quarto-xref">Figure&nbsp;1</a>, at the intersection of the feasible regions imposed by the two constraints!</p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -651,7 +651,7 @@ Objective Function Gradient and Solution Uniqueness
 </div>
 </div>
 <p>If you want a LaTeX-marked up version in the REPL, use <code>latex_formulation()</code>.</p>
-<p>We won’t go into detail here, but there are other ways to define the model, which are detailed in the <a href="https://jump.dev/JuMP.jl/stable/">JuMP documentation</a>. For example, we can specify multiple variables using <a href="https://jump.dev/JuMP.jl/stable/manual/variables/#variables"><code>@variables</code></a>. Similarly, we can use <a href="https://jump.dev/JuMP.jl/stable/manual/constraints/#The-@constraints-macro"><code>@constraints</code></a> to define multiple constraints at once. Or we can use <a href="https://jump.dev/JuMP.jl/stable/tutorials/Getting%20started/variables_constraints_objective/#Constraints-in-a-loop">loops</a> to define multiple constraints or constraints involving many variables. We can also specify the model in <a href="https://jump.dev/JuMP.jl/stable/tutorials/Getting%20started/variables_constraints_objective/#Vectorized-syntax">vectorized syntax</a>, which is similar to how linear programs are specified in MATLAB.</p>
+<p>We won’t go into detail here, but there are other ways to define the model, which are detailed in the <a href="https://jump.dev/JuMP.jl/stable/">JuMP documentation</a>. For example, we can specify multiple variables using <a href="https://jump.dev/JuMP.jl/stable/manual/variables/#variables"><code>@variables</code></a>. Similarly, we can use <a href="https://jump.dev/JuMP.jl/stable/manual/constraints/#The-@constraints-macro"><code>@constraints</code></a> to define multiple constraints at once. Or we can use <a href="https://jump.dev/JuMP.jl/stable/tutorials/Getting started/variables_constraints_objective/#Constraints-in-a-loop">loops</a> to define multiple constraints or constraints involving many variables. We can also specify the model in <a href="https://jump.dev/JuMP.jl/stable/tutorials/Getting started/variables_constraints_objective/#Vectorized-syntax">vectorized syntax</a>, which is similar to how linear programs are specified in MATLAB.</p>
 </section>
 <section id="solve-the-model" class="level3">
 <h3 class="anchored" data-anchor-id="solve-the-model">Solve the Model</h3>
@@ -800,11 +800,11 @@ HiGHS run time      :          0.00</code></pre>
 <polyline clip-path="url(#clip202)" style="stroke:#3da44d; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:0.3; fill:none" points="181.719,395.513 258.564,420.612 335.409,445.711 412.254,470.809 489.099,495.908 565.944,521.007 642.789,546.106 719.634,571.205 796.479,596.304 873.323,621.402 950.168,646.501 1027.01,671.6 1103.86,696.699 1180.7,721.798 1257.55,746.896 1334.39,771.995 1411.24,797.094 1488.08,822.193 1564.93,847.292 1641.77,872.391 1718.62,897.489 1795.46,922.588 1872.31,947.687 1949.15,972.786 2026,997.885 2102.84,1022.98 2179.69,1048.08 2256.53,1073.18 2333.38,1098.28 2410.22,1123.38 2487.07,1148.48 2563.91,1173.58 2640.76,1198.68 "></polyline>
 <circle clip-path="url(#clip202)" cx="1889.38" cy="953.265" r="18" fill="#0000ff" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
 </svg>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Solution for the widget problem <span class="math inline">\(\eqref{eq:widget}\)</span>. The blue dot shows the optimal solution.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Solution for the widget problem <span class="math inline">\(\eqref{eq:widget}\)</span>. The blue dot shows the optimal solution.</figcaption>
 </figure>
 </div>
 </div>
-<p>As shown in <a href="#fig-widget-solution">Figure&nbsp;2</a>, the optimal solution <span class="math display">\[(x^*, y^*)\]</span> is exactly where we deduced it would be geometrically.</p>
+<p>As shown in <a href="#fig-widget-solution" class="quarto-xref">Figure&nbsp;2</a>, the optimal solution <span class="math display">\[(x^*, y^*)\]</span> is exactly where we deduced it would be geometrically.</p>
 </section>
 <section id="other-stuff-we-can-do" class="level3">
 <h3 class="anchored" data-anchor-id="other-stuff-we-can-do">Other Stuff We Can Do</h3>
@@ -998,6 +998,34 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, function() {
+      let href = xref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note !== null) {
+        if (id.startsWith('sec-')) {
+          // Special case sections, only their first couple elements
+          const container = document.createElement("div");
+          if (note.children && note.children.length > 2) {
+            for (let i = 0; i < 2; i++) {
+              container.appendChild(note.children[i].cloneNode(true));
+            }
+            return container.innerHTML
+          } else {
+            return note.innerHTML;
+          }
+        } else {
+          return note.innerHTML;
+        }
+      } else {
+        return "";
+      }
     });
   }
       let selectedAnnoteEl;

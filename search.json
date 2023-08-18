@@ -634,7 +634,7 @@
     "href": "slides/lecture01-1.html#labs-20",
     "title": "Welcome to BEE 4750!",
     "section": "Labs (20%)",
-    "text": "Labs (20%)\n\nIn-class guided activities, but may need some time after class to complete\nFocus on “how” to apply methods and concepts from class\nIf you can’t bring a laptop to these classes, you can work with someone else\nCan work in groups, but must submit your own notebook\nDue by 9:00 on the due date (usually Friday or one week) after lab session.\nWill drop one."
+    "text": "Labs (20%)\n\nIn-class guided activities, but may need some time after class to complete\nFocus on “how” to apply methods and concepts from class\nIf you can’t bring a laptop to these classes, you can work with someone else\nCan work in groups, but must submit your own notebook\nDue by 9:00pm on the due date.\nWill drop one."
   },
   {
     "objectID": "slides/lecture01-1.html#homework-assignments-40",
@@ -655,7 +655,7 @@
     "href": "slides/lecture01-1.html#final-project-deliverables",
     "title": "Welcome to BEE 4750!",
     "section": "Final Project: Deliverables",
-    "text": "Final Project: Deliverables\n\nProposal: one page overview of system and model plan\nRegulatory Review: 2–3 page report on relevant regulations\nLiterature Review (BEE 5750): 2 page synthesis of relevant literature\nPresentation: Short overview of project (last week of classes)\nPoster: Overview and results (due end of semester)"
+    "text": "Final Project: Deliverables\n\nProposal: one page overview of system and model plan\nRegulatory Review: 3 page report on relevant regulations\nLiterature Critique (BEE 5750): Analysis of relevant paper.\nPresentation: Short overview of project (last week of classes)\nPresentation Peer Review: Review of 2-3.\nPoster: Overview and results (due end of semester)\nGroup Assessment (BEE 4750): Review of group member contributions."
   },
   {
     "objectID": "slides/lecture01-1.html#attendance",
@@ -683,7 +683,7 @@
     "href": "slides/lecture01-1.html#academic-integrity",
     "title": "Welcome to BEE 4750!",
     "section": "Academic Integrity",
-    "text": "Academic Integrity\nHopefully not a concern…\n\nCollaboration is great and is encouraged!\nKnowing how to find and use helpful resources is a skill we want to develop.\n\n\n\nDon’t just copy…learn from others and give credit.\nSubmit your own original work."
+    "text": "Academic Integrity\nHopefully not a concern…\n\nCollaboration is great and is encouraged!\nKnowing how to find and use helpful resources is a skill we want to develop.\nDon’t just copy…learn from others and give credit.\nSubmit your own original work."
   },
   {
     "objectID": "slides/lecture01-1.html#academic-integrity-1",
@@ -697,14 +697,14 @@
     "href": "slides/lecture01-1.html#academic-integrity-scenario-1",
     "title": "Welcome to BEE 4750!",
     "section": "Academic Integrity: Scenario 1",
-    "text": "Academic Integrity: Scenario 1\nDan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. He cites the source of the codes.\n\n\n\n\n\n\nIs this ok?\n\n\n\nProbably Not\n\nWhat portion of the work is Dan’s?\nHow important were the codes?\nDid Dan understand what he copied?"
+    "text": "Academic Integrity: Scenario 1\nDan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. They cites the source of the codes.\n\n\n\n\n\n\nIs this ok?\n\n\n\nProbably Not\n\nWhat portion of the work is Dan’s?\nHow important were the codes?\nDid Dan understand what they copied?"
   },
   {
     "objectID": "slides/lecture01-1.html#academic-integrity-scenario-1-1",
     "href": "slides/lecture01-1.html#academic-integrity-scenario-1-1",
     "title": "Welcome to BEE 4750!",
     "section": "Academic Integrity: Scenario 1",
-    "text": "Academic Integrity: Scenario 1\nDan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. He cites the source of the codes.\n\n\n\n\n\n\nWhat Should Dan Do?\n\n\n\nDan should paraphrase the codes he found to incorporate them with his own code, and then also cite them."
+    "text": "Academic Integrity: Scenario 1\nDan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. They cites the source of the codes.\n\n\n\n\n\n\nWhat Should Dan Do?\n\n\n\nDan should paraphrase the codes they found to incorporate them with his own code, and then also cite them."
   },
   {
     "objectID": "slides/lecture01-1.html#academic-integrity-scenario-2",
@@ -718,14 +718,14 @@
     "href": "slides/lecture01-1.html#academic-integrity-scenario-3",
     "title": "Welcome to BEE 4750!",
     "section": "Academic Integrity: Scenario 3",
-    "text": "Academic Integrity: Scenario 3\nFelix and Rachel are working together on a problem involving a derivation. Rachel types it up in LaTeX and sends the code to Felix, who pastes it into his Jupyter notebook.\n\n\n\n\n\n\nIs this ok?\n\n\n\nLikely Not\n\nDid Felix contribute enough to the derivation?\nDefinitely not OK if Felix doesn’t give Rachel credit for her contribution."
+    "text": "Academic Integrity: Scenario 3\nFelix and Rachel are working together on a problem involving a derivation. Rachel types it up in LaTeX and sends the code to Felix, who pastes it into his Jupyter notebook.\n\n\n\n\n\n\nIs this ok?\n\n\n\nLikely Not\n\nDid Felix contribute enough to the derivation?\nDefinitely not OK if Felix doesn’t give Rachel credit for their contribution."
   },
   {
     "objectID": "slides/lecture01-1.html#academic-integrity-scenario-4",
     "href": "slides/lecture01-1.html#academic-integrity-scenario-4",
     "title": "Welcome to BEE 4750!",
     "section": "Academic Integrity: Scenario 4",
-    "text": "Academic Integrity: Scenario 4\nDarren uses ChatGPT to debug an error in his homework code. He fixes the error and credits ChatGPT in his References section.\n\n\n\n\n\n\nIs this ok?\n\n\n\nWell-meaning, but no!\n\nUsing ChatGPT (or other ML tools) can be ok, but…\nNeed to ask permission and thoroughly document the query and the exact response."
+    "text": "Academic Integrity: Scenario 4\nDarren uses ChatGPT to debug an error in their homework code. They fix the error and credits ChatGPT in his References section.\n\n\n\n\n\n\nIs this ok?\n\n\n\nWell-meaning, but no!\n\nUsing ChatGPT (or other ML tools) can be ok, but…\nNeed to ask permission and thoroughly document the query and the exact response."
   },
   {
     "objectID": "slides/lecture01-1.html#chatgpt-the-stochastic-parrot",

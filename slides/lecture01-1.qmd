@@ -109,7 +109,7 @@ execute:
 - Focus on "how" to apply methods and concepts from class
 - **If you can't bring a laptop to these classes, you can work with someone else**
 - Can work in groups, but must submit your own notebook
-- Due by **9:00 on the due date (usually Friday or one week) after lab session**.
+- Due by **9:00pm** on the due date.
 - Will drop one.
 
 
@@ -132,10 +132,12 @@ execute:
 ## Final Project: Deliverables
 
 - **Proposal**: one page overview of system and model plan
-- **Regulatory Review**: 2--3 page report on relevant regulations
-- **Literature Review *(BEE 5750)***: 2 page synthesis of relevant literature
+- **Regulatory Review**: 3 page report on relevant regulations
+- **Literature Critique *(BEE 5750)***: Analysis of relevant paper.
 - **Presentation**: Short overview of project (last week of classes)
+- **Presentation Peer Review**: Review of 2-3.
 - **Poster**: Overview and results (due end of semester)
+- **Group Assessment *(BEE 4750)***: Review of group member contributions.
 
 
 ## Attendance
@@ -168,9 +170,6 @@ Hopefully not a concern...
 
 - Collaboration is great and is encouraged! 
 - Knowing how to find and use helpful resources is a skill we want to develop. 
-
-. . .
-
 - Don't just copy...learn from others and give credit.
 - Submit your own original work.
 
@@ -186,7 +185,7 @@ But often lines aren't that simple. Let's quickly consider some scenarios (h/t t
 
 ## Academic Integrity: Scenario 1
 
-Dan searches the internet for relevant code and copy-pastes it into his Jupyter notebook.  He cites the source of the codes.
+Dan searches the internet for relevant code and copy-pastes it into his Jupyter notebook.  They cites the source of the codes.
 
 ::: {.callout-important}
 ### Is this ok?
@@ -196,19 +195,19 @@ Dan searches the internet for relevant code and copy-pastes it into his Jupyter 
 
 - What portion of the work is Dan's?
 - How important were the codes?
-- Did Dan understand what he copied?
+- Did Dan understand what they copied?
 :::
 :::
 
 ## Academic Integrity: Scenario 1
 
-Dan searches the internet for relevant code and copy-pastes it into his Jupyter notebook.  He cites the source of the codes.
+Dan searches the internet for relevant code and copy-pastes it into his Jupyter notebook.  They cites the source of the codes.
 
 ::: {.callout-tip}
 ### What Should Dan Do?
 
 ::: {.fragment .fade-in}
-Dan should *paraphrase* the codes he found to incorporate them with his own code, and then also cite them.
+Dan should *paraphrase* the codes they found to incorporate them with his own code, and then also cite them.
 :::
 :::
 
@@ -241,7 +240,7 @@ Felix and Rachel are working together on a problem involving a derivation. Rache
 **Likely Not**
 
 - Did Felix contribute enough to the derivation?
-- ***Definitely not OK if Felix doesn't give Rachel credit for her contribution.***
+- ***Definitely not OK if Felix doesn't give Rachel credit for their contribution.***
 
 :::
 :::
@@ -249,7 +248,7 @@ Felix and Rachel are working together on a problem involving a derivation. Rache
 
 ## Academic Integrity: Scenario 4
 
-Darren uses ChatGPT to debug an error in his homework code. He fixes the error and credits ChatGPT in his References section.
+Darren uses ChatGPT to debug an error in their homework code. They fix the error and credits ChatGPT in his References section.
 
 ::: {.callout-important}
 ### Is this ok?

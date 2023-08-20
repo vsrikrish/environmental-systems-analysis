@@ -415,12 +415,12 @@ Due Date
 <section id="load-environment" class="level3">
 <h3 class="anchored" data-anchor-id="load-environment">Load Environment</h3>
 <p>The following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.</p>
-<div id="1bb41e7b" class="cell" data-execution_count="1">
+<div id="432ba8be" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="pp">@__DIR__</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="94159ade" class="cell" data-execution_count="2">
+<div id="1d125d66" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LaTeXStrings</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -445,7 +445,7 @@ Due Date
 <li>the table of dispersion coefficients <code>turb_coef</code>, which is provided for you below as a <a href="https://dataframes.juliadata.org/stable/"><code>DataFrame</code></a>.</li>
 </ul>
 </section>
-<div id="c5808218" class="cell" data-execution_count="3">
+<div id="e3abd9e6" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set up coefficients in matrix form</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>turb_coef <span class="op">=</span> [</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fl">213.0</span>  <span class="fl">440.8</span> <span class="fl">1.041</span> <span class="fl">9.27</span>  <span class="fl">459.7</span> <span class="fl">2.094</span> <span class="op">-</span><span class="fl">9.6</span></span>

@@ -1715,6 +1715,83 @@
     "text": "Assessments\n\nHW2 due Friday.\nLab2 also due Friday.\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
+    "objectID": "slides/lecture05-1.html#overview",
+    "href": "slides/lecture05-1.html#overview",
+    "title": "Monte Carlo and Climate Sensitivity",
+    "section": "Overview",
+    "text": "Overview\n\nDue Friday (9/22) at 9pm on Gradescope.\nNotebook is a little long, but exercises should be short.\nRemember to “Run All” before exporting and submitting."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#planetary-energy-balance",
+    "href": "slides/lecture05-1.html#planetary-energy-balance",
+    "title": "Monte Carlo and Climate Sensitivity",
+    "section": "Planetary Energy Balance",
+    "text": "Planetary Energy Balance\n\nRepresentation of Planetary Energy Balance\nSource: Reprinted from A Climate Modeling Primer, A. Henderson-Sellers and K. McGuffie, Wiley, pg. 58, (1987) via https://www.e-education.psu.edu/meteo469/node/137."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#radiative-forcing",
+    "href": "slides/lecture05-1.html#radiative-forcing",
+    "title": "Monte Carlo and Climate Sensitivity",
+    "section": "Radiative Forcing",
+    "text": "Radiative Forcing\nClimate changes result from changes to the energy balance of the planet, due to e.g.:\n\ngreenhouse gas emissions (which trap radiation, warming the planet);\naerosol emissions from air pollution or volcanic eruptions (which block incoming radiation, cooling the planet);\nchanges to the solar cycle (which can increase or decrease the incoming solar radiation).\n\n\nThese changes to the radiative balance are called radiative forcings (RF)."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#historical-and-projected-radiative-forcing",
+    "href": "slides/lecture05-1.html#historical-and-projected-radiative-forcing",
+    "title": "Monte Carlo and Climate Sensitivity",
+    "section": "Historical and Projected Radiative Forcing",
+    "text": "Historical and Projected Radiative Forcing\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Historical and projected radiative forcings.\n\n\n\n\nThese projections are under RCP 8.5, which is the “worst-case” official future climate scenario."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#energy-balance-model-ebm",
+    "href": "slides/lecture05-1.html#energy-balance-model-ebm",
+    "title": "Monte Carlo and Climate Sensitivity",
+    "section": "Energy Balance Model (EBM)",
+    "text": "Energy Balance Model (EBM)\n\nSimplest possible climate model.\nTreats the Earth as a 0-dimensional sphere covered with water.\nEarth warms due to imbalance in average (over surface area) heat flux."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#ebm-equations",
+    "href": "slides/lecture05-1.html#ebm-equations",
+    "title": "Monte Carlo and Climate Sensitivity",
+    "section": "EBM Equations",
+    "text": "EBM Equations\n\\[\\begin{align*}\n\\overbrace{\\frac{dH}{dt}}^{\\text{change in heat}} &= \\overbrace{F}^{\\text{RF}} - \\overbrace{\\lambda T}^{\\substack{\\text{change in} \\\\ \\text{temperature}}} \\\\\n\\underbrace{C}_{\\substack{\\text{ocean heat} \\\\ \\text{capacity}}} \\frac{dT}{dt} &= F - \\lambda T\n\\end{align*}\\]\nThe proportionality coefficient \\(\\lambda\\) is important: it is the climate feedback factor and controls how much the Earth warms in response to radiative forcing."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#what-the-ebm-neglects",
+    "href": "slides/lecture05-1.html#what-the-ebm-neglects",
+    "title": "Monte Carlo and Climate Sensitivity",
+    "section": "What the EBM Neglects",
+    "text": "What the EBM Neglects\nThe EBM is a one-box model of the Earth’s climate: models energy balance between incoming and outgoing heat. As such, it neglects:\n\n“Deep” ocean heat uptake and cycling.\nMultiple atmospheric layers.\nSpatial patterns of atmospheric and ocean circulation."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#equilibrium-climate-sensitivity-ecs",
+    "href": "slides/lecture05-1.html#equilibrium-climate-sensitivity-ecs",
+    "title": "Monte Carlo and Climate Sensitivity",
+    "section": "Equilibrium Climate Sensitivity (ECS)",
+    "text": "Equilibrium Climate Sensitivity (ECS)\nUnder steady-state conditions (constant \\(F\\) and \\(dT/dt = 0\\)), \\[T = \\frac{F}{\\lambda}.\\]\nWhen we double atmospheric CO2, we refer to the equilibrium temperature \\(S\\) as the equilibrium climate sensitivity:\n\\[S = \\underbrace{F_{2\\times \\text{CO}_2}}_{\\approx 4 \\text{W/m}^2}/\\lambda\\]"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#monte-carlo-for-ecs-uncertainty",
+    "href": "slides/lecture05-1.html#monte-carlo-for-ecs-uncertainty",
+    "title": "Monte Carlo and Climate Sensitivity",
+    "section": "Monte Carlo for ECS Uncertainty",
+    "text": "Monte Carlo for ECS Uncertainty\nYour task in the lab: obtain projections under RCP 8.5 forcing and ECS uncertainty using Monte Carlo\nHow does uncertainty in the ECS propagate to uncertainty in temperatures in 2100?"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#next-classes",
+    "href": "slides/lecture05-1.html#next-classes",
+    "title": "Monte Carlo and Climate Sensitivity",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday/Friday: Simulating Dissolved Oxygen\nNext Week: Prescriptive Modeling and Optimization"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#assessments",
+    "href": "slides/lecture05-1.html#assessments",
+    "title": "Monte Carlo and Climate Sensitivity",
+    "section": "Assessments",
+    "text": "Assessments\nFriday: Homework 2 and Lab 2 both due.\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
     "objectID": "slides/lecture02-1.html#what-is-a-system",
     "href": "slides/lecture02-1.html#what-is-a-system",
     "title": "Understanding Systems with Models",

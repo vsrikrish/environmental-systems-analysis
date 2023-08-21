@@ -27,13 +27,29 @@ format:
         html-math-method: mathjax
         include-in-header: mathjax-config.html
         date-format: long
-
+        email-obfuscation: javascript
 execute:
     freeze: auto
 ---
 
 # Welcome!
 
+## Instructors
+
+:::: {.columns}
+::: {.column width=50%}
+**Instructor**: Prof. Vivek Srikrishnan, <viveks@cornell.edu>
+
+- Office: 318 Riley-Robb
+- Office Hours: MW 10-11, R 11-12
+:::
+::: {.column width=50%}
+**TA**: Gabriela Ackermann Logan, <ga345@cornell.edu>
+
+- Office: 319 RIley-Robb
+- Office Hours: T 10-11
+:::
+::::
 
 ## Course Overview
 
@@ -134,8 +150,8 @@ execute:
 - **Proposal**: one page overview of system and model plan
 - **Regulatory Review**: 3 page report on relevant regulations
 - **Literature Critique *(BEE 5750)***: Analysis of relevant paper.
-- **Presentation**: Short overview of project (last week of classes)
-- **Presentation Peer Review**: Review of 2-3.
+- ***Presentation***: Short overview of project (last week of classes)
+- ***Presentation Peer Review***: Review of 2-3.
 - **Poster**: Overview and results (due end of semester)
 - **Group Assessment *(BEE 4750)***: Review of group member contributions.
 

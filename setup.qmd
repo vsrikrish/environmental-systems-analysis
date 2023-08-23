@@ -40,8 +40,8 @@ curl -fsSL https://install.julialang.org | sh
 
 Once you install Juliaup, install Julia version 1.8.5 by opening a terminal (in MacOS or Linux) or the command line (in Windows) and entering:
 ```shell
-julia add 1.8.5
-julia default 1.8.5
+juliaup add 1.8.5
+juliaup default 1.8.5
 ```
 
 This will install Julia 1.8.5 and make it the default version, which should maximize package compatibility throughout this course. Going forward, if you want to add new versions or change the default, you can [follow the Juliaup instructions](https://github.com/JuliaLang/juliaup#using-juliaup).

@@ -147,6 +147,28 @@ Examples include lake eutrophication and ice-sheet melting.
 :::
 ::::
 
+## Conceptual Model of a System
+
+![Conceptual Model of a System](images/system-conceptual.svg)
+
+## Environmental Systems
+
+:::: {.columns}
+::: {.column width=60%}
+![Conceptual Model of an Environmental System](images/system-environmental.svg){width=100%}
+:::
+
+::: {.column width=40%}
+
+- Municipal sewage into lakes, rivers, etc.
+- Power plant emissions into air
+- Solid waste placed on landfill
+- CO<sub>2</sub> into atmosphere
+
+:::
+::::
+
+
 ## What Do We Need To Define A System?
 
 ::: {.incremental}
@@ -156,6 +178,8 @@ Examples include lake eutrophication and ice-sheet melting.
 - **Inputs**: control policies and/or external forcings
 - **Outputs**: measured quantities of interest
 :::
+
+
 
 # Key Takeaways
 

@@ -31,6 +31,16 @@ execute:
     freeze: auto
 ---
 
+# Review
+
+## Last Class
+
+Went over syllabus and course policies.
+
+## Questions?
+
+{{< include _poll-prompt.qmd >}}
+
 # Why Study Systems?
 
 ## What Is A System?

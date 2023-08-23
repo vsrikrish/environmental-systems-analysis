@@ -96,7 +96,6 @@ For example:
 - Fate and transport modeling involves quantifying how stocks change as they move through the system.
 :::
 
-# Examples of Systems Dynamics
 
 ## Feedback Loops
 

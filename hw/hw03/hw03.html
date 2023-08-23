@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.78">
+<meta name="generator" content="quarto-1.3.283">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -352,7 +352,7 @@ window.MathJax = {
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/hw/hw03/hw03.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="hw03.ipynb" download="hw03.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/hw/hw03/hw03.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -387,18 +387,15 @@ Due Date
 <p>Friday, 10/06/23, 9:00pm</p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-caution">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-body-container">
 <p>If you are enrolled in the course, make sure that you use the GitHub Classroom link provided in Ed Discussion, or you may not be able to get help if you run into problems.</p>
 <p>Otherwise, you can <a href="https://github.com/BEE4750/hw03">find the Github repository here</a>.</p>
+</div>
 </div>
 </div>
 <section id="overview" class="level2">
@@ -430,17 +427,17 @@ Due Date
 <h2 class="anchored" data-anchor-id="problems-total-100-points">Problems (Total: 100 Points)</h2>
 <section id="problem-1-60-points" class="level3 cell markdown">
 <h3 class="anchored" data-anchor-id="problem-1-60-points">Problem 1 (60 points)</h3>
-<p>A river which flows at 6 km/d is receiving waste discharges from two sources which are 15 km apart, as shown in <a href="#fig-river" class="quarto-xref">Figure&nbsp;1</a>. The oxygen reaeration rate is 0.55 day<sup>-1</sup>, and the decay rates of CBOD and NBOD are are 0.55 and 0.25 day<sup>-1</sup>, respectively. The river’s saturated dissolved oxygen concentration is 10m g/L.</p>
+<p>A river which flows at 6 km/d is receiving waste discharges from two sources which are 15 km apart, as shown in <a href="#fig-river">Figure&nbsp;1</a>. The oxygen reaeration rate is 0.55 day<sup>-1</sup>, and the decay rates of CBOD and NBOD are are 0.55 and 0.25 day<sup>-1</sup>, respectively. The river’s saturated dissolved oxygen concentration is 10m g/L.</p>
 <div id="fig-river" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/river_diagram.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: Schematic of the system in Problem 1</figcaption>
+<p><img src="figures/river_diagram.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Schematic of the system in Problem 1</figcaption><p></p>
 </figure>
 </div>
 </section>
 <section id="problem-1.1-20-points" class="level4 cell markdown">
 <h4 class="anchored" data-anchor-id="problem-1.1-20-points">Problem 1.1 (20 points)</h4>
-<p>If the characteristics of the river inflow and waste discharges are given in <a href="#tbl-river" class="quarto-xref">Table&nbsp;1</a>, plot the dissolved oxygen concentration in the river from the first waste stream to 50km downstream.</p>
+<p>If the characteristics of the river inflow and waste discharges are given in <a href="#tbl-river">Table&nbsp;1</a>, plot the dissolved oxygen concentration in the river from the first waste stream to 50km downstream.</p>
 <div id="tbl-river" class="anchored">
 <table class="table table-sm table-striped small">
 <caption>Table&nbsp;1: River inflow and waste stream characteristics for Problem 1.</caption>
@@ -651,34 +648,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, function() {
-      let href = xref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note !== null) {
-        if (id.startsWith('sec-')) {
-          // Special case sections, only their first couple elements
-          const container = document.createElement("div");
-          if (note.children && note.children.length > 2) {
-            for (let i = 0; i < 2; i++) {
-              container.appendChild(note.children[i].cloneNode(true));
-            }
-            return container.innerHTML
-          } else {
-            return note.innerHTML;
-          }
-        } else {
-          return note.innerHTML;
-        }
-      } else {
-        return "";
-      }
     });
   }
       let selectedAnnoteEl;

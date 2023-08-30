@@ -36,15 +36,15 @@ If you have a Mac, open a terminal (such as the Terminal app) and enter:
 curl -fsSL https://install.julialang.org | sh
 ```
 
-#### Installing Julia 1.8.5
+#### Installing Julia 1.9.2
 
-Once you install Juliaup, install Julia version 1.8.5 by opening a terminal (in MacOS or Linux) or the command line (in Windows) and entering:
+Once you install Juliaup, install Julia version 1.9.2 by opening a terminal (in MacOS or Linux) or the command line (in Windows) and entering:
 ```shell
-juliaup add 1.8.5
-juliaup default 1.8.5
+juliaup add 1.9.2
+juliaup default 1.9.2
 ```
 
-This will install Julia 1.8.5 and make it the default version, which should maximize package compatibility throughout this course. Going forward, if you want to add new versions or change the default, you can [follow the Juliaup instructions](https://github.com/JuliaLang/juliaup#using-juliaup).
+This will install Julia 1.9.2 and make it the default version, which should maximize package compatibility throughout this course. Going forward, if you want to add new versions or change the default, you can [follow the Juliaup instructions](https://github.com/JuliaLang/juliaup#using-juliaup).
 
 
 ### Install and Set Up VS Code {#sec-install-code}

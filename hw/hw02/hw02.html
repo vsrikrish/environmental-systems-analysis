@@ -112,6 +112,7 @@ window.MathJax = {
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta property="og:title" content="BEE 4750 - Fall 2023 - BEE 4750 Homework 2: Gaussian Plumes">
+<meta property="og:description" content="">
 <meta property="og:site-name" content="BEE 4750 - Fall 2023">
 </head>
 
@@ -353,6 +354,7 @@ window.MathJax = {
   <li><a href="#problem-2-35-points" id="toc-problem-2-35-points" class="nav-link" data-scroll-target="#problem-2-35-points">Problem 2 (35 points)</a></li>
   <li><a href="#problem-3-25-points" id="toc-problem-3-25-points" class="nav-link" data-scroll-target="#problem-3-25-points">Problem 3 (25 points)</a></li>
   </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/hw/hw02/hw02.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -405,19 +407,20 @@ Due Date
 <section id="instructions" class="level3">
 <h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
 <ul>
-<li>Problems 1-3 consist of a series of code snippets for you to interpret and debug. For Problems 1 and 2, you will be asked to identify relevant error(s) and fix the code. For Problem 3, the code works as intended; your goal is to identify the code’s purpose by following its logic.</li>
-<li>Problem 4 asks you to convert a verbal description of a wastewater treatment system into a Julia function, and then to use that function to explore the impact of different wastewater allocation strategies.</li>
+<li>Problem 1 asks you to compute the concentration of a pollutant from a point souce at a ground-level receptor and compare this concentration to a regulatory exposure standard.</li>
+<li>Problem 2 involves writing a simulation model for Gaussian plume dispersion and looking at the sensitivity of the dispersion and concentrations to changes in atmospheric stability and wind speed.</li>
+<li>Problem 3 asks you to examine the impact of two point sources on ground-level receptor concentrations.</li>
 </ul>
 </section>
 <section id="load-environment" class="level3">
 <h3 class="anchored" data-anchor-id="load-environment">Load Environment</h3>
 <p>The following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.</p>
-<div id="432ba8be" class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="pp">@__DIR__</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="1d125d66" class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LaTeXStrings</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -442,7 +445,7 @@ Due Date
 <li>the table of dispersion coefficients <code>turb_coef</code>, which is provided for you below as a <a href="https://dataframes.juliadata.org/stable/"><code>DataFrame</code></a>.</li>
 </ul>
 </section>
-<div id="e3abd9e6" class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set up coefficients in matrix form</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>turb_coef <span class="op">=</span> [</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fl">213.0</span>  <span class="fl">440.8</span> <span class="fl">1.041</span> <span class="fl">9.27</span>  <span class="fl">459.7</span> <span class="fl">2.094</span> <span class="op">-</span><span class="fl">9.6</span></span>
@@ -660,9 +663,13 @@ Using Comprehensions to Apply Functions Across Inputs
 <h4 class="anchored" data-anchor-id="problem-3.2-10-points">Problem 3.2 (10 points)</h4>
 <p>How does this compare to the exposure standard you found for Problem 1.3? If a control is needed, what information might you need to make a decision about how to allocate those reductions across the two sources?</p>
 </section>
-
-
 </section>
+<section id="references" class="level2 cell markdown">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>List any external references consulted, including classmates.</p>
+</section>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

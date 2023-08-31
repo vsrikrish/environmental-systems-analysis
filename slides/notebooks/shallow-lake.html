@@ -373,7 +373,7 @@ window.MathJax = {
   <li><a href="#lake-problem-dynamics" id="toc-lake-problem-dynamics" class="nav-link" data-scroll-target="#lake-problem-dynamics">Lake Problem Dynamics</a></li>
   <li><a href="#simulating-the-model-under-constant-inflows" id="toc-simulating-the-model-under-constant-inflows" class="nav-link" data-scroll-target="#simulating-the-model-under-constant-inflows">Simulating The Model Under Constant Inflows</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/vsrikrish/environmental-systems-analysis/blob/main/slides/notebooks/shallow-lake.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="shallow-lake.out.ipynb" download="shallow-lake.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/vsrikrish/environmental-systems-analysis/blob/main/slides/notebooks/shallow-lake.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
@@ -408,21 +408,15 @@ window.MathJax = {
 </header>
 
 <div class="cell" data-execution_count="3">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="fu">dirname</span>(<span class="pp">@__DIR__</span>))</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <div class="cell" data-execution_count="4">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LaTeXStrings</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Distributions</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Random</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <section id="introduction" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
@@ -510,19 +504,14 @@ Carpenter, S. R., Ludwig, D., &amp; Brock, W. A. (1999). Management of eutrophic
 Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for robust multi-objective management of deeply uncertain socio-ecological tipping points. <em>Environmental Modelling &amp; Software</em>, <em>92</em>, 125–141. <a href="https://doi.org/10.1016/j.envsoft.2017.02.017">https://doi.org/10.1016/j.envsoft.2017.02.017</a>
 </div></div><p>First, let’s look at how the balance of P recycling and outflows affects the accumulation of P in the lake absent additional inputs (<span class="math inline">\(a=y=0\)</span>).</p>
 <div class="cell" data-execution_count="5">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># define functions for lake recycling and outflows</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lake_P_cycling</span>(x, q) <span class="op">=</span> x<span class="op">.^</span>q <span class="op">./</span> (<span class="fl">1</span> <span class="op">.+</span> x<span class="op">.^</span>q);</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lake_P_out</span>(x, b) <span class="op">=</span> b <span class="op">.*</span> x;</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># define range of lake states X</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">0.05</span><span class="op">:</span><span class="fl">2.5</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <div class="cell" data-fig-width="100%" data-execution_count="6">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot recycling and outflows for selected values of b and q</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> <span class="fu">plot</span>(x, <span class="fu">lake_P_cycling</span>(x, <span class="fl">2.5</span>), color<span class="op">=:</span>black, linewidth<span class="op">=</span><span class="fl">5</span>,legend<span class="op">=:</span>topleft, label<span class="op">=:</span><span class="cn">false</span>, ylabel<span class="op">=</span><span class="st">"P Flux"</span>, xlabel<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>X_t<span class="sc">$</span><span class="st">", </span>tickfontsize<span class="st">=14, guidefontsize=16, legendfontsize=14, palette=:tol_muted, framestyle=:zerolines, grid=:false)</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(x, <span class="fu">lake_P_out</span>(x, <span class="fl">0.6</span>), linewidth<span class="op">=</span><span class="fl">3</span>, linestyle<span class="op">=:</span>dash, label<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>b<span class="st">=0.6</span><span class="sc">$</span><span class="st">")</span></span>
@@ -533,7 +522,6 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">quiver!</span>([<span class="fl">2.5</span>], [<span class="fl">0.97</span>], quiver<span class="op">=</span>([<span class="op">-</span><span class="fl">0.125</span>], [<span class="op">-</span><span class="fl">0.05</span>]), color<span class="op">=:</span>red, linewidth<span class="op">=</span><span class="fl">2</span>)</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(ylims<span class="op">=</span>(<span class="op">-</span><span class="fl">0.02</span>, <span class="fl">1</span>))</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">600</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div id="fig-lake-noinput" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -594,11 +582,8 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 <p>Based on <a href="#fig-lake-noinput">Figure&nbsp;1</a>, we can see that there are typically three equilibria: a stable equilibrium at <span class="math inline">\(X=0\)</span>, an unstable, oligotrophic equilibrium <span class="math inline">\(X_o\)</span>, and a stable, eutrophic equilibrium <span class="math inline">\(X_e\)</span>. When <span class="math inline">\(X_t &lt; X_o\)</span>, the lake tends towards a zero P level without external inputs, while when <span class="math inline">\(X_t &gt; X_o\)</span>, the lake will inevitably undergo eutrophication, as the P level will tend towards <span class="math inline">\(X_e\)</span>. This means that <span class="math inline">\(X_t=X_o\)</span> corresponds to a <strong>tipping point</strong>: beyond that level, the lake will abruptly switch to a eutrophic state from which it cannot recover.</p>
 <p>This lake is subject to a <strong>bifurcation</strong> depending on the values of <span class="math inline">\(b\)</span> and <span class="math inline">\(q\)</span>. To see this, let’s fix <span class="math inline">\(q=2.5\)</span>, as in <a href="#fig-lake-noinput">Figure&nbsp;1</a>. For <span class="math inline">\(b=0.4\)</span>, there are the two equilibria mentioned previously. However, when <span class="math inline">\(b=0.2\)</span>, there is only the unstable equilibrium <span class="math inline">\(X=X_o\)</span> in addition to <span class="math inline">\(X=0\)</span>. For <span class="math inline">\(b=0.6\)</span>, the only equilibrium is <span class="math inline">\(X=0\)</span>, so any positive P input would result in eutrophication. This highlights the delicacy of systems which exhibit bifurcations: whether an equilibrium is stable or unstable, or even exists, can depend on a characteristic of the system which is often highly uncertain.</p>
 <div class="cell" data-fig-width="100%" data-execution_count="7">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> [<span class="fl">0</span>, <span class="fl">0.67</span>, <span class="fl">2.2</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(p1, eq, (y <span class="op">-&gt;</span> <span class="fu">lake_P_cycling</span>(y, <span class="fl">2.5</span>)).(eq), label<span class="op">=</span><span class="st">"Equilibria"</span>, markersize<span class="op">=</span><span class="fl">10</span>, markercolor<span class="op">=:</span>red)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div id="fig-lake-noinput-eq" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -661,14 +646,11 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 </div>
 </div>
 <div class="cell" data-fig-width="100%" data-execution_count="8">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>p2 <span class="op">=</span> <span class="fu">plot</span>(x, <span class="fl">0.05</span> <span class="op">.+</span> <span class="fu">lake_P_cycling</span>(x, <span class="fl">2.5</span>), color<span class="op">=:</span>black, linewidth<span class="op">=</span><span class="fl">5</span>,legend<span class="op">=:</span>topleft, label<span class="op">=:</span><span class="cn">false</span>, ylabel<span class="op">=</span><span class="st">"P Flux"</span>, xlabel<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>X_t<span class="sc">$</span><span class="st">", </span>tickfontsize<span class="st">=14, guidefontsize=16, legendfontsize=14, palette=:tol_muted, framestyle=:zerolines, grid=:false)</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(x, <span class="fu">lake_P_out</span>(x, <span class="fl">0.6</span>), linewidth<span class="op">=</span><span class="fl">3</span>, linestyle<span class="op">=:</span>dash, label<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>b<span class="st">=0.6</span><span class="sc">$</span><span class="st">")</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plot<span class="st">!(x, lake_P_out(x, 0.4), linewidth=3, linestyle=:dash, label=L"</span><span class="op">$</span>b<span class="op">=</span><span class="fl">0.4</span><span class="op">$</span><span class="st">")</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(x, <span class="fu">lake_P_out</span>(x, <span class="fl">0.2</span>), linewidth<span class="op">=</span><span class="fl">3</span>, linestyle<span class="op">=:</span>dash, label<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>b<span class="st">=0.2</span><span class="sc">$</span><span class="st">")</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plot<span class="st">!(size=(600, 600))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div id="fig-lake-input" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -757,8 +739,6 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 </tbody>
 </table>
 <div class="cell" data-execution_count="9">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Random</span>.<span class="fu">seed!</span>(<span class="fl">1</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># set parameters</span></span>
@@ -769,21 +749,17 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="fl">2.5</span></span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">0.4</span></span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">50</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display">
 <pre><code>50</code></pre>
 </div>
 </div>
 <div class="cell" data-fig-width="100%" data-execution_count="27">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">LogNormal</span>(μ, σ²), T)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(y; label<span class="op">=</span><span class="st">"Non-Point Source Inflows"</span>, color<span class="op">=:</span>black, marker<span class="op">=</span>(<span class="op">:</span>x, <span class="fl">5</span>), guidefontsize<span class="op">=</span><span class="fl">18</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, legendfontsize<span class="op">=</span><span class="fl">14</span>, linewidth<span class="op">=</span><span class="fl">3</span>, legend<span class="op">=:</span>topright)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">xlabel!</span>(L<span class="st">"t"</span>)</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel!</span>(L<span class="st">"y_t"</span>)</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">600</span>))</span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ylims!</span>((<span class="fl">0.025</span>, <span class="fl">0.042</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div id="fig-lake-inflows" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -1041,8 +1017,6 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 </div>
 </div>
 <div class="cell" data-fig-width="100%" data-execution_count="28">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>X₁ <span class="op">=</span> <span class="fu">zeros</span>(T<span class="op">+</span><span class="fl">1</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>X₂ <span class="op">=</span> <span class="fu">zeros</span>(T<span class="op">+</span><span class="fl">1</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1056,7 +1030,6 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">xlabel!</span>(L<span class="st">"t"</span>)</span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel!</span>(L<span class="st">"X_t"</span>)</span>
 <span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">600</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div id="fig-lake-state" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <!--?xml version="1.0" encoding="utf-8"?-->

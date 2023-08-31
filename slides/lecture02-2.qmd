@@ -270,4 +270,4 @@ One option: We could leave $E_1$ up to the owners of Factory 1 and require $E_2$
 
 **Friday**: Lake Eutrophication Example
 
-**Monday**: Simulating Dissolved Oxygen Dynamics
+**Wednesday**: Box Models and Simulation

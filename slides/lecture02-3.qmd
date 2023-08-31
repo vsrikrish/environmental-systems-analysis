@@ -35,6 +35,10 @@ execute:
 #| echo: false
 #| output: false
 
+import Pkg
+Pkg.activate(".")
+Pkg.instantiate()
+
 using Plots
 using Distributions
 using StatsPlots
@@ -154,7 +158,9 @@ We'll focus on the case where $q = 2.5$.
 :::
 
 ::: {.column width=50%}
+
 {{< embed notebooks/shallow-lake.ipynb#fig-lake-noinput >}}
+
 :::
 ::::
 
@@ -168,7 +174,9 @@ This reflects trend in natural P dynamics (red arrows).
 :::
 
 ::: {.column width=50%}
+
 {{< embed notebooks/shallow-lake.ipynb#fig-lake-noinput >}}
+
 :::
 ::::
 

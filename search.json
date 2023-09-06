@@ -434,207 +434,592 @@
     "text": "Assessments\n\nReleased HW4 early, due 10/22.\nLab3 due Friday.\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
-    "objectID": "slides/lecture03-3.html#box-models",
-    "href": "slides/lecture03-3.html#box-models",
+    "objectID": "slides/lecture0x-1.html#box-models",
+    "href": "slides/lecture0x-1.html#box-models",
     "title": "Plume Dispersion Models",
     "section": "Box Models",
     "text": "Box Models\n\nMass-balance over a spatial “box”\nCan combine multiple boxes together to represent processes over larger spatial domains"
   },
   {
-    "objectID": "slides/lecture03-3.html#simulation-workflow",
-    "href": "slides/lecture03-3.html#simulation-workflow",
+    "objectID": "slides/lecture0x-1.html#simulation-workflow",
+    "href": "slides/lecture0x-1.html#simulation-workflow",
     "title": "Plume Dispersion Models",
     "section": "Simulation Workflow",
     "text": "Simulation Workflow\n\n\n\n\n\n\n\n\nG\n\n  \n\nInitial Box\n\n Initial Box   \n\nInflows\n\n Inflows   \n\nInitial Box-&gt;Inflows\n\n    \n\nMixing/Bulk System\n\n Mixing/Bulk System   \n\nInflows-&gt;Mixing/Bulk System\n\n    \n\nFate & Transport\n\n Fate & Transport   \n\nMixing/Bulk System-&gt;Fate & Transport\n\n    \n\nOutflows\n\n Outflows   \n\nFate & Transport-&gt;Outflows\n\n    \n\nOutflows-&gt;Initial Box\n\n  Repeat for Next Time Step   \n\nOutflows-&gt;Inflows\n\n  Repeat for Next Box  \n\n\nFigure 1: ?(caption)"
   },
   {
-    "objectID": "slides/lecture03-3.html#questions",
-    "href": "slides/lecture03-3.html#questions",
+    "objectID": "slides/lecture0x-1.html#questions",
+    "href": "slides/lecture0x-1.html#questions",
     "title": "Plume Dispersion Models",
     "section": "Questions",
     "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture03-3.html#criteria-air-pollutants",
-    "href": "slides/lecture03-3.html#criteria-air-pollutants",
+    "objectID": "slides/lecture0x-1.html#criteria-air-pollutants",
+    "href": "slides/lecture0x-1.html#criteria-air-pollutants",
     "title": "Plume Dispersion Models",
     "section": "Criteria Air Pollutants",
     "text": "Criteria Air Pollutants\n\nPollutants which have an ambient air quality standard.\nMost common examples:\n\nPM2.5, PM10\nO3\nCO\nSO2\nNO2"
   },
   {
-    "objectID": "slides/lecture03-3.html#impact-of-the-clean-air-act",
-    "href": "slides/lecture03-3.html#impact-of-the-clean-air-act",
+    "objectID": "slides/lecture0x-1.html#impact-of-the-clean-air-act",
+    "href": "slides/lecture0x-1.html#impact-of-the-clean-air-act",
     "title": "Plume Dispersion Models",
     "section": "Impact of the Clean Air Act",
     "text": "Impact of the Clean Air Act\n\nDecoupling of GDP and Air Pollution\nSource: Resources for the Future"
   },
   {
-    "objectID": "slides/lecture03-3.html#some-approaches-for-modeling-air-pollution",
-    "href": "slides/lecture03-3.html#some-approaches-for-modeling-air-pollution",
+    "objectID": "slides/lecture0x-1.html#some-approaches-for-modeling-air-pollution",
+    "href": "slides/lecture0x-1.html#some-approaches-for-modeling-air-pollution",
     "title": "Plume Dispersion Models",
     "section": "Some Approaches For Modeling Air Pollution",
     "text": "Some Approaches For Modeling Air Pollution\nLast Class: Box (or “airshed”) model of air pollution\n\nLooks at overall mass-balance.\nTotal inputs/outputs in a particular boundary.\n\nToday: Point sources and receptors (plume/puff models)"
   },
   {
-    "objectID": "slides/lecture03-3.html#point-sourcesreceptors",
-    "href": "slides/lecture03-3.html#point-sourcesreceptors",
+    "objectID": "slides/lecture0x-1.html#point-sourcesreceptors",
+    "href": "slides/lecture0x-1.html#point-sourcesreceptors",
     "title": "Plume Dispersion Models",
     "section": "Point Sources/Receptors",
     "text": "Point Sources/Receptors\nConcerned about dispersal from a point source:\n\nPoint Source/Receptor Schematic"
   },
   {
-    "objectID": "slides/lecture03-3.html#point-sourcesreceptors-1",
-    "href": "slides/lecture03-3.html#point-sourcesreceptors-1",
+    "objectID": "slides/lecture0x-1.html#point-sourcesreceptors-1",
+    "href": "slides/lecture0x-1.html#point-sourcesreceptors-1",
     "title": "Plume Dispersion Models",
     "section": "Point Sources/Receptors",
     "text": "Point Sources/Receptors\nAt a given instant, flow from source to receptor follows a path:\n\nPoint Source Flow Traces"
   },
   {
-    "objectID": "slides/lecture03-3.html#point-sourcesreceptors-2",
-    "href": "slides/lecture03-3.html#point-sourcesreceptors-2",
+    "objectID": "slides/lecture0x-1.html#point-sourcesreceptors-2",
+    "href": "slides/lecture0x-1.html#point-sourcesreceptors-2",
     "title": "Plume Dispersion Models",
     "section": "Point Sources/Receptors",
     "text": "Point Sources/Receptors\nAveraging those traces over time gives us a “plume”:\n\nPoint Source Average Plume"
   },
   {
-    "objectID": "slides/lecture03-3.html#point-sourcesreceptors-3",
-    "href": "slides/lecture03-3.html#point-sourcesreceptors-3",
+    "objectID": "slides/lecture0x-1.html#point-sourcesreceptors-3",
+    "href": "slides/lecture0x-1.html#point-sourcesreceptors-3",
     "title": "Plume Dispersion Models",
     "section": "Point Sources/Receptors",
     "text": "Point Sources/Receptors\nWhat is the distribution of pollutant above the receptor?\n\nPoint Source Average Plume"
   },
   {
-    "objectID": "slides/lecture03-3.html#gaussian-plume",
-    "href": "slides/lecture03-3.html#gaussian-plume",
+    "objectID": "slides/lecture0x-1.html#gaussian-plume",
+    "href": "slides/lecture0x-1.html#gaussian-plume",
     "title": "Plume Dispersion Models",
     "section": "“Gaussian Plume”",
     "text": "“Gaussian Plume”\nWe can reason that the concentration follows a “bell curve”:\n\nGaussian Plume"
   },
   {
-    "objectID": "slides/lecture03-3.html#gaussian-plume-1",
-    "href": "slides/lecture03-3.html#gaussian-plume-1",
+    "objectID": "slides/lecture0x-1.html#gaussian-plume-1",
+    "href": "slides/lecture0x-1.html#gaussian-plume-1",
     "title": "Plume Dispersion Models",
     "section": "“Gaussian Plume”",
     "text": "“Gaussian Plume”\nWe can reason that the concentration follows a “bell curve”:\n\nGaussian Plume Distribution"
   },
   {
-    "objectID": "slides/lecture03-3.html#gaussian-plume-2",
-    "href": "slides/lecture03-3.html#gaussian-plume-2",
+    "objectID": "slides/lecture0x-1.html#gaussian-plume-2",
+    "href": "slides/lecture0x-1.html#gaussian-plume-2",
     "title": "Plume Dispersion Models",
     "section": "“Gaussian Plume”",
     "text": "“Gaussian Plume”\nNot illustrated, but this reasoning also applies cross-wind (\\(y\\)).\n\nGaussian Plume Distribution"
   },
   {
-    "objectID": "slides/lecture03-3.html#gaussian-plume-model",
-    "href": "slides/lecture03-3.html#gaussian-plume-model",
+    "objectID": "slides/lecture0x-1.html#gaussian-plume-model",
+    "href": "slides/lecture0x-1.html#gaussian-plume-model",
     "title": "Plume Dispersion Models",
     "section": "Gaussian Plume Model",
     "text": "Gaussian Plume Model\n\\[\\begin{equation}\nC(x,y,z) = \\frac{Q}{2\\pi u \\sigma_y \\sigma_z} \\exp\\left[-\\frac{1}{2} \\left(\\frac{y^2}{\\sigma_y^2} + \\frac{(z - H)^2}{\\sigma_z^2}\\right)\\right]\n\\end{equation}\\]\n\n\n\nVariable\nMeaning\n\n\n\n\n\\(C\\)\nConcentration (g/m\\(^3\\))\n\n\n\\(Q\\)\nEmissions Rate (g/s)\n\n\n\\(H\\)\nEffective Source Height (m)\n\n\n\\(u\\)\nWind Speed (m/s)"
   },
   {
-    "objectID": "slides/lecture03-3.html#gaussian-plume-derivation",
-    "href": "slides/lecture03-3.html#gaussian-plume-derivation",
+    "objectID": "slides/lecture0x-1.html#gaussian-plume-derivation",
+    "href": "slides/lecture0x-1.html#gaussian-plume-derivation",
     "title": "Plume Dispersion Models",
     "section": "Gaussian Plume Derivation",
     "text": "Gaussian Plume Derivation\nUse the advective-diffusion equation to describe the mass-balance of a small air parcel :\n\\[ \\frac{\\partial C}{\\partial t} + \\color{blue}\\overbrace{[D + K] \\nabla^2 C}^\\text{diffusion} \\color{black} - \\color{red}\\overbrace{\\overrightarrow{u} \\cdot \\overrightarrow{\\nabla} C}^\\text{advection}\\]\n\n\\(D\\) is the diffusion coefficient\n\\(K\\) is the dispersion coefficient (turbulent mixing)"
   },
   {
-    "objectID": "slides/lecture03-3.html#diffusive-flux",
-    "href": "slides/lecture03-3.html#diffusive-flux",
+    "objectID": "slides/lecture0x-1.html#diffusive-flux",
+    "href": "slides/lecture0x-1.html#diffusive-flux",
     "title": "Plume Dispersion Models",
     "section": "Diffusive Flux",
     "text": "Diffusive Flux\n\n\n\n\n\nDiffusive Flux\n\n\n\nConcentration gradient + Diffusion ⇒ Flux\nFick’s law: mass transfer by diffusion\n\\[F_x = D \\frac{dC}{dx}\\]"
   },
   {
-    "objectID": "slides/lecture03-3.html#turbulent-flux",
-    "href": "slides/lecture03-3.html#turbulent-flux",
+    "objectID": "slides/lecture0x-1.html#turbulent-flux",
+    "href": "slides/lecture0x-1.html#turbulent-flux",
     "title": "Plume Dispersion Models",
     "section": "Turbulent Flux",
     "text": "Turbulent Flux\n\n\n\n\n\nTurbulent Flux\n\n\n\nConcentration gradient + Turbulent mixing ⇒ Flux\n\\[F_x = K_{xx}\\frac{dC}{dx}\\]\nThe dispersion coefficient \\(K_{xx}\\) depends on flow/eddy characteristics."
   },
   {
-    "objectID": "slides/lecture03-3.html#gaussian-plume-model-derivation",
-    "href": "slides/lecture03-3.html#gaussian-plume-model-derivation",
+    "objectID": "slides/lecture0x-1.html#gaussian-plume-model-derivation",
+    "href": "slides/lecture0x-1.html#gaussian-plume-model-derivation",
     "title": "Plume Dispersion Models",
     "section": "Gaussian Plume Model Derivation",
     "text": "Gaussian Plume Model Derivation\n\\[\\frac{\\partial C}{\\partial t} + \\vec{u} \\cdot \\vec{\\nabla} C  - [D + K] \\nabla^2 C  = 0\\]\nAssumptions:\n\nSteady-state:\n\n\\[ \\frac{\\partial C}{\\partial t} = 0\\]"
   },
   {
-    "objectID": "slides/lecture03-3.html#gaussian-plume-model-derivation-1",
-    "href": "slides/lecture03-3.html#gaussian-plume-model-derivation-1",
+    "objectID": "slides/lecture0x-1.html#gaussian-plume-model-derivation-1",
+    "href": "slides/lecture0x-1.html#gaussian-plume-model-derivation-1",
     "title": "Plume Dispersion Models",
     "section": "Gaussian Plume Model Derivation",
     "text": "Gaussian Plume Model Derivation\n\\[\\frac{\\partial C}{\\partial t} + \\vec{u} \\cdot \\vec{\\nabla} C  - [D + K] \\nabla^2 C  = 0\\]\nAssumptions:\n\nWind only in \\(x\\)-direction:\n\n\\[\\vec{u} \\cdot \\vec{\\nabla} C = u_x \\frac{\\partial C}{\\partial x} + \\cancel{u_y \\frac{\\partial C}{\\partial y}} + \\cancel{u_z \\frac{\\partial C}{\\partial z}}\\]"
   },
   {
-    "objectID": "slides/lecture03-3.html#gaussian-plume-model-derivation-2",
-    "href": "slides/lecture03-3.html#gaussian-plume-model-derivation-2",
+    "objectID": "slides/lecture0x-1.html#gaussian-plume-model-derivation-2",
+    "href": "slides/lecture0x-1.html#gaussian-plume-model-derivation-2",
     "title": "Plume Dispersion Models",
     "section": "Gaussian Plume Model Derivation",
     "text": "Gaussian Plume Model Derivation\n\\[\\frac{\\partial C}{\\partial t} + \\vec{u} \\cdot \\vec{\\nabla} C  - [D + K] \\nabla^2 C  = 0\\]\nAssumptions:\n\nTurbulence \\(\\gg\\) diffusion, e.g. \\(K \\gg D\\), and \\(K\\) is unimportant along \\(x\\)-direction:\n\n\\[-[\\cancel{D} + K] \\nabla^2 C = \\cancel{K_{xx}} \\frac{\\partial^2 C}{\\partial x^2} + K_{yy} \\frac{\\partial^2 C}{\\partial y^2} + K_{zz} \\frac{\\partial^2 C}{\\partial z^2}\\]"
   },
   {
-    "objectID": "slides/lecture03-3.html#gaussian-plume-model-derivation-3",
-    "href": "slides/lecture03-3.html#gaussian-plume-model-derivation-3",
+    "objectID": "slides/lecture0x-1.html#gaussian-plume-model-derivation-3",
+    "href": "slides/lecture0x-1.html#gaussian-plume-model-derivation-3",
     "title": "Plume Dispersion Models",
     "section": "Gaussian Plume Model Derivation",
     "text": "Gaussian Plume Model Derivation\nWith these assumptions, the equation simplifies to:\n\\[u \\frac{\\partial C}{\\partial x} = K_{yy} \\frac{\\partial^2 C}{\\partial y^2} + K_{zz}\\frac{\\partial^2 C}{\\partial z^2}\\]\n\n\n\nAssume mass flow through vertical plane downwind must equal emissions rate \\(Q\\):\n\\[Q = \\iint u C dy dz\\]\n\n\n\n\nBoundary Condition for A-D Equation"
   },
   {
-    "objectID": "slides/lecture03-3.html#gaussian-plume-model-derivation-4",
-    "href": "slides/lecture03-3.html#gaussian-plume-model-derivation-4",
+    "objectID": "slides/lecture0x-1.html#gaussian-plume-model-derivation-4",
+    "href": "slides/lecture0x-1.html#gaussian-plume-model-derivation-4",
     "title": "Plume Dispersion Models",
     "section": "Gaussian Plume Model Derivation",
     "text": "Gaussian Plume Model Derivation\nSolving this PDE:\n\\[C(x,y,z) = \\frac{Q}{4\\pi x \\sqrt{K_{yy} + K_{zz}}} \\exp\\left[-\\frac{u}{4x}\\left(\\frac{y^2}{K_{yy}} + \\frac{(z-H)^2}{K_{zz}}\\right)\\right]\\]\n\nNow substitute\n\\[\\begin{aligned}\n\\sigma_y^2 &= 2 K_{yy} t = 2 K_{yy} \\frac{x}{u} \\\\\n\\sigma_z^2 &= 2 K_{zz} \\frac{x}{u}\n\\end{aligned}\\]"
   },
   {
-    "objectID": "slides/lecture03-3.html#gaussian-plume-model-derivation-5",
-    "href": "slides/lecture03-3.html#gaussian-plume-model-derivation-5",
+    "objectID": "slides/lecture0x-1.html#gaussian-plume-model-derivation-5",
+    "href": "slides/lecture0x-1.html#gaussian-plume-model-derivation-5",
     "title": "Plume Dispersion Models",
     "section": "Gaussian Plume Model Derivation",
     "text": "Gaussian Plume Model Derivation\nThis results in:\n\\[\nC(x,y,z) = \\frac{Q}{2\\pi u \\sigma_y \\sigma_z} \\exp\\left[-\\frac{1}{2}\\left(\\frac{y^2}{\\sigma_y^2} + \\frac{(z-H)^2}{\\sigma_z^2}\\right) \\right]\\]\nwhich looks like a Gaussian distribution probability distribution if we restrict to \\(y\\) or \\(z\\)."
   },
   {
-    "objectID": "slides/lecture03-3.html#gaussian-plume-model-with-reflection",
-    "href": "slides/lecture03-3.html#gaussian-plume-model-with-reflection",
+    "objectID": "slides/lecture0x-1.html#gaussian-plume-model-with-reflection",
+    "href": "slides/lecture0x-1.html#gaussian-plume-model-with-reflection",
     "title": "Plume Dispersion Models",
     "section": "Gaussian Plume Model with Reflection",
     "text": "Gaussian Plume Model with Reflection\nLast piece: the ground dampens vertical dispersion.\n\nReflected Mass Off Ground"
   },
   {
-    "objectID": "slides/lecture03-3.html#gaussian-plume-model-with-reflection-1",
-    "href": "slides/lecture03-3.html#gaussian-plume-model-with-reflection-1",
+    "objectID": "slides/lecture0x-1.html#gaussian-plume-model-with-reflection-1",
+    "href": "slides/lecture0x-1.html#gaussian-plume-model-with-reflection-1",
     "title": "Plume Dispersion Models",
     "section": "Gaussian Plume Model with Reflection",
     "text": "Gaussian Plume Model with Reflection\n\n\nWe can account for this extra term using a flipped “image” of the source.\n\n\n\n\nReflected Mass Off Ground"
   },
   {
-    "objectID": "slides/lecture03-3.html#final-model-elevated-source-with-reflection",
-    "href": "slides/lecture03-3.html#final-model-elevated-source-with-reflection",
+    "objectID": "slides/lecture0x-1.html#final-model-elevated-source-with-reflection",
+    "href": "slides/lecture0x-1.html#final-model-elevated-source-with-reflection",
     "title": "Plume Dispersion Models",
     "section": "Final Model: Elevated Source with Reflection",
     "text": "Final Model: Elevated Source with Reflection\n\\[\\begin{aligned}\nC(x,y,z) = &\\frac{Q}{2\\pi u \\sigma_y \\sigma_z} \\exp\\left(\\frac{-y^2}{2\\sigma_y^2} \\right) \\times \\\\\\\\\n& \\quad \\left[\\exp\\left(\\frac{-(z-H)^2}{2\\sigma_z^2}\\right) + \\exp\\left(\\frac{-(z+H)^2}{2\\sigma_z^2}\\right) \\right]\n\\end{aligned}\\]"
   },
   {
-    "objectID": "slides/lecture03-3.html#final-model-assumptions",
-    "href": "slides/lecture03-3.html#final-model-assumptions",
+    "objectID": "slides/lecture0x-1.html#final-model-assumptions",
+    "href": "slides/lecture0x-1.html#final-model-assumptions",
     "title": "Plume Dispersion Models",
     "section": "Final Model Assumptions",
     "text": "Final Model Assumptions\nAssumptions:\n\nSteady-State\nConstant wind velocity and direction\nWind &gt;&gt; dispersion in \\(x\\)-direction\nNo reactions\nSmooth ground (avoids turbulent eddies and other reflections)"
   },
   {
-    "objectID": "slides/lecture03-3.html#key-takeaways-1",
-    "href": "slides/lecture03-3.html#key-takeaways-1",
+    "objectID": "slides/lecture0x-1.html#key-takeaways-1",
+    "href": "slides/lecture0x-1.html#key-takeaways-1",
     "title": "Plume Dispersion Models",
     "section": "Key Takeaways",
     "text": "Key Takeaways\n\nPlume models are commonly used for point sources and point receptors.\nGaussian plumes: continuous emissions from an elevated source.\nF&T determined by advection and diffusion/turbulence.\nHowever, number of critical assumptions."
   },
   {
-    "objectID": "slides/lecture03-3.html#next-classes",
-    "href": "slides/lecture03-3.html#next-classes",
+    "objectID": "slides/lecture0x-1.html#next-classes",
+    "href": "slides/lecture0x-1.html#next-classes",
     "title": "Plume Dispersion Models",
     "section": "Next Classes",
     "text": "Next Classes\nMonday: Gaussian Plume Dispersion and Example\nWednesday/Friday: Uncertainty, Risk and Monte Carlo\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#gaussian-plume-for-air-pollution-dispersion",
+    "href": "slides/lecture0x-2.html#gaussian-plume-for-air-pollution-dispersion",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Gaussian Plume for Air Pollution Dispersion",
+    "text": "Gaussian Plume for Air Pollution Dispersion\n\nUsed for point sources.\nTypically for continuous emissions from an elevated source."
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#gaussian-plume-model",
+    "href": "slides/lecture0x-2.html#gaussian-plume-model",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Gaussian Plume Model",
+    "text": "Gaussian Plume Model\n\n\n\nVariable\nMeaning\n\n\n\n\n\\(C\\)\nConcentration (g/m\\(^3\\))\n\n\n\\(Q\\)\nEmissions Rate (g/s)\n\n\n\\(H\\)\nEffective Source Height (m)\n\n\n\\(u\\)\nWind Speed (m/s)\n\n\n\\(y, z\\)\nCrosswind, Vertical Distance (m)"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#gaussian-plume-model-1",
+    "href": "slides/lecture0x-2.html#gaussian-plume-model-1",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Gaussian Plume Model",
+    "text": "Gaussian Plume Model\n\nGaussian Plume Distribution"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#gaussian-plume-model-with-ground-reflection",
+    "href": "slides/lecture0x-2.html#gaussian-plume-model-with-ground-reflection",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Gaussian Plume Model With Ground Reflection",
+    "text": "Gaussian Plume Model With Ground Reflection\n\\[\\begin{aligned}\nC(x,y,z) = &\\frac{Q}{2\\pi u \\sigma_y \\sigma_z} \\exp\\left(\\frac{-y^2}{2\\sigma_y^2} \\right) \\times \\\\\\\\\n& \\quad \\left[\\exp\\left(\\frac{-(z-H)^2}{2\\sigma_z^2}\\right) + \\exp\\left(\\frac{-(z+H)^2}{2\\sigma_z^2}\\right) \\right]\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#questions",
+    "href": "slides/lecture0x-2.html#questions",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#estimating-dispersion-spread",
+    "href": "slides/lecture0x-2.html#estimating-dispersion-spread",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Estimating Dispersion “Spread”",
+    "text": "Estimating Dispersion “Spread”\nValues of \\(\\sigma_y\\) and \\(\\sigma_z\\) matter substantially for modeling plume spread downwind. What influences them?"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#estimating-dispersion-spread-1",
+    "href": "slides/lecture0x-2.html#estimating-dispersion-spread-1",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Estimating Dispersion “Spread”",
+    "text": "Estimating Dispersion “Spread”\nMain contribution: atmospheric stability\n\nGreater stability ⇒ less vertical/cross-wind dispersion.\nPasquill (1961): Six stability classes."
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#estimating-dispersion-spread-2",
+    "href": "slides/lecture0x-2.html#estimating-dispersion-spread-2",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Estimating Dispersion “Spread”",
+    "text": "Estimating Dispersion “Spread”\nContributors to atmospheric stability:\n\nTemperature gradient\nWind speed\nSolar radiation\nCloud cover\nRichardson number (buoyancy / flow shear)"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#atmospheric-stability-classes",
+    "href": "slides/lecture0x-2.html#atmospheric-stability-classes",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Atmospheric Stability Classes",
+    "text": "Atmospheric Stability Classes\n\n\n\nClass\nStability\nDescription\n\n\n\n\nA\nExtremely unstable\nSunny summer day\n\n\nB\nModerately unstable\nSunny & warm\n\n\nC\nSlightly unstable\nPartly cloudy day\n\n\nD\nNeutral\nCloudy day or night\n\n\nE\nSlightly stable\nPartly cloudy night\n\n\nF\nModerately stable\nClear night\n\n\n\n\nSource: https://courses.ecampus.oregonstate.edu/ne581/eleven/"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#estimating-dispersion-spread-3",
+    "href": "slides/lecture0x-2.html#estimating-dispersion-spread-3",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Estimating Dispersion “Spread”",
+    "text": "Estimating Dispersion “Spread”\n\\[\\begin{aligned}\n\\sigma_y &= ax^{0.894} \\\\\n\\sigma_z &= cx^d + f\n\\end{aligned}\\]\n\nDispersion Coefficients\nSource: https://courses.washington.edu/cee490/DISPCOEF4WP.htm\n\nNote: here \\(x\\) is in km, while in the plume equation \\(y\\), \\(z\\) are in m!"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#estimating-dispersion-spread-4",
+    "href": "slides/lecture0x-2.html#estimating-dispersion-spread-4",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Estimating Dispersion “Spread”",
+    "text": "Estimating Dispersion “Spread”\nThen take estimates for \\(\\sigma_y\\) and \\(\\sigma_z\\) and plug into plume dispersion equation\n\\[\\begin{aligned}\nC(x,y,z) = &\\frac{Q}{2\\pi u {\\color{red}\\sigma_y \\sigma_z}} \\exp\\left(\\frac{-y^2}{2{\\color{red}\\sigma_y^2}} \\right) \\times \\\\\\\\\n& \\quad \\left[\\exp\\left(\\frac{-(z-H)^2}{2{\\color{red}\\sigma_z^2}}\\right) + \\exp\\left(\\frac{-(z+H)^2}{2{\\color{red}\\sigma_z^2}}\\right) \\right]\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#example",
+    "href": "slides/lecture0x-2.html#example",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Example",
+    "text": "Example\nA 100m tall chimney emits HCl at a rate of 1.75 kg/s. The plume rises 10m before being convected horizontally by the wind. A housing development is planned near the chimney, and environmental authorities want to map the HCl concentration within a 5km x 1km region downwind under\n\nneutral, moderately stable, and moderately unstable atmospheric conditions,\nand under 5 m/s and 20 m/s winds?"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#plume-equation",
+    "href": "slides/lecture0x-2.html#plume-equation",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Plume Equation",
+    "text": "Plume Equation\n\\[\\begin{aligned}\nC(x,y,z) = &\\frac{Q}{2\\pi u \\sigma_y \\sigma_z} \\exp\\left(\\frac{-y^2}{2\\sigma_y^2} \\right) \\times \\\\\\\\\n& \\quad \\left[\\exp\\left(\\frac{-(z-H)^2}{2\\sigma_z^2}\\right) + \\exp\\left(\\frac{-(z+H)^2}{2\\sigma_z^2}\\right) \\right]\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#plume-equation-ground-level",
+    "href": "slides/lecture0x-2.html#plume-equation-ground-level",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Plume Equation (Ground Level)",
+    "text": "Plume Equation (Ground Level)\n\\[\\begin{aligned}\nC(x,y) = &\\frac{Q}{\\pi u \\sigma_y \\sigma_z} \\exp\\left(\\frac{-y^2}{2\\sigma_y^2} \\right) \\exp\\left(\\frac{-H^2}{2\\sigma_z^2}\\right)\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#key-variables",
+    "href": "slides/lecture0x-2.html#key-variables",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Key Variables",
+    "text": "Key Variables\n\n\\(Q\\): 1750 g/s\n\\(H\\): 110 m\n\\(u\\): 5 or 20 m/s\n\\(x\\): 0 to 3000 m (need to pick a step size)\n\\(y\\): 0 to 1000 m (need to pick a step size)"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#calculate-dispersion-spread",
+    "href": "slides/lecture0x-2.html#calculate-dispersion-spread",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Calculate Dispersion Spread",
+    "text": "Calculate Dispersion Spread\nNeutral, moderately stable, moderately unstable atmospheric conditions ⇒ Classes D, B, F\nGet the coefficients off the table and put them into the regression equations for \\(\\sigma_y\\) and \\(\\sigma_z\\).\nKey thing: \\(\\sigma_z\\) dispersion changes once we pass 1000m downwind (\\(x\\)-direction).\nNow we can write a simulation model."
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#simulation-model-pseudocode",
+    "href": "slides/lecture0x-2.html#simulation-model-pseudocode",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Simulation Model “Pseudocode”",
+    "text": "Simulation Model “Pseudocode”\nYou’ll do this for real for homework, but here’s a brief sketch:\n\nPick a resolution/grid size (we’ll use 10m) and set up \\(x\\) and \\(y\\) grids;\nFor each wind speed and stability class:\n\nLoop over each grid point and compute \\(\\sigma_y\\), \\(\\sigma_z\\);\nUse plume equation to compute concentration."
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#simulation-model-pseudocode-1",
+    "href": "slides/lecture0x-2.html#simulation-model-pseudocode-1",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Simulation Model “Pseudocode”",
+    "text": "Simulation Model “Pseudocode”\nThere are more or less efficient or “stylish” ways to write this code, but don’t worry about that for this class, just make sure your code is readable and documented to help with debugging!"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#julia-vs.-matlabpython",
+    "href": "slides/lecture0x-2.html#julia-vs.-matlabpython",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Julia vs. Matlab/Python",
+    "text": "Julia vs. Matlab/Python\nThe good news: Unlike in Python, loops in Julia are really well-optimized."
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#julia-vs.-matlabpython-1",
+    "href": "slides/lecture0x-2.html#julia-vs.-matlabpython-1",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Julia vs. Matlab/Python",
+    "text": "Julia vs. Matlab/Python\nThe bad news: There can be some weird issue with scope when doing something this (which you might in Python or Matlab):\nC = zeros(10)\n\nfor i in eachindex(C)\n    C[i] = f(i)\nend"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#julia-vs.-matlabpython-2",
+    "href": "slides/lecture0x-2.html#julia-vs.-matlabpython-2",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Julia vs. Matlab/Python",
+    "text": "Julia vs. Matlab/Python\nInstead, try broadcasting over inputs:\nI = 1:10\nC = f.(I)\nor use a comprehension:\nC = [f(i) for i in I]"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#neutral-conditions",
+    "href": "slides/lecture0x-2.html#neutral-conditions",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Neutral Conditions",
+    "text": "Neutral Conditions\nColor values are HCl concentrations in \\(\\mu\\)g.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Neutral Conditions\n\n\n\n\n5 m/s wind\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Neutral Conditions\n\n\n\n\n10 m/s wind"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#moderately-stable-conditions",
+    "href": "slides/lecture0x-2.html#moderately-stable-conditions",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Moderately Stable Conditions",
+    "text": "Moderately Stable Conditions\nColor values are HCl concentrations in \\(\\mu\\)g.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Neutral Conditions\n\n\n\n\n5 m/s wind\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Neutral Conditions\n\n\n\n\n10 m/s wind"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#moderately-unstable-conditions",
+    "href": "slides/lecture0x-2.html#moderately-unstable-conditions",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Moderately Unstable Conditions",
+    "text": "Moderately Unstable Conditions\nColor values are HCl concentrations in \\(\\mu\\)g.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Neutral Conditions\n\n\n\n\n5 m/s wind\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Neutral Conditions\n\n\n\n\n10 m/s wind"
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#key-takeaways-1",
+    "href": "slides/lecture0x-2.html#key-takeaways-1",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nAtmospheric stability plays a major role in pollution dispersion.\nCan use simulation modeling to evaluate concentrations of a contaminant over a spatial domain.\nKey choice: resolution\nThen “loop” (or in Julia, broadcast/use a comprehension) over the spatial grid.\nImportant: this all assumed a fixed wind speed and stability."
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#next-classes",
+    "href": "slides/lecture0x-2.html#next-classes",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: Probability and Monte Carlo\nFriday: Lab on Monte Carlo."
+  },
+  {
+    "objectID": "slides/lecture0x-2.html#assessments",
+    "href": "slides/lecture0x-2.html#assessments",
+    "title": "Plume Models: Dispersion and Examples",
+    "section": "Assessments",
+    "text": "Assessments\n\nHW2 on simulating Gaussian plume dispersion released today.\nDue 9/22.\n\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#last-class",
+    "href": "slides/lecture03-3.html#last-class",
+    "title": "Dissolved Oxygen",
+    "section": "Last Class",
+    "text": "Last Class\n\nModel-based simulation as a way to understand system dynamics and response.\nBox models: mass-balance in some region of the domain\nCan generalize single box models by:\n\nAdding more complexity;\ncombining multiple boxes."
+  },
+  {
+    "objectID": "slides/lecture03-3.html#why-simulate",
+    "href": "slides/lecture03-3.html#why-simulate",
+    "title": "Dissolved Oxygen",
+    "section": "Why Simulate?",
+    "text": "Why Simulate?\n\nSystem involves complex, nonlinear dynamics that may not be analytically tractable.\nSetting up and running a real-world experiment is not possible.\nState depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.\nNeed to understand range of system performance across rarely-seen conditions."
+  },
+  {
+    "objectID": "slides/lecture03-3.html#questions",
+    "href": "slides/lecture03-3.html#questions",
+    "title": "Dissolved Oxygen",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#fate-transport-modeling",
+    "href": "slides/lecture03-3.html#fate-transport-modeling",
+    "title": "Dissolved Oxygen",
+    "section": "Fate & Transport Modeling",
+    "text": "Fate & Transport Modeling\nHow do nutrients and other quantities move through environmental mediums?\nWhat can make fate & transport modeling more complex?\n\n\nMultiple points of inflow;\nMore complex growth/decay dynamics.\nStochasticity/randomness."
+  },
+  {
+    "objectID": "slides/lecture03-3.html#dissolved-oxygen",
+    "href": "slides/lecture03-3.html#dissolved-oxygen",
+    "title": "Dissolved Oxygen",
+    "section": "Dissolved Oxygen",
+    "text": "Dissolved Oxygen\n\n\nDissolved oxygen (DO) is the free, non-compound oxygen present in water or other liquids.\nFreshwater can only hold small amounts, and this capacity is regulated by temperature.\n\n\n\n\nDissolved Oxygen by temperature\n\n\n\nSource: fondriest.com"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#temperature-impact-on-do",
+    "href": "slides/lecture03-3.html#temperature-impact-on-do",
+    "title": "Dissolved Oxygen",
+    "section": "Temperature Impact on DO",
+    "text": "Temperature Impact on DO\n\nDissolved Oxygen and Temperature Plot\nSource: usgs.gov"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#dissolved-oxygen-and-life",
+    "href": "slides/lecture03-3.html#dissolved-oxygen-and-life",
+    "title": "Dissolved Oxygen",
+    "section": "Dissolved Oxygen and Life",
+    "text": "Dissolved Oxygen and Life\n\n\nDissolved oxygen is an important nutrient for aquatic life.\nHypoxia occurs when DO levels are \\(&lt; 2\\) mg/L.\n\n\n\n\nMinimum DO requirements for freshwater fish\n\n\n\n\nSource: fondriest.com"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#factors-influencing-do",
+    "href": "slides/lecture03-3.html#factors-influencing-do",
+    "title": "Dissolved Oxygen",
+    "section": "Factors Influencing DO",
+    "text": "Factors Influencing DO\n\nTemperature, Pressure, Depth\nSalinity\nMixing\nPlant and Microbial Life\nOrganic Matter"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#impact-of-paris-on-seine-do-1874",
+    "href": "slides/lecture03-3.html#impact-of-paris-on-seine-do-1874",
+    "title": "Dissolved Oxygen",
+    "section": "Impact of Paris On Seine DO, 1874",
+    "text": "Impact of Paris On Seine DO, 1874\n\nDissolved Oxygen Downstream of Paris, 1874\nSource: Dmitrieva, T., et al. (2018). https://doi.org/10.1007/s12685-018-0216-7"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#do-regulatory-standards",
+    "href": "slides/lecture03-3.html#do-regulatory-standards",
+    "title": "Dissolved Oxygen",
+    "section": "DO Regulatory Standards",
+    "text": "DO Regulatory Standards\nObjective: Keep DO above the regulatory standard.\nIn NY (via Westlaw):\n\nDO levels may not fall below 3 mg/L\nDO may not be below 4.8 mg/L for an extended period"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#oxygen-balance-in-rivers-and-streams",
+    "href": "slides/lecture03-3.html#oxygen-balance-in-rivers-and-streams",
+    "title": "Dissolved Oxygen",
+    "section": "Oxygen Balance in Rivers and Streams",
+    "text": "Oxygen Balance in Rivers and Streams\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#selecting-a-metric-for-do-fluxes",
+    "href": "slides/lecture03-3.html#selecting-a-metric-for-do-fluxes",
+    "title": "Dissolved Oxygen",
+    "section": "Selecting a Metric for DO Fluxes",
+    "text": "Selecting a Metric for DO Fluxes\nTypically use oxygen demand (OD):\n\nmeasure of the concentration of oxidizable materials in a water sample\nmetric for organic waste contamination\nreflects how oxygen will be depleted in a given segment\n\nBut there are several different processes affecting total OD!"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#biochemical-oxygen-demand-bod",
+    "href": "slides/lecture03-3.html#biochemical-oxygen-demand-bod",
+    "title": "Dissolved Oxygen",
+    "section": "Biochemical Oxygen Demand (BOD)",
+    "text": "Biochemical Oxygen Demand (BOD)\nOxygen used by microbes during aerobic decomposition of organic materials: \\[\\text{Organic Matter} + \\text{O}_2 \\rightarrow \\text{CO}_2 +  \\text{H}_2\\text{O} + \\text{NO}_3 + \\text{SO}_2 + \\text{Residuals}\\]\nBroadly speaking, we care about two types of BOD: Carbonaceous BOD and Nitrogenous BOD."
+  },
+  {
+    "objectID": "slides/lecture03-3.html#carbonaceous-bod-cbod",
+    "href": "slides/lecture03-3.html#carbonaceous-bod-cbod",
+    "title": "Dissolved Oxygen",
+    "section": "Carbonaceous BOD (CBOD)",
+    "text": "Carbonaceous BOD (CBOD)\nOxygen consumed during microbial decomposition of carbon compounds, e.g.: \\[\\text{C}_a\\text{H}_b\\text{O}_c + d\\text{O}_2 \\rightarrow e\\text{H}_2\\text{O} + f\\text{CO}_2\\]"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#nitrogenous-bod-nbod",
+    "href": "slides/lecture03-3.html#nitrogenous-bod-nbod",
+    "title": "Dissolved Oxygen",
+    "section": "Nitrogenous BOD (NBOD)",
+    "text": "Nitrogenous BOD (NBOD)\nOxygen consumed during microbial decomposition of nitrogen compounds: \\[2\\text{NH}_2^+ + 4\\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O} + 4\\text{H}^+ + 2\\text{NO}_3^-\\]"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#bod-and-time",
+    "href": "slides/lecture03-3.html#bod-and-time",
+    "title": "Dissolved Oxygen",
+    "section": "BOD and Time",
+    "text": "BOD and Time\nMoreover, BOD is differentiated based on time frame, e.g.:\n\nBOD5: oxygen demand over 5 days\nBOD20: oxygen demand over 20 days"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#do-modeling-needs",
+    "href": "slides/lecture03-3.html#do-modeling-needs",
+    "title": "Dissolved Oxygen",
+    "section": "DO Modeling Needs",
+    "text": "DO Modeling Needs\nNeed a model that will predict DO as a function of CBOD, NBOD.\nUse a fate and transport modeling approach: how are relevant quantities moved downstream?\nNote: Can’t assume homogeneous processes."
+  },
+  {
+    "objectID": "slides/lecture03-3.html#modeling-do",
+    "href": "slides/lecture03-3.html#modeling-do",
+    "title": "Dissolved Oxygen",
+    "section": "Modeling DO",
+    "text": "Modeling DO\n\n\nSo what do we do?\nStart by assuming steady-state waste in each section (or box…).\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#modeling-do-1",
+    "href": "slides/lecture03-3.html#modeling-do-1",
+    "title": "Dissolved Oxygen",
+    "section": "Modeling DO",
+    "text": "Modeling DO\n\n\nWe’ll track the mass balance in terms of rates (not absolute mass).\nWhat happens to an element of water?\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#steady-state-waste-do-mass-balance",
+    "href": "slides/lecture03-3.html#steady-state-waste-do-mass-balance",
+    "title": "Dissolved Oxygen",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nLet \\(U\\) be the river velocity (km/d), \\(x\\) the distance downstream from a waste release site in km, and \\(C(x)\\) the DO concentration at \\(x\\) in mg/L.\n\\[\\begin{align}\nU \\frac{dC}{dx} &= \\text{Change in DO} \\\\[0.5em]\n&= \\text{Reaeration} + \\text{Photosynthesis} - \\text{Respiration}  \\\\[0.5em]\n& \\qquad - \\text{Benthal Uptake} - \\text{CBOD} - \\text{NBOD}\n\n\\end{align}\\]"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#bod-oxygen-uptake",
+    "href": "slides/lecture03-3.html#bod-oxygen-uptake",
+    "title": "Dissolved Oxygen",
+    "section": "BOD Oxygen Uptake",
+    "text": "BOD Oxygen Uptake\nAssume deoxygenation from waste decomposition is first-order (rate \\(k\\)):\n\\[\\begin{aligned}\n\\frac{dM}{dt} &= -kM \\\\\\\\\n\\Rightarrow M &= M_0 \\exp(-kt)\n\\end{aligned}\\]\n\nBut our equations are formulated in terms of distance:\n\\[M = M_0 \\exp(-kx/U)\\]"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#bod-oxygen-uptake-1",
+    "href": "slides/lecture03-3.html#bod-oxygen-uptake-1",
+    "title": "Dissolved Oxygen",
+    "section": "BOD Oxygen Uptake",
+    "text": "BOD Oxygen Uptake\nFor biochemical organics, if \\(k_c\\) is the deoxygenation rate (d\\(^{-1}\\));\n\\[B(x) = B_0 \\exp(-k_c x / U);\\]\nFor nitrification, if \\(k_n\\) is the deoxygenation rate (d\\(^{-1}\\)):\n\\[N(x) = N_0 \\exp(-k_n x / U).\\]"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#steady-state-waste-do-mass-balance-1",
+    "href": "slides/lecture03-3.html#steady-state-waste-do-mass-balance-1",
+    "title": "Dissolved Oxygen",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nSo the corresponding oxygen uptake rates are \\[k_c B(x) = k_c B_0 \\exp(-k_c x / U)\\] and\n\\[k_n N(x) = k_n N_0 \\exp(-k_n x / U).\\]"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#steady-state-waste-do-mass-balance-2",
+    "href": "slides/lecture03-3.html#steady-state-waste-do-mass-balance-2",
+    "title": "Dissolved Oxygen",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nOther processes:\n\nReaeration, assume a simple linear model based on difference from saturation level \\(C_s\\): \\(k_a (C_s - C)\\)\nAssume measured, constant values for photosynthesis (\\(P_s\\)), respiration (\\(R\\)), benthal uptake (\\(S_B\\))"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#steady-state-waste-do-mass-balance-3",
+    "href": "slides/lecture03-3.html#steady-state-waste-do-mass-balance-3",
+    "title": "Dissolved Oxygen",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nPutting it all together:\n\\[\\begin{aligned}\nU \\frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B \\\\\\\\\n&\\quad - k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right) - k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#key-points-1",
+    "href": "slides/lecture03-3.html#key-points-1",
+    "title": "Dissolved Oxygen",
+    "section": "Key Points",
+    "text": "Key Points\n\nDissolved oxygen (DO) is essential for water quality and aquatic life.\nCommonly regulated to keep DO above a minimum threshold.\nDO impacted by a number of factors, notably organic waste decomposition and nitrification.\nWe derived a first-order equation for DO using mass-balance and fate & transport principles."
+  },
+  {
+    "objectID": "slides/lecture03-3.html#next-classes",
+    "href": "slides/lecture03-3.html#next-classes",
+    "title": "Dissolved Oxygen",
+    "section": "Next Classes",
+    "text": "Next Classes\nMonday: Simulating DO dynamics.\nWednesday/Friday: Uncertainty and Risk"
+  },
+  {
+    "objectID": "slides/lecture03-3.html#assessments",
+    "href": "slides/lecture03-3.html#assessments",
+    "title": "Dissolved Oxygen",
+    "section": "Assessments",
+    "text": "Assessments\n\nHW1 due tonight (9PM!)\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture01-1.html#course-staff",
@@ -1440,342 +1825,6 @@
     "title": "LP Example: Optimizing Resource Allocation",
     "section": "Next Classes",
     "text": "Next Classes\nWednesday: Guest lecture by Diana Hackett (Mann librarian) on regulations research.\nFriday: Lab on linear programming in Julia.\n\n\nBEE 4750, Environmental Systems Analysis"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#last-class",
-    "href": "slides/lecture05-3.html#last-class",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Last Class",
-    "text": "Last Class\n\n\n\nDissolved Oxygen: essential quantity for aquatic life\nMinimum concentration regulated\nUsed mass-balance to derive first-order equation\n\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#do-concentration-equation",
-    "href": "slides/lecture05-3.html#do-concentration-equation",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "DO Concentration Equation",
-    "text": "DO Concentration Equation\n\\[\\begin{align}\n\\overbrace{U \\frac{dC}{dx}}^{\\text{Concentration Change}} &= \\overbrace{k_a (C_s - C)}^{\\text{Reaeration}} + \\overbrace{P - R - S_B}^{\\text{Constants}} \\\\[0.5em]\n&\\quad - \\underbrace{k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right)}_{\\text{CBOD}} - \\underbrace{k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)}_{\\text{NBOD}}\n\\end{align}\\]"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#questions",
-    "href": "slides/lecture05-3.html#questions",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Questions",
-    "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#steady-state-mass-balance-solution",
-    "href": "slides/lecture05-3.html#steady-state-mass-balance-solution",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Steady-State Mass-Balance Solution",
-    "text": "Steady-State Mass-Balance Solution\n\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1), \\\\[1em]\n\n\\alpha_1 &= \\exp\\left(-\\frac{k_a x}{U}\\right) \\\\[0.25em]\n\\alpha_2 &= \\left(\\frac{k_c}{k_a-k_c}\\right)\\left[\\exp\\left(\\frac{-k_c x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right] \\\\[0.25em]\n\\alpha_3 &= \\left(\\frac{k_n}{k_a-k_n}\\right)\\left[\\exp\\left(\\frac{-k_n x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right]\n\\end{align}\\]"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#steady-state-mass-balance-solution-1",
-    "href": "slides/lecture05-3.html#steady-state-mass-balance-solution-1",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Steady-State Mass-Balance Solution",
-    "text": "Steady-State Mass-Balance Solution\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 \\\\[0.5em]\n& \\qquad + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1),\n\\end{align}\\]\nNote: Usually, these models ignore \\(P\\), \\(R\\), and \\(S_B\\).\nWhy do you think that might be?"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#dissolved-oxygen-sag-curve",
-    "href": "slides/lecture05-3.html#dissolved-oxygen-sag-curve",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Dissolved Oxygen “Sag” Curve",
-    "text": "Dissolved Oxygen “Sag” Curve\n\n\nDissolved oxygen concentrations downstream of a waste release “sag” and then start to recover as CBOD and NBOD decrease.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Sag curve for dissolved oxygen."
-  },
-  {
-    "objectID": "slides/lecture05-3.html#how-to-simulate",
-    "href": "slides/lecture05-3.html#how-to-simulate",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "How To Simulate",
-    "text": "How To Simulate\nSo far, this is only different from our single-box airshed in terms of the number of processes.\nSingle equation, straightforward to evaluate across many values of \\(x\\) with a loop:\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = (y -&gt; dissolved_oxygen(y, parameters)).(x)"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#single-discharge-example",
-    "href": "slides/lecture05-3.html#single-discharge-example",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Single-Discharge Example",
-    "text": "Single-Discharge Example\n\n\n\n\n\n\n\n\n\nParameter\nRiver\nWaste\nGeneral\n\n\n\n\nVolume (m3/d)\n100,000\n10,000\n—\n\n\nDO (mg/L)\n6.4\n4.2\n—\n\n\nCBOD (mg/L)\n5\n49\n—\n\n\nNBOD (mg/L)\n5\n27\n—\n\n\n\\(C_s\\) (mg/L)\n—\n—\n7\n\n\n\\(k_a\\), \\(k_c\\), \\(k_n\\)\n—\n—\n0.8, 0.5, 0.4"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#single-discharge-example-initial-condition",
-    "href": "slides/lecture05-3.html#single-discharge-example-initial-condition",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Single-Discharge Example: Initial Condition",
-    "text": "Single-Discharge Example: Initial Condition\nHow do we find the initial state (\\(x=0\\))?\n\nNeed to compute the mixed concentrations of DO, CBOD, and NBOD (\\(Q\\) is the flow volume):\n\\[C_0 = C_\\text{mixed} = \\frac{C_\\text{river} \\times Q_\\text{river} + C_\\text{waste} \\times Q_\\text{waste}}{Q_\\text{river} + Q_\\text{waste}}\\]"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#single-discharge-example-initial-condition-1",
-    "href": "slides/lecture05-3.html#single-discharge-example-initial-condition-1",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Single-Discharge Example: Initial Condition",
-    "text": "Single-Discharge Example: Initial Condition\nSo the initial values:\n\\[C_0 = 6.2 \\ \\text{mg/L}\\]\n\\[B_0 = 9 \\ \\text{mg/L}\\]\n\\[N_0 = 7 \\ \\text{mg/L}\\]"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#single-discharge-example-simulation",
-    "href": "slides/lecture05-3.html#single-discharge-example-simulation",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Single-Discharge Example: Simulation",
-    "text": "Single-Discharge Example: Simulation\nNow we can compute \\(C(x)\\) (river velocity \\(U = 5\\) km/d).\n\n\nfunction dissolved_oxygen(x, Cs, C0, B0, N0, ka, kc, kn, U)\n    α1 = exp(-ka * x / U)\n    α2 = (kc / (ka - kc)) * (exp(-kc * x / U) - α1)\n    α3 = (kn / (ka - kn)) * (exp(-kn * x / U) - α1)\n    C = (Cs * (1 - α1)) + (C0 * α1) - (B0 * α2) - (N0 * α3)\n    return C\nend\n\nx = 0:0.1:20\nC = (y -&gt; dissolved_oxygen(y, Cs, C0, B0, N0, ka, kc, kn, U)).(x)"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#single-discharge-example-simulation-1",
-    "href": "slides/lecture05-3.html#single-discharge-example-simulation-1",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Single-Discharge Example: Simulation",
-    "text": "Single-Discharge Example: Simulation\n\n\n\n\nCode\nplot(x, C; linewidth=3, \n    label=\"Dissolved Oxygen\", \n    tickfontsize=16, \n    guidefontsize=16, \n    legendfontsize=16)\nxlabel!(L\"$x$ (km)\")\nylabel!(\"DO Concentration (mg/L)\")\nhline!([3], color=:red, \n    linestyle=:dash, \n    label=\"Regulatory Standard\")\nplot!(size=(500, 500))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Single-Release Dissolved Oxygen Example"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#multiple-discharges",
-    "href": "slides/lecture05-3.html#multiple-discharges",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Multiple Discharges",
-    "text": "Multiple Discharges\nWhat happens if we have multiple discharge sites?\n\nSchematic for Multiple Discharge Example"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#multiple-discharges-1",
-    "href": "slides/lecture05-3.html#multiple-discharges-1",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Multiple Discharges",
-    "text": "Multiple Discharges\n\n\nThink about this as a multi-box problem:\n\nBox 1: From Release 1 to Release 2\nBox 2: From Release 2 to End\n\n\n\n\n\nMultiple Discharge Boxes"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#multiple-discharges-2",
-    "href": "slides/lecture05-3.html#multiple-discharges-2",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Multiple Discharges",
-    "text": "Multiple Discharges\n\n\n\nDynamics within each box are like single-release example;\nMake sure to get new initial conditions from relevant outflows!\n\n\n\n\n\nMultiple Discharge Boxes"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#multiple-discharges-3",
-    "href": "slides/lecture05-3.html#multiple-discharges-3",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Multiple Discharges",
-    "text": "Multiple Discharges\nQuestion: Who would you penalize for lack of compliance?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Multi-Release Dissolved Oxygen Example"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#key-points-1",
-    "href": "slides/lecture05-3.html#key-points-1",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Key Points",
-    "text": "Key Points\n\nSimulation involves running the model over space/time.\nMultiple sections as “multi-box” model: outflows from one box become inflows/initial conditions for another.\nAssigning blame/responsibility in an interdependent system is not straightforward!"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#simulation-framework-overview",
-    "href": "slides/lecture05-3.html#simulation-framework-overview",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Simulation Framework Overview",
-    "text": "Simulation Framework Overview\n\nSimulation Workflow Diagram"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#next-classes",
-    "href": "slides/lecture05-3.html#next-classes",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Next Classes",
-    "text": "Next Classes\nNext week: Prescriptive modeling, optimization, and linear programming"
-  },
-  {
-    "objectID": "slides/lecture05-3.html#assessments",
-    "href": "slides/lecture05-3.html#assessments",
-    "title": "Dissolved Oxygen Simulation",
-    "section": "Assessments",
-    "text": "Assessments\n\nHW2 and Lab2 due tonight.\nHW3 assigned Monday, due 10/6.\n\n\n\nBEE 4750, Environmental Systems Analysis"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#last-class",
-    "href": "slides/lecture05-2.html#last-class",
-    "title": "Dissolved Oxygen",
-    "section": "Last Class",
-    "text": "Last Class\n\nModel-based simulation as a way to understand system dynamics and response.\nBox models: mass-balance in some region of the domain\nCan generalize single box models by:\n\nAdding more complexity;\ncombining multiple boxes."
-  },
-  {
-    "objectID": "slides/lecture05-2.html#why-simulate",
-    "href": "slides/lecture05-2.html#why-simulate",
-    "title": "Dissolved Oxygen",
-    "section": "Why Simulate?",
-    "text": "Why Simulate?\n\nSystem involves complex, nonlinear dynamics that may not be analytically tractable.\nSetting up and running a real-world experiment is not possible.\nState depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.\nNeed to understand range of system performance across rarely-seen conditions."
-  },
-  {
-    "objectID": "slides/lecture05-2.html#questions",
-    "href": "slides/lecture05-2.html#questions",
-    "title": "Dissolved Oxygen",
-    "section": "Questions",
-    "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#fate-transport-modeling",
-    "href": "slides/lecture05-2.html#fate-transport-modeling",
-    "title": "Dissolved Oxygen",
-    "section": "Fate & Transport Modeling",
-    "text": "Fate & Transport Modeling\nHow do nutrients and other quantities move through environmental mediums?\nWhat can make fate & transport modeling more complex?\n\n\nMultiple points of inflow;\nMore complex growth/decay dynamics.\nStochasticity/randomness."
-  },
-  {
-    "objectID": "slides/lecture05-2.html#dissolved-oxygen",
-    "href": "slides/lecture05-2.html#dissolved-oxygen",
-    "title": "Dissolved Oxygen",
-    "section": "Dissolved Oxygen",
-    "text": "Dissolved Oxygen\n\n\nDissolved oxygen (DO) is the free, non-compound oxygen present in water or other liquids.\nFreshwater can only hold small amounts, and this capacity is regulated by temperature.\n\n\n\n\nDissolved Oxygen by temperature\n\n\n\nSource: fondriest.com"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#temperature-impact-on-do",
-    "href": "slides/lecture05-2.html#temperature-impact-on-do",
-    "title": "Dissolved Oxygen",
-    "section": "Temperature Impact on DO",
-    "text": "Temperature Impact on DO\n\nDissolved Oxygen and Temperature Plot\nSource: usgs.gov"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#dissolved-oxygen-and-life",
-    "href": "slides/lecture05-2.html#dissolved-oxygen-and-life",
-    "title": "Dissolved Oxygen",
-    "section": "Dissolved Oxygen and Life",
-    "text": "Dissolved Oxygen and Life\n\n\nDissolved oxygen is an important nutrient for aquatic life.\nHypoxia occurs when DO levels are \\(&lt; 2\\) mg/L.\n\n\n\n\nMinimum DO requirements for freshwater fish\n\n\n\n\nSource: fondriest.com"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#factors-influencing-do",
-    "href": "slides/lecture05-2.html#factors-influencing-do",
-    "title": "Dissolved Oxygen",
-    "section": "Factors Influencing DO",
-    "text": "Factors Influencing DO\n\nTemperature, Pressure, Depth\nSalinity\nMixing\nPlant and Microbial Life\nOrganic Matter"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#impact-of-paris-on-seine-do-1874",
-    "href": "slides/lecture05-2.html#impact-of-paris-on-seine-do-1874",
-    "title": "Dissolved Oxygen",
-    "section": "Impact of Paris On Seine DO, 1874",
-    "text": "Impact of Paris On Seine DO, 1874\n\nDissolved Oxygen Downstream of Paris, 1874\nSource: Dmitrieva, T., et al. (2018). https://doi.org/10.1007/s12685-018-0216-7"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#do-regulatory-standards",
-    "href": "slides/lecture05-2.html#do-regulatory-standards",
-    "title": "Dissolved Oxygen",
-    "section": "DO Regulatory Standards",
-    "text": "DO Regulatory Standards\nObjective: Keep DO above the regulatory standard.\nIn NY (via Westlaw):\n\nDO levels may not fall below 3 mg/L\nDO may not be below 4.8 mg/L for an extended period"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#oxygen-balance-in-rivers-and-streams",
-    "href": "slides/lecture05-2.html#oxygen-balance-in-rivers-and-streams",
-    "title": "Dissolved Oxygen",
-    "section": "Oxygen Balance in Rivers and Streams",
-    "text": "Oxygen Balance in Rivers and Streams\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#selecting-a-metric-for-do-fluxes",
-    "href": "slides/lecture05-2.html#selecting-a-metric-for-do-fluxes",
-    "title": "Dissolved Oxygen",
-    "section": "Selecting a Metric for DO Fluxes",
-    "text": "Selecting a Metric for DO Fluxes\nTypically use oxygen demand (OD):\n\nmeasure of the concentration of oxidizable materials in a water sample\nmetric for organic waste contamination\nreflects how oxygen will be depleted in a given segment\n\nBut there are several different processes affecting total OD!"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#biochemical-oxygen-demand-bod",
-    "href": "slides/lecture05-2.html#biochemical-oxygen-demand-bod",
-    "title": "Dissolved Oxygen",
-    "section": "Biochemical Oxygen Demand (BOD)",
-    "text": "Biochemical Oxygen Demand (BOD)\nOxygen used by microbes during aerobic decomposition of organic materials: \\[\\text{Organic Matter} + \\text{O}_2 \\rightarrow \\text{CO}_2 +  \\text{H}_2\\text{O} + \\text{NO}_3 + \\text{SO}_2 + \\text{Residuals}\\]\nBroadly speaking, we care about two types of BOD: Carbonaceous BOD and Nitrogenous BOD."
-  },
-  {
-    "objectID": "slides/lecture05-2.html#carbonaceous-bod-cbod",
-    "href": "slides/lecture05-2.html#carbonaceous-bod-cbod",
-    "title": "Dissolved Oxygen",
-    "section": "Carbonaceous BOD (CBOD)",
-    "text": "Carbonaceous BOD (CBOD)\nOxygen consumed during microbial decomposition of carbon compounds, e.g.: \\[\\text{C}_a\\text{H}_b\\text{O}_c + d\\text{O}_2 \\rightarrow e\\text{H}_2\\text{O} + f\\text{CO}_2\\]"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#nitrogenous-bod-nbod",
-    "href": "slides/lecture05-2.html#nitrogenous-bod-nbod",
-    "title": "Dissolved Oxygen",
-    "section": "Nitrogenous BOD (NBOD)",
-    "text": "Nitrogenous BOD (NBOD)\nOxygen consumed during microbial decomposition of nitrogen compounds: \\[2\\text{NH}_2^+ + 4\\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O} + 4\\text{H}^+ + 2\\text{NO}_3^-\\]"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#bod-and-time",
-    "href": "slides/lecture05-2.html#bod-and-time",
-    "title": "Dissolved Oxygen",
-    "section": "BOD and Time",
-    "text": "BOD and Time\nMoreover, BOD is differentiated based on time frame, e.g.:\n\nBOD5: oxygen demand over 5 days\nBOD20: oxygen demand over 20 days"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#do-modeling-needs",
-    "href": "slides/lecture05-2.html#do-modeling-needs",
-    "title": "Dissolved Oxygen",
-    "section": "DO Modeling Needs",
-    "text": "DO Modeling Needs\nNeed a model that will predict DO as a function of CBOD, NBOD.\nUse a fate and transport modeling approach: how are relevant quantities moved downstream?\nNote: Can’t assume homogeneous processes."
-  },
-  {
-    "objectID": "slides/lecture05-2.html#modeling-do",
-    "href": "slides/lecture05-2.html#modeling-do",
-    "title": "Dissolved Oxygen",
-    "section": "Modeling DO",
-    "text": "Modeling DO\n\n\nSo what do we do?\nStart by assuming steady-state waste in each section (or box…).\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#modeling-do-1",
-    "href": "slides/lecture05-2.html#modeling-do-1",
-    "title": "Dissolved Oxygen",
-    "section": "Modeling DO",
-    "text": "Modeling DO\n\n\nWe’ll track the mass balance in terms of rates (not absolute mass).\nWhat happens to an element of water?\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#steady-state-waste-do-mass-balance",
-    "href": "slides/lecture05-2.html#steady-state-waste-do-mass-balance",
-    "title": "Dissolved Oxygen",
-    "section": "Steady-State Waste, DO Mass Balance",
-    "text": "Steady-State Waste, DO Mass Balance\nLet \\(U\\) be the river velocity (km/d), \\(x\\) the distance downstream from a waste release site in km, and \\(C(x)\\) the DO concentration at \\(x\\) in mg/L.\n\\[\\begin{align}\nU \\frac{dC}{dx} &= \\text{Change in DO} \\\\[0.5em]\n&= \\text{Reaeration} + \\text{Photosynthesis} - \\text{Respiration}  \\\\[0.5em]\n& \\qquad - \\text{Benthal Uptake} - \\text{CBOD} - \\text{NBOD}\n\n\\end{align}\\]"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#bod-oxygen-uptake",
-    "href": "slides/lecture05-2.html#bod-oxygen-uptake",
-    "title": "Dissolved Oxygen",
-    "section": "BOD Oxygen Uptake",
-    "text": "BOD Oxygen Uptake\nAssume deoxygenation from waste decomposition is first-order (rate \\(k\\)):\n\\[\\begin{aligned}\n\\frac{dM}{dt} &= -kM \\\\\\\\\n\\Rightarrow M &= M_0 \\exp(-kt)\n\\end{aligned}\\]\n\nBut our equations are formulated in terms of distance:\n\\[M = M_0 \\exp(-kx/U)\\]"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#bod-oxygen-uptake-1",
-    "href": "slides/lecture05-2.html#bod-oxygen-uptake-1",
-    "title": "Dissolved Oxygen",
-    "section": "BOD Oxygen Uptake",
-    "text": "BOD Oxygen Uptake\nFor biochemical organics, if \\(k_c\\) is the deoxygenation rate (d\\(^{-1}\\));\n\\[B(x) = B_0 \\exp(-k_c x / U);\\]\nFor nitrification, if \\(k_n\\) is the deoxygenation rate (d\\(^{-1}\\)):\n\\[N(x) = N_0 \\exp(-k_n x / U).\\]"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#steady-state-waste-do-mass-balance-1",
-    "href": "slides/lecture05-2.html#steady-state-waste-do-mass-balance-1",
-    "title": "Dissolved Oxygen",
-    "section": "Steady-State Waste, DO Mass Balance",
-    "text": "Steady-State Waste, DO Mass Balance\nSo the corresponding oxygen uptake rates are \\[k_c B(x) = k_c B_0 \\exp(-k_c x / U)\\] and\n\\[k_n N(x) = k_n N_0 \\exp(-k_n x / U).\\]"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#steady-state-waste-do-mass-balance-2",
-    "href": "slides/lecture05-2.html#steady-state-waste-do-mass-balance-2",
-    "title": "Dissolved Oxygen",
-    "section": "Steady-State Waste, DO Mass Balance",
-    "text": "Steady-State Waste, DO Mass Balance\nOther processes:\n\nReaeration, assume a simple linear model based on difference from saturation level \\(C_s\\): \\(k_a (C_s - C)\\)\nAssume measured, constant values for photosynthesis (\\(P_s\\)), respiration (\\(R\\)), benthal uptake (\\(S_B\\))"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#steady-state-waste-do-mass-balance-3",
-    "href": "slides/lecture05-2.html#steady-state-waste-do-mass-balance-3",
-    "title": "Dissolved Oxygen",
-    "section": "Steady-State Waste, DO Mass Balance",
-    "text": "Steady-State Waste, DO Mass Balance\nPutting it all together:\n\\[\\begin{aligned}\nU \\frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B \\\\\\\\\n&\\quad - k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right) - k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)\n\\end{aligned}\\]"
-  },
-  {
-    "objectID": "slides/lecture05-2.html#key-points-1",
-    "href": "slides/lecture05-2.html#key-points-1",
-    "title": "Dissolved Oxygen",
-    "section": "Key Points",
-    "text": "Key Points\n\nDissolved oxygen (DO) is essential for water quality and aquatic life.\nCommonly regulated to keep DO above a minimum threshold.\nDO impacted by a number of factors, notably organic waste decomposition and nitrification.\nWe derived a first-order equation for DO using mass-balance and fate & transport principles."
-  },
-  {
-    "objectID": "slides/lecture05-2.html#next-classes",
-    "href": "slides/lecture05-2.html#next-classes",
-    "title": "Dissolved Oxygen",
-    "section": "Next Classes",
-    "text": "Next Classes\nFriday: Simulating DO dynamics.\nNext Week: Prescriptive modeling and optimization."
-  },
-  {
-    "objectID": "slides/lecture05-2.html#assessments",
-    "href": "slides/lecture05-2.html#assessments",
-    "title": "Dissolved Oxygen",
-    "section": "Assessments",
-    "text": "Assessments\n\nHW2 due Friday.\nLab2 also due Friday.\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture05-1.html#overview",
@@ -2695,193 +2744,144 @@
     "text": "Multiple-Period Dispatch\nWhat changes for multiple periods?\n\nNeed to meet demand at every time period\nWe have additional ramping constraints: plants can only increase and decrease their output by so much from time to time, by \\(R_g\\).\n\n\nJuMP Implementation\n\n\nCode\nramp = [150, 200, 100, 250, 300]\ndemand = [1725, 1596, 1476, 1408, 1530, 1714, 1820, 1973, 2081, 2202, 2105, 2065, \n    2045, 2195, 2309, 2390, 2486, 2515, 2075, 2006, 1956, 1902, 1865, 1820]\nh = length(demand)\nT = 1:h\n\ndispatch2 = Model(HiGHS.Optimizer)\n@variable(dispatch2, gen_minpower[g] &lt;= y[g in G, t in T] &lt;= gen_maxpower[g])\n@objective(dispatch2, Min, sum(gen_varcost .* sum([y[:, t] for t in T])))\n@constraint(dispatch2, load[t in T], sum(y[:, t]) == demand[t])\n@constraint(dispatch2, rampup[g in G, t in 1:h-1], y[g, t+1] - y[g, t] &lt;= ramp[g])\n@constraint(dispatch2, rampdown[g in G, t in 1:h-1], y[g, t] - y[g, t+1] &lt;= ramp[g])\n\nlatex_formulation(dispatch2)\n\n\n\\[ \\begin{aligned}\n\\min\\quad & 2 y_{3,1} + 2 y_{3,2} + 2 y_{3,3} + 2 y_{3,4} + 2 y_{3,5} + 2 y_{3,6} + 2 y_{3,7} + 2 y_{3,8} + 2 y_{3,9} + 2 y_{3,10} + 2 y_{3,11} + 2 y_{3,12} + 2 y_{3,13} + 2 y_{3,14} + 2 y_{3,15} + 2 y_{3,16} + 2 y_{3,17} + 2 y_{3,18} + 2 y_{3,19} + 2 y_{3,20} + 2 y_{3,21} + 2 y_{3,22} + 2 y_{3,23} + 2 y_{3,24} + 21.5 y_{4,1} + 21.5 y_{4,2} + 21.5 y_{4,3} + 21.5 y_{4,4} + 21.5 y_{4,5} + 21.5 y_{4,6} + 21.5 y_{4,7} + 21.5 y_{4,8} + 21.5 y_{4,9} + 21.5 y_{4,10} + 21.5 y_{4,11} + 21.5 y_{4,12} + 21.5 y_{4,13} + 21.5 y_{4,14} + 21.5 y_{4,15} + 21.5 y_{4,16} + 21.5 y_{4,17} + 21.5 y_{4,18} + 21.5 y_{4,19} + 21.5 y_{4,20} + 21.5 y_{4,21} + 21.5 y_{4,22} + 21.5 y_{4,23} + 21.5 y_{4,24} + 23 y_{5,1} + 23 y_{5,2} + 23 y_{5,3} + 23 y_{5,4} + 23 y_{5,5} + 23 y_{5,6} + 23 y_{5,7} + 23 y_{5,8} + 23 y_{5,9} + 23 y_{5,10} + 23 y_{5,11} + 23 y_{5,12} + 23 y_{5,13} + 23 y_{5,14} + 23 y_{5,15} + 23 y_{5,16} + 23 y_{5,17} + 23 y_{5,18} + 23 y_{5,19} + 23 y_{5,20} + 23 y_{5,21} + 23 y_{5,22} + 23 y_{5,23} + 23 y_{5,24}\\\\\n\\text{Subject to} \\quad & y_{1,1} + y_{2,1} + y_{3,1} + y_{4,1} + y_{5,1} = 1725.0\\\\\n& y_{1,2} + y_{2,2} + y_{3,2} + y_{4,2} + y_{5,2} = 1596.0\\\\\n& y_{1,3} + y_{2,3} + y_{3,3} + y_{4,3} + y_{5,3} = 1476.0\\\\\n& y_{1,4} + y_{2,4} + y_{3,4} + y_{4,4} + y_{5,4} = 1408.0\\\\\n& y_{1,5} + y_{2,5} + y_{3,5} + y_{4,5} + y_{5,5} = 1530.0\\\\\n& y_{1,6} + y_{2,6} + y_{3,6} + y_{4,6} + y_{5,6} = 1714.0\\\\\n& y_{1,7} + y_{2,7} + y_{3,7} + y_{4,7} + y_{5,7} = 1820.0\\\\\n& y_{1,8} + y_{2,8} + y_{3,8} + y_{4,8} + y_{5,8} = 1973.0\\\\\n& y_{1,9} + y_{2,9} + y_{3,9} + y_{4,9} + y_{5,9} = 2081.0\\\\\n& y_{1,10} + y_{2,10} + y_{3,10} + y_{4,10} + y_{5,10} = 2202.0\\\\\n& y_{1,11} + y_{2,11} + y_{3,11} + y_{4,11} + y_{5,11} = 2105.0\\\\\n& y_{1,12} + y_{2,12} + y_{3,12} + y_{4,12} + y_{5,12} = 2065.0\\\\\n& y_{1,13} + y_{2,13} + y_{3,13} + y_{4,13} + y_{5,13} = 2045.0\\\\\n& y_{1,14} + y_{2,14} + y_{3,14} + y_{4,14} + y_{5,14} = 2195.0\\\\\n& y_{1,15} + y_{2,15} + y_{3,15} + y_{4,15} + y_{5,15} = 2309.0\\\\\n& y_{1,16} + y_{2,16} + y_{3,16} + y_{4,16} + y_{5,16} = 2390.0\\\\\n& y_{1,17} + y_{2,17} + y_{3,17} + y_{4,17} + y_{5,17} = 2486.0\\\\\n& y_{1,18} + y_{2,18} + y_{3,18} + y_{4,18} + y_{5,18} = 2515.0\\\\\n& y_{1,19} + y_{2,19} + y_{3,19} + y_{4,19} + y_{5,19} = 2075.0\\\\\n& y_{1,20} + y_{2,20} + y_{3,20} + y_{4,20} + y_{5,20} = 2006.0\\\\\n& y_{1,21} + y_{2,21} + y_{3,21} + y_{4,21} + y_{5,21} = 1956.0\\\\\n& y_{1,22} + y_{2,22} + y_{3,22} + y_{4,22} + y_{5,22} = 1902.0\\\\\n& y_{1,23} + y_{2,23} + y_{3,23} + y_{4,23} + y_{5,23} = 1865.0\\\\\n& y_{1,24} + y_{2,24} + y_{3,24} + y_{4,24} + y_{5,24} = 1820.0\\\\\n& -y_{1,1} + y_{1,2} \\leq 150.0\\\\\n& -y_{2,1} + y_{2,2} \\leq 200.0\\\\\n& -y_{3,1} + y_{3,2} \\leq 100.0\\\\\n& -y_{4,1} + y_{4,2} \\leq 250.0\\\\\n& -y_{5,1} + y_{5,2} \\leq 300.0\\\\\n& -y_{1,2} + y_{1,3} \\leq 150.0\\\\\n& -y_{2,2} + y_{2,3} \\leq 200.0\\\\\n& -y_{3,2} + y_{3,3} \\leq 100.0\\\\\n& -y_{4,2} + y_{4,3} \\leq 250.0\\\\\n& -y_{5,2} + y_{5,3} \\leq 300.0\\\\\n& -y_{1,3} + y_{1,4} \\leq 150.0\\\\\n& -y_{2,3} + y_{2,4} \\leq 200.0\\\\\n& -y_{3,3} + y_{3,4} \\leq 100.0\\\\\n& -y_{4,3} + y_{4,4} \\leq 250.0\\\\\n& -y_{5,3} + y_{5,4} \\leq 300.0\\\\\n& -y_{1,4} + y_{1,5} \\leq 150.0\\\\\n& -y_{2,4} + y_{2,5} \\leq 200.0\\\\\n& -y_{3,4} + y_{3,5} \\leq 100.0\\\\\n& -y_{4,4} + y_{4,5} \\leq 250.0\\\\\n& -y_{5,4} + y_{5,5} \\leq 300.0\\\\\n& -y_{1,5} + y_{1,6} \\leq 150.0\\\\\n& -y_{2,5} + y_{2,6} \\leq 200.0\\\\\n& -y_{3,5} + y_{3,6} \\leq 100.0\\\\\n& -y_{4,5} + y_{4,6} \\leq 250.0\\\\\n& -y_{5,5} + y_{5,6} \\leq 300.0\\\\\n& -y_{1,6} + y_{1,7} \\leq 150.0\\\\\n& -y_{2,6} + y_{2,7} \\leq 200.0\\\\\n& -y_{3,6} + y_{3,7} \\leq 100.0\\\\\n& -y_{4,6} + y_{4,7} \\leq 250.0\\\\\n& -y_{5,6} + y_{5,7} \\leq 300.0\\\\\n& -y_{1,7} + y_{1,8} \\leq 150.0\\\\\n& -y_{2,7} + y_{2,8} \\leq 200.0\\\\\n& -y_{3,7} + y_{3,8} \\leq 100.0\\\\\n& -y_{4,7} + y_{4,8} \\leq 250.0\\\\\n& -y_{5,7} + y_{5,8} \\leq 300.0\\\\\n& -y_{1,8} + y_{1,9} \\leq 150.0\\\\\n& -y_{2,8} + y_{2,9} \\leq 200.0\\\\\n& -y_{3,8} + y_{3,9} \\leq 100.0\\\\\n& -y_{4,8} + y_{4,9} \\leq 250.0\\\\\n& -y_{5,8} + y_{5,9} \\leq 300.0\\\\\n& -y_{1,9} + y_{1,10} \\leq 150.0\\\\\n& -y_{2,9} + y_{2,10} \\leq 200.0\\\\\n& -y_{3,9} + y_{3,10} \\leq 100.0\\\\\n& -y_{4,9} + y_{4,10} \\leq 250.0\\\\\n& -y_{5,9} + y_{5,10} \\leq 300.0\\\\\n& -y_{1,10} + y_{1,11} \\leq 150.0\\\\\n& -y_{2,10} + y_{2,11} \\leq 200.0\\\\\n& -y_{3,10} + y_{3,11} \\leq 100.0\\\\\n& -y_{4,10} + y_{4,11} \\leq 250.0\\\\\n& -y_{5,10} + y_{5,11} \\leq 300.0\\\\\n& -y_{1,11} + y_{1,12} \\leq 150.0\\\\\n& -y_{2,11} + y_{2,12} \\leq 200.0\\\\\n& -y_{3,11} + y_{3,12} \\leq 100.0\\\\\n& -y_{4,11} + y_{4,12} \\leq 250.0\\\\\n& -y_{5,11} + y_{5,12} \\leq 300.0\\\\\n& -y_{1,12} + y_{1,13} \\leq 150.0\\\\\n& -y_{2,12} + y_{2,13} \\leq 200.0\\\\\n& -y_{3,12} + y_{3,13} \\leq 100.0\\\\\n& -y_{4,12} + y_{4,13} \\leq 250.0\\\\\n& -y_{5,12} + y_{5,13} \\leq 300.0\\\\\n& -y_{1,13} + y_{1,14} \\leq 150.0\\\\\n& -y_{2,13} + y_{2,14} \\leq 200.0\\\\\n& -y_{3,13} + y_{3,14} \\leq 100.0\\\\\n& -y_{4,13} + y_{4,14} \\leq 250.0\\\\\n& -y_{5,13} + y_{5,14} \\leq 300.0\\\\\n& -y_{1,14} + y_{1,15} \\leq 150.0\\\\\n& -y_{2,14} + y_{2,15} \\leq 200.0\\\\\n& -y_{3,14} + y_{3,15} \\leq 100.0\\\\\n& -y_{4,14} + y_{4,15} \\leq 250.0\\\\\n& -y_{5,14} + y_{5,15} \\leq 300.0\\\\\n& -y_{1,15} + y_{1,16} \\leq 150.0\\\\\n& -y_{2,15} + y_{2,16} \\leq 200.0\\\\\n& -y_{3,15} + y_{3,16} \\leq 100.0\\\\\n& -y_{4,15} + y_{4,16} \\leq 250.0\\\\\n& -y_{5,15} + y_{5,16} \\leq 300.0\\\\\n& -y_{1,16} + y_{1,17} \\leq 150.0\\\\\n& -y_{2,16} + y_{2,17} \\leq 200.0\\\\\n& -y_{3,16} + y_{3,17} \\leq 100.0\\\\\n& -y_{4,16} + y_{4,17} \\leq 250.0\\\\\n& -y_{5,16} + y_{5,17} \\leq 300.0\\\\\n& -y_{1,17} + y_{1,18} \\leq 150.0\\\\\n& -y_{2,17} + y_{2,18} \\leq 200.0\\\\\n& -y_{3,17} + y_{3,18} \\leq 100.0\\\\\n& -y_{4,17} + y_{4,18} \\leq 250.0\\\\\n& -y_{5,17} + y_{5,18} \\leq 300.0\\\\\n& -y_{1,18} + y_{1,19} \\leq 150.0\\\\\n& -y_{2,18} + y_{2,19} \\leq 200.0\\\\\n& -y_{3,18} + y_{3,19} \\leq 100.0\\\\\n& -y_{4,18} + y_{4,19} \\leq 250.0\\\\\n& -y_{5,18} + y_{5,19} \\leq 300.0\\\\\n& -y_{1,19} + y_{1,20} \\leq 150.0\\\\\n& -y_{2,19} + y_{2,20} \\leq 200.0\\\\\n& -y_{3,19} + y_{3,20} \\leq 100.0\\\\\n& -y_{4,19} + y_{4,20} \\leq 250.0\\\\\n& -y_{5,19} + y_{5,20} \\leq 300.0\\\\\n& -y_{1,20} + y_{1,21} \\leq 150.0\\\\\n& -y_{2,20} + y_{2,21} \\leq 200.0\\\\\n& -y_{3,20} + y_{3,21} \\leq 100.0\\\\\n& -y_{4,20} + y_{4,21} \\leq 250.0\\\\\n& -y_{5,20} + y_{5,21} \\leq 300.0\\\\\n& -y_{1,21} + y_{1,22} \\leq 150.0\\\\\n& -y_{2,21} + y_{2,22} \\leq 200.0\\\\\n& -y_{3,21} + y_{3,22} \\leq 100.0\\\\\n& -y_{4,21} + y_{4,22} \\leq 250.0\\\\\n& -y_{5,21} + y_{5,22} \\leq 300.0\\\\\n& -y_{1,22} + y_{1,23} \\leq 150.0\\\\\n& -y_{2,22} + y_{2,23} \\leq 200.0\\\\\n& -y_{3,22} + y_{3,23} \\leq 100.0\\\\\n& -y_{4,22} + y_{4,23} \\leq 250.0\\\\\n& -y_{5,22} + y_{5,23} \\leq 300.0\\\\\n& -y_{1,23} + y_{1,24} \\leq 150.0\\\\\n& -y_{2,23} + y_{2,24} \\leq 200.0\\\\\n& -y_{3,23} + y_{3,24} \\leq 100.0\\\\\n& -y_{4,23} + y_{4,24} \\leq 250.0\\\\\n& -y_{5,23} + y_{5,24} \\leq 300.0\\\\\n& y_{1,1} - y_{1,2} \\leq 150.0\\\\\n& y_{2,1} - y_{2,2} \\leq 200.0\\\\\n& y_{3,1} - y_{3,2} \\leq 100.0\\\\\n& y_{4,1} - y_{4,2} \\leq 250.0\\\\\n& y_{5,1} - y_{5,2} \\leq 300.0\\\\\n& y_{1,2} - y_{1,3} \\leq 150.0\\\\\n& y_{2,2} - y_{2,3} \\leq 200.0\\\\\n& y_{3,2} - y_{3,3} \\leq 100.0\\\\\n& y_{4,2} - y_{4,3} \\leq 250.0\\\\\n& y_{5,2} - y_{5,3} \\leq 300.0\\\\\n& y_{1,3} - y_{1,4} \\leq 150.0\\\\\n& y_{2,3} - y_{2,4} \\leq 200.0\\\\\n& y_{3,3} - y_{3,4} \\leq 100.0\\\\\n& y_{4,3} - y_{4,4} \\leq 250.0\\\\\n& y_{5,3} - y_{5,4} \\leq 300.0\\\\\n& y_{1,4} - y_{1,5} \\leq 150.0\\\\\n& y_{2,4} - y_{2,5} \\leq 200.0\\\\\n& y_{3,4} - y_{3,5} \\leq 100.0\\\\\n& y_{4,4} - y_{4,5} \\leq 250.0\\\\\n& y_{5,4} - y_{5,5} \\leq 300.0\\\\\n& y_{1,5} - y_{1,6} \\leq 150.0\\\\\n& y_{2,5} - y_{2,6} \\leq 200.0\\\\\n& y_{3,5} - y_{3,6} \\leq 100.0\\\\\n& y_{4,5} - y_{4,6} \\leq 250.0\\\\\n& y_{5,5} - y_{5,6} \\leq 300.0\\\\\n& y_{1,6} - y_{1,7} \\leq 150.0\\\\\n& y_{2,6} - y_{2,7} \\leq 200.0\\\\\n& y_{3,6} - y_{3,7} \\leq 100.0\\\\\n& y_{4,6} - y_{4,7} \\leq 250.0\\\\\n& y_{5,6} - y_{5,7} \\leq 300.0\\\\\n& y_{1,7} - y_{1,8} \\leq 150.0\\\\\n& y_{2,7} - y_{2,8} \\leq 200.0\\\\\n& y_{3,7} - y_{3,8} \\leq 100.0\\\\\n& y_{4,7} - y_{4,8} \\leq 250.0\\\\\n& y_{5,7} - y_{5,8} \\leq 300.0\\\\\n& y_{1,8} - y_{1,9} \\leq 150.0\\\\\n& y_{2,8} - y_{2,9} \\leq 200.0\\\\\n& y_{3,8} - y_{3,9} \\leq 100.0\\\\\n& y_{4,8} - y_{4,9} \\leq 250.0\\\\\n& y_{5,8} - y_{5,9} \\leq 300.0\\\\\n& y_{1,9} - y_{1,10} \\leq 150.0\\\\\n& y_{2,9} - y_{2,10} \\leq 200.0\\\\\n& y_{3,9} - y_{3,10} \\leq 100.0\\\\\n& y_{4,9} - y_{4,10} \\leq 250.0\\\\\n& y_{5,9} - y_{5,10} \\leq 300.0\\\\\n& y_{1,10} - y_{1,11} \\leq 150.0\\\\\n& y_{2,10} - y_{2,11} \\leq 200.0\\\\\n& y_{3,10} - y_{3,11} \\leq 100.0\\\\\n& y_{4,10} - y_{4,11} \\leq 250.0\\\\\n& y_{5,10} - y_{5,11} \\leq 300.0\\\\\n& y_{1,11} - y_{1,12} \\leq 150.0\\\\\n& y_{2,11} - y_{2,12} \\leq 200.0\\\\\n& y_{3,11} - y_{3,12} \\leq 100.0\\\\\n& y_{4,11} - y_{4,12} \\leq 250.0\\\\\n& y_{5,11} - y_{5,12} \\leq 300.0\\\\\n& y_{1,12} - y_{1,13} \\leq 150.0\\\\\n& y_{2,12} - y_{2,13} \\leq 200.0\\\\\n& y_{3,12} - y_{3,13} \\leq 100.0\\\\\n& y_{4,12} - y_{4,13} \\leq 250.0\\\\\n& y_{5,12} - y_{5,13} \\leq 300.0\\\\\n& y_{1,13} - y_{1,14} \\leq 150.0\\\\\n& y_{2,13} - y_{2,14} \\leq 200.0\\\\\n& y_{3,13} - y_{3,14} \\leq 100.0\\\\\n& y_{4,13} - y_{4,14} \\leq 250.0\\\\\n& y_{5,13} - y_{5,14} \\leq 300.0\\\\\n& y_{1,14} - y_{1,15} \\leq 150.0\\\\\n& y_{2,14} - y_{2,15} \\leq 200.0\\\\\n& y_{3,14} - y_{3,15} \\leq 100.0\\\\\n& y_{4,14} - y_{4,15} \\leq 250.0\\\\\n& y_{5,14} - y_{5,15} \\leq 300.0\\\\\n& y_{1,15} - y_{1,16} \\leq 150.0\\\\\n& y_{2,15} - y_{2,16} \\leq 200.0\\\\\n& y_{3,15} - y_{3,16} \\leq 100.0\\\\\n& y_{4,15} - y_{4,16} \\leq 250.0\\\\\n& y_{5,15} - y_{5,16} \\leq 300.0\\\\\n& y_{1,16} - y_{1,17} \\leq 150.0\\\\\n& y_{2,16} - y_{2,17} \\leq 200.0\\\\\n& y_{3,16} - y_{3,17} \\leq 100.0\\\\\n& y_{4,16} - y_{4,17} \\leq 250.0\\\\\n& y_{5,16} - y_{5,17} \\leq 300.0\\\\\n& y_{1,17} - y_{1,18} \\leq 150.0\\\\\n& y_{2,17} - y_{2,18} \\leq 200.0\\\\\n& y_{3,17} - y_{3,18} \\leq 100.0\\\\\n& y_{4,17} - y_{4,18} \\leq 250.0\\\\\n& y_{5,17} - y_{5,18} \\leq 300.0\\\\\n& y_{1,18} - y_{1,19} \\leq 150.0\\\\\n& y_{2,18} - y_{2,19} \\leq 200.0\\\\\n& y_{3,18} - y_{3,19} \\leq 100.0\\\\\n& y_{4,18} - y_{4,19} \\leq 250.0\\\\\n& y_{5,18} - y_{5,19} \\leq 300.0\\\\\n& y_{1,19} - y_{1,20} \\leq 150.0\\\\\n& y_{2,19} - y_{2,20} \\leq 200.0\\\\\n& y_{3,19} - y_{3,20} \\leq 100.0\\\\\n& y_{4,19} - y_{4,20} \\leq 250.0\\\\\n& y_{5,19} - y_{5,20} \\leq 300.0\\\\\n& y_{1,20} - y_{1,21} \\leq 150.0\\\\\n& y_{2,20} - y_{2,21} \\leq 200.0\\\\\n& y_{3,20} - y_{3,21} \\leq 100.0\\\\\n& y_{4,20} - y_{4,21} \\leq 250.0\\\\\n& y_{5,20} - y_{5,21} \\leq 300.0\\\\\n& y_{1,21} - y_{1,22} \\leq 150.0\\\\\n& y_{2,21} - y_{2,22} \\leq 200.0\\\\\n& y_{3,21} - y_{3,22} \\leq 100.0\\\\\n& y_{4,21} - y_{4,22} \\leq 250.0\\\\\n& y_{5,21} - y_{5,22} \\leq 300.0\\\\\n& y_{1,22} - y_{1,23} \\leq 150.0\\\\\n& y_{2,22} - y_{2,23} \\leq 200.0\\\\\n& y_{3,22} - y_{3,23} \\leq 100.0\\\\\n& y_{4,22} - y_{4,23} \\leq 250.0\\\\\n& y_{5,22} - y_{5,23} \\leq 300.0\\\\\n& y_{1,23} - y_{1,24} \\leq 150.0\\\\\n& y_{2,23} - y_{2,24} \\leq 200.0\\\\\n& y_{3,23} - y_{3,24} \\leq 100.0\\\\\n& y_{4,23} - y_{4,24} \\leq 250.0\\\\\n& y_{5,23} - y_{5,24} \\leq 300.0\\\\\n& y_{1,1} \\geq 0.0\\\\\n& y_{2,1} \\geq 0.0\\\\\n& y_{3,1} \\geq 200.0\\\\\n& y_{4,1} \\geq 160.0\\\\\n& y_{5,1} \\geq 40.0\\\\\n& y_{1,2} \\geq 0.0\\\\\n& y_{2,2} \\geq 0.0\\\\\n& y_{3,2} \\geq 200.0\\\\\n& y_{4,2} \\geq 160.0\\\\\n& y_{5,2} \\geq 40.0\\\\\n& y_{1,3} \\geq 0.0\\\\\n& y_{2,3} \\geq 0.0\\\\\n& y_{3,3} \\geq 200.0\\\\\n& y_{4,3} \\geq 160.0\\\\\n& y_{5,3} \\geq 40.0\\\\\n& y_{1,4} \\geq 0.0\\\\\n& y_{2,4} \\geq 0.0\\\\\n& y_{3,4} \\geq 200.0\\\\\n& y_{4,4} \\geq 160.0\\\\\n& y_{5,4} \\geq 40.0\\\\\n& y_{1,5} \\geq 0.0\\\\\n& y_{2,5} \\geq 0.0\\\\\n& y_{3,5} \\geq 200.0\\\\\n& y_{4,5} \\geq 160.0\\\\\n& y_{5,5} \\geq 40.0\\\\\n& y_{1,6} \\geq 0.0\\\\\n& y_{2,6} \\geq 0.0\\\\\n& y_{3,6} \\geq 200.0\\\\\n& y_{4,6} \\geq 160.0\\\\\n& y_{5,6} \\geq 40.0\\\\\n& y_{1,7} \\geq 0.0\\\\\n& y_{2,7} \\geq 0.0\\\\\n& y_{3,7} \\geq 200.0\\\\\n& y_{4,7} \\geq 160.0\\\\\n& y_{5,7} \\geq 40.0\\\\\n& y_{1,8} \\geq 0.0\\\\\n& y_{2,8} \\geq 0.0\\\\\n& y_{3,8} \\geq 200.0\\\\\n& y_{4,8} \\geq 160.0\\\\\n& y_{5,8} \\geq 40.0\\\\\n& y_{1,9} \\geq 0.0\\\\\n& y_{2,9} \\geq 0.0\\\\\n& y_{3,9} \\geq 200.0\\\\\n& y_{4,9} \\geq 160.0\\\\\n& y_{5,9} \\geq 40.0\\\\\n& y_{1,10} \\geq 0.0\\\\\n& y_{2,10} \\geq 0.0\\\\\n& y_{3,10} \\geq 200.0\\\\\n& y_{4,10} \\geq 160.0\\\\\n& y_{5,10} \\geq 40.0\\\\\n& y_{1,11} \\geq 0.0\\\\\n& y_{2,11} \\geq 0.0\\\\\n& y_{3,11} \\geq 200.0\\\\\n& y_{4,11} \\geq 160.0\\\\\n& y_{5,11} \\geq 40.0\\\\\n& y_{1,12} \\geq 0.0\\\\\n& y_{2,12} \\geq 0.0\\\\\n& y_{3,12} \\geq 200.0\\\\\n& y_{4,12} \\geq 160.0\\\\\n& y_{5,12} \\geq 40.0\\\\\n& y_{1,13} \\geq 0.0\\\\\n& y_{2,13} \\geq 0.0\\\\\n& y_{3,13} \\geq 200.0\\\\\n& y_{4,13} \\geq 160.0\\\\\n& y_{5,13} \\geq 40.0\\\\\n& y_{1,14} \\geq 0.0\\\\\n& y_{2,14} \\geq 0.0\\\\\n& y_{3,14} \\geq 200.0\\\\\n& y_{4,14} \\geq 160.0\\\\\n& y_{5,14} \\geq 40.0\\\\\n& y_{1,15} \\geq 0.0\\\\\n& y_{2,15} \\geq 0.0\\\\\n& y_{3,15} \\geq 200.0\\\\\n& y_{4,15} \\geq 160.0\\\\\n& y_{5,15} \\geq 40.0\\\\\n& y_{1,16} \\geq 0.0\\\\\n& y_{2,16} \\geq 0.0\\\\\n& y_{3,16} \\geq 200.0\\\\\n& y_{4,16} \\geq 160.0\\\\\n& y_{5,16} \\geq 40.0\\\\\n& y_{1,17} \\geq 0.0\\\\\n& y_{2,17} \\geq 0.0\\\\\n& y_{3,17} \\geq 200.0\\\\\n& y_{4,17} \\geq 160.0\\\\\n& y_{5,17} \\geq 40.0\\\\\n& y_{1,18} \\geq 0.0\\\\\n& y_{2,18} \\geq 0.0\\\\\n& y_{3,18} \\geq 200.0\\\\\n& y_{4,18} \\geq 160.0\\\\\n& y_{5,18} \\geq 40.0\\\\\n& y_{1,19} \\geq 0.0\\\\\n& y_{2,19} \\geq 0.0\\\\\n& y_{3,19} \\geq 200.0\\\\\n& y_{4,19} \\geq 160.0\\\\\n& y_{5,19} \\geq 40.0\\\\\n& y_{1,20} \\geq 0.0\\\\\n& y_{2,20} \\geq 0.0\\\\\n& y_{3,20} \\geq 200.0\\\\\n& y_{4,20} \\geq 160.0\\\\\n& y_{5,20} \\geq 40.0\\\\\n& y_{1,21} \\geq 0.0\\\\\n& y_{2,21} \\geq 0.0\\\\\n& y_{3,21} \\geq 200.0\\\\\n& y_{4,21} \\geq 160.0\\\\\n& y_{5,21} \\geq 40.0\\\\\n& y_{1,22} \\geq 0.0\\\\\n& y_{2,22} \\geq 0.0\\\\\n& y_{3,22} \\geq 200.0\\\\\n& y_{4,22} \\geq 160.0\\\\\n& y_{5,22} \\geq 40.0\\\\\n& y_{1,23} \\geq 0.0\\\\\n& y_{2,23} \\geq 0.0\\\\\n& y_{3,23} \\geq 200.0\\\\\n& y_{4,23} \\geq 160.0\\\\\n& y_{5,23} \\geq 40.0\\\\\n& y_{1,24} \\geq 0.0\\\\\n& y_{2,24} \\geq 0.0\\\\\n& y_{3,24} \\geq 200.0\\\\\n& y_{4,24} \\geq 160.0\\\\\n& y_{5,24} \\geq 40.0\\\\\n& y_{1,1} \\leq 150.0\\\\\n& y_{2,1} \\leq 200.0\\\\\n& y_{3,1} \\leq 1000.0\\\\\n& y_{4,1} \\leq 700.0\\\\\n& y_{5,1} \\leq 500.0\\\\\n& y_{1,2} \\leq 150.0\\\\\n& y_{2,2} \\leq 200.0\\\\\n& y_{3,2} \\leq 1000.0\\\\\n& y_{4,2} \\leq 700.0\\\\\n& y_{5,2} \\leq 500.0\\\\\n& y_{1,3} \\leq 150.0\\\\\n& y_{2,3} \\leq 200.0\\\\\n& y_{3,3} \\leq 1000.0\\\\\n& y_{4,3} \\leq 700.0\\\\\n& y_{5,3} \\leq 500.0\\\\\n& y_{1,4} \\leq 150.0\\\\\n& y_{2,4} \\leq 200.0\\\\\n& y_{3,4} \\leq 1000.0\\\\\n& y_{4,4} \\leq 700.0\\\\\n& y_{5,4} \\leq 500.0\\\\\n& y_{1,5} \\leq 150.0\\\\\n& y_{2,5} \\leq 200.0\\\\\n& y_{3,5} \\leq 1000.0\\\\\n& y_{4,5} \\leq 700.0\\\\\n& y_{5,5} \\leq 500.0\\\\\n& y_{1,6} \\leq 150.0\\\\\n& y_{2,6} \\leq 200.0\\\\\n& y_{3,6} \\leq 1000.0\\\\\n& y_{4,6} \\leq 700.0\\\\\n& y_{5,6} \\leq 500.0\\\\\n& y_{1,7} \\leq 150.0\\\\\n& y_{2,7} \\leq 200.0\\\\\n& y_{3,7} \\leq 1000.0\\\\\n& y_{4,7} \\leq 700.0\\\\\n& y_{5,7} \\leq 500.0\\\\\n& y_{1,8} \\leq 150.0\\\\\n& y_{2,8} \\leq 200.0\\\\\n& y_{3,8} \\leq 1000.0\\\\\n& y_{4,8} \\leq 700.0\\\\\n& y_{5,8} \\leq 500.0\\\\\n& y_{1,9} \\leq 150.0\\\\\n& y_{2,9} \\leq 200.0\\\\\n& y_{3,9} \\leq 1000.0\\\\\n& y_{4,9} \\leq 700.0\\\\\n& y_{5,9} \\leq 500.0\\\\\n& y_{1,10} \\leq 150.0\\\\\n& y_{2,10} \\leq 200.0\\\\\n& y_{3,10} \\leq 1000.0\\\\\n& y_{4,10} \\leq 700.0\\\\\n& y_{5,10} \\leq 500.0\\\\\n& y_{1,11} \\leq 150.0\\\\\n& y_{2,11} \\leq 200.0\\\\\n& y_{3,11} \\leq 1000.0\\\\\n& y_{4,11} \\leq 700.0\\\\\n& y_{5,11} \\leq 500.0\\\\\n& y_{1,12} \\leq 150.0\\\\\n& y_{2,12} \\leq 200.0\\\\\n& y_{3,12} \\leq 1000.0\\\\\n& y_{4,12} \\leq 700.0\\\\\n& y_{5,12} \\leq 500.0\\\\\n& y_{1,13} \\leq 150.0\\\\\n& y_{2,13} \\leq 200.0\\\\\n& y_{3,13} \\leq 1000.0\\\\\n& y_{4,13} \\leq 700.0\\\\\n& y_{5,13} \\leq 500.0\\\\\n& y_{1,14} \\leq 150.0\\\\\n& y_{2,14} \\leq 200.0\\\\\n& y_{3,14} \\leq 1000.0\\\\\n& y_{4,14} \\leq 700.0\\\\\n& y_{5,14} \\leq 500.0\\\\\n& y_{1,15} \\leq 150.0\\\\\n& y_{2,15} \\leq 200.0\\\\\n& y_{3,15} \\leq 1000.0\\\\\n& y_{4,15} \\leq 700.0\\\\\n& y_{5,15} \\leq 500.0\\\\\n& y_{1,16} \\leq 150.0\\\\\n& y_{2,16} \\leq 200.0\\\\\n& y_{3,16} \\leq 1000.0\\\\\n& y_{4,16} \\leq 700.0\\\\\n& y_{5,16} \\leq 500.0\\\\\n& y_{1,17} \\leq 150.0\\\\\n& y_{2,17} \\leq 200.0\\\\\n& y_{3,17} \\leq 1000.0\\\\\n& y_{4,17} \\leq 700.0\\\\\n& y_{5,17} \\leq 500.0\\\\\n& y_{1,18} \\leq 150.0\\\\\n& y_{2,18} \\leq 200.0\\\\\n& y_{3,18} \\leq 1000.0\\\\\n& y_{4,18} \\leq 700.0\\\\\n& y_{5,18} \\leq 500.0\\\\\n& y_{1,19} \\leq 150.0\\\\\n& y_{2,19} \\leq 200.0\\\\\n& y_{3,19} \\leq 1000.0\\\\\n& y_{4,19} \\leq 700.0\\\\\n& y_{5,19} \\leq 500.0\\\\\n& y_{1,20} \\leq 150.0\\\\\n& y_{2,20} \\leq 200.0\\\\\n& y_{3,20} \\leq 1000.0\\\\\n& y_{4,20} \\leq 700.0\\\\\n& y_{5,20} \\leq 500.0\\\\\n& y_{1,21} \\leq 150.0\\\\\n& y_{2,21} \\leq 200.0\\\\\n& y_{3,21} \\leq 1000.0\\\\\n& y_{4,21} \\leq 700.0\\\\\n& y_{5,21} \\leq 500.0\\\\\n& y_{1,22} \\leq 150.0\\\\\n& y_{2,22} \\leq 200.0\\\\\n& y_{3,22} \\leq 1000.0\\\\\n& y_{4,22} \\leq 700.0\\\\\n& y_{5,22} \\leq 500.0\\\\\n& y_{1,23} \\leq 150.0\\\\\n& y_{2,23} \\leq 200.0\\\\\n& y_{3,23} \\leq 1000.0\\\\\n& y_{4,23} \\leq 700.0\\\\\n& y_{5,23} \\leq 500.0\\\\\n& y_{1,24} \\leq 150.0\\\\\n& y_{2,24} \\leq 200.0\\\\\n& y_{3,24} \\leq 1000.0\\\\\n& y_{4,24} \\leq 700.0\\\\\n& y_{5,24} \\leq 500.0\\\\\n\\end{aligned} \\]\n\n\n\n\nCode\n\nset_silent(dispatch2)\noptimize!(dispatch2)\n\ngen = value.(y).data\n\n\n5×24 Matrix{Float64}:\n  150.0   150.0  150.0  128.0  150.0  …   150.0   150.0   150.0   150.0\n  200.0   200.0  200.0  200.0  200.0      200.0   200.0   200.0   200.0\n 1000.0  1000.0  926.0  880.0  980.0     1000.0  1000.0  1000.0  1000.0\n  335.0   206.0  160.0  160.0  160.0      566.0   512.0   475.0   430.0\n   40.0    40.0   40.0   40.0   40.0       40.0    40.0    40.0    40.0\n\n\n\n\nCode\nareaplot(gen', \n    label=permutedims(gen_names), \n    xlabel = \"Hour\", \n    ylabel =\"Generated Electricity (MW)\", \n    color_palette=:tol_muted, \n    size=(1200, 600), \n    left_margin=6mm, \n    bottom_margin=6mm,\n    grid=:false,\n    legend = :outerright, ylim=(0, 2800),\n    legendfontsize=20, tickfontsize=20, \n    guidefontsize=20\n)\nplot!(demand, color=:red, \n    label=\"demand\", linestyle=:dash,\n    linewidth=5)\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\np = plot(gen', \n    label=permutedims(gen_names), \n    xlabel = \"Hour\", \n    ylabel =\"Generated Electricity (MW)\", \n    color_palette=:tol_muted, \n    linewidth=5,\n    size=(1200, 600), left_margin=6mm, \n    bottom_margin=6mm,\n    legendfontsize=20, tickfontsize=20, \n    guidefontsize=20,\n    legend=:outerright\n)\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotice that even though hydro is effectively zero-cost, we reduce dispatched hydropower in hour 4 because coal is at its minimum generating capacity and nuclear can’t be ramped down further. These constraints complicate the simple merit order that we previously saw.\nThese constraints also play a major role in systems with high levels of renewable penetration. For example, the so-called California “duck curve” is created by the challenges of ramping generation between the early afternoon, when solar generation is at its maximum, and in the evening, when solar generation is decreasing and demand increases rapidly.\n\n\n\nCalifornia Duck Curve"
   },
   {
-    "objectID": "slides/lecture04-1.html#gaussian-plume-for-air-pollution-dispersion",
-    "href": "slides/lecture04-1.html#gaussian-plume-for-air-pollution-dispersion",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Gaussian Plume for Air Pollution Dispersion",
-    "text": "Gaussian Plume for Air Pollution Dispersion\n\nUsed for point sources.\nTypically for continuous emissions from an elevated source."
+    "objectID": "slides/lecture04-1.html#last-class",
+    "href": "slides/lecture04-1.html#last-class",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Last Class",
+    "text": "Last Class\n\n\n\nDissolved Oxygen: essential quantity for aquatic life\nMinimum concentration regulated\nUsed mass-balance to derive first-order equation\n\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
   },
   {
-    "objectID": "slides/lecture04-1.html#gaussian-plume-model",
-    "href": "slides/lecture04-1.html#gaussian-plume-model",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Gaussian Plume Model",
-    "text": "Gaussian Plume Model\n\n\n\nVariable\nMeaning\n\n\n\n\n\\(C\\)\nConcentration (g/m\\(^3\\))\n\n\n\\(Q\\)\nEmissions Rate (g/s)\n\n\n\\(H\\)\nEffective Source Height (m)\n\n\n\\(u\\)\nWind Speed (m/s)\n\n\n\\(y, z\\)\nCrosswind, Vertical Distance (m)"
-  },
-  {
-    "objectID": "slides/lecture04-1.html#gaussian-plume-model-1",
-    "href": "slides/lecture04-1.html#gaussian-plume-model-1",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Gaussian Plume Model",
-    "text": "Gaussian Plume Model\n\nGaussian Plume Distribution"
-  },
-  {
-    "objectID": "slides/lecture04-1.html#gaussian-plume-model-with-ground-reflection",
-    "href": "slides/lecture04-1.html#gaussian-plume-model-with-ground-reflection",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Gaussian Plume Model With Ground Reflection",
-    "text": "Gaussian Plume Model With Ground Reflection\n\\[\\begin{aligned}\nC(x,y,z) = &\\frac{Q}{2\\pi u \\sigma_y \\sigma_z} \\exp\\left(\\frac{-y^2}{2\\sigma_y^2} \\right) \\times \\\\\\\\\n& \\quad \\left[\\exp\\left(\\frac{-(z-H)^2}{2\\sigma_z^2}\\right) + \\exp\\left(\\frac{-(z+H)^2}{2\\sigma_z^2}\\right) \\right]\n\\end{aligned}\\]"
+    "objectID": "slides/lecture04-1.html#do-concentration-equation",
+    "href": "slides/lecture04-1.html#do-concentration-equation",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "DO Concentration Equation",
+    "text": "DO Concentration Equation\n\\[\\begin{align}\n\\overbrace{U \\frac{dC}{dx}}^{\\text{Concentration Change}} &= \\overbrace{k_a (C_s - C)}^{\\text{Reaeration}} + \\overbrace{P - R - S_B}^{\\text{Constants}} \\\\[0.5em]\n&\\quad - \\underbrace{k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right)}_{\\text{CBOD}} - \\underbrace{k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)}_{\\text{NBOD}}\n\\end{align}\\]"
   },
   {
     "objectID": "slides/lecture04-1.html#questions",
     "href": "slides/lecture04-1.html#questions",
-    "title": "Plume Models: Dispersion and Examples",
+    "title": "Dissolved Oxygen Simulation",
     "section": "Questions",
     "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture04-1.html#estimating-dispersion-spread",
-    "href": "slides/lecture04-1.html#estimating-dispersion-spread",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Estimating Dispersion “Spread”",
-    "text": "Estimating Dispersion “Spread”\nValues of \\(\\sigma_y\\) and \\(\\sigma_z\\) matter substantially for modeling plume spread downwind. What influences them?"
+    "objectID": "slides/lecture04-1.html#steady-state-mass-balance-solution",
+    "href": "slides/lecture04-1.html#steady-state-mass-balance-solution",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Steady-State Mass-Balance Solution",
+    "text": "Steady-State Mass-Balance Solution\n\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1), \\\\[1em]\n\n\\alpha_1 &= \\exp\\left(-\\frac{k_a x}{U}\\right) \\\\[0.25em]\n\\alpha_2 &= \\left(\\frac{k_c}{k_a-k_c}\\right)\\left[\\exp\\left(\\frac{-k_c x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right] \\\\[0.25em]\n\\alpha_3 &= \\left(\\frac{k_n}{k_a-k_n}\\right)\\left[\\exp\\left(\\frac{-k_n x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right]\n\\end{align}\\]"
   },
   {
-    "objectID": "slides/lecture04-1.html#estimating-dispersion-spread-1",
-    "href": "slides/lecture04-1.html#estimating-dispersion-spread-1",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Estimating Dispersion “Spread”",
-    "text": "Estimating Dispersion “Spread”\nMain contribution: atmospheric stability\n\nGreater stability ⇒ less vertical/cross-wind dispersion.\nPasquill (1961): Six stability classes."
+    "objectID": "slides/lecture04-1.html#steady-state-mass-balance-solution-1",
+    "href": "slides/lecture04-1.html#steady-state-mass-balance-solution-1",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Steady-State Mass-Balance Solution",
+    "text": "Steady-State Mass-Balance Solution\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 \\\\[0.5em]\n& \\qquad + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1),\n\\end{align}\\]\nNote: Usually, these models ignore \\(P\\), \\(R\\), and \\(S_B\\).\nWhy do you think that might be?"
   },
   {
-    "objectID": "slides/lecture04-1.html#estimating-dispersion-spread-2",
-    "href": "slides/lecture04-1.html#estimating-dispersion-spread-2",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Estimating Dispersion “Spread”",
-    "text": "Estimating Dispersion “Spread”\nContributors to atmospheric stability:\n\nTemperature gradient\nWind speed\nSolar radiation\nCloud cover\nRichardson number (buoyancy / flow shear)"
+    "objectID": "slides/lecture04-1.html#dissolved-oxygen-sag-curve",
+    "href": "slides/lecture04-1.html#dissolved-oxygen-sag-curve",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Dissolved Oxygen “Sag” Curve",
+    "text": "Dissolved Oxygen “Sag” Curve\n\n\nDissolved oxygen concentrations downstream of a waste release “sag” and then start to recover as CBOD and NBOD decrease.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Sag curve for dissolved oxygen."
   },
   {
-    "objectID": "slides/lecture04-1.html#atmospheric-stability-classes",
-    "href": "slides/lecture04-1.html#atmospheric-stability-classes",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Atmospheric Stability Classes",
-    "text": "Atmospheric Stability Classes\n\n\n\nClass\nStability\nDescription\n\n\n\n\nA\nExtremely unstable\nSunny summer day\n\n\nB\nModerately unstable\nSunny & warm\n\n\nC\nSlightly unstable\nPartly cloudy day\n\n\nD\nNeutral\nCloudy day or night\n\n\nE\nSlightly stable\nPartly cloudy night\n\n\nF\nModerately stable\nClear night\n\n\n\n\nSource: https://courses.ecampus.oregonstate.edu/ne581/eleven/"
+    "objectID": "slides/lecture04-1.html#how-to-simulate",
+    "href": "slides/lecture04-1.html#how-to-simulate",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "How To Simulate",
+    "text": "How To Simulate\nSo far, this is only different from our single-box airshed in terms of the number of processes.\nSingle equation, straightforward to evaluate across many values of \\(x\\) with a loop:\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = (y -&gt; dissolved_oxygen(y, parameters)).(x)"
   },
   {
-    "objectID": "slides/lecture04-1.html#estimating-dispersion-spread-3",
-    "href": "slides/lecture04-1.html#estimating-dispersion-spread-3",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Estimating Dispersion “Spread”",
-    "text": "Estimating Dispersion “Spread”\n\\[\\begin{aligned}\n\\sigma_y &= ax^{0.894} \\\\\n\\sigma_z &= cx^d + f\n\\end{aligned}\\]\n\nDispersion Coefficients\nSource: https://courses.washington.edu/cee490/DISPCOEF4WP.htm\n\nNote: here \\(x\\) is in km, while in the plume equation \\(y\\), \\(z\\) are in m!"
+    "objectID": "slides/lecture04-1.html#single-discharge-example",
+    "href": "slides/lecture04-1.html#single-discharge-example",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Single-Discharge Example",
+    "text": "Single-Discharge Example\n\n\n\n\n\n\n\n\n\nParameter\nRiver\nWaste\nGeneral\n\n\n\n\nVolume (m3/d)\n100,000\n10,000\n—\n\n\nDO (mg/L)\n6.4\n4.2\n—\n\n\nCBOD (mg/L)\n5\n49\n—\n\n\nNBOD (mg/L)\n5\n27\n—\n\n\n\\(C_s\\) (mg/L)\n—\n—\n7\n\n\n\\(k_a\\), \\(k_c\\), \\(k_n\\)\n—\n—\n0.8, 0.5, 0.4"
   },
   {
-    "objectID": "slides/lecture04-1.html#estimating-dispersion-spread-4",
-    "href": "slides/lecture04-1.html#estimating-dispersion-spread-4",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Estimating Dispersion “Spread”",
-    "text": "Estimating Dispersion “Spread”\nThen take estimates for \\(\\sigma_y\\) and \\(\\sigma_z\\) and plug into plume dispersion equation\n\\[\\begin{aligned}\nC(x,y,z) = &\\frac{Q}{2\\pi u {\\color{red}\\sigma_y \\sigma_z}} \\exp\\left(\\frac{-y^2}{2{\\color{red}\\sigma_y^2}} \\right) \\times \\\\\\\\\n& \\quad \\left[\\exp\\left(\\frac{-(z-H)^2}{2{\\color{red}\\sigma_z^2}}\\right) + \\exp\\left(\\frac{-(z+H)^2}{2{\\color{red}\\sigma_z^2}}\\right) \\right]\n\\end{aligned}\\]"
+    "objectID": "slides/lecture04-1.html#single-discharge-example-initial-condition",
+    "href": "slides/lecture04-1.html#single-discharge-example-initial-condition",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Single-Discharge Example: Initial Condition",
+    "text": "Single-Discharge Example: Initial Condition\nHow do we find the initial state (\\(x=0\\))?\n\nNeed to compute the mixed concentrations of DO, CBOD, and NBOD (\\(Q\\) is the flow volume):\n\\[C_0 = C_\\text{mixed} = \\frac{C_\\text{river} \\times Q_\\text{river} + C_\\text{waste} \\times Q_\\text{waste}}{Q_\\text{river} + Q_\\text{waste}}\\]"
   },
   {
-    "objectID": "slides/lecture04-1.html#example",
-    "href": "slides/lecture04-1.html#example",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Example",
-    "text": "Example\nA 100m tall chimney emits HCl at a rate of 1.75 kg/s. The plume rises 10m before being convected horizontally by the wind. A housing development is planned near the chimney, and environmental authorities want to map the HCl concentration within a 5km x 1km region downwind under\n\nneutral, moderately stable, and moderately unstable atmospheric conditions,\nand under 5 m/s and 20 m/s winds?"
+    "objectID": "slides/lecture04-1.html#single-discharge-example-initial-condition-1",
+    "href": "slides/lecture04-1.html#single-discharge-example-initial-condition-1",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Single-Discharge Example: Initial Condition",
+    "text": "Single-Discharge Example: Initial Condition\nSo the initial values:\n\\[C_0 = 6.2 \\ \\text{mg/L}\\]\n\\[B_0 = 9 \\ \\text{mg/L}\\]\n\\[N_0 = 7 \\ \\text{mg/L}\\]"
   },
   {
-    "objectID": "slides/lecture04-1.html#plume-equation",
-    "href": "slides/lecture04-1.html#plume-equation",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Plume Equation",
-    "text": "Plume Equation\n\\[\\begin{aligned}\nC(x,y,z) = &\\frac{Q}{2\\pi u \\sigma_y \\sigma_z} \\exp\\left(\\frac{-y^2}{2\\sigma_y^2} \\right) \\times \\\\\\\\\n& \\quad \\left[\\exp\\left(\\frac{-(z-H)^2}{2\\sigma_z^2}\\right) + \\exp\\left(\\frac{-(z+H)^2}{2\\sigma_z^2}\\right) \\right]\n\\end{aligned}\\]"
+    "objectID": "slides/lecture04-1.html#single-discharge-example-simulation",
+    "href": "slides/lecture04-1.html#single-discharge-example-simulation",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Single-Discharge Example: Simulation",
+    "text": "Single-Discharge Example: Simulation\nNow we can compute \\(C(x)\\) (river velocity \\(U = 5\\) km/d).\n\n\nfunction dissolved_oxygen(x, Cs, C0, B0, N0, ka, kc, kn, U)\n    α1 = exp(-ka * x / U)\n    α2 = (kc / (ka - kc)) * (exp(-kc * x / U) - α1)\n    α3 = (kn / (ka - kn)) * (exp(-kn * x / U) - α1)\n    C = (Cs * (1 - α1)) + (C0 * α1) - (B0 * α2) - (N0 * α3)\n    return C\nend\n\nx = 0:0.1:20\nC = (y -&gt; dissolved_oxygen(y, Cs, C0, B0, N0, ka, kc, kn, U)).(x)"
   },
   {
-    "objectID": "slides/lecture04-1.html#plume-equation-ground-level",
-    "href": "slides/lecture04-1.html#plume-equation-ground-level",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Plume Equation (Ground Level)",
-    "text": "Plume Equation (Ground Level)\n\\[\\begin{aligned}\nC(x,y) = &\\frac{Q}{\\pi u \\sigma_y \\sigma_z} \\exp\\left(\\frac{-y^2}{2\\sigma_y^2} \\right) \\exp\\left(\\frac{-H^2}{2\\sigma_z^2}\\right)\n\\end{aligned}\\]"
+    "objectID": "slides/lecture04-1.html#single-discharge-example-simulation-1",
+    "href": "slides/lecture04-1.html#single-discharge-example-simulation-1",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Single-Discharge Example: Simulation",
+    "text": "Single-Discharge Example: Simulation\n\n\n\n\nCode\nplot(x, C; linewidth=3, \n    label=\"Dissolved Oxygen\", \n    tickfontsize=16, \n    guidefontsize=16, \n    legendfontsize=16)\nxlabel!(L\"$x$ (km)\")\nylabel!(\"DO Concentration (mg/L)\")\nhline!([3], color=:red, \n    linestyle=:dash, \n    label=\"Regulatory Standard\")\nplot!(size=(500, 500))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Single-Release Dissolved Oxygen Example"
   },
   {
-    "objectID": "slides/lecture04-1.html#key-variables",
-    "href": "slides/lecture04-1.html#key-variables",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Key Variables",
-    "text": "Key Variables\n\n\\(Q\\): 1750 g/s\n\\(H\\): 110 m\n\\(u\\): 5 or 20 m/s\n\\(x\\): 0 to 3000 m (need to pick a step size)\n\\(y\\): 0 to 1000 m (need to pick a step size)"
+    "objectID": "slides/lecture04-1.html#multiple-discharges",
+    "href": "slides/lecture04-1.html#multiple-discharges",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Multiple Discharges",
+    "text": "Multiple Discharges\nWhat happens if we have multiple discharge sites?\n\nSchematic for Multiple Discharge Example"
   },
   {
-    "objectID": "slides/lecture04-1.html#calculate-dispersion-spread",
-    "href": "slides/lecture04-1.html#calculate-dispersion-spread",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Calculate Dispersion Spread",
-    "text": "Calculate Dispersion Spread\nNeutral, moderately stable, moderately unstable atmospheric conditions ⇒ Classes D, B, F\nGet the coefficients off the table and put them into the regression equations for \\(\\sigma_y\\) and \\(\\sigma_z\\).\nKey thing: \\(\\sigma_z\\) dispersion changes once we pass 1000m downwind (\\(x\\)-direction).\nNow we can write a simulation model."
+    "objectID": "slides/lecture04-1.html#multiple-discharges-1",
+    "href": "slides/lecture04-1.html#multiple-discharges-1",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Multiple Discharges",
+    "text": "Multiple Discharges\n\n\nThink about this as a multi-box problem:\n\nBox 1: From Release 1 to Release 2\nBox 2: From Release 2 to End\n\n\n\n\n\nMultiple Discharge Boxes"
   },
   {
-    "objectID": "slides/lecture04-1.html#simulation-model-pseudocode",
-    "href": "slides/lecture04-1.html#simulation-model-pseudocode",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Simulation Model “Pseudocode”",
-    "text": "Simulation Model “Pseudocode”\nYou’ll do this for real for homework, but here’s a brief sketch:\n\nPick a resolution/grid size (we’ll use 10m) and set up \\(x\\) and \\(y\\) grids;\nFor each wind speed and stability class:\n\nLoop over each grid point and compute \\(\\sigma_y\\), \\(\\sigma_z\\);\nUse plume equation to compute concentration."
+    "objectID": "slides/lecture04-1.html#multiple-discharges-2",
+    "href": "slides/lecture04-1.html#multiple-discharges-2",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Multiple Discharges",
+    "text": "Multiple Discharges\n\n\n\nDynamics within each box are like single-release example;\nMake sure to get new initial conditions from relevant outflows!\n\n\n\n\n\nMultiple Discharge Boxes"
   },
   {
-    "objectID": "slides/lecture04-1.html#simulation-model-pseudocode-1",
-    "href": "slides/lecture04-1.html#simulation-model-pseudocode-1",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Simulation Model “Pseudocode”",
-    "text": "Simulation Model “Pseudocode”\nThere are more or less efficient or “stylish” ways to write this code, but don’t worry about that for this class, just make sure your code is readable and documented to help with debugging!"
+    "objectID": "slides/lecture04-1.html#multiple-discharges-3",
+    "href": "slides/lecture04-1.html#multiple-discharges-3",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Multiple Discharges",
+    "text": "Multiple Discharges\nQuestion: Who would you penalize for lack of compliance?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Multi-Release Dissolved Oxygen Example"
   },
   {
-    "objectID": "slides/lecture04-1.html#julia-vs.-matlabpython",
-    "href": "slides/lecture04-1.html#julia-vs.-matlabpython",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Julia vs. Matlab/Python",
-    "text": "Julia vs. Matlab/Python\nThe good news: Unlike in Python, loops in Julia are really well-optimized."
+    "objectID": "slides/lecture04-1.html#key-points-1",
+    "href": "slides/lecture04-1.html#key-points-1",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Key Points",
+    "text": "Key Points\n\nSimulation involves running the model over space/time.\nMultiple sections as “multi-box” model: outflows from one box become inflows/initial conditions for another.\nAssigning blame/responsibility in an interdependent system is not straightforward!"
   },
   {
-    "objectID": "slides/lecture04-1.html#julia-vs.-matlabpython-1",
-    "href": "slides/lecture04-1.html#julia-vs.-matlabpython-1",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Julia vs. Matlab/Python",
-    "text": "Julia vs. Matlab/Python\nThe bad news: There can be some weird issue with scope when doing something this (which you might in Python or Matlab):\nC = zeros(10)\n\nfor i in eachindex(C)\n    C[i] = f(i)\nend"
-  },
-  {
-    "objectID": "slides/lecture04-1.html#julia-vs.-matlabpython-2",
-    "href": "slides/lecture04-1.html#julia-vs.-matlabpython-2",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Julia vs. Matlab/Python",
-    "text": "Julia vs. Matlab/Python\nInstead, try broadcasting over inputs:\nI = 1:10\nC = f.(I)\nor use a comprehension:\nC = [f(i) for i in I]"
-  },
-  {
-    "objectID": "slides/lecture04-1.html#neutral-conditions",
-    "href": "slides/lecture04-1.html#neutral-conditions",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Neutral Conditions",
-    "text": "Neutral Conditions\nColor values are HCl concentrations in \\(\\mu\\)g.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Neutral Conditions\n\n\n\n\n5 m/s wind\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Neutral Conditions\n\n\n\n\n10 m/s wind"
-  },
-  {
-    "objectID": "slides/lecture04-1.html#moderately-stable-conditions",
-    "href": "slides/lecture04-1.html#moderately-stable-conditions",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Moderately Stable Conditions",
-    "text": "Moderately Stable Conditions\nColor values are HCl concentrations in \\(\\mu\\)g.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Neutral Conditions\n\n\n\n\n5 m/s wind\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Neutral Conditions\n\n\n\n\n10 m/s wind"
-  },
-  {
-    "objectID": "slides/lecture04-1.html#moderately-unstable-conditions",
-    "href": "slides/lecture04-1.html#moderately-unstable-conditions",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Moderately Unstable Conditions",
-    "text": "Moderately Unstable Conditions\nColor values are HCl concentrations in \\(\\mu\\)g.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Neutral Conditions\n\n\n\n\n5 m/s wind\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Neutral Conditions\n\n\n\n\n10 m/s wind"
-  },
-  {
-    "objectID": "slides/lecture04-1.html#key-takeaways-1",
-    "href": "slides/lecture04-1.html#key-takeaways-1",
-    "title": "Plume Models: Dispersion and Examples",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nAtmospheric stability plays a major role in pollution dispersion.\nCan use simulation modeling to evaluate concentrations of a contaminant over a spatial domain.\nKey choice: resolution\nThen “loop” (or in Julia, broadcast/use a comprehension) over the spatial grid.\nImportant: this all assumed a fixed wind speed and stability."
+    "objectID": "slides/lecture04-1.html#simulation-framework-overview",
+    "href": "slides/lecture04-1.html#simulation-framework-overview",
+    "title": "Dissolved Oxygen Simulation",
+    "section": "Simulation Framework Overview",
+    "text": "Simulation Framework Overview\n\nSimulation Workflow Diagram"
   },
   {
     "objectID": "slides/lecture04-1.html#next-classes",
     "href": "slides/lecture04-1.html#next-classes",
-    "title": "Plume Models: Dispersion and Examples",
+    "title": "Dissolved Oxygen Simulation",
     "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Probability and Monte Carlo\nFriday: Lab on Monte Carlo."
+    "text": "Next Classes\nWednesday/Friday: Uncertainty, Risk, and Monte Carlo"
   },
   {
     "objectID": "slides/lecture04-1.html#assessments",
     "href": "slides/lecture04-1.html#assessments",
-    "title": "Plume Models: Dispersion and Examples",
+    "title": "Dissolved Oxygen Simulation",
     "section": "Assessments",
-    "text": "Assessments\n\nHW2 on simulating Gaussian plume dispersion released today.\nDue 9/22.\n\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Assessments\n\nHW1 released today, due 9/22.\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture04-3.html#systems-and-uncertainty",
@@ -3917,6 +3917,6 @@
     "href": "schedule.html",
     "title": "BEE 4750: Environmental Systems Analysis",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 06\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nFri, Sep 08\nPlume Dispersion Models\n\n\n\n\n\n\n\n4\nMon, Sep 11\nPlume Dispersion Models\n\n\n\n\n\n\n\n\nWed, Sep 13\nUncertainty and Risk\n\n\n\n\n\n\n\n\nFri, Sep 15\nMonte Carlo Simulation\n\n\n\n\n\n\n\n5\nMon, Sep 18\nLab: Monte Carlo\n\n\n\n\n\n\n\n\nWed, Sep 20\nDissolved Oxygen\n\n\n\n\n\n\n\n\nFri, Sep 22\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n6\nMon, Sep 25\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nWed, Sep 27\nIntroduction to Optimization\n\n\n\n\n\n\n\n\nFri, Sep 29\nLinear Programming\n\n\n\n\n\n\n\n7\nMon, Oct 02\nLP Example: Resource Allocation\n\n\n\n\n\n\n\n\nWed, Oct 04\nGuest Lecture: Diana Hackett\n\n\n\n\n\n\n\n\nFri, Oct 06\nLab: Optimization with JuMP.jl\n\n\n\n\n\n\n\n8\nMon, Oct 09\nNo Class: Indigeneous People’s Day\n\n\n\n\n\n\n\n\nWed, Oct 11\nPower Systems, Generating Capacity Expansion\n\n\n\n\n\n\n\n\nFri, Oct 13\nEconomic Dispatch\n\n\n\n\n\n\n\n9\nMon, Oct 16\nManaging Multiple Air Pollutant Sources\n\n\n\n\n\n\n\n\nWed, Oct 18\nLake Eutrophication\n\n\n\n\n\n\n\n\nFri, Oct 20\nLake Eutrophication II\n\n\n\n\n\n\n\n10\nMon, Oct 23\nMixed Integer Programming\n\n\n\n\n\n\n\n\nWed, Oct 25\nSolid Waste Management\n\n\n\n\n\n\n\n\nFri, Oct 27\nUnit Commitment"
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 06\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nFri, Sep 08\nDissolved Oxygen\n\n\n\n\n\n\n\n\nMon, Sep 11\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n\nWed, Sep 13\nUncertainty and Risk\n\n\n\n\n\n\n\n\nFri, Sep 15\nMonte Carlo Simulation\n\n\n\n\n\n\n\n5\nMon, Sep 18\nLab: Monte Carlo\n\n\n\n\n\n\n\n\nWed, Sep 20\nPlume Dispersion Models\n\n\n\n\n\n\n\n4\nFri, Sep 22\nPlume Dispersion Models\n\n\n\n\n\n\n\n6\nMon, Sep 25\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nWed, Sep 27\nIntroduction to Optimization\n\n\n\n\n\n\n\n\nFri, Sep 29\nLinear Programming\n\n\n\n\n\n\n\n7\nMon, Oct 02\nLP Example: Resource Allocation\n\n\n\n\n\n\n\n\nWed, Oct 04\nGuest Lecture: Diana Hackett\n\n\n\n\n\n\n\n\nFri, Oct 06\nLab: Optimization with JuMP.jl\n\n\n\n\n\n\n\n8\nMon, Oct 09\nNo Class: Indigeneous People’s Day\n\n\n\n\n\n\n\n\nWed, Oct 11\nPower Systems, Generating Capacity Expansion\n\n\n\n\n\n\n\n\nFri, Oct 13\nEconomic Dispatch\n\n\n\n\n\n\n\n9\nMon, Oct 16\nManaging Multiple Air Pollutant Sources\n\n\n\n\n\n\n\n\nWed, Oct 18\nLake Eutrophication\n\n\n\n\n\n\n\n\nFri, Oct 20\nLake Eutrophication II\n\n\n\n\n\n\n\n10\nMon, Oct 23\nMixed Integer Programming\n\n\n\n\n\n\n\n\nWed, Oct 25\nSolid Waste Management\n\n\n\n\n\n\n\n\nFri, Oct 27\nUnit Commitment"
   }
 ]

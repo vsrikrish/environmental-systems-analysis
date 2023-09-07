@@ -24,3 +24,20 @@ Milestones which are only for BEE 5750 or 4750 students are in *italics*.
 | Poster | 30  | | | Fri, Dec 15 |
 | *Literature Review* (5750 only) | 10 | | | Fri, Dec 15 |
 | *Team Evaluations* (4750 only) | 10 | | | Fri, Dec 15 |
+
+## Scope and Topics
+
+The project can be on any environmental system of interest, so long as the approaches from class are being extended in some way. This can involve applying new methods (*e.g.* multi-objective optimzation, more advanced uncertainty analysis, lifecycle analysis) to systems studied from class, or applying class or new methods to other systems. 
+
+Some project topics from previous semesters include:
+
+- Battery lifecycle analysis for residential storage;
+- Hydropower production from Ithaca-area streams;
+- Traffic regulation to comply with air-quality standards;
+- Wastewater treatment design;
+- Geothermal energy lifecycle analysis;
+- Multi-objective optimization for water management;
+- Energy storage on Cornell's campus;
+- Flight schedule optimization;
+- Milk alternatives lifecycle analysis;
+- Hydrogen fuel cell lifecycle analysis.

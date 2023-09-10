@@ -8,9 +8,6 @@ format:
         warning: true
         error: true
         code-annotation: below
-    pdf:
-        warning: true
-        error: true
 jupyter: julia-1.9
 format-links: []
 ---

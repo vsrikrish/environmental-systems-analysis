@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BEE 4750 - Fall 2023 - BEE 4750 Homework 2: Gaussian Plumes</title>
+<title>BEE 4750 - Fall 2023 - BEE 4750 Homework 2: Dissolved Oxygen</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../hw/hw03/hw03.html" rel="next">
+<link href="../../hw/hw03/hw03.qmd" rel="next">
 <link href="../../hw/hw01/hw01.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -104,15 +104,14 @@ window.MathJax = {
     }
   };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="BEE 4750 - Fall 2023 - BEE 4750 Homework 2: Gaussian Plumes">
+<meta property="og:title" content="BEE 4750 - Fall 2023 - BEE 4750 Homework 2: Dissolved Oxygen">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://viveks.me/environmental-systems-analysis/hw/hw02/figures/river_diagram.png">
 <meta property="og:site-name" content="BEE 4750 - Fall 2023">
+<meta property="og:image:height" content="655">
+<meta property="og:image:width" content="1454">
 </head>
 
 <body class="nav-sidebar docked">
@@ -210,7 +209,7 @@ window.MathJax = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../hw/hw03/hw03.html" class="sidebar-item-text sidebar-link">
+  <a href="../../hw/hw03/hw03.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework 3</span></a>
   </div>
 </li>
@@ -346,13 +345,17 @@ window.MathJax = {
   <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
   <li><a href="#load-environment" id="toc-load-environment" class="nav-link" data-scroll-target="#load-environment">Load Environment</a></li>
   </ul></li>
-  <li><a href="#problems-total-100-points" id="toc-problems-total-100-points" class="nav-link" data-scroll-target="#problems-total-100-points">Problems (Total: 100 Points)</a>
+  <li><a href="#problems-total-40-points" id="toc-problems-total-40-points" class="nav-link" data-scroll-target="#problems-total-40-points">Problems (Total: 40 Points)</a>
   <ul class="collapse">
-  <li><a href="#problem-1-40-points" id="toc-problem-1-40-points" class="nav-link" data-scroll-target="#problem-1-40-points">Problem 1 (40 points)</a></li>
-  <li><a href="#problem-1.3-10-points" id="toc-problem-1.3-10-points" class="nav-link" data-scroll-target="#problem-1.3-10-points">Problem 1.3 (10 points)</a></li>
-  <li><a href="#problem-2-35-points" id="toc-problem-2-35-points" class="nav-link" data-scroll-target="#problem-2-35-points">Problem 2 (35 points)</a></li>
-  <li><a href="#problem-3-25-points" id="toc-problem-3-25-points" class="nav-link" data-scroll-target="#problem-3-25-points">Problem 3 (25 points)</a></li>
+  <li><a href="#problem-1-8-points" id="toc-problem-1-8-points" class="nav-link" data-scroll-target="#problem-1-8-points">Problem 1 (8 points)</a></li>
+  <li><a href="#problem-2-4-points" id="toc-problem-2-4-points" class="nav-link" data-scroll-target="#problem-2-4-points">Problem 2 (4 points)</a></li>
+  <li><a href="#problem-3-3-points" id="toc-problem-3-3-points" class="nav-link" data-scroll-target="#problem-3-3-points">Problem 3 (3 points)</a></li>
+  <li><a href="#problem-4-5-points" id="toc-problem-4-5-points" class="nav-link" data-scroll-target="#problem-4-5-points">Problem 4 (5 points)</a></li>
+  <li><a href="#problem-5-5-points" id="toc-problem-5-5-points" class="nav-link" data-scroll-target="#problem-5-5-points">Problem 5 (5 points)</a></li>
+  <li><a href="#problem-7-5-points" id="toc-problem-7-5-points" class="nav-link" data-scroll-target="#problem-7-5-points">Problem 7 (5 points)</a></li>
+  <li><a href="#problem-8-5-points" id="toc-problem-8-5-points" class="nav-link" data-scroll-target="#problem-8-5-points">Problem 8 (5 points)</a></li>
   </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/hw/hw02/hw02.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="hw02.ipynb" download="hw02.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
@@ -361,7 +364,7 @@ window.MathJax = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">BEE 4750 Homework 2: Gaussian Plumes</h1>
+<h1 class="title">BEE 4750 Homework 2: Dissolved Oxygen</h1>
 </div>
 
 
@@ -386,7 +389,7 @@ Due Date
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Friday, 9/22/23, 9:00pm</p>
+<p>Friday, 09/22/23, 9:00pm</p>
 </div>
 </div>
 <div class="callout callout-style-simple callout-caution callout-titled">
@@ -407,265 +410,111 @@ Due Date
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <section id="instructions" class="level3">
 <h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
-<ul>
-<li>Problems 1-3 consist of a series of code snippets for you to interpret and debug. For Problems 1 and 2, you will be asked to identify relevant error(s) and fix the code. For Problem 3, the code works as intended; your goal is to identify the code’s purpose by following its logic.</li>
-<li>Problem 4 asks you to convert a verbal description of a wastewater treatment system into a Julia function, and then to use that function to explore the impact of different wastewater allocation strategies.</li>
-</ul>
+<p>This assignment asks you to use a simulation model for dissolved oxygen to assess the impacts of two wastewater streams, including minimum treatment levels and the impact of uncertain environmental conditions. You will also be asked to identify a minimum distance for the addition of a third discharge stream.</p>
 </section>
 <section id="load-environment" class="level3">
 <h3 class="anchored" data-anchor-id="load-environment">Load Environment</h3>
 <p>The following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.</p>
-<div id="1b842458" class="cell" data-execution_count="1">
+<div id="d39f1ad0" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="pp">@__DIR__</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="03735664" class="cell" data-execution_count="2">
+<div id="5d77d6dc" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LaTeXStrings</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Distributions</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="problems-total-100-points" class="level2">
-<h2 class="anchored" data-anchor-id="problems-total-100-points">Problems (Total: 100 Points)</h2>
-<section id="problem-1-40-points" class="level3 cell markdown">
-<h3 class="anchored" data-anchor-id="problem-1-40-points">Problem 1 (40 points)</h3>
-<p>A ground-level receptor is located 1.5 km downwind from the center-line of a chimney emitting 2 kg/s of SO<sub>2</sub>. The chimney is 100m high and the plume initially rises another 10m being advected downwind. We want to know what</p>
-</section>
-<section id="problem-1.1-20-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-1.1-20-points">Problem 1.1 (20 points)</h4>
-<p>Write a function <code>gaussian_plume</code> to simulate the SO<sub>2</sub> concentration at ground level (mg/m<sup>3</sup>). The <code>gaussian_plume</code> function should accept the following inputs:</p>
-<ul>
-<li>the displacement from the source <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, where <span class="math inline">\(x\)</span> is the distance downwind (km) and <span class="math inline">\(y\)</span> is the distance crosswind (km);</li>
-<li>the wind speed <span class="math inline">\(u\)</span> (m/s);</li>
-<li>the SO<sub>2</sub> emissions rate <span class="math inline">\(Q\)</span> (g/s);</li>
-<li>the effective height of the source <span class="math inline">\(H\)</span> (m);</li>
-<li>the atmospheric stability class (1–6);</li>
-<li>the table of dispersion coefficients <code>turb_coef</code>, which is provided for you below as a <a href="https://dataframes.juliadata.org/stable/"><code>DataFrame</code></a>.</li>
-</ul>
-</section>
-<div id="33414153" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set up coefficients in matrix form</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>turb_coef <span class="op">=</span> [</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fl">213.0</span>  <span class="fl">440.8</span> <span class="fl">1.041</span> <span class="fl">9.27</span>  <span class="fl">459.7</span> <span class="fl">2.094</span> <span class="op">-</span><span class="fl">9.6</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fl">156.0</span>  <span class="fl">106.6</span> <span class="fl">1.149</span> <span class="fl">3.3</span>   <span class="fl">108.2</span> <span class="fl">1.098</span> <span class="fl">2.0</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fl">104.0</span>  <span class="fl">61.0</span>  <span class="fl">0.911</span> <span class="fl">0.0</span>   <span class="fl">61.0</span>  <span class="fl">0.911</span> <span class="fl">0.0</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fl">68.0</span>   <span class="fl">33.2</span>  <span class="fl">0.725</span> <span class="op">-</span><span class="fl">1.7</span>  <span class="fl">44.5</span>  <span class="fl">0.516</span> <span class="op">-</span><span class="fl">13.0</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="fl">50.5</span>   <span class="fl">22.8</span>  <span class="fl">0.675</span> <span class="op">-</span><span class="fl">1.3</span>  <span class="fl">55.4</span>  <span class="fl">0.305</span> <span class="op">-</span><span class="fl">34.0</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="fl">34.0</span>   <span class="fl">14.35</span> <span class="fl">0.740</span> <span class="op">-</span><span class="fl">0.35</span> <span class="fl">62.6</span>  <span class="fl">0.180</span> <span class="op">-</span><span class="fl">48.6</span> </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># now convert to DataFrame with names</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># column names ending with 1 refer to coefficients for x &lt; 1km, column names ending with 2 refer to coefficients for x &gt; 1km </span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>turb_coef <span class="op">=</span> <span class="fu">DataFrame</span>(turb_coef, [<span class="st">"a"</span>, <span class="st">"c1"</span>, <span class="st">"d1"</span>, <span class="st">"f1"</span>, <span class="st">"c2"</span>, <span class="st">"d2"</span>, <span class="st">"f2"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<div><div style="float: left;"><span>6×7 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
-<table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">a</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">c1</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">d1</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">f1</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">c2</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">d2</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">f2</th>
-</tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: right;">213.0</td>
-<td style="text-align: right;">440.8</td>
-<td style="text-align: right;">1.041</td>
-<td style="text-align: right;">9.27</td>
-<td style="text-align: right;">459.7</td>
-<td style="text-align: right;">2.094</td>
-<td style="text-align: right;">-9.6</td>
-</tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: right;">156.0</td>
-<td style="text-align: right;">106.6</td>
-<td style="text-align: right;">1.149</td>
-<td style="text-align: right;">3.3</td>
-<td style="text-align: right;">108.2</td>
-<td style="text-align: right;">1.098</td>
-<td style="text-align: right;">2.0</td>
-</tr>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: right;">104.0</td>
-<td style="text-align: right;">61.0</td>
-<td style="text-align: right;">0.911</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">61.0</td>
-<td style="text-align: right;">0.911</td>
-<td style="text-align: right;">0.0</td>
-</tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
-<td style="text-align: right;">68.0</td>
-<td style="text-align: right;">33.2</td>
-<td style="text-align: right;">0.725</td>
-<td style="text-align: right;">-1.7</td>
-<td style="text-align: right;">44.5</td>
-<td style="text-align: right;">0.516</td>
-<td style="text-align: right;">-13.0</td>
-</tr>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
-<td style="text-align: right;">50.5</td>
-<td style="text-align: right;">22.8</td>
-<td style="text-align: right;">0.675</td>
-<td style="text-align: right;">-1.3</td>
-<td style="text-align: right;">55.4</td>
-<td style="text-align: right;">0.305</td>
-<td style="text-align: right;">-34.0</td>
-</tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
-<td style="text-align: right;">34.0</td>
-<td style="text-align: right;">14.35</td>
-<td style="text-align: right;">0.74</td>
-<td style="text-align: right;">-0.35</td>
-<td style="text-align: right;">62.6</td>
-<td style="text-align: right;">0.18</td>
-<td style="text-align: right;">-48.6</td>
-</tr>
-</tbody>
-</table>
+<section id="problems-total-40-points" class="level2">
+<h2 class="anchored" data-anchor-id="problems-total-40-points">Problems (Total: 40 Points)</h2>
+<p>A river which flows at 6 km/d is receiving waste discharges from two sources which are 15 km apart, as shown in <a href="#fig-river" class="quarto-xref">Figure&nbsp;1</a>. The oxygen reaeration rate is 0.55 day<sup>-1</sup>, and the decay rates of CBOD and NBOD are are 0.55 and 0.25 day<sup>-1</sup>, respectively. The river’s saturated dissolved oxygen concentration is 10m g/L.</p>
+<div id="fig-river" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/river_diagram.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Schematic of the system</figcaption>
+</figure>
 </div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-DataFrames
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A <code>DataFrame</code> is the standard data structure in Julia for working with tabular data (if you’ve used Python, you can compare it to <code>pandas</code>). Since <code>turb_coef</code> is a <code>DataFrame</code>, you can access elements with syntax like <code>turb_coef[1, :c]</code> (to access the first element of a column named <code>c</code>).</p>
-</div>
-</div>
-<div class="callout callout-style-simple callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Pass Data To Functions When Possible
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Remember to pass <code>turb_coef</code> to <code>gaussian_plums</code> as an argument — this is generally good Julia (and broader programming) style and improves performance.</p>
-</div>
-</div>
-<section id="problem-1.2-10-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-1.2-10-points">Problem 1.2 (10 points)</h4>
-<p>Assume the wind is blowing at 5 m/s. Use your function to calculate the SO<sub>2</sub> concentration 600 m downwind, both along the centerline and 1 km crosswind, for the neutral (cloudy-day) atmospheric stability class (D/4).</p>
-</section>
-<section id="problem-1.3-10-points" class="level3 cell markdown">
-<h3 class="anchored" data-anchor-id="problem-1.3-10-points">Problem 1.3 (10 points)</h3>
-<p>Find the exposure standard in the United States for SO<sub>2</sub> (<strong>make sure to cite where you found it!</strong>). How do your results from Problem 1.2 compare?</p>
-</section>
-<section id="problem-2-35-points" class="level3 cell markdown">
-<h3 class="anchored" data-anchor-id="problem-2-35-points">Problem 2 (35 points)</h3>
-</section>
-<section id="problem-2.1-10-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-2.1-10-points">Problem 2.1 (10 points)</h4>
-<p>Plot (using s <a href="https://viveks.me/environmental-systems-analysis/tutorials/julia-basics.html#comprehensions"><code>heatmap</code></a>) the SO<sub>2</sub> concentration over a 5km downwind by 5km crosswind (relative to the plume source) region for the neutral (cloudy-day) atmospheric stability class (D/4).</p>
-<div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Using Comprehensions to Apply Functions Across Inputs
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Writing loops in Julia outside of functions can be finicky due to issues of scope (the details aren’t important, but this has to do with how Julia compiles code for performance). A solution is to use a <a href="https://viveks.me/environmental-systems-analysis/tutorials/julia-basics.html#comprehensions">comprehension</a>. For example, to apply a function <code>f</code> over all combinations of two vectors <code>x</code> and <code>y</code>,</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>[<span class="fu">f</span>(i, j) for i <span class="kw">in</span> x for j <span class="kw">in</span> y]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>will return a 2d array of outputs of <code>f</code>.</p>
-</div>
-</div>
-</section>
-<section id="problem-2.2-10-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-2.2-10-points">Problem 2.2 (10 points)</h4>
-<p>Make the same plot for each stability class.</p>
-</section>
-<section id="problem-2.3-10-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-2.3-10-points">Problem 2.3 (10 points)</h4>
-<p>For the neutral stability class, make the same plot for the following wind speeds: 5m/s, 10m/s, 15m/s, 20m/s.</p>
-</section>
-<section id="problem-2.4-5-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-2.4-5-points">Problem 2.4 (5 points)</h4>
-<p>Compare your results from Problems 2.2 and 2.3, What can you conclude about the impact of atmospheric stability vs.&nbsp;wind speed for pollutant dispersion?</p>
-</section>
-<section id="problem-3-25-points" class="level3 cell markdown">
-<h3 class="anchored" data-anchor-id="problem-3-25-points">Problem 3 (25 points)</h3>
-<p>Suppose we have two sources, with the following characteristics (distance relative to a ground-level receptor):</p>
+<section id="problem-1-8-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-1-8-points">Problem 1 (8 points)</h3>
+<p>If the characteristics of the river inflow and waste discharges are given in <a href="#tbl-river" class="quarto-xref">Table&nbsp;1</a>, write a Julia model to compute the dissolved oxygen concentration from the first wastewater discharge to an arbitrary distance <code>d</code> km downstream. Use your model to compute the maximum dissolved oxygen concentration up to 50km downstream and how far downriver this maximum occurs.</p>
+<div id="tbl-river" class="anchored">
 <table class="table table-sm table-striped small">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
+<caption>Table&nbsp;1: River inflow and waste stream characteristics for Problem 1.</caption>
 <thead>
 <tr class="header">
-<th style="text-align: right;">Emissions rate (kg/s)</th>
-<th style="text-align: right;">Height (m)</th>
-<th style="text-align: right;">Initial Plume Rise (m)</th>
-<th style="text-align: right;">Upwind Distance (km)</th>
-<th style="text-align: right;">Crosswind Distance (km)</th>
+<th style="text-align: center;">Parameter</th>
+<th style="text-align: right;">River Inflow</th>
+<th style="text-align: right;">Waste Stream 1</th>
+<th style="text-align: right;">Waste Stream 2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">1.2</td>
-<td style="text-align: right;">75</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: right;">2</td>
+<td style="text-align: center;">Inflow</td>
+<td style="text-align: right;">100,000 m<sup>3</sup>/d</td>
+<td style="text-align: right;">10,000 m<sup>3</sup>/d</td>
+<td style="text-align: right;">15,000 m<sup>3</sup>/d</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">60</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: center;">DO Concentration</td>
+<td style="text-align: right;">7.5 mg/L</td>
+<td style="text-align: right;">5 mg/L</td>
+<td style="text-align: right;">5 mg/L</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">CBOD</td>
+<td style="text-align: right;">5 mg/L</td>
+<td style="text-align: right;">50 mg/L</td>
+<td style="text-align: right;">45 mg/L</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">NBOD</td>
+<td style="text-align: right;">5 mg/L</td>
+<td style="text-align: right;">35 mg/L</td>
+<td style="text-align: right;">35 mg/L</td>
 </tr>
 </tbody>
 </table>
+</div>
 </section>
-<section id="problem-3.1-15-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-3.1-15-points">Problem 3.1 (15 points)</h4>
-<p>If the wind blows at 10 m/s, what is the worst possible concentration of SO<sub>2</sub> at the receptor? Under what atmospheric conditions might these occur?</p>
+<section id="problem-2-4-points" class="level3 eall markdown">
+<h3 class="anchored" data-anchor-id="problem-2-4-points">Problem 2 (4 points)</h3>
+<p>Use your model to plot the dissolved oxygen concentration in the river from the first waste stream to 50km downstream. What do you notice?</p>
 </section>
-<section id="problem-3.2-10-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-3.2-10-points">Problem 3.2 (10 points)</h4>
-<p>How does this compare to the exposure standard you found for Problem 1.3? If a control is needed, what information might you need to make a decision about how to allocate those reductions across the two sources?</p>
+<section id="problem-3-3-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-3-3-points">Problem 3 (3 points)</h3>
+<p>Under the assumptions of Problem 1, determine the distance from waste stream 2 it will take for the dissolved oxygen concentration of the river to recover to 6 mg/L.</p>
+</section>
+<section id="problem-4-5-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-4-5-points">Problem 4 (5 points)</h3>
+<p>What is the minimum level of treatment (% removal of organic waste) for waste stream 2 that will ensure that the dissolved oxygen concentration never drops below 4 mg/L, assuming that waste stream 1 remains untreated?</p>
+</section>
+<section id="problem-5-5-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-5-5-points">Problem 5 (5 points)</h3>
+<p>If both waste streams are treated equally, what is the minimum level of treatment (% removal of organic waste) for the two sources required to ensure that the dissolved oxygen concentration never drops below 4 mg/L?</p>
+</section>
+<section id="problem-6-5-points" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-6-5-points">Problem 6 (5 points)</h4>
+<p>Suppose you are responsible for designing a waste treatment plan for discharges into the river, with a regulatory mandate to keep the dissolved oxygen concentration above 4 mg/L. Discuss whether you’d opt to treat waste stream 2 alone or both waste streams equally. What other information might you need to make a conclusion, if any?</p>
+</section>
+<section id="problem-7-5-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-7-5-points">Problem 7 (5 points)</h3>
+<p>Suppose that it is known that the DO concentrations at the river inflow can vary uniformly between 6 mg/L and 8 mg/L. How often will the treatment plan identified in Problem 5 (both waste streams treated equally) fail to comply with the regulatory standard?</p>
+</section>
+<section id="problem-8-5-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-8-5-points">Problem 8 (5 points)</h3>
+<p>A factory is planning a third wastewater discharge into the river downstream of the second plant. This discharge would consist of 5 m<sup>3</sup>/day of wastewater with a dissolved oxygen content of 4.5 mg/L and CBOD and NBOD levels of 50 and 45 mg/L, respectively.</p>
+<p>Assume that the treatment plan you identified in Problem 5 is still in place for the existing discharges. If the third discharge will not be treated, under the original inflow conditions (7.5 mg/L DO), how far downstream from the second discharge does this third discharge need to be placed to keep the river concentration from dropping below 4 mg/L?</p>
+</section>
+</section>
+<section id="references" class="level2 cell markdown">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>List any external references consulted, including classmates.</p>
 </section>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1003,7 +852,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../hw/hw03/hw03.html" class="pagination-link">
+      <a href="../../hw/hw03/hw03.qmd" class="pagination-link">
         <span class="nav-page-text">Homework 3</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

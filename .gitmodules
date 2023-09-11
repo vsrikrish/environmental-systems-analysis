@@ -7,6 +7,7 @@
 [submodule "hw/hw02"]
 	path = hw/hw02
 	url = https://github.com/BEE4750/hw02.git
+	branch = Fall23
 [submodule "hw/hw03"]
 	path = hw/hw03
 	url = https://github.com/BEE4750/hw03.git

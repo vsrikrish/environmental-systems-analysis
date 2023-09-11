@@ -107,7 +107,26 @@ Dissolved oxygen concentrations downstream of a waste release "sag" and then sta
 
 So far, this is only different from our single-box airshed in terms of the number of processes.
 
-Single equation, straightforward to evaluate across many values of $x$ with a loop:
+Single equation, straightforward to evaluate across many values of $x$ with a loop.
+
+```julia
+x = 0:x_step:x_max # array from 0 to x_max in stepsize x_step
+
+C = zeroes(length(x)) # initialize storage
+for (i, y) in pairs(x)
+    C[i] = dissolved_oxygen(y, parameters)
+end
+```
+
+## Julia Sidebar: Loop Alternatives
+
+Loops in Julia are fast and should be used freely. 
+
+But there are some more concise alternatives, which may be more readable in some cases.
+
+## Julia Sidebar: Broadcasting
+
+But some more concise alternatives (which may be more readable) include **broadcasting**:
 
 ```julia
 x = 0:x_step:x_max # array from 0 to x_max in stepsize x_step
@@ -115,6 +134,29 @@ x = 0:x_step:x_max # array from 0 to x_max in stepsize x_step
 # evaluate DO function over every x with fixed parameters
 C = (y -> dissolved_oxygen(y, parameters)).(x) 
 ```
+
+Broadcasting gets finicky over multiple inputs.
+
+## Julia Sidebar: Comprehensions
+
+...And **comprehensions** (in-line for loops, also in Python):
+
+```julia
+x = 0:x_step:x_max # array from 0 to x_max in stepsize x_step
+
+# evaluate DO function over every x with fixed parameters
+C = [dissolved_oxygen(y, parameters) for y in x]
+```
+
+Can "stack" the `for` loops in a comprehension to nest.
+
+## Julia Sidebar: When To Use Loops?
+
+Think about readability and ease of debugging!
+
+- If your code is complex and not wrapped in a function, or you have several nested loops, you should use a loop (*just be careful of scope...*)
+- If your code is complex, may be worth asking if you should write a function instead and use broadcasting or a comprehension.
+
 
 ## Single-Discharge Example
 

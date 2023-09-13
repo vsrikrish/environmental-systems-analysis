@@ -34,6 +34,23 @@ execute:
     freeze: auto
 ---
 
+```{julia}
+#| output: false
+#| echo: false
+
+Pkg.activate(".")
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+#| echo: false
+
+using CSV
+using DataFrames
+using Plots
+```
+
 # Review and Questions
 
 ## Last Class
@@ -127,14 +144,96 @@ For example, an often key concern is whether uncertainties are **correlated**: d
 
 If this is the case, it can bias results to assume independence.
 
-## Correlated Climate Uncertainties
+## Climate Change
 
-Consider projections of future climate change for a certain emissions trajectory. 
+:::: {.columns}
+::: {.column width=40%}
+Let's look at how global mean temperatures have changed from 1850--2022 relative to a preindustrial baseline.
+:::
+::: {.column width=60%}
+```{julia}
+# Data from https://crudata.uea.ac.uk/cru/data/temperature/
+# The CSV is read into a DataFrame object, and we specify that it is comma delimited
+temp_data = CSV.read("data/climate/HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv", DataFrame, delim=",")
 
-There are several key (uncertain) parameters affecting how:
+# The syntax df[!, "colname"] selects the entire column named "colname" but does not make and return a copy
+# To get a copy (for example, if you want to modify that vector but not the original dataframe), use df[:, "column"]
+# If we wanted to only select a range of rows, use df[row_index, "colname"], where row_index could be a single value, a numerical or Boolean array
+time_obs = temp_data[!, "Time"] # years
+temp_obs = temp_data[!, "Anomaly (deg C)"] # GMT estimate
+temp_obs_lo = temp_data[!, "Lower confidence limit (2.5%)"] # 2.5% confidence level
+temp_obs_hi = temp_data[!, "Upper confidence limit (97.5%)"] # 97.5% confidence level
 
-- carbon is cycled by the Earth system
-- CO<sub>2</sub> in the atmosphere results in warming.
+temp_baseline = mean(temp_obs[1:51]) # get 1850-1900 baseline for renormalization
+temp_obs = temp_obs .- temp_baseline
+temp_obs_lo = temp_obs_lo .- temp_baseline
+temp_obs_hi = temp_obs_hi .- temp_baseline
+
+# The ribbon=(...) argument plots a ribbon around the main y-axis value and can be passed as a single array (for a symmetric error bound or a tuple of arrays (for lower/upper bounds, as below))
+plot(time_obs, temp_obs, ribbon=(temp_obs - temp_obs_lo, temp_obs_hi - temp_obs), color="blue", linewidth=3, fillalpha=0.2, legend=false, xlabel="Year", ylabel="Temperature anomaly (°C)", tickfontsize=14, guidefontsize=14)
+plot!(size=(750, 500))
+```
+:::
+::::
+
+## Causes of Climate Changes
+
+Climatic changes result from changes to the heat or energy balance of the Earth due to alterations to the chemical composition of the atmosphere, which include: 
+
+- greenhouse gas emissions;
+- aerosol emissions from air pollution or volcanic eruptions;
+- changes to the solar cycle.
+
+## Radiative Forcing
+
+The impact of these changes on the energy balance of the planet are referred to as *radiative forcing*. 
+
+A positive radiative forcing means a warming effect (net heat increase) and a negative radiative forcing means a cooling effect (net heat loss).
+
+## Projections of Future Radiative Forcing
+
+:::: {.columns}
+::: {.column width=40%}
+Let's look at the projected forcings from one of the official scenarios (*actually the most extreme scenario*) used to assess future climate change. 
+
+:::
+::: {.column width=60%}
+```{julia}
+# Dataset from https://zenodo.org/record/3973015
+# The CSV is read into a DataFrame object, and we specify that it is comma delimited
+forcings_all = CSV.read("data/climate/ERF_ssp585_1750-2500.csv", DataFrame, delim=",")
+
+# Separate out the individual components
+forcing_co2 = forcings_all[!,"co2"]
+# Get total aerosol forcings
+forcing_aerosol_rad = forcings_all[!,"aerosol-radiation_interactions"]
+forcing_aerosol_cloud = forcings_all[!,"aerosol-cloud_interactions"]
+forcing_aerosol = forcing_aerosol_rad + forcing_aerosol_cloud
+forcing_total = forcings_all[!,"total"]
+forcing_non_aerosol = forcing_total - forcing_aerosol
+forcing_other = forcing_total - (forcing_co2 + forcing_aerosol)
+
+t = time_forcing = Int64.(forcings_all[!,"year"]) # Ensure that years are interpreted as integers
+
+plot(xlabel="Year", ylabel="Radiative Forcing (W/m²)", tickfontsize=14, guidefontsize=14, legendfontsize=14)
+plot!(time_forcing, forcing_total, label="Total", color=:black, linewidth=4)
+plot!(time_forcing, forcing_co2, label="CO₂", color=:orange, linewidth=3)
+plot!(time_forcing, forcing_aerosol, label="Aerosol", color=:blue, linewidth=3)
+plot!(time_forcing, forcing_other, label="Other", color=:purple, linewidth=3)
+vline!([2014], label="", color=:red, linestyle=:dash)
+plot!(size=(750, 500))
+```
+:::
+::::
+
+## What Is Uncertain?
+
+There are many uncertainties in modeling climate changes:
+
+1. How much CO~2~ gets absorbed by sinks/emitted by sources?
+2. How strong is the aerosol cooling effect?
+3. How rapidly is heat absorbed by and transported into the deep ocean?
+4. What is the atmospheric temperature response to increases in radiative forcing?
 
 ## Correlated Climate Uncertainties
 
@@ -169,7 +268,7 @@ Neglecting these correlations can change the distribution of hindcasted and proj
 ![Impact of ignoring parameter correlations on modeled temperatures](images/temperature-projections.svg)
 
 ::: {.caption}
-Source: [Errickson et al (2021)](https://doi.org/10.1038/s41586-021-03386-6)
+Source: [Errickson et al (2021)](https://doi.org/10.1038/s41586-021-03386-6){width=20s0%}
 :::
 :::
 ::::

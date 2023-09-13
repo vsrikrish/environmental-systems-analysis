@@ -3381,15 +3381,43 @@
     "text": "Neglecting Correlations\nFor example, an often key concern is whether uncertainties are correlated: do certain outcomes tend to occur in combination?\nIf this is the case, it can bias results to assume independence."
   },
   {
-    "objectID": "slides/lecture04-2.html#correlated-climate-uncertainties",
-    "href": "slides/lecture04-2.html#correlated-climate-uncertainties",
+    "objectID": "slides/lecture04-2.html#climate-change",
+    "href": "slides/lecture04-2.html#climate-change",
     "title": "Uncertainty and Risk",
-    "section": "Correlated Climate Uncertainties",
-    "text": "Correlated Climate Uncertainties\nConsider projections of future climate change for a certain emissions trajectory.\nThere are several key (uncertain) parameters affecting how:\n\ncarbon is cycled by the Earth system\nCO2 in the atmosphere results in warming."
+    "section": "Climate Change",
+    "text": "Climate Change\n\n\nLet’s look at how global mean temperatures have changed from 1850–2022 relative to a preindustrial baseline."
   },
   {
-    "objectID": "slides/lecture04-2.html#correlated-climate-uncertainties-1",
-    "href": "slides/lecture04-2.html#correlated-climate-uncertainties-1",
+    "objectID": "slides/lecture04-2.html#causes-of-climate-changes",
+    "href": "slides/lecture04-2.html#causes-of-climate-changes",
+    "title": "Uncertainty and Risk",
+    "section": "Causes of Climate Changes",
+    "text": "Causes of Climate Changes\nClimatic changes result from changes to the heat or energy balance of the Earth due to alterations to the chemical composition of the atmosphere, which include:\n\ngreenhouse gas emissions;\naerosol emissions from air pollution or volcanic eruptions;\nchanges to the solar cycle."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#radiative-forcing",
+    "href": "slides/lecture04-2.html#radiative-forcing",
+    "title": "Uncertainty and Risk",
+    "section": "Radiative Forcing",
+    "text": "Radiative Forcing\nThe impact of these changes on the energy balance of the planet are referred to as radiative forcing.\nA positive radiative forcing means a warming effect (net heat increase) and a negative radiative forcing means a cooling effect (net heat loss)."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#projections-of-future-radiative-forcing",
+    "href": "slides/lecture04-2.html#projections-of-future-radiative-forcing",
+    "title": "Uncertainty and Risk",
+    "section": "Projections of Future Radiative Forcing",
+    "text": "Projections of Future Radiative Forcing\n\n\nLet’s look at the projected forcings from one of the official scenarios (actually the most extreme scenario) used to assess future climate change."
+  },
+  {
+    "objectID": "slides/lecture04-2.html#what-is-uncertain",
+    "href": "slides/lecture04-2.html#what-is-uncertain",
+    "title": "Uncertainty and Risk",
+    "section": "What Is Uncertain?",
+    "text": "What Is Uncertain?\nThere are many uncertainties in modeling climate changes:\n\nHow much CO2 gets absorbed by sinks/emitted by sources?\nHow strong is the aerosol cooling effect?\nHow rapidly is heat absorbed by and transported into the deep ocean?\nWhat is the atmospheric temperature response to increases in radiative forcing?"
+  },
+  {
+    "objectID": "slides/lecture04-2.html#correlated-climate-uncertainties",
+    "href": "slides/lecture04-2.html#correlated-climate-uncertainties",
     "title": "Uncertainty and Risk",
     "section": "Correlated Climate Uncertainties",
     "text": "Correlated Climate Uncertainties\n\n\n\nEquilibrium Climate Sensitivity\nOcean Heat Diffusivity\nAerosol Cooling Factor\nCarbon Sink Respiration Sensitivity\n\n\n\n\n\nCorrelated climate parameter estimates\n\n\n\nSource: Errickson et al (2021)"

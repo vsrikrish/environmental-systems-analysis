@@ -1,10 +1,10 @@
 ---
-title: "Monte Carlo and Climate Sensitivity"
+title: "Uncertainty and Monte Carlo"
 subtitle: "Lab 02"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"
-date: "September 15, 2023"
+date: "September 18, 2023"
 format:
     revealjs:
         slide-number: c/t
@@ -31,142 +31,30 @@ execute:
     freeze: auto
 ---
 
-```{julia}
-#| echo: false
-#| output: false
-
-import Pkg
-Pkg.activate(".")
-Pkg.instantiate()
-```
-
-```{julia}
-#| echo: false
-#| output: false
-
-using Measures
-using Random
-using Plots
-using CSV
-using DataFrames
-
-Random.seed!(1)
-```
-
-
-# Simple Climate Models and Lab 2
-
-## Overview
-
-- Due Friday (**9/22**) at 9pm on Gradescope.
-- Notebook is a little long, but exercises *should* be short.
-- Remember to "Run All" before exporting and submitting.
-
-# A One-Box Model of the Climate
-
-## Planetary Energy Balance
-
-![Representation of Planetary Energy Balance](https://www.e-education.psu.edu/meteo469/sites/www.e-education.psu.edu.meteo469/files/lesson04/ebm_0_dim.gif)
-
-::: {.caption}
-Source: Reprinted from A Climate Modeling Primer, A. Henderson-Sellers and K. McGuffie, Wiley, pg. 58, (1987) via <https://www.e-education.psu.edu/meteo469/node/137>.
-:::
-
-## Radiative Forcing
-
-Climate changes result from changes to the energy balance of the planet, due to *e.g.*:
-
-- greenhouse gas emissions (which trap radiation, warming the planet);
-- aerosol emissions from air pollution or volcanic eruptions (which block incoming radiation, cooling the planet);
-- changes to the solar cycle (which can increase or decrease the incoming solar radiation).
-
-::: {.fragment .fade-in}
-These changes to the radiative balance are called **radiative forcings** (RF).
-:::
-
-## Historical and Projected Radiative Forcing
-
-:::: {.columns}
-::: {.column width=70%}
-```{julia}
-#| label: fig-rf
-#| fig-align: center
-#| fig-cap: Historical and projected radiative forcings.
-
-# Dataset from https://zenodo.org/record/3973015
-# The CSV is read into a DataFrame object, and we specify that it is comma delimited
-forcings_all = CSV.read("data/climate/ERF_ssp585_1750-2500.csv", DataFrame, delim=",")
-
-# Separate out the individual components
-forcing_co2 = forcings_all[!,"co2"]
-# Get total aerosol forcings
-forcing_aerosol_rad = forcings_all[!,"aerosol-radiation_interactions"]
-forcing_aerosol_cloud = forcings_all[!,"aerosol-cloud_interactions"]
-forcing_aerosol = forcing_aerosol_rad + forcing_aerosol_cloud
-forcing_total = forcings_all[!,"total"]
-forcing_non_aerosol = forcing_total - forcing_aerosol
-forcing_other = forcing_total - (forcing_co2 + forcing_aerosol)
-
-t = time_forcing = Int64.(forcings_all[!,"year"]) # Ensure that years are interpreted as integers
-
-plot(xlabel="Year", ylabel="Radiative Forcing (W/m²)", tickfontsize=14, guidefontsize=16, legendfontsize=14)
-plot!(time_forcing, forcing_total, label="Total", color=:black, linewidth=3)
-plot!(time_forcing, forcing_co2, label="CO₂", color=:orange, linewidth=2)
-plot!(time_forcing, forcing_aerosol, label="Aerosol", color=:blue, linewidth=2)
-plot!(time_forcing, forcing_other, label="Other", color=:purple, linewidth=2)
-vline!([2014], label="", color=:red, linestyle=:dash)
-plot!(size=(1000, 500))
-```
-:::
-::: {.column width=30%}
-These projections are under RCP 8.5, which is the "worst-case" official future climate scenario.
-:::
-::::
-
-## Energy Balance Model (EBM)
-
-- Simplest possible climate model.
-- Treats the Earth as a 0-dimensional sphere covered with water.
-- Earth warms due to imbalance in average (over surface area) heat flux.
-
-## EBM Equations
-
-\begin{align*}
-\overbrace{\frac{dH}{dt}}^{\text{change in heat}} &= \overbrace{F}^{\text{RF}} - \overbrace{\lambda T}^{\substack{\text{change in} \\ \text{temperature}}} \\
-\underbrace{C}_{\substack{\text{ocean heat} \\ \text{capacity}}} \frac{dT}{dt} &= F - \lambda T
-\end{align*}
-
-The proportionality coefficient $\lambda$ is important: it is the **climate feedback factor** and controls how much the Earth warms in response to radiative forcing.
-
-## What the EBM Neglects
-
-The EBM is a one-box model of the Earth's climate: models energy balance between incoming and outgoing heat. As such, it neglects:
-
-- "Deep" ocean heat uptake and cycling.
-- Multiple atmospheric layers.
-- Spatial patterns of atmospheric and ocean circulation.
-
-## Equilibrium Climate Sensitivity (ECS)
-
-Under steady-state conditions (constant $F$ and $dT/dt = 0$), $$T = \frac{F}{\lambda}.$$
-
-When we double atmospheric CO~2~, we refer to the equilibrium temperature $S$ as the **equilibrium climate sensitivity**:
-
-$$S = \underbrace{F_{2\times \text{CO}_2}}_{\approx 4 \text{W/m}^2}/\lambda$$
 
 # Lab 2 Instructions
 
 ## Monte Carlo for ECS Uncertainty
 
-Your task in the lab: obtain projections under RCP 8.5 forcing and ECS uncertainty using Monte Carlo
+Your task in the lab: analyze two different games of "chance" (one is, one sort of is). 
 
-How does uncertainty in the ECS propagate to uncertainty in temperatures in 2100?
+Lab is due on 9/22 by 9pm.
+
+## Reminder About The Rubric
+
+For full points, make sure to check rubric (available on the Labs page of the website; Homework is similar) before finalizing submission. If unsure if something might be penalized, please ask on Ed or in class. In general, points will be taken off for:
+
+* Missing units;
+* Plots: Unlabeled axes/missing legends if needed;
+* Lack of proper precision when reporting values.
 
 # Upcoming Schedule
 
 ## Next Classes
 
-**Wednesday/Friday**: Simulating Dissolved Oxygen
+**Wednesday**: Monte Carlo wrap-up
+
+**Friday**: Uncertainty and Simple Climate Models
 
 **Next Week**: Prescriptive Modeling and Optimization
 

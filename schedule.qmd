@@ -20,10 +20,10 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 |     | Fri, Sep 08 | Dissolved Oxygen | [{{< fa sharp presentation-screen >}}](slides/lecture03-3.qmd){target="_blank"} | | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | | 
 |     | Mon, Sep 11 | Dissolved Oxygen Simulation |  [{{< fa sharp presentation-screen >}}](slides/lecture04-1.qmd){target="_blank"} | |  [{{< fa sharp pen-field >}}](hw/hw02/hw02.qmd) | |
 |    | Wed, Sep 13 | Uncertainty and Risk |  [{{< fa sharp presentation-screen >}}](slides/lecture04-2.qmd){target="_blank"} | | | |
-|   | Fri, Sep 15 | Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture04-3.qmd){target="_blank"} | | | |
+|   | Fri, Sep 15 | Probability and Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture04-3.qmd){target="_blank"} | | | |
 |  5  | Mon, Sep 18 | Lab: Monte Carlo | [{{< fa sharp presentation-screen >}}](slides/lecture05-1.qmd) | [{{< fa sharp laptop-code >}}](labs/lab02/lab02.qmd) | | |
-|       | Wed, Sep 20 | Plume Dispersion Models | [{{< fa sharp presentation-screen >}}](slides/lecture03-3.qmd){target="_blank"} | |  [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | |
-| 4   | Fri, Sep 22 | Plume Dispersion Models | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} |  [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | |
+|       | Wed, Sep 20 | Monte Carlo, Formally | [{{< fa sharp presentation-screen >}}](slides/lecture05-2.qmd){target="_blank"} | | | |
+|    | Fri, Sep 22 | Simple Climate Models and Uncertainty | [{{< fa sharp presentation-screen >}}](slides/lecture05-3.qmd){target="_blank"} | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} |  [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | |
 |  6  | Mon, Sep 25 | Prescriptive Modeling | [{{< fa sharp presentation-screen >}}](slides/lecture06-1.qmd){target="_blank"}  | | [{{< fa sharp pen-field >}}](hw/hw03/hw03.qmd) | |
 |   | Wed, Sep 27 | Introduction to Optimization | [{{< fa sharp presentation-screen >}}](slides/lecture06-2.qmd){target="_blank"} | |   | |
 |      | Fri, Sep 29 | Linear Programming | [{{< fa sharp presentation-screen >}}](slides/lecture06-3.qmd){target="_blank"} |  | | |

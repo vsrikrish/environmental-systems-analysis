@@ -1932,11 +1932,39 @@
     "text": "Assessments\nFriday: Homework 2 and Lab 2 both due.\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
+    "objectID": "slides/lecture05-2.html#monte-carlo-simulation",
+    "href": "slides/lecture05-2.html#monte-carlo-simulation",
+    "title": "Why Monte Carlo Works",
+    "section": "Monte Carlo Simulation",
+    "text": "Monte Carlo Simulation\nMonte Carlo is stochastic simulation.\n\n\n\n\n\n\n\nG\n\n  \n\na\n\n Probability  Distribution   \n\nb\n\n Random  Samples   \n\na-&gt;b\n\n  Sample   \n\nc\n\n Model   \n\nb-&gt;c\n\n  Input   \n\nd\n\n Outputs   \n\nc-&gt;d\n\n  Simulate"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#goals-of-monte-carlo",
+    "href": "slides/lecture05-2.html#goals-of-monte-carlo",
+    "title": "Why Monte Carlo Works",
+    "section": "Goals of Monte Carlo",
+    "text": "Goals of Monte Carlo\nMonte Carlo is a broad method, which can be used to:\n\nObtain probability distributions of outputs (uncertainty propagation);\nEstimate deterministic quantities (Monte Carlo estimation)."
+  },
+  {
+    "objectID": "slides/lecture05-2.html#monte-carlo-estimation",
+    "href": "slides/lecture05-2.html#monte-carlo-estimation",
+    "title": "Why Monte Carlo Works",
+    "section": "Monte Carlo Estimation",
+    "text": "Monte Carlo Estimation\nMonte Carlo estimation involves framing the (deterministic) quantity of interest as a summary statistic of a random process."
+  },
+  {
+    "objectID": "slides/lecture05-2.html#questions",
+    "href": "slides/lecture05-2.html#questions",
+    "title": "Why Monte Carlo Works",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
     "objectID": "slides/lecture05-2.html#why-monte-carlo-works",
     "href": "slides/lecture05-2.html#why-monte-carlo-works",
     "title": "Why Monte Carlo Works",
     "section": "Why Monte Carlo Works",
-    "text": "Why Monte Carlo Works\nWe can formalize this common use of Monte Carlo estimation as the computation of the expected value of a random quantity \\(Y\\), \\(\\mu = \\mathbb{E}[Y]\\).\nTo do this, generate \\(n\\) independent and identically distributed values \\(Y_1, \\ldots, Y_n\\). Then the sample estimate is\n\\[\\tilde{\\mu} = \\frac{1}{n}\\sum_{i=1}^n Y_i\\]"
+    "text": "Why Monte Carlo Works\nWe can formalize Monte Carlo estimation as the computation of the expected value of a random quantity \\(Y\\), \\(\\mu = \\mathbb{E}[Y]\\).\nTo do this, generate \\(n\\) independent and identically distributed values \\(Y_1, \\ldots, Y_n\\). Then the sample estimate is\n\\[\\tilde{\\mu}_n = \\frac{1}{n}\\sum_{i=1}^n Y_i\\]"
   },
   {
     "objectID": "slides/lecture05-2.html#monte-carlo-formally",
@@ -1957,39 +1985,81 @@
     "href": "slides/lecture05-2.html#the-law-of-large-numbers-1",
     "title": "Why Monte Carlo Works",
     "section": "The Law of Large Numbers",
-    "text": "The Law of Large Numbers\nIn other words, eventually we will get within an arbitrary error of the true expectation. But how large is large enough?"
+    "text": "The Law of Large Numbers\nIn other words, eventually Monte Carlo estimates will get within an arbitrary error of the true expectation. But how large is large enough?\nNote that the law of large numbers applies to vector-valued functions as well. The key is that \\(f(x) = Y\\) just needs to be sufficiently well-behaved."
   },
   {
     "objectID": "slides/lecture05-2.html#monte-carlo-sample-mean",
     "href": "slides/lecture05-2.html#monte-carlo-sample-mean",
     "title": "Why Monte Carlo Works",
     "section": "Monte Carlo Sample Mean",
-    "text": "Monte Carlo Sample Mean\nNotice that the sample mean \\(\\tilde{\\mu}_n\\) is itself a random variable.\nWith some assumptions (the mean of \\(Y\\) exists and \\(Y\\) has finite variance), the expected Monte Carlo sample mean \\(\\mathbb{E}[\\tilde{\\mu}_n]\\) is\n\\[\\frac{1}{n}\\sum_{i=1}^n \\mathbb{E}[Y_i] = \\frac{1}{n} n \\mu = \\mu\\]\nThis means that the Monte Carlo estimate is an unbiased estimate of the mean."
+    "text": "Monte Carlo Sample Mean\nThe sample mean \\(\\tilde{\\mu}_n = \\frac{1}{n}\\sum_{i=1}^n Y_i\\) is itself a random variable.\n\nWith some assumptions (the mean of \\(Y\\) exists and \\(Y\\) has finite variance), the expected Monte Carlo sample mean \\(\\mathbb{E}[\\tilde{\\mu}_n]\\) is\n\\[\\frac{1}{n}\\sum_{i=1}^n \\mathbb{E}[Y_i] = \\frac{1}{n} n \\mu = \\mu\\]\nSo the Monte Carlo estimate is an unbiased estimate of the mean."
   },
   {
     "objectID": "slides/lecture05-2.html#monte-carlo-error",
     "href": "slides/lecture05-2.html#monte-carlo-error",
     "title": "Why Monte Carlo Works",
     "section": "Monte Carlo Error",
-    "text": "Monte Carlo Error\nWe’d like to know more about the error of this estimate for a given sample size. The variance of this estimator is\n\\[\\tilde{\\sigma}_n^2 = \\text{Var}\\left(\\tilde{\\mu}_n\\right) = \\mathbb{E}\\left((\\tilde{\\mu}_n - \\mu)^2\\right) = \\frac{\\sigma_Y^2}{n}\\]\nSo as \\(n\\) increases, the standard error decreases:\n\\[\\tilde{\\sigma}_n = \\frac{\\sigma_Y}{\\sqrt{n}}\\]"
+    "text": "Monte Carlo Error\nWe’d like to know more about the error of this estimate for a given sample size. The variance of this estimator is\n\\[\\tilde{\\sigma}_n^2 = \\text{Var}\\left(\\tilde{\\mu}_n\\right) = \\mathbb{E}\\left((\\tilde{\\mu}_n - \\mu)^2\\right) = \\frac{\\sigma_Y^2}{n}\\]\n\nSo as \\(n\\) increases, the standard error decreases:\n\\[\\tilde{\\sigma}_n = \\frac{\\sigma_Y}{\\sqrt{n}}\\]"
   },
   {
     "objectID": "slides/lecture05-2.html#monte-carlo-error-1",
     "href": "slides/lecture05-2.html#monte-carlo-error-1",
     "title": "Why Monte Carlo Works",
     "section": "Monte Carlo Error",
-    "text": "Monte Carlo Error\nIn other words, if we want to decrease the Monte Carlo error by 10x, we need 100x additional samples. This is not an ideal method for high levels of accuracy.\n\n\n\nMonte Carlo is an extremely bad method. It should only be used when all alternative methods are worse.\n\n\n— Sokal, Monte Carlo Methods in Statistical Mechanics, 1996"
+    "text": "Monte Carlo Error\nIn other words, if we want to decrease the Monte Carlo error by 10x, we need 100x additional samples. This is not an ideal method for high levels of accuracy.\n\n\n\nMonte Carlo is an extremely bad method. It should only be used when all alternative methods are worse.\n\n\n— Sokal, Monte Carlo Methods in Statistical Mechanics, 1996\n\n\n\n\nBut…often most alternatives are worse!"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#when-might-we-want-to-use-monte-carlo",
+    "href": "slides/lecture05-2.html#when-might-we-want-to-use-monte-carlo",
+    "title": "Why Monte Carlo Works",
+    "section": "When Might We Want to Use Monte Carlo?",
+    "text": "When Might We Want to Use Monte Carlo?\n\n\nAll models are wrong, and so there always exists some irreducible model error. Can we reduce the Monte Carlo error enough so it’s less than the model error and other uncertainties?\nWe often need a lot of simulations. Do we have enough computational power?"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#when-might-we-want-to-use-monte-carlo-1",
+    "href": "slides/lecture05-2.html#when-might-we-want-to-use-monte-carlo-1",
+    "title": "Why Monte Carlo Works",
+    "section": "When Might We Want to Use Monte Carlo?",
+    "text": "When Might We Want to Use Monte Carlo?\nIf you can compute your answers analytically, you probably should.\nBut for many systems problems, this is either\n\nNot possible;\nRequires a lot of stylization and simplification."
   },
   {
     "objectID": "slides/lecture05-2.html#monte-carlo-confidence-intervals",
     "href": "slides/lecture05-2.html#monte-carlo-confidence-intervals",
     "title": "Why Monte Carlo Works",
     "section": "Monte Carlo Confidence Intervals",
-    "text": "Monte Carlo Confidence Intervals\nThis error estimate lets us compute confidence intervals for the MC estimate.\nBasic Idea: The Central Limit Theorem says that with enough samples, the errors are normally distributed:\n\\[\\left\\|\\tilde{\\mu}_n - \\mu\\right\\| \\to \\mathcal{N}\\left(0, \\frac{\\sigma_Y^2}{n}\\right)\\]"
+    "text": "Monte Carlo Confidence Intervals\nThis error estimate lets us compute confidence intervals for the MC estimate."
+  },
+  {
+    "objectID": "slides/lecture05-2.html#what-is-a-confidence-interval",
+    "href": "slides/lecture05-2.html#what-is-a-confidence-interval",
+    "title": "Why Monte Carlo Works",
+    "section": "What is a Confidence Interval?",
+    "text": "What is a Confidence Interval?\nRemember: an \\(\\alpha\\)-confidence interval is an interval such that \\(\\alpha \\%\\) of intervals constructed after a given experiment will contain the true value.\n\nIt is not an interval which contains the true value \\(\\alpha \\%\\) of the time. This concept does not exist within frequentist statistics, and this mistake is often made."
+  },
+  {
+    "objectID": "slides/lecture05-2.html#how-to-interpret-confidence-intervals",
+    "href": "slides/lecture05-2.html#how-to-interpret-confidence-intervals",
+    "title": "Why Monte Carlo Works",
+    "section": "How To Interpret Confidence Intervals",
+    "text": "How To Interpret Confidence Intervals\n\n\nTo understand confidence intervals, think of horseshoes!\nThe post is a fixed target, and my accuracy informs how confident I am that I will hit the target with any given toss.\n\n\n\n\nCartoon of horseshoes\n\n\n\nSource: https://www.wikihow.com/Throw-a-Horseshoe"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#how-to-interpret-confidence-intervals-1",
+    "href": "slides/lecture05-2.html#how-to-interpret-confidence-intervals-1",
+    "title": "Why Monte Carlo Works",
+    "section": "How To Interpret Confidence Intervals",
+    "text": "How To Interpret Confidence Intervals\nBut once I make the throw, I’ve either hit or missed.\nThe confidence level \\(\\alpha\\%\\) expresses the pre-experimental frequency by which a confidence interval will contain the true value. So for a 95% confidence interval, there is a 5% chance that a given sample was an outlier and the interval is inaccurate."
   },
   {
     "objectID": "slides/lecture05-2.html#monte-carlo-confidence-intervals-1",
     "href": "slides/lecture05-2.html#monte-carlo-confidence-intervals-1",
+    "title": "Why Monte Carlo Works",
+    "section": "Monte Carlo Confidence Intervals",
+    "text": "Monte Carlo Confidence Intervals\nOK, back to Monte Carlo…\nBasic Idea: The Central Limit Theorem says that with enough samples, the errors are normally distributed:\n\\[\\left\\|\\tilde{\\mu}_n - \\mu\\right\\| \\to \\mathcal{N}\\left(0, \\frac{\\sigma_Y^2}{n}\\right)\\]"
+  },
+  {
+    "objectID": "slides/lecture05-2.html#monte-carlo-confidence-intervals-2",
+    "href": "slides/lecture05-2.html#monte-carlo-confidence-intervals-2",
     "title": "Why Monte Carlo Works",
     "section": "Monte Carlo Confidence Intervals",
     "text": "Monte Carlo Confidence Intervals\nThe \\(\\alpha\\)-confidence interval is: \\[\\tilde{\\mu}_n \\pm \\Phi^{-1}\\left(1 - \\frac{\\alpha}{2}\\right) \\frac{\\sigma_Y}{\\sqrt{n}}\\]\nFor example, the 95% confidence interval is \\[\\tilde{\\mu}_n \\pm 1.96 \\frac{\\sigma_Y}{\\sqrt{n}}.\\]"
@@ -2007,6 +2077,20 @@
     "title": "Why Monte Carlo Works",
     "section": "Implications of Monte Carlo Error",
     "text": "Implications of Monte Carlo Error\nIf you can compute your answer analytically, you probably should.\nBut often this is difficult if not impossible without many simplifying assumptions."
+  },
+  {
+    "objectID": "slides/lecture05-2.html#more-advanced-monte-carlo-methods",
+    "href": "slides/lecture05-2.html#more-advanced-monte-carlo-methods",
+    "title": "Why Monte Carlo Works",
+    "section": "More Advanced Monte Carlo Methods",
+    "text": "More Advanced Monte Carlo Methods\nThis type of “simple” Monte Carlo analysis assumes that we can readily sample independent and identically-distributed random variables. There are other methods for when distributions are hard to sample from or uncertainties aren’t independent."
+  },
+  {
+    "objectID": "slides/lecture05-2.html#on-random-number-generators",
+    "href": "slides/lecture05-2.html#on-random-number-generators",
+    "title": "Why Monte Carlo Works",
+    "section": "On Random Number Generators",
+    "text": "On Random Number Generators\n\n\nRandom number generators are not really random, only pseudorandom.\nThis is why setting a seed is important. But even that can go wrong…\n\n\n\n\nXKCD Cartoon 221: Random Number\n\n\n\nSource: XKCD #221"
   },
   {
     "objectID": "slides/lecture05-2.html#key-takeaways-1",

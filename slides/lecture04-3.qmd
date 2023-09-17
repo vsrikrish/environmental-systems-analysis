@@ -79,17 +79,54 @@ Uncertainties arise due to the separation between the "internals" of the system 
 
 {{< include _poll-prompt.qmd >}}
 
-# Probability
+# More On Probability
+
+## Conditional Probabilities
+
+We often don't want to just know if a particular event $A$ has a certain probability, but also how other events (call them $B$) might depend on that outcome.
+
+**In other words:**
+
+We want the *conditional probability* of $B$ given $A$, denoted $\mathbb{P}(B|A)$.
+
+## Conditional Probabilities
+
+We can write conditional probabilities in terms of unconditional probabilities:
+
+$$\mathbb{P}(B|A) = \frac{\mathbb{P}(BA)}{\mathbb{P}(A)}.$$
+
+## Bayes' Theorem
+
+Conditional probabilities can be inverted according to **Bayes' Theorem**:
+
+$$\mathbb{P}(A|B) = \frac{\mathbb{P}(B|A) \times \mathbb{P}(A)}{\mathbb{B}}.$$
+
+## Conditional Probability and Environmental Systems
+
+Environmental outcomes are often dependent on other uncertain processes.
+
+::: {.fragment .fade-in}
+- Upwind concentrations + stochastic winds &Rightarrow; exposure
+- Sea-level rise + storm tides &Rightarrow; coastal flooding
+- Extreme temperatures + many other mechanisms &Rightarrow; power outages
+:::
 
 ## Probability Distributions
 
-The likelihood of possible values of an unknown quantity are often represented as a probability distribution.
+The probability of possible values of an unknown quantity are often represented as a probability distribution.
 
-Probability distributions associate a probability to every event under consideration and have to follow certain rules (for example, total probability = 1).
+Probability distributions associate a probability to every event under consideration (the *event space*) and have to follow certain rules (for example, total probability = 1).
 
 ## Selecting a Distribution
 
+:::: {.columns}
+::: {.column width=35%}
 The specification of distributions can *strongly* influence the analysis. 
+:::
+::: {.column width=65%}
+![Probabilistic interactions between sea-levels and exposure](images/Risk_Interactions.jpg){width=90%}
+:::
+::::
 
 ## Selecting a Distribution
 
@@ -106,6 +143,13 @@ A distribution implicitly answers questions like:
 - Skew (are larger or smaller events more or equally probable)
 - Variance (how spread out is the distribution around the mode)
 - Tail Probabilities (how probable are extreme events)
+
+## Common Distributions
+
+- Gaussian / Normal
+- Lognormal
+- Binomial
+- Uniform / Discrete Uniform
 
 ## Probability Distribution Tails
 
@@ -131,7 +175,7 @@ xlabel!("Value")
 
 ## Stochastic Simulation
 
-**Monte Carlo simulation**: Propagating random samples through a model.
+**Monte Carlo simulation**: Propagating random samples through a model to estimate a value (usually an expectation or a quantile).
 
 ```{dot}
 //| fig-width: 100%
@@ -187,12 +231,14 @@ Monte Carlo estimation involves framing the quantity of interest as a summary st
 
 :::: {.columns}
 ::: {.column width=50%}
+::: {.fragment .fade-in}
 Finding $\pi$ by sampling random values from the unit square and computing the fraction in the unit circle. This is an example of **Monte Carlo integration**.
 
 $$\frac{\text{Area of Circle}}{\text{Area of Square}} = \frac{\pi}{4}$$
 :::
+:::
 ::: {.column width=50%}
-
+:::{.fragment .fade-in}
 ```{julia}
 #| echo: false
 #| fig-height: 100%
@@ -249,6 +295,7 @@ end every 100
 gif(mc_anim, "images/mc_pi.gif", fps=3)
 ```
 :::
+:::
 ::::
 
 ## MC Example: Dice
@@ -257,10 +304,13 @@ gif(mc_anim, "images/mc_pi.gif", fps=3)
 ::: {.column width=50%}
 What is the probability of rolling 4 dice for a total of 19?
 
+::: {.fragment .fade-in}
 Can simulate dice rolls and find the frequency of 19s among the samples.
+:::
 :::
 ::: {.column width=50%}
 
+::: {.fragment .fade-in}
 ```{julia}
 #| echo: false
 #| fig-width: 100%
@@ -315,6 +365,7 @@ gif(mc_anim, "images/mc_dice.gif", fps=10)
 
 ```
 :::
+:::
 ::::
 
 ## Monte Carlo Estimation
@@ -325,106 +376,21 @@ For example, consider our dissolved oxygen model. Suppose that we have a probabi
 
 **How could we compute the probability of DO falling below the regulatory standard somewhere downstream?**
 
-## Why Monte Carlo Works
+## Monte Carlo and Uncertainty Propagation
 
-We can formalize this common use of Monte Carlo estimation as the computation of the expected value of a random quantity $Y$, $\mu = \mathbb{E}[Y]$.
-
-To do this, generate $n$ independent and identically distributed values $Y_1, \ldots, Y_n$.  Then the sample estimate is
-
-$$\tilde{\mu} = \frac{1}{n}\sum_{i=1}^n Y_i$$
-
-## Monte Carlo (Formally)
-
-More generally, we want to compute some quantity $Y=f(X)$, where $X$ is distributed according to some probability distribution $p(x)$ and $f(x)$ is a real-valued function over a domain $D$.
-
-Then
-$$\mu = \mathbb{E}(Y) = \int_D f(x)p(x)dx.$$
-
-## The Law of Large Numbers
-
-If 
-
-(1) $Y$ is a random variable and its expectation exists and 
-
-(2) $Y_1, \ldots, Y_n$ are independently and identically distributed
-
-Then by the **weak law of large numbers**:
-
-$$\lim_{n \to \infty} \mathbb{P}\left(\left|\tilde{\mu}_n - \mu\right| \leq \varepsilon \right) = 1$$
-
-## The Law of Large Numbers
-
-In other words, *eventually* we will get within an arbitrary error of the true expectation. But how large is large enough?
-
-## Monte Carlo Sample Mean
-
-Notice that the sample mean $\tilde{\mu}_n$ is itself a random variable.
-
-With some assumptions (the mean of $Y$ exists and $Y$ has finite variance), the expected Monte Carlo sample mean $\mathbb{E}[\tilde{\mu}_n]$ is
-
-$$\frac{1}{n}\sum_{i=1}^n \mathbb{E}[Y_i] = \frac{1}{n} n \mu = \mu$$
-
-This means that the Monte Carlo estimate is an *unbiased* estimate of the mean.
-
-## Monte Carlo Error
-
-We'd like to know more about the error of this estimate for a given sample size. The variance of this estimator is
-
-$$\tilde{\sigma}_n^2 = \text{Var}\left(\tilde{\mu}_n\right) = \mathbb{E}\left((\tilde{\mu}_n - \mu)^2\right) = \frac{\sigma_Y^2}{n}$$
-
-So as $n$ increases, the *standard error* decreases:
-
-$$\tilde{\sigma}_n = \frac{\sigma_Y}{\sqrt{n}}$$
-
-## Monte Carlo Error
-
-In other words, if we want to decrease the Monte Carlo error by 10x, we need 100x additional samples. **This is not an ideal method for high levels of accuracy.** 
+This is an example of **uncertainty propagation**: draw samples from some distribution, and run them through one or more models to find the (conditional) probability of outcomes of interest (for good or bad).
 
 ::: {.fragment .fade-in}
-::: {.quote}
-> Monte Carlo is an extremely bad method. It should only be used when all alternative methods are worse.
-
-::: {.cite}
---- Sokal, *Monte Carlo Methods in Statistical Mechanics*, 1996
+For example (HW3): What is the probability that a levee will be overtopped given climate and extreme sea-level uncertainty?
 :::
-:::
-:::
-
-## Monte Carlo Confidence Intervals
-
-This error estimate lets us compute confidence intervals for the MC estimate.
-
-**Basic Idea**: The *Central Limit Theorem* says that with enough samples, the errors are normally distributed:
-
-$$\left\|\tilde{\mu}_n - \mu\right\| \to \mathcal{N}\left(0, \frac{\sigma_Y^2}{n}\right)$$
-
-## Monte Carlo Confidence Intervals
-
-The $\alpha$-confidence interval is:
-$$\tilde{\mu}_n \pm \Phi^{-1}\left(1 - \frac{\alpha}{2}\right) \frac{\sigma_Y}{\sqrt{n}}$$
-
-For example, the 95% confidence interval is $$\tilde{\mu}_n \pm 1.96 \frac{\sigma_Y}{\sqrt{n}}.$$
-
-## Implications of Monte Carlo Error
-
-Converging at a rate of $1/\sqrt{n}$ is not great. But:
-
-- All models are wrong, and so there always exists some irreducible model error. 
-- We often need a lot of simulations. Do we have enough computational power?
-
-## Implications of Monte Carlo Error
-
-If you can compute your answer analytically, you probably should. 
-
-But often this is difficult if not impossible without many simplifying assumptions.
 
 # Key Takeaways
 
 ## Key Takeaways
 
 - Choice of probability distribution can have large impacts on uncertainty and risk estimates: **try not to use distributions just because they're convenient.**
-- **Monte Carlo**: Estimate expected values of functions using simulation.
-- Monte Carlo error is on the order $1/\sqrt{n}$, so not great if more direct approaches are available and tractable.
+- **Monte Carlo**: Estimate expected values of outcomes using simulation.
+
 
 # Upcoming Schedule
 
@@ -432,4 +398,4 @@ But often this is difficult if not impossible without many simplifying assumptio
 
 **Monday**: Lab on Monte Carlo.
 
-**Wednesday/Friday**: Dissolved Oxygen modeling and simulation.
+**Wednesday**: Monte Carlo wrapup

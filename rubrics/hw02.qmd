@@ -56,7 +56,7 @@ General points will be deducted for the following:
 
 | Missing (0) | Developing (1-2) | Above Average (3-4) | Excellent (5) |
 |:-----------------|:-----------------|:-----------------|:-----------------|
-| Solution not provided or does not seem related to the problem. | Solution is provided, but contains major mistakes in the approach. | Solution contains minor mistakes, or is inappropriately precise (in either direction). | Solution is correct and is correctly implemented. |
+| Solution not provided or does not seem related to the problem. | Solution is provided, but contains major mistakes in the approach. | Solution contains minor mistakes, is inappropriately precise (in either direction), or gets the right answer for the wrong reason(s) (by not using the model). | Solution is correct and is correctly implemented. |
 
 ### Problem 8 (5 points)
 

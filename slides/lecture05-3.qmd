@@ -1,10 +1,10 @@
 ---
-title: "Monte Carlo and Climate Sensitivity"
-subtitle: "Lab 02"
+title: "Uncertainty and Simple Climate Models"
+subtitle: "Lecture 12"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"
-date: "September 15, 2023"
+date: "September 22, 2023"
 format:
     revealjs:
         slide-number: c/t
@@ -49,20 +49,83 @@ using Random
 using Plots
 using CSV
 using DataFrames
+using Distributions
+using StatsPlots
 
 Random.seed!(1)
 ```
 
 
-# Simple Climate Models and Lab 2
+# Review and Questions
 
-## Overview
+## Monte Carlo
 
-- Due Friday (**9/22**) at 9pm on Gradescope.
-- Notebook is a little long, but exercises *should* be short.
-- Remember to "Run All" before exporting and submitting.
+Monte Carlo is **stochastic simulation**.
 
-# A One-Box Model of the Climate
+```{dot}
+//| fig-width: 100%
+digraph G {
+    graph [
+        rankdir=LR
+        layout=dot
+    ]
+    node [
+        fontname = "IBM Plex Sans, sans-serif"
+        fontsize=25
+    ]
+    edge [
+        arrowsize=0.75
+        labeldistance=3
+        penwidth=3
+        fontname = "IBM Plex Sans, sans-serif"
+        fontsize=25
+        style=dashed
+        color="#b31b1b"
+        fontcolor="#b31b1b"
+    ]
+    a [label="Probability\n Distribution"]
+    b [label = "Random\n Samples"]
+    c [label="Model"]
+    d [label="Outputs"]
+
+    a -> b [
+        label="Sample"
+    ]
+    b -> c [
+        label="Input"
+    ]
+    c -> d [
+        label="Simulate"
+    ]
+}
+
+```
+
+## Monte Carlo
+
+Let $Y=f(X)$, where $X$ is a random variable. Let $\mathbb{E}[Y] = \mu$.
+
+If $X_1, \ldots, X_n$ are independent samples, then the Monte Carlo estimate of $\mu$ is $$\tilde{\mu}_n = \frac{1}{n} \sum_{i=1}^n f(X_i) = \frac{1}{n}\sum_{i=1}^n Y_i.$$
+
+The key point: $\tilde{\mu}_n \to \mu$ as $n \to \infty$.
+
+## Monte Carlo Properties
+
+Monte Carlo is an **unbiased estimator**: $$\mathbb{E}[\tilde{\mu}_n] = \mu.$$
+
+Monte Carlo variance: $$\text{Var}[\tilde{\mu}_n] = \tilde{\sigma}_n^2 = \frac{\sigma_Y^2}{n}.$$
+
+## Monte Carlo Confidence Intervals
+
+This means we can obtain $\alpha$-confidence intervals:
+
+$$\tilde{\mu}_n \pm \Phi^{-1}\left(1 - \frac{\alpha}{2}\right) \frac{\sigma_Y}{\sqrt{n}}.$$
+
+## Questions?
+
+{{< include _poll-prompt.qmd >}}
+
+# Energy Balance and Climate Change
 
 ## Planetary Energy Balance
 
@@ -74,15 +137,11 @@ Source: Reprinted from A Climate Modeling Primer, A. Henderson-Sellers and K. Mc
 
 ## Radiative Forcing
 
-Climate changes result from changes to the energy balance of the planet, due to *e.g.*:
+Climate changes result from changes to the energy balance of the planet (or **radiative forcings**), due to *e.g.*:
 
 - greenhouse gas emissions (which trap radiation, warming the planet);
 - aerosol emissions from air pollution or volcanic eruptions (which block incoming radiation, cooling the planet);
 - changes to the solar cycle (which can increase or decrease the incoming solar radiation).
-
-::: {.fragment .fade-in}
-These changes to the radiative balance are called **radiative forcings** (RF).
-:::
 
 ## Historical and Projected Radiative Forcing
 
@@ -109,13 +168,13 @@ forcing_other = forcing_total - (forcing_co2 + forcing_aerosol)
 
 t = time_forcing = Int64.(forcings_all[!,"year"]) # Ensure that years are interpreted as integers
 
-plot(xlabel="Year", ylabel="Radiative Forcing (W/m²)", tickfontsize=14, guidefontsize=16, legendfontsize=14)
+plot(xlabel="Year", ylabel="Radiative Forcing (W/m²)", tickfontsize=14, guidefontsize=16, legendfontsize=14, leftmargin=10mm, bottommargin=5mm)
 plot!(time_forcing, forcing_total, label="Total", color=:black, linewidth=3)
 plot!(time_forcing, forcing_co2, label="CO₂", color=:orange, linewidth=2)
 plot!(time_forcing, forcing_aerosol, label="Aerosol", color=:blue, linewidth=2)
 plot!(time_forcing, forcing_other, label="Other", color=:purple, linewidth=2)
 vline!([2014], label="", color=:red, linestyle=:dash)
-plot!(size=(1000, 500))
+plot!(size=(800, 450))
 ```
 :::
 ::: {.column width=30%}
@@ -123,7 +182,49 @@ These projections are under RCP 8.5, which is the "worst-case" official future c
 :::
 ::::
 
-## Energy Balance Model (EBM)
+## Historical and Projected Radiative Forcing
+
+:::: {.columns}
+::: {.column width=70%}
+```{julia}
+#| label: fig-rf-26
+#| fig-align: center
+#| fig-cap: Historical and projected radiative forcings.
+
+# Dataset from https://zenodo.org/record/3973015
+# The CSV is read into a DataFrame object, and we specify that it is comma delimited
+forcings_all = CSV.read("data/climate/ERF_ssp126_1750-2500.csv", DataFrame, delim=",")
+
+# Separate out the individual components
+forcing_co2 = forcings_all[!,"co2"]
+# Get total aerosol forcings
+forcing_aerosol_rad = forcings_all[!,"aerosol-radiation_interactions"]
+forcing_aerosol_cloud = forcings_all[!,"aerosol-cloud_interactions"]
+forcing_aerosol = forcing_aerosol_rad + forcing_aerosol_cloud
+forcing_total = forcings_all[!,"total"]
+forcing_non_aerosol = forcing_total - forcing_aerosol
+forcing_other = forcing_total - (forcing_co2 + forcing_aerosol)
+
+t = time_forcing = Int64.(forcings_all[!,"year"]) # Ensure that years are interpreted as integers
+
+plot(xlabel="Year", ylabel="Radiative Forcing (W/m²)", tickfontsize=14, guidefontsize=16, legendfontsize=14, leftmargin=10mm, bottommargin=5mm)
+plot!(time_forcing, forcing_total, label="Total", color=:black, linewidth=3)
+plot!(time_forcing, forcing_co2, label="CO₂", color=:orange, linewidth=2)
+plot!(time_forcing, forcing_aerosol, label="Aerosol", color=:blue, linewidth=2)
+plot!(time_forcing, forcing_other, label="Other", color=:purple, linewidth=2)
+vline!([2014], label="", color=:red, linestyle=:dash)
+plot!(size=(800, 450))
+```
+:::
+::: {.column width=30%}
+These are RCP 2.6, one of the "better" scenarios (often a lower bound on future warming).
+:::
+::::
+
+
+# The Energy Balance Model (EBM)
+
+## Sketch of the EBM
 
 - Simplest possible climate model.
 - Treats the Earth as a 0-dimensional sphere covered with water.
@@ -154,13 +255,33 @@ When we double atmospheric CO~2~, we refer to the equilibrium temperature $S$ as
 
 $$S = \underbrace{F_{2\times \text{CO}_2}}_{\approx 4 \text{W/m}^2}/\lambda$$
 
-# Lab 2 Instructions
+## Equilibrium Climate Sensitivity Uncertainty
 
-## Monte Carlo for ECS Uncertainty
+The ECS is very uncertain (though uncertainty has been reduced recently). 
 
-Your task in the lab: obtain projections under RCP 8.5 forcing and ECS uncertainty using Monte Carlo
+# Monte Carlo Simulation and ECS Uncertainty
+
+## Uncertainty Propagation in the Climate System
 
 How does uncertainty in the ECS propagate to uncertainty in temperatures in 2100?
+
+:::: {.columns}
+::: {.column width=60%}
+A reasonable distribution is $S \sim \text{LogNormal}(\log(3.2), \log(2)/{2})$
+:::
+::: {.column width=40%}
+```{julia}
+ecs_dist = LogNormal(log(3.2), log(2)/2)
+ecs_samples = rand(ecs_dist, 100000)
+plot(density(ecs_samples), linewidth=3, legend=:false, tickfontsize=14)
+plot!(size=(500, 300))
+xlims!((0,7.2))
+vline!([mean(ecs_samples)], linewidth=3, linestyle=:dash)
+q_lo, q_hi = quantile(ecs_dist, [0.025, 0.975])
+areaplot!(q_lo:0.01:q_hi, pdf.(ecs_dist, q_lo:0.01:q_hi))
+```
+:::
+::::
 
 # Upcoming Schedule
 

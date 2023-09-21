@@ -2,7 +2,7 @@
 
 julia_version = "1.9.2"
 manifest_format = "2.0"
-project_hash = "fb1dff80b48d2cb5728aadd5138b893756806431"
+project_hash = "31a5997c44f80e0d648c1cf954077e33ad8a694e"
 
 [[deps.Animations]]
 deps = ["Colors"]

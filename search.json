@@ -1855,81 +1855,200 @@
     "text": "Next Classes\nWednesday: Guest lecture by Diana Hackett (Mann librarian) on regulations research.\nFriday: Lab on linear programming in Julia.\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
-    "objectID": "slides/lecture05-3.html#overview",
-    "href": "slides/lecture05-3.html#overview",
-    "title": "Monte Carlo and Climate Sensitivity",
-    "section": "Overview",
-    "text": "Overview\n\nDue Friday (9/22) at 9pm on Gradescope.\nNotebook is a little long, but exercises should be short.\nRemember to “Run All” before exporting and submitting."
+    "objectID": "slides/lecture05-3.html#monte-carlo",
+    "href": "slides/lecture05-3.html#monte-carlo",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Monte Carlo",
+    "text": "Monte Carlo\nMonte Carlo is stochastic simulation.\n\n\n\n\n\n\n\nG\n\n  \n\na\n\n Probability  Distribution   \n\nb\n\n Random  Samples   \n\na-&gt;b\n\n  Sample   \n\nc\n\n Model   \n\nb-&gt;c\n\n  Input   \n\nd\n\n Outputs   \n\nc-&gt;d\n\n  Simulate"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#monte-carlo-1",
+    "href": "slides/lecture05-3.html#monte-carlo-1",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Monte Carlo",
+    "text": "Monte Carlo\nLet \\(Y=f(X)\\), where \\(X\\) is a random variable. Let \\(\\mathbb{E}[Y] = \\mu\\).\nIf \\(X_1, \\ldots, X_n\\) are independent samples, then the Monte Carlo estimate of \\(\\mu\\) is \\[\\tilde{\\mu}_n = \\frac{1}{n} \\sum_{i=1}^n f(X_i) = \\frac{1}{n}\\sum_{i=1}^n Y_i.\\]\nThe key point: \\(\\tilde{\\mu}_n \\to \\mu\\) as \\(n \\to \\infty\\)."
+  },
+  {
+    "objectID": "slides/lecture05-3.html#monte-carlo-properties",
+    "href": "slides/lecture05-3.html#monte-carlo-properties",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Monte Carlo Properties",
+    "text": "Monte Carlo Properties\nMonte Carlo is an unbiased estimator: \\[\\mathbb{E}[\\tilde{\\mu}_n] = \\mu.\\]\nMonte Carlo variance: \\[\\text{Var}[\\tilde{\\mu}_n] = \\tilde{\\sigma}_n^2 = \\frac{\\sigma_Y^2}{n}.\\]"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#monte-carlo-confidence-intervals",
+    "href": "slides/lecture05-3.html#monte-carlo-confidence-intervals",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Monte Carlo Confidence Intervals",
+    "text": "Monte Carlo Confidence Intervals\nThis means we can obtain \\(\\alpha\\)-confidence intervals:\n\\[\\tilde{\\mu}_n \\pm \\Phi^{-1}\\left(1 - \\frac{\\alpha}{2}\\right) \\frac{\\sigma_Y}{\\sqrt{n}}.\\]"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#questions",
+    "href": "slides/lecture05-3.html#questions",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
     "objectID": "slides/lecture05-3.html#planetary-energy-balance",
     "href": "slides/lecture05-3.html#planetary-energy-balance",
-    "title": "Monte Carlo and Climate Sensitivity",
+    "title": "Uncertainty and Simple Climate Models",
     "section": "Planetary Energy Balance",
     "text": "Planetary Energy Balance\n\nRepresentation of Planetary Energy Balance\nSource: Reprinted from A Climate Modeling Primer, A. Henderson-Sellers and K. McGuffie, Wiley, pg. 58, (1987) via https://www.e-education.psu.edu/meteo469/node/137."
   },
   {
     "objectID": "slides/lecture05-3.html#radiative-forcing",
     "href": "slides/lecture05-3.html#radiative-forcing",
-    "title": "Monte Carlo and Climate Sensitivity",
+    "title": "Uncertainty and Simple Climate Models",
     "section": "Radiative Forcing",
-    "text": "Radiative Forcing\nClimate changes result from changes to the energy balance of the planet, due to e.g.:\n\ngreenhouse gas emissions (which trap radiation, warming the planet);\naerosol emissions from air pollution or volcanic eruptions (which block incoming radiation, cooling the planet);\nchanges to the solar cycle (which can increase or decrease the incoming solar radiation).\n\n\nThese changes to the radiative balance are called radiative forcings (RF)."
+    "text": "Radiative Forcing\nClimate changes result from changes to the energy balance of the planet (or radiative forcings), due to e.g.:\n\ngreenhouse gas emissions (which trap radiation, warming the planet);\naerosol emissions from air pollution or volcanic eruptions (which block incoming radiation, cooling the planet);\nchanges to the solar cycle (which can increase or decrease the incoming solar radiation)."
   },
   {
     "objectID": "slides/lecture05-3.html#historical-and-projected-radiative-forcing",
     "href": "slides/lecture05-3.html#historical-and-projected-radiative-forcing",
-    "title": "Monte Carlo and Climate Sensitivity",
+    "title": "Uncertainty and Simple Climate Models",
     "section": "Historical and Projected Radiative Forcing",
-    "text": "Historical and Projected Radiative Forcing\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Historical and projected radiative forcings.\n\n\n\n\nThese projections are under RCP 8.5, which is the “worst-case” official future climate scenario."
+    "text": "Historical and Projected Radiative Forcing\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Historical and projected radiative forcings.\n\n\n\n\nThese projections are under RCP 8.5, which is the “worst-case” official future climate scenario."
   },
   {
-    "objectID": "slides/lecture05-3.html#energy-balance-model-ebm",
-    "href": "slides/lecture05-3.html#energy-balance-model-ebm",
-    "title": "Monte Carlo and Climate Sensitivity",
-    "section": "Energy Balance Model (EBM)",
-    "text": "Energy Balance Model (EBM)\n\nSimplest possible climate model.\nTreats the Earth as a 0-dimensional sphere covered with water.\nEarth warms due to imbalance in average (over surface area) heat flux."
+    "objectID": "slides/lecture05-3.html#historical-and-projected-radiative-forcing-1",
+    "href": "slides/lecture05-3.html#historical-and-projected-radiative-forcing-1",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Historical and Projected Radiative Forcing",
+    "text": "Historical and Projected Radiative Forcing\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Historical and projected radiative forcings.\n\n\n\n\nThese are RCP 2.6, one of the “better” scenarios (often a lower bound on future warming)."
+  },
+  {
+    "objectID": "slides/lecture05-3.html#global-mean-temperature",
+    "href": "slides/lecture05-3.html#global-mean-temperature",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Global Mean Temperature",
+    "text": "Global Mean Temperature\n\n\nThese radiative changes result in changes to global mean temperatures, which result in other impacts.\nHow can we model this relationship?"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#sketch-of-the-ebm",
+    "href": "slides/lecture05-3.html#sketch-of-the-ebm",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Sketch of the EBM",
+    "text": "Sketch of the EBM\n\nSimplest possible climate model.\nTreats the Earth as a 0-dimensional sphere covered with water.\nEarth warms due to imbalance in average (over surface area) heat flux."
   },
   {
     "objectID": "slides/lecture05-3.html#ebm-equations",
     "href": "slides/lecture05-3.html#ebm-equations",
-    "title": "Monte Carlo and Climate Sensitivity",
+    "title": "Uncertainty and Simple Climate Models",
     "section": "EBM Equations",
-    "text": "EBM Equations\n\\[\\begin{align*}\n\\overbrace{\\frac{dH}{dt}}^{\\text{change in heat}} &= \\overbrace{F}^{\\text{RF}} - \\overbrace{\\lambda T}^{\\substack{\\text{change in} \\\\ \\text{temperature}}} \\\\\n\\underbrace{C}_{\\substack{\\text{ocean heat} \\\\ \\text{capacity}}} \\frac{dT}{dt} &= F - \\lambda T\n\\end{align*}\\]\nThe proportionality coefficient \\(\\lambda\\) is important: it is the climate feedback factor and controls how much the Earth warms in response to radiative forcing."
+    "text": "EBM Equations\n\\[\\begin{align*}\n\\overbrace{\\frac{dH}{dt}}^{\\text{change in heat}} &= \\overbrace{F}^{\\text{RF}} - \\overbrace{\\lambda T}^{\\substack{\\text{change in} \\\\ \\text{temperature}}} \\\\\n\\underbrace{C}_{\\substack{\\text{ocean heat} \\\\ \\text{capacity}}} \\frac{dT}{dt} &= F - \\lambda T \\\\\nc\\underbrace{d}_{\\substack{\\text{ocean} \\\\ \\text{mixing depth}}} \\frac{dT}{dt} &= F - \\lambda T,\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#ebm-equations-1",
+    "href": "slides/lecture05-3.html#ebm-equations-1",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "EBM Equations",
+    "text": "EBM Equations\n\n\\(c = 4.184\\times 10^6 \\\\ \\text{J/K/m}^2\\) is the specific heat of water per area.\nTotal RF: \\[F = F_\\text{non-aerosol} + \\alpha F_\\text{aerosol}.\\]\nThe proportionality coefficient \\(\\lambda\\) is important: it is the climate feedback factor and controls how much the Earth warms in response to radiative forcing."
+  },
+  {
+    "objectID": "slides/lecture05-3.html#ebm-solution",
+    "href": "slides/lecture05-3.html#ebm-solution",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "EBM Solution",
+    "text": "EBM Solution\nWe can solve the EBM using Euler timestepping:\n\\[\\begin{gather*}\nC dT/dt = F - \\lambda T \\\\\\\\\n\\Rightarrow C \\frac{T_{i+1}-T_i}{\\Delta t} = F_i - \\lambda T_i \\\\\\\\\n\\Rightarrow T_{i+1} = T_i + \\frac{F_i - \\lambda T_i}{C} \\Delta t\n\\end{gather*}\\]"
   },
   {
     "objectID": "slides/lecture05-3.html#what-the-ebm-neglects",
     "href": "slides/lecture05-3.html#what-the-ebm-neglects",
-    "title": "Monte Carlo and Climate Sensitivity",
+    "title": "Uncertainty and Simple Climate Models",
     "section": "What the EBM Neglects",
     "text": "What the EBM Neglects\nThe EBM is a one-box model of the Earth’s climate: models energy balance between incoming and outgoing heat. As such, it neglects:\n\n“Deep” ocean heat uptake and cycling.\nMultiple atmospheric layers.\nSpatial patterns of atmospheric and ocean circulation."
   },
   {
     "objectID": "slides/lecture05-3.html#equilibrium-climate-sensitivity-ecs",
     "href": "slides/lecture05-3.html#equilibrium-climate-sensitivity-ecs",
-    "title": "Monte Carlo and Climate Sensitivity",
+    "title": "Uncertainty and Simple Climate Models",
     "section": "Equilibrium Climate Sensitivity (ECS)",
     "text": "Equilibrium Climate Sensitivity (ECS)\nUnder steady-state conditions (constant \\(F\\) and \\(dT/dt = 0\\)), \\[T = \\frac{F}{\\lambda}.\\]\nWhen we double atmospheric CO2, we refer to the equilibrium temperature \\(S\\) as the equilibrium climate sensitivity:\n\\[S = \\underbrace{F_{2\\times \\text{CO}_2}}_{\\approx 4 \\text{W/m}^2}/\\lambda\\]"
   },
   {
-    "objectID": "slides/lecture05-3.html#monte-carlo-for-ecs-uncertainty",
-    "href": "slides/lecture05-3.html#monte-carlo-for-ecs-uncertainty",
-    "title": "Monte Carlo and Climate Sensitivity",
-    "section": "Monte Carlo for ECS Uncertainty",
-    "text": "Monte Carlo for ECS Uncertainty\nYour task in the lab: obtain projections under RCP 8.5 forcing and ECS uncertainty using Monte Carlo\nHow does uncertainty in the ECS propagate to uncertainty in temperatures in 2100?"
+    "objectID": "slides/lecture05-3.html#equilibrium-climate-sensitivity-uncertainty",
+    "href": "slides/lecture05-3.html#equilibrium-climate-sensitivity-uncertainty",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Equilibrium Climate Sensitivity Uncertainty",
+    "text": "Equilibrium Climate Sensitivity Uncertainty\nThe ECS is very uncertain (though uncertainty has been reduced recently).\n\n\nA reasonable distribution is \\(S \\sim \\text{LogNormal}(\\log(3.2), \\log(2)/{3})\\)"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#best-fit-ebm-simulation",
+    "href": "slides/lecture05-3.html#best-fit-ebm-simulation",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Best Fit EBM Simulation",
+    "text": "Best Fit EBM Simulation\n\n\nLet’s run the EBM with typical values of \\(S = 3.2^\\circ\\) C, \\(d=100\\)m, and \\(\\alpha = 1.3\\)."
+  },
+  {
+    "objectID": "slides/lecture05-3.html#comparison-to-temperature-data",
+    "href": "slides/lecture05-3.html#comparison-to-temperature-data",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Comparison to Temperature Data",
+    "text": "Comparison to Temperature Data\n\n\nHow well does this do against the temperature data?"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#uncertainty-propagation-in-the-climate-system",
+    "href": "slides/lecture05-3.html#uncertainty-propagation-in-the-climate-system",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Uncertainty Propagation in the Climate System",
+    "text": "Uncertainty Propagation in the Climate System\n\n\nHow does uncertainty in the ECS propagate to uncertainty in temperatures in 2100?"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#temperature-histograms",
+    "href": "slides/lecture05-3.html#temperature-histograms",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Temperature Histograms",
+    "text": "Temperature Histograms\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Histogram of EBM output in 2100"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#uncertainty-propagation-in-the-climate-system-1",
+    "href": "slides/lecture05-3.html#uncertainty-propagation-in-the-climate-system-1",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Uncertainty Propagation in the Climate System",
+    "text": "Uncertainty Propagation in the Climate System\n\n\nAdding in temperature data…"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#limits-of-the-ebm-impact-parameterization",
+    "href": "slides/lecture05-3.html#limits-of-the-ebm-impact-parameterization",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Limits of the EBM Impact Parameterization",
+    "text": "Limits of the EBM Impact Parameterization\nOne of the problems is using parameter values/distributions which were chosen in a different context.\nThe EBM simplifies certain dynamics so much that these parameters, while they have physical interpretations, need different distributions or have different correlations.\nIdentifying these values for a particular model is called model calibration."
+  },
+  {
+    "objectID": "slides/lecture05-3.html#how-do-we-make-these-plots-in-julia",
+    "href": "slides/lecture05-3.html#how-do-we-make-these-plots-in-julia",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "How Do We Make These Plots in Julia?",
+    "text": "How Do We Make These Plots in Julia?\n\nTo compute quantiles and median, use Distributions.quantile():\n# find median of vector v\nquantile(v, [0.5])\nCan broadcast quantile calculation over columns/rows of an array:\n# find median of array ebm_output for each year/column\nquantile.(eachcol(ebm_output), 0.5)"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#how-do-we-make-these-plots-in-julia-1",
+    "href": "slides/lecture05-3.html#how-do-we-make-these-plots-in-julia-1",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "How Do We Make These Plots in Julia?",
+    "text": "How Do We Make These Plots in Julia?\n\nTo plot intervals around a median (or other central value), use the ribbon= keyword in plot() to pass an array of bounds. For example:\nplot(t, temp_median_26, \n    ribbon=(temp_median_26 - temp_quantiles_26[1, :],\n    temp_quantiles_26[2, :] - temp_median_26)...)"
+  },
+  {
+    "objectID": "slides/lecture05-3.html#key-points-1",
+    "href": "slides/lecture05-3.html#key-points-1",
+    "title": "Uncertainty and Simple Climate Models",
+    "section": "Key Points",
+    "text": "Key Points\n\nUncertainty propagation lets us quantify the impact of upstream uncertainties on system outputs\nViewed the impact of climate sensitivity and radiative forcing uncertainty on temperature projections for a simple model.\nDistributions of uncertain inputs or parameters may not be directly usable in another model context due to model assumptions."
   },
   {
     "objectID": "slides/lecture05-3.html#next-classes",
     "href": "slides/lecture05-3.html#next-classes",
-    "title": "Monte Carlo and Climate Sensitivity",
+    "title": "Uncertainty and Simple Climate Models",
     "section": "Next Classes",
-    "text": "Next Classes\nWednesday/Friday: Simulating Dissolved Oxygen\nNext Week: Prescriptive Modeling and Optimization"
+    "text": "Next Classes\nNext Week: Prescriptive Modeling and Optimization"
   },
   {
     "objectID": "slides/lecture05-3.html#assessments",
     "href": "slides/lecture05-3.html#assessments",
-    "title": "Monte Carlo and Climate Sensitivity",
+    "title": "Uncertainty and Simple Climate Models",
     "section": "Assessments",
-    "text": "Assessments\nFriday: Homework 2 and Lab 2 both due.\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Assessments\nToday: Homework 2 and Lab 2 both due.\nMonday: Homework 3 released (on uncertainty propagation from the EBM to sea-level rise and levee heights)\nNext Friday: Project Proposal due\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture05-2.html#monte-carlo-simulation",
@@ -4190,6 +4309,6 @@
     "href": "schedule.html",
     "title": "BEE 4750: Environmental Systems Analysis",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 06\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nFri, Sep 08\nDissolved Oxygen\n\n\n\n\n\n\n\n\nMon, Sep 11\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n\nWed, Sep 13\nUncertainty and Risk\n\n\n\n\n\n\n\n\nFri, Sep 15\nProbability and Monte Carlo Simulation\n\n\n\n\n\n\n\n5\nMon, Sep 18\nLab: Monte Carlo\n\n\n\n\n\n\n\n\nWed, Sep 20\nMonte Carlo, Formally\n\n\n\n\n\n\n\n\nFri, Sep 22\nSimple Climate Models and Uncertainty\n\n\n\n\n\n\n\n6\nMon, Sep 25\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nWed, Sep 27\nIntroduction to Optimization\n\n\n\n\n\n\n\n\nFri, Sep 29\nLinear Programming\n\n\n\n\n\n\n\n7\nMon, Oct 02\nLP Example: Resource Allocation\n\n\n\n\n\n\n\n\nWed, Oct 04\nGuest Lecture: Diana Hackett\n\n\n\n\n\n\n\n\nFri, Oct 06\nLab: Optimization with JuMP.jl\n\n\n\n\n\n\n\n8\nMon, Oct 09\nNo Class: Indigeneous People’s Day\n\n\n\n\n\n\n\n\nWed, Oct 11\nPower Systems, Generating Capacity Expansion\n\n\n\n\n\n\n\n\nFri, Oct 13\nEconomic Dispatch\n\n\n\n\n\n\n\n9\nMon, Oct 16\nManaging Multiple Air Pollutant Sources\n\n\n\n\n\n\n\n\nWed, Oct 18\nLake Eutrophication\n\n\n\n\n\n\n\n\nFri, Oct 20\nLake Eutrophication II\n\n\n\n\n\n\n\n10\nMon, Oct 23\nMixed Integer Programming\n\n\n\n\n\n\n\n\nWed, Oct 25\nSolid Waste Management\n\n\n\n\n\n\n\n\nFri, Oct 27\nUnit Commitment"
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 06\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nFri, Sep 08\nDissolved Oxygen\n\n\n\n\n\n\n\n\nMon, Sep 11\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n\nWed, Sep 13\nUncertainty and Risk\n\n\n\n\n\n\n\n\nFri, Sep 15\nProbability and Monte Carlo Simulation\n\n\n\n\n\n\n\n5\nMon, Sep 18\nLab: Monte Carlo\n\n\n\n\n\n\n\n\nWed, Sep 20\nMonte Carlo, Formally\n\n\n\n\n\n\n\n\nFri, Sep 22\nSimple Climate Models and Uncertainty Propagation\n\n\n\n\n\n\n\n6\nMon, Sep 25\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nWed, Sep 27\nIntroduction to Optimization\n\n\n\n\n\n\n\n\nFri, Sep 29\nLinear Programming\n\n\n\n\n\n\n\n7\nMon, Oct 02\nLP Example: Resource Allocation\n\n\n\n\n\n\n\n\nWed, Oct 04\nGuest Lecture: Diana Hackett\n\n\n\n\n\n\n\n\nFri, Oct 06\nLab: Optimization with JuMP.jl\n\n\n\n\n\n\n\n8\nMon, Oct 09\nNo Class: Indigeneous People’s Day\n\n\n\n\n\n\n\n\nWed, Oct 11\nPower Systems, Generating Capacity Expansion\n\n\n\n\n\n\n\n\nFri, Oct 13\nEconomic Dispatch\n\n\n\n\n\n\n\n9\nMon, Oct 16\nManaging Multiple Air Pollutant Sources\n\n\n\n\n\n\n\n\nWed, Oct 18\nLake Eutrophication\n\n\n\n\n\n\n\n\nFri, Oct 20\nLake Eutrophication II\n\n\n\n\n\n\n\n10\nMon, Oct 23\nMixed Integer Programming\n\n\n\n\n\n\n\n\nWed, Oct 25\nSolid Waste Management\n\n\n\n\n\n\n\n\nFri, Oct 27\nUnit Commitment"
   }
 ]

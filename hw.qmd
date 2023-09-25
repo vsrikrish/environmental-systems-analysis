@@ -18,7 +18,7 @@ This page contains information about and a schedule of the homework assignments 
 
 | Assignment | Instructions | Rubric | Solutions | Due Date |
 |:----------:|:------------:|:------:|:---------:|:--------:|
-| HW1 | [{{< fa sharp pen-field >}}](hw/hw01/hw01.html) | [{{< fa sharp list-check >}}](rubrics/hw01.qmd) | [{{< fa sharp key-skeleton >}}]{solutions/hw01/hw01-solution.html} | Sep 08, 2023 |
+| HW1 | [{{< fa sharp pen-field >}}](hw/hw01/hw01.html) | [{{< fa sharp list-check >}}](rubrics/hw01.qmd) | [{{< fa sharp key-skeleton >}}](solutions/hw01/hw01-solution.html) | Sep 08, 2023 |
 | HW2 | [{{< fa sharp pen-field >}}](hw/hw02/hw02.html) | [{{< fa sharp list-check >}}](rubrics/hw02.qmd) | [{{< fa sharp key-skeleton >}}]{style="color:grey"} | Sep 22, 2023 |
 | HW3 | [{{< fa sharp pen-field >}}](hw/hw03/hw03.html) | [{{< fa sharp list-check >}}](rubrics/hw03.qmd) | [{{< fa sharp key-skeleton >}}]{style="color:grey"} | Oct 06, 2023 |
 | HW4 | [{{< fa sharp pen-field >}}](hw/hw04/hw04.html) | [{{< fa sharp list-check >}}](rubrics/hw04.qmd){style="color:grey"} | [{{< fa sharp key-skeleton >}}]{style="color:grey"} | Oct 27, 2023 |

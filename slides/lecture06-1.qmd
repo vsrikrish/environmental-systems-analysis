@@ -261,7 +261,7 @@ f(a, b) = 5000 * a.^2 + 3000 * b.^2
 plt = contour(a,b,(a,b)->f(a,b), nlevels=15, 
   c=:heat, linewidth=5, colorbar = false, 
   contour_labels = true, grid = false, 
-  right_margin=8mm) 
+  right_margin=8mm, bottom_margin=5mm, left_margin=5mm, tickfontsize=14, guidefontsize=16) 
 xaxis!(L"E_1", ticks=0:0.1:1, 
   limits=(0, 1))
 yaxis!(L"E_2", ticks=0:0.1:1, 
@@ -282,7 +282,7 @@ fa = a[a .>= 0.5]
 fb = (1459 .- 835 .* a[a .>= 0.5])./1200
 plot!(fa, fb, fillrange=1, 
   label="Feasible Region", opacity=0.4, 
-  color=:green, legend=:bottomleft)
+  color=:green, legend=:bottomleft, legendfontsize=16)
 scatter!([0.5], [(1459 - 835 * 0.5) / 1200],
   markershape=:star, color=:yellow, 
   markersize=20, label="Optimum")
@@ -309,7 +309,6 @@ Each source is allocated a "load" they can discharge based on waste fate and tra
 
 
 ## Waste Load Allocation Problem
-<hr>
 
 Waste loads affect quality $Q$ based on F&T model: 
 
@@ -322,8 +321,6 @@ $$\begin{aligned}
 \text{determine} & \quad  W_1, W_2, \ldots, W_n \notag \\\\
 \text{subject to:} & \quad f(W_1, W_2, \ldots, W_n) \geq Q^* \notag
 \end{aligned}$$
-
-How do we choose certain variables to **optimize** a target outcome, possibly subject to some constraints.
 
 
 # Key Takeaways

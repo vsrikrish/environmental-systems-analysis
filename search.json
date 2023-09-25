@@ -3560,7 +3560,49 @@
     "href": "slides/lecture06-1.html#model-formulation-1",
     "title": "Prescriptive Modeling",
     "section": "Model Formulation",
-    "text": "Model Formulation\n\\[\\begin{alignat}{3}\n& \\min_{E_1, E_2} &\\quad  5000E_1^2 + 3000E_2^2 &  \\\\\\\\\n& \\text{subject to:} & 1000 E_1 &\\geq 500 \\\\\n& & 835E_1 + 1200E_2 &\\geq 1459 \\\\\n& & \\color{purple}E_1, E_2 &\\;\\color{purple}\\geq 0 \\\\\n& & \\color{purple}E_1, E_2 &\\;\\color{purple}\\leq 1\n\\end{alignat}\\]\nThe"
+    "text": "Model Formulation\n\\[\\begin{alignat}{3}\n& \\min_{E_1, E_2} &\\quad  5000E_1^2 + 3000E_2^2 &  \\\\\\\\\n& \\text{subject to:} & 1000 E_1 &\\geq 500 \\\\\n& & 835E_1 + 1200E_2 &\\geq 1459 \\\\\n& & \\color{purple}E_1, E_2 &\\;\\color{purple}\\geq 0 \\\\\n& & \\color{purple}E_1, E_2 &\\;\\color{purple}\\leq 1\n\\end{alignat}\\]"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#oknow-what",
+    "href": "slides/lecture06-1.html#oknow-what",
+    "title": "Prescriptive Modeling",
+    "section": "OK…now what?",
+    "text": "OK…now what?\nWe’ve formulated our model, but now we need to solve it to find \\(E_1\\) and \\(E_2\\). This is the realm of optimization.\nIn this case, the problem is straightforward as it is so low-dimensional."
+  },
+  {
+    "objectID": "slides/lecture06-1.html#plotting-the-decision-space",
+    "href": "slides/lecture06-1.html#plotting-the-decision-space",
+    "title": "Prescriptive Modeling",
+    "section": "Plotting the Decision Space",
+    "text": "Plotting the Decision Space"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#plotting-the-feasible-region",
+    "href": "slides/lecture06-1.html#plotting-the-feasible-region",
+    "title": "Prescriptive Modeling",
+    "section": "Plotting the Feasible Region",
+    "text": "Plotting the Feasible Region"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#the-solution",
+    "href": "slides/lecture06-1.html#the-solution",
+    "title": "Prescriptive Modeling",
+    "section": "The Solution!",
+    "text": "The Solution!\nSo the solution occurs at the intersection of the two constraints, where:\n\\[E_1 = 0.5, E_2 = 0.85\\]\nand the cost of this treatment plan is\n\\[C(0.5, 0.85) = \\$ 3417.\\]\nDoes this solution make sense?"
+  },
+  {
+    "objectID": "slides/lecture06-1.html#waste-load-allocation-problem",
+    "href": "slides/lecture06-1.html#waste-load-allocation-problem",
+    "title": "Prescriptive Modeling",
+    "section": "Waste Load Allocation Problem",
+    "text": "Waste Load Allocation Problem\nThis is an example of a waste load allocation problem.\nEach source is allocated a “load” they can discharge based on waste fate and transport."
+  },
+  {
+    "objectID": "slides/lecture06-1.html#waste-load-allocation-problem-1",
+    "href": "slides/lecture06-1.html#waste-load-allocation-problem-1",
+    "title": "Prescriptive Modeling",
+    "section": "Waste Load Allocation Problem",
+    "text": "Waste Load Allocation Problem\nWaste loads affect quality \\(Q\\) based on F&T model:\n\\[Q=f(W_1, W_2, \\ldots, W_n)\\]\nSo the general form for a prescriptive waste load allocation model:\n\\[\\begin{aligned}\n\\text{determine} & \\quad  W_1, W_2, \\ldots, W_n \\notag \\\\\\\\\n\\text{subject to:} & \\quad f(W_1, W_2, \\ldots, W_n) \\geq Q^* \\notag\n\\end{aligned}\\]"
   },
   {
     "objectID": "slides/lecture06-1.html#key-takeaways-1",

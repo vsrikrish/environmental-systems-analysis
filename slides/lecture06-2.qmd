@@ -205,7 +205,7 @@ Two common approaches:
 
 ::::
 
-## Solution Approach 2: Generalized Search Algorithms
+## Generalized Search Algorithms
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -221,7 +221,7 @@ These methods work pretty well, but can:
 :::
 ::::
 
-## Solution Approach 2: Generalized Search Algorithms
+## Generalized Search Algorithms
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -237,7 +237,7 @@ These methods work pretty well, but can:
 :::
 ::::
 
-## Solution Approach 2: Generalized Search Algorithms
+## Generalized Search Algorithms
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -249,7 +249,7 @@ These methods work pretty well, but can:
 :::
 
 ::: {.column width=50%}
-![waiting model evaluation meme](figures/stochastic-gradient-descent-meme.png)
+![waiting model evaluation meme](figures/stochastic-gradient-descent-meme.png){width=65%}
 :::
 ::::
 

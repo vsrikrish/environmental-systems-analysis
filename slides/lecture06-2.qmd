@@ -209,14 +209,48 @@ Two common approaches:
 
 :::: {.columns}
 ::: {.column width=50%}
+These methods work pretty well, but can:
 
-![Function with Multiple Minima](images/multiple-optima.svg)
+- **require a lot of evaluations**;
+- may get stuck at local optima;
+- may not converge if step sizes aren't set correctly
 :::
 
 ::: {.column width=50%}
-These methods work pretty well, but can require a lot of evaluations and/or may get stuck at local optima.
+![waiting model evaluation meme](figures/expensive-model-optimization.jpeg)
+:::
+::::
+
+## Solution Approach 2: Generalized Search Algorithms
+
+:::: {.columns}
+::: {.column width=50%}
+These methods work pretty well, but can:
+
+- require a lot of evaluations;
+- **may get stuck at local optima**;
+- may not converge if step sizes aren't set correctly
 :::
 
+::: {.column width=50%}
+![waiting model evaluation meme](figures/gradient-descent-meme.jpeg)
+:::
+::::
+
+## Solution Approach 2: Generalized Search Algorithms
+
+:::: {.columns}
+::: {.column width=50%}
+These methods work pretty well, but can:
+
+- require a lot of evaluations;
+- may get stuck at local optima;
+- **may not converge if not tuned well**.
+:::
+
+::: {.column width=50%}
+![waiting model evaluation meme](figures/stochastic-gradient-descent-meme.png)
+:::
 ::::
 
 # Constrained Optimization

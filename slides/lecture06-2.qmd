@@ -69,15 +69,10 @@ Random.seed!(1)
   - What are eligible decisions?
   - Engineering restrictions, performance or regulatory standards, etc.
 
-## Questions?
-
-{{< include _poll-prompt.qmd >}}
-
-# Solving Our Wastewater Model
 
 ## Wastewater Treatment Model
 
-Last class, we derived the following model for the treatment of wastewater from two point releases:
+Last class, we looked at the following model for the treatment of wastewater from two point releases:
 
 $$\begin{alignat}{3}
 & \min_{E_1, E_2} &\quad  5000E_1^2 + 3000E_2^2 &  \\\\
@@ -146,38 +141,11 @@ and the cost of this treatment plan is
 
 $$C(0.5, 0.85) = \$ 3417.$$
 
-::: {.fragment .fade-in}
-**Does this solution make sense**?
-:::
 
-# Waste Load Allocation Problems
+## Questions?
 
-## Waste Load Allocation
+{{< include _poll-prompt.qmd >}}
 
-This is an example of a *waste load allocation* problem.
-
-**Key question**: How do we restrict waste discharges to control or limit environmental impact?
-
-## Waste Load Allocation Schematic
-
-![Environmental Systems Model Schematic](images/system-environmental.svg)
-
-Each source is allocated a "load" they can discharge based on waste fate and transport.
-
-## Waste Load Allocation Model
-
-Waste loads affect quality $Q$ based on fate & transport model: 
-
-$$Q=f(W_1, W_2, \ldots, W_n)$$
-
-::: {.fragment .fade-in}
-So the general form for a prescriptive waste load allocation model:
-
-$$\begin{aligned}
-\text{determine} & \quad  W_1, W_2, \ldots, W_n \notag \\\\
-\text{subject to:} & \quad f(W_1, W_2, \ldots, W_n) \geq Q^* \notag
-\end{aligned}$$
-:::
 
 # Optimization Models
 
@@ -251,6 +219,109 @@ These methods work pretty well, but can require a lot of evaluations and/or may 
 
 ::::
 
+# Constrained Optimization
+
+## Unconstrained Optimization
+
+:::: {.columns}
+::: {.column width=50%}
+
+![Function with Multiple Minima](images/multiple-optima.svg)
+:::
+
+::: {.column width=50%}
+
+Without constraints, our goal is to find extrema of the function.
+
+Can do this using the structure of the objective (gradient) or through stochastic search (Monte Carlo).
+:::
+::::
+
+## Constrained Optimization
+
+:::: {.columns}
+::: {.column width=50%}
+
+![Function with Multiple Minima and a Constraint](images/multiple-optima-constrained.svg)
+:::
+
+::: {.column width=50%}
+Now, notice the effect of a constraint!
+
+
+For a constrained problem, we also have to look along the constraint to see if that creates a solution.
+:::
+
+::::
+
+## Lagrange Multipliers
+
+We can solve some constrained problems using Lagrange Multipliers!
+
+
+Recall (maybe) that the Lagrange Multipliers method requires *equality* constraints. But we can easily create those with "dummy" variables.
+
+## Using Equality Constraints
+
+:::: {.columns}
+::: {.column width=50%}
+
+**Original Problem**
+
+
+$$
+\begin{aligned}
+& \min &&f(x_1, x_2) \notag \\\\
+& \text{subject to:} && x_1 \geq A \notag \\
+& && x_2 \leq B \notag
+\end{aligned}
+$$
+:::
+
+::: {.column width=50%}
+
+**With Dummy Variables**
+
+
+$$
+\begin{aligned}
+& \min &&f(x_1, x_2) \notag \\\\
+& \text{subject to:} && x_1 - S_1^2 = A \notag \\
+& && x_2 + S_2^2 = B \notag
+\end{aligned}
+$$
+:::
+::::
+
+## Using Lagrange Multipliers
+
+Then the Lagrangian function becomes:
+
+
+$$
+H(\mathbf{x}, S_1, S_2, \lambda_1, \lambda_2) = f(\mathbf{x}) - \lambda_1(x_1 - S_1^2 - A) - \lambda_2(x_2 + S_2^2 - B)
+$$
+
+
+where $\lambda_1$, $\lambda_2$ are penalties for violating the constraints.
+
+
+The $\lambda_i$ are the eponymous *Lagrange multipliers*.
+
+## Using Lagrange Multipliers
+
+
+Next step: locate possible optima where the partial derivatives of the Lagrangian are zero.
+
+$$\frac{\partial H(\cdot)}{\partial \cdot} = 0$$
+
+This is actually many equations, even though our original problem was low-dimensional, and can be slow to solve.
+
+## Using Lagrange Multiplers
+
+Despite these challenges, Lagrange Multiplers are at the core of many advanced search algorithms.
+
+
 
 # Key Takeaways
 
@@ -267,9 +338,9 @@ These methods work pretty well, but can require a lot of evaluations and/or may 
 
 ## Next Classes
 
-**Friday**: Constrained optimization and solving linear models (linear programming)
+**Friday**: Solving linear optimization models (linear programming)
 
-**Monday**: Example of formulating and solving a linear program.
+**Monday**: Project proposal peer review.
 
 **Wednesday**: Guest lecture by Diana Hackett (Mann librarian) on regulations research.
 

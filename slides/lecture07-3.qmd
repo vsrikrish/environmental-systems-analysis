@@ -1,0 +1,61 @@
+---
+title: "Linear Programming and JuMP"
+subtitle: "Lab 03"
+author: "Vivek Srikrishnan"
+course: "BEE 4750"
+institution: "Cornell University"
+date: "October 6, 2023"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        footer: "[BEE 4750, Environmental Systems Analysis](https://viveks.me/environmental-systems-analysis)"
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: mathjax      
+        include-in-header: mathjax-config.html
+        date-format: long
+execute:
+    freeze: auto
+---
+
+
+# Lab 3 Instructions
+
+## Forest Management Optimization
+
+Your task in the lab: Formulate and solve a simple **resource allocation problem** (more on this next week).
+
+Lab is due on 10/13 by 9pm.
+
+## Reminder About The Rubric
+
+For full points, make sure to check rubric (available on the Labs page of the website; Homework is similar) before finalizing submission. If unsure if something might be penalized, please ask on Ed or in class. In general, points will be taken off for:
+
+* Missing units;
+* Plots: Unlabeled axes/missing legends if needed;
+* Lack of proper precision when reporting values.
+
+# Upcoming Schedule
+
+## Next Classes
+
+**Monday**: No class (Indigeneous People's Day)
+
+**Wednesday/Friday**: Linear Programming Examples (land allocation, power systems)
+
+## Assessments
+
+**Today**: Homework 3 due by 9:00pm.

@@ -1,6 +1,6 @@
 ---
-title: "Power Systems: Generating Capacity Expansion"
-subtitle: "Lecture 17"
+title: "LP Example: Optimizing Resource Allocation"
+subtitle: "Lecture 16"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"
@@ -50,279 +50,289 @@ Pkg.instantiate()
 using JuMP
 using HiGHS
 using Plots
-using StatsPlots
 using Measures
 using LaTeXStrings
-using DataFrames
-using CSV
-using MarkdownTables
 ```
 
 # Review and Questions
 
-## Last Week
+## A While Ago...
 
-- Resource allocation problem as a linear program
-- Guest lecture on regulation research
-- Lab on using `JuMP.jl` for solving LPs
+A **linear program** (**LP**), has the following characteristics:
+
+- **Linearity**: The objective function and constraints are all linear;
+- **Divisibility**: The decision variables are continuous (they can be fractional levels);
+- **Certainty**: The problem is deterministic.
+
+## Simplex Method
+
+:::: {.columns}
+::: {.column width=40%}
+Solutions to LPs must occur at intersections of constraints, which is the key insight for the *simplex method*.
+:::
+
+::: {.column width=60%}
+```{julia}
+x1 = 0:1200
+x2 = 0:1400
+f1(x) = (600 .- 0.9 .* x) ./ 0.5
+f2(x) = 1000 .- x
+
+p = plot(0:667, min.(f1(0:667), f2(0:667)), fillrange=0, color=:lightblue, grid=true, label="Feasible Region", xlabel=L"x_1", ylabel=L"x_2", xlims=(-50, 1200), ylims=(-50, 1400), framestyle=:origin, minorticks=4, right_margin=4mm, left_margin=4mm, legendfontsize=14, tickfontsize=16, guidefontsize=16)
+plot!(0:667, f1.(0:667), color=:brown, linewidth=3, label=false)
+plot!(0:1000, f2.(0:1000), color=:red, linewidth=3, label=false)
+annotate!(400, 1100, text(L"0.9x_1 + 0.5x_2 = 600", color=:purple, pointsize=18))
+annotate!(1000, 300, text(L"x_1 + x_2 = 1000", color=:red, pointsize=18))
+plot!(size=(600, 600))
+
+Z(x1,x2) = 230 * x1 + 120 * x2
+contour!(0:660,0:1000,(x1,x2)->Z(x1,x2), levels=5, c=:devon, linewidth=2, colorbar = false, clabels = true) 
+
+scatter!(p, [0, 0, 667, 250], [0, 1000, 0, 750], markersize=10, z=2, label="Corner Point", markercolor=:orange)
+```
+:::
+::::
 
 ## Questions?
 
 {{< include _poll-prompt.qmd >}}
 
-# Electric Power System Decision Problems
+# Resource Allocation Example
 
-## Overview of Electric Power Systems
+## Resource Allocation Problems
 
-![Power Systems Schematic](https://upload.wikimedia.org/wikipedia/commons/4/41/Electricity_grid_simple-_North_America.svg)
+**Resource Allocation Problems** are a broad category of prescriptive environmental modeling.
 
-::: {.caption}
-Source: [Wikipedia](https://en.wikipedia.org/wiki/Electric_power_transmission)
-:::
+![Resource Allocation Schematic](figures/resource-allocation-schematic.svg)
 
-## Decisions Problems for Power Systems
+## Example: Pesticide Application
 
-![Decision Problems for Power Systems by Time Scale](figures/elec-decision-problems.svg)
+A farmer has access to a pesticide which can be used on corn, soybeans, and wheat fields, and costs $70/ha-yr to apply.
 
-::: {.caption}
-Adapted from Perez-Arriaga, Ignacio J., Hugh Rudnick, and Michel Rivier (2009)
-:::
+## Example: Pesticide Application
 
-## Electricity Generation by Source
+The following crop yields can be obtained:
 
-![Electricity Generation in 2022 by Source](https://www.eia.gov/energyexplained/electricity/images/outlet-graph-large.jpg)
+| Application Rate (kg/ha) | Soybean (kg/ha) | Wheat (kg/ha) | Corn (kg/ha) |
+|:----------------------------------:|:---------------:|:-------------:|:------------:|
+| 0 | 2900 | 3500 | 5900 |
+| 1 | 3800 | 4100 | 6700 |
+| 2 | 4400 | 4200 | 7900 |
 
-::: {.caption}
-Source: U.S. Energy Information Administration
-:::
+## Example: Pesticide Application
 
-# Generating Capacity Expansion
+Production costs, *excluding pesticide*, and selling prices:
 
-## Capacity Expansion
+| Crop | Production Cost (\$/ha-yr) | Selling Price (\$/kg) |
+|:----:|:--------------------------------:|:--------------------:|
+| Soybeans | 350 |  0.36 |
+| Wheat | 280 | 0.27 |
+| Corn | 390 | 0.22 |
 
-**Capacity expansion** involves adding resources to generate or transmit electricity to meet anticipated demand (*load*) in the future.
+## Example: Pesticide Application
 
-Typical objective: Minimize cost
+Recently, environmental authorities have declared that farms cannot have an *average* application rate on soybeans, wheat, and corn which exceeds 0.8, 0.7, and 0.6 kg/ha, respectively.
 
-But other constraints may apply, *e.g.* reducing CO~2~ emissions or increasing fuel diversity.
+**Question**: How should the farmer plant crops and apply pesticides to maximize profits over 130 total ha while remaining in regulatory compliance if demand for each crop this year is 250,000 kg?
 
+# Problem Formulation
 
-# Simple Capacity Expansion Example
+## Decision Variables
 
-## Plant Types
+The first step is to establish notation for our decision variables.
 
-In general, we have many fuel options:
+## What Are Our Decision Variables?
 
-- Gas (combined cycle or simple cycle);
-- Coal;
-- Nuclear;
-- Renewables (wind, solar, hydro, geothermal)
+{{< include _poll-prompt.qmd >}}
 
-## Simplified Example: Generators 
+## Decision Variables
 
-```{julia}
-
-gens = DataFrame(CSV.File("data/capacity_expansion/generators.csv"))
-gens_display = rename(gens, Symbol.([:Generator, :"Fixed Cost (\\\$)", :"Variable Cost (\\\$/MW)"]))
-markdown_table(gens_display[1:end-2, :])
-```
-
-## Simplified Example: Demand
-
-```{julia}
-#| label: fig-demand
-#| fig-cap: Demand for 2020 in NYISO Zone C
-#| fig-align: center
-
-NY_demand = DataFrame(CSV.File("data/capacity_expansion/2020_hourly_load_NY.csv"))
-rename!(NY_demand, :"Time Stamp" => :Date)
-demand = NY_demand[:, [:Date, :C]]
-rename!(demand, :C => :Demand)
-@df demand plot(:Date, :Demand, xlabel="Date", ylabel="Demand (MWh)", label=:false, tickfontsize=14, guidefontsize=14, xrot=45, bottommargin=20mm, leftmargin=7mm)
-plot!(size=(1200, 550))
-```
-
-## Simplified Example: Load Duration Curve
-
-```{julia}
-#| label: fig-ldc
-#| fig-cap: Load Duration Curve for 2020 in NYISO Zone C
-#| fig-align: center
-
-plot(sort(demand.Demand, rev=true), linewidth=3, label=:false, leftmargin=8mm, bottommargin=20mm, tickfontsize=14, guidefontsize=14)
-xaxis!("Hours")
-yaxis!("Demand (MWh)")
-plot!(size=(1200, 550))
-```
-
-## Capacity Expansion: Goal
-
-We want to find the installed capacity of each technology that meets demand at all hours at minimal *total cost*.
-
-::: {.fragment .fade-in}
-*Although...*
-
-::: {.incremental}
-- For some hours with extreme load, is it necessarily worth it to build new generation to meet those peaks?
-- Instead, assign a *high* cost $NSECost$ to **non-served energy** (NSE). In this case, let's set $NSECost = \$9000$/MWh
-:::
-:::
-
-## Decision Variables 
-
-What are our variables?
-
-::: {.fragment .fade-in}
 | Variable | Meaning |
-|:--:|:-------------------:|
-| $x_g$ | installed capacity (MW) from each generator type $g \in \mathcal{G}$ |
-| $y_{g,t}$ | production (MW) from each generator type $g$ in hour $t \in \mathcal{T}$ |
-| $NSE_t$ | non-served energy (MWh) in hour $t \in \mathcal{T}$ |
+|:---:|:------------------|
+| $S_j$ | ha planted with soybeans and treated with pesticide rate $j=0,1,2$ kg |
+| $W_j$ | ha planted with wheat and treated with pesticide rate $j=0,1,2$ kg |
+| $C_j$ | ha planted with corn and treated with pesticide rate $j=0,1,2$ kg |
+
+## Objective Function
+
+Next, let's formulate the objective function.
+
+The farmer's goal is to maximize profits.
+
+**Take some time to work on this.**
+
+## Objective Function
+
+**Key**: Compute profit for each ha by crop and pesticide rate.
+
+$$Z = \sum_{\text{crop}, i} \left[ (\text{yield} \times \text{selling price}) - \text{total cost} \right]$$
+
+::: {.fragment .fade-in}
+After some algebra:
+
+\begin{align*}
+Z &= 694 S_0 + 948 S_1 + 1164 S_2 \\[0.25em]
+& \qquad + 665 W_0 + 757 W_1 + 784 W_2 \\[0.25em]
+& \qquad + 908 C_0 + 1014 C_1 + 1278 C_2
+\end{align*}
 :::
 
-## Capacity Expansion Objective
+## Objective Function (Vector Notation)
 
-$$
-\begin{align}
-\min_{x, y, NSE} Z &= {\color{red}\text{investment cost} } + {\color{blue}\text{operating cost} } \\
-&= {\color{red} \sum_{g \in \mathcal{G}} \text{FixedCost}_g x_g} + {\color{blue} \sum_{t \in \mathcal{T}} \sum_{g \in \mathcal{G}}  \text{VarCost}_g y_{g,t} + \sum_{t \in \mathcal{T}} \text{NSECost} NSE_t}
-\end{align}
-$$
+:::: {.columns}
+::: {.column width=50%}
+**Original**: 
+\begin{align*}
+Z &= 694 S_0 + 948 S_1 + 1164 S_2 \\[0.25em]
+& + 665 W_0 + 757 W_1 + 784 W_2 \\[0.25em]
+& + 908 C_0 + 1014 C_1 + 1278 C_2
+\end{align*}
+:::
+
+::: {.column width=50%}
+**Vectorized**:
+\begin{align*}
+Z &= \mathbf{S} \begin{pmatrix}694 \\ 948 \\ 1164 \end{pmatrix} + \mathbf{W} \begin{pmatrix}665 \\ 757 \\ 784 \end{pmatrix} \\[0.25em]
+& + \mathbf{C} \begin{pmatrix}908 \\ 1014 \\ 1278 \end{pmatrix}
+\end{align*}
+:::
+::::
+
+## Constraints
+
+Finally, we need to establish our constraints.
 
 ## What Are Our Constraints?
 
 {{< include _poll-prompt.qmd >}}
 
-## Capacity Expansion Constraints
+## What Are Our Constraints?
 
-- **Demand**: Sum of generated energy and non-served energy must equal demand $d_t$.
-- **Capacity**: Generator types cannot produce more electricity than their installed capacity.
-- **Non-negativity**: All decision variables must be non-negative.
+- **Land Area**: total farmland cannot exceed 130 ha
+- **Demand**: No reason to grow more than 250,000 kg of any crop.
+- **Regulation**: Limits on average pesticide application for each crop.
+- **Non-negativity**: No land allocation can be less than 0.
 
-## Problem Formulation
+## Land Area Constraint
 
-$$
+$$\sum_j S_j + C_j + W_j \leq 130$$
+
+Can write this out more fully, but as you will see, `JuMP.jl` can handle these compact formulations (which makes debugging easier).
+
+## Demand Constraints
+
+\begin{alignat*}{3}
+\text{Soybeans}:& \qquad &\mathbf{S} \begin{pmatrix}2900 \\ 3800 \\ 4400 \end{pmatrix} \leq 250000 \\ \text{Wheat}:& \qquad &\mathbf{W} \begin{pmatrix}3500 \\ 4100 \\ 4200 \end{pmatrix} \leq 250000 \\
+\text{Corn}:& \qquad &\mathbf{C} \begin{pmatrix}5900 \\ 6700 \\ 7200 \end{pmatrix} \leq 250000 
+\end{alignat*}
+
+## Regulatory Constraints
+
+For soybeans:
+
+$$\frac{S_1 + 2 S_2}{S_0 + S_1 + S_2} \leq 0.8$$
+
+::: {.fragment .fade-in}
+Is this an acceptable constraint?
+:::
+
+## Regulatory Constraints
+
+These need to be linear for a linear program. 
+
+::: {.fragment .fade-in}
+
+\begin{align*}
+& \frac{S_1 + 2 S_2}{S_0 + S_1 + S_2} \leq 0.8 \\\\
+& \quad \Rightarrow S_1 + 2S_2 \leq 0.8 (S_0 + S_1 + S_2) \\\\
+& \quad \Rightarrow -0.8 S_0 + 0.2 S_1 + 1.2 S_2 \leq 0
+\end{align*}
+:::
+
+## Regulatory Constraints
+
+Similarly for wheat and corn:
+
+\begin{align*}
+-0.7 W_0 + 0.3 W_1 + 1.3 W_2 & \leq 0 \\\\
+-0.6 C_0 + 0.4 C_1 + 1.4 C_2 & \leq 0
+\end{align*}
+
+## Non-Negativity Constraints
+
+These are straightforward, but neglecting them can lead to numerical issues:
+
+$$S_j, W_j, C_j \geq 0.$$
+
+## Final Model (Standard Form)
+
+::: {.small-math}
 \begin{align}
-\min_{x, y, NSE} \quad & \sum_{g \in \mathcal{G}} \text{FixedCost}_g x_g + \sum_{t \in \mathcal{T}} \sum_{g \in \mathcal{G}} \text{VarCost}_gy_{g,t} & \\
-& \quad + \sum_{t \in \mathcal{T}} \text{NSECost} NSE_t & \\[0.5em]
-\text {subject to:} \quad & \sum_{g \in \mathcal{G}} y_{g,t} + NSE_t = d_t & \forall t \in \mathcal{T} \\[0.5em]
-& y_{g,t} \leq x_g & \forall g \in {G},  \forall t \in \mathcal{T} \\[0.5em]
-& x_g, y_{g,t}, NSE_t \geq 0 & \forall g \in {G},  \forall t \in \mathcal{T}
+\max_{S_j, W_j, C_j} \quad & 694 S_0 + 948 S_1 + 1164 S_2  + 665 W_0 + 757 W_1 + 784 W_2  \tag{1} \\[-1em] & \qquad + 908 C_0 + 1014 C_1 + 1278 C_2 \\[0.5em]
+\text{subject to:} \quad & S_0 + S_1 + S_2 + W_0 + W_1 + W_2 + C_0 + C_1 + C_2 \leq 130 \tag{2} \\
+& 2900 S_0 + 3800 S_1 + 4400 S_2 \leq 250000 \tag{3a} \\
+& 3500 W_0 + 4100 W_1 + 4200 W_2 \leq 250000 \tag{3b}\\
+& 5900 C_0 + 6700 C_1 + 7200 C_2 \leq 250000 \tag{3c}\\
+& -0.8 S_0 + 0.2 S_1 + 1.2 S_2 \leq 0 \tag{4a}\\
+& -0.7 W_0 + 0.3 W_1 + 1.3 W_2  \leq 0 \tag{4b}\\
+& -0.6 C_0 + 0.4 C_1 + 1.4 C_2  \leq 0 \tag{4c}\\
+& S_j, W_j, C_j \geq 0 \tag{5}
 \end{align}
-$$
+:::
 
-## Capacity Expansion is an LP
+# Model Solution
 
-- **Linearity**: costs assumed to scale linearly;
-- **Divisible**: we model total installed capacity, not number of individual units
-- **Certainty**: no uncertainty about renewables.
-
-Real problems can get much more complex, particularly if we try to model making decisions under renewable or load uncertainty.
-
-## What Does This Problem Neglect?
-
-1. **Discrete decisions**: is a plant on or off (this is called *unit commitment*)?
-2. **Intertemporal constraints**: Power plants can't just "ramp" from producing low levels of power to high levels of power; there are real engineering limits.
-3. **Transmission**: We can generate all the power we want, but what if we can't get it to where the demand is?
-
-## Capacity Expansion Example Solution
+## Solution
 
 ```{julia}
+#| echo: false
 #| output: false
 
-# define sets
-G = 1:nrow(gens[1:end-2, :])
-T = 1:nrow(demand)
-NSECost = 9000
+farm_model = Model(HiGHS.Optimizer)
+@variable(farm_model, S[1:3] >= 0)
+@variable(farm_model, W[1:3] >= 0)
+@variable(farm_model, C[1:3] >= 0)
+@objective(farm_model, Max, [694; 948; 1164]' * S + [665; 757; 784]' * W + [908; 1014; 1278]' * C)
+@constraint(farm_model, area, sum(S) + sum(W) + sum(C) <= 130)
+@constraint(farm_model, soy_demand, [2900; 3800; 4400]' * S <= 250000)
+@constraint(farm_model, wheat_demand, [3500; 4100; 4200]' * W <= 250000)
+@constraint(farm_model, corn_demand, [5900; 6700; 7900]' * C <= 250000)
+@constraint(farm_model, soy_pesticide, [-0.8; 0.2; 1.2]' * S <= 0)
+@constraint(farm_model, wheat_pesticide, [-0.7; 0.3; 1.3]' * W <= 0)
+@constraint(farm_model, corn_pesticide, [-0.6; 0.4; 1.4]' * C <= 0)
 
-gencap = Model(HiGHS.Optimizer)
-# define variables
-@variables(gencap, begin
-    x[g in G] >= 0
-    y[g in G, t in T] >= 0
-    NSE[t in T] >= 0
-end)
-@objective(gencap, Min, 
-    sum(gens[G, :FixedCost] .* x) + sum(gens[G, :VarCost] .* sum(y[:, t] for t in T)) + NSECost * sum(NSE)
-)
-@constraint(gencap, load[t in T], sum(y[:, t]) + NSE[t] == demand.Demand[t])
-@constraint(gencap, availability[g in G, t in T], y[g, t] <= x[g])
-optimize!(gencap)
+optimize!(farm_model)
 ```
 
-```{julia}
-generation = zeros(size(G,1))
-for i in 1:size(G,1) 
-    generation[i] = sum(value.(y)[G[i],:].data) 
-end
-MWh_share = generation./sum(demand.Demand).*100
-cap_share = value.(x).data ./ maximum(demand.Demand) .* 100
-results = DataFrame(
-    Resource = gens.Plant[G], 
-    Capacity = value.(x).data,
-    Percent_Cap = cap_share,
-    Generated = generation/1000,
-    Percent_Gen = MWh_share
-)
-rename!(results, 
-    [:Capacity => :"Capacity (MW)", 
-    :Percent_Cap => :"Percent_Cap (%)", 
-    :Generated => "Generated (GWh)",
-    :Percent_Gen => "Percent_Gen (%)"])
-results[:, 2:end] = round.(results[:, 2:end], digits=1)
+| Pesticide Application (kg/ha-yr) | Soybeans (ha) | Wheat (ha) | Corn (ha) |
+|:-------:|------:|------:|------:|
+| 0 | 13.8 | 26.9 | 6.7 |
+| 1 | 55.2 | 0 | 15.7 |
+| 2 | 0 | 11.5 | 0 |
 
-NSE_MW = maximum(value.(NSE).data) 
-NSE_MWh = sum(value.(NSE).data)
-push!(results, ["NSE" NSE_MW NSE_MW/maximum(demand.Demand)*100 NSE_MWh/1000 NSE_MWh/sum(demand.Demand)*100])
+This solution has an objective value of \$117,549.
 
-results[:, 2:end] = round.(results[:, 2:end], digits=1)
-markdown_table(results)
-```
+## Shadow Prices
 
-## When Do Generators Operate?
+The following constraints have non-zero shadow prices:
 
-```{julia}
-#| label: fig-results
-#| fig-cap: Results of Generating Capacity Expansion Example
-#| 
-
-areaplot(value.(y).data', 
-    label=permutedims(gens.Plant), 
-    xlabel = "Hour", 
-    ylabel ="Generated Electricity (MWh)", 
-    color_palette=:seaborn_colorblind, 
-    size=(700, 700), 
-    left_margin=5mm, 
-    bottom_margin=5mm,
-    grid=:false,
-    legend = :topleft, ylim=(0, 3200),
-    legendfontsize=14, tickfontsize=14, 
-    guidefontsize=14)
-plot!(size=(1200, 550))
-```
-
-## What Else Could We Add?
-
-{{< include _poll-prompt.qmd >}}
+- Area ($729$)
+- Soy Demand ($4.6 \times 10^{-2}$)
+- Wheat Demand ($4.5 \times 10^{-2}$)
+- Soy Pesticide ($212$)
+- Wheat Pesticide ($92$)
+- Corn Pesticide ($140$)
 
 # Key Takeaways
 
 ## Key Takeaways
 
-- Capacity Expansion is a foundational power systems decision problem.
-- Is an LP with some basic assumptions.
-- We looked at a "greenfield" example: no existing plants.
-- Decision problem becomes more complex with renewables (HW4) or "brownfield" (expanding existing fleet).
+- Resource allocation problems can be formulated as mathematical programs (in this case, linear)
+- Saw example of formulating objective and constraints
+- Can learn about which constraints matter the most from shadow prices. 
 
 # Upcoming Schedule
 
 ## Next Classes
 
-**Friday**: Economic Dispatch
-
-**Next Week**: Mixed Integer Linear Programs and Applications
-
-## Assessments
-
-- Released HW4 early, due 10/22.
-- Lab3 due **Friday**.
+**Friday/Monday**: Electric power system decision problems (generating capacity expansion, unit commitment)

@@ -315,172 +315,368 @@
     "text": "Software Tools\n\nThis course will use the Julia programming language. Julia is a modern, free, open source language which is designed for scientific computing. No prior knowledge of Julia is required. My recommendation is to use Visual Studio Code with the official Julia extension for coding.\nAssignments will be distributed using GitHub Classroom. You should create a GitHub account, but we will walk through how to use it."
   },
   {
-    "objectID": "slides/lecture08-2.html#last-week",
-    "href": "slides/lecture08-2.html#last-week",
-    "title": "Power Systems: Generating Capacity Expansion",
-    "section": "Last Week",
-    "text": "Last Week\n\nResource allocation problem as a linear program\nGuest lecture on regulation research\nLab on using JuMP.jl for solving LPs"
+    "objectID": "slides/lecture08-2.html#a-while-ago",
+    "href": "slides/lecture08-2.html#a-while-ago",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "A While Ago…",
+    "text": "A While Ago…\nA linear program (LP), has the following characteristics:\n\nLinearity: The objective function and constraints are all linear;\nDivisibility: The decision variables are continuous (they can be fractional levels);\nCertainty: The problem is deterministic."
+  },
+  {
+    "objectID": "slides/lecture08-2.html#simplex-method",
+    "href": "slides/lecture08-2.html#simplex-method",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Simplex Method",
+    "text": "Simplex Method\n\n\nSolutions to LPs must occur at intersections of constraints, which is the key insight for the simplex method."
   },
   {
     "objectID": "slides/lecture08-2.html#questions",
     "href": "slides/lecture08-2.html#questions",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#resource-allocation-problems",
+    "href": "slides/lecture08-2.html#resource-allocation-problems",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Resource Allocation Problems",
+    "text": "Resource Allocation Problems\nResource Allocation Problems are a broad category of prescriptive environmental modeling.\n\nResource Allocation Schematic"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#example-pesticide-application",
+    "href": "slides/lecture08-2.html#example-pesticide-application",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Example: Pesticide Application",
+    "text": "Example: Pesticide Application\nA farmer has access to a pesticide which can be used on corn, soybeans, and wheat fields, and costs $70/ha-yr to apply."
+  },
+  {
+    "objectID": "slides/lecture08-2.html#example-pesticide-application-1",
+    "href": "slides/lecture08-2.html#example-pesticide-application-1",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Example: Pesticide Application",
+    "text": "Example: Pesticide Application\nThe following crop yields can be obtained:\n\n\n\n\n\n\n\n\n\nApplication Rate (kg/ha)\nSoybean (kg/ha)\nWheat (kg/ha)\nCorn (kg/ha)\n\n\n\n\n0\n2900\n3500\n5900\n\n\n1\n3800\n4100\n6700\n\n\n2\n4400\n4200\n7900"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#example-pesticide-application-2",
+    "href": "slides/lecture08-2.html#example-pesticide-application-2",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Example: Pesticide Application",
+    "text": "Example: Pesticide Application\nProduction costs, excluding pesticide, and selling prices:\n\n\n\nCrop\nProduction Cost ($/ha-yr)\nSelling Price ($/kg)\n\n\n\n\nSoybeans\n350\n0.36\n\n\nWheat\n280\n0.27\n\n\nCorn\n390\n0.22"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#example-pesticide-application-3",
+    "href": "slides/lecture08-2.html#example-pesticide-application-3",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Example: Pesticide Application",
+    "text": "Example: Pesticide Application\nRecently, environmental authorities have declared that farms cannot have an average application rate on soybeans, wheat, and corn which exceeds 0.8, 0.7, and 0.6 kg/ha, respectively.\nQuestion: How should the farmer plant crops and apply pesticides to maximize profits over 130 total ha while remaining in regulatory compliance if demand for each crop this year is 250,000 kg?"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#decision-variables",
+    "href": "slides/lecture08-2.html#decision-variables",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Decision Variables",
+    "text": "Decision Variables\nThe first step is to establish notation for our decision variables."
+  },
+  {
+    "objectID": "slides/lecture08-2.html#what-are-our-decision-variables",
+    "href": "slides/lecture08-2.html#what-are-our-decision-variables",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "What Are Our Decision Variables?",
+    "text": "What Are Our Decision Variables?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#decision-variables-1",
+    "href": "slides/lecture08-2.html#decision-variables-1",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Decision Variables",
+    "text": "Decision Variables\n\n\n\n\n\n\n\nVariable\nMeaning\n\n\n\n\n\\(S_j\\)\nha planted with soybeans and treated with pesticide rate \\(j=0,1,2\\) kg\n\n\n\\(W_j\\)\nha planted with wheat and treated with pesticide rate \\(j=0,1,2\\) kg\n\n\n\\(C_j\\)\nha planted with corn and treated with pesticide rate \\(j=0,1,2\\) kg"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#objective-function",
+    "href": "slides/lecture08-2.html#objective-function",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Objective Function",
+    "text": "Objective Function\nNext, let’s formulate the objective function.\nThe farmer’s goal is to maximize profits.\nTake some time to work on this."
+  },
+  {
+    "objectID": "slides/lecture08-2.html#objective-function-1",
+    "href": "slides/lecture08-2.html#objective-function-1",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Objective Function",
+    "text": "Objective Function\nKey: Compute profit for each ha by crop and pesticide rate.\n\\[Z = \\sum_{\\text{crop}, i} \\left[ (\\text{yield} \\times \\text{selling price}) - \\text{total cost} \\right]\\]\n\nAfter some algebra:\n\\[\\begin{align*}\nZ &= 694 S_0 + 948 S_1 + 1164 S_2 \\\\[0.25em]\n& \\qquad + 665 W_0 + 757 W_1 + 784 W_2 \\\\[0.25em]\n& \\qquad + 908 C_0 + 1014 C_1 + 1278 C_2\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#objective-function-vector-notation",
+    "href": "slides/lecture08-2.html#objective-function-vector-notation",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Objective Function (Vector Notation)",
+    "text": "Objective Function (Vector Notation)\n\n\nOriginal: \\[\\begin{align*}\nZ &= 694 S_0 + 948 S_1 + 1164 S_2 \\\\[0.25em]\n& + 665 W_0 + 757 W_1 + 784 W_2 \\\\[0.25em]\n& + 908 C_0 + 1014 C_1 + 1278 C_2\n\\end{align*}\\]\n\nVectorized: \\[\\begin{align*}\nZ &= \\mathbf{S} \\begin{pmatrix}694 \\\\ 948 \\\\ 1164 \\end{pmatrix} + \\mathbf{W} \\begin{pmatrix}665 \\\\ 757 \\\\ 784 \\end{pmatrix} \\\\[0.25em]\n& + \\mathbf{C} \\begin{pmatrix}908 \\\\ 1014 \\\\ 1278 \\end{pmatrix}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#constraints",
+    "href": "slides/lecture08-2.html#constraints",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Constraints",
+    "text": "Constraints\nFinally, we need to establish our constraints."
+  },
+  {
+    "objectID": "slides/lecture08-2.html#what-are-our-constraints",
+    "href": "slides/lecture08-2.html#what-are-our-constraints",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "What Are Our Constraints?",
+    "text": "What Are Our Constraints?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#what-are-our-constraints-1",
+    "href": "slides/lecture08-2.html#what-are-our-constraints-1",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "What Are Our Constraints?",
+    "text": "What Are Our Constraints?\n\nLand Area: total farmland cannot exceed 130 ha\nDemand: No reason to grow more than 250,000 kg of any crop.\nRegulation: Limits on average pesticide application for each crop.\nNon-negativity: No land allocation can be less than 0."
+  },
+  {
+    "objectID": "slides/lecture08-2.html#land-area-constraint",
+    "href": "slides/lecture08-2.html#land-area-constraint",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Land Area Constraint",
+    "text": "Land Area Constraint\n\\[\\sum_j S_j + C_j + W_j \\leq 130\\]\nCan write this out more fully, but as you will see, JuMP.jl can handle these compact formulations (which makes debugging easier)."
+  },
+  {
+    "objectID": "slides/lecture08-2.html#demand-constraints",
+    "href": "slides/lecture08-2.html#demand-constraints",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Demand Constraints",
+    "text": "Demand Constraints\n\\[\\begin{alignat*}{3}\n\\text{Soybeans}:& \\qquad &\\mathbf{S} \\begin{pmatrix}2900 \\\\ 3800 \\\\ 4400 \\end{pmatrix} \\leq 250000 \\\\ \\text{Wheat}:& \\qquad &\\mathbf{W} \\begin{pmatrix}3500 \\\\ 4100 \\\\ 4200 \\end{pmatrix} \\leq 250000 \\\\\n\\text{Corn}:& \\qquad &\\mathbf{C} \\begin{pmatrix}5900 \\\\ 6700 \\\\ 7200 \\end{pmatrix} \\leq 250000\n\\end{alignat*}\\]"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#regulatory-constraints",
+    "href": "slides/lecture08-2.html#regulatory-constraints",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Regulatory Constraints",
+    "text": "Regulatory Constraints\nFor soybeans:\n\\[\\frac{S_1 + 2 S_2}{S_0 + S_1 + S_2} \\leq 0.8\\]\n\nIs this an acceptable constraint?"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#regulatory-constraints-1",
+    "href": "slides/lecture08-2.html#regulatory-constraints-1",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Regulatory Constraints",
+    "text": "Regulatory Constraints\nThese need to be linear for a linear program.\n\n\\[\\begin{align*}\n& \\frac{S_1 + 2 S_2}{S_0 + S_1 + S_2} \\leq 0.8 \\\\\\\\\n& \\quad \\Rightarrow S_1 + 2S_2 \\leq 0.8 (S_0 + S_1 + S_2) \\\\\\\\\n& \\quad \\Rightarrow -0.8 S_0 + 0.2 S_1 + 1.2 S_2 \\leq 0\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#regulatory-constraints-2",
+    "href": "slides/lecture08-2.html#regulatory-constraints-2",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Regulatory Constraints",
+    "text": "Regulatory Constraints\nSimilarly for wheat and corn:\n\\[\\begin{align*}\n-0.7 W_0 + 0.3 W_1 + 1.3 W_2 & \\leq 0 \\\\\\\\\n-0.6 C_0 + 0.4 C_1 + 1.4 C_2 & \\leq 0\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#non-negativity-constraints",
+    "href": "slides/lecture08-2.html#non-negativity-constraints",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Non-Negativity Constraints",
+    "text": "Non-Negativity Constraints\nThese are straightforward, but neglecting them can lead to numerical issues:\n\\[S_j, W_j, C_j \\geq 0.\\]"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#final-model-standard-form",
+    "href": "slides/lecture08-2.html#final-model-standard-form",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Final Model (Standard Form)",
+    "text": "Final Model (Standard Form)\n\n\\[\\begin{align}\n\\max_{S_j, W_j, C_j} \\quad & 694 S_0 + 948 S_1 + 1164 S_2  + 665 W_0 + 757 W_1 + 784 W_2  \\tag{1} \\\\[-1em] & \\qquad + 908 C_0 + 1014 C_1 + 1278 C_2 \\\\[0.5em]\n\\text{subject to:} \\quad & S_0 + S_1 + S_2 + W_0 + W_1 + W_2 + C_0 + C_1 + C_2 \\leq 130 \\tag{2} \\\\\n& 2900 S_0 + 3800 S_1 + 4400 S_2 \\leq 250000 \\tag{3a} \\\\\n& 3500 W_0 + 4100 W_1 + 4200 W_2 \\leq 250000 \\tag{3b}\\\\\n& 5900 C_0 + 6700 C_1 + 7200 C_2 \\leq 250000 \\tag{3c}\\\\\n& -0.8 S_0 + 0.2 S_1 + 1.2 S_2 \\leq 0 \\tag{4a}\\\\\n& -0.7 W_0 + 0.3 W_1 + 1.3 W_2  \\leq 0 \\tag{4b}\\\\\n& -0.6 C_0 + 0.4 C_1 + 1.4 C_2  \\leq 0 \\tag{4c}\\\\\n& S_j, W_j, C_j \\geq 0 \\tag{5}\n\\end{align}\\]"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#solution",
+    "href": "slides/lecture08-2.html#solution",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Solution",
+    "text": "Solution\n\n\n\n\n\n\n\n\n\nPesticide Application (kg/ha-yr)\nSoybeans (ha)\nWheat (ha)\nCorn (ha)\n\n\n\n\n0\n13.8\n26.9\n6.7\n\n\n1\n55.2\n0\n15.7\n\n\n2\n0\n11.5\n0\n\n\n\nThis solution has an objective value of $117,549."
+  },
+  {
+    "objectID": "slides/lecture08-2.html#shadow-prices",
+    "href": "slides/lecture08-2.html#shadow-prices",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Shadow Prices",
+    "text": "Shadow Prices\nThe following constraints have non-zero shadow prices:\n\nArea (\\(729\\))\nSoy Demand (\\(4.6 \\times 10^{-2}\\))\nWheat Demand (\\(4.5 \\times 10^{-2}\\))\nSoy Pesticide (\\(212\\))\nWheat Pesticide (\\(92\\))\nCorn Pesticide (\\(140\\))"
+  },
+  {
+    "objectID": "slides/lecture08-2.html#key-takeaways-1",
+    "href": "slides/lecture08-2.html#key-takeaways-1",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nResource allocation problems can be formulated as mathematical programs (in this case, linear)\nSaw example of formulating objective and constraints\nCan learn about which constraints matter the most from shadow prices."
+  },
+  {
+    "objectID": "slides/lecture08-2.html#next-classes",
+    "href": "slides/lecture08-2.html#next-classes",
+    "title": "LP Example: Optimizing Resource Allocation",
+    "section": "Next Classes",
+    "text": "Next Classes\nFriday/Monday: Electric power system decision problems (generating capacity expansion, unit commitment)\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
+    "objectID": "slides/lecture08-3.html#last-class",
+    "href": "slides/lecture08-3.html#last-class",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Last Class",
+    "text": "Last Class\n\nResource allocation problem as a linear program\nWorked land allocation example"
+  },
+  {
+    "objectID": "slides/lecture08-3.html#questions",
+    "href": "slides/lecture08-3.html#questions",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Questions?",
     "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture08-2.html#overview-of-electric-power-systems",
-    "href": "slides/lecture08-2.html#overview-of-electric-power-systems",
+    "objectID": "slides/lecture08-3.html#overview-of-electric-power-systems",
+    "href": "slides/lecture08-3.html#overview-of-electric-power-systems",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Overview of Electric Power Systems",
     "text": "Overview of Electric Power Systems\n\nPower Systems Schematic\nSource: Wikipedia"
   },
   {
-    "objectID": "slides/lecture08-2.html#decisions-problems-for-power-systems",
-    "href": "slides/lecture08-2.html#decisions-problems-for-power-systems",
+    "objectID": "slides/lecture08-3.html#decisions-problems-for-power-systems",
+    "href": "slides/lecture08-3.html#decisions-problems-for-power-systems",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Decisions Problems for Power Systems",
     "text": "Decisions Problems for Power Systems\n\nDecision Problems for Power Systems by Time Scale\nAdapted from Perez-Arriaga, Ignacio J., Hugh Rudnick, and Michel Rivier (2009)"
   },
   {
-    "objectID": "slides/lecture08-2.html#electricity-generation-by-source",
-    "href": "slides/lecture08-2.html#electricity-generation-by-source",
+    "objectID": "slides/lecture08-3.html#electricity-generation-by-source",
+    "href": "slides/lecture08-3.html#electricity-generation-by-source",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Electricity Generation by Source",
     "text": "Electricity Generation by Source\n\nElectricity Generation in 2022 by Source\nSource: U.S. Energy Information Administration"
   },
   {
-    "objectID": "slides/lecture08-2.html#capacity-expansion",
-    "href": "slides/lecture08-2.html#capacity-expansion",
+    "objectID": "slides/lecture08-3.html#capacity-expansion",
+    "href": "slides/lecture08-3.html#capacity-expansion",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Capacity Expansion",
     "text": "Capacity Expansion\nCapacity expansion involves adding resources to generate or transmit electricity to meet anticipated demand (load) in the future.\nTypical objective: Minimize cost\nBut other constraints may apply, e.g. reducing CO2 emissions or increasing fuel diversity."
   },
   {
-    "objectID": "slides/lecture08-2.html#plant-types",
-    "href": "slides/lecture08-2.html#plant-types",
+    "objectID": "slides/lecture08-3.html#plant-types",
+    "href": "slides/lecture08-3.html#plant-types",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Plant Types",
     "text": "Plant Types\nIn general, we have many fuel options:\n\nGas (combined cycle or simple cycle);\nCoal;\nNuclear;\nRenewables (wind, solar, hydro, geothermal)"
   },
   {
-    "objectID": "slides/lecture08-2.html#simplified-example-generators",
-    "href": "slides/lecture08-2.html#simplified-example-generators",
+    "objectID": "slides/lecture08-3.html#simplified-example-generators",
+    "href": "slides/lecture08-3.html#simplified-example-generators",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Simplified Example: Generators",
     "text": "Simplified Example: Generators\n\n\n\n\n\nGenerator\nFixed Cost ($)\nVariable Cost ($/MW)\n\n\n\n\nGeothermal\n450000\n0\n\n\nCoal\n220000\n21\n\n\nNG CCGT\n82000\n25\n\n\nNG CT\n65000\n35"
   },
   {
-    "objectID": "slides/lecture08-2.html#simplified-example-demand",
-    "href": "slides/lecture08-2.html#simplified-example-demand",
+    "objectID": "slides/lecture08-3.html#simplified-example-demand",
+    "href": "slides/lecture08-3.html#simplified-example-demand",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Simplified Example: Demand",
     "text": "Simplified Example: Demand\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Demand for 2020 in NYISO Zone C"
   },
   {
-    "objectID": "slides/lecture08-2.html#simplified-example-load-duration-curve",
-    "href": "slides/lecture08-2.html#simplified-example-load-duration-curve",
+    "objectID": "slides/lecture08-3.html#simplified-example-load-duration-curve",
+    "href": "slides/lecture08-3.html#simplified-example-load-duration-curve",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Simplified Example: Load Duration Curve",
     "text": "Simplified Example: Load Duration Curve\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Load Duration Curve for 2020 in NYISO Zone C"
   },
   {
-    "objectID": "slides/lecture08-2.html#capacity-expansion-goal",
-    "href": "slides/lecture08-2.html#capacity-expansion-goal",
+    "objectID": "slides/lecture08-3.html#capacity-expansion-goal",
+    "href": "slides/lecture08-3.html#capacity-expansion-goal",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Capacity Expansion: Goal",
     "text": "Capacity Expansion: Goal\nWe want to find the installed capacity of each technology that meets demand at all hours at minimal total cost.\n\nAlthough…\n\n\nFor some hours with extreme load, is it necessarily worth it to build new generation to meet those peaks?\nInstead, assign a high cost \\(NSECost\\) to non-served energy (NSE). In this case, let’s set \\(NSECost = \\$9000\\)/MWh"
   },
   {
-    "objectID": "slides/lecture08-2.html#decision-variables",
-    "href": "slides/lecture08-2.html#decision-variables",
+    "objectID": "slides/lecture08-3.html#decision-variables",
+    "href": "slides/lecture08-3.html#decision-variables",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Decision Variables",
     "text": "Decision Variables\nWhat are our variables?\n\n\n\n\n\n\n\n\nVariable\nMeaning\n\n\n\n\n\\(x_g\\)\ninstalled capacity (MW) from each generator type \\(g \\in \\mathcal{G}\\)\n\n\n\\(y_{g,t}\\)\nproduction (MW) from each generator type \\(g\\) in hour \\(t \\in \\mathcal{T}\\)\n\n\n\\(NSE_t\\)\nnon-served energy (MWh) in hour \\(t \\in \\mathcal{T}\\)"
   },
   {
-    "objectID": "slides/lecture08-2.html#capacity-expansion-objective",
-    "href": "slides/lecture08-2.html#capacity-expansion-objective",
+    "objectID": "slides/lecture08-3.html#capacity-expansion-objective",
+    "href": "slides/lecture08-3.html#capacity-expansion-objective",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Capacity Expansion Objective",
     "text": "Capacity Expansion Objective\n\\[\n\\begin{align}\n\\min_{x, y, NSE} Z &= {\\color{red}\\text{investment cost} } + {\\color{blue}\\text{operating cost} } \\\\\n&= {\\color{red} \\sum_{g \\in \\mathcal{G}} \\text{FixedCost}_g x_g} + {\\color{blue} \\sum_{t \\in \\mathcal{T}} \\sum_{g \\in \\mathcal{G}}  \\text{VarCost}_g y_{g,t} + \\sum_{t \\in \\mathcal{T}} \\text{NSECost} NSE_t}\n\\end{align}\n\\]"
   },
   {
-    "objectID": "slides/lecture08-2.html#what-are-our-constraints",
-    "href": "slides/lecture08-2.html#what-are-our-constraints",
+    "objectID": "slides/lecture08-3.html#what-are-our-constraints",
+    "href": "slides/lecture08-3.html#what-are-our-constraints",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "What Are Our Constraints?",
     "text": "What Are Our Constraints?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture08-2.html#capacity-expansion-constraints",
-    "href": "slides/lecture08-2.html#capacity-expansion-constraints",
+    "objectID": "slides/lecture08-3.html#capacity-expansion-constraints",
+    "href": "slides/lecture08-3.html#capacity-expansion-constraints",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Capacity Expansion Constraints",
     "text": "Capacity Expansion Constraints\n\nDemand: Sum of generated energy and non-served energy must equal demand \\(d_t\\).\nCapacity: Generator types cannot produce more electricity than their installed capacity.\nNon-negativity: All decision variables must be non-negative."
   },
   {
-    "objectID": "slides/lecture08-2.html#problem-formulation",
-    "href": "slides/lecture08-2.html#problem-formulation",
+    "objectID": "slides/lecture08-3.html#problem-formulation",
+    "href": "slides/lecture08-3.html#problem-formulation",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Problem Formulation",
     "text": "Problem Formulation\n\\[\n\\begin{align}\n\\min_{x, y, NSE} \\quad & \\sum_{g \\in \\mathcal{G}} \\text{FixedCost}_g x_g + \\sum_{t \\in \\mathcal{T}} \\sum_{g \\in \\mathcal{G}} \\text{VarCost}_gy_{g,t} & \\\\\n& \\quad + \\sum_{t \\in \\mathcal{T}} \\text{NSECost} NSE_t & \\\\[0.5em]\n\\text {subject to:} \\quad & \\sum_{g \\in \\mathcal{G}} y_{g,t} + NSE_t = d_t & \\forall t \\in \\mathcal{T} \\\\[0.5em]\n& y_{g,t} \\leq x_g & \\forall g \\in {G},  \\forall t \\in \\mathcal{T} \\\\[0.5em]\n& x_g, y_{g,t}, NSE_t \\geq 0 & \\forall g \\in {G},  \\forall t \\in \\mathcal{T}\n\\end{align}\n\\]"
   },
   {
-    "objectID": "slides/lecture08-2.html#capacity-expansion-is-an-lp",
-    "href": "slides/lecture08-2.html#capacity-expansion-is-an-lp",
+    "objectID": "slides/lecture08-3.html#capacity-expansion-is-an-lp",
+    "href": "slides/lecture08-3.html#capacity-expansion-is-an-lp",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Capacity Expansion is an LP",
     "text": "Capacity Expansion is an LP\n\nLinearity: costs assumed to scale linearly;\nDivisible: we model total installed capacity, not number of individual units\nCertainty: no uncertainty about renewables.\n\nReal problems can get much more complex, particularly if we try to model making decisions under renewable or load uncertainty."
   },
   {
-    "objectID": "slides/lecture08-2.html#what-does-this-problem-neglect",
-    "href": "slides/lecture08-2.html#what-does-this-problem-neglect",
+    "objectID": "slides/lecture08-3.html#what-does-this-problem-neglect",
+    "href": "slides/lecture08-3.html#what-does-this-problem-neglect",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "What Does This Problem Neglect?",
     "text": "What Does This Problem Neglect?\n\nDiscrete decisions: is a plant on or off (this is called unit commitment)?\nIntertemporal constraints: Power plants can’t just “ramp” from producing low levels of power to high levels of power; there are real engineering limits.\nTransmission: We can generate all the power we want, but what if we can’t get it to where the demand is?"
   },
   {
-    "objectID": "slides/lecture08-2.html#capacity-expansion-example-solution",
-    "href": "slides/lecture08-2.html#capacity-expansion-example-solution",
+    "objectID": "slides/lecture08-3.html#capacity-expansion-example-solution",
+    "href": "slides/lecture08-3.html#capacity-expansion-example-solution",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Capacity Expansion Example Solution",
     "text": "Capacity Expansion Example Solution\n\n\n\n\n\n\n\n\n\n\n\n\nResource\nCapacity (MW)\nPercent_Cap (%)\nGenerated (GWh)\nPercent_Gen (%)\n\n\n\n\nGeothermal\n0.0\n0.0\n0.0\n0.0\n\n\nCoal\n0.0\n0.0\n0.0\n0.0\n\n\nNG CCGT\n2016.9\n72.5\n15157.7\n98.1\n\n\nNG CT\n733.0\n26.4\n292.2\n1.9\n\n\nNSE\n31.2\n1.1\n0.1\n0.0"
   },
   {
-    "objectID": "slides/lecture08-2.html#when-do-generators-operate",
-    "href": "slides/lecture08-2.html#when-do-generators-operate",
+    "objectID": "slides/lecture08-3.html#when-do-generators-operate",
+    "href": "slides/lecture08-3.html#when-do-generators-operate",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "When Do Generators Operate?",
     "text": "When Do Generators Operate?\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Results of Generating Capacity Expansion Example"
   },
   {
-    "objectID": "slides/lecture08-2.html#what-else-could-we-add",
-    "href": "slides/lecture08-2.html#what-else-could-we-add",
+    "objectID": "slides/lecture08-3.html#what-else-could-we-add",
+    "href": "slides/lecture08-3.html#what-else-could-we-add",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "What Else Could We Add?",
     "text": "What Else Could We Add?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture08-2.html#key-takeaways-1",
-    "href": "slides/lecture08-2.html#key-takeaways-1",
+    "objectID": "slides/lecture08-3.html#key-takeaways-1",
+    "href": "slides/lecture08-3.html#key-takeaways-1",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Key Takeaways",
     "text": "Key Takeaways\n\nCapacity Expansion is a foundational power systems decision problem.\nIs an LP with some basic assumptions.\nWe looked at a “greenfield” example: no existing plants.\nDecision problem becomes more complex with renewables (HW4) or “brownfield” (expanding existing fleet)."
   },
   {
-    "objectID": "slides/lecture08-2.html#next-classes",
-    "href": "slides/lecture08-2.html#next-classes",
+    "objectID": "slides/lecture08-3.html#next-classes",
+    "href": "slides/lecture08-3.html#next-classes",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Next Classes",
-    "text": "Next Classes\nFriday: Economic Dispatch\nNext Week: Mixed Integer Linear Programs and Applications"
+    "text": "Next Classes\nMonday: Economic Dispatch Wednesday/Friday: Air Pollution"
   },
   {
-    "objectID": "slides/lecture08-2.html#assessments",
-    "href": "slides/lecture08-2.html#assessments",
+    "objectID": "slides/lecture08-3.html#assessments",
+    "href": "slides/lecture08-3.html#assessments",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Assessments",
-    "text": "Assessments\n\nReleased HW4 early, due 10/22.\nLab3 due Friday.\n\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Assessments\n\nLab 3 due tonight at 9pm.\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture0x-1.html#box-models",
@@ -1680,202 +1876,6 @@
     "text": "Next Classes\nMonday: Modeling Systems\nWednesday/Friday: Examples of Systems Models\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
-    "objectID": "slides/lecture07-1.html#last-class",
-    "href": "slides/lecture07-1.html#last-class",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Last Class",
-    "text": "Last Class\nA linear program (LP), has the following characteristics:\n\nLinearity: The objective function and constraints are all linear;\nDivisibility: The decision variables are continuous (they can be fractional levels);\nCertainty: The problem is deterministic."
-  },
-  {
-    "objectID": "slides/lecture07-1.html#simplex-method",
-    "href": "slides/lecture07-1.html#simplex-method",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Simplex Method",
-    "text": "Simplex Method\n\n\nSolutions to LPs must occur at intersections of constraints, which is the key insight for the simplex method."
-  },
-  {
-    "objectID": "slides/lecture07-1.html#questions",
-    "href": "slides/lecture07-1.html#questions",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Questions?",
-    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#resource-allocation-problems",
-    "href": "slides/lecture07-1.html#resource-allocation-problems",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Resource Allocation Problems",
-    "text": "Resource Allocation Problems\nResource Allocation Problems are a broad category of prescriptive environmental modeling.\n\nResource Allocation Schematic"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#example-pesticide-application",
-    "href": "slides/lecture07-1.html#example-pesticide-application",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Example: Pesticide Application",
-    "text": "Example: Pesticide Application\nA farmer has access to a pesticide which can be used on corn, soybeans, and wheat fields, and costs $70/ha-yr to apply."
-  },
-  {
-    "objectID": "slides/lecture07-1.html#example-pesticide-application-1",
-    "href": "slides/lecture07-1.html#example-pesticide-application-1",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Example: Pesticide Application",
-    "text": "Example: Pesticide Application\nThe following crop yields can be obtained:\n\n\n\n\n\n\n\n\n\nApplication Rate (kg/ha)\nSoybean (kg/ha)\nWheat (kg/ha)\nCorn (kg/ha)\n\n\n\n\n0\n2900\n3500\n5900\n\n\n1\n3800\n4100\n6700\n\n\n2\n4400\n4200\n7900"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#example-pesticide-application-2",
-    "href": "slides/lecture07-1.html#example-pesticide-application-2",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Example: Pesticide Application",
-    "text": "Example: Pesticide Application\nProduction costs, excluding pesticide, and selling prices:\n\n\n\nCrop\nProduction Cost ($/ha-yr)\nSelling Price ($/kg)\n\n\n\n\nSoybeans\n350\n0.36\n\n\nWheat\n280\n0.27\n\n\nCorn\n390\n0.22"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#example-pesticide-application-3",
-    "href": "slides/lecture07-1.html#example-pesticide-application-3",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Example: Pesticide Application",
-    "text": "Example: Pesticide Application\nRecently, environmental authorities have declared that farms cannot have an average application rate on soybeans, wheat, and corn which exceeds 0.8, 0.7, and 0.6 kg/ha, respectively.\nQuestion: How should the farmer plant crops and apply pesticides to maximize profits over 130 total ha while remaining in regulatory compliance if demand for each crop this year is 250,000 kg?"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#decision-variables",
-    "href": "slides/lecture07-1.html#decision-variables",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Decision Variables",
-    "text": "Decision Variables\nThe first step is to establish notation for our decision variables."
-  },
-  {
-    "objectID": "slides/lecture07-1.html#what-are-our-decision-variables",
-    "href": "slides/lecture07-1.html#what-are-our-decision-variables",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "What Are Our Decision Variables?",
-    "text": "What Are Our Decision Variables?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#decision-variables-1",
-    "href": "slides/lecture07-1.html#decision-variables-1",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Decision Variables",
-    "text": "Decision Variables\n\n\n\n\n\n\n\nVariable\nMeaning\n\n\n\n\n\\(S_j\\)\nha planted with soybeans and treated with pesticide rate \\(j=0,1,2\\) kg\n\n\n\\(W_j\\)\nha planted with wheat and treated with pesticide rate \\(j=0,1,2\\) kg\n\n\n\\(C_j\\)\nha planted with corn and treated with pesticide rate \\(j=0,1,2\\) kg"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#objective-function",
-    "href": "slides/lecture07-1.html#objective-function",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Objective Function",
-    "text": "Objective Function\nNext, let’s formulate the objective function.\nThe farmer’s goal is to maximize profits.\nTake some time to work on this."
-  },
-  {
-    "objectID": "slides/lecture07-1.html#objective-function-1",
-    "href": "slides/lecture07-1.html#objective-function-1",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Objective Function",
-    "text": "Objective Function\nKey: Compute profit for each ha by crop and pesticide rate.\n\\[Z = \\sum_{\\text{crop}, i} \\left[ (\\text{yield} \\times \\text{selling price}) - \\text{total cost} \\right]\\]\n\nAfter some algebra:\n\\[\\begin{align*}\nZ &= 694 S_0 + 948 S_1 + 1164 S_2 \\\\[0.25em]\n& \\qquad + 665 W_0 + 757 W_1 + 784 W_2 \\\\[0.25em]\n& \\qquad + 908 C_0 + 1014 C_1 + 1278 C_2\n\\end{align*}\\]"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#objective-function-vector-notation",
-    "href": "slides/lecture07-1.html#objective-function-vector-notation",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Objective Function (Vector Notation)",
-    "text": "Objective Function (Vector Notation)\n\n\nOriginal: \\[\\begin{align*}\nZ &= 694 S_0 + 948 S_1 + 1164 S_2 \\\\[0.25em]\n& + 665 W_0 + 757 W_1 + 784 W_2 \\\\[0.25em]\n& + 908 C_0 + 1014 C_1 + 1278 C_2\n\\end{align*}\\]\n\nVectorized: \\[\\begin{align*}\nZ &= \\mathbf{S} \\begin{pmatrix}694 \\\\ 948 \\\\ 1164 \\end{pmatrix} + \\mathbf{W} \\begin{pmatrix}665 \\\\ 757 \\\\ 784 \\end{pmatrix} \\\\[0.25em]\n& + \\mathbf{C} \\begin{pmatrix}908 \\\\ 1014 \\\\ 1278 \\end{pmatrix}\n\\end{align*}\\]"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#constraints",
-    "href": "slides/lecture07-1.html#constraints",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Constraints",
-    "text": "Constraints\nFinally, we need to establish our constraints."
-  },
-  {
-    "objectID": "slides/lecture07-1.html#what-are-our-constraints",
-    "href": "slides/lecture07-1.html#what-are-our-constraints",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "What Are Our Constraints?",
-    "text": "What Are Our Constraints?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#what-are-our-constraints-1",
-    "href": "slides/lecture07-1.html#what-are-our-constraints-1",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "What Are Our Constraints?",
-    "text": "What Are Our Constraints?\n\nLand Area: total farmland cannot exceed 130 ha\nDemand: No reason to grow more than 250,000 kg of any crop.\nRegulation: Limits on average pesticide application for each crop.\nNon-negativity: No land allocation can be less than 0."
-  },
-  {
-    "objectID": "slides/lecture07-1.html#land-area-constraint",
-    "href": "slides/lecture07-1.html#land-area-constraint",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Land Area Constraint",
-    "text": "Land Area Constraint\n\\[\\sum_j S_j + C_j + W_j \\leq 130\\]\nCan write this out more fully, but as you will see, JuMP.jl can handle these compact formulations (which makes debugging easier)."
-  },
-  {
-    "objectID": "slides/lecture07-1.html#demand-constraints",
-    "href": "slides/lecture07-1.html#demand-constraints",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Demand Constraints",
-    "text": "Demand Constraints\n\\[\\begin{alignat*}{3}\n\\text{Soybeans}:& \\qquad &\\mathbf{S} \\begin{pmatrix}2900 \\\\ 3800 \\\\ 4400 \\end{pmatrix} \\leq 250000 \\\\ \\text{Wheat}:& \\qquad &\\mathbf{W} \\begin{pmatrix}3500 \\\\ 4100 \\\\ 4200 \\end{pmatrix} \\leq 250000 \\\\\n\\text{Corn}:& \\qquad &\\mathbf{C} \\begin{pmatrix}5900 \\\\ 6700 \\\\ 7200 \\end{pmatrix} \\leq 250000\n\\end{alignat*}\\]"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#regulatory-constraints",
-    "href": "slides/lecture07-1.html#regulatory-constraints",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Regulatory Constraints",
-    "text": "Regulatory Constraints\nFor soybeans:\n\\[\\frac{S_1 + 2 S_2}{S_0 + S_1 + S_2} \\leq 0.8\\]\n\nIs this an acceptable constraint?"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#regulatory-constraints-1",
-    "href": "slides/lecture07-1.html#regulatory-constraints-1",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Regulatory Constraints",
-    "text": "Regulatory Constraints\nThese need to be linear for a linear program.\n\n\\[\\begin{align*}\n& \\frac{S_1 + 2 S_2}{S_0 + S_1 + S_2} \\leq 0.8 \\\\\\\\\n& \\quad \\Rightarrow S_1 + 2S_2 \\leq 0.8 (S_0 + S_1 + S_2) \\\\\\\\\n& \\quad \\Rightarrow -0.8 S_0 + 0.2 S_1 + 1.2 S_2 \\leq 0\n\\end{align*}\\]"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#regulatory-constraints-2",
-    "href": "slides/lecture07-1.html#regulatory-constraints-2",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Regulatory Constraints",
-    "text": "Regulatory Constraints\nSimilarly for wheat and corn:\n\\[\\begin{align*}\n-0.7 W_0 + 0.3 W_1 + 1.3 W_2 & \\leq 0 \\\\\\\\\n-0.6 C_0 + 0.4 C_1 + 1.4 C_2 & \\leq 0\n\\end{align*}\\]"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#non-negativity-constraints",
-    "href": "slides/lecture07-1.html#non-negativity-constraints",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Non-Negativity Constraints",
-    "text": "Non-Negativity Constraints\nThese are straightforward, but neglecting them can lead to numerical issues:\n\\[S_j, W_j, C_j \\geq 0.\\]"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#final-model-standard-form",
-    "href": "slides/lecture07-1.html#final-model-standard-form",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Final Model (Standard Form)",
-    "text": "Final Model (Standard Form)\n\n\\[\\begin{align}\n\\max_{S_j, W_j, C_j} \\quad & 694 S_0 + 948 S_1 + 1164 S_2  + 665 W_0 + 757 W_1 + 784 W_2  \\tag{1} \\\\[-1em] & \\qquad + 908 C_0 + 1014 C_1 + 1278 C_2 \\\\[0.5em]\n\\text{subject to:} \\quad & S_0 + S_1 + S_2 + W_0 + W_1 + W_2 + C_0 + C_1 + C_2 \\leq 130 \\tag{2} \\\\\n& 2900 S_0 + 3800 S_1 + 4400 S_2 \\leq 250000 \\tag{3a} \\\\\n& 3500 W_0 + 4100 W_1 + 4200 W_2 \\leq 250000 \\tag{3b}\\\\\n& 5900 C_0 + 6700 C_1 + 7200 C_2 \\leq 250000 \\tag{3c}\\\\\n& -0.8 S_0 + 0.2 S_1 + 1.2 S_2 \\leq 0 \\tag{4a}\\\\\n& -0.7 W_0 + 0.3 W_1 + 1.3 W_2  \\leq 0 \\tag{4b}\\\\\n& -0.6 C_0 + 0.4 C_1 + 1.4 C_2  \\leq 0 \\tag{4c}\\\\\n& S_j, W_j, C_j \\geq 0 \\tag{5}\n\\end{align}\\]"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#solution",
-    "href": "slides/lecture07-1.html#solution",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Solution",
-    "text": "Solution\n\n\n\n\n\n\n\n\n\nPesticide Application (kg/ha-yr)\nSoybeans (ha)\nWheat (ha)\nCorn (ha)\n\n\n\n\n0\n13.8\n26.9\n6.7\n\n\n1\n55.2\n0\n15.7\n\n\n2\n0\n11.5\n0\n\n\n\nThis solution has an objective value of $117,549."
-  },
-  {
-    "objectID": "slides/lecture07-1.html#shadow-prices",
-    "href": "slides/lecture07-1.html#shadow-prices",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Shadow Prices",
-    "text": "Shadow Prices\nThe following constraints have non-zero shadow prices:\n\nArea (\\(729\\))\nSoy Demand (\\(4.6 \\times 10^{-2}\\))\nWheat Demand (\\(4.5 \\times 10^{-2}\\))\nSoy Pesticide (\\(212\\))\nWheat Pesticide (\\(92\\))\nCorn Pesticide (\\(140\\))"
-  },
-  {
-    "objectID": "slides/lecture07-1.html#key-takeaways-1",
-    "href": "slides/lecture07-1.html#key-takeaways-1",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nResource allocation problems can be formulated as mathematical programs (in this case, linear)\nSaw example of formulating objective and constraints\nCan learn about which constraints matter the most from shadow prices."
-  },
-  {
-    "objectID": "slides/lecture07-1.html#next-classes",
-    "href": "slides/lecture07-1.html#next-classes",
-    "title": "LP Example: Optimizing Resource Allocation",
-    "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Guest lecture by Diana Hackett (Mann librarian) on regulations research.\nFriday: Lab on linear programming in Julia.\n\n\nBEE 4750, Environmental Systems Analysis"
-  },
-  {
     "objectID": "slides/lecture05-3.html#monte-carlo",
     "href": "slides/lecture05-3.html#monte-carlo",
     "title": "Uncertainty and Simple Climate Models",
@@ -2273,6 +2273,34 @@
     "title": "Uncertainty and Monte Carlo",
     "section": "Assessments",
     "text": "Assessments\nFriday: Homework 2 and Lab 2 both due.\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
+    "objectID": "slides/lecture07-3.html#forest-management-optimization",
+    "href": "slides/lecture07-3.html#forest-management-optimization",
+    "title": "Linear Programming and JuMP",
+    "section": "Forest Management Optimization",
+    "text": "Forest Management Optimization\nYour task in the lab: Formulate and solve a simple resource allocation problem (more on this next week).\nLab is due on 10/13 by 9pm."
+  },
+  {
+    "objectID": "slides/lecture07-3.html#reminder-about-the-rubric",
+    "href": "slides/lecture07-3.html#reminder-about-the-rubric",
+    "title": "Linear Programming and JuMP",
+    "section": "Reminder About The Rubric",
+    "text": "Reminder About The Rubric\nFor full points, make sure to check rubric (available on the Labs page of the website; Homework is similar) before finalizing submission. If unsure if something might be penalized, please ask on Ed or in class. In general, points will be taken off for:\n\nMissing units;\nPlots: Unlabeled axes/missing legends if needed;\nLack of proper precision when reporting values."
+  },
+  {
+    "objectID": "slides/lecture07-3.html#next-classes",
+    "href": "slides/lecture07-3.html#next-classes",
+    "title": "Linear Programming and JuMP",
+    "section": "Next Classes",
+    "text": "Next Classes\nMonday: No class (Indigeneous People’s Day)\nWednesday/Friday: Linear Programming Examples (land allocation, power systems)"
+  },
+  {
+    "objectID": "slides/lecture07-3.html#assessments",
+    "href": "slides/lecture07-3.html#assessments",
+    "title": "Linear Programming and JuMP",
+    "section": "Assessments",
+    "text": "Assessments\nToday: Homework 3 due by 9:00pm.\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture02-1.html#what-is-a-system",
@@ -2744,18 +2772,11 @@
     "text": "Last Class\n\nDecision models involve objectives and constraints.\nObjective:\n\nHow are we assessing performance? (the metric)\nDo we want to maximize or minimize?\n\nConstraints:\n\nWhat are eligible decisions?\nEngineering restrictions, performance or regulatory standards, etc."
   },
   {
-    "objectID": "slides/lecture06-2.html#questions",
-    "href": "slides/lecture06-2.html#questions",
-    "title": "Introduction to Optimization",
-    "section": "Questions?",
-    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
     "objectID": "slides/lecture06-2.html#wastewater-treatment-model",
     "href": "slides/lecture06-2.html#wastewater-treatment-model",
     "title": "Introduction to Optimization",
     "section": "Wastewater Treatment Model",
-    "text": "Wastewater Treatment Model\nLast class, we derived the following model for the treatment of wastewater from two point releases:\n\\[\\begin{alignat}{3}\n& \\min_{E_1, E_2} &\\quad  5000E_1^2 + 3000E_2^2 &  \\\\\\\\\n& \\text{subject to:} & 1000 E_1 &\\geq 500 \\\\\n& & 835E_1 + 1200E_2 &\\geq 1459 \\\\\n& & E_1, E_2 &\\;\\geq 0 \\\\\n& & E_1, E_2 &\\;\\leq 1\n\\end{alignat}\\]"
+    "text": "Wastewater Treatment Model\nLast class, we looked at the following model for the treatment of wastewater from two point releases:\n\\[\\begin{alignat}{3}\n& \\min_{E_1, E_2} &\\quad  5000E_1^2 + 3000E_2^2 &  \\\\\\\\\n& \\text{subject to:} & 1000 E_1 &\\geq 500 \\\\\n& & 835E_1 + 1200E_2 &\\geq 1459 \\\\\n& & E_1, E_2 &\\;\\geq 0 \\\\\n& & E_1, E_2 &\\;\\leq 1\n\\end{alignat}\\]"
   },
   {
     "objectID": "slides/lecture06-2.html#solving-this-problem",
@@ -2769,28 +2790,14 @@
     "href": "slides/lecture06-2.html#the-solution",
     "title": "Introduction to Optimization",
     "section": "The Solution",
-    "text": "The Solution\nSo the solution occurs at the intersection of the two constraints, where:\n\\[E_1 = 0.5, E_2 = 0.85\\]\nand the cost of this treatment plan is\n\\[C(0.5, 0.85) = \\$ 3417.\\]\n\nDoes this solution make sense?"
+    "text": "The Solution\nSo the solution occurs at the intersection of the two constraints, where:\n\\[E_1 = 0.5, E_2 = 0.85\\]\nand the cost of this treatment plan is\n\\[C(0.5, 0.85) = \\$ 3417.\\]"
   },
   {
-    "objectID": "slides/lecture06-2.html#waste-load-allocation",
-    "href": "slides/lecture06-2.html#waste-load-allocation",
+    "objectID": "slides/lecture06-2.html#questions",
+    "href": "slides/lecture06-2.html#questions",
     "title": "Introduction to Optimization",
-    "section": "Waste Load Allocation",
-    "text": "Waste Load Allocation\nThis is an example of a waste load allocation problem.\nKey question: How do we restrict waste discharges to control or limit environmental impact?"
-  },
-  {
-    "objectID": "slides/lecture06-2.html#waste-load-allocation-schematic",
-    "href": "slides/lecture06-2.html#waste-load-allocation-schematic",
-    "title": "Introduction to Optimization",
-    "section": "Waste Load Allocation Schematic",
-    "text": "Waste Load Allocation Schematic\n\nEnvironmental Systems Model SchematicEach source is allocated a “load” they can discharge based on waste fate and transport."
-  },
-  {
-    "objectID": "slides/lecture06-2.html#waste-load-allocation-model",
-    "href": "slides/lecture06-2.html#waste-load-allocation-model",
-    "title": "Introduction to Optimization",
-    "section": "Waste Load Allocation Model",
-    "text": "Waste Load Allocation Model\nWaste loads affect quality \\(Q\\) based on fate & transport model:\n\\[Q=f(W_1, W_2, \\ldots, W_n)\\]\n\nSo the general form for a prescriptive waste load allocation model:\n\\[\\begin{aligned}\n\\text{determine} & \\quad  W_1, W_2, \\ldots, W_n \\notag \\\\\\\\\n\\text{subject to:} & \\quad f(W_1, W_2, \\ldots, W_n) \\geq Q^* \\notag\n\\end{aligned}\\]"
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
     "objectID": "slides/lecture06-2.html#components-of-an-optimization-model",
@@ -2835,6 +2842,55 @@
     "text": "Solution Approach 2: Generalized Search Algorithms\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nThese methods work pretty well, but can require a lot of evaluations and/or may get stuck at local optima."
   },
   {
+    "objectID": "slides/lecture06-2.html#unconstrained-optimization",
+    "href": "slides/lecture06-2.html#unconstrained-optimization",
+    "title": "Introduction to Optimization",
+    "section": "Unconstrained Optimization",
+    "text": "Unconstrained Optimization\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nWithout constraints, our goal is to find extrema of the function.\nCan do this using the structure of the objective (gradient) or through stochastic search (Monte Carlo)."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#constrained-optimization-1",
+    "href": "slides/lecture06-2.html#constrained-optimization-1",
+    "title": "Introduction to Optimization",
+    "section": "Constrained Optimization",
+    "text": "Constrained Optimization\n\n\n\n\n\nFunction with Multiple Minima and a Constraint\n\n\n\nNow, notice the effect of a constraint!\nFor a constrained problem, we also have to look along the constraint to see if that creates a solution."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#lagrange-multipliers",
+    "href": "slides/lecture06-2.html#lagrange-multipliers",
+    "title": "Introduction to Optimization",
+    "section": "Lagrange Multipliers",
+    "text": "Lagrange Multipliers\nWe can solve some constrained problems using Lagrange Multipliers!\nRecall (maybe) that the Lagrange Multipliers method requires equality constraints. But we can easily create those with “dummy” variables."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#using-equality-constraints",
+    "href": "slides/lecture06-2.html#using-equality-constraints",
+    "title": "Introduction to Optimization",
+    "section": "Using Equality Constraints",
+    "text": "Using Equality Constraints\n\n\nOriginal Problem\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 \\geq A \\notag \\\\\n& && x_2 \\leq B \\notag\n\\end{aligned}\n\\]\n\nWith Dummy Variables\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 - S_1^2 = A \\notag \\\\\n& && x_2 + S_2^2 = B \\notag\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture06-2.html#using-lagrange-multipliers",
+    "href": "slides/lecture06-2.html#using-lagrange-multipliers",
+    "title": "Introduction to Optimization",
+    "section": "Using Lagrange Multipliers",
+    "text": "Using Lagrange Multipliers\nThen the Lagrangian function becomes:\n\\[\nH(\\mathbf{x}, S_1, S_2, \\lambda_1, \\lambda_2) = f(\\mathbf{x}) - \\lambda_1(x_1 - S_1^2 - A) - \\lambda_2(x_2 + S_2^2 - B)\n\\]\nwhere \\(\\lambda_1\\), \\(\\lambda_2\\) are penalties for violating the constraints.\nThe \\(\\lambda_i\\) are the eponymous Lagrange multipliers."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#using-lagrange-multipliers-1",
+    "href": "slides/lecture06-2.html#using-lagrange-multipliers-1",
+    "title": "Introduction to Optimization",
+    "section": "Using Lagrange Multipliers",
+    "text": "Using Lagrange Multipliers\nNext step: locate possible optima where the partial derivatives of the Lagrangian are zero.\n\\[\\frac{\\partial H(\\cdot)}{\\partial \\cdot} = 0\\]\nThis is actually many equations, even though our original problem was low-dimensional, and can be slow to solve."
+  },
+  {
+    "objectID": "slides/lecture06-2.html#using-lagrange-multiplers",
+    "href": "slides/lecture06-2.html#using-lagrange-multiplers",
+    "title": "Introduction to Optimization",
+    "section": "Using Lagrange Multiplers",
+    "text": "Using Lagrange Multiplers\nDespite these challenges, Lagrange Multiplers are at the core of many advanced search algorithms."
+  },
+  {
     "objectID": "slides/lecture06-2.html#key-takeaways-1",
     "href": "slides/lecture06-2.html#key-takeaways-1",
     "title": "Introduction to Optimization",
@@ -2846,14 +2902,14 @@
     "href": "slides/lecture06-2.html#next-classes",
     "title": "Introduction to Optimization",
     "section": "Next Classes",
-    "text": "Next Classes\nFriday: Constrained optimization and solving linear models (linear programming)\nMonday: Example of formulating and solving a linear program.\nWednesday: Guest lecture by Diana Hackett (Mann librarian) on regulations research.\nFriday: Lab on linear programming in Julia.\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Next Classes\nFriday: Solving linear optimization models (linear programming)\nMonday: Project proposal peer review.\nWednesday: Guest lecture by Diana Hackett (Mann librarian) on regulations research.\nFriday: Lab on linear programming in Julia.\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture06-3.html#last-class",
     "href": "slides/lecture06-3.html#last-class",
     "title": "Linear Programming",
     "section": "Last Class",
-    "text": "Last Class\n\nOptimization for solving decision problems.\nUsed graphical method to identify solution for low (2-d) decision problem.\nDiscussed trial and error and search algorithms.\nFor unconstrained problems, gradient-based methods can get “stuck” at local optima.\nEvolutionary algorithms can require many iterations and evaluations."
+    "text": "Last Class\n\nOptimization for solving decision problems.\nDiscussed trial and error and search algorithms.\nFor unconstrained problems, gradient-based methods can get “stuck” at local optima.\nEvolutionary algorithms can require many iterations and evaluations.\nReviewed Lagrange multipliers for constrained optimization."
   },
   {
     "objectID": "slides/lecture06-3.html#questions",
@@ -2861,55 +2917,6 @@
     "title": "Linear Programming",
     "section": "Questions?",
     "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
-    "objectID": "slides/lecture06-3.html#unconstrained-optimization",
-    "href": "slides/lecture06-3.html#unconstrained-optimization",
-    "title": "Linear Programming",
-    "section": "Unconstrained Optimization",
-    "text": "Unconstrained Optimization\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nWithout constraints, our goal is to find extrema of the function.\nCan do this using the structure of the objective (gradient) or through stochastic search (Monte Carlo)."
-  },
-  {
-    "objectID": "slides/lecture06-3.html#constrained-optimization-1",
-    "href": "slides/lecture06-3.html#constrained-optimization-1",
-    "title": "Linear Programming",
-    "section": "Constrained Optimization",
-    "text": "Constrained Optimization\n\n\n\n\n\nFunction with Multiple Minima and a Constraint\n\n\n\nNow, notice the effect of a constraint!\nFor a constrained problem, we also have to look along the constraint to see if that creates a solution."
-  },
-  {
-    "objectID": "slides/lecture06-3.html#lagrange-multipliers",
-    "href": "slides/lecture06-3.html#lagrange-multipliers",
-    "title": "Linear Programming",
-    "section": "Lagrange Multipliers",
-    "text": "Lagrange Multipliers\nWe can solve some constrained problems using Lagrange Multipliers!\nRecall (maybe) that the Lagrange Multipliers method requires equality constraints. But we can easily create those with “dummy” variables."
-  },
-  {
-    "objectID": "slides/lecture06-3.html#using-equality-constraints",
-    "href": "slides/lecture06-3.html#using-equality-constraints",
-    "title": "Linear Programming",
-    "section": "Using Equality Constraints",
-    "text": "Using Equality Constraints\n\n\nOriginal Problem\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 \\geq A \\notag \\\\\n& && x_2 \\leq B \\notag\n\\end{aligned}\n\\]\n\nWith Dummy Variables\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 - S_1^2 = A \\notag \\\\\n& && x_2 + S_2^2 = B \\notag\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/lecture06-3.html#using-lagrange-multipliers",
-    "href": "slides/lecture06-3.html#using-lagrange-multipliers",
-    "title": "Linear Programming",
-    "section": "Using Lagrange Multipliers",
-    "text": "Using Lagrange Multipliers\nThen the Lagrangian function becomes:\n\\[\nH(\\mathbf{x}, S_1, S_2, \\lambda_1, \\lambda_2) = f(\\mathbf{x}) - \\lambda_1(x_1 - S_1^2 - A) - \\lambda_2(x_2 + S_2^2 - B)\n\\]\nwhere \\(\\lambda_1\\), \\(\\lambda_2\\) are penalties for violating the constraints.\nThe \\(\\lambda_i\\) are the eponymous Lagrange multipliers."
-  },
-  {
-    "objectID": "slides/lecture06-3.html#using-lagrange-multipliers-1",
-    "href": "slides/lecture06-3.html#using-lagrange-multipliers-1",
-    "title": "Linear Programming",
-    "section": "Using Lagrange Multipliers",
-    "text": "Using Lagrange Multipliers\nNext step: locate possible optima where the partial derivatives of the Lagrangian are zero.\n\\[\\frac{\\partial H(\\cdot)}{\\partial \\cdot} = 0\\]\nThis is actually many equations, even though our original problem was low-dimensional, and can be slow to solve."
-  },
-  {
-    "objectID": "slides/lecture06-3.html#using-lagrange-multiplers",
-    "href": "slides/lecture06-3.html#using-lagrange-multiplers",
-    "title": "Linear Programming",
-    "section": "Using Lagrange Multiplers",
-    "text": "Using Lagrange Multiplers\nDespite these challenges, Lagrange Multiplers are at the core of many advanced search algorithms."
   },
   {
     "objectID": "slides/lecture06-3.html#what-is-linear-programming",
@@ -3035,7 +3042,7 @@
     "href": "slides/lecture06-3.html#next-classes",
     "title": "Linear Programming",
     "section": "Next Classes",
-    "text": "Next Classes\nMonday: Example of formulating and solving an LP\nWednesday: Guest lecture by Diana Hackett (Mann librarian) on regulations research.\nFriday: Lab on linear programming in Julia.\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Next Classes\nMonday: Project proposal peer review\nWednesday: Guest lecture by Diana Hackett (Mann librarian) on regulations research.\nFriday: Lab on linear programming in Julia.\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/notebooks/dissolved-oxygen.html",
@@ -4358,7 +4365,7 @@
     "href": "project.html#schedule",
     "title": "Final Project",
     "section": "Schedule",
-    "text": "Schedule\nMilestones which are only for BEE 5750 or 4750 students are in italics.\n\n\n\n\n\n\n\n\n\n\nMilestone\nPoints\nInstructions\nRubric\nDue Date\n\n\n\n\nProposal\n10\n\n\nFri, Sep 29\n\n\nRegulations Report\n20\n\n\nFri, Oct 27\n\n\nProject Update\n10\n\n\nFri, Nov 10\n\n\nPresentation\n20\n\n\nMon, Dec 4 - Fri, Dec 8\n\n\nPoster\n30\n\n\nFri, Dec 15\n\n\nLiterature Review (5750 only)\n10\n\n\nFri, Dec 15\n\n\nTeam Evaluations (4750 only)\n10\n\n\nFri, Dec 15"
+    "text": "Schedule\nMilestones which are only for BEE 5750 or 4750 students are in italics.\n\n\n\n\n\n\n\n\n\n\nMilestone\nPoints\nInstructions\nRubric\nDue Date\n\n\n\n\nProposal\n10\n\n\nFri, Sep 29\n\n\nProposal Peer Review\n10\n\n\nMon, Oct 2\n\n\nRegulations Report\n20\n\n\nFri, Oct 27\n\n\nProject Update\n10\n\n\nFri, Nov 10\n\n\nPoster\n30\n\n\nFri, Dec 4\n\n\nPoster Peer Review\n10\n\n\nFri, Dec 15\n\n\nLiterature Review (5750 only)\n10\n\n\nFri, Dec 15\n\n\nTeam Evaluations (4750 only)\n10\n\n\nFri, Dec 15"
   },
   {
     "objectID": "project.html#scope-and-topics",
@@ -4386,6 +4393,6 @@
     "href": "schedule.html",
     "title": "BEE 4750: Environmental Systems Analysis",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 06\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nFri, Sep 08\nDissolved Oxygen\n\n\n\n\n\n\n\n\nMon, Sep 11\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n\nWed, Sep 13\nUncertainty and Risk\n\n\n\n\n\n\n\n\nFri, Sep 15\nProbability and Monte Carlo Simulation\n\n\n\n\n\n\n\n5\nMon, Sep 18\nLab: Monte Carlo\n\n\n\n\n\n\n\n\nWed, Sep 20\nMonte Carlo, Formally\n\n\n\n\n\n\n\n\nFri, Sep 22\nSimple Climate Models and Uncertainty Propagation\n\n\n\n\n\n\n\n6\nMon, Sep 25\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nWed, Sep 27\nIntroduction to Optimization\n\n\n\n\n\n\n\n\nFri, Sep 29\nLinear Programming\n\n\n\n\n\n\n\n7\nMon, Oct 02\nLP Example: Resource Allocation\n\n\n\n\n\n\n\n\nWed, Oct 04\nGuest Lecture: Diana Hackett\n\n\n\n\n\n\n\n\nFri, Oct 06\nLab: Optimization with JuMP.jl\n\n\n\n\n\n\n\n8\nMon, Oct 09\nNo Class: Indigeneous People’s Day\n\n\n\n\n\n\n\n\nWed, Oct 11\nPower Systems, Generating Capacity Expansion\n\n\n\n\n\n\n\n\nFri, Oct 13\nEconomic Dispatch\n\n\n\n\n\n\n\n9\nMon, Oct 16\nManaging Multiple Air Pollutant Sources\n\n\n\n\n\n\n\n\nWed, Oct 18\nLake Eutrophication\n\n\n\n\n\n\n\n\nFri, Oct 20\nLake Eutrophication II\n\n\n\n\n\n\n\n10\nMon, Oct 23\nMixed Integer Programming\n\n\n\n\n\n\n\n\nWed, Oct 25\nSolid Waste Management\n\n\n\n\n\n\n\n\nFri, Oct 27\nUnit Commitment"
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 06\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nFri, Sep 08\nDissolved Oxygen\n\n\n\n\n\n\n\n\nMon, Sep 11\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n\nWed, Sep 13\nUncertainty and Risk\n\n\n\n\n\n\n\n\nFri, Sep 15\nProbability and Monte Carlo Simulation\n\n\n\n\n\n\n\n5\nMon, Sep 18\nLab: Monte Carlo\n\n\n\n\n\n\n\n\nWed, Sep 20\nMonte Carlo, Formally\n\n\n\n\n\n\n\n\nFri, Sep 22\nSimple Climate Models and Uncertainty Propagation\n\n\n\n\n\n\n\n6\nMon, Sep 25\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nWed, Sep 27\nIntroduction to Optimization\n\n\n\n\n\n\n\n\nFri, Sep 29\nLinear Programming\n\n\n\n\n\n\n\n7\nMon, Oct 02\nProject Proposal Peer Review\n\n\n\n\n\n\n\n\nWed, Oct 04\nGuest Lecture: Diana Hackett\n\n\n\n\n\n\n\n\nFri, Oct 06\nLab: Optimization with JuMP.jl\n\n\n\n\n\n\n\n8\nMon, Oct 09\nNo Class: Indigeneous People’s Day\n\n\n\n\n\n\n\n\nWed, Oct 11\nLP Example: Resource Allocation\n\n\n\n\n\n\n\n\nFri, Oct 13\nPower Systems, Generating Capacity Expansion\n\n\n\n\n\n\n\n9\nMon, Oct 16\nEconomic Dispatch\n\n\n\n\n\n\n\n\nWed, Oct 18\nManaging Multiple Air Pollutant Sources\n\n\n\n\n\n\n\n\nFri, Oct 20\nAir Pollution II\n\n\n\n\n\n\n\n10\nMon, Oct 23\nLake Eutrophication\n\n\n\n\n\n\n\n\nWed, Oct 25\nLake Eutrophication II\n\n\n\n\n\n\n\n\nFri, Oct 27\nMixed Integer Programming\n\n\n\n\n\n\n\n11\nMon, Oct 30\nSolid Waste Management\n\n\n\n\n\n\n\n\nWed, Nov 1\nUnit Commitment"
   }
 ]

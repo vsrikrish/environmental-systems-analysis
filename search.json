@@ -2912,6 +2912,13 @@
     "text": "Key Takeaways\n\nWe solve decision models through optimization.\nDecision models have a standard structure:\n\nDecision Variables\nObjective\nConstraints\n\nGoal: find “best” solution with respect to the objective that is feasible."
   },
   {
+    "objectID": "slides/lecture06-2.html#key-takeaways-2",
+    "href": "slides/lecture06-2.html#key-takeaways-2",
+    "title": "Introduction to Optimization",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nTrial and error: not a great approach!\nSearch algorithms: better!\nLagrange Multipliers: Finally useful (for constrained optimization)!"
+  },
+  {
     "objectID": "slides/lecture06-2.html#next-classes",
     "href": "slides/lecture06-2.html#next-classes",
     "title": "Introduction to Optimization",

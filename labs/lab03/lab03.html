@@ -111,6 +111,7 @@ window.MathJax = {
     }
   };
 </script>
+<meta name="mermaid-theme" content="forest">
 <script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -423,12 +424,12 @@ Due Date
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>The following code should go at the top of most Julia scripts; it will load the local package environment and install any needed packages. You will see this often and shouldn’t need to touch it.</p>
-<div id="eacc55e7" class="cell" data-execution_count="1">
+<div id="33352b2d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"."</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f95f5f52" class="cell" data-execution_count="2">
+<div id="37e1bfa0" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">JuMP </span><span class="co"># optimization modeling syntax</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">HiGHS </span><span class="co"># optimization solver</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots </span><span class="co"># plotting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -438,11 +439,18 @@ Due Date
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>In this lab, you will write and solve a resource allocation example using <code>JuMP.jl</code>. <code>JuMP.jl</code> provides an intuitive syntax for writing, solving, and querying optimization problems.</p>
 <p>For an example of using <code>JuMP.jl</code> to solve linear programs, see <a href="https://viveks.me/environmental-systems-analysis/tutorials/julia-jump.html">the relevant tutorial on the class website</a>.</p>
+<p>Free free to delete some of the illustrative cells and code blocks in your notebook as you go through and solve the lab problems…this might help reduce some potential confusion while grading about what your answer is.</p>
 </section>
 <section id="introduction" class="level2 cell markdown">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Your task is to decide how much lumber to produce to maximize profit from wood sales. You can purchase wood from a managed forest, which consists of spruce (320,000 bf) and fir (720,000 bf). Spruce costs $0.12 per bf to purchase and fir costs $0.08 per bf.</p>
-<p>At the lumber mill, wood can be turned into plywood of various grades (see the table for how much wood of each type is required for and the revenue from each grade).</p>
+<p>At the lumber mill, wood can be turned into plywood of various grades (see <a href="#tbl-inputs" class="quarto-xref">Table&nbsp;1</a> for how much wood of each type is required for and the revenue from each grade). Any excess wood is sent to be recycled into particle board. This resource allocation problem is diagrammed in <a href="#fig-schematic" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<div id="tbl-inputs" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-inputs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Wood inputs and revenue by plywood grade. S refers to spruce inputs, F fir inputs.
+</figcaption>
+<div aria-describedby="tbl-inputs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table table-sm table-striped small">
 <thead>
 <tr class="header">
@@ -469,22 +477,29 @@ Due Date
 </tr>
 </tbody>
 </table>
-<p>Any excess wood is sent to be recycled into particle board, which can be sold for a net revenue of $0.03 per bf. This is summarized in the figure below.</p>
+</div>
+</figure>
+</div>
 </section>
 <div class="cell">
 <div class="cell-output-display">
+<div id="fig-schematic" class="quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-schematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
+<pre class="mermaid mermaid-js" data-label="fig-schematic">flowchart LR
     A[Spruce] -- $0.12 per bf --&gt; C{Lumber Mill}
     B[Fir] -- $0.08 per bf --&gt; C
     C --&gt; P(Plywood)
     C -- Wood Excess --&gt; D{Recycle}
-    D --&gt; E(Particle Board)
-    E -- $0.03 per bf net --&gt; S[Sell]
-    P -- Price depends on grade --&gt; S
+    P -- Price depends on grade --&gt; S[Sell]
 </pre>
 </div>
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-schematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Flowchat of the resource allocation problem in this lab.
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -518,31 +533,31 @@ Due Date
 </section>
 <ol type="1">
 <li><p>Initialize your model with a solver; in this case, we’ll use the <code>HiGHS</code> solver, but there are other solvers listed here for different types of problems, some of which are open and some of which require a commercial license: <a href="https://jump.dev/JuMP.jl/stable/installation/#Supported-solvers" class="uri">https://jump.dev/JuMP.jl/stable/installation/#Supported-solvers</a>:</p>
-<div id="17ec9259" class="cell" data-execution_count="3">
+<div id="4151a9c0" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>example_model <span class="op">=</span> <span class="fu">Model</span>(HiGHS.Optimizer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
 <li><p>Define variables with syntax like</p>
-<div id="b60bf76d" class="cell" data-execution_count="4">
+<div id="55b73155" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(example_model, <span class="fl">1</span> <span class="op">&gt;=</span> example_x <span class="op">&gt;=</span> <span class="fl">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This will create a variable <code>example_x</code> which is constrained to be between 0 and 1; you can leave off any of the bounds if a variable is unbounded in a particular direction. You can also add a vector of variables:</p>
-<div id="79dac662" class="cell" data-execution_count="5">
+<div id="b2ed8fcf" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span> <span class="co"># define set to index variables</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(example_model, <span class="fl">1</span> <span class="op">&gt;=</span> example_z[t <span class="kw">in</span> T] <span class="op">&gt;=</span> <span class="fl">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>which will create a vector of 3 variables <code>example_z[1]</code>, …, <code>example_z[3]</code>, all of which are bounded between 0 and 1.</p></li>
 <li><p>Add an objective with</p>
-<div id="70abadb8" class="cell" data-execution_count="6">
+<div id="9c52906b" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@objective</span>(example_model, Max, example_x <span class="op">+</span> <span class="fu">sum</span>(example_z))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>which will add an objective to maximize (replace with <code>Min</code> to minimize).</p></li>
 <li><p>Add constraints:</p>
-<div id="9fa7da32" class="cell" data-execution_count="7">
+<div id="b45f9c28" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(example_model, constraint1, <span class="fl">2</span>example_x <span class="op">+</span> <span class="fl">3</span><span class="fu">*sum</span>(example_z) <span class="op">&lt;=</span> <span class="fl">10</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(example_model, constraint2, <span class="fl">5</span>example_x <span class="op">-</span> example_z[<span class="fl">1</span>] <span class="op">&lt;=</span> <span class="fl">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>which will name the constraints <code>constraint1</code> and <code>constraint2</code> (you should make yours more descriptive about what the constraint actually is). The value of adding a name is to facilitate later querying of shadow prices, which we will discuss later. You can also add a vector of constraints which have similar structure or rely on different elements of a data vector:</p>
-<div id="29365ee5" class="cell" data-execution_count="8">
+<div id="cdab167e" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [<span class="fl">2</span>; <span class="fl">4</span>]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="fl">8</span>; <span class="fl">12</span>]</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>I <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span> <span class="co"># set indices for constraint</span></span>
@@ -561,7 +576,7 @@ Due Date
 </div>
 </div>
 <p>Finally, you can (and probably should) <code>print</code> your model to make sure that you get something that looks like the equations that you wrote down (in a notebook, this will be nicely rendered):</p>
-<div id="51308b81" class="cell" data-execution_count="9">
+<div id="d9bdefcc" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><span class="math display">\[ \begin{aligned}
@@ -599,7 +614,7 @@ Define your entire model in one cell
 <h4 class="anchored" data-anchor-id="problem-2.2-1-points">Problem 2.2 (1 points)</h4>
 <p>Find the solution to your program and find the optimal values of the decision variables. Once you’ve defined your model, you can find the solution with `optimize!():</p>
 </section>
-<div id="db208545" class="cell" data-execution_count="10">
+<div id="f005b0a8" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">optimize!</span>(example_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Running HiGHS 1.5.3 [date: 1970-01-01, git hash: 45a127b78]
@@ -635,13 +650,13 @@ What if I Get An Error?
 </div>
 </div>
 <p>To find the values of variables after optimizing, use <code>value.()</code> (the broadcasting ensures this will work for vector-valued variables as well):</p>
-<div id="8efa66fa" class="cell" data-execution_count="11">
+<div id="2e2a8ac5" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(example_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>0.6</code></pre>
 </div>
 </div>
-<div id="33ad88f9" class="cell" data-execution_count="12">
+<div id="7c447004" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(example_z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>1-dimensional DenseAxisArray{Float64,1,...} with index sets:
@@ -657,7 +672,7 @@ And data, a 3-element Vector{Float64}:
 <h3 class="anchored" data-anchor-id="problem-2.3-1-point">Problem 2.3 (1 point)</h3>
 <p>How would your profit change if you could buy 1,000 additional bf of spruce? You can answer this by getting the shadow price of a particular variable with:</p>
 </section>
-<div id="c5444df9" class="cell" data-execution_count="13">
+<div id="eeb7745c" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shadow_price</span>(constraint1) <span class="co"># this is why we named the constraints when we defined them</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>0.3333333333333333</code></pre>
@@ -665,7 +680,7 @@ And data, a 3-element Vector{Float64}:
 </div>
 <section id="problem-2.4-1-point" class="level4 cell markdown">
 <h4 class="anchored" data-anchor-id="problem-2.4-1-point">Problem 2.4 (1 point)</h4>
-<p>Would you prefer to have 1,000 additional bf of spruce or 2,000 additional bf of fir?</p>
+<p>Would you prefer to have 2,000 additional bf of spruce or 1,000 additional bf of fir?</p>
 </section>
 </section>
 <section id="references" class="level2">

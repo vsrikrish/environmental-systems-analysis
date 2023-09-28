@@ -368,6 +368,12 @@ Despite these challenges, Lagrange Multiplers are at the core of many advanced s
   - Constraints
 - **Goal**: find "best" solution with respect to the objective that is feasible.
 
+## Key Takeaways
+
+- Trial and error: not a great approach!
+- Search algorithms: better!
+- Lagrange Multipliers: Finally useful (for constrained optimization)!
+
 # Upcoming Schedule
 
 ## Next Classes

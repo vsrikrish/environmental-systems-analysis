@@ -325,8 +325,6 @@ $$\Rightarrow \qquad \frac{\partial H}{\partial A} = \lambda_1, \qquad \frac{\pa
 
 ## Key Takeaways
 
-- Trial and error: not a great approach!
-- Search algorithms: better!
 - Linear Programs: straightforward to solve!
 - For an LP, an optimum must occur at a corner of the feasible polytope.
 - Shadow prices (dual variables) of the constraints are the rate by which the solution would improve if the constraints were relaxed.

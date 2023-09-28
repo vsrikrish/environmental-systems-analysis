@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BEE 4750 - Fall 2023 - BEE 4750 Lab 1: Julia Basics</title>
+<title>BEE 4750 - Fall 2023 - BEE 4750 Lab 3: Linear Programming with JuMP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../labs/lab02/lab02.html" rel="next">
-<link href="../../labs.html" rel="prev">
+<link href="../../project.html" rel="next">
+<link href="../../labs/lab02/lab02.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -111,11 +111,14 @@ window.MathJax = {
     }
   };
 </script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="BEE 4750 - Fall 2023 - BEE 4750 Lab 1: Julia Basics">
+<meta property="og:title" content="BEE 4750 - Fall 2023 - BEE 4750 Lab 3: Linear Programming with JuMP">
 <meta property="og:description" content="Homepage for BEE 4750/57e50, Environmental Systems Analysis, at Cornell University, Fall 2023.">
 <meta property="og:site_name" content="BEE 4750 - Fall 2023">
 </head>
@@ -129,7 +132,7 @@ window.MathJax = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../labs.html">Labs</a></li><li class="breadcrumb-item"><a href="../../labs/lab01/lab01.html">Lab 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../labs.html">Labs</a></li><li class="breadcrumb-item"><a href="../../labs/lab03/lab03.html">Lab 3</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -238,7 +241,7 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../labs/lab01/lab01.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../labs/lab01/lab01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 1</span></a>
   </div>
 </li>
@@ -250,7 +253,7 @@ window.MathJax = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../labs/lab03/lab03.html" class="sidebar-item-text sidebar-link">
+  <a href="../../labs/lab03/lab03.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Lab 3</span></a>
   </div>
 </li>
@@ -359,30 +362,24 @@ window.MathJax = {
    
   <ul>
   <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#problems-10-points" id="toc-problems-10-points" class="nav-link" data-scroll-target="#problems-10-points">Problems (10 points)</a>
   <ul class="collapse">
-  <li><a href="#julia" id="toc-julia" class="nav-link" data-scroll-target="#julia">Julia</a></li>
-  <li><a href="#jupyter-notebooks" id="toc-jupyter-notebooks" class="nav-link" data-scroll-target="#jupyter-notebooks">Jupyter Notebooks</a></li>
-  <li><a href="#julia-basics" id="toc-julia-basics" class="nav-link" data-scroll-target="#julia-basics">Julia Basics</a></li>
-  <li><a href="#formatting-math" id="toc-formatting-math" class="nav-link" data-scroll-target="#formatting-math">Formatting Math</a></li>
-  <li><a href="#looking-for-help" id="toc-looking-for-help" class="nav-link" data-scroll-target="#looking-for-help">Looking For Help</a></li>
+  <li><a href="#problem-1-problem-formulation-5-points" id="toc-problem-1-problem-formulation-5-points" class="nav-link" data-scroll-target="#problem-1-problem-formulation-5-points">Problem 1: Problem Formulation (5 points)</a></li>
+  <li><a href="#problem-2-find-the-solution-5-points" id="toc-problem-2-find-the-solution-5-points" class="nav-link" data-scroll-target="#problem-2-find-the-solution-5-points">Problem 2: Find the Solution (5 points)</a></li>
+  <li><a href="#problem-2.3-1-point" id="toc-problem-2.3-1-point" class="nav-link" data-scroll-target="#problem-2.3-1-point">Problem 2.3 (1 point)</a></li>
   </ul></li>
-  <li><a href="#exercises-10-points" id="toc-exercises-10-points" class="nav-link" data-scroll-target="#exercises-10-points">Exercises (10 points)</a>
-  <ul class="collapse">
-  <li><a href="#exercise-1-3-points" id="toc-exercise-1-3-points" class="nav-link" data-scroll-target="#exercise-1-3-points">Exercise 1 (3 points)</a></li>
-  <li><a href="#exercise-2-3-points" id="toc-exercise-2-3-points" class="nav-link" data-scroll-target="#exercise-2-3-points">Exercise 2 (3 points)</a></li>
-  <li><a href="#exercise-3-making-a-plot-3-points" id="toc-exercise-3-making-a-plot-3-points" class="nav-link" data-scroll-target="#exercise-3-making-a-plot-3-points">Exercise 3: Making a Plot (3 points)</a></li>
-  </ul></li>
-  <li><a href="#export-and-submit-the-notebook-1-point" id="toc-export-and-submit-the-notebook-1-point" class="nav-link" data-scroll-target="#export-and-submit-the-notebook-1-point">Export and Submit the Notebook (1 point)</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/labs/lab01/lab01.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lab01.ipynb" download="lab01.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/labs/lab03/lab03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lab03.ipynb" download="lab03.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../labs.html">Labs</a></li><li class="breadcrumb-item"><a href="../../labs/lab01/lab01.html">Lab 1</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../labs.html">Labs</a></li><li class="breadcrumb-item"><a href="../../labs/lab03/lab03.html">Lab 3</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">BEE 4750 Lab 1: Julia Basics</h1>
+<h1 class="title">BEE 4750 Lab 3: Linear Programming with JuMP</h1>
 </div>
 
 
@@ -409,7 +406,7 @@ Due Date
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Friday, 9/1/23, 9:00pm</p>
+<p>Friday, 10/13/23, 9:00pm</p>
 </div>
 </div>
 <div class="callout callout-style-simple callout-caution">
@@ -419,175 +416,261 @@ Due Date
 </div>
 <div class="callout-body-container">
 <p>If you are enrolled in the course, make sure that you use the GitHub Classroom link provided in Ed Discussion, or you may not be able to get help if you run into problems.</p>
-<p>Otherwise, you can <a href="https://github.com/BEE4750/lab01">find the Github repository here</a>.</p>
+<p>Otherwise, you can <a href="{{< var github_org.repo >}}/lab03">find the Github repository here</a>.</p>
 </div>
 </div>
 </div>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>The following code should go at the top of most Julia scripts; it will load the local package environment and install any needed packages. You will see this often and shouldn’t need to touch it.</p>
-<div id="9bea54ce" class="cell" data-execution_count="1">
+<div id="eacc55e7" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"."</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This next cell loads packages which are required for the rest of the code evaluation. In this case, we only need to load the <code>Plots.jl</code> plotting package, but you will see others over the course of the semester (and can add more if desired; just make sure that you’ve <a href="https://viveks.me/environmental-systems-analysis/tutorials/julia-basics.html#package-management">added the new packages to the environment</a>). Standard Julia practice is to load all of the needed packages at the top of the file.</p>
-<div id="9aab18e6" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f95f5f52" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">JuMP </span><span class="co"># optimization modeling syntax</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">HiGHS </span><span class="co"># optimization solver</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots </span><span class="co"># plotting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="introduction" class="level2">
+<section id="overview" class="level2 cell markdown">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In this lab, you will write and solve a resource allocation example using <code>JuMP.jl</code>. <code>JuMP.jl</code> provides an intuitive syntax for writing, solving, and querying optimization problems.</p>
+<p>For an example of using <code>JuMP.jl</code> to solve linear programs, see <a href="https://viveks.me/environmental-systems-analysis/tutorials/julia-jump.html">the relevant tutorial on the class website</a>.</p>
+</section>
+<section id="introduction" class="level2 cell markdown">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<section id="julia" class="level3">
-<h3 class="anchored" data-anchor-id="julia">Julia</h3>
-<p>Julia is an up-and-coming language, originally developed for scientific programming. While learning a new programming language always has its hiccups, the good news is that if you’ve programmed in a high-level language such as Python or MATLAB, most Julia concepts should look familiar.</p>
-<p>If you have not successfully set up Julia, follow the instructions in <a href="https://viveks.me/environmental-systems-analysis/setup.html">Tools Setup</a> and/or ask for help.</p>
-<p>You can use other editors for this course, but our recommendation is <a href="https://code.visualstudio.com/">Visual Studio Code</a> with the <a href="https://marketplace.visualstudio.com/items?itemName=julialang.language-julia">Julia extension</a>, which will make life a <em>lot</em> simpler! You should have set this up by following the <a href="https://viveks.me/environmental-systems-analysis/setup.html">Tools Setup</a> instructions, but if not, do so now and/or ask for help.</p>
+<p>Your task is to decide how much lumber to produce to maximize profit from wood sales. You can purchase wood from a managed forest, which consists of spruce (320,000 bf) and fir (720,000 bf). Spruce costs $0.12 per bf to purchase and fir costs $0.08 per bf.</p>
+<p>At the lumber mill, wood can be turned into plywood of various grades (see the table for how much wood of each type is required for and the revenue from each grade).</p>
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Plywood Grade</th>
+<th style="text-align: center;">Inputs (bf/bf plywood)</th>
+<th style="text-align: center;">Revenue ($/1000 bf)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.5 (S) + 1.5 (F)</td>
+<td style="text-align: center;">400</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.0 (S) + 2.0 (F)</td>
+<td style="text-align: center;">520</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.5 (S) + 2.0 (F)</td>
+<td style="text-align: center;">700</td>
+</tr>
+</tbody>
+</table>
+<p>Any excess wood is sent to be recycled into particle board, which can be sold for a net revenue of $0.03 per bf. This is summarized in the figure below.</p>
 </section>
-<section id="jupyter-notebooks" class="level3">
-<h3 class="anchored" data-anchor-id="jupyter-notebooks">Jupyter Notebooks</h3>
-<p>Jupyter notebooks integrate text and equations in Markdown with Julia (or Python, or R) code. To do this, Jupyter notebooks consist of two types of “cells”: code cells and Markdown (text) cells.</p>
-<p>Click once on this section of text. A box will appear around this text (and some areas above/below it) - all of that is within this cell.</p>
-<p>Markdown is a text markup framework for formatting language that makes things look pretty when viewed across different platforms: web browsers, notebooks, and so forth. Text written in Markdown can also include hyperlinks, LaTeX equations, section headers, and images, among other features (most of <a href="https://viveks.me/climate-risk-analysis">the course website</a> and the lecture notes were all written in Markdown!). <a href="https://www.markdownguide.org/cheat-sheet/">Here is a basic Markdown cheat sheet</a>.</p>
-<p>What you are looking at right now is the formatted text after the Markdown is processed. To see the raw Markdown, do one of:</p>
-<ul>
-<li>press <code>Enter</code> while that cell is selected, or</li>
-<li>double-click on that cell.</li>
-</ul>
-<hr>
-<p>A couple of the features you will see in this Markdown cell:</p>
-<ul>
-<li>The <code>---</code> command creates a horizontal line. This is also nice for separating sections.</li>
-<li>Backticks (<code>`...`</code>) can be used to format and highlight code, keystrokes, etc.</li>
-<li>The <code>#</code> sign is used to create a new section header; two <code>#</code> signs (<code>##</code>) is used to create a new subsection header; <code>###</code> creates a subsubsection, and so on.</li>
-<li>You can create a bulleted list by using the asterisk <code>*</code> or a dash <code>-</code> and a space.</li>
-<li>You can create regular text by just typing as usual.</li>
-<li>You can create <strong>bold-faced text</strong> by wrapping it with two asterisks on both sides.</li>
-<li>You can create <em>italicized text</em> by wrapping it with a single asterisk on both sides.</li>
-<li>To create a new paragraph, you must include a blank line between the old and new paragraphs.</li>
-</ul>
-<p>At this point you might be wondering how to turn this cell back into the fully formatted Markdown text instead of the raw Markdown you’re probably still looking at. You have a couple of options, depending on your platform, but the most consistent is to type <code>Shift + Enter</code> to <strong>execute</strong> the cell (this is also how to run code, but more on that later).</p>
-<p>Additionally, you will frequently need to create new cells in your Jupyter notebooks. How you do this will depend on how you interact with the notebook, but try to figure this out now.</p>
-<p>One tip is to think carefully about what bits of code should be in the same cell, as you typically only see output from the last command in a cell. For example, compare the following:</p>
-<div id="913ecd2c" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">5</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>-0.9589242746631385</code></pre>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Spruce] -- $0.12 per bf --&gt; C{Lumber Mill}
+    B[Fir] -- $0.08 per bf --&gt; C
+    C --&gt; P(Plywood)
+    C -- Wood Excess --&gt; D{Recycle}
+    D --&gt; E(Particle Board)
+    E -- $0.03 per bf net --&gt; S[Sell]
+    P -- Price depends on grade --&gt; S
+</pre>
 </div>
 </div>
-<p>with</p>
-<div id="6f4c7ba9" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>5</code></pre>
 </div>
 </div>
-<div id="4f25f432" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>-0.9589242746631385</code></pre>
-</div>
-</div>
-<p>In Julia, you can also suppress the output of a command with a semi-colon:</p>
-<div id="719151a2" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(x);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>which can help if you want to split some code out for clarity or to insert some text prior to it, but don’t want to clutter the notebook with its output.</p>
-<p>For code cells, to execute the commands within the cell, we also press <code>Shift+Enter</code>.</p>
-<p>Finally, <strong>make sure that you evaluate all of the code cells in order before submitting</strong>. One bad outcome with notebooks occurs when cells are evaluated out of order, so fixed bugs and edits in previous cells do not get a chance to propagate down. You can do this with the <code>Run All</code> command in whichever interface you’re using to edit your notebook.</p>
+<section id="problems-10-points" class="level2">
+<h2 class="anchored" data-anchor-id="problems-10-points">Problems (10 points)</h2>
+<section id="problem-1-problem-formulation-5-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-1-problem-formulation-5-points">Problem 1: Problem Formulation (5 points)</h3>
+<p>In this problem, you will go through the steps of formulating a linear program for this problem.</p>
 </section>
-<section id="julia-basics" class="level3">
-<h3 class="anchored" data-anchor-id="julia-basics">Julia Basics</h3>
-<p>There are many tutorials and references for Julia, including a <a href="../tutorials/julia-basics.html">basics overview on the class website</a>. Please feel free to reference these as you work through any part of the course.</p>
+<section id="problem-1.1-1-point" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-1.1-1-point">Problem 1.1 (1 point)</h4>
+<p>What are your decision variables? Clearly define your notation, including what variables you are using, what they mean, and what their units are.</p>
 </section>
-<section id="formatting-math" class="level3">
-<h3 class="anchored" data-anchor-id="formatting-math">Formatting Math</h3>
-<p>It will often be helpful to include nicely-formatted mathematics in a notebook. Markdown accomodates this using LaTeX syntax. A LaTeX cheatsheet is available on the class website, and many other guides exist online.</p>
-<p>Below is an example of a formatted equation: <span class="math display">\[x = 5.\]</span></p>
+<section id="problem-1.2-1-point" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-1.2-1-point">Problem 1.2 (1 point)</h4>
+<p>Derive your objective function. Support your function with justifications and/or equations as necessary. You will not receive credit just for the function alone.</p>
 </section>
-<section id="looking-for-help" class="level3">
-<h3 class="anchored" data-anchor-id="looking-for-help">Looking For Help</h3>
-<p>There is no shame in using Google, or other resources, for help when programming. There are many, many times when you can’t quite get the syntax to work, can’t quite figure out the right package or command to use, or are feeling too lazy or overwhelmed (I’m not judging either of those!) to dig through the documentation. Some good resources include:</p>
-<ul>
-<li><a href="https://stackoverflow.com/">Stack Overflow</a> is a treasure trove of answers;</li>
-<li>The <a href="https://discourse.julialang.org/">official Julia forum</a> and the <a href="https://www.reddit.com/r/Julia/">Julia Subreddit</a> are also very useful.</li>
-</ul>
-<p>You are also highly encouraged to post on <a href="https://us.edstem.org">Ed Discussion</a>, though getting a response might be less immediate. Just be mindful that to get good answers, <a href="https://stackoverflow.com/help/how-to-ask">you have to help people help you</a>, and <strong>make sure to give credit to any resources that were helpful</strong>!</p>
+<section id="problem-1.3-2-point" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-1.3-2-point">Problem 1.3 (2 point)</h4>
+<p>Derive any needed constraints. Support your function with justifications and/or equations as necessary. You will not receive credit just for the final constraints alone.</p>
 </section>
+<section id="problem-1.4-1-point" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-1.4-1-point">Problem 1.4 (1 point)</h4>
+<p>Put the linear program into standard form. For an example of the syntax for this, see lines 82–91 <a href="https://github.com/vsrikrish/environmental-systems-analysis/blob/Fall23/tutorials/julia-jump.qmd">here</a>.</p>
 </section>
-<section id="exercises-10-points" class="level2">
-<h2 class="anchored" data-anchor-id="exercises-10-points">Exercises (10 points)</h2>
-<p>Use your understanding of Julia syntax to complete the following (hopefully short) exercises. Convert your completed notebook to a PDF and submit it to the Gradescope Assignment “Lab 1”.</p>
-<p><strong>Remember to</strong>:</p>
-<ul>
-<li>Evaluate all of your code cells, in order (using a <code>Run All</code> command). This will make sure all output is visible and that the code cells were evaluated in the correct order.</li>
-<li>Tag each of the problems when you submit to Gradescope; a 10% penalty will be deducted if this is not done.</li>
-</ul>
-<section id="exercise-1-3-points" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1-3-points">Exercise 1 (3 points)</h3>
-<p>Given two numeric arrays <code>x</code> and <code>y</code>, write a function to compute their dot product if they have equal length, and return an error if not (this is useful for debugging!). Use the following code as a starting point.</p>
-<div id="fee8cf7f" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">dot_product</span>(x, y)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">...</span> <span class="co"># insert test condition for equal lengths</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="co"># compute and return dot product</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">throw</span>(<span class="fu">DimensionMismatch</span>(<span class="st">"length of x not equal to length of y"</span>))</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Here are some tests to make sure your code works as intended. Tests like these are useful to make sure everything works as intended. One reason to split your code up into functions is that it makes it straightforward to write tests to make sure each piece of your code works, which makes it easier to identify where errors are occuring.</p>
-<div id="5ebb079f" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dot_product</span>([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>], [<span class="fl">4</span> <span class="fl">5</span> <span class="fl">6</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>If you know the value you should get, you can write a more formal test using the <code>@assert</code> macro, which is a good way to “automate” checking (since you get an obvious error if the code doesn’t work as desired):</p>
-<div id="c98aad3b" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">dot_product</span>([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>], [<span class="fl">4</span> <span class="fl">5</span> <span class="fl">6</span>]) <span class="op">==</span> <span class="fl">32</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Let’s also make sure we get an error when the dimensions of the two vectors don’t match:</p>
-<div id="878af6fe" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dot_product</span>([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>], [<span class="fl">4</span> <span class="fl">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="problem-2-find-the-solution-5-points" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2-find-the-solution-5-points">Problem 2: Find the Solution (5 points)</h3>
+<section id="problem-2.1-2-points" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-2.1-2-points">Problem 2.1 (2 points)</h4>
+<p>Code your linear program using <code>JuMP</code>. Feel free to consult <a href="https://viveks.me/environmental-systems-analysis/tutorials/julia-jump.html">the website’s <code>JuMP</code> tutorial</a> for syntax help. The keys:</p>
 </section>
-<section id="exercise-2-3-points" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2-3-points">Exercise 2 (3 points)</h3>
-<p>This problem involves implementing Newton’s method for computing square roots; it was shamelessly copied from MIT’s <a href="https://computationalthinking.mit.edu/Spring21/hw0/">Introduction to Computational Thinking</a>. You will use a <code>while</code> loop instead of the <code>for</code> loop shown above.</p>
-<p>Implement the following algorithm in a function <code>newton_sqrt</code>:</p>
-<p>Given <span class="math inline">\(x &gt; 0\)</span>:</p>
 <ol type="1">
-<li>Take a guess <span class="math inline">\(a\)</span>.</li>
-<li>Divide <span class="math inline">\(x\)</span> by <span class="math inline">\(a\)</span>.<br>
-</li>
-<li>Update <span class="math inline">\(a\)</span> as the average of <span class="math inline">\(x/a\)</span> and <span class="math inline">\(a\)</span>.</li>
-<li>Repeat until <span class="math inline">\(x/a\)</span> is within a tolerance of <span class="math inline">\(\varepsilon\)</span> from <span class="math inline">\(a\)</span>.</li>
-<li>Return <span class="math inline">\(a \approx \sqrt{x}\)</span>.</li>
+<li><p>Initialize your model with a solver; in this case, we’ll use the <code>HiGHS</code> solver, but there are other solvers listed here for different types of problems, some of which are open and some of which require a commercial license: <a href="https://jump.dev/JuMP.jl/stable/installation/#Supported-solvers" class="uri">https://jump.dev/JuMP.jl/stable/installation/#Supported-solvers</a>:</p>
+<div id="17ec9259" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>example_model <span class="op">=</span> <span class="fu">Model</span>(HiGHS.Optimizer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>Define variables with syntax like</p>
+<div id="b60bf76d" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(example_model, <span class="fl">1</span> <span class="op">&gt;=</span> example_x <span class="op">&gt;=</span> <span class="fl">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This will create a variable <code>example_x</code> which is constrained to be between 0 and 1; you can leave off any of the bounds if a variable is unbounded in a particular direction. You can also add a vector of variables:</p>
+<div id="79dac662" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span> <span class="co"># define set to index variables</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(example_model, <span class="fl">1</span> <span class="op">&gt;=</span> example_z[t <span class="kw">in</span> T] <span class="op">&gt;=</span> <span class="fl">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>which will create a vector of 3 variables <code>example_z[1]</code>, …, <code>example_z[3]</code>, all of which are bounded between 0 and 1.</p></li>
+<li><p>Add an objective with</p>
+<div id="70abadb8" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@objective</span>(example_model, Max, example_x <span class="op">+</span> <span class="fu">sum</span>(example_z))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>which will add an objective to maximize (replace with <code>Min</code> to minimize).</p></li>
+<li><p>Add constraints:</p>
+<div id="9fa7da32" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(example_model, constraint1, <span class="fl">2</span>example_x <span class="op">+</span> <span class="fl">3</span><span class="fu">*sum</span>(example_z) <span class="op">&lt;=</span> <span class="fl">10</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(example_model, constraint2, <span class="fl">5</span>example_x <span class="op">-</span> example_z[<span class="fl">1</span>] <span class="op">&lt;=</span> <span class="fl">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>which will name the constraints <code>constraint1</code> and <code>constraint2</code> (you should make yours more descriptive about what the constraint actually is). The value of adding a name is to facilitate later querying of shadow prices, which we will discuss later. You can also add a vector of constraints which have similar structure or rely on different elements of a data vector:</p>
+<div id="29365ee5" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [<span class="fl">2</span>; <span class="fl">4</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="fl">8</span>; <span class="fl">12</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>I <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span> <span class="co"># set indices for constraint</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(example_model, vector_constraint[i <span class="kw">in</span> I], A[i] <span class="op">*</span> <span class="fu">sum</span>(example_z) <span class="op">.&lt;=</span> b[i])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can also define matrices of constraints which depend on two index sets by generalizing this syntax, e.g.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(example_model, matrix_constraint[i <span class="kw">in</span> I, j <span class="kw">in</span> J, <span class="op">...</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Specifying higher-dimensional vectors and matrices of variables and constraints will be important when we start looking at more complex applications, so don’t skip over this! You don’t want to manually enter thousands of constraints to ensure hourly electricity demand is met…</p>
+</div>
+</div>
+</div>
+<p>Finally, you can (and probably should) <code>print</code> your model to make sure that you get something that looks like the equations that you wrote down (in a notebook, this will be nicely rendered):</p>
+<div id="51308b81" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><span class="math display">\[ \begin{aligned}
+\max\quad &amp; example\_x + example\_z_{1} + example\_z_{2} + example\_z_{3}\\
+\text{Subject to} \quad &amp; 2 example\_x + 3 example\_z_{1} + 3 example\_z_{2} + 3 example\_z_{3} \leq 10\\
+&amp; 5 example\_x - example\_z_{1} \leq 2\\
+&amp; 2 example\_z_{1} + 2 example\_z_{2} + 2 example\_z_{3} \leq 8\\
+&amp; 4 example\_z_{1} + 4 example\_z_{2} + 4 example\_z_{3} \leq 12\\
+&amp; example\_x \geq 0\\
+&amp; example\_z_{1} \geq 0\\
+&amp; example\_z_{2} \geq 0\\
+&amp; example\_z_{3} \geq 0\\
+&amp; example\_x \leq 1\\
+&amp; example\_z_{1} \leq 1\\
+&amp; example\_z_{2} \leq 1\\
+&amp; example\_z_{3} \leq 1\\
+\end{aligned} \]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Define your entire model in one cell
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>JuMP</code> has great and intuitive syntax, but it doesn’t like re-defining variables or constraints once they’ve been set. I recommend putting all of your model-definition code (starting from <code>model = Model(...)</code>) for a particular optimization problem in a single notebook cell, so you can re-set up the entire problem with a single click when you want to make a change.</p>
+</div>
+</div></li>
 </ol>
-<div id="d4b10513" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="problem-2.2-1-points" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-2.2-1-points">Problem 2.2 (1 points)</h4>
+<p>Find the solution to your program and find the optimal values of the decision variables. Once you’ve defined your model, you can find the solution with `optimize!():</p>
+</section>
+<div id="db208545" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">optimize!</span>(example_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Running HiGHS 1.5.3 [date: 1970-01-01, git hash: 45a127b78]
+Copyright (c) 2023 HiGHS under MIT licence terms
+Presolving model
+2 rows, 4 cols, 6 nonzeros
+2 rows, 3 cols, 5 nonzeros
+2 rows, 3 cols, 5 nonzeros
+Presolve : Reductions: rows 2(-2); columns 3(-1); elements 5(-7)
+Solving the presolved LP
+Using EKK dual simplex solver - serial
+  Iteration        Objective     Infeasibilities num(sum)
+          0     0.0000000000e+00 Ph1: 0(0) 0s
+          2    -3.5333333333e+00 Pr: 0(0) 0s
+Solving the original LP from the solution after postsolve
+Model   status      : Optimal
+Simplex   iterations: 2
+Objective value     :  3.5333333333e+00
+HiGHS run time      :          0.01</code></pre>
 </div>
-<p>Use your <code>newton_sqrt</code> function to compute <span class="math inline">\(\sqrt{2}\)</span> to within a tolerance of <span class="math inline">\(\varepsilon = 0.01\)</span>.</p>
-<div id="1ebf6c5d" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What if I Get An Error?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <code>optimize!()</code> throws an error, that’s usually a sign that something is wrong with the formulation (for example, a variable might not be bounded or a constraint might not be specified correctly) or a typo in the model definition. Linear programs should be well behaved!</p>
+</div>
+</div>
+<p>To find the values of variables after optimizing, use <code>value.()</code> (the broadcasting ensures this will work for vector-valued variables as well):</p>
+<div id="8efa66fa" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(example_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>0.6</code></pre>
+</div>
+</div>
+<div id="33ad88f9" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(example_z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>1-dimensional DenseAxisArray{Float64,1,...} with index sets:
+    Dimension 1, 1:3
+And data, a 3-element Vector{Float64}:
+ 1.0
+ 0.9333333333333332
+ 1.0</code></pre>
+</div>
 </div>
 </section>
-<section id="exercise-3-making-a-plot-3-points" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-3-making-a-plot-3-points">Exercise 3: Making a Plot (3 points)</h3>
-<p>Write a function to compute the square of an integer <code>x</code>. Evaluate this function for integers between <span class="math inline">\(x=-5\)</span> and <span class="math inline">\(x=5\)</span> and make a plot of the squared values (you can find a quick guide to making various types of plots <a href="../tutorials/julia-plots.html">here</a>). Make sure to label your axes.</p>
-<div id="bb737a4c" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="problem-2.3-1-point" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-2.3-1-point">Problem 2.3 (1 point)</h3>
+<p>How would your profit change if you could buy 1,000 additional bf of spruce? You can answer this by getting the shadow price of a particular variable with:</p>
+</section>
+<div id="c5444df9" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shadow_price</span>(constraint1) <span class="co"># this is why we named the constraints when we defined them</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>0.3333333333333333</code></pre>
 </div>
+</div>
+<section id="problem-2.4-1-point" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-2.4-1-point">Problem 2.4 (1 point)</h4>
+<p>Would you prefer to have 1,000 additional bf of spruce or 2,000 additional bf of fir?</p>
 </section>
 </section>
-<section id="export-and-submit-the-notebook-1-point" class="level2">
-<h2 class="anchored" data-anchor-id="export-and-submit-the-notebook-1-point">Export and Submit the Notebook (1 point)</h2>
-<p>The last step is to export the notebook for submission to Gradescope (this section won’t be repeated going forward, but the steps are the same).</p>
-<p>You should see the following menu bar at the top of the VS Code window: <img src="figures/vs-code-top-bar.png" class="img-fluid" alt="Notebook Menu Bar"></p>
-<ol type="1">
-<li>Click “Run All” at the top to execute all of the cells in order. <strong>Please do not forget to do this before exporting and submitting or you may lose points because your code has not been executed or may have errors</strong>.</li>
-<li>Click the ellipsis (“…”) and select “Export”. If you have LaTeX installed, you can click “PDF”; otherwise, click “HTML.” Save the file, and then when prompted, open the file. This should open the page in your browser; go to the print interface and save as a PDF. ::: {.callout-tip} When printing to PDF, long lines will run off the edge of code cells, which may result in comments or code being hidden. If you see this, go back to the notebook and break up long lines into shorter onces (for example, see the comment in the above code cell) to ensure key parts of your results aren’t missing. :::</li>
-</ol>
-<p>Great! That’s the basic workflow for every assignment in this course.</p>
-<p>Now you have your PDF that you can submit to Gradescope. Make sure that you tag pages corresponding to relevant problems to avoid a 10% penalty.</p>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Put any consulted sources here, including classmates you worked with/who helped you.</p>
 
 
 </section>
@@ -1026,13 +1109,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../labs.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Labs</span>
+      <a href="../../labs/lab02/lab02.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 2</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../labs/lab02/lab02.html" class="pagination-link">
-        <span class="nav-page-text">Lab 2</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../project.html" class="pagination-link">
+        <span class="nav-page-text">Final Project</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

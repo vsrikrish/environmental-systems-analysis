@@ -45,7 +45,7 @@
     "href": "project.html#schedule",
     "title": "Final Project",
     "section": "Schedule",
-    "text": "Schedule\nMilestones which are only for BEE 5750 or 4750 students are in italics.\n\n\n\n\n\n\n\n\n\n\nMilestone\nPoints\nInstructions\nRubric\nDue Date\n\n\n\n\nProposal\n10\n\n\nFri, Sep 29\n\n\nProposal Peer Review\n10\n\n\nMon, Oct 2\n\n\nRegulations Report\n20\n\n\nFri, Oct 27\n\n\nProject Update\n10\n\n\nFri, Nov 10\n\n\nPoster\n30\n\n\nFri, Dec 4\n\n\nPoster Peer Review\n10\n\n\nFri, Dec 15\n\n\nLiterature Review (5750 only)\n10\n\n\nFri, Dec 15\n\n\nTeam Evaluations (4750 only)\n10\n\n\nFri, Dec 15",
+    "text": "Schedule\nMilestones which are only for BEE 5750 or 4750 students are in italics.\n\n\n\n\n\n\n\n\n\n\nMilestone\nPoints\nInstructions\nRubric\nDue Date\n\n\n\n\nProposal\n10\n\n\nFri, Sep 29\n\n\nProposal Peer Review\n10\n\n\nMon, Oct 2\n\n\nRegulations Report\n20\n\n\n\n\n\nProject Update\n10\n\n\nFri, Nov 10\n\n\nPoster\n30\n\n\nFri, Dec 4\n\n\nPoster Peer Review\n10\n\n\nFri, Dec 15\n\n\nLiterature Review (5750 only)\n10\n\n\nFri, Dec 15\n\n\nTeam Evaluations (4750 only)\n10\n\n\nFri, Dec 15",
     "crumbs": [
       "Final Project"
     ]
@@ -390,67 +390,60 @@
     "text": "Rubric\nGeneral points will be deducted for the following:\n\nLate submission (10% per day);\nUntagged answers in Gradescope (10% penalty);\nNon-referenced consulted sources (penalty depending on severity).\n\n\nProblem 1 (8 Points)\n\n\n\n\n\n\n\n\n\n\nMissing (0)\nNeeds Improvement (1-2)\nDeveloping (3-4)\nAbove Average (5-6)\nExcellent (7-8)\n\n\n\n\nSolution missing or unrelated to problem description.\nCode does not work (throws an error) or implements a different model.\nCode runs but has a major bug or logical error which makes the answer to the minimum value incorrect.\nCode implements the model correctly and gets the right answer but is uncommented or unclear.\nCode works or may contain a minor bug.\n\n\n\n\n\nProblem 2 (4 points)\n\n\n\n\n\n\n\n\n\n\nMissing (0)\nNeeds Improvement (1)\nDeveloping (2)\nAbove Average (3)\nExcellent (4)\n\n\n\n\nPlot not provided or does not seem related to the problem.\nPlot is missing requested elements or plotted series has major mistakes.\nPlot is missing major components, such as axis labels or legends.\nPlot is missing minor components, such as units, or has minor mistakes in the plotted series.\nPlot is clearly and completely labelled and is correct.\n\n\n\n\n\nProblem 3 (3 points)\n\n\n\n\n\n\n\n\nNeeds Improvement (0)\nDeveloping (1)\nAbove Average (2)\n\n\n\n\nProblem missing or no solution provided using model from Problem 1.\nModel used to provide wrong answer.\nCorrect solution obtained.\n\n\n\n\n\nProblem 4 (5 points)\n\n\n\n\n\n\n\n\n\nMissing (0)\nDeveloping (1-2)\nAbove Average (3-4)\nExcellent (5)\n\n\n\n\nSolution not provided or does not seem related to the problem.\nSolution is provided, but contains major mistakes in the approach.\nSolution contains minor mistakes, or is inappropriately precise (in either direction).\nSolution is correct and is correctly implemented.\n\n\n\n\n\nProblem 5 (5 points)\n\n\n\n\n\n\n\n\n\nMissing (0)\nDeveloping (1-2)\nAbove Average (3-4)\nExcellent (5)\n\n\n\n\nSolution not provided or does not seem related to the problem.\nSolution is provided, but contains major mistakes in the approach.\nSolution contains minor mistakes, or is inappropriately precise (in either direction).\nSolution is correct and is correctly implemented.\n\n\n\n\n\nProblem 6 (5 points)\n\n\n\n\n\n\n\n\n\nMissing (0)\nDeveloping (1-2)\nAbove Average (3-4)\nExcellent (5)\n\n\n\n\nAnswer not provided or does not seem related to the problem.\nAnswer is provided, but is not or is poorly justified.\nAnswer is not complete and misses some additional information.\nComplete answer provided.\n\n\n\n\n\nProblem 7 (5 points)\n\n\n\n\n\n\n\n\n\nMissing (0)\nDeveloping (1-2)\nAbove Average (3-4)\nExcellent (5)\n\n\n\n\nSolution not provided or does not seem related to the problem.\nSolution is provided, but contains major mistakes in the approach.\nSolution contains minor mistakes, is inappropriately precise (in either direction), or gets the right answer for the wrong reason(s) (by not using the model).\nSolution is correct and is correctly implemented.\n\n\n\n\n\nProblem 8 (5 points)\n\n\n\n\n\n\n\n\n\nMissing (0)\nDeveloping (1-2)\nAbove Average (3-4)\nExcellent (5)\n\n\n\n\nSolution not provided or does not seem related to the problem.\nSolution is provided, but contains major mistakes in the approach.\nSolution contains minor mistakes, or is inappropriately precise (in either direction).\nSolution is correct and is correctly implemented."
   },
   {
-    "objectID": "rubrics/lab01.html",
-    "href": "rubrics/lab01.html",
-    "title": "Lab 1 Rubric",
+    "objectID": "rubrics/proposal-review.html",
+    "href": "rubrics/proposal-review.html",
+    "title": "Proposal Review Rubric",
     "section": "",
-    "text": "This lab will be graded on completion. Full (10) points will be given for a submission which is complete and successfully uploaded to Gradescope (including tagged problems).\nHowever, 10% (1 point) will be taken off for each day the proposal is late (starting at the due date/time), and 10% (1 point) will also be deducted if problems are not tagged in Gradescope (additional points may be lost if the TA does not see solutions because of a lag of tags; these points will not be subject to a regrade).\nProblems whose solutions are not rendered in the submitted PDFs will be treated as though they were not completed."
+    "text": "You will be graded on completing your two reviews (90%) and reading your received reviews (10%)."
   },
   {
-    "objectID": "rubrics/regulation.html",
-    "href": "rubrics/regulation.html",
-    "title": "Regulations Report Rubric",
+    "objectID": "rubrics/lab03.html",
+    "href": "rubrics/lab03.html",
+    "title": "Lab 3 Rubric",
     "section": "",
-    "text": "The report is graded out of a total of 20 points.\n\n\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0)\nDeveloping (1)\nAbove Average (2)\nExcellent (3)\n\n\n\n\nNo description of background, or description does not make the problem or regulatory context clear.\nDescribes the broad regulatory context clearly and includes specific concerns or motivating incidents.\nMotivates need for regulatory action, but not clearly.\nNeed for regulatory action is clearly articulated in light of context and concerns.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0)\nDeveloping (1)\nAbove Average (2)\nExcellent (4)\n\n\n\n\nMissing or no specifics provided.\nProvides some details but writing is unclear and not tied to specific aims.\nPurpose and aims of regulation are clearly articulated.\nPurpose of regulation is tied clearly to the background context."
+    "text": "This is the grading rubric for Lab 3. The rubric does not provide specifics, but should give an idea of what a complete solution looks like and how different components are prioritized and weighted.\nThe assignment is out of a total of 10 points."
   },
   {
-    "objectID": "rubrics/regulation.html#rubric",
-    "href": "rubrics/regulation.html#rubric",
-    "title": "Regulations Report Rubric",
+    "objectID": "rubrics/lab03.html#rubric",
+    "href": "rubrics/lab03.html#rubric",
+    "title": "Lab 3 Rubric",
+    "section": "Rubric",
+    "text": "Rubric\n\nProblem 1 (5 Points)\n\nProblem 1.1 (1 points)\n\n\n\n\n\n\n\nMissing or Needs Improvement (0)\nAbove Average (1)\n\n\n\n\nProblem missing or variables not well defined.\nDecision variables defined along with units and meaning; minor mistakes ok.\n\n\n\n\n\nProblem 1.2 (2 points)\n\n\n\n\n\n\n\nMissing or Needs Improvement (0)\nAbove Average (1)\n\n\n\n\nNo answer, major mistakes in objective function provided, or objective function provided without derivation or justification.\nObjective function provided with derivation; minor mistakes ok.\n\n\n\n\n\nProblem 1.3 (2 points)\n\n\n\n\n\n\n\n\nMissing (0)\nNeeds Improvement (1)\nAbove Average (2)\n\n\n\n\nNo answers or major conceptual errors on constraint derivation.\nConstraint set mostly but not complete.\nComplete constraint set provided; minor mistakes ok.\n\n\n\n\n\nProblem 1.4 (1 points)\n\n\n\n\n\n\n\nMissing or Needs Improvement (0)\nAbove Average (1)\n\n\n\n\nNo answer or problem not put in standard form.\nProblem provided in standard form, consistent with the prior answers.\n\n\n\n\n\n\nProblem 2 (5 points)\n\nProblem 2.1 (2 points)\n\n\n\n\n\n\n\n\nMissing (0)\nNeeds Improvement (1)\nAbove Average (2)\n\n\n\n\nSolution missing or implementation unrelated to problem.\nCode provided but has major problems (throws an error).\nCode provided which correctly implements the problem (per Problem 1.4) and does not throw an error.\n\n\n\n\n\nProblem 2.2 (1 points)\n\n\n\n\n\n\n\nMissing or Needs Improvement (0)\nAbove Average (1)\n\n\n\n\nSolution missing components (for example, decision variables not provided).\nComplete solution provided which includes optimal objective value and decision variable values.\n\n\n\n\n\nProblem 2.3 (1 points)\n\n\n\n\n\n\n\nMissing or Needs Improvement (0)\nAbove Average (1)\n\n\n\n\nSolution missing or shadow price not queried or interpreted properly.\nCorrect solution provided.\n\n\n\n\n\nProblem 2.4 (1 points)\n\n\n\n\n\n\n\nMissing or Needs Improvement (0)\nAbove Average (1)\n\n\n\n\nSolution missing or no interpretation of queried values provided.\nAnswer provided which answers the question posed."
+  },
+  {
+    "objectID": "rubrics/lab02.html",
+    "href": "rubrics/lab02.html",
+    "title": "Lab 2 Rubric",
     "section": "",
-    "text": "The report is graded out of a total of 20 points.\n\n\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0)\nDeveloping (1)\nAbove Average (2)\nExcellent (3)\n\n\n\n\nNo description of background, or description does not make the problem or regulatory context clear.\nDescribes the broad regulatory context clearly and includes specific concerns or motivating incidents.\nMotivates need for regulatory action, but not clearly.\nNeed for regulatory action is clearly articulated in light of context and concerns.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0)\nDeveloping (1)\nAbove Average (2)\nExcellent (4)\n\n\n\n\nMissing or no specifics provided.\nProvides some details but writing is unclear and not tied to specific aims.\nPurpose and aims of regulation are clearly articulated.\nPurpose of regulation is tied clearly to the background context."
+    "text": "This is the grading rubric for Lab 2. The rubric does not provide specifics, but should give an idea of what a complete solution looks like and how different components are prioritized and weighted.\nThe assignment is out of a total of 10 points. ## Rubric\n\nProblem 1 (5 Points)\n\nProblem 1.1 (1 points)\n\n\n\n\n\n\n\nMissing or Needs Improvement (0)\nAbove Average (1)\n\n\n\n\nProblem missing or major error in code.\nCode runs and has the correct logic to simulate the game\n\n\n\n\n\nProblem 1.2 (2 points)\n\n\n\n\n\n\n\n\nMissing (0)\nNeeds Improvement (1)\nAbove Average (2)\n\n\n\n\nNo plot provided or plot does not visualize what was asked for.\nPlot is related to the game simulations but has key issues prohibiting interpretability of results (unlabeled axes, etc).\nPlot is easy to interpret and graphs the correct quantities.\n\n\n\n\n\nProblem 1.3 (2 points)\n\n\n\n\n\n\n\n\nMissing (0)\nNeeds Improvement (1)\nAbove Average (2)\n\n\n\n\nAnalysis missing or unrelated to the plot.\nAnalysis does not match plot or is merely superficial (for example, identifying point of rough convergence without discussing earlier period).\nAnalysis matches the plot and covers everything asked for.\n\n\n\n\n\n\nProblem 2 (5 points)\n\nProblem 2.1 (3 points)\n\n\n\n\n\n\n\n\n\nMissing (0)\nNeeds Improvement (1)\nAbove Average (2)\nExcellent (3)\n\n\n\n\nProblem missing or code is not related to the problem.\nCode has major logic or syntax errors and/or justification of the number of samples is missing.\nCode has a minor error which prevents getting the right results or justification of the number of samples is weak (e.g. not related to any analysis of convergence).\nCode works properly and clear justification of number of samples is presented, drawing on evidence.\n\n\n\n\n\nProblem 2.2 (2 points)\n\n\n\n\n\n\n\n\nMissing (0)\nNeeds Improvement (1)\nAbove Average (2)\n\n\n\n\nPlot is missing or is unrelated to the problem.\nPlot is present but has issues which limit interpretabiity (e.g. unlabeled axes) or there is no analysis of the result.\nPlot answers the question and is easily interpretable, and there is a discussion of the results."
   },
   {
-    "objectID": "rubrics/regulation.html#current-state-4-points",
-    "href": "rubrics/regulation.html#current-state-4-points",
-    "title": "Regulations Report Rubric",
-    "section": "Current State (4 points)",
-    "text": "Current State (4 points)\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0)\nDeveloping (1)\nAbove Average (2)\nExcellent (4)\n\n\n\n\nMissing or no specifics provided.\nCurrent state of the regulation is provided but is unclear, and/or is derived from inappropriate sources.\nDescription of regulation is clear, but is largely reproduced from a single (appropriate) source.\nDescription clearly synthesizes multiple appropriate sources in own words."
-  },
-  {
-    "objectID": "rubrics/regulation.html#descriptive-timeline-4-points",
-    "href": "rubrics/regulation.html#descriptive-timeline-4-points",
-    "title": "Regulations Report Rubric",
-    "section": "Descriptive Timeline (4 points)",
-    "text": "Descriptive Timeline (4 points)\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0)\nDeveloping (1)\nAbove Average (3)\nExcellent (4)\n\n\n\n\nMissing or no specifics provided.\nFewer than three rule-making instances are provided without justification and evidence that fewer have occurred.\nAt least three rule-making instances are provided and are sufficiently detailed to understand the relevant changes, but feel disconnected.\nRule-making instances are well-motivated and connected to the broader narrative in a coherent timeline."
-  },
-  {
-    "objectID": "rubrics/regulation.html#model-incorporation-5-points",
-    "href": "rubrics/regulation.html#model-incorporation-5-points",
-    "title": "Regulations Report Rubric",
-    "section": "Model Incorporation (5 points)",
-    "text": "Model Incorporation (5 points)\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0)\nDeveloping (1)\nAbove Average (3)\nExcellent (5)\n\n\n\n\nMissing.\nSome attempt to incorporate the regulation into the systems model is provided, but missing specifics or is disconnected from its purpose and aims.\nThe regulation’s incorporation into the problem is specifically defined or justification seems arbitrary.\nThe regulation’s incorporation into the problem is well connected to the broader narrative about its purpose and aims."
-  },
-  {
-    "objectID": "project/proposal.html",
-    "href": "project/proposal.html",
-    "title": "Project Proposal Instructions",
+    "objectID": "project/proposal-review.html",
+    "href": "project/proposal-review.html",
+    "title": "Proposal Peer Review Instructions",
     "section": "",
-    "text": "The project proposal is intended to provide an initial idea of your project to formalize:\n\nThe scope of the systems model;\nThe specific design or management problem.\n\nThe proposal is not binding: you can change aspects of the project later, for example, if you find that you cannot formulate your proposed problem appropriately or cannot find data. However, please discuss these changes with Prof. Srikrishnan as soon as possible to make sure the revised project satisfies the project requirement.\nWhile you may have to submit the proposal before we can discuss prescriptive problems in class, your project can focus on decision-making. Provide an idea of the decision problem you would like to study, and you will have the opportunity to refine your problem formulation through discussions with Prof. Srikrishnan and in the project update based on the course content."
+    "text": "The proposal peer review is intended to serve two purposes, one for the reviewer and one for the writer of the proposal.\n\nOne of the best ways to improve as a writer is to read what others write. You may see aspects of other proposals that you either wish that you had included or you may see some that you want to make sure to avoid in the future. As you move forward in your career, you may write and read these kinds of documents.\nAs a writer, it’s always helpful to get others’ eyes on your writing. This feedback will be useful as you move forward with your project and it takes more concrete shape.\n\nYou will each review two proposals from other groups. The review process should be short."
   },
   {
-    "objectID": "project/proposal.html#overview",
-    "href": "project/proposal.html#overview",
-    "title": "Project Proposal Instructions",
+    "objectID": "project/proposal-review.html#overview",
+    "href": "project/proposal-review.html#overview",
+    "title": "Proposal Peer Review Instructions",
     "section": "",
-    "text": "The project proposal is intended to provide an initial idea of your project to formalize:\n\nThe scope of the systems model;\nThe specific design or management problem.\n\nThe proposal is not binding: you can change aspects of the project later, for example, if you find that you cannot formulate your proposed problem appropriately or cannot find data. However, please discuss these changes with Prof. Srikrishnan as soon as possible to make sure the revised project satisfies the project requirement.\nWhile you may have to submit the proposal before we can discuss prescriptive problems in class, your project can focus on decision-making. Provide an idea of the decision problem you would like to study, and you will have the opportunity to refine your problem formulation through discussions with Prof. Srikrishnan and in the project update based on the course content."
+    "text": "The proposal peer review is intended to serve two purposes, one for the reviewer and one for the writer of the proposal.\n\nOne of the best ways to improve as a writer is to read what others write. You may see aspects of other proposals that you either wish that you had included or you may see some that you want to make sure to avoid in the future. As you move forward in your career, you may write and read these kinds of documents.\nAs a writer, it’s always helpful to get others’ eyes on your writing. This feedback will be useful as you move forward with your project and it takes more concrete shape.\n\nYou will each review two proposals from other groups. The review process should be short."
   },
   {
-    "objectID": "project/proposal.html#instructions",
-    "href": "project/proposal.html#instructions",
-    "title": "Project Proposal Instructions",
+    "objectID": "project/proposal-review.html#instructions",
+    "href": "project/proposal-review.html#instructions",
+    "title": "Proposal Peer Review Instructions",
     "section": "Instructions",
-    "text": "Instructions\n\nYour proposal should be no more than 1 page, not including figures or references.\nProvide a brief overview of the system you would like to analyze, a motivation for the choice, and the problem you will study. Your proposal should include:\n\nAn overview of your system (including a diagram showing the control volume of your study, relevant metrics, and what exogenous factors you will consider).\nA rough idea of the experimental design, possible data sources and including what uncertainties you will consider.\nReferences for any sources consulted, including academic literature, websites, and news articles.\n\nInclude the name(s) of the project team at the top of the PDF.\nThe proposal should have the following format:\n\n1/2 inch margins on each side;\n12 point Calibri font;\n1.5x line spacing.\n\nSubmit a PDF of the proposal to Gradescope by 9:00 PM on the due date."
+    "text": "Instructions\n\nYou will be prompted to submit an anonymized version of your proposal to Canvas.\nPrior to class on the peer review date, you will be assigned two proposals to review anonymously.\nRead each proposal carefully and with a view towards the rubric below. You will choose a rating for each rubric item.\nWrite some comments synthesizing the positive and negative aspects of the proposal across the rubric entries.\nSubmit your reviews by 9pm on the peer review date.\nYour reviews have no bearing on grades, so keep them constructive. The goal is to help improve your final projects and those of your classmates.\nYou will be graded on completing the reviews (90%) and reading your received reviews (10%)."
+  },
+  {
+    "objectID": "project/proposal-review.html#rubric",
+    "href": "project/proposal-review.html#rubric",
+    "title": "Proposal Peer Review Instructions",
+    "section": "Rubric",
+    "text": "Rubric\nComponent | Needs A Lot Of Improvement | Needs Some Improvement | Fine As Is | Good |\n|:————-:||:————|:————|:————|:————-| | Problem Description | No problem description or goal provided. | Problem description or goals provided, but unclear. | Clear problem description or goals provided, but problem may not be well motivated. | Clear problem description or goals provided and well motivated as an interesting problem. | | System Overview | No description of the system for the analysis or description missing key details such as assumptions about included components and processes or metrics. | Description of system provided and appears complete but is unclear. | Description is clear and includes necessary information, but details are vague. | Description is clear, includes all information, and is detailed. | | Alignment of System and Problem | Unclear how system is relevant to the problem of interest. | System description is not well aligned with the problem description (e.g. there is a mismatch between the goals and which processes are included and how). | System and problem appear aligned but some lack of clarity in justifying why certain components were or weren’t included. | System and problem are well aligned and this is clear from the descriptions. | | Experimental Design | No or unclear details about proposed design included (metrics, uncertainties, data). | Proposed design described but may require more details to be actionable. | Proposed design may be slightly vague, but can get a complete picture of what the group is trying to do. | Proposed design is clear and actionable. | | References | References not included. | References included, but there are several places that should be referenced but are not. | References included and appropriate. | Proposal is thoroughly and clearly referenced. |"
   },
   {
     "objectID": "about.html",
@@ -908,6 +901,13 @@
     "text": "What is Linear Programming?\nLinear programming refers to optimization for linear models.\nAs we will see over the next few weeks, linear models are:\n\nrelatively simple (which lets us solve and analyze them “easily”);\nsurprisingly applicable to many contexts!"
   },
   {
+    "objectID": "slides/lecture06-3.html#sidebar-why-programming",
+    "href": "slides/lecture06-3.html#sidebar-why-programming",
+    "title": "Linear Programming",
+    "section": "Sidebar: Why “Programming”?",
+    "text": "Sidebar: Why “Programming”?\n“Program” used to refer to military logistics, which is the origin of this field of research. For this historical reason, “mathematical programming” is often used instead of “mathematical optimization.”\n\nWe typically restrict “program” for optimization problems which are formulated completely mathematically, versus we use a computer model to simulate the relationship between decision variables and outputs."
+  },
+  {
     "objectID": "slides/lecture06-3.html#linear-functions",
     "href": "slides/lecture06-3.html#linear-functions",
     "title": "Linear Programming",
@@ -926,7 +926,7 @@
     "href": "slides/lecture06-3.html#linearization",
     "title": "Linear Programming",
     "section": "Linearization",
-    "text": "Linearization\n\n\nLinear models are useful because we can linearize nonlinear functions.\nWhen we linearize components of an LP, this is called the linear relaxation of the original problem."
+    "text": "Linearization\n\n\nLinear models come up frequently because we can linearize nonlinear functions.\nWhen we linearize components of an mathematical program, this is called the linear relaxation of the original problem."
   },
   {
     "objectID": "slides/lecture06-3.html#linearization-1",
@@ -955,6 +955,20 @@
     "title": "Linear Programming",
     "section": "Why Is Solving LPs Straightforward?",
     "text": "Why Is Solving LPs Straightforward?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is the basis of all simplex methods for solving LPs.\nThese methods go back to George Dantzig in the 1940s and are still widely used today."
+  },
+  {
+    "objectID": "slides/lecture06-3.html#why-do-lps-have-a-corner-solution",
+    "href": "slides/lecture06-3.html#why-do-lps-have-a-corner-solution",
+    "title": "Linear Programming",
+    "section": "Why Do LPs Have A Corner Solution?",
+    "text": "Why Do LPs Have A Corner Solution?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCan a solution be in the interior?"
+  },
+  {
+    "objectID": "slides/lecture06-3.html#why-do-lps-have-a-corner-solution-1",
+    "href": "slides/lecture06-3.html#why-do-lps-have-a-corner-solution-1",
+    "title": "Linear Programming",
+    "section": "Why Do LPs Have A Corner Solution?",
+    "text": "Why Do LPs Have A Corner Solution?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat about along an edge but not a corner?"
   },
   {
     "objectID": "slides/lecture06-3.html#example-solving-an-lp",
@@ -4577,25 +4591,67 @@
     "text": "Instructions\n\nYour report should be no more than 3 pages, not including figures or references.\nYou should include the following information in your report (written as a narrative, rather than as a list):\n\nThe regulation you are researching;\nThe problem the regulation was intended to solve;\nThe history of the regulation’s proposal, amendments, and current state;\nAt least three specific instances of proposed rule-making, revision, or public comment in the regulatory process that applied to your regulation1;\nHow you plan to incorporate your regulation into your systems model;\nReferences for any sources consulted, including academic literature, websites, and news articles.\n\nInclude the name(s) of the project team at the top of the PDF.\nThe report should have the following format:\n\n1/2 inch margins on each side;\n12 point Calibri font;\n1.5x line spacing.\n\nSubmit a PDF of the proposal to Gradescope by 9:00 PM on the due date.\n\n\n\n1 If you cannot find three instances, document your search process and those you were able to find"
   },
   {
-    "objectID": "rubrics/lab02.html",
-    "href": "rubrics/lab02.html",
-    "title": "Lab 2 Rubric",
+    "objectID": "project/proposal.html",
+    "href": "project/proposal.html",
+    "title": "Project Proposal Instructions",
     "section": "",
-    "text": "This is the grading rubric for Lab 2. The rubric does not provide specifics, but should give an idea of what a complete solution looks like and how different components are prioritized and weighted.\nThe assignment is out of a total of 10 points. ## Rubric\n\nProblem 1 (5 Points)\n\nProblem 1.1 (1 points)\n\n\n\n\n\n\n\nMissing or Needs Improvement (0)\nAbove Average (1)\n\n\n\n\nProblem missing or major error in code.\nCode runs and has the correct logic to simulate the game\n\n\n\n\n\nProblem 1.2 (2 points)\n\n\n\n\n\n\n\n\nMissing (0)\nNeeds Improvement (1)\nAbove Average (2)\n\n\n\n\nNo plot provided or plot does not visualize what was asked for.\nPlot is related to the game simulations but has key issues prohibiting interpretability of results (unlabeled axes, etc).\nPlot is easy to interpret and graphs the correct quantities.\n\n\n\n\n\nProblem 1.3 (2 points)\n\n\n\n\n\n\n\n\nMissing (0)\nNeeds Improvement (1)\nAbove Average (2)\n\n\n\n\nAnalysis missing or unrelated to the plot.\nAnalysis does not match plot or is merely superficial (for example, identifying point of rough convergence without discussing earlier period).\nAnalysis matches the plot and covers everything asked for.\n\n\n\n\n\n\nProblem 2 (5 points)\n\nProblem 2.1 (3 points)\n\n\n\n\n\n\n\n\n\nMissing (0)\nNeeds Improvement (1)\nAbove Average (2)\nExcellent (3)\n\n\n\n\nProblem missing or code is not related to the problem.\nCode has major logic or syntax errors and/or justification of the number of samples is missing.\nCode has a minor error which prevents getting the right results or justification of the number of samples is weak (e.g. not related to any analysis of convergence).\nCode works properly and clear justification of number of samples is presented, drawing on evidence.\n\n\n\n\n\nProblem 2.2 (2 points)\n\n\n\n\n\n\n\n\nMissing (0)\nNeeds Improvement (1)\nAbove Average (2)\n\n\n\n\nPlot is missing or is unrelated to the problem.\nPlot is present but has issues which limit interpretabiity (e.g. unlabeled axes) or there is no analysis of the result.\nPlot answers the question and is easily interpretable, and there is a discussion of the results."
+    "text": "The project proposal is intended to provide an initial idea of your project to formalize:\n\nThe scope of the systems model;\nThe specific design or management problem.\n\nThe proposal is not binding: you can change aspects of the project later, for example, if you find that you cannot formulate your proposed problem appropriately or cannot find data. However, please discuss these changes with Prof. Srikrishnan as soon as possible to make sure the revised project satisfies the project requirement.\nWhile you may have to submit the proposal before we can discuss prescriptive problems in class, your project can focus on decision-making. Provide an idea of the decision problem you would like to study, and you will have the opportunity to refine your problem formulation through discussions with Prof. Srikrishnan and in the project update based on the course content."
   },
   {
-    "objectID": "rubrics/lab03.html",
-    "href": "rubrics/lab03.html",
-    "title": "Lab 3 Rubric",
+    "objectID": "project/proposal.html#overview",
+    "href": "project/proposal.html#overview",
+    "title": "Project Proposal Instructions",
     "section": "",
-    "text": "This is the grading rubric for Lab 3. The rubric does not provide specifics, but should give an idea of what a complete solution looks like and how different components are prioritized and weighted.\nThe assignment is out of a total of 10 points."
+    "text": "The project proposal is intended to provide an initial idea of your project to formalize:\n\nThe scope of the systems model;\nThe specific design or management problem.\n\nThe proposal is not binding: you can change aspects of the project later, for example, if you find that you cannot formulate your proposed problem appropriately or cannot find data. However, please discuss these changes with Prof. Srikrishnan as soon as possible to make sure the revised project satisfies the project requirement.\nWhile you may have to submit the proposal before we can discuss prescriptive problems in class, your project can focus on decision-making. Provide an idea of the decision problem you would like to study, and you will have the opportunity to refine your problem formulation through discussions with Prof. Srikrishnan and in the project update based on the course content."
   },
   {
-    "objectID": "rubrics/lab03.html#rubric",
-    "href": "rubrics/lab03.html#rubric",
-    "title": "Lab 3 Rubric",
-    "section": "Rubric",
-    "text": "Rubric\n\nProblem 1 (5 Points)\n\nProblem 1.1 (1 points)\n\n\n\n\n\n\n\nMissing or Needs Improvement (0)\nAbove Average (1)\n\n\n\n\nProblem missing or variables not well defined.\nDecision variables defined along with units and meaning; minor mistakes ok.\n\n\n\n\n\nProblem 1.2 (2 points)\n\n\n\n\n\n\n\nMissing or Needs Improvement (0)\nAbove Average (1)\n\n\n\n\nNo answer, major mistakes in objective function provided, or objective function provided without derivation or justification.\nObjective function provided with derivation; minor mistakes ok.\n\n\n\n\n\nProblem 1.3 (2 points)\n\n\n\n\n\n\n\n\nMissing (0)\nNeeds Improvement (1)\nAbove Average (2)\n\n\n\n\nNo answers or major conceptual errors on constraint derivation.\nConstraint set mostly but not complete.\nComplete constraint set provided; minor mistakes ok.\n\n\n\n\n\nProblem 1.4 (1 points)\n\n\n\n\n\n\n\nMissing or Needs Improvement (0)\nAbove Average (1)\n\n\n\n\nNo answer or problem not put in standard form.\nProblem provided in standard form, consistent with the prior answers.\n\n\n\n\n\n\nProblem 2 (5 points)\n\nProblem 2.1 (2 points)\n\n\n\n\n\n\n\n\nMissing (0)\nNeeds Improvement (1)\nAbove Average (2)\n\n\n\n\nSolution missing or implementation unrelated to problem.\nCode provided but has major problems (throws an error).\nCode provided which correctly implements the problem (per Problem 1.4) and does not throw an error.\n\n\n\n\n\nProblem 2.2 (1 points)\n\n\n\n\n\n\n\nMissing or Needs Improvement (0)\nAbove Average (1)\n\n\n\n\nSolution missing components (for example, decision variables not provided).\nComplete solution provided which includes optimal objective value and decision variable values.\n\n\n\n\n\nProblem 2.3 (1 points)\n\n\n\n\n\n\n\nMissing or Needs Improvement (0)\nAbove Average (1)\n\n\n\n\nSolution missing or shadow price not queried or interpreted properly.\nCorrect solution provided.\n\n\n\n\n\nProblem 2.4 (1 points)\n\n\n\n\n\n\n\nMissing or Needs Improvement (0)\nAbove Average (1)\n\n\n\n\nSolution missing or no interpretation of queried values provided.\nAnswer provided which answers the question posed."
+    "objectID": "project/proposal.html#instructions",
+    "href": "project/proposal.html#instructions",
+    "title": "Project Proposal Instructions",
+    "section": "Instructions",
+    "text": "Instructions\n\nYour proposal should be no more than 1 page, not including figures or references.\nProvide a brief overview of the system you would like to analyze, a motivation for the choice, and the problem you will study. Your proposal should include:\n\nAn overview of your system (including a diagram showing the control volume of your study, relevant metrics, and what exogenous factors you will consider).\nA rough idea of the experimental design, possible data sources and including what uncertainties you will consider.\nReferences for any sources consulted, including academic literature, websites, and news articles.\n\nInclude the name(s) of the project team at the top of the PDF.\nThe proposal should have the following format:\n\n1/2 inch margins on each side;\n12 point Calibri font;\n1.5x line spacing.\n\nSubmit a PDF of the proposal to Gradescope by 9:00 PM on the due date."
+  },
+  {
+    "objectID": "rubrics/regulation.html",
+    "href": "rubrics/regulation.html",
+    "title": "Regulations Report Rubric",
+    "section": "",
+    "text": "The report is graded out of a total of 20 points.\n\n\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0)\nDeveloping (1)\nAbove Average (2)\nExcellent (3)\n\n\n\n\nNo description of background, or description does not make the problem or regulatory context clear.\nDescribes the broad regulatory context clearly and includes specific concerns or motivating incidents.\nMotivates need for regulatory action, but not clearly.\nNeed for regulatory action is clearly articulated in light of context and concerns.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0)\nDeveloping (1)\nAbove Average (2)\nExcellent (4)\n\n\n\n\nMissing or no specifics provided.\nProvides some details but writing is unclear and not tied to specific aims.\nPurpose and aims of regulation are clearly articulated.\nPurpose of regulation is tied clearly to the background context."
+  },
+  {
+    "objectID": "rubrics/regulation.html#rubric",
+    "href": "rubrics/regulation.html#rubric",
+    "title": "Regulations Report Rubric",
+    "section": "",
+    "text": "The report is graded out of a total of 20 points.\n\n\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0)\nDeveloping (1)\nAbove Average (2)\nExcellent (3)\n\n\n\n\nNo description of background, or description does not make the problem or regulatory context clear.\nDescribes the broad regulatory context clearly and includes specific concerns or motivating incidents.\nMotivates need for regulatory action, but not clearly.\nNeed for regulatory action is clearly articulated in light of context and concerns.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0)\nDeveloping (1)\nAbove Average (2)\nExcellent (4)\n\n\n\n\nMissing or no specifics provided.\nProvides some details but writing is unclear and not tied to specific aims.\nPurpose and aims of regulation are clearly articulated.\nPurpose of regulation is tied clearly to the background context."
+  },
+  {
+    "objectID": "rubrics/regulation.html#current-state-4-points",
+    "href": "rubrics/regulation.html#current-state-4-points",
+    "title": "Regulations Report Rubric",
+    "section": "Current State (4 points)",
+    "text": "Current State (4 points)\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0)\nDeveloping (1)\nAbove Average (2)\nExcellent (4)\n\n\n\n\nMissing or no specifics provided.\nCurrent state of the regulation is provided but is unclear, and/or is derived from inappropriate sources.\nDescription of regulation is clear, but is largely reproduced from a single (appropriate) source.\nDescription clearly synthesizes multiple appropriate sources in own words."
+  },
+  {
+    "objectID": "rubrics/regulation.html#descriptive-timeline-4-points",
+    "href": "rubrics/regulation.html#descriptive-timeline-4-points",
+    "title": "Regulations Report Rubric",
+    "section": "Descriptive Timeline (4 points)",
+    "text": "Descriptive Timeline (4 points)\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0)\nDeveloping (1)\nAbove Average (3)\nExcellent (4)\n\n\n\n\nMissing or no specifics provided.\nFewer than three rule-making instances are provided without justification and evidence that fewer have occurred.\nAt least three rule-making instances are provided and are sufficiently detailed to understand the relevant changes, but feel disconnected.\nRule-making instances are well-motivated and connected to the broader narrative in a coherent timeline."
+  },
+  {
+    "objectID": "rubrics/regulation.html#model-incorporation-5-points",
+    "href": "rubrics/regulation.html#model-incorporation-5-points",
+    "title": "Regulations Report Rubric",
+    "section": "Model Incorporation (5 points)",
+    "text": "Model Incorporation (5 points)\n\n\n\n\n\n\n\n\n\nNeeds Improvement (0)\nDeveloping (1)\nAbove Average (3)\nExcellent (5)\n\n\n\n\nMissing.\nSome attempt to incorporate the regulation into the systems model is provided, but missing specifics or is disconnected from its purpose and aims.\nThe regulation’s incorporation into the problem is specifically defined or justification seems arbitrary.\nThe regulation’s incorporation into the problem is well connected to the broader narrative about its purpose and aims."
+  },
+  {
+    "objectID": "rubrics/lab01.html",
+    "href": "rubrics/lab01.html",
+    "title": "Lab 1 Rubric",
+    "section": "",
+    "text": "This lab will be graded on completion. Full (10) points will be given for a submission which is complete and successfully uploaded to Gradescope (including tagged problems).\nHowever, 10% (1 point) will be taken off for each day the proposal is late (starting at the due date/time), and 10% (1 point) will also be deducted if problems are not tagged in Gradescope (additional points may be lost if the TA does not see solutions because of a lag of tags; these points will not be subject to a regrade).\nProblems whose solutions are not rendered in the submitted PDFs will be treated as though they were not completed."
   },
   {
     "objectID": "rubrics/hw03.html",

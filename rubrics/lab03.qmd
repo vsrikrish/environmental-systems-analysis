@@ -7,8 +7,8 @@ pdf: default
 This is the grading rubric for [Lab 3](../labs/lab03/lab03.qmd). The rubric does not provide specifics, but should give an idea of what a complete solution looks like and how different components are prioritized and weighted.
 
 The assignment is out of a total of 10 points.
-`
-## Rubric`
+
+## Rubric
 
 ### Problem 1 (5 Points)
 

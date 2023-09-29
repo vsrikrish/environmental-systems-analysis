@@ -17,8 +17,8 @@ Milestones which are only for BEE 5750 or 4750 students are in *italics*.
 
 | Milestone | Points | Instructions | Rubric | Due Date |
 |:---------:|:------------:|:-------:|:-----------|:---------:|
-| Proposal | 10 | [{{< fa sharp pen-field >}}](project/proposal.html) | [{{< fa sharp list-check >}}](rubrics/proposal.qmd) | Fri, Sep 29 |
-| Proposal Peer Review | 10 | | | Mon, Oct 2 |
+| Proposal | 10 | [{{< fa sharp pen-field >}}](project/proposal.qmd) |  | Fri, Sep 29 |
+| Proposal Peer Review | 10 | [{{< fa sharp pen-field >}}](project/proposal-review.qmd) | [{{< fa sharp list-check >}}](rubrics/proposal-review.qmd) | Mon, Oct 2 |
 | Regulations Report | 20 | | | Fri, Oct 27 |
 | Project Update | 10 | | | Fri, Nov 10 |
 | Poster | 30  | | | Fri, Dec 4 |

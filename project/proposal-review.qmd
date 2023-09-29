@@ -36,11 +36,9 @@ You will each review two proposals from other groups. The review process should 
 ## Rubric
 
 | **Component** | Needs A Lot Of Improvement | Needs Some Improvement | Fine As Is | Good |
-|:-------------:||:------------|:------------|:------------|:-------------|
-| **Problem Description** | No problem description or goal provided. | 
-Problem description or goals provided, but unclear. | Clear problem description or goals provided, but problem may not be well motivated. | Clear problem description or goals provided and well motivated as an interesting problem. |
+|:-------------:|:------------|:------------|:------------|:-------------|
+| **Problem Description** | No problem description or goal provided. | Problem description or goals provided, but unclear. | Clear problem description or goals provided, but problem may not be well motivated. | Clear problem description or goals provided and well motivated as an interesting problem. |
 | **System Overview** | No description of the system for the analysis or description missing key details such as assumptions about included components and processes or metrics. | Description of system provided and appears complete but is unclear. | Description is clear and includes necessary information, but details are vague. | Description is clear, includes all information, and is detailed. |
-| **Alignment of System and Problem** | Unclear how system is relevant to the problem of interest. | System description is not well aligned with the problem description (e.g. there is a mismatch between the goals and which processes are included and how). | System and problem appear aligned but some lack of clarity in justifying why certain components were or weren't included. | 
-System and problem are well aligned and this is clear from the descriptions. |
+| **Alignment of System and Problem** | Unclear how system is relevant to the problem of interest. | System description is not well aligned with the problem description (e.g. there is a mismatch between the goals and which processes are included and how). | System and problem appear aligned but some lack of clarity in justifying why certain components were or weren't included. | System and problem are well aligned and this is clear from the descriptions. |
 | **Experimental Design** | No or unclear details about proposed design included (metrics, uncertainties, data). | Proposed design described but may require more details to be actionable. | Proposed design may be slightly vague, but can get a complete picture of what the group is trying to do. | Proposed design is clear and actionable. |
 | **References** | References not included. | References included, but there are several places that should be referenced but are not. | References included and appropriate. | Proposal is thoroughly  and clearly referenced. |

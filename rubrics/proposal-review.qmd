@@ -1,0 +1,16 @@
+---
+title: "Proposal Review Rubric"
+html: default
+pdf:
+    documentclass: article
+    geometry:
+        - margin=1in  
+    include-in-header:
+        text: |
+            \renewcommand\toprule[2]\relax
+            \renewcommand\bottomrule[2]\relax
+    filters:
+        - ../_assets/filters/columns-to-tables.lua
+---
+
+You will be graded on completing your two reviews (90%) and reading your received reviews (10%).

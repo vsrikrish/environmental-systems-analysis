@@ -154,6 +154,21 @@ yaxis!("Demand (MWh)")
 plot!(size=(1200, 550))
 ```
 
+## Simplified Example: Load Duration Curve
+
+```{julia}
+#| label: fig-ldc-sections
+#| fig-cap: Load Duration Curve for 2020 in NYISO Zone C
+#| fig-align: center
+
+hline!([2400], color=:red, linewidth=3, label=false)
+annotate!(2000, 2500, text("Peak Load", :red, :right, 20))
+hline!([1500], color=:brown, linewidth=3, label=false)
+annotate!(4000, 2000, text("Shoulder Load", :brown, :left, 20))
+annotate!(2000, 1400, text("Base Load", :blue, :right, 20))
+
+```
+
 ## Capacity Expansion: Goal
 
 We want to find the installed capacity of each technology that meets demand at all hours at minimal *total cost*.
@@ -222,7 +237,8 @@ Real problems can get much more complex, particularly if we try to model making 
 
 1. **Discrete decisions**: is a plant on or off (this is called *unit commitment*)?
 2. **Intertemporal constraints**: Power plants can't just "ramp" from producing low levels of power to high levels of power; there are real engineering limits.
-3. **Transmission**: We can generate all the power we want, but what if we can't get it to where the demand is?
+3. **Transmission**: We can generate all the power we want, but what if we can't get it to where the demand is
+4. **Retirements**: We might have existing generators that we want to retire ("brownfield" scenarios).
 
 ## Capacity Expansion Example Solution
 
@@ -264,10 +280,10 @@ results = DataFrame(
     Percent_Gen = MWh_share
 )
 rename!(results, 
-    [:Capacity => :"Capacity (MW)", 
-    :Percent_Cap => :"Percent_Cap (%)", 
-    :Generated => "Generated (GWh)",
-    :Percent_Gen => "Percent_Gen (%)"])
+    [:Capacity => :"Installed Capacity (MW)", 
+    :Percent_Cap => :"Percent Installed (%)", 
+    :Generated => "Annual Generation (GWh)",
+    :Percent_Gen => "Percent Generated (%)"])
 results[:, 2:end] = round.(results[:, 2:end], digits=1)
 
 NSE_MW = maximum(value.(NSE).data) 
@@ -304,6 +320,41 @@ plot!(size=(1200, 550))
 
 {{< include _poll-prompt.qmd >}}
 
+## What About Renewables?
+
+Renewables make this problem more complicated because their capacity is variable:
+
+- resource availability not constant across time;
+- need to consider a **capacity factor**.
+
+::: {.fragment .fade-in}
+How would this change our existing capacity expansion formulation?
+:::
+
+## Renewable Variability Impact
+
+This will change the **capacity** constraint from
+$$y_{g,t} \leq x_g \qquad \forall g \in {G},  \forall t \in \mathcal{T}$$
+to
+$$y_{g,t} \leq x_g \times c_{g,t} \qquad \forall g \in {G},  \forall t \in \mathcal{T}$$
+where $c_{g,t}$ is the capacity factor in time period $t$ for generator type $g$.
+
+## Implementing Constraints in JuMP
+
+I recommend using vector notation in `JuMP` to specify these constraints, *e.g.* for capacity:
+
+```julia
+# define sets
+G = 1:num_gen # num_gen is the number of generators
+T = 1:num_times # number of time periods
+
+c = ... # G x T matrix of capacity factors  
+@variable(..., x[g in G] >= 0) # installed capacity
+@variable(..., y[g in G, t in T] >= 0) # generated power
+@constraint(..., capacity[g in G, t in T], 
+    y[g,t] <= x[g] * c[g,t]) # capacity constraint
+```
+
 # Key Takeaways
 
 ## Key Takeaways
@@ -311,15 +362,17 @@ plot!(size=(1200, 550))
 - Capacity Expansion is a foundational power systems decision problem.
 - Is an LP with some basic assumptions.
 - We looked at a "greenfield" example: no existing plants.
-- Decision problem becomes more complex with renewables (HW4) or "brownfield" (expanding existing fleet).
+- Decision problem becomes more complex with renewables (HW4) or "brownfield" (expanding existing fleet, possibly with retirements).
 
 # Upcoming Schedule
 
 ## Next Classes
 
 **Monday**: Economic Dispatch
+
 **Wednesday/Friday**: Air Pollution
 
 ## Assessments
 
 - Lab 3 due **tonight** at 9pm.
+- HW4 assigned Monday (likely over the weekend).

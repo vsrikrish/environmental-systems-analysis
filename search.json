@@ -2133,6 +2133,13 @@
     "text": "Simplified Example: Load Duration Curve\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Load Duration Curve for 2020 in NYISO Zone C"
   },
   {
+    "objectID": "slides/lecture08-3.html#simplified-example-load-duration-curve-1",
+    "href": "slides/lecture08-3.html#simplified-example-load-duration-curve-1",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Simplified Example: Load Duration Curve",
+    "text": "Simplified Example: Load Duration Curve\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Load Duration Curve for 2020 in NYISO Zone C"
+  },
+  {
     "objectID": "slides/lecture08-3.html#capacity-expansion-goal",
     "href": "slides/lecture08-3.html#capacity-expansion-goal",
     "title": "Power Systems: Generating Capacity Expansion",
@@ -2186,21 +2193,21 @@
     "href": "slides/lecture08-3.html#what-does-this-problem-neglect",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "What Does This Problem Neglect?",
-    "text": "What Does This Problem Neglect?\n\nDiscrete decisions: is a plant on or off (this is called unit commitment)?\nIntertemporal constraints: Power plants can’t just “ramp” from producing low levels of power to high levels of power; there are real engineering limits.\nTransmission: We can generate all the power we want, but what if we can’t get it to where the demand is?"
+    "text": "What Does This Problem Neglect?\n\nDiscrete decisions: is a plant on or off (this is called unit commitment)?\nIntertemporal constraints: Power plants can’t just “ramp” from producing low levels of power to high levels of power; there are real engineering limits.\nTransmission: We can generate all the power we want, but what if we can’t get it to where the demand is\nRetirements: We might have existing generators that we want to retire (“brownfield” scenarios)."
   },
   {
     "objectID": "slides/lecture08-3.html#capacity-expansion-example-solution",
     "href": "slides/lecture08-3.html#capacity-expansion-example-solution",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Capacity Expansion Example Solution",
-    "text": "Capacity Expansion Example Solution\n\n\n\n\n\n\n\n\n\n\n\n\nResource\nCapacity (MW)\nPercent_Cap (%)\nGenerated (GWh)\nPercent_Gen (%)\n\n\n\n\nGeothermal\n0.0\n0.0\n0.0\n0.0\n\n\nCoal\n0.0\n0.0\n0.0\n0.0\n\n\nNG CCGT\n2016.9\n72.5\n15157.7\n98.1\n\n\nNG CT\n733.0\n26.4\n292.2\n1.9\n\n\nNSE\n31.2\n1.1\n0.1\n0.0"
+    "text": "Capacity Expansion Example Solution\n\n\n\n\n\n\n\n\n\n\n\n\nResource\nInstalled Capacity (MW)\nPercent Installed (%)\nAnnual Generation (GWh)\nPercent Generated (%)\n\n\n\n\nGeothermal\n0.0\n0.0\n0.0\n0.0\n\n\nCoal\n0.0\n0.0\n0.0\n0.0\n\n\nNG CCGT\n2016.9\n72.5\n15157.7\n98.1\n\n\nNG CT\n733.0\n26.4\n292.2\n1.9\n\n\nNSE\n31.2\n1.1\n0.1\n0.0"
   },
   {
     "objectID": "slides/lecture08-3.html#when-do-generators-operate",
     "href": "slides/lecture08-3.html#when-do-generators-operate",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "When Do Generators Operate?",
-    "text": "When Do Generators Operate?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Results of Generating Capacity Expansion Example"
+    "text": "When Do Generators Operate?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Results of Generating Capacity Expansion Example"
   },
   {
     "objectID": "slides/lecture08-3.html#what-else-could-we-add",
@@ -2210,25 +2217,46 @@
     "text": "What Else Could We Add?\n\n\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
+    "objectID": "slides/lecture08-3.html#what-about-renewables",
+    "href": "slides/lecture08-3.html#what-about-renewables",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "What About Renewables?",
+    "text": "What About Renewables?\nRenewables make this problem more complicated because their capacity is variable:\n\nresource availability not constant across time;\nneed to consider a capacity factor.\n\n\nHow would this change our existing capacity expansion formulation?"
+  },
+  {
+    "objectID": "slides/lecture08-3.html#renewable-variability-impact",
+    "href": "slides/lecture08-3.html#renewable-variability-impact",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Renewable Variability Impact",
+    "text": "Renewable Variability Impact\nThis will change the capacity constraint from \\[y_{g,t} \\leq x_g \\qquad \\forall g \\in {G},  \\forall t \\in \\mathcal{T}\\] to \\[y_{g,t} \\leq x_g \\times c_{g,t} \\qquad \\forall g \\in {G},  \\forall t \\in \\mathcal{T}\\] where \\(c_{g,t}\\) is the capacity factor in time period \\(t\\) for generator type \\(g\\)."
+  },
+  {
+    "objectID": "slides/lecture08-3.html#implementing-constraints-in-jump",
+    "href": "slides/lecture08-3.html#implementing-constraints-in-jump",
+    "title": "Power Systems: Generating Capacity Expansion",
+    "section": "Implementing Constraints in JuMP",
+    "text": "Implementing Constraints in JuMP\nI recommend using vector notation in JuMP to specify these constraints, e.g. for capacity:\n# define sets\nG = 1:num_gen # num_gen is the number of generators\nT = 1:num_times # number of time periods\n\nc = ... # G x T matrix of capacity factors  \n@variable(..., x[g in G] &gt;= 0) # installed capacity\n@variable(..., y[g in G, t in T] &gt;= 0) # generated power\n@constraint(..., capacity[g in G, t in T], \n    y[g,t] &lt;= x[g] * c[g,t]) # capacity constraint"
+  },
+  {
     "objectID": "slides/lecture08-3.html#key-takeaways-1",
     "href": "slides/lecture08-3.html#key-takeaways-1",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nCapacity Expansion is a foundational power systems decision problem.\nIs an LP with some basic assumptions.\nWe looked at a “greenfield” example: no existing plants.\nDecision problem becomes more complex with renewables (HW4) or “brownfield” (expanding existing fleet)."
+    "text": "Key Takeaways\n\nCapacity Expansion is a foundational power systems decision problem.\nIs an LP with some basic assumptions.\nWe looked at a “greenfield” example: no existing plants.\nDecision problem becomes more complex with renewables (HW4) or “brownfield” (expanding existing fleet, possibly with retirements)."
   },
   {
     "objectID": "slides/lecture08-3.html#next-classes",
     "href": "slides/lecture08-3.html#next-classes",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Next Classes",
-    "text": "Next Classes\nMonday: Economic Dispatch Wednesday/Friday: Air Pollution"
+    "text": "Next Classes\nMonday: Economic Dispatch\nWednesday/Friday: Air Pollution"
   },
   {
     "objectID": "slides/lecture08-3.html#assessments",
     "href": "slides/lecture08-3.html#assessments",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Assessments",
-    "text": "Assessments\n\nLab 3 due tonight at 9pm.\n\n\n\nBEE 4750, Environmental Systems Analysis"
+    "text": "Assessments\n\nLab 3 due tonight at 9pm.\nHW4 assigned Monday (likely over the weekend).\n\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "index.html",

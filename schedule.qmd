@@ -33,7 +33,7 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 |  8  | Mon, Oct 09 | **No Class: Indigeneous People's Day** | | | | |
 |     | Wed, Oct 11 | LP Example: Resource Allocation | [{{< fa sharp presentation-screen >}}](slides/lecture08-2.qmd){target="_blank"}
 |     | Fri, Oct 13 | Power Systems, Generating Capacity Expansion | [{{< fa sharp presentation-screen >}}](slides/lecture08-3.qmd){target="_blank"} | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | | |
-|  9  | Mon, Oct 16 | Economic Dispatch | | | [{{< fa sharp pen-field >}}](hw/hw04/hw04.qmd) | |
+|  9  | Mon, Oct 16 | Economic Dispatch | [{{< fa sharp presentation-screen >}}](slides/lecture09-1.qmd){target="_blank"} | | [{{< fa sharp pen-field >}}](hw/hw04/hw04.qmd) | |
 |    | Wed, Oct 18 | Managing Multiple Air Pollutant Sources | | |  | |
 |    | Fri, Oct 20 | Air Pollution II | | |  | |
 |  10 | Mon, Oct 23 | Lake Eutrophication | | | | |

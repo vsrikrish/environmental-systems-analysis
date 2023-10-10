@@ -1,0 +1,15 @@
+Plant,Pmin,Pmax,VarCost,Ramp
+Biomass, 0, 50, 5, 50
+Hydroelectric, 0, 500, 0, 500
+NG CCGT1, 220, 620, 23, 240
+NG CCGT2, 25, 50, 30, 20
+NG CCGT3, 200, 570, 22, 228
+NG CCGT4, 150, 350, 36, 350
+NG CCGT5, 150, 350, 37, 350
+NG CT1, 73, 100, 38, 100
+NG CT2, 21, 48, 39, 48
+NG CT3, 21, 51, 39, 51
+NG CT4, 21, 51, 40, 51
+NG CT5, 0, 100, 45, 100
+NG CT6, 0, 100, 46, 100
+

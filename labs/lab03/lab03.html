@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BEE 4750 - Fall 2023 - BEE 4750 Homework 3: Uncertain Sea-Level Rise and Levee Reliability</title>
+<title>BEE 4750 - Fall 2023 - BEE 4750 Lab 3: Linear Programming with JuMP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../hw/hw04/hw04.html" rel="next">
-<link href="../../hw/hw02/hw02.html" rel="prev">
+<link href="../../project.html" rel="next">
+<link href="../../labs/lab02/lab02.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -104,11 +104,15 @@ window.MathJax = {
     }
   };
 </script>
+<meta name="mermaid-theme" content="forest">
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="BEE 4750 - Fall 2023 - BEE 4750 Homework 3: Uncertain Sea-Level Rise and Levee Reliability">
+<meta property="og:title" content="BEE 4750 - Fall 2023 - BEE 4750 Lab 3: Linear Programming with JuMP">
 <meta property="og:description" content="">
 <meta property="og:site-name" content="BEE 4750 - Fall 2023">
 </head>
@@ -122,7 +126,7 @@ window.MathJax = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../hw.html">Homework</a></li><li class="breadcrumb-item"><a href="../../hw/hw03/hw03.html">Homework 3</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../labs.html">Labs</a></li><li class="breadcrumb-item"><a href="../../labs/lab03/lab03.html">Lab 3</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -189,11 +193,11 @@ window.MathJax = {
       <div class="sidebar-item-container"> 
             <a href="../../hw.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../hw/hw01/hw01.html" class="sidebar-item-text sidebar-link">
@@ -208,7 +212,7 @@ window.MathJax = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../hw/hw03/hw03.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../hw/hw03/hw03.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework 3</span></a>
   </div>
 </li>
@@ -224,11 +228,11 @@ window.MathJax = {
       <div class="sidebar-item-container"> 
             <a href="../../labs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Labs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../labs/lab01/lab01.html" class="sidebar-item-text sidebar-link">
@@ -243,7 +247,7 @@ window.MathJax = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../labs/lab03/lab03.html" class="sidebar-item-text sidebar-link">
+  <a href="../../labs/lab03/lab03.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Lab 3</span></a>
   </div>
 </li>
@@ -351,27 +355,24 @@ window.MathJax = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#problems-10-points" id="toc-problems-10-points" class="nav-link" data-scroll-target="#problems-10-points">Problems (10 points)</a>
   <ul class="collapse">
-  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
-  <li><a href="#load-environment" id="toc-load-environment" class="nav-link" data-scroll-target="#load-environment">Load Environment</a></li>
-  </ul></li>
-  <li><a href="#problems-total-40-points" id="toc-problems-total-40-points" class="nav-link" data-scroll-target="#problems-total-40-points">Problems (Total: 40 Points)</a>
-  <ul class="collapse">
-  <li><a href="#problem-1-12-points" id="toc-problem-1-12-points" class="nav-link" data-scroll-target="#problem-1-12-points">Problem 1 (12 points)</a></li>
-  <li><a href="#problem-2-15-points" id="toc-problem-2-15-points" class="nav-link" data-scroll-target="#problem-2-15-points">Problem 2 (15 points)</a></li>
-  <li><a href="#problem-3-13-points" id="toc-problem-3-13-points" class="nav-link" data-scroll-target="#problem-3-13-points">Problem 3 (13 points)</a></li>
+  <li><a href="#problem-1-problem-formulation-5-points" id="toc-problem-1-problem-formulation-5-points" class="nav-link" data-scroll-target="#problem-1-problem-formulation-5-points">Problem 1: Problem Formulation (5 points)</a></li>
+  <li><a href="#problem-2-find-the-solution-5-points" id="toc-problem-2-find-the-solution-5-points" class="nav-link" data-scroll-target="#problem-2-find-the-solution-5-points">Problem 2: Find the Solution (5 points)</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/hw/hw03/hw03.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/labs/lab03/lab03.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">BEE 4750 Homework 3: Uncertain Sea-Level Rise and Levee Reliability</h1>
+<h1 class="title">BEE 4750 Lab 3: Linear Programming with JuMP</h1>
 </div>
 
 
@@ -396,7 +397,7 @@ Due Date
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Friday, 10/06/23, 9:00pm</p>
+<p>Friday, 10/13/23, 9:00pm</p>
 </div>
 </div>
 <div class="callout callout-style-simple callout-caution">
@@ -406,231 +407,268 @@ Due Date
 </div>
 <div class="callout-body-container">
 <p>If you are enrolled in the course, make sure that you use the GitHub Classroom link provided in Ed Discussion, or you may not be able to get help if you run into problems.</p>
-<p>Otherwise, you can <a href="https://github.com/BEE4750/hw03">find the Github repository here</a>.</p>
+<p>Otherwise, you can <a href="https://github.com/BEE4750/lab03">find the Github repository here</a>.</p>
 </div>
 </div>
 </div>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<section id="instructions" class="level3">
-<h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
-<p>This assignment asks you to conduct a Monte Carlo analysis of levee reliability in the face of uncertain changes to local sea levels. You will propagate uncertainty in equilibrium climate sensitivity through the energy balance model to obtain a distribution of temperatures, which will then drive a model of sea-level rise. You will finally use this distribution to assess the probability that a planned levee will achieve its desired reliability standard.</p>
-</section>
-<section id="load-environment" class="level3">
-<h3 class="anchored" data-anchor-id="load-environment">Load Environment</h3>
-<p>The following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.</p>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>The following code should go at the top of most Julia scripts; it will load the local package environment and install any needed packages. You will see this often and shouldn’t need to touch it.</p>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="pp">@__DIR__</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"."</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Random</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LaTeXStrings</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Distributions</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CSV</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">JuMP </span><span class="co"># optimization modeling syntax</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">HiGHS </span><span class="co"># optimization solver</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots </span><span class="co"># plotting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="overview" class="level2 cell markdown">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In this lab, you will write and solve a resource allocation example using <code>JuMP.jl</code>. <code>JuMP.jl</code> provides an intuitive syntax for writing, solving, and querying optimization problems.</p>
+<p>For an example of using <code>JuMP.jl</code> to solve linear programs, see <a href="https://viveks.me/environmental-systems-analysis/tutorials/julia-jump.html">the relevant tutorial on the class website</a>.</p>
+<p>Free free to delete some of the illustrative cells and code blocks in your notebook as you go through and solve the lab problems…this might help reduce some potential confusion while grading about what your answer is.</p>
 </section>
-<section id="problems-total-40-points" class="level2">
-<h2 class="anchored" data-anchor-id="problems-total-40-points">Problems (Total: 40 Points)</h2>
-<section id="problem-1-12-points" class="level3 cell markdown">
-<h3 class="anchored" data-anchor-id="problem-1-12-points">Problem 1 (12 points)</h3>
-<p>Recall from class that the simple energy balance model (EBM) of planetary energy balance links changes in radiative forcing (<span class="math inline">\(F\)</span>) to global mean temperature (<span class="math inline">\(T\)</span>) changes through the discretized equation <span class="math display">\[T_{i+1} = T_{i} + \frac{F_i - \lambda T_i}{cd} \times \Delta t,\]</span> where <span class="math inline">\(i\)</span> is the current time step, <span class="math inline">\(c = 4.184 \times 10^6\)</span> J/K/m<sup>2</sup> is the heat capacity of water per unit area, <span class="math inline">\(d\)</span> is the (uncertain) depth of the mixing layer, <span class="math inline">\(\Delta t\)</span> is the annual time step in seconds and <span class="math inline">\(\lambda = F_{\text{2xCO}_2}/S\)</span> is the climate feedback parameter in W/m<sup>2</sup>/<span class="math inline">\(^\circ\)</span> C, where <span class="math inline">\(S\)</span> is the equilibrium climate sensitivity (the uncertain equilibrium temperature change resulting from a doubling of atmospheric CO<sub>2</sub>). Finally, while total radiative forcing can be the result of non-aerosol and aerosol effects, we do not know the relative intensity of aerosol forcing, so we represent this with an uncertain aerosol scaling factor <span class="math inline">\(\alpha\)</span>.</p>
-<p>We can implement this model with the following Julia function. We will assume an ocean mixing depth <span class="math inline">\(d = 100\)</span> m and an aerosol scaling factor <span class="math inline">\(\alpha = 1.3\)</span> so we can focus on the uncertainty in <span class="math inline">\(S\)</span>.</p>
-<p>The last technical concern is that “global mean temperature” does not make sense in absolute terms as a marker of climate change. Instead, we typically refer to temperature changes relative to some historical pre-industrial baseline. In this case, we will use the period from 1880-1900, though this choice can vary.</p>
+<section id="introduction" class="level2 cell markdown">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Your task is to decide how much lumber to produce to maximize profit from wood sales. You can purchase wood from a managed forest, which consists of spruce (320,000 bf) and fir (720,000 bf). Spruce costs $0.12 per bf to purchase and fir costs $0.08 per bf.</p>
+<p>At the lumber mill, wood can be turned into plywood of various grades (see <a href="#tbl-inputs">Table&nbsp;1</a> for how much wood of each type is required for and the revenue from each grade). Any excess wood is sent to be recycled into particle board. This resource allocation problem is diagrammed in <a href="#fig-schematic">Figure&nbsp;1</a>.</p>
+<div id="tbl-inputs" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Table&nbsp;1: Wood inputs and revenue by plywood grade. S refers to spruce inputs, F fir inputs.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Plywood Grade</th>
+<th style="text-align: center;">Inputs (bf/bf plywood)</th>
+<th style="text-align: center;">Revenue ($/1000 bf)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.5 (S) + 1.5 (F)</td>
+<td style="text-align: center;">400</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.0 (S) + 2.0 (F)</td>
+<td style="text-align: center;">520</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.5 (S) + 2.0 (F)</td>
+<td style="text-align: center;">700</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we need to split up the aerosol and non-aerosol forcings when we call the function</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">energy_balance_model</span>(S, forcing_aerosol, forcing_non_aerosol)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    d <span class="op">=</span> <span class="fl">100</span> <span class="co"># ocean mixing depth [m]</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    α <span class="op">=</span> <span class="fl">1.3</span> <span class="co"># aerosol scaling factor</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    F2xCO₂ <span class="op">=</span> <span class="fl">4.0</span> <span class="co"># radiative forcing [W/m²] for a doubling of CO₂</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    λ <span class="op">=</span> F2xCO₂<span class="op">/</span>S</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> <span class="fl">4.184e6</span> <span class="co"># heat capacity/area [J/K/m²]</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    C <span class="op">=</span> c<span class="op">*</span>d <span class="co"># heat capacity of mixed layer (per area)</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    F <span class="op">=</span> forcing_non_aerosol <span class="op">+</span> α<span class="op">*</span>forcing_aerosol <span class="co"># radiative forcing</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    Δt <span class="op">=</span> <span class="fl">31558152.0</span> <span class="co"># annual timestep [s]</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    T <span class="op">=</span> <span class="fu">zero</span>(F)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(F)<span class="op">-</span><span class="fl">1</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        T[i<span class="op">+</span><span class="fl">1</span>] <span class="op">=</span> T[i] <span class="op">+</span> (F[i] <span class="op">-</span> λ<span class="op">*</span>T[i])<span class="op">/</span>C <span class="op">*</span> Δt</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># return temperature anomaly relative to 1880-1900 baseline</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> T <span class="op">.-</span> <span class="fu">mean</span>(T[<span class="fl">1</span><span class="op">:</span><span class="fl">21</span>]) </span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>energy_balance_model (generic function with 1 method)</code></pre>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-schematic" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-schematic">flowchart LR
+    A[Spruce] -- $0.12 per bf --&gt; C{Lumber Mill}
+    B[Fir] -- $0.08 per bf --&gt; C
+    C --&gt; P(Plywood)
+    C -- Wood Excess --&gt; D{Recycle}
+    P -- Price depends on grade --&gt; S[Sell]
+</pre>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Flowchat of the resource allocation problem in this lab.</figcaption><p></p>
+</figure>
 </div>
 </div>
-<p>Finally, we need to load some radiative forcing data. We will use the radiative forcing scenario RCP 8.5. We can load this data, which is in a <code>.csv</code> (comma-delimited) file, into a <code>DataFrame</code>, which is a tabular data structure. Rows and columns in a <code>DataFrame</code> can be accessed using their numerical index (like a matrix), but columns also have names; you can access a particular column in a dataframe <code>df</code> by name using <code>df.colname</code> or <code>df[:, "colname"]</code>.</p>
-<p>Of note: this data set goes from 1750–2500, so you will need to take care to make sure you are using the right years at each step. For example, here we will constrain the data to 1880–2100, which is the period we are interested in.</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The CSV is read into a DataFrame object, and we specify that it is comma delimited</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>forcings_all_85 <span class="op">=</span> CSV.<span class="fu">read</span>(<span class="st">"data/ERF_ssp585_1750-2500.csv"</span>, DataFrame, delim<span class="op">=</span><span class="st">","</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># get the years corresponding to the forcings</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="fu">Int64</span>.(forcings_all_85[!,<span class="st">"year"</span>]) <span class="co"># Ensure that years are interpreted as integers</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># find the indices of the years 1880 and 2100</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># we can do this with the indexin function</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>time_bounds <span class="op">=</span> <span class="fu">indexin</span>([<span class="fl">1880</span>, <span class="fl">2100</span>], t)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> time_bounds[<span class="fl">1</span>]<span class="op">:</span>time_bounds[<span class="fl">2</span>] <span class="co"># create range of years</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Separate out the individual components</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>forcing_co2_85 <span class="op">=</span> forcings_all_85[years,<span class="st">"co2"</span>]</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Get total aerosol and non-aerosol forcings</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>forcing_aerosol_rad_85 <span class="op">=</span> forcings_all_85[years,<span class="st">"aerosol-radiation_interactions"</span>]</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>forcing_aerosol_cloud_85 <span class="op">=</span> forcings_all_85[years,<span class="st">"aerosol-cloud_interactions"</span>]</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>forcing_aerosol_85 <span class="op">=</span> forcing_aerosol_rad_85 <span class="op">+</span> forcing_aerosol_cloud_85 <span class="co"># aerosol forcings</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>forcing_total_85 <span class="op">=</span> forcings_all_85[years,<span class="st">"total"</span>] </span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>forcing_non_aerosol_85 <span class="op">=</span> forcing_total_85 <span class="op">-</span> forcing_aerosol_85 <span class="co"># non-aerosol forcings</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>221-element Vector{Float64}:
-  0.42741479112315905
-  0.4487940147601447
-  0.4900144276528058
- -0.019811270078689047
- -1.480725700367619
- -0.3154905163510021
-  0.233186559774844
-  0.2923308952663089
-  0.45833872365810924
-  0.5168189581089915
-  0.4144761329626494
-  0.2762327724171124
-  0.48656957869238376
-  ⋮
-  9.560222650653953
-  9.671039126229665
-  9.772610821460296
-  9.879065698371564
-  9.946850640754889
- 10.002169546141578
- 10.061009359425011
- 10.115684195707905
- 10.182946497594184
- 10.249699157847772
- 10.331407709334023
- 10.424544495740134</code></pre>
 </div>
-</div>
-<p>For this assignment, you can use the <code>forcing_aerosol_85</code> and <code>forcing_non_aerosol_85</code> vectors as is to correspond to the relevant forcings. You will need to use the vector <code>t</code> to find the appropriate years for analysis.</p>
-<section id="problem-1.1-3-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-1.1-3-points">Problem 1.1 (3 points)</h4>
-<p>Assume that <span class="math inline">\(S\)</span> is distributed according to <span class="math inline">\(\text{LogNormal}(\log(3.2), \log{2}/3)\)</span> (as in class). Draw 10,000 samples from this distribution and make a histogram.</p>
+<section id="problems-10-points" class="level2">
+<h2 class="anchored" data-anchor-id="problems-10-points">Problems (10 points)</h2>
+<section id="problem-1-problem-formulation-5-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-1-problem-formulation-5-points">Problem 1: Problem Formulation (5 points)</h3>
+<p>In this problem, you will go through the steps of formulating a linear program for this problem.</p>
 </section>
-<section id="problem-1.2-5-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-1.2-5-points">Problem 1.2 (5 points)</h4>
-<p>Use the EBM to propagate your samples of <span class="math inline">\(S\)</span> to a distribution of global mean temperature. Plot the median and 90% predictive distribution (between the .05 and .95 quantiles) from 1880-2100.</p>
+<section id="problem-1.1-1-point" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-1.1-1-point">Problem 1.1 (1 point)</h4>
+<p>What are your decision variables? Clearly define your notation, including what variables you are using, what they mean, and what their units are.</p>
 </section>
-<section id="problem-1.3-4-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-1.3-4-points">Problem 1.3 (4 points)</h4>
-<p>Make a histogram of global mean temperature projections in 2100. If you compare this distribution to the distribution of <span class="math inline">\(S\)</span> from Problem 1.1, what do you observe?</p>
+<section id="problem-1.2-1-point" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-1.2-1-point">Problem 1.2 (1 point)</h4>
+<p>Derive your objective function. Support your function with justifications and/or equations as necessary. You will not receive credit just for the function alone.</p>
 </section>
-<section id="problem-2-15-points" class="level3 cell markdown">
-<h3 class="anchored" data-anchor-id="problem-2-15-points">Problem 2 (15 points)</h3>
-<p>Changes to global temperatures cause changes in global sea levels through several mechanisms, including thermal expansion (the change in ocean volume due to increased heat content) and melting land-based ice. One simple way to represent this link is through the following model, proposed by <a href="https://doi.org/10.1126/science.1135456">Rahmstorf (2007)</a>.</p>
-<p><span class="math display">\[\frac{dH}{dt} = a(T-T_0),\]</span></p>
-<p>where <span class="math inline">\(H\)</span> is the global mean sea level in mm, <span class="math inline">\(T\)</span> is global mean temperature, <span class="math inline">\(T_0\)</span> is an equilibrium temperature (where there is no change in sea levels), and <span class="math inline">\(a\)</span> is a proportionality constant. This model can be discretized to give <span class="math display">\[H_{i+1} - H_i = a (T_i - T_0).\]</span></p>
-<p>Note that, like with global mean temperature, the notion of “global mean sea level” does not make sense in absolute terms (were sea levels ever at “zero”?). Instead, we want to normalize this relative to some historical baseline. In this case (with a view towards Problem 3), we will compute our sea levels relative to the 2010 sea level. Note that in addition to the model parameters, we also need an initial sea-level parameter <span class="math inline">\(H_0\)</span> which will give us the right anomaly level.</p>
-<p>The best estimates for these parameters are:</p>
-<ul>
-<li><span class="math inline">\(a = 1.86\)</span>;</li>
-<li><span class="math inline">\(H_0 = -223\)</span>;</li>
-<li><span class="math inline">\(T_0 = -0.62\)</span></li>
-</ul>
+<section id="problem-1.3-2-point" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-1.3-2-point">Problem 1.3 (2 point)</h4>
+<p>Derive any needed constraints. Support your function with justifications and/or equations as necessary. You will not receive credit just for the final constraints alone.</p>
 </section>
-<section id="problem-2.1-5-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-2.1-5-points">Problem 2.1 (5 points)</h4>
-<p>Write a function <code>sea_level_model()</code> to implement the mathematical sea-level rise model described above. It should take in needed parameters and a vector of temperatures and return a vector of sea levels. To test your function, use the provided temperature series <code>historical_temps</code> (read in below) to compute the global mean sea level anomaly in 2022 (the last year of the dataset) with the parameter values above; you should get a value of approximately 40mm.</p>
+<section id="problem-1.4-1-point" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-1.4-1-point">Problem 1.4 (1 point)</h4>
+<p>Put this optimization problem in mathematical programming form. For an example of the syntax for this, see lines 82–91 <a href="https://github.com/vsrikrish/environmental-systems-analysis/blob/Fall23/tutorials/julia-jump.qmd">here</a>.</p>
 </section>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>historical_temp_data <span class="op">=</span> CSV.<span class="fu">read</span>(<span class="st">"data/HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv"</span>, DataFrame, delim<span class="op">=</span><span class="st">","</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># column 2 is the temperature anomaly, column 1 is the year</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>temp_bds <span class="op">=</span> <span class="fu">indexin</span>([<span class="fl">1880</span>, <span class="fl">1900</span>], historical_temp_data[!, <span class="fl">1</span>]) <span class="co"># find the index of 2010 for normalization</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>historical_temp_data[<span class="op">:</span>, <span class="fl">2</span>] <span class="op">.-=</span> <span class="fu">mean</span>(historical_temp_data[temp_bds[<span class="fl">1</span>]<span class="op">:</span>temp_bds[<span class="fl">2</span>], <span class="fl">2</span>])</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>historical_temps <span class="op">=</span> historical_temp_data[temp_bds[<span class="fl">1</span>]<span class="op">:</span><span class="kw">end</span>, <span class="fl">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>143-element Vector{Float64}:
-  0.07297116761904765
-  0.15655772761904765
-  0.09327316761904769
-  0.04232884761904765
- -0.10351681238095234
- -0.08232033238095232
- -0.03210037238095231
- -0.10998251238095236
-  0.00942435761904764
-  0.13890768761904768
- -0.11805492238095233
- -0.012511692380952344
- -0.11875525238095236
-  ⋮
-  0.9265009776190476
-  0.9664103476190478
-  1.0123786476190477
-  1.0616748976190478
-  1.2139176176190476
-  1.3217303776190477
-  1.2339774976190476
-  1.1514572476190477
-  1.2798758476190477
-  1.3115970476190477
-  1.1506591476190478
-  1.1896871476190476</code></pre>
-</div>
-</div>
-<section id="problem-2.2-5-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-2.2-5-points">Problem 2.2 (5 points)</h4>
-<p>Evaluate <code>sea_level_model()</code> using the projected temperature ensemble from Problem 1. Plot the 90% projection interval of the sea levels.</p>
+<section id="problem-2-find-the-solution-5-points" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2-find-the-solution-5-points">Problem 2: Find the Solution (5 points)</h3>
+<section id="problem-2.1-2-points" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-2.1-2-points">Problem 2.1 (2 points)</h4>
+<p>Code your linear program using <code>JuMP</code>. Feel free to consult <a href="https://viveks.me/environmental-systems-analysis/tutorials/julia-jump.html">the website’s <code>JuMP</code> tutorial</a> for syntax help. The keys:</p>
 </section>
-<section id="problem-2.3-5-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-2.3-5-points">Problem 2.3 (5 points)</h4>
-<p>Make a histogram of the sea-level anomaly in 2100. What can you observe about how the ECS uncertainty has impacted sea-level uncertainty under this radiative forcing scenario? What might the implications be of only using the best-estimate ECS value?</p>
-</section>
-<section id="problem-3-13-points" class="level3 cell markdown">
-<h3 class="anchored" data-anchor-id="problem-3-13-points">Problem 3 (13 points)</h3>
-<p>You’ve been asked to consult on a levee reliability analysis. For context, levees in the United States are supposed to only fail once in 100 years, or, in other words, to have at most a 1% chance of failure in a given year. We will assume for this problem that the only way in which a levee fails is by being overtopped (note: this is unrealistic).</p>
-<p>We can assess the probability of levee overtopping by comparing its height to a distribution of extreme sea levels. A common approach is to look at the distribution of the highest sea level each year. These extreme sea levels can be obtained by combining the absolute sea level (we will use our distribution of global sea levels for this), the rate of subsidence (how much the ground sinks), and the distribution of storm tides (the highest tide level, which is often the result of storm surges combining with high tide).</p>
-<p>Assume for this problem that:</p>
 <ol type="1">
-<li>the annual rate of subsidence <span class="math inline">\(\nu\)</span> is 1.2mm/yr;</li>
-<li>the distribution of annual storm tide maxima, above the mean sea level, is (and is expected to continue to be) given by a <span class="math inline">\(\text{GeneralizedExtremeValue}(900, 25, 0.3)\)</span> distribution, which looks like this:</li>
-</ol>
-</section>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tide_distribution <span class="op">=</span> <span class="fu">GeneralizedExtremeValue</span>(<span class="fl">900</span>, <span class="fl">25</span>, <span class="fl">0.3</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">histogram</span>(<span class="fu">rand</span>(tide_distribution, <span class="fl">10000</span>), xlabel<span class="op">=</span><span class="st">"Storm Tide Height (mm)"</span>, ylabel<span class="op">=</span><span class="st">"Count"</span>, legend<span class="op">=:</span><span class="cn">false</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<li><p>Initialize your model with a solver; in this case, we’ll use the <code>HiGHS</code> solver, but there are other solvers listed here for different types of problems, some of which are open and some of which require a commercial license: <a href="https://jump.dev/JuMP.jl/stable/installation/#Supported-solvers" class="uri">https://jump.dev/JuMP.jl/stable/installation/#Supported-solvers</a>:</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>example_model <span class="op">=</span> <span class="fu">Model</span>(HiGHS.Optimizer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>Define variables with syntax like</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(example_model, <span class="fl">1</span> <span class="op">&gt;=</span> example_x <span class="op">&gt;=</span> <span class="fl">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Feel free to just sample from <code>tide_distribution</code> in your solution below.</p>
-<section id="problem-3.1-2-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-3.1-2-points">Problem 3.1 (2 points)</h4>
-<p>How would you use your sea-level simulations and the above information to compute a distribution of extreme sea levels in 2100 relative to 2010 mean sea level? Write down the approach in clear steps, with equations as needed.</p>
+<p>This will create a variable <code>example_x</code> which is constrained to be between 0 and 1; you can leave off any of the bounds if a variable is unbounded in a particular direction. You can also add a vector of variables:</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span> <span class="co"># define set to index variables</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variable</span>(example_model, <span class="fl">1</span> <span class="op">&gt;=</span> example_z[t <span class="kw">in</span> T] <span class="op">&gt;=</span> <span class="fl">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>which will create a vector of 3 variables <code>example_z[1]</code>, …, <code>example_z[3]</code>, all of which are bounded between 0 and 1.</p></li>
+<li><p>Add an objective with</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@objective</span>(example_model, Max, example_x <span class="op">+</span> <span class="fu">sum</span>(example_z))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>which will add an objective to maximize (replace with <code>Min</code> to minimize).</p></li>
+<li><p>Add constraints:</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(example_model, constraint1, <span class="fl">2</span>example_x <span class="op">+</span> <span class="fl">3</span><span class="fu">*sum</span>(example_z) <span class="op">&lt;=</span> <span class="fl">10</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(example_model, constraint2, <span class="fl">5</span>example_x <span class="op">-</span> example_z[<span class="fl">1</span>] <span class="op">&lt;=</span> <span class="fl">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>which will name the constraints <code>constraint1</code> and <code>constraint2</code> (you should make yours more descriptive about what the constraint actually is). The value of adding a name is to facilitate later querying of shadow prices, which we will discuss later. You can also add a vector of constraints which have similar structure or rely on different elements of a data vector:</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [<span class="fl">2</span>; <span class="fl">4</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="fl">8</span>; <span class="fl">12</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>I <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span> <span class="co"># set indices for constraint</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(example_model, vector_constraint[i <span class="kw">in</span> I], A[i] <span class="op">*</span> <span class="fu">sum</span>(example_z) <span class="op">.&lt;=</span> b[i])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can also define matrices of constraints which depend on two index sets by generalizing this syntax, e.g.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@constraint</span>(example_model, matrix_constraint[i <span class="kw">in</span> I, j <span class="kw">in</span> J, <span class="op">...</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Specifying higher-dimensional vectors and matrices of variables and constraints will be important when we start looking at more complex applications, so don’t skip over this! You don’t want to manually enter thousands of constraints to ensure hourly electricity demand is met…</p>
+</div>
+</div>
+</div>
+<p>Finally, you can (and probably should) <code>print</code> your model to make sure that you get something that looks like the equations that you wrote down (in a notebook, this will be nicely rendered):</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(example_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><span class="math display">\[ \begin{aligned}
+\max\quad &amp; example\_x + example\_z_{1} + example\_z_{2} + example\_z_{3}\\
+\text{Subject to} \quad &amp; 2 example\_x + 3 example\_z_{1} + 3 example\_z_{2} + 3 example\_z_{3} \leq 10\\
+&amp; 5 example\_x - example\_z_{1} \leq 2\\
+&amp; 2 example\_z_{1} + 2 example\_z_{2} + 2 example\_z_{3} \leq 8\\
+&amp; 4 example\_z_{1} + 4 example\_z_{2} + 4 example\_z_{3} \leq 12\\
+&amp; example\_x \geq 0\\
+&amp; example\_z_{1} \geq 0\\
+&amp; example\_z_{2} \geq 0\\
+&amp; example\_z_{3} \geq 0\\
+&amp; example\_x \leq 1\\
+&amp; example\_z_{1} \leq 1\\
+&amp; example\_z_{2} \leq 1\\
+&amp; example\_z_{3} \leq 1\\
+\end{aligned} \]</span></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Define your entire model in one cell
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>JuMP</code> has great and intuitive syntax, but it doesn’t like re-defining variables or constraints once they’ve been set. I recommend putting all of your model-definition code (starting from <code>model = Model(...)</code>) for a particular optimization problem in a single notebook cell, so you can re-set up the entire problem with a single click when you want to make a change.</p>
+</div>
+</div></li>
+</ol>
+<section id="problem-2.2-1-points" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-2.2-1-points">Problem 2.2 (1 points)</h4>
+<p>Find the solution to your program and find the optimal values of the decision variables. Once you’ve defined your model, you can find the solution with `optimize!():</p>
 </section>
-<section id="problem-3.2-3-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-3.2-3-points">Problem 3.2 (3 points)</h4>
-<p>Follow the steps above and produce a histogram of the extreme sea levels in 2100 relative to 2010.</p>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">optimize!</span>(example_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Running HiGHS 1.5.3 [date: 1970-01-01, git hash: 45a127b78]
+Copyright (c) 2023 HiGHS under MIT licence terms
+Presolving model
+2 rows, 4 cols, 6 nonzeros
+2 rows, 3 cols, 5 nonzeros
+2 rows, 3 cols, 5 nonzeros
+Presolve : Reductions: rows 2(-2); columns 3(-1); elements 5(-7)
+Solving the presolved LP
+Using EKK dual simplex solver - serial
+  Iteration        Objective     Infeasibilities num(sum)
+          0     0.0000000000e+00 Ph1: 0(0) 0s
+          2    -3.5333333333e+00 Pr: 0(0) 0s
+Solving the original LP from the solution after postsolve
+Model   status      : Optimal
+Simplex   iterations: 2
+Objective value     :  3.5333333333e+00
+HiGHS run time      :          0.00</code></pre>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What if I Get An Error?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <code>optimize!()</code> throws an error, that’s usually a sign that something is wrong with the formulation (for example, a variable might not be bounded or a constraint might not be specified correctly) or a typo in the model definition. Linear programs should be well behaved!</p>
+</div>
+</div>
+<p>To find the values of variables after optimizing, use <code>value.()</code> (the broadcasting ensures this will work for vector-valued variables as well):</p>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(example_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>0.6</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">value</span>.(example_z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>1-dimensional DenseAxisArray{Float64,1,...} with index sets:
+    Dimension 1, 1:3
+And data, a 3-element Vector{Float64}:
+ 1.0
+ 0.9333333333333332
+ 1.0</code></pre>
+</div>
+</div>
+<section id="problem-2.3-1-point" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-2.3-1-point">Problem 2.3 (1 point)</h4>
+<p>How would your profit change if you could buy 1,000 additional bf of spruce? You can answer this by getting the shadow price of a particular variable with:</p>
 </section>
-<section id="problem-3.3-5-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-3.3-5-points">Problem 3.3 (5 points)</h4>
-<p>The current levee was heightened in 2010 to 2m above the 2010 mean sea level. Based on your analysis above, what is the probability that the levee will be overtopped in 2100 (remember that the reliability standard is 1%)?</p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shadow_price</span>(constraint1) <span class="co"># this is why we named the constraints when we defined them</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>0.3333333333333333</code></pre>
+</div>
+</div>
+<section id="problem-2.4-1-point" class="level4 cell markdown">
+<h4 class="anchored" data-anchor-id="problem-2.4-1-point">Problem 2.4 (1 point)</h4>
+<p>Would you prefer to have 2,000 additional bf of spruce or 1,000 additional bf of fir?</p>
 </section>
-<section id="problem-3.4-3-points" class="level4 cell markdown">
-<h4 class="anchored" data-anchor-id="problem-3.4-3-points">Problem 3.4 (3 points)</h4>
-<p>Based on your analysis, would you recommend that the levee be heightened again in the future, and if so, how high? What other information might you need, if any, to make your recommendation?</p>
 </section>
 </section>
-<section id="references" class="level2 cell markdown">
+<section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p>List any external references consulted, including classmates.</p>
+<p>Put any consulted sources here, including classmates you worked with/who helped you.</p>
+
+
 </section>
-
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -935,13 +973,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../hw/hw02/hw02.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Homework 2</span>
+      <a href="../../labs/lab02/lab02.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 2</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../hw/hw04/hw04.html" class="pagination-link">
-        <span class="nav-page-text">Homework 4</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../project.html" class="pagination-link">
+        <span class="nav-page-text">Final Project</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

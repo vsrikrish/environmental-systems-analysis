@@ -1,10 +1,10 @@
 ---
 title: "Plume Dispersion Models"
-subtitle: "Lecture 07"
+subtitle: "Lecture 19"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"
-date: "September 8, 2023"
+date: "October 18, 2023"
 format:
     revealjs:
         slide-number: c/t

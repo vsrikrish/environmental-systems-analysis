@@ -1,0 +1,103 @@
+---
+title: "Homework 4 Rubric"
+html: default
+pdf: default
+---
+
+This is the grading rubric for [Homework 4](../hw/hw04/hw04.qmd). The rubric does not provide specifics, but should give an idea of what a complete solution looks like and how different components are prioritized and weighted.
+
+The assignment is out of a total of 40 points.
+
+## Rubric
+
+General points will be deducted for the following:
+
+- Late submission (10% per day);
+- Untagged answers in Gradescope (10% penalty);
+- Non-referenced consulted sources (penalty depending on severity).
+
+### Problem 1 (22 Points)
+
+#### Problem 1.1 (2 points)
+
+| Missing or Needs Improvement (0) | Needs Improvement (1)  | Above Average (2) | 
+|:-----------------|:-----------------|:-----------------|
+| Solution missing or seemingly unrelated to problem description, or variable list missing definitions. | Variable list incomplete or missing units. | Variable list contains all needed variables and enough detail to know what the variables represent, including units. | 
+
+#### Problem 1.2 (3 points)
+
+| Missing (0) | Needs Improvement (1) | Developing (2) | Above Average (3) | 
+|:-----------------|:-----------------|:-----------------|:-----------------|
+| Solution missing or does not seem related to the problem, or uses notation which was not established in Problem 1.1 or this one. | Objective function contains major conceptual mistakes, such as missing key components. | Objective function contains all needed components but may include minor conceptual mistakes, such as overlooking a term. | Objective function is complete and may include very minor mistakes, such as an incorrect coefficient. | 
+
+#### Problem 1.3 (4 points)
+
+| Missing (0) | Needs Improvement (1) | Developing (2) | Above Average (3) | Excellent (4) |
+|:------------------------|:-----------------|:--------------------|:--------------------|:--------------------|
+| Solution missing or unrelated to problem description.  | Not all constraints included, and the ones that are included have conceptual mistakes. | Not all constraints included (enough to not properly constrain the problem), but the ones that are included are correct, and constraints may be missing derivations or justifications.  | All needed constraints included, but some include conceptual mistakes in how they're specified or derived/justified. | All needed constraints included with appropriate derivation and justification and contain at most minor mistakes.
+
+#### Problem 1.4 (3 points)
+
+| Missing or Needs Improvement (0) |  Developing (1) | Above Average (2) | Excellent (3) |
+|:------------------------|:-----------------|:--------------------|:--------------------|:--------------------|
+| Solution missing or unrelated to problem formulation from Problems 1.1--1.3.  | Major mistakes in problem program, such as missing or mis-specified objectives, variables, or constraints. | Minor mistakes in problem program, such as typos, or program is missing comments and is unclear to follow.  | Code appropriately encodes specified optimization problem and is appropriately commented so it is easy to follow. | 
+
+#### Problem 1.5 (5 points)
+
+| Missing (0) | Needs Improvement (1) | Developing (2-3) | Above Average (4) | Excellent (5) |
+|:------------------------|:-----------------|:--------------------|:--------------------|:--------------------|
+| Solution missing or unrelated to problem description.  | Optimal solution found but with no details on the solution. | Optimal solution found but details are incomplete, queried incorrectly, or presented unclearly. | Solution found but some slight mistakes in the solution details. | Optimal solution found but reporting may be missing units or other context. | Optimal solution found and reporting clear and complete.
+
+#### Problem 1.6 (5 points)
+
+| Missing (0) | Needs Improvement (1) | Developing (2) | Above Average (3) | Excellent (4) |
+|:------------------------|:-----------------|:--------------------|:--------------------|:--------------------|
+| Solution missing or unrelated to problem description.  | Not all constraints included, and the ones that are included have conceptual mistakes. | Not all constraints included (enough to not properly constrain the problem), but the ones that are included are correct.  | All needed constraints included, but some include conceptual mistakes in how they're specified. | All needed constraints included and contain at most minor mistakes (such as typos in coefficients).
+
+
+
+### Problem 2 (15 points)
+
+#### Problem 2.1 (5 points)
+
+| Missing (0) | Developing (1-2) | Above Average (3-4) | Excellent (5) |
+|:-----------------|:-----------------|:-----------------|:-----------------|
+| Solution not provided or does not seem related to the problem. | Model developed but has major bugs which prevent it from implementing the equations. | Model has minor bugs and/or is missing test. | Model correctly implements equation and is tested. |
+
+### Problem 2.2 (5 points)
+
+| Missing (0) | Needs Improvement (1) | Developing (2) | Above Average (3-4) | Excellent (5) |
+|:-----------------|:-----------------|:-----------------|:-----------------|
+| Solution missing or unrelated to problem description. | Model is evaluated using wrong temperature ensemble. | Plot is missing but model evaluation is provided using the correct ensemble. | Minor problems in model evaluation and/or plot. | All elements executed correctly. |
+
+#### Problem 2.3 (5 points)
+
+| Missing (0) | Needs Improvement (1) | Developing (2-3) | Above Average (4) | Excellent (5) |
+|:------------------------|:-----------------|:--------------------|:--------------------|:--------------------|
+| Histogram missing or unrelated to problem description.  | Histogram missing plotting elements (axis labels, units, etc, as appropriate). | Histogram is of wrong quantity. | Sampling and histogram completed correctly but discussion is missing or unclear. | Sampling and histogram completed correctly and clear discussion provided. | 
+
+### Problem 3 (13 points)
+
+#### Problem 3.1 (2 points)
+
+| Missing (0) | Developing (1) | Above Average (2) 
+|:-----------------|:-----------------|:-----------------|
+| Solution not provided, incomplete, or does not seem related to the problem. | Approach complete but unclear or contains small mistakes.  | Approach correctly and clearly describes steps. |
+
+#### Problem 3.2 (3 points)
+
+| Missing (0) | Needs Improvement (1) | Developing (2) | Above Average (3)  |
+|:------------------------|:-----------------|:--------------------|:--------------------|:--------------------|
+| Histogram missing or unrelated to problem description.  | Histogram missing plotting elements (axis labels, units, etc, as appropriate). | Histogram is of wrong quantity. | Sampling and histogram completed correctly. 
+
+#### Problem 3.3 (5 points)
+
+| Missing (0) | Needs Improvement (1-2) | Developing (2-3) | Above Average (4-5) | 
+|:------------------------|:-----------------|:--------------------|:--------------------|
+| Solution missing or unrelated to problem description.  | Wrong analysis framework used to assess probabilities (points based on severity of problem). | Minor problem with probability analysis (e.g. wrong threshold, lack of unit conversion, etc). | Analysis done correctly, possibly with comparison to reliability standard. | 
+
+#### Problem 3.4 (3 points)
+
+| Missing (0) | Developing (1) | Above Average (2) | Excellent (3)  |
+|:------------------------|:-----------------|:--------------------|:--------------------|:--------------------|
+| Solution missing or unrelated to problem description.  | Recommendation made but is not clearly based on the prior analysis. | Recommendation made based on prior analysis but neglects other relevant information that might influence it. | Discussion includes consideration of other potentially relevant information.

@@ -648,7 +648,7 @@
     "href": "slides/lecture08-3.html#capacity-expansion-objective",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Capacity Expansion Objective",
-    "text": "Capacity Expansion Objective\n\\[\n\\begin{align}\n\\min_{x, y, NSE} Z &= {\\color{red}\\text{investment cost} } + {\\color{blue}\\text{operating cost} } \\\\\n&= {\\color{red} \\sum_{g \\in \\mathcal{G}} \\text{FixedCost}_g x_g} + {\\color{blue} \\sum_{t \\in \\mathcal{T}} \\sum_{g \\in \\mathcal{G}}  \\text{VarCost}_g y_{g,t} + \\\\\n& \\qquad \\sum_{t \\in \\mathcal{T}} \\text{NSECost} NSE_t}\n\\end{align}\n\\]"
+    "text": "Capacity Expansion Objective\n\\[\n\\begin{align}\n\\min_{x, y, NSE} Z &= {\\color{red}\\text{investment cost} } + {\\color{blue}\\text{operating cost} } \\\\\n&= {\\color{red} \\sum_{g \\in \\mathcal{G}} \\text{FixedCost}_g x_g} + {\\color{blue} \\sum_{t \\in \\mathcal{T}} \\sum_{g \\in \\mathcal{G}}  \\text{VarCost}_g y_{g,t} + \\sum_{t \\in \\mathcal{T}} \\text{NSECost} NSE_t}\n\\end{align}\n\\]"
   },
   {
     "objectID": "slides/lecture08-3.html#what-are-our-constraints",

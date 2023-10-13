@@ -199,7 +199,8 @@ What are our variables?
 $$
 \begin{align}
 \min_{x, y, NSE} Z &= {\color{red}\text{investment cost} } + {\color{blue}\text{operating cost} } \\
-&= {\color{red} \sum_{g \in \mathcal{G}} \text{FixedCost}_g x_g} + {\color{blue} \sum_{t \in \mathcal{T}} \sum_{g \in \mathcal{G}}  \text{VarCost}_g y_{g,t} + \sum_{t \in \mathcal{T}} \text{NSECost} NSE_t}
+&= {\color{red} \sum_{g \in \mathcal{G}} \text{FixedCost}_g x_g} + {\color{blue} \sum_{t \in \mathcal{T}} \sum_{g \in \mathcal{G}}  \text{VarCost}_g y_{g,t} + \\
+& \qquad \sum_{t \in \mathcal{T}} \text{NSECost} NSE_t}
 \end{align}
 $$
 
@@ -219,9 +220,9 @@ $$
 \begin{align}
 \min_{x, y, NSE} \quad & \sum_{g \in \mathcal{G}} \text{FixedCost}_g x_g + \sum_{t \in \mathcal{T}} \sum_{g \in \mathcal{G}} \text{VarCost}_gy_{g,t} & \\
 & \quad + \sum_{t \in \mathcal{T}} \text{NSECost} NSE_t & \\[0.5em]
-\text {subject to:} \quad & \sum_{g \in \mathcal{G}} y_{g,t} + NSE_t = d_t & \forall t \in \mathcal{T} \\[0.5em]
-& y_{g,t} \leq x_g & \forall g \in {G},  \forall t \in \mathcal{T} \\[0.5em]
-& x_g, y_{g,t}, NSE_t \geq 0 & \forall g \in {G},  \forall t \in \mathcal{T}
+\text {subject to:} \quad & \sum_{g \in \mathcal{G}} y_{g,t} + NSE_t = d_t \qquad \qquad  \forall t \in \mathcal{T} \\[0.5em]
+& y_{g,t} \leq x_g \qquad \qquad \forall g \in {G},  \forall t \in \mathcal{T} \\[0.5em]
+& x_g, y_{g,t}, NSE_t \geq 0 \qquad \qquad \forall g \in {G},  \forall t \in \mathcal{T}
 \end{align}
 $$
 
@@ -233,12 +234,7 @@ $$
 
 Real problems can get much more complex, particularly if we try to model making decisions under renewable or load uncertainty.
 
-## What Does This Problem Neglect?
 
-1. **Discrete decisions**: is a plant on or off (this is called *unit commitment*)?
-2. **Intertemporal constraints**: Power plants can't just "ramp" from producing low levels of power to high levels of power; there are real engineering limits.
-3. **Transmission**: We can generate all the power we want, but what if we can't get it to where the demand is
-4. **Retirements**: We might have existing generators that we want to retire ("brownfield" scenarios).
 
 ## Capacity Expansion Example Solution
 
@@ -316,10 +312,16 @@ areaplot(value.(y).data',
 plot!(size=(1200, 550))
 ```
 
-## What Else Could We Add?
+## What Does This Problem Formulation Neglect?
 
 {{< include _poll-prompt.qmd >}}
 
+## What Does This Problem Neglect?
+
+1. **Discrete decisions**: is a plant on or off (this is called *unit commitment*)?
+2. **Intertemporal constraints**: Power plants can't just "ramp" from producing low levels of power to high levels of power; there are real engineering limits.
+3. **Transmission**: We can generate all the power we want, but what if we can't get it to where the demand is
+4. **Retirements**: We might have existing generators that we want to retire ("brownfield" scenarios).
 ## What About Renewables?
 
 Renewables make this problem more complicated because their capacity is variable:

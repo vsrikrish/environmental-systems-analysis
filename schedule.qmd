@@ -38,7 +38,7 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 |    | Fri, Oct 20 | Air Pollution II | [{{< fa sharp presentation-screen >}}](slides/lecture09-3.qmd){target="_blank"} | |  | |
 |  10 | Mon, Oct 23 | Lake Eutrophication | | | | |
 |     | Wed, Oct 25 | Lake Eutrophication II | | | | |
-|     | Fri, Oct 27 |  Mixed Integer Programming | | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | | |
+|     | Fri, Oct 27 |  Mixed Integer Programming | |  | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | |
 |  11   | Mon, Oct 30 | Solid Waste Management | | |  | |
 |    | Wed, Nov 1 | Unit Commitment | | | | |
 

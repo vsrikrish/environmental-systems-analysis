@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.4.388">
 
   <meta name="author" content="Vivek Srikrishnan">
-  <meta name="dcterms.date" content="2023-10-06">
-  <title>BEE 4750 - Fall 2023 - Linear Programming and JuMP</title>
+  <meta name="dcterms.date" content="2023-10-18">
+  <title>BEE 4750 - Fall 2023 - Plume Dispersion Models</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -340,8 +340,8 @@
     }
   };
   </script>
-<meta property="og:title" content="BEE 4750 - Fall 2023 - Linear Programming and JuMP">
-<meta property="og:description" content="Lab 03">
+<meta property="og:title" content="BEE 4750 - Fall 2023 - Plume Dispersion Models">
+<meta property="og:description" content="Lecture 19">
 <meta property="og:site_name" content="BEE 4750 - Fall 2023">
 </head>
 <body class="quarto-light">
@@ -349,36 +349,396 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-    <h1 class="title">Linear Programming and JuMP</h1>
+    <h1 class="title">Plume Dispersion Models</h1>
   <hr>
-<p class="subtitle">Lab 03</p>
-<p class="date">October 6, 2023</p>
+<p class="subtitle">Lecture 19</p>
+<p class="date">October 18, 2023</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Overview</h2>
 <ul>
-<li><a href="#/lab-3-instructions" id="/toc-lab-3-instructions">Lab 3 Instructions</a></li>
+<li><a href="#/review-and-questions" id="/toc-review-and-questions">Review and Questions</a></li>
+<li><a href="#/plume-dispersion" id="/toc-plume-dispersion">Plume Dispersion</a></li>
+<li><a href="#/key-takeaways" id="/toc-key-takeaways">Key Takeaways</a></li>
 <li><a href="#/upcoming-schedule" id="/toc-upcoming-schedule">Upcoming Schedule</a></li>
 </ul>
 </nav>
 </section>
 <section>
-<section id="lab-3-instructions" class="title-slide slide level1 center">
-<h1>Lab 3 Instructions</h1>
+<section id="review-and-questions" class="title-slide slide level1 center">
+<h1>Review and Questions</h1>
 
 </section>
-<section id="forest-management-optimization" class="slide level2">
-<h2>Forest Management Optimization</h2>
-<p>Your task in the lab: Formulate and solve a simple <strong>resource allocation problem</strong> (more on this next week).</p>
-<p>Lab is due on 10/13 by 9pm.</p>
-</section>
-<section id="reminder-about-the-rubric" class="slide level2">
-<h2>Reminder About The Rubric</h2>
-<p>For full points, make sure to check rubric (available on the Labs page of the website; Homework is similar) before finalizing submission. If unsure if something might be penalized, please ask on Ed or in class. In general, points will be taken off for:</p>
+<section id="box-models" class="slide level2">
+<h2>Box Models</h2>
 <ul>
-<li>Missing units;</li>
-<li>Plots: Unlabeled axes/missing legends if needed;</li>
-<li>Lack of proper precision when reporting values.</li>
+<li>Mass-balance over a spatial “box”</li>
+<li>Can combine multiple boxes together to represent processes over larger spatial domains</li>
+</ul>
+</section>
+<section id="simulation-workflow" class="slide level2">
+<h2>Simulation Workflow</h2>
+<div class="cell" data-fig-height="6">
+<div class="cell-output-display">
+<div id="fig-simulation">
+<div>
+<svg width="960" height="576" viewbox="0.00 0.00 501.63 351.80" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 347.8)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-347.8 497.63,-347.8 497.63,4 -4,4"></polygon>
+<!-- Initial Box -->
+<g id="node1" class="node">
+<title>Initial Box</title>
+<ellipse fill="none" stroke="black" cx="276.79" cy="-325.8" rx="52.72" ry="18"></ellipse>
+<text text-anchor="middle" x="276.79" y="-321.6" font-family="Times,serif" font-size="14.00">Initial Box</text>
+</g>
+<!-- Inflows -->
+<g id="node2" class="node">
+<title>Inflows</title>
+<ellipse fill="none" stroke="black" cx="211.79" cy="-252.8" rx="40.58" ry="18"></ellipse>
+<text text-anchor="middle" x="211.79" y="-248.6" font-family="Times,serif" font-size="14.00">Inflows</text>
+</g>
+<!-- Initial Box&#45;&gt;Inflows -->
+<g id="edge1" class="edge">
+<title>Initial Box-&gt;Inflows</title>
+<path fill="none" stroke="black" d="M261.72,-308.33C253.23,-299.06 242.49,-287.33 233.15,-277.13"></path>
+<polygon fill="black" stroke="black" points="235.67,-274.7 226.34,-269.69 230.51,-279.43 235.67,-274.7"></polygon>
+</g>
+<!-- Mixing/Bulk System -->
+<g id="node3" class="node">
+<title>Mixing/Bulk System</title>
+<ellipse fill="none" stroke="black" cx="91.79" cy="-179.8" rx="91.58" ry="18"></ellipse>
+<text text-anchor="middle" x="91.79" y="-175.6" font-family="Times,serif" font-size="14.00">Mixing/Bulk System</text>
+</g>
+<!-- Inflows&#45;&gt;Mixing/Bulk System -->
+<g id="edge2" class="edge">
+<title>Inflows-&gt;Mixing/Bulk System</title>
+<path fill="none" stroke="black" d="M188.37,-237.94C171.22,-227.79 147.61,-213.83 128.03,-202.24"></path>
+<polygon fill="black" stroke="black" points="129.75,-199.19 119.36,-197.11 126.18,-205.22 129.75,-199.19"></polygon>
+</g>
+<!-- Fate &amp; Transport -->
+<g id="node4" class="node">
+<title>Fate &amp; Transport</title>
+<ellipse fill="none" stroke="black" cx="102.79" cy="-91" rx="77.59" ry="18"></ellipse>
+<text text-anchor="middle" x="102.79" y="-86.8" font-family="Times,serif" font-size="14.00">Fate &amp; Transport</text>
+</g>
+<!-- Mixing/Bulk System&#45;&gt;Fate &amp; Transport -->
+<g id="edge3" class="edge">
+<title>Mixing/Bulk System-&gt;Fate &amp; Transport</title>
+<path fill="none" stroke="black" d="M93.96,-161.65C95.5,-149.52 97.59,-133.02 99.35,-119.12"></path>
+<polygon fill="black" stroke="black" points="102.84,-119.47 100.62,-109.11 95.89,-118.59 102.84,-119.47"></polygon>
+</g>
+<!-- Outflows -->
+<g id="node5" class="node">
+<title>Outflows</title>
+<ellipse fill="none" stroke="black" cx="211.79" cy="-18" rx="46.96" ry="18"></ellipse>
+<text text-anchor="middle" x="211.79" y="-13.8" font-family="Times,serif" font-size="14.00">Outflows</text>
+</g>
+<!-- Fate &amp; Transport&#45;&gt;Outflows -->
+<g id="edge4" class="edge">
+<title>Fate &amp; Transport-&gt;Outflows</title>
+<path fill="none" stroke="black" d="M127.52,-73.89C143.25,-63.65 163.75,-50.3 180.58,-39.33"></path>
+<polygon fill="black" stroke="black" points="182.54,-42.23 189.01,-33.84 178.72,-36.36 182.54,-42.23"></polygon>
+</g>
+<!-- Outflows&#45;&gt;Initial Box -->
+<g id="edge6" class="edge">
+<title>Outflows-&gt;Initial Box</title>
+<path fill="none" stroke="brown" d="M255.78,-24.49C293.83,-32 342.79,-49.52 342.79,-90 342.79,-253.8 342.79,-253.8 342.79,-253.8 342.79,-274.58 327.44,-291.83 311.54,-304.13"></path>
+<polygon fill="brown" stroke="brown" points="309.32,-301.41 303.26,-310.09 313.41,-307.09 309.32,-301.41"></polygon>
+<text text-anchor="middle" x="418.21" y="-175.6" font-family="Times,serif" font-size="14.00" fill="brown">Repeat for Next Time Step</text>
+</g>
+<!-- Outflows&#45;&gt;Inflows -->
+<g id="edge5" class="edge">
+<title>Outflows-&gt;Inflows</title>
+<path fill="none" stroke="red" d="M211.79,-36.14C211.79,-76.19 211.79,-176.17 211.79,-224.62"></path>
+<polygon fill="red" stroke="red" points="208.29,-224.68 211.79,-234.68 215.29,-224.68 208.29,-224.68"></polygon>
+<text text-anchor="middle" x="269.91" y="-131.2" font-family="Times,serif" font-size="14.00" fill="red">Repeat for Next Box</text>
+</g>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<div class="columns center">
+<div class="column" style="width:40%;">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center" width="100%" alt="Poll Everywhere QR Code" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig">
+<div>
+<img data-src="images/vsrikrish-poll.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code">
+</div>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<p><strong>Text</strong>: VSRIKRISH to 22333</p>
+<p><strong>URL</strong>: <a href="https://pollev.com/vsrikrish">https://pollev.com/vsrikrish</a> <br><br> <a href="https://www.polleverywhere.com/multiple_choice_polls/qKeig0hHShZYHAOmvZtZm?preview=true&amp;controls=none" data-preview-link="true">See Results</a></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="plume-dispersion" class="title-slide slide level1 center">
+<h1>Plume Dispersion</h1>
+
+</section>
+<section id="criteria-air-pollutants" class="slide level2">
+<h2>Criteria Air Pollutants</h2>
+<ul>
+<li>Pollutants which have an ambient air quality standard.</li>
+<li>Most common examples:
+<ul>
+<li>PM2.5, PM10</li>
+<li>O<sub>3</sub></li>
+<li>CO</li>
+<li>SO<sub>2</sub></li>
+<li>NO<sub>2</sub></li>
+</ul></li>
+</ul>
+</section>
+<section id="impact-of-the-clean-air-act" class="slide level2">
+<h2>Impact of the Clean Air Act</h2>
+
+<img data-src="https://media.rff.org/images/clean_air_PR.width-1480.png" class="r-stretch quarto-figure-center"><p class="caption">Decoupling of GDP and Air Pollution</p><div class="caption">
+<p>Source: <a href="https://www.rff.org/news/press-releases/clean-air-act-successes-and-challenges-1970/">Resources for the Future</a></p>
+</div>
+</section>
+<section id="some-approaches-for-modeling-air-pollution" class="slide level2">
+<h2>Some Approaches For Modeling Air Pollution</h2>
+<p><strong>Last Class</strong>: Box (or “airshed”) model of air pollution</p>
+<ul>
+<li>Looks at overall mass-balance.</li>
+<li>Total inputs/outputs in a particular boundary.</li>
+</ul>
+<p><strong>Today</strong>: Point sources and receptors (<em>plume</em>/puff models)</p>
+</section>
+<section id="point-sourcesreceptors" class="slide level2">
+<h2>Point Sources/Receptors</h2>
+<p>Concerned about dispersal from a point source:</p>
+
+<img data-src="figures/air-pollution.png" class="r-stretch quarto-figure-center"><p class="caption">Point Source/Receptor Schematic</p></section>
+<section id="point-sourcesreceptors-1" class="slide level2">
+<h2>Point Sources/Receptors</h2>
+<p>At a given instant, flow from source to receptor follows a path:</p>
+
+<img data-src="figures/air-pollution-instant.png" class="r-stretch quarto-figure-center"><p class="caption">Point Source Flow Traces</p></section>
+<section id="point-sourcesreceptors-2" class="slide level2">
+<h2>Point Sources/Receptors</h2>
+<p>Averaging those traces over time gives us a “plume”:</p>
+
+<img data-src="figures/air-pollution-plume-timeavg.png" class="r-stretch quarto-figure-center"><p class="caption">Point Source Average Plume</p></section>
+<section id="point-sourcesreceptors-3" class="slide level2">
+<h2>Point Sources/Receptors</h2>
+<p>What is the distribution of pollutant above the receptor?</p>
+
+<img data-src="figures/air-pollution-plume-timeavg.png" class="r-stretch quarto-figure-center"><p class="caption">Point Source Average Plume</p></section>
+<section id="gaussian-plume" class="slide level2">
+<h2>“Gaussian Plume”</h2>
+<p>We can reason that the concentration follows a “bell curve”:</p>
+
+<img data-src="figures/air-pollution-plume-shape.png" class="r-stretch quarto-figure-center"><p class="caption">Gaussian Plume</p></section>
+<section id="gaussian-plume-1" class="slide level2">
+<h2>“Gaussian Plume”</h2>
+<p>We can reason that the concentration follows a “bell curve”:</p>
+
+<img data-src="figures/air-pollution-plume-dist.png" class="r-stretch quarto-figure-center"><p class="caption">Gaussian Plume Distribution</p></section>
+<section id="gaussian-plume-2" class="slide level2">
+<h2>“Gaussian Plume”</h2>
+<p>Not illustrated, but this reasoning also applies cross-wind (<span class="math inline">\(y\)</span>).</p>
+
+<img data-src="figures/air-pollution-plume-dist.png" class="r-stretch quarto-figure-center"><p class="caption">Gaussian Plume Distribution</p></section>
+<section id="gaussian-plume-model" class="slide level2">
+<h2>Gaussian Plume Model</h2>
+<p><span class="math display">\[\begin{equation}
+C(x,y,z) = \frac{Q}{2\pi u \sigma_y \sigma_z} \exp\left[-\frac{1}{2} \left(\frac{y^2}{\sigma_y^2} + \frac{(z - H)^2}{\sigma_z^2}\right)\right]
+\end{equation}\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(C\)</span></td>
+<td style="text-align: left;">Concentration (g/m<span class="math inline">\(^3\)</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(Q\)</span></td>
+<td style="text-align: left;">Emissions Rate (g/s)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(H\)</span></td>
+<td style="text-align: left;">Effective Source Height (m)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(u\)</span></td>
+<td style="text-align: left;">Wind Speed (m/s)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gaussian-plume-derivation" class="slide level2">
+<h2>Gaussian Plume Derivation</h2>
+<p>Use the <strong>advective-diffusion equation</strong> to describe the mass-balance of a small air parcel :</p>
+<p><span class="math display">\[ \frac{\partial C}{\partial t} + \color{blue}\overbrace{[D + K] \nabla^2 C}^\text{diffusion} \color{black} - \color{red}\overbrace{\overrightarrow{u} \cdot \overrightarrow{\nabla} C}^\text{advection}\]</span></p>
+<ul>
+<li><span class="math inline">\(D\)</span> is the diffusion coefficient</li>
+<li><span class="math inline">\(K\)</span> is the dispersion coefficient (turbulent mixing)</li>
+</ul>
+</section>
+<section id="diffusive-flux" class="slide level2">
+<h2>Diffusive Flux</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/diffusion-flux.png"></p>
+<figcaption>Diffusive Flux</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Concentration gradient + Diffusion ⇒ Flux</p>
+<p><strong>Fick’s law</strong>: mass transfer by diffusion</p>
+<p><span class="math display">\[F_x = D \frac{dC}{dx}\]</span></p>
+</div>
+</div>
+</section>
+<section id="turbulent-flux" class="slide level2">
+<h2>Turbulent Flux</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/turbulent-flux.png"></p>
+<figcaption>Turbulent Flux</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Concentration gradient + Turbulent mixing ⇒ Flux</p>
+<p><span class="math display">\[F_x = K_{xx}\frac{dC}{dx}\]</span></p>
+<p>The dispersion coefficient <span class="math inline">\(K_{xx}\)</span> depends on flow/eddy characteristics.</p>
+</div>
+</div>
+</section>
+<section id="gaussian-plume-model-derivation" class="slide level2">
+<h2>Gaussian Plume Model Derivation</h2>
+<p><span class="math display">\[\frac{\partial C}{\partial t} + \vec{u} \cdot \vec{\nabla} C  - [D + K] \nabla^2 C  = 0\]</span></p>
+<p><strong>Assumptions</strong>:</p>
+<ul>
+<li>Steady-state:</li>
+</ul>
+<p><span class="math display">\[ \frac{\partial C}{\partial t} = 0\]</span></p>
+</section>
+<section id="gaussian-plume-model-derivation-1" class="slide level2">
+<h2>Gaussian Plume Model Derivation</h2>
+<p><span class="math display">\[\frac{\partial C}{\partial t} + \vec{u} \cdot \vec{\nabla} C  - [D + K] \nabla^2 C  = 0\]</span></p>
+<p><strong>Assumptions</strong>:</p>
+<ul>
+<li>Wind only in <span class="math inline">\(x\)</span>-direction:</li>
+</ul>
+<p><span class="math display">\[\vec{u} \cdot \vec{\nabla} C = u_x \frac{\partial C}{\partial x} + \cancel{u_y \frac{\partial C}{\partial y}} + \cancel{u_z \frac{\partial C}{\partial z}}\]</span></p>
+</section>
+<section id="gaussian-plume-model-derivation-2" class="slide level2">
+<h2>Gaussian Plume Model Derivation</h2>
+<p><span class="math display">\[\frac{\partial C}{\partial t} + \vec{u} \cdot \vec{\nabla} C  - [D + K] \nabla^2 C  = 0\]</span></p>
+<p><strong>Assumptions</strong>:</p>
+<ul>
+<li>Turbulence <span class="math inline">\(\gg\)</span> diffusion, e.g.&nbsp;<span class="math inline">\(K \gg D\)</span>, and <span class="math inline">\(K\)</span> is unimportant along <span class="math inline">\(x\)</span>-direction:</li>
+</ul>
+<p><span class="math display">\[-[\cancel{D} + K] \nabla^2 C = \cancel{K_{xx}} \frac{\partial^2 C}{\partial x^2} + K_{yy} \frac{\partial^2 C}{\partial y^2} + K_{zz} \frac{\partial^2 C}{\partial z^2}\]</span></p>
+</section>
+<section id="gaussian-plume-model-derivation-3" class="slide level2">
+<h2>Gaussian Plume Model Derivation</h2>
+<p>With these assumptions, the equation simplifies to:</p>
+<p><span class="math display">\[u \frac{\partial C}{\partial x} = K_{yy} \frac{\partial^2 C}{\partial y^2} + K_{zz}\frac{\partial^2 C}{\partial z^2}\]</span></p>
+<div class="fragment fade-in">
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>Assume mass flow through vertical plane downwind must equal emissions rate <span class="math inline">\(Q\)</span>:</p>
+<p><span class="math display">\[Q = \iint u C dy dz\]</span></p>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/boundary-mass.png"></p>
+<figcaption>Boundary Condition for A-D Equation</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="gaussian-plume-model-derivation-4" class="slide level2">
+<h2>Gaussian Plume Model Derivation</h2>
+<p>Solving this PDE:</p>
+<p><span class="math display">\[C(x,y,z) = \frac{Q}{4\pi x \sqrt{K_{yy} + K_{zz}}} \exp\left[-\frac{u}{4x}\left(\frac{y^2}{K_{yy}} + \frac{(z-H)^2}{K_{zz}}\right)\right]\]</span></p>
+<div class="fragment fade-in">
+<p>Now substitute</p>
+<p><span class="math display">\[\begin{aligned}
+\sigma_y^2 &amp;= 2 K_{yy} t = 2 K_{yy} \frac{x}{u} \\
+\sigma_z^2 &amp;= 2 K_{zz} \frac{x}{u}
+\end{aligned}\]</span></p>
+</div>
+</section>
+<section id="gaussian-plume-model-derivation-5" class="slide level2">
+<h2>Gaussian Plume Model Derivation</h2>
+<p>This results in:</p>
+<p><span class="math display">\[
+C(x,y,z) = \frac{Q}{2\pi u \sigma_y \sigma_z} \exp\left[-\frac{1}{2}\left(\frac{y^2}{\sigma_y^2} + \frac{(z-H)^2}{\sigma_z^2}\right) \right]\]</span></p>
+<p>which looks like a Gaussian distribution probability distribution if we restrict to <span class="math inline">\(y\)</span> or <span class="math inline">\(z\)</span>.</p>
+</section>
+<section id="gaussian-plume-model-with-reflection" class="slide level2">
+<h2>Gaussian Plume Model with Reflection</h2>
+<p>Last piece: the ground dampens vertical dispersion.</p>
+
+<img data-src="figures/reflection.png" class="r-stretch quarto-figure-center"><p class="caption">Reflected Mass Off Ground</p></section>
+<section id="gaussian-plume-model-with-reflection-1" class="slide level2">
+<h2>Gaussian Plume Model with Reflection</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p>We can account for this extra term using a flipped “image” of the source.</p>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/reflection-image.png"></p>
+<figcaption>Reflected Mass Off Ground</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="final-model-elevated-source-with-reflection" class="slide level2">
+<h2>Final Model: Elevated Source with Reflection</h2>
+<p><span class="math display">\[\begin{aligned}
+C(x,y,z) = &amp;\frac{Q}{2\pi u \sigma_y \sigma_z} \exp\left(\frac{-y^2}{2\sigma_y^2} \right) \times \\\\
+&amp; \quad \left[\exp\left(\frac{-(z-H)^2}{2\sigma_z^2}\right) + \exp\left(\frac{-(z+H)^2}{2\sigma_z^2}\right) \right]
+\end{aligned}\]</span></p>
+</section>
+<section id="final-model-assumptions" class="slide level2">
+<h2>Final Model Assumptions</h2>
+<p><strong>Assumptions</strong>:</p>
+<ol type="1">
+<li>Steady-State</li>
+<li>Constant wind velocity and direction</li>
+<li>Wind &gt;&gt; dispersion in <span class="math inline">\(x\)</span>-direction</li>
+<li>No reactions</li>
+<li>Smooth ground (avoids turbulent eddies and other reflections)</li>
+</ol>
+</section></section>
+<section>
+<section id="key-takeaways" class="title-slide slide level1 center">
+<h1>Key Takeaways</h1>
+
+</section>
+<section id="key-takeaways-1" class="slide level2">
+<h2>Key Takeaways</h2>
+<ul>
+<li>Plume models are commonly used for point sources and point receptors.</li>
+<li><strong>Gaussian plumes</strong>: continuous emissions from an elevated source.</li>
+<li>F&amp;T determined by advection and diffusion/turbulence.</li>
+<li>However, number of critical assumptions.</li>
 </ul>
 </section></section>
 <section>
@@ -388,12 +748,8 @@
 </section>
 <section id="next-classes" class="slide level2">
 <h2>Next Classes</h2>
-<p><strong>Monday</strong>: No class (Indigeneous People’s Day)</p>
-<p><strong>Wednesday/Friday</strong>: Linear Programming Examples (land allocation, power systems)</p>
-</section>
-<section id="assessments" class="slide level2">
-<h2>Assessments</h2>
-<p><strong>Today</strong>: Homework 3 due by 9:00pm.</p>
+<p><strong>Monday</strong>: Gaussian Plume Dispersion and Example</p>
+<p><strong>Wednesday/Friday</strong>: Uncertainty, Risk and Monte Carlo</p>
 
 <div class="footer footer-default">
 <p><a href="https://viveks.me/environmental-systems-analysis">BEE 4750, Environmental Systems Analysis</a></p>

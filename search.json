@@ -669,7 +669,7 @@
     "href": "slides/lecture08-3.html#problem-formulation",
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Problem Formulation",
-    "text": "Problem Formulation\n\\[\n\\begin{align}\n\\min_{x, y, NSE} \\quad & \\sum_{g \\in \\mathcal{G}} \\text{FixedCost}_g x_g + \\sum_{t \\in \\mathcal{T}} \\sum_{g \\in \\mathcal{G}} \\text{VarCost}_gy_{g,t} & \\\\\n& \\quad + \\sum_{t \\in \\mathcal{T}} \\text{NSECost} NSE_t & \\\\[0.5em]\n\\text {subject to:} \\quad & \\sum_{g \\in \\mathcal{G}} y_{g,t} + NSE_t = d_t & \\forall t \\in \\mathcal{T} \\\\[0.5em]\n& y_{g,t} \\leq x_g & \\forall g \\in {G},  \\forall t \\in \\mathcal{T} \\\\[0.5em]\n& x_g, y_{g,t}, NSE_t \\geq 0 & \\forall g \\in {G},  \\forall t \\in \\mathcal{T}\n\\end{align}\n\\]"
+    "text": "Problem Formulation\n\\[\n\\begin{align}\n\\min_{x, y, NSE} \\quad & \\sum_{g \\in \\mathcal{G}} \\text{FixedCost}_g x_g + \\sum_{t \\in \\mathcal{T}} \\sum_{g \\in \\mathcal{G}} \\text{VarCost}_gy_{g,t} & \\\\\n& \\quad + \\sum_{t \\in \\mathcal{T}} \\text{NSECost} NSE_t & \\\\[0.5em]\n\\text {subject to:} \\quad & \\sum_{g \\in \\mathcal{G}} y_{g,t} + NSE_t = d_t \\qquad \\qquad  \\forall t \\in \\mathcal{T} \\\\[0.5em]\n& y_{g,t} \\leq x_g \\qquad \\qquad \\forall g \\in {G},  \\forall t \\in \\mathcal{T} \\\\[0.5em]\n& x_g, y_{g,t}, NSE_t \\geq 0 \\qquad \\qquad \\forall g \\in {G},  \\forall t \\in \\mathcal{T}\n\\end{align}\n\\]"
   },
   {
     "objectID": "slides/lecture08-3.html#capacity-expansion-is-an-lp",
@@ -677,13 +677,6 @@
     "title": "Power Systems: Generating Capacity Expansion",
     "section": "Capacity Expansion is an LP",
     "text": "Capacity Expansion is an LP\n\nLinearity: costs assumed to scale linearly;\nDivisible: we model total installed capacity, not number of individual units\nCertainty: no uncertainty about renewables.\n\nReal problems can get much more complex, particularly if we try to model making decisions under renewable or load uncertainty."
-  },
-  {
-    "objectID": "slides/lecture08-3.html#what-does-this-problem-neglect",
-    "href": "slides/lecture08-3.html#what-does-this-problem-neglect",
-    "title": "Power Systems: Generating Capacity Expansion",
-    "section": "What Does This Problem Neglect?",
-    "text": "What Does This Problem Neglect?\n\nDiscrete decisions: is a plant on or off (this is called unit commitment)?\nIntertemporal constraints: Power plants can’t just “ramp” from producing low levels of power to high levels of power; there are real engineering limits.\nTransmission: We can generate all the power we want, but what if we can’t get it to where the demand is\nRetirements: We might have existing generators that we want to retire (“brownfield” scenarios)."
   },
   {
     "objectID": "slides/lecture08-3.html#capacity-expansion-example-solution",
@@ -700,18 +693,18 @@
     "text": "When Do Generators Operate?\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Results of Generating Capacity Expansion Example"
   },
   {
-    "objectID": "slides/lecture08-3.html#what-else-could-we-add",
-    "href": "slides/lecture08-3.html#what-else-could-we-add",
+    "objectID": "slides/lecture08-3.html#what-does-this-problem-formulation-neglect",
+    "href": "slides/lecture08-3.html#what-does-this-problem-formulation-neglect",
     "title": "Power Systems: Generating Capacity Expansion",
-    "section": "What Else Could We Add?",
-    "text": "What Else Could We Add?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+    "section": "What Does This Problem Formulation Neglect?",
+    "text": "What Does This Problem Formulation Neglect?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture08-3.html#what-about-renewables",
-    "href": "slides/lecture08-3.html#what-about-renewables",
+    "objectID": "slides/lecture08-3.html#what-does-this-problem-neglect",
+    "href": "slides/lecture08-3.html#what-does-this-problem-neglect",
     "title": "Power Systems: Generating Capacity Expansion",
-    "section": "What About Renewables?",
-    "text": "What About Renewables?\nRenewables make this problem more complicated because their capacity is variable:\n\nresource availability not constant across time;\nneed to consider a capacity factor.\n\n\nHow would this change our existing capacity expansion formulation?"
+    "section": "What Does This Problem Neglect?",
+    "text": "What Does This Problem Neglect?\n\nDiscrete decisions: is a plant on or off (this is called unit commitment)?\nIntertemporal constraints: Power plants can’t just “ramp” from producing low levels of power to high levels of power; there are real engineering limits.\nTransmission: We can generate all the power we want, but what if we can’t get it to where the demand is\nRetirements: We might have existing generators that we want to retire (“brownfield” scenarios). ## What About Renewables?\n\nRenewables make this problem more complicated because their capacity is variable:\n\nresource availability not constant across time;\nneed to consider a capacity factor.\n\n\nHow would this change our existing capacity expansion formulation?"
   },
   {
     "objectID": "slides/lecture08-3.html#renewable-variability-impact",

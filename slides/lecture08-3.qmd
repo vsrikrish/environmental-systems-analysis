@@ -199,8 +199,7 @@ What are our variables?
 $$
 \begin{align}
 \min_{x, y, NSE} Z &= {\color{red}\text{investment cost} } + {\color{blue}\text{operating cost} } \\
-&= {\color{red} \sum_{g \in \mathcal{G}} \text{FixedCost}_g x_g} + {\color{blue} \sum_{t \in \mathcal{T}} \sum_{g \in \mathcal{G}}  \text{VarCost}_g y_{g,t} + \\
-& \qquad \sum_{t \in \mathcal{T}} \text{NSECost} NSE_t}
+&= {\color{red} \sum_{g \in \mathcal{G}} \text{FixedCost}_g x_g} + {\color{blue} \sum_{t \in \mathcal{T}} \sum_{g \in \mathcal{G}}  \text{VarCost}_g y_{g,t} + \sum_{t \in \mathcal{T}} \text{NSECost} NSE_t}
 \end{align}
 $$
 

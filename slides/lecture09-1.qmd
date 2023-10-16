@@ -136,7 +136,7 @@ But we can assume a piecewise linear approximation.
 
 :::
 ::: {.column width=40%}
-![Typical cost curve for a thermal generator](figures/thermal-cost-curve.jpeg)
+![Typical cost curve for a thermal generator](figures/thermal-cost-curve.png)
 
 ::: {.caption}
 Source: [Ross Baldrick, UT Austin](https://users.ece.utexas.edu/~baldick/classes/394V/Dispatch.pdf)

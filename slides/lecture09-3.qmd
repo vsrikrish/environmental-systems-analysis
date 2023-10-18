@@ -1,5 +1,5 @@
 ---
-title: "Plume Models: Dispersion and Examples"
+title: "Plume Models: Multiple Sources and Receptors"
 subtitle: "Lecture 20"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
@@ -82,71 +82,6 @@ C(x,y,z) = &\frac{Q}{2\pi u \sigma_y \sigma_z} \exp\left(\frac{-y^2}{2\sigma_y^2
 ## Questions
 
 {{< include _poll-prompt.qmd >}}
-
-# Dispersion
-
-## Estimating Dispersion "Spread"
-
-Values of $\sigma_y$ and $\sigma_z$ matter substantially for modeling plume spread downwind. What influences them?
-
-## Estimating Dispersion "Spread"
-
-**Main contribution**: atmospheric stability
-
-- Greater stability &Rightarrow; less vertical/cross-wind dispersion.
-
-- Pasquill (1961): Six stability classes.
-
-## Estimating Dispersion "Spread"
-
-Contributors to atmospheric stability:
-
-- Temperature gradient
-- Wind speed
-- Solar radiation
-- Cloud cover
-- Richardson number (buoyancy / flow shear)
-
-## Atmospheric Stability Classes
-
-Class | Stability | Description |
-:----:|:----------|:-----------|
-A | Extremely unstable | Sunny summer day 
-B | Moderately unstable | Sunny & warm |
-C | Slightly unstable | Partly cloudy day |
-D | Neutral | Cloudy day or night |
-E | Slightly stable | Partly cloudy night |
-F | Moderately stable | Clear night |
-
-::: {.caption}
-Source: <https://courses.ecampus.oregonstate.edu/ne581/eleven/>
-:::
-
-## Estimating Dispersion "Spread"
-
-$$\begin{aligned}
-\sigma_y &= ax^{0.894} \\
-\sigma_z &= cx^d + f
-\end{aligned}$$
-
-![Dispersion Coefficients](figures/plume-dispersion.png)
-
-::: {.caption}
-Source: <https://courses.washington.edu/cee490/DISPCOEF4WP.htm>
-:::
-
-**Note**: here $x$ is in km, while in the plume equation $y$, $z$ are in m!
-
-
-## Estimating Dispersion "Spread"
-
-Then take estimates for $\sigma_y$ and $\sigma_z$ and plug into plume dispersion equation
-
-$$\begin{aligned}
-C(x,y,z) = &\frac{Q}{2\pi u {\color{red}\sigma_y \sigma_z}} \exp\left(\frac{-y^2}{2{\color{red}\sigma_y^2}} \right) \times \\\\
-& \quad \left[\exp\left(\frac{-(z-H)^2}{2{\color{red}\sigma_z^2}}\right) + \exp\left(\frac{-(z+H)^2}{2{\color{red}\sigma_z^2}}\right) \right]
-\end{aligned}$$
-
 
 # Multiple Point Sources
 
@@ -417,10 +352,12 @@ markdown_table(DataFrame(Source=1:3, R1=treated[:, 1], R2=treated[:, 2], R3=trea
 
 ## Next Classes
 
-**Monday**: Plant-level emissions control.
+**Monday**: Mixed Integer Linear Programming
 
-**Wednesday/Friday**: Lake Eutrophication Revisited.
+**Wednesday/Friday**: Applications (network models, unit commitment)
 
 ## Assessments
 
 **HW4**: Due next Friday (10/27) at 9pm.
+
+**Regulatory Report**: Due next Friday also.

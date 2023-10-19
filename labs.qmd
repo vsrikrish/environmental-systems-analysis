@@ -17,7 +17,7 @@ This page contains information about and a schedule of the lab assignments for t
 | Lab | Instructions | Rubric | Solutions | Due Date |
 |:----------:|:------------:|:------:|:---------|
 | Lab 1 | [{{< fa sharp laptop-code >}}](labs/lab01/lab01.html) | [{{< fa sharp list-check >}}](rubrics/lab01.html) | [{{< fa sharp key-skeleton >}}](solutions/lab01/lab01-solution.html) | Sep 01, 2023 |
-| Lab 2 | [{{< fa sharp laptop-code >}}](labs/lab02/lab02.html) | [{{< fa sharp list-check >}}](rubrics/lab02.html) | [{{< fa sharp key-skeleton >}}]{style="color:grey"} | Sep 22, 2023 |
+| Lab 2 | [{{< fa sharp laptop-code >}}](labs/lab02/lab02.html) | [{{< fa sharp list-check >}}](rubrics/lab02.html) | [{{< fa sharp key-skeleton >}}](solutions/lab02/lab02-solution.html) | Sep 22, 2023 |
 | Lab 3 | [{{< fa sharp laptop-code >}}](labs/lab03/lab03.html) | [{{< fa sharp list-check >}}](rubrics/lab03.html) | [{{< fa sharp key-skeleton >}}]{style="color:grey"} | Oct 13, 2023 |
 
 

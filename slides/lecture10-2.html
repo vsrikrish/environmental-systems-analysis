@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.4.388">
 
   <meta name="author" content="Vivek Srikrishnan">
-  <meta name="dcterms.date" content="2023-10-06">
-  <title>BEE 4750 - Fall 2023 - Linear Programming and JuMP</title>
+  <meta name="dcterms.date" content="2023-10-25">
+  <title>BEE 4750 - Fall 2023 - Waste Management and Network Models</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -342,8 +342,8 @@
     }
   };
   </script>
-<meta property="og:title" content="BEE 4750 - Fall 2023 - Linear Programming and JuMP">
-<meta property="og:description" content="Lab 03">
+<meta property="og:title" content="BEE 4750 - Fall 2023 - Waste Management and Network Models">
+<meta property="og:description" content="Lecture 21">
 <meta property="og:site_name" content="BEE 4750 - Fall 2023">
 </head>
 <body class="quarto-light">
@@ -351,51 +351,251 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-    <h1 class="title">Linear Programming and JuMP</h1>
+    <h1 class="title">Waste Management and Network Models</h1>
   <hr>
-<p class="subtitle">Lab 03</p>
-<p class="date">October 6, 2023</p>
+<p class="subtitle">Lecture 21</p>
+<p class="date">October 25, 2023</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Overview</h2>
 <ul>
-<li><a href="#/lab-3-instructions" id="/toc-lab-3-instructions">Lab 3 Instructions</a></li>
-<li><a href="#/upcoming-schedule" id="/toc-upcoming-schedule">Upcoming Schedule</a></li>
+<li><a href="#/review-and-questions" id="/toc-review-and-questions">Review and Questions</a></li>
+<li><a href="#/solid-waste-management" id="/toc-solid-waste-management">Solid Waste Management</a></li>
 </ul>
 </nav>
 </section>
 <section>
-<section id="lab-3-instructions" class="title-slide slide level1 center">
-<h1>Lab 3 Instructions</h1>
+<section id="review-and-questions" class="title-slide slide level1 center">
+<h1>Review and Questions</h1>
 
 </section>
-<section id="forest-management-optimization" class="slide level2">
-<h2>Forest Management Optimization</h2>
-<p>Your task in the lab: Formulate and solve a simple <strong>resource allocation problem</strong> (more on this next week).</p>
-<p>Lab is due on 10/13 by 9pm.</p>
-</section>
-<section id="reminder-about-the-rubric" class="slide level2">
-<h2>Reminder About The Rubric</h2>
-<p>For full points, make sure to check rubric (available on the Labs page of the website; Homework is similar) before finalizing submission. If unsure if something might be penalized, please ask on Ed or in class. In general, points will be taken off for:</p>
+<section id="mixed-integer-linear-programming" class="slide level2">
+<h2>Mixed Integer Linear Programming</h2>
 <ul>
-<li>Missing units;</li>
-<li>Plots: Unlabeled axes/missing legends if needed;</li>
-<li>Lack of proper precision when reporting values.</li>
+<li>Problems involving integer constraints break assumptions of LP.</li>
+<li>Can solve using branch and bound or related algorithms.</li>
+<li>Iteratively solve a sequence of restricted LPs until integer solution is found.</li>
 </ul>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<div class="columns center">
+<div class="column" style="width:40%;">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center" data-fig-align="center" width="100%" alt="Poll Everywhere QR Code">
+<figure class="quarto-float quarto-float-fig">
+<div>
+<img data-src="images/vsrikrish-poll.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code">
+</div>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<p><strong>Text</strong>: VSRIKRISH to 22333</p>
+<p><strong>URL</strong>: <a href="https://pollev.com/vsrikrish">https://pollev.com/vsrikrish</a> <br><br> <a href="https://www.polleverywhere.com/multiple_choice_polls/qKeig0hHShZYHAOmvZtZm?preview=true&amp;controls=none" data-preview-link="true">See Results</a></p>
+</div>
+</div>
 </section></section>
 <section>
-<section id="upcoming-schedule" class="title-slide slide level1 center">
-<h1>Upcoming Schedule</h1>
+<section id="solid-waste-management" class="title-slide slide level1 center">
+<h1>Solid Waste Management</h1>
 
 </section>
-<section id="next-classes" class="slide level2">
-<h2>Next Classes</h2>
-<p><strong>Monday</strong>: No class (Indigeneous People’s Day)</p>
-<p><strong>Wednesday/Friday</strong>: Linear Programming Examples (land allocation, power systems)</p>
+<section id="waste-load-allocation" class="slide level2">
+<h2>Waste Load Allocation</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Some relevant questions:</p>
+<ul>
+<li>Where do we send waste?</li>
+<li>What types of facilities do we build/operate?</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://www.epa.gov/sites/default/files/styles/medium/public/2015-08/hierarchy_hierarchy_and_options_pages.png"></p>
+<figcaption>Waste Management Hierarchy</figcaption>
+</figure>
+</div>
+<div class="caption">
+<p>Source: <a href="https://www.epa.gov/homeland-security-waste/waste-management-options-homeland-security-incidents">EPA</a></p>
+</div>
+</div>
+</div>
 </section>
-<section id="assessments" class="slide level2">
-<h2>Assessments</h2>
-<p><strong>Today</strong>: Homework 3 due by 9:00pm.</p>
+<section id="waste-allocation-as-a-network-problem" class="slide level2">
+<h2>Waste Allocation As A Network Problem</h2>
+<p>Want to model the flows between sources and sinks!</p>
+
+<img data-src="figures/waste-network-blank.svg" class="r-stretch quarto-figure-center"><p class="caption">Network Representation</p></section>
+<section id="network-parameterization" class="slide level2">
+<h2>Network Parameterization</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/waste-network-params.svg"></p>
+<figcaption>Network Parameterization</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\color{purple}S_i\)</span></td>
+<td style="text-align: left;">Waste produced at source <span class="math inline">\(i\)</span> (Mg/day)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\color{red}K_j\)</span></td>
+<td style="text-align: left;">Capacity of disposal <span class="math inline">\(j\)</span> (Mg/day)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\color{blue}W_{ij}\)</span></td>
+<td style="text-align: left;">Waste transported from source <span class="math inline">\(i\)</span> to disposal <span class="math inline">\(j\)</span> (Mg/day)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="what-is-missing" class="slide level2">
+<h2>What Is Missing?</h2>
+<p>This network representation takes into account the graph structure of the system, but nothing else.</p>
+<p><strong>What else might we need?</strong></p>
+</section>
+<section id="system-specific-information-needs" class="slide level2">
+<h2>System-Specific Information Needs</h2>
+<p>To complete the model, need:</p>
+<ul>
+<li>System dynamics (fate &amp; transport);</li>
+<li>Objectives</li>
+<li>Costs</li>
+<li>Management goals and/or regulatory constraints</li>
+</ul>
+</section>
+<section id="waste-mass-balance-constraints" class="slide level2">
+<h2>Waste Mass-Balance Constraints</h2>
+<ol type="1">
+<li>Need to dispose of all waste from each source <span class="math inline">\(i\)</span>: <span class="math display">\[\sum_{j \in J} W_{ij} = S_i\]</span></li>
+<li>Capacity limit at each disposal site <span class="math inline">\(j\)</span>: <span class="math display">\[\sum_{i \in I} W_{ij} \leq K_j\]</span></li>
+</ol>
+</section>
+<section id="objective-minimize-total-costs" class="slide level2">
+<h2>Objective: Minimize Total Costs</h2>
+<p><strong>What are some components of total system cost?</strong></p>
+</section>
+<section id="cost-components" class="slide level2">
+<h2>Cost Components</h2>
+<ul>
+<li><strong>Transportation</strong> of waste</li>
+<li><strong>Disposal</strong>: fixed costs and variable costs</li>
+</ul>
+</section>
+<section id="objective-transportation-costs" class="slide level2">
+<h2>Objective: Transportation Costs</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(a_{ij}\)</span></td>
+<td style="text-align: left;">Cost of transporting waste from source <span class="math inline">\(i\)</span> to disposal <span class="math inline">\(j\)</span> ($/Mg-km)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(l_{ij}\)</span></td>
+<td style="text-align: left;">Distance between source <span class="math inline">\(i\)</span> and disposal <span class="math inline">\(j\)</span> (km)</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<div class="fragment fade-in">
+<p><span class="math display">\[
+\begin{align}
+&amp;\text{Transportation Costs} = \\[0.5em]
+&amp;\qquad \sum_{i \in I, j \in J} a_{ij}\,l_{ij}\,W_{ij}
+\end{align}
+\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="objective-disposal-costs" class="slide level2">
+<h2>Objective: Disposal Costs</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(c_j\)</span></td>
+<td style="text-align: left;">Fixed costs of operating disposal <span class="math inline">\(j\)</span> ($/day)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(b_{j}\)</span></td>
+<td style="text-align: left;">Variable cost of disposing waste at disposal <span class="math inline">\(j\)</span> ($/Mg)</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<div class="fragment fade-in">
+<p><span class="math display">\[
+\begin{align}
+&amp;\text{Disposal Costs} = \\[0.5em]
+&amp;\qquad \sum_{j \in J} \left[c_j + b_j \sum_{i \in I} W_{ij}\right]
+\end{align}
+\]</span></p>
+<div class="fragment fade-in">
+<p><strong>Is this expression for disposal costs right?</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="objective-disposal-costs-1" class="slide level2">
+<h2>Objective: Disposal Costs</h2>
+<p>The prior expression is only correct if all disposal facilities are operating.</p>
+<p>The option to not operate disposal facility <span class="math inline">\(j\)</span> means we need new <strong>indicator</strong> variables.</p>
+<div class="fragment fade-in">
+<p><span class="math display">\[Y_j = \begin{cases}0 &amp; \text{if} \sum_{i \in I} W_{ij} = 0 \\[0.5em] 1 &amp; \text{if} \sum_{i \in I} W_{ij} &gt; 0\end{cases}\]</span></p>
+</div>
+</section>
+<section id="problem-formulation" class="slide level2">
+<h2>Problem Formulation</h2>
+<p><span class="math display">\[
+\begin{align}
+\min_{W_{i,j}, {Y_j}} &amp; \sum_i \sum_j a_{ij}\,l_{ij}\,W_{ij} + \sum_j \left[c_jY_j + \sum_i b_jW_{ij}\right] &amp; \\
+\text{subject to:} \qquad &amp; Y_j = \begin{cases}0 &amp; \text{if } \sum_{i \in I} W_{ij} = 0 \\ 1 &amp; \text{if } \sum_{i \in I} W_{ij} &gt; 0 \end{cases} &amp; \text{(commitment)} \\
+&amp; \sum_i W_{ij} \leq K_j &amp; \text{(capacity limit)} \\
+&amp; \sum_j W_{ij} = S_i &amp; \text{(mass balance)} \\
+&amp;  W_{ij} \geq 0 &amp; \text{(nonnegativity)}
+\end{align}
+\]</span></p>
+</section>
+<section id="waste-management-example" class="slide level2">
+<h2>Waste Management Example</h2>
 
 <div class="footer footer-default">
 <p><a href="https://viveks.me/environmental-systems-analysis">BEE 4750, Environmental Systems Analysis</a></p>

@@ -326,6 +326,8 @@
   window.MathJax = {
       {
         minScale: 0.5
+        loader: {load: ['[tex]/tagformat']},
+        tex: {packages: {'[+]': ['tagformat']}}
       }
     };
     MathJax = {
@@ -359,6 +361,7 @@
 <ul>
 <li><a href="#/review-and-questions" id="/toc-review-and-questions">Review and Questions</a></li>
 <li><a href="#/plume-dispersion" id="/toc-plume-dispersion">Plume Dispersion</a></li>
+<li><a href="#/dispersion-and-atmospheric-stability" id="/toc-dispersion-and-atmospheric-stability">Dispersion and Atmospheric Stability</a></li>
 <li><a href="#/key-takeaways" id="/toc-key-takeaways">Key Takeaways</a></li>
 <li><a href="#/upcoming-schedule" id="/toc-upcoming-schedule">Upcoming Schedule</a></li>
 </ul>
@@ -369,103 +372,18 @@
 <h1>Review and Questions</h1>
 
 </section>
-<section id="box-models" class="slide level2">
-<h2>Box Models</h2>
+<section id="economic-dispatch" class="slide level2">
+<h2>Economic Dispatch</h2>
 <ul>
-<li>Mass-balance over a spatial “box”</li>
-<li>Can combine multiple boxes together to represent processes over larger spatial domains</li>
+<li>Second power systems LP</li>
+<li>Incorporating ramping and minimum power constraints can lead to a deviation from simple “merit order” dispatch.</li>
 </ul>
-</section>
-<section id="simulation-workflow" class="slide level2">
-<h2>Simulation Workflow</h2>
-<div class="cell" data-fig-height="6">
-<div class="cell-output-display">
-<div id="fig-simulation">
-<div>
-<svg width="960" height="576" viewbox="0.00 0.00 501.63 351.80" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 347.8)">
-<title>G</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-347.8 497.63,-347.8 497.63,4 -4,4"></polygon>
-<!-- Initial Box -->
-<g id="node1" class="node">
-<title>Initial Box</title>
-<ellipse fill="none" stroke="black" cx="276.79" cy="-325.8" rx="52.72" ry="18"></ellipse>
-<text text-anchor="middle" x="276.79" y="-321.6" font-family="Times,serif" font-size="14.00">Initial Box</text>
-</g>
-<!-- Inflows -->
-<g id="node2" class="node">
-<title>Inflows</title>
-<ellipse fill="none" stroke="black" cx="211.79" cy="-252.8" rx="40.58" ry="18"></ellipse>
-<text text-anchor="middle" x="211.79" y="-248.6" font-family="Times,serif" font-size="14.00">Inflows</text>
-</g>
-<!-- Initial Box&#45;&gt;Inflows -->
-<g id="edge1" class="edge">
-<title>Initial Box-&gt;Inflows</title>
-<path fill="none" stroke="black" d="M261.72,-308.33C253.23,-299.06 242.49,-287.33 233.15,-277.13"></path>
-<polygon fill="black" stroke="black" points="235.67,-274.7 226.34,-269.69 230.51,-279.43 235.67,-274.7"></polygon>
-</g>
-<!-- Mixing/Bulk System -->
-<g id="node3" class="node">
-<title>Mixing/Bulk System</title>
-<ellipse fill="none" stroke="black" cx="91.79" cy="-179.8" rx="91.58" ry="18"></ellipse>
-<text text-anchor="middle" x="91.79" y="-175.6" font-family="Times,serif" font-size="14.00">Mixing/Bulk System</text>
-</g>
-<!-- Inflows&#45;&gt;Mixing/Bulk System -->
-<g id="edge2" class="edge">
-<title>Inflows-&gt;Mixing/Bulk System</title>
-<path fill="none" stroke="black" d="M188.37,-237.94C171.22,-227.79 147.61,-213.83 128.03,-202.24"></path>
-<polygon fill="black" stroke="black" points="129.75,-199.19 119.36,-197.11 126.18,-205.22 129.75,-199.19"></polygon>
-</g>
-<!-- Fate &amp; Transport -->
-<g id="node4" class="node">
-<title>Fate &amp; Transport</title>
-<ellipse fill="none" stroke="black" cx="102.79" cy="-91" rx="77.59" ry="18"></ellipse>
-<text text-anchor="middle" x="102.79" y="-86.8" font-family="Times,serif" font-size="14.00">Fate &amp; Transport</text>
-</g>
-<!-- Mixing/Bulk System&#45;&gt;Fate &amp; Transport -->
-<g id="edge3" class="edge">
-<title>Mixing/Bulk System-&gt;Fate &amp; Transport</title>
-<path fill="none" stroke="black" d="M93.96,-161.65C95.5,-149.52 97.59,-133.02 99.35,-119.12"></path>
-<polygon fill="black" stroke="black" points="102.84,-119.47 100.62,-109.11 95.89,-118.59 102.84,-119.47"></polygon>
-</g>
-<!-- Outflows -->
-<g id="node5" class="node">
-<title>Outflows</title>
-<ellipse fill="none" stroke="black" cx="211.79" cy="-18" rx="46.96" ry="18"></ellipse>
-<text text-anchor="middle" x="211.79" y="-13.8" font-family="Times,serif" font-size="14.00">Outflows</text>
-</g>
-<!-- Fate &amp; Transport&#45;&gt;Outflows -->
-<g id="edge4" class="edge">
-<title>Fate &amp; Transport-&gt;Outflows</title>
-<path fill="none" stroke="black" d="M127.52,-73.89C143.25,-63.65 163.75,-50.3 180.58,-39.33"></path>
-<polygon fill="black" stroke="black" points="182.54,-42.23 189.01,-33.84 178.72,-36.36 182.54,-42.23"></polygon>
-</g>
-<!-- Outflows&#45;&gt;Initial Box -->
-<g id="edge6" class="edge">
-<title>Outflows-&gt;Initial Box</title>
-<path fill="none" stroke="brown" d="M255.78,-24.49C293.83,-32 342.79,-49.52 342.79,-90 342.79,-253.8 342.79,-253.8 342.79,-253.8 342.79,-274.58 327.44,-291.83 311.54,-304.13"></path>
-<polygon fill="brown" stroke="brown" points="309.32,-301.41 303.26,-310.09 313.41,-307.09 309.32,-301.41"></polygon>
-<text text-anchor="middle" x="418.21" y="-175.6" font-family="Times,serif" font-size="14.00" fill="brown">Repeat for Next Time Step</text>
-</g>
-<!-- Outflows&#45;&gt;Inflows -->
-<g id="edge5" class="edge">
-<title>Outflows-&gt;Inflows</title>
-<path fill="none" stroke="red" d="M211.79,-36.14C211.79,-76.19 211.79,-176.17 211.79,-224.62"></path>
-<polygon fill="red" stroke="red" points="208.29,-224.68 211.79,-234.68 215.29,-224.68 208.29,-224.68"></polygon>
-<text text-anchor="middle" x="269.91" y="-131.2" font-family="Times,serif" font-size="14.00" fill="red">Repeat for Next Box</text>
-</g>
-</g>
-</svg>
-</div>
-</div>
-</div>
-</div>
 </section>
 <section id="questions" class="slide level2">
 <h2>Questions</h2>
 <div class="columns center">
 <div class="column" style="width:40%;">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center" data-fig-align="center" width="100%" alt="Poll Everywhere QR Code">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center" alt="Poll Everywhere QR Code" width="100%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig">
 <div>
 <img data-src="images/vsrikrish-poll.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code">
@@ -728,6 +646,101 @@ C(x,y,z) = &amp;\frac{Q}{2\pi u \sigma_y \sigma_z} \exp\left(\frac{-y^2}{2\sigma
 </ol>
 </section></section>
 <section>
+<section id="dispersion-and-atmospheric-stability" class="title-slide slide level1 center">
+<h1>Dispersion and Atmospheric Stability</h1>
+
+</section>
+<section id="estimating-dispersion-spread" class="slide level2">
+<h2>Estimating Dispersion “Spread”</h2>
+<p>Values of <span class="math inline">\(\sigma_y\)</span> and <span class="math inline">\(\sigma_z\)</span> matter substantially for modeling plume spread downwind. What influences them?</p>
+</section>
+<section id="estimating-dispersion-spread-1" class="slide level2">
+<h2>Estimating Dispersion “Spread”</h2>
+<p><strong>Main contribution</strong>: atmospheric stability</p>
+<ul>
+<li><p>Greater stability ⇒ less vertical/cross-wind dispersion.</p></li>
+<li><p>Pasquill (1961): Six stability classes.</p></li>
+</ul>
+</section>
+<section id="estimating-dispersion-spread-2" class="slide level2">
+<h2>Estimating Dispersion “Spread”</h2>
+<p>Contributors to atmospheric stability:</p>
+<ul>
+<li>Temperature gradient</li>
+<li>Wind speed</li>
+<li>Solar radiation</li>
+<li>Cloud cover</li>
+<li>Richardson number (buoyancy / flow shear)</li>
+</ul>
+</section>
+<section id="atmospheric-stability-classes" class="slide level2">
+<h2>Atmospheric Stability Classes</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Class</th>
+<th style="text-align: left;">Stability</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: left;">Extremely unstable</td>
+<td style="text-align: left;">Sunny summer day</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B</td>
+<td style="text-align: left;">Moderately unstable</td>
+<td style="text-align: left;">Sunny &amp; warm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: left;">Slightly unstable</td>
+<td style="text-align: left;">Partly cloudy day</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D</td>
+<td style="text-align: left;">Neutral</td>
+<td style="text-align: left;">Cloudy day or night</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E</td>
+<td style="text-align: left;">Slightly stable</td>
+<td style="text-align: left;">Partly cloudy night</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">F</td>
+<td style="text-align: left;">Moderately stable</td>
+<td style="text-align: left;">Clear night</td>
+</tr>
+</tbody>
+</table>
+<div class="caption">
+<p>Source: <a href="https://courses.ecampus.oregonstate.edu/ne581/eleven/" class="uri">https://courses.ecampus.oregonstate.edu/ne581/eleven/</a></p>
+</div>
+</section>
+<section id="estimating-dispersion-spread-3" class="slide level2">
+<h2>Estimating Dispersion “Spread”</h2>
+<p><span class="math display">\[\begin{aligned}
+\sigma_y &amp;= ax^{0.894} \\
+\sigma_z &amp;= cx^d + f
+\end{aligned}\]</span></p>
+
+<img data-src="figures/plume-dispersion.png" class="r-stretch quarto-figure-center"><p class="caption">Dispersion Coefficients</p><div class="caption">
+<p>Source: <a href="https://courses.washington.edu/cee490/DISPCOEF4WP.htm" class="uri">https://courses.washington.edu/cee490/DISPCOEF4WP.htm</a></p>
+</div>
+<p><strong>Note</strong>: here <span class="math inline">\(x\)</span> is in km, while in the plume equation <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span> are in m!</p>
+</section>
+<section id="estimating-dispersion-spread-4" class="slide level2">
+<h2>Estimating Dispersion “Spread”</h2>
+<p>Then take estimates for <span class="math inline">\(\sigma_y\)</span> and <span class="math inline">\(\sigma_z\)</span> and plug into plume dispersion equation</p>
+<p><span class="math display">\[\begin{aligned}
+C(x,y,z) = &amp;\frac{Q}{2\pi u {\color{red}\sigma_y \sigma_z}} \exp\left(\frac{-y^2}{2{\color{red}\sigma_y^2}} \right) \times \\\\
+&amp; \quad \left[\exp\left(\frac{-(z-H)^2}{2{\color{red}\sigma_z^2}}\right) + \exp\left(\frac{-(z+H)^2}{2{\color{red}\sigma_z^2}}\right) \right]
+\end{aligned}\]</span></p>
+</section></section>
+<section>
 <section id="key-takeaways" class="title-slide slide level1 center">
 <h1>Key Takeaways</h1>
 
@@ -748,8 +761,8 @@ C(x,y,z) = &amp;\frac{Q}{2\pi u \sigma_y \sigma_z} \exp\left(\frac{-y^2}{2\sigma
 </section>
 <section id="next-classes" class="slide level2">
 <h2>Next Classes</h2>
-<p><strong>Monday</strong>: Gaussian Plume Dispersion and Example</p>
-<p><strong>Wednesday/Friday</strong>: Uncertainty, Risk and Monte Carlo</p>
+<p><strong>Friday</strong>: Managing multiple point sources of air pollution</p>
+<p><strong>Next Week</strong>: Mixed-Integer Linear Programming and Applications</p>
 
 <div class="footer footer-default">
 <p><a href="https://viveks.me/environmental-systems-analysis">BEE 4750, Environmental Systems Analysis</a></p>

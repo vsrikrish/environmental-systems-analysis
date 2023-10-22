@@ -3590,39 +3590,130 @@
     "text": "Idea of Mixed-Integer Solution Method\nSolution to linear relaxation (relax integer constraint to turn into an LP) is an upper bound on the mixed-integer solution (why?).\n\n\nStarting from this, test new problems “bounding” LP solution with integer constraints.\nContinue until integer solution found.\n\nThis is the branch and bound algorithm."
   },
   {
+    "objectID": "slides/lecture10-1.html#branch-and-bound-node-1",
+    "href": "slides/lecture10-1.html#branch-and-bound-node-1",
+    "title": "Mixed Integer Linear Programming",
+    "section": "Branch and Bound: Node 1",
+    "text": "Branch and Bound: Node 1"
+  },
+  {
     "objectID": "slides/lecture10-1.html#example-milp-branch-and-bound",
     "href": "slides/lecture10-1.html#example-milp-branch-and-bound",
     "title": "Mixed Integer Linear Programming",
     "section": "Example MILP: Branch and Bound",
-    "text": "Example MILP: Branch and Bound"
+    "text": "Example MILP: Branch and Bound\n\nBranch and Bound Node 1"
   },
   {
-    "objectID": "slides/lecture10-1.html#example-milp-first-iteration",
-    "href": "slides/lecture10-1.html#example-milp-first-iteration",
+    "objectID": "slides/lecture10-1.html#example-milp-branch-and-bound-1",
+    "href": "slides/lecture10-1.html#example-milp-branch-and-bound-1",
     "title": "Mixed Integer Linear Programming",
-    "section": "Example MILP: First Iteration",
-    "text": "Example MILP: First Iteration\n\n\nBranch 1: \\[\n\\begin{align}\n\\max \\quad & 3x_1 + 4x_2 \\\\[0.5em]\n\\text{subject to:} \\quad  & 2x_1 + 6x_2 \\leq 27 \\\\\n& x_2 \\geq 2 \\\\\n& 3x_1 + x_2 \\leq 19 \\\\\n& {\\color{red}x_2 \\leq 5} \\\\\n& x_1, x_2 \\geq 0, \\text{int} \\\\\n\\end{align}\n\\]\n\nBranch 2: \\[\n\\begin{align}\n\\max \\quad & 3x_1 + 4x_2 \\\\[0.5em]\n\\text{subject to:} \\quad  & 2x_1 + 6x_2 \\leq 27 \\\\\n& x_2 \\geq 2 \\\\\n& 3x_1 + x_2 \\leq 19 \\\\\n& {\\color{red}x_2 \\geq 6} \\\\\n& x_1, x_2 \\geq 0, \\text{int}\n\\end{align}\n\\]"
+    "section": "Example MILP: Branch and Bound",
+    "text": "Example MILP: Branch and Bound\n\nBranch and Bound Node 1"
   },
   {
-    "objectID": "slides/lecture10-1.html#example-milp-linear-relaxation",
-    "href": "slides/lecture10-1.html#example-milp-linear-relaxation",
+    "objectID": "slides/lecture10-1.html#example-milp-branch-and-bound-nodes-2-and-3",
+    "href": "slides/lecture10-1.html#example-milp-branch-and-bound-nodes-2-and-3",
     "title": "Mixed Integer Linear Programming",
-    "section": "Example MILP: Linear Relaxation",
-    "text": "Example MILP: Linear Relaxation"
+    "section": "Example MILP: Branch and Bound Nodes 2 and 3",
+    "text": "Example MILP: Branch and Bound Nodes 2 and 3\n\\[\n\\begin{align}\n\\max \\quad & 3x_1 + 4x_2 \\\\[0.5em]\n\\text{subject to:} \\quad  & 2x_1 + 6x_2 \\leq 27 \\\\\n& x_2 \\geq 2 \\\\\n& 3x_1 + x_2 \\leq 19 \\\\\n& x_1, x_2 \\geq 0 \\\\\n& {\\color{red}x_2 \\leq 5} \\qquad (\\text{node}\\, 2) \\\\\n& {\\color{blue}x_2 \\geq 6} \\qquad (\\text{node}\\, 3) \\\\\n\\end{align}\n\\]"
   },
   {
-    "objectID": "slides/lecture10-1.html#example-milp-second-iteration",
-    "href": "slides/lecture10-1.html#example-milp-second-iteration",
+    "objectID": "slides/lecture10-1.html#example-milp-nodes-2-and-3",
+    "href": "slides/lecture10-1.html#example-milp-nodes-2-and-3",
     "title": "Mixed Integer Linear Programming",
-    "section": "Example MILP: Second Iteration",
-    "text": "Example MILP: Second Iteration\n\n\nBranch 1: \\[\n\\begin{align}\n\\max \\quad & 3x_1 + 4x_2 \\\\[0.5em]\n\\text{subject to:} \\quad  & 2x_1 + 6x_2 \\leq 27 \\\\\n& x_2 \\geq 2 \\\\\n& 3x_1 + x_2 \\leq 19 \\\\\n& {\\color{red}x_2 \\leq 5} \\\\\n& x_1, x_2 \\geq 0, \\text{int} \\\\\n\\end{align}\n\\]\n\nBranch 2: \\[\n\\begin{align}\n\\max \\quad & 3x_1 + 4x_2 \\\\[0.5em]\n\\text{subject to:} \\quad  & 2x_1 + 6x_2 \\leq 27 \\\\\n& x_2 \\geq 2 \\\\\n& 3x_1 + x_2 \\leq 19 \\\\\n& {\\color{red}x_2 \\geq 6} \\\\\n& x_1, x_2 \\geq 0, \\text{int}\n\\end{align}\n\\]"
+    "section": "Example MILP: Nodes 2 and 3",
+    "text": "Example MILP: Nodes 2 and 3"
   },
   {
-    "objectID": "slides/lecture10-1.html#example-milp-linear-relaxation-2",
-    "href": "slides/lecture10-1.html#example-milp-linear-relaxation-2",
+    "objectID": "slides/lecture10-1.html#example-milp-branch-and-bound-2",
+    "href": "slides/lecture10-1.html#example-milp-branch-and-bound-2",
     "title": "Mixed Integer Linear Programming",
-    "section": "Example MILP: Linear Relaxation 2",
-    "text": "Example MILP: Linear Relaxation 2\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBEE 4750, Environmental Systems Analysis"
+    "section": "Example MILP: Branch and Bound",
+    "text": "Example MILP: Branch and Bound\n\nBranch and Bound Node 1"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#example-milp-branch-and-bound-3",
+    "href": "slides/lecture10-1.html#example-milp-branch-and-bound-3",
+    "title": "Mixed Integer Linear Programming",
+    "section": "Example MILP: Branch and Bound",
+    "text": "Example MILP: Branch and Bound\n\nBranch and Bound Node 1"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#example-milp-nodes-4-and-5",
+    "href": "slides/lecture10-1.html#example-milp-nodes-4-and-5",
+    "title": "Mixed Integer Linear Programming",
+    "section": "Example MILP: Nodes 4 and 5",
+    "text": "Example MILP: Nodes 4 and 5"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#example-milp-branch-and-bound-4",
+    "href": "slides/lecture10-1.html#example-milp-branch-and-bound-4",
+    "title": "Mixed Integer Linear Programming",
+    "section": "Example MILP: Branch and Bound",
+    "text": "Example MILP: Branch and Bound\n\nBranch and Bound Node 1"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#example-milp-branch-and-bound-5",
+    "href": "slides/lecture10-1.html#example-milp-branch-and-bound-5",
+    "title": "Mixed Integer Linear Programming",
+    "section": "Example MILP: Branch and Bound",
+    "text": "Example MILP: Branch and Bound\n\nBranch and Bound Node 1"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#example-milp-nodes-6-and-7",
+    "href": "slides/lecture10-1.html#example-milp-nodes-6-and-7",
+    "title": "Mixed Integer Linear Programming",
+    "section": "Example MILP: Nodes 6 and 7",
+    "text": "Example MILP: Nodes 6 and 7"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#example-milp-branch-and-bound-6",
+    "href": "slides/lecture10-1.html#example-milp-branch-and-bound-6",
+    "title": "Mixed Integer Linear Programming",
+    "section": "Example MILP: Branch and Bound",
+    "text": "Example MILP: Branch and Bound\n\nBranch and Bound Node 1"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#example-milp-branch-and-bound-7",
+    "href": "slides/lecture10-1.html#example-milp-branch-and-bound-7",
+    "title": "Mixed Integer Linear Programming",
+    "section": "Example MILP: Branch and Bound",
+    "text": "Example MILP: Branch and Bound\n\nBranch and Bound Node 1"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#example-milp-nodes-8-and-9",
+    "href": "slides/lecture10-1.html#example-milp-nodes-8-and-9",
+    "title": "Mixed Integer Linear Programming",
+    "section": "Example MILP: Nodes 8 and 9",
+    "text": "Example MILP: Nodes 8 and 9"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#example-milp-branch-and-bound-8",
+    "href": "slides/lecture10-1.html#example-milp-branch-and-bound-8",
+    "title": "Mixed Integer Linear Programming",
+    "section": "Example MILP: Branch and Bound",
+    "text": "Example MILP: Branch and Bound\n\nBranch and Bound Node 1"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#mixed-integer-problems",
+    "href": "slides/lecture10-1.html#mixed-integer-problems",
+    "title": "Mixed Integer Linear Programming",
+    "section": "Mixed Integer Problems",
+    "text": "Mixed Integer Problems\n\nInteger/binary variables (e.g. from operational status) cause several violations of LP assumptions.\n\nNon-linear/discontinuous objectives/constraints;\nLoss of variable divisibility.\n\nCan solve these problems with branch and bound (or more sophisticated refinements, such as branch and cut).\n\nSearch only useful refinements, ignore others."
+  },
+  {
+    "objectID": "slides/lecture10-1.html#upcoming-schedule",
+    "href": "slides/lecture10-1.html#upcoming-schedule",
+    "title": "Mixed Integer Linear Programming",
+    "section": "Upcoming Schedule",
+    "text": "Upcoming Schedule\nWednesday/Friday: Applications of MILP to solid waste management and maybe unit commitment."
+  },
+  {
+    "objectID": "slides/lecture10-1.html#assessments",
+    "href": "slides/lecture10-1.html#assessments",
+    "title": "Mixed Integer Linear Programming",
+    "section": "Assessments",
+    "text": "Assessments\nHW4/Regulatory Report: Due Friday by 9pm on Gradescope.\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture10-2.html#mixed-integer-linear-programming",
@@ -3674,11 +3765,25 @@
     "text": "System-Specific Information Needs\nTo complete the model, need:\n\nSystem dynamics (fate & transport);\nObjectives\nCosts\nManagement goals and/or regulatory constraints"
   },
   {
-    "objectID": "slides/lecture10-2.html#waste-mass-balance-constraints",
-    "href": "slides/lecture10-2.html#waste-mass-balance-constraints",
+    "objectID": "slides/lecture10-2.html#example-system",
+    "href": "slides/lecture10-2.html#example-system",
     "title": "Waste Management and Network Models",
-    "section": "Waste Mass-Balance Constraints",
-    "text": "Waste Mass-Balance Constraints\n\nNeed to dispose of all waste from each source \\(i\\): \\[\\sum_{j \\in J} W_{ij} = S_i\\]\nCapacity limit at each disposal site \\(j\\): \\[\\sum_{i \\in I} W_{ij} \\leq K_j\\]"
+    "section": "Example System",
+    "text": "Example System\n\n\n\n\n\nWaste Management Example\n\n\n\nThree disposal options:\n\nWaste-to-Energy (WTE)\nMaterials Recovery Facility (MRF)\nLandfill (LF)"
+  },
+  {
+    "objectID": "slides/lecture10-2.html#waste-management-decision-variables",
+    "href": "slides/lecture10-2.html#waste-management-decision-variables",
+    "title": "Waste Management and Network Models",
+    "section": "Waste Management Decision Variables",
+    "text": "Waste Management Decision Variables\n\n\n\n\n\nWaste Management Example\n\n\n\nWhat are our decision variables?"
+  },
+  {
+    "objectID": "slides/lecture10-2.html#waste-management-decision-variables-1",
+    "href": "slides/lecture10-2.html#waste-management-decision-variables-1",
+    "title": "Waste Management and Network Models",
+    "section": "Waste Management Decision Variables",
+    "text": "Waste Management Decision Variables\n\n\n\n\n\n\n\nVariable\nDefinition\n\n\n\n\n\\(W_{ij}\\)\nWaste transported from city \\(i\\) to disposal \\(j\\) (Mg/day)\n\n\n\\(R_{kj}\\)\nResidual waste transported from disposal \\(k\\) to disposal \\(j\\) (Mg/day)\n\n\n\\(Y_j\\)\nOperational status (on/off) of disposal \\(j\\) (binary)"
   },
   {
     "objectID": "slides/lecture10-2.html#objective-minimize-total-costs",
@@ -3716,18 +3821,137 @@
     "text": "Objective: Disposal Costs\nThe prior expression is only correct if all disposal facilities are operating.\nThe option to not operate disposal facility \\(j\\) means we need new indicator variables.\n\n\\[Y_j = \\begin{cases}0 & \\text{if} \\sum_{i \\in I} W_{ij} = 0 \\\\[0.5em] 1 & \\text{if} \\sum_{i \\in I} W_{ij} &gt; 0\\end{cases}\\]"
   },
   {
+    "objectID": "slides/lecture10-2.html#waste-mass-balance-constraints",
+    "href": "slides/lecture10-2.html#waste-mass-balance-constraints",
+    "title": "Waste Management and Network Models",
+    "section": "Waste Mass-Balance Constraints",
+    "text": "Waste Mass-Balance Constraints\n\nNeed to dispose of all waste from each source \\(i\\): \\[\\sum_{j \\in J} W_{ij} = S_i\\]\nCapacity limit at each disposal site \\(j\\): \\[\\sum_{i \\in I} W_{ij} \\leq K_j\\]"
+  },
+  {
     "objectID": "slides/lecture10-2.html#problem-formulation",
     "href": "slides/lecture10-2.html#problem-formulation",
     "title": "Waste Management and Network Models",
     "section": "Problem Formulation",
-    "text": "Problem Formulation\n\\[\n\\begin{align}\n\\min_{W_{i,j}, {Y_j}} & \\sum_i \\sum_j a_{ij}\\,l_{ij}\\,W_{ij} + \\sum_j \\left[c_jY_j + \\sum_i b_jW_{ij}\\right] & \\\\\n\\text{subject to:} \\qquad & Y_j = \\begin{cases}0 & \\text{if } \\sum_{i \\in I} W_{ij} = 0 \\\\ 1 & \\text{if } \\sum_{i \\in I} W_{ij} &gt; 0 \\end{cases} & \\text{(commitment)} \\\\\n& \\sum_i W_{ij} \\leq K_j & \\text{(capacity limit)} \\\\\n& \\sum_j W_{ij} = S_i & \\text{(mass balance)} \\\\\n&  W_{ij} \\geq 0 & \\text{(nonnegativity)}\n\\end{align}\n\\]"
+    "text": "Problem Formulation\n\\[\n\\begin{align}\n\\min_{W_{i,j}, {Y_j}} & \\sum_i \\sum_j a_{ij}\\,l_{ij}\\,W_{ij} + \\sum_j \\left[c_jY_j + \\sum_i b_jW_{ij}\\right] & \\\\\n\\text{subject to:} \\quad & Y_j = \\begin{cases}0 & \\text{if } \\sum_{i \\in I} W_{ij} = 0 \\\\ 1 & \\text{if } \\sum_{i \\in I} W_{ij} &gt; 0 \\end{cases} & \\text{(commitment)} \\\\\n& \\sum_i W_{ij} \\leq K_j & \\text{(capacity limit)} \\\\\n& \\sum_j W_{ij} = S_i & \\text{(mass balance)} \\\\\n&  W_{ij} \\geq 0 & \\text{(nonnegativity)}\n\\end{align}\n\\]"
   },
   {
-    "objectID": "slides/lecture10-2.html#waste-management-example",
-    "href": "slides/lecture10-2.html#waste-management-example",
+    "objectID": "slides/lecture10-2.html#facility-costs",
+    "href": "slides/lecture10-2.html#facility-costs",
     "title": "Waste Management and Network Models",
-    "section": "Waste Management Example",
-    "text": "Waste Management Example\n\n\nBEE 4750, Environmental Systems Analysis"
+    "section": "Facility Costs",
+    "text": "Facility Costs\n\n\n\n\n\nWaste Management Example\n\n\n\n\n\n\n\n\n\n\n\n\nFacility\nFixed Cost ($/yr)\nTipping Cost ($/Mg)\nRecycling Cost ($/Mg recycled)\n\n\n\n\nWTE\n900,000\n60\n–\n\n\nMRF\n400,000\n5\n35\n\n\nLF\n700,000\n40\n–\n\n\n\nMRF Recycling Rate: 40%"
+  },
+  {
+    "objectID": "slides/lecture10-2.html#wte-costs",
+    "href": "slides/lecture10-2.html#wte-costs",
+    "title": "Waste Management and Network Models",
+    "section": "WTE Costs",
+    "text": "WTE Costs\n\n\n\n\n\nWaste Management Example\n\n\n\nFixed Costs: $900,000/yr\nTipping Cost: $60/Mg handled\n\nTotal WTE Cost ($/day): \\[2466 Y_1 + 60(W_{11} + W_{21} + R_{21})\\]"
+  },
+  {
+    "objectID": "slides/lecture10-2.html#mrf-costs",
+    "href": "slides/lecture10-2.html#mrf-costs",
+    "title": "Waste Management and Network Models",
+    "section": "MRF Costs",
+    "text": "MRF Costs\n\n\n\n\n\nWaste Management Example\n\n\nRecycling: 40%, $35/Mg recycled\n\nFixed Costs: $400,000/yr\nTipping Cost: $5/Mg handled\n\nTotal MRF Cost ($/day): \\[\n\\begin{align}\n&1096 Y_2 + 5(W_{12} + W_{22}) +\n\\\\ &\\qquad 0.4(35)(W_{12} + W_{22})\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture10-2.html#lf-costs",
+    "href": "slides/lecture10-2.html#lf-costs",
+    "title": "Waste Management and Network Models",
+    "section": "LF Costs",
+    "text": "LF Costs\n\n\n\n\n\nWaste Management Example\n\n\n\nFixed Costs: $700,000/yr\nTipping Cost: $40/Mg handled\n\nTotal LF Cost ($/day): \\[1918 Y_2 + 40(W_{13} + W_{23} + R_{13} + R_{23})\\]"
+  },
+  {
+    "objectID": "slides/lecture10-2.html#transportation-costs",
+    "href": "slides/lecture10-2.html#transportation-costs",
+    "title": "Waste Management and Network Models",
+    "section": "Transportation Costs",
+    "text": "Transportation Costs\n\n\n\n\n\nWaste Management Example\n\n\n\nTransportation Cost: $1.50/Mg-km\nTotal Tranportation Cost ($/day): \\[\n\\begin{align}\n1.5&{\\Large[}15W_{11} + 5W_{12} + 30W_{13} \\\\\n& \\quad 10W_{21} + 15W_{22} + 25W_{23} \\\\\n& \\quad 18R_{13} + 15R_{21} + 32R_{23}{\\Large]}\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture10-2.html#final-objective",
+    "href": "slides/lecture10-2.html#final-objective",
+    "title": "Waste Management and Network Models",
+    "section": "Final Objective",
+    "text": "Final Objective\nCombining the transportation and disposal costs and simplifying: \\[\n\\begin{align}\n\\min_{W, R, Y} \\qquad & 82.5 W_{11} + 26.5W_{12} + 85W_{13} + 75W_{21} + \\\\[0.25em]\n& \\quad 41.5W_{22} + 77.5W_{23} + 67R_{13} + 82.5R_{21} + \\\\[0.75em]\n& \\quad 88R_{23} + 2466Y_1 + 1096Y_2 + 1918Y_3\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture10-2.html#city-mass-balance-constraints",
+    "href": "slides/lecture10-2.html#city-mass-balance-constraints",
+    "title": "Waste Management and Network Models",
+    "section": "City Mass-Balance Constraints",
+    "text": "City Mass-Balance Constraints\n\n\n\n\n\nWaste Management Example\n\n\n\nCity 1: \\(W_{11} + W_{12} + W_{13} = 100\\)\nCity 2: \\(W_{21} + W_{22} + W_{23} = 170\\)"
+  },
+  {
+    "objectID": "slides/lecture10-2.html#residual-mass-balance-constraints",
+    "href": "slides/lecture10-2.html#residual-mass-balance-constraints",
+    "title": "Waste Management and Network Models",
+    "section": "Residual Mass-Balance Constraints",
+    "text": "Residual Mass-Balance Constraints\n\n\n\n\n\nWaste Management Example\n\n\n\nRecycling Rate: 40%\nWTE Residual Ash: 20%\n\n\\(R_{13} = 0.2(W_{11} + W_{21} + R_{21})\\)\n\n\\(R_{21} + R_{23} = 0.6(W_{12} + W_{22})\\)"
+  },
+  {
+    "objectID": "slides/lecture10-2.html#disposal-limit-constraints",
+    "href": "slides/lecture10-2.html#disposal-limit-constraints",
+    "title": "Waste Management and Network Models",
+    "section": "Disposal Limit Constraints",
+    "text": "Disposal Limit Constraints\n\n\n\n\n\nWaste Management Example\n\n\n\nWTE: \\(W_{11} + W_{21} + R_{21} \\leq 150\\)\nMRF: \\(W_{12} + W_{22} \\leq 130\\)\nLF: \\(W_{13} + W_{23} + R_{23} + R_{13} \\leq 200\\)"
+  },
+  {
+    "objectID": "slides/lecture10-2.html#commitment-and-non-negativity-constraints",
+    "href": "slides/lecture10-2.html#commitment-and-non-negativity-constraints",
+    "title": "Waste Management and Network Models",
+    "section": "Commitment and Non-Negativity Constraints",
+    "text": "Commitment and Non-Negativity Constraints\n\\[\n\\begin{align}\nY_1 &= \\begin{cases}0 &\\quad \\text{if } W_{11} + W_{21} + R_{21} = 0 \\\\ 1 & \\quad \\text{else} \\end{cases} \\\\\nY_2 &= \\begin{cases}0 &\\quad \\text{if } W_{21} + W_{22} = 0 \\\\ 1 & \\quad \\text{else} \\end{cases} \\\\\nY_3 &= 1 \\\\[0.5em]\nW_{ij}, R_{ij} &\\geq 0\n\\end{align}\\]"
+  },
+  {
+    "objectID": "slides/lecture10-2.html#how-to-incorporate-indicator-constraints-in-jump",
+    "href": "slides/lecture10-2.html#how-to-incorporate-indicator-constraints-in-jump",
+    "title": "Waste Management and Network Models",
+    "section": "How To Incorporate Indicator Constraints in JuMP",
+    "text": "How To Incorporate Indicator Constraints in JuMP\nSome solvers allow you to directly translate indicator constraints into JuMP. For example,\n@constraint(waste, commit2, !Y[2] =&gt; {W[1,2] + W[2,2] == 0})\nimplements \\[Y_2 = \\begin{cases}0 &\\quad \\text{if } W_{21} + W_{22} = 0 \\\\ 1 & \\quad \\text{else} \\end{cases}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture10-2.html#how-to-incorporate-indicator-constraints-in-jump-1",
+    "href": "slides/lecture10-2.html#how-to-incorporate-indicator-constraints-in-jump-1",
+    "title": "Waste Management and Network Models",
+    "section": "How To Incorporate Indicator Constraints in JuMP",
+    "text": "How To Incorporate Indicator Constraints in JuMP\nHiGHS does not support this type of syntax. So what can we do?\n\nUse a “big-M” reformulation:\n\\[MY_1 \\geq  W_{21} + W_{22}\\]\nwhere \\(M\\) is so large that it is greater than any feasible value of the RHS."
+  },
+  {
+    "objectID": "slides/lecture10-2.html#example-solution",
+    "href": "slides/lecture10-2.html#example-solution",
+    "title": "Waste Management and Network Models",
+    "section": "Example Solution",
+    "text": "Example Solution\nAfter putting this all into JuMP (you know how!), optimal objective is $26,879/day.\n\n\n\\(Y_1 = 1\\)\n\\(Y_2 = 1\\)\n\\(Y_3 = 1\\)\n\n\\(W_{12} = 100\\) Mg/day\n\\(W_{23} = 170\\) Mg/day\n\n\\(R_{13} = 7.5\\) Mg/day\n\\(R_{21} = 37.5\\) Mg/day\n\\(R_{23} = 22.5\\) Mg/day"
+  },
+  {
+    "objectID": "slides/lecture10-2.html#example-solution-1",
+    "href": "slides/lecture10-2.html#example-solution-1",
+    "title": "Waste Management and Network Models",
+    "section": "Example Solution",
+    "text": "Example Solution\n\nWaste Management Problem Solution"
+  },
+  {
+    "objectID": "slides/lecture10-2.html#network-problems",
+    "href": "slides/lecture10-2.html#network-problems",
+    "title": "Waste Management and Network Models",
+    "section": "Network Problems",
+    "text": "Network Problems\n\nExplicitly model flows between network components;\nOften are limits on flow or node capacities;\nFate & transport dynamics can result in residuals and extra flows.\nOften are non-obvious results for how to route relevant stocks through network.\n\nAnother example: power flow modeling through a transmission network."
+  },
+  {
+    "objectID": "slides/lecture10-2.html#solid-waste-management-1",
+    "href": "slides/lecture10-2.html#solid-waste-management-1",
+    "title": "Waste Management and Network Models",
+    "section": "Solid Waste Management",
+    "text": "Solid Waste Management\n\nNetwork induced by fixed transportation routes.\nDifferent types of facilities can produce different residual waste products.\nExtra residual waste can mean facilities have to operate.\n\nHW 5: Two twists: Non-homogeneous waste (different ash/recycline rates) and CO2 emissions tax."
+  },
+  {
+    "objectID": "slides/lecture10-2.html#upcoming-schedule",
+    "href": "slides/lecture10-2.html#upcoming-schedule",
+    "title": "Waste Management and Network Models",
+    "section": "Upcoming Schedule",
+    "text": "Upcoming Schedule\nHW4/Regulatory Report: Due Friday at 9pm.\nHW5: Will be released on Friday, due 11/10 at 9pm.\nProject Update: Also due 11/10 at 9pm.\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
     "objectID": "slides/lecture03-3.html#last-class",

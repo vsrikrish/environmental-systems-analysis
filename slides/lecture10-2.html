@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -361,6 +426,8 @@
 <ul>
 <li><a href="#/review-and-questions" id="/toc-review-and-questions">Review and Questions</a></li>
 <li><a href="#/solid-waste-management" id="/toc-solid-waste-management">Solid Waste Management</a></li>
+<li><a href="#/waste-management-example" id="/toc-waste-management-example">Waste Management Example</a></li>
+<li><a href="#/key-takeaways" id="/toc-key-takeaways">Key Takeaways</a></li>
 </ul>
 </nav>
 </section>
@@ -381,7 +448,7 @@
 <h2>Questions</h2>
 <div class="columns center">
 <div class="column" style="width:40%;">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center" data-fig-align="center" width="100%" alt="Poll Everywhere QR Code">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center" alt="Poll Everywhere QR Code" width="100%" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig">
 <div>
 <img data-src="images/vsrikrish-poll.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code">
@@ -480,13 +547,75 @@
 <li>Costs</li>
 <li>Management goals and/or regulatory constraints</li>
 </ul>
+</section></section>
+<section>
+<section id="waste-management-example" class="title-slide slide level1 center">
+<h1>Waste Management Example</h1>
+
 </section>
-<section id="waste-mass-balance-constraints" class="slide level2">
-<h2>Waste Mass-Balance Constraints</h2>
-<ol type="1">
-<li>Need to dispose of all waste from each source <span class="math inline">\(i\)</span>: <span class="math display">\[\sum_{j \in J} W_{ij} = S_i\]</span></li>
-<li>Capacity limit at each disposal site <span class="math inline">\(j\)</span>: <span class="math display">\[\sum_{i \in I} W_{ij} \leq K_j\]</span></li>
-</ol>
+<section id="example-system" class="slide level2">
+<h2>Example System</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/waste-example-network.svg"></p>
+<figcaption>Waste Management Example</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Three disposal options:</p>
+<ul>
+<li>Waste-to-Energy (WTE)</li>
+<li>Materials Recovery Facility (MRF)</li>
+<li>Landfill (LF)</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="waste-management-decision-variables" class="slide level2">
+<h2>Waste Management Decision Variables</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/waste-example-network.svg"></p>
+<figcaption>Waste Management Example</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong><em>What are our decision variables?</em></strong></p>
+</div>
+</div>
+</section>
+<section id="waste-management-decision-variables-1" class="slide level2">
+<h2>Waste Management Decision Variables</h2>
+<table>
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(W_{ij}\)</span></td>
+<td style="text-align: left;">Waste transported from city <span class="math inline">\(i\)</span> to disposal <span class="math inline">\(j\)</span> (Mg/day)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(R_{kj}\)</span></td>
+<td style="text-align: left;">Residual waste transported from disposal <span class="math inline">\(k\)</span> to disposal <span class="math inline">\(j\)</span> (Mg/day)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(Y_j\)</span></td>
+<td style="text-align: left;">Operational status (on/off) of disposal <span class="math inline">\(j\)</span> (binary)</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="objective-minimize-total-costs" class="slide level2">
 <h2>Objective: Minimize Total Costs</h2>
@@ -582,20 +711,303 @@
 <p><span class="math display">\[Y_j = \begin{cases}0 &amp; \text{if} \sum_{i \in I} W_{ij} = 0 \\[0.5em] 1 &amp; \text{if} \sum_{i \in I} W_{ij} &gt; 0\end{cases}\]</span></p>
 </div>
 </section>
+<section id="waste-mass-balance-constraints" class="slide level2">
+<h2>Waste Mass-Balance Constraints</h2>
+<ol type="1">
+<li>Need to dispose of all waste from each source <span class="math inline">\(i\)</span>: <span class="math display">\[\sum_{j \in J} W_{ij} = S_i\]</span></li>
+<li>Capacity limit at each disposal site <span class="math inline">\(j\)</span>: <span class="math display">\[\sum_{i \in I} W_{ij} \leq K_j\]</span></li>
+</ol>
+</section>
 <section id="problem-formulation" class="slide level2">
 <h2>Problem Formulation</h2>
 <p><span class="math display">\[
 \begin{align}
 \min_{W_{i,j}, {Y_j}} &amp; \sum_i \sum_j a_{ij}\,l_{ij}\,W_{ij} + \sum_j \left[c_jY_j + \sum_i b_jW_{ij}\right] &amp; \\
-\text{subject to:} \qquad &amp; Y_j = \begin{cases}0 &amp; \text{if } \sum_{i \in I} W_{ij} = 0 \\ 1 &amp; \text{if } \sum_{i \in I} W_{ij} &gt; 0 \end{cases} &amp; \text{(commitment)} \\
+\text{subject to:} \quad &amp; Y_j = \begin{cases}0 &amp; \text{if } \sum_{i \in I} W_{ij} = 0 \\ 1 &amp; \text{if } \sum_{i \in I} W_{ij} &gt; 0 \end{cases} &amp; \text{(commitment)} \\
 &amp; \sum_i W_{ij} \leq K_j &amp; \text{(capacity limit)} \\
 &amp; \sum_j W_{ij} = S_i &amp; \text{(mass balance)} \\
 &amp;  W_{ij} \geq 0 &amp; \text{(nonnegativity)}
 \end{align}
 \]</span></p>
 </section>
-<section id="waste-management-example" class="slide level2">
-<h2>Waste Management Example</h2>
+<section id="facility-costs" class="slide level2">
+<h2>Facility Costs</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/waste-example-network.svg"></p>
+<figcaption>Waste Management Example</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<table style="width:100%;">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Facility</th>
+<th style="text-align: right;">Fixed Cost ($/yr)</th>
+<th style="text-align: right;">Tipping Cost ($/Mg)</th>
+<th style="text-align: right;">Recycling Cost ($/Mg recycled)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">WTE</td>
+<td style="text-align: right;">900,000</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">–</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MRF</td>
+<td style="text-align: right;">400,000</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">35</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">LF</td>
+<td style="text-align: right;">700,000</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">–</td>
+</tr>
+</tbody>
+</table>
+<p>MRF Recycling Rate: 40%</p>
+</div>
+</div>
+</section>
+<section id="wte-costs" class="slide level2">
+<h2>WTE Costs</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/waste-example-network.svg"></p>
+<figcaption>Waste Management Example</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Fixed Costs</strong>: $900,000/yr</p>
+<p><strong>Tipping Cost</strong>: $60/Mg handled</p>
+<div class="fragment fade-in">
+<p><strong><em>Total WTE Cost ($/day)</em></strong>: <span class="math display">\[2466 Y_1 + 60(W_{11} + W_{21} + R_{21})\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="mrf-costs" class="slide level2">
+<h2>MRF Costs</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/waste-example-network.svg"></p>
+<figcaption>Waste Management Example</figcaption>
+</figure>
+</div>
+<p><strong>Recycling</strong>: 40%, $35/Mg recycled</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Fixed Costs</strong>: $400,000/yr</p>
+<p><strong>Tipping Cost</strong>: $5/Mg handled</p>
+<div class="fragment fade-in">
+<p><strong><em>Total MRF Cost ($/day)</em></strong>: <span class="math display">\[
+\begin{align}
+&amp;1096 Y_2 + 5(W_{12} + W_{22}) +
+\\ &amp;\qquad 0.4(35)(W_{12} + W_{22})
+\end{align}
+\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="lf-costs" class="slide level2">
+<h2>LF Costs</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/waste-example-network.svg"></p>
+<figcaption>Waste Management Example</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Fixed Costs</strong>: $700,000/yr</p>
+<p><strong>Tipping Cost</strong>: $40/Mg handled</p>
+<div class="fragment fade-in">
+<p><strong><em>Total LF Cost ($/day)</em></strong>: <span class="math display">\[1918 Y_2 + 40(W_{13} + W_{23} + R_{13} + R_{23})\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="transportation-costs" class="slide level2">
+<h2>Transportation Costs</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/waste-example-network.svg"></p>
+<figcaption>Waste Management Example</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Transportation Cost</strong>: $1.50/Mg-km</p>
+<p><strong><em>Total Tranportation Cost ($/day)</em></strong>: <span class="math display">\[
+\begin{align}
+1.5&amp;{\Large[}15W_{11} + 5W_{12} + 30W_{13} \\
+&amp; \quad 10W_{21} + 15W_{22} + 25W_{23} \\
+&amp; \quad 18R_{13} + 15R_{21} + 32R_{23}{\Large]}
+\end{align}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="final-objective" class="slide level2">
+<h2>Final Objective</h2>
+<p>Combining the transportation and disposal costs and simplifying: <span class="math display">\[
+\begin{align}
+\min_{W, R, Y} \qquad &amp; 82.5 W_{11} + 26.5W_{12} + 85W_{13} + 75W_{21} + \\[0.25em]
+&amp; \quad 41.5W_{22} + 77.5W_{23} + 67R_{13} + 82.5R_{21} + \\[0.75em]
+&amp; \quad 88R_{23} + 2466Y_1 + 1096Y_2 + 1918Y_3
+\end{align}
+\]</span></p>
+</section>
+<section id="city-mass-balance-constraints" class="slide level2">
+<h2>City Mass-Balance Constraints</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/waste-example-network.svg"></p>
+<figcaption>Waste Management Example</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>City 1</strong>: <span class="math inline">\(W_{11} + W_{12} + W_{13} = 100\)</span></p>
+<p><strong>City 2</strong>: <span class="math inline">\(W_{21} + W_{22} + W_{23} = 170\)</span></p>
+</div>
+</div>
+</section>
+<section id="residual-mass-balance-constraints" class="slide level2">
+<h2>Residual Mass-Balance Constraints</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/waste-example-network.svg"></p>
+<figcaption>Waste Management Example</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Recycling Rate</strong>: 40%</p>
+<p><strong>WTE Residual Ash</strong>: 20%</p>
+<div class="fragment fade-in">
+<p><span class="math inline">\(R_{13} = 0.2(W_{11} + W_{21} + R_{21})\)</span></p>
+<div class="fragment fade-in">
+<p><span class="math inline">\(R_{21} + R_{23} = 0.6(W_{12} + W_{22})\)</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="disposal-limit-constraints" class="slide level2">
+<h2>Disposal Limit Constraints</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/waste-example-network.svg"></p>
+<figcaption>Waste Management Example</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>WTE</strong>: <span class="math inline">\(W_{11} + W_{21} + R_{21} \leq 150\)</span></p>
+<p><strong>MRF</strong>: <span class="math inline">\(W_{12} + W_{22} \leq 130\)</span></p>
+<p><strong>LF</strong>: <span class="math inline">\(W_{13} + W_{23} + R_{23} + R_{13} \leq 200\)</span></p>
+</div>
+</div>
+</section>
+<section id="commitment-and-non-negativity-constraints" class="slide level2">
+<h2>Commitment and Non-Negativity Constraints</h2>
+<p><span class="math display">\[
+\begin{align}
+Y_1 &amp;= \begin{cases}0 &amp;\quad \text{if } W_{11} + W_{21} + R_{21} = 0 \\ 1 &amp; \quad \text{else} \end{cases} \\
+Y_2 &amp;= \begin{cases}0 &amp;\quad \text{if } W_{21} + W_{22} = 0 \\ 1 &amp; \quad \text{else} \end{cases} \\
+Y_3 &amp;= 1 \\[0.5em]
+W_{ij}, R_{ij} &amp;\geq 0
+\end{align}\]</span></p>
+</section>
+<section id="how-to-incorporate-indicator-constraints-in-jump" class="slide level2">
+<h2>How To Incorporate Indicator Constraints in JuMP</h2>
+<p>Some solvers allow you to directly translate indicator constraints into JuMP. For example,</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1"></a><span class="pp">@constraint</span>(waste, commit2, !Y[<span class="fl">2</span>] <span class="op">=&gt;</span> {W[<span class="fl">1</span>,<span class="fl">2</span>] <span class="op">+</span> W[<span class="fl">2</span>,<span class="fl">2</span>] <span class="op">==</span> <span class="fl">0</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>implements <span class="math display">\[Y_2 = \begin{cases}0 &amp;\quad \text{if } W_{21} + W_{22} = 0 \\ 1 &amp; \quad \text{else} \end{cases}
+\]</span></p>
+</section>
+<section id="how-to-incorporate-indicator-constraints-in-jump-1" class="slide level2">
+<h2>How To Incorporate Indicator Constraints in JuMP</h2>
+<p>HiGHS does not support this type of syntax. So what can we do?</p>
+<div class="fragment fade-in">
+<p>Use a <strong>“big-M”</strong> reformulation:</p>
+<p><span class="math display">\[MY_1 \geq  W_{21} + W_{22}\]</span></p>
+<p>where <span class="math inline">\(M\)</span> is so large that it is greater than any feasible value of the RHS.</p>
+</div>
+</section>
+<section id="example-solution" class="slide level2">
+<h2>Example Solution</h2>
+<p>After putting this all into JuMP (you know how!), optimal objective is $26,879/day.</p>
+<div class="columns">
+<div class="column" style="width:20%;">
+<p><span class="math inline">\(Y_1 = 1\)</span></p>
+<p><span class="math inline">\(Y_2 = 1\)</span></p>
+<p><span class="math inline">\(Y_3 = 1\)</span></p>
+</div><div class="column" style="width:33%;">
+<p><span class="math inline">\(W_{12} = 100\)</span> Mg/day</p>
+<p><span class="math inline">\(W_{23} = 170\)</span> Mg/day</p>
+</div><div class="column" style="width:47%;">
+<p><span class="math inline">\(R_{13} = 7.5\)</span> Mg/day</p>
+<p><span class="math inline">\(R_{21} = 37.5\)</span> Mg/day</p>
+<p><span class="math inline">\(R_{23} = 22.5\)</span> Mg/day</p>
+</div>
+</div>
+</section>
+<section id="example-solution-1" class="slide level2">
+<h2>Example Solution</h2>
+
+<img data-src="figures/waste-example-solution.svg" class="r-stretch quarto-figure-center"><p class="caption">Waste Management Problem Solution</p></section></section>
+<section>
+<section id="key-takeaways" class="title-slide slide level1 center">
+<h1>Key Takeaways</h1>
+
+</section>
+<section id="network-problems" class="slide level2">
+<h2>Network Problems</h2>
+<ul>
+<li>Explicitly model flows between network components;</li>
+<li>Often are limits on flow or node capacities;</li>
+<li>Fate &amp; transport dynamics can result in residuals and extra flows.</li>
+<li>Often are non-obvious results for how to route relevant stocks through network.</li>
+</ul>
+<p><strong>Another example</strong>: power flow modeling through a transmission network.</p>
+</section>
+<section id="solid-waste-management-1" class="slide level2">
+<h2>Solid Waste Management</h2>
+<ul>
+<li>Network induced by fixed transportation routes.</li>
+<li>Different types of facilities can produce different residual waste products.</li>
+<li>Extra residual waste can mean facilities have to operate.</li>
+</ul>
+<p><strong>HW 5</strong>: Two twists: Non-homogeneous waste (different ash/recycline rates) and CO<sub>2</sub> emissions tax.</p>
+</section>
+<section id="upcoming-schedule" class="slide level2">
+<h2>Upcoming Schedule</h2>
+<p><strong>HW4/Regulatory Report</strong>: Due <strong>Friday</strong> at 9pm.</p>
+<p><strong>HW5</strong>: Will be released on Friday, due 11/10 at 9pm.</p>
+<p><strong>Project Update</strong>: Also due 11/10 at 9pm.</p>
 
 <div class="footer footer-default">
 <p><a href="https://viveks.me/environmental-systems-analysis">BEE 4750, Environmental Systems Analysis</a></p>

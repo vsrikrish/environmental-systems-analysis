@@ -1,0 +1,490 @@
+---
+title: "Mixed Integer Linear Programming"
+subtitle: "Lecture 21"
+author: "Vivek Srikrishnan"
+course: "BEE 4750"
+institution: "Cornell University"
+date: "October 23, 2023"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        footer: "[BEE 4750, Environmental Systems Analysis](https://viveks.me/environmental-systems-analysis)"
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: mathjax
+        include-in-header: mathjax-config.html
+        date-format: long
+
+execute:
+    freeze: auto
+---
+
+```{julia}
+import Pkg
+Pkg.activate(".")
+Pkg.instantiate()
+```
+
+```{julia}
+using DataFrames
+using Plots
+using GraphRecipes
+using LaTeXStrings
+using Measures
+```
+
+# Review and Questions
+
+## Linear Programming
+
+- Assumptions of:
+    - certainty
+    - divisibility
+    - linearity
+- Solutions must be at intersections of constraints.
+- Shadow prices: value of relaxing constraints.
+- Saw examples from power systems and air quality
+
+## Questions
+
+{{< include _poll-prompt.qmd >}}
+
+# Mixed Integer Linear Programming
+
+## Problems with Discrete Decisions
+
+**Economic dispatch**: Assumed we had a fleet of online generators.
+
+What if we had to decide if generators should be on/off to avoid causing additional expense from minimum power/ramping constraints?
+
+## Problems with Discrete Decisions
+
+These types of decisions are common for infrastructure operations or investment problems.
+
+## Fixed Costs
+
+A key consideration when deciding whether to operate *something* are **fixed costs**.
+
+- **Fixed costs**: Labor, etc, required to operate or produce regardless of quantity.
+- **Variable costs**: Costs of inputs (energy, additional labor, materials) required to operate or produce per unit of time/quantity.
+
+## Fixed Costs Cause Discontinuities
+
+:::: {.columns}
+::: {.column width=50%}
+```{julia}
+x = 1:1:10
+C(x) = 3 .+ 2 .* x
+
+plot(x, C(x), grid=:false, ylabel="Costs", xlabel="Units of Operation",
+label="Cost (\$\$)", thickness_scaling=1.25, color=:black, legend=:bottomright, xticks=0:1:10, linewidth=3, tickfontsize=14, guidefontsize=14, legendfontsize=14, xlims=(-0.5, 10), ylims=(-0.5, 24), framestyle=:origin)
+plot!(x[x .> 0.], cumsum(C(x[x .> 0.])) ./ x[x .> 0.], color=:red, linestyle=:dot, label="Average Cost (\$\$/Unit)", linewidth=2)
+scatter!([(0, 0), (1, 5)], color=:black, markersize=5, label=:false)
+plot!(0:0.1:1, 3 .+ 2 .* (0:0.1:1), color=:black, linestyle=:dash, label=:false)
+plot!(size=(600, 500))
+```
+:::
+::: {.column width=50%}
+A discontinuous cost function is one way to violate the principles of linear programming!
+:::
+::::
+
+## Operational Status As Decision Variables
+
+The potential decision to not operate means that we need to introduce new *indicator* variables, which flag on/off status:
+
+$$
+\mathbb{I}_g = \begin{cases} 0 & \text{off} \\ 1 & \text{on} \end{cases}
+$$
+
+When we include variables which are **binary** or, more generally, **integer**, we now have a **mixed-integer linear program**.
+
+## Discrete Decision Variables Violate Divisibility
+
+:::: {.columns}
+::: {.column width=60%}
+```{julia, lp-sketch}
+x = 2:0.1:10.75
+f1(x) = 4.5 .* x
+f2(x) = -x .+ 16
+f3(x) = -1.5 .* x .+ 12
+f4(x) = 0.5 .* x
+
+p = plot(x, max.(f3(x), f4(x)), fillrange=min.(f1(x), f2(x)), color=:lightblue, grid=true, legend=false, xlabel=L"x", ylabel=L"y", xlims=(0, 12), framestyle=:origin, ylims=(0, 15), minorticks=2, guidefontsize=16, tickfontsize=14)
+plot!(-2:0.1:20, f1.(-2:0.1:20), color=:green, linewidth=3)
+plot!(-2:0.1:20, f2.(-2:0.1:20), color=:red, linewidth=3)
+plot!(-2:0.1:20, f3.(-2:0.1:20), color=:brown, linewidth=3)
+plot!(-2:0.1:20, f4.(-2:0.1:20), color=:purple, linewidth=3)
+plot!(gridlinewidth=1, gridalpha=0.75)
+plot!(xticks=round(Int,xlims(p)[1]):round(Int,xlims(p)[2]), yticks=round(Int,ylims(p)[1]):round(Int,ylims(p)[2]))
+plot!(size=(600, 500))
+```
+:::
+::: {.column width=40%}
+Recall that for LPs, solutions must occur at corners of the feasible polyhedra.
+:::
+::::
+
+## Discrete Decision Variables Violate Divisibility
+
+:::: {.columns}
+::: {.column width=60%}
+
+```{julia, milp-sketch}
+x = 2:0.1:10.75
+f1(x) = 4.5 .* x
+f2(x) = -x .+ 16
+f3(x) = -1.5 .* x .+ 12
+f4(x) = 0.5 .* x
+
+p = plot(x, max.(f3(x), f4(x)), fillrange=min.(f1(x), f2(x)), color=:lightblue, grid=true, legend=false, xlabel=L"x", ylabel=L"y", xlims=(0, 12), framestyle=:origin, ylims=(0, 15), minorticks=2, guidefontsize=16, tickfontsize=14)
+plot!(-2:0.1:20, f1.(-2:0.1:20), color=:green, linewidth=3)
+plot!(-2:0.1:20, f2.(-2:0.1:20), color=:red, linewidth=3)
+plot!(-2:0.1:20, f3.(-2:0.1:20), color=:brown, linewidth=3)
+plot!(-2:0.1:20, f4.(-2:0.1:20), color=:purple, linewidth=3)
+plot!(gridlinewidth=1, gridalpha=0.75)
+plot!(xticks=round(Int,xlims(p)[1]):round(Int,xlims(p)[2]), yticks=round(Int,ylims(p)[1]):round(Int,ylims(p)[2]))
+
+scatter!(collect(Iterators.product(2:10, 3:13))[:], color=:black, markersize=5)
+plot!(size=(600, 500))
+```
+
+:::
+::: {.column width=40%}
+**Mixed-integer LPs**: corners may not exist at integer points.
+:::
+::::
+
+# Solving MILPs
+
+## Example: Simple Mixed-Integer Linear Program
+
+$$
+\begin{align}
+\max \quad & 3x_1 + 4x_2 \\[0.5em]
+\text{subject to:} \quad  & 2x_1 + 6x_2 \leq 27 \\[0.5em]
+& x_2 \geq 2 \\[0.5em]
+& 3x_1 + x_2 \leq 19 \\[0.5em]
+& x_1, x_2 \geq 0 \\[0.5em]
+& x_1, x_2 \quad \text{integers}
+\end{align}
+$$
+
+## Example: MILP
+
+```{julia}
+x = 0:0.1:5.7
+f1(x) = (27 .- 2 .* x) ./ 6.    
+f2(x) = 19 .- 3 .* x
+
+p = plot(x, 2 .+ zeros(length(x)), fillrange=min.(f1(x), f2(x)), color=:lightblue, grid=true, legend=false, xlabel=L"x_1", ylabel=L"x_2", xlims=(0, 6), framestyle=:origin, ylims=(0, 5), minorticks=2, guidefontsize=18, tickfontsize=16, bottom_margin=10mm, left_margin=10mm)
+hline!([2], color=:red, linewidth=3)
+plot!(-2:0.1:6, f1.(-2:0.1:6), color=:purple, linewidth=3)
+vline!([0], color=:black, linewidth=3)
+plot!(-2:0.1:6, f2.(-2:0.1:6), color=:blue, linewidth=3)
+plot!(gridlinewidth=0.75, gridalpha=0.3)
+plot!(xticks=round(Int,xlims(p)[1]):round(Int,xlims(p)[2]), yticks=round(Int,ylims(p)[1]):round(Int,ylims(p)[2]))
+annotate!(4, 4.5, text("LP Solution", :black, :right, 22))
+quiver!([4], [4.25], quiver=([1.3], [-1.4]), color=:black, linewidth=3)
+
+scatter!([(5.44, 2.69)], markersize=8, markerstrokeecolor=:black, markercolor=:yellow)
+
+grid_pts = [(5, 2), (4, 2), (4, 3), (3, 2), (3, 3), (2, 2), (2, 3), (1, 2), (1, 3), (1,4), (0, 2), (0, 3), (0, 4)]
+scatter!(grid_pts, color=:brown, markersize=8)
+
+plot!(size=(1200, 600))
+```
+
+## Example: MILP
+
+```{julia}
+scatter!(p, [(4, 3)], color=:red, markersize=8)
+annotate!(p, 4, 1.2, text("MILP Solution", :black, :right, 22))
+quiver!(p, [3.5], [1.5], quiver=([0.4], [1.35]), color=:black, linewidth=3)
+```
+
+## Idea of Mixed-Integer Solution Method
+
+Solution to linear relaxation (relax integer constraint to turn into an LP) is an *upper bound* on the mixed-integer solution (**why**?).
+
+::: {.fragment .fade-in}
+1. Starting from this, test new problems "bounding" LP solution with integer constraints.
+
+2. Continue until integer solution found.
+
+This is the **branch and bound** algorithm.
+:::
+
+## Branch and Bound: Node 1
+
+```{julia}
+x = 0:0.1:5.7
+f1(x) = (27 .- 2 .* x) ./ 6.    
+f2(x) = 19 .- 3 .* x
+
+p = plot(x, 2 .+ zeros(length(x)), fillrange=min.(f1(x), f2(x)), color=:lightblue, grid=true, legend=false, xlabel=L"x_1", ylabel=L"x_2", xlims=(0, 6), framestyle=:origin, ylims=(0, 5), minorticks=2, guidefontsize=18, tickfontsize=16, bottom_margin=10mm, left_margin=10mm)
+hline!([2], color=:red, linewidth=3)
+plot!(-2:0.1:6, f1.(-2:0.1:6), color=:purple, linewidth=3)
+vline!([0], color=:black, linewidth=3)
+plot!(-2:0.1:6, f2.(-2:0.1:6), color=:blue, linewidth=3)
+plot!(gridlinewidth=0.75, gridalpha=0.3)
+plot!(xticks=round(Int,xlims(p)[1]):round(Int,xlims(p)[2]), yticks=round(Int,ylims(p)[1]):round(Int,ylims(p)[2]))
+annotate!(4, 4.5, text("Upper Bound \n" * L"$Z=27.0625$", :black, :right, 22))
+quiver!([4], [4.25], quiver=([1.3], [-1.4]), color=:black, linewidth=3)
+annotate!(4, 1, text("Lower Bound \n" * L"$Z=23$", :black, :right, 22))
+quiver!([4], [1.25], quiver=([0.9], [0.65]), color=:black, linewidth=3)
+
+scatter!([(5.44, 2.69)], markersize=8, markerstrokeecolor=:black, markercolor=:yellow)
+
+grid_pts = [(5, 2), (4, 2), (4, 3), (3, 2), (3, 3), (2, 2), (2, 3), (1, 2), (1, 3), (1,4), (0, 2), (0, 3), (0, 4)]
+scatter!(grid_pts, color=:brown, markersize=8)
+
+plot!(size=(1200, 600))
+```
+
+
+## Example MILP: Branch and Bound
+
+![Branch and Bound Node 1](figures/bb-1.png)
+
+## Example MILP: Branch and Bound
+
+![Branch and Bound Node 1](figures/bb-23-pre.png)
+
+## Example MILP: Branch and Bound Nodes 2 and 3
+
+$$
+\begin{align}
+\max \quad & 3x_1 + 4x_2 \\[0.5em]
+\text{subject to:} \quad  & 2x_1 + 6x_2 \leq 27 \\
+& x_2 \geq 2 \\
+& 3x_1 + x_2 \leq 19 \\
+& x_1, x_2 \geq 0 \\
+& {\color{red}x_2 \leq 5} \qquad (\text{node}\, 2) \\
+& {\color{blue}x_2 \geq 6} \qquad (\text{node}\, 3) \\
+\end{align}
+$$
+
+## Example MILP: Nodes 2 and 3
+
+```{julia}
+#| layout-ncol: 2
+x = 0:0.1:4.5
+f1(x) = (27 .- 2 .* x) ./ 6.    
+f2(x) = 19 .- 3 .* x
+
+p2 = hline([2], grid=true, color=:orange, linestyle=:dash, linewidth=2, legend=false, xlabel=L"x_1", ylabel=L"x_2", xlims=(0, 6), framestyle=:origin, ylims=(0, 5), guidefontsize=18, tickfontsize=16, bottom_margin=10mm, left_margin=10mm)
+plot!(-2:0.1:6, f1.(-2:0.1:6), color=:purple, linewidth=3)
+vline!([0], color=:black, linewidth=3)
+plot!(-2:0.1:6, f2.(-2:0.1:6), color=:blue, linewidth=3)
+plot!(gridlinewidth=0.75, gridalpha=0.3)
+hline!([2], color=:red, linewidth=3)
+
+plot!(xticks=round(Int,xlims(p)[1]):round(Int,xlims(p)[2]), yticks=round(Int,ylims(p)[1]):round(Int,ylims(p)[2]))
+plot!(size=(600, 600))
+annotate!(4, 1, text(L"Z=25", :black, :center, 22))
+quiver!([4.25], [1.25], quiver=([1.25], [0.7]), color=:black, linewidth=3)
+scatter!([(5.67, 2)], markersize=8, markerstrokeecolor=:black, markercolor=:yellow)
+grid_pts = [(0, 2), (1, 2), (2, 2), (3, 2), (4, 2), (5, 2)]
+scatter!(grid_pts, color=:brown, markersize=8)
+display(p2)
+
+p3 = plot(x, 3 .+ zeros(length(x)), fillrange=min.(f1(x), f2(x)), color=:lightblue, grid=true, legend=false, xlabel=L"x_1", ylabel=L"x_2", xlims=(0, 6), framestyle=:origin, ylims=(0, 5), guidefontsize=18, tickfontsize=16, bottom_margin=10mm, left_margin=10mm)
+plot!(-2:0.1:6, f1.(-2:0.1:6), color=:purple, linewidth=3)
+vline!([0], color=:black, linewidth=3)
+plot!(-2:0.1:6, f2.(-2:0.1:6), color=:blue, linewidth=3)
+plot!(gridlinewidth=0.75, gridalpha=0.3)
+hline!([2], color=:red, linewidth=3)
+hline!([3], linestyle=:dash, color=:orange, linewidth=2)
+plot!(xticks=round(Int,xlims(p)[1]):round(Int,xlims(p)[2]), yticks=round(Int,ylims(p)[1]):round(Int,ylims(p)[2]))
+plot!(size=(600, 600))
+annotate!(3.5, 4.5, text(L"$Z=25.5$", :black, :center, 22))
+quiver!([3.5], [4.25], quiver=([0.9], [-1.1]), color=:black, linewidth=3)
+scatter!([(4.5, 3)], markersize=8, markerstrokeecolor=:black, markercolor=:yellow)
+grid_pts = [(4, 3), (3, 3), (2, 3), (1, 3), (1,4), (0, 3), (0, 4)]
+scatter!(grid_pts, color=:brown, markersize=8)
+display(p3)
+
+```
+
+## Example MILP: Branch and Bound
+
+![Branch and Bound Node 1](figures/bb-23.png)
+
+## Example MILP: Branch and Bound
+
+![Branch and Bound Node 1](figures/bb-45-pre.png)
+
+## Example MILP: Nodes 4 and 5
+
+```{julia}
+#| layout-ncol: 2
+x = 0:0.1:4
+f1(x) = (27 .- 2 .* x) ./ 6.    
+f2(x) = 19 .- 3 .* x
+
+p4 = plot(x, 3 .+ zeros(length(x)), fillrange=min.(f1(x), f2(x)), color=:lightblue, grid=true, legend=false, xlabel=L"x_1", ylabel=L"x_2", xlims=(0, 6), framestyle=:origin, ylims=(0, 5), guidefontsize=18, tickfontsize=16, bottom_margin=10mm, left_margin=10mm)
+plot!(-2:0.1:6, f1.(-2:0.1:6), color=:purple, linewidth=3)
+vline!([0], color=:black, linewidth=3)
+plot!(-2:0.1:6, f2.(-2:0.1:6), color=:blue, linewidth=3)
+plot!(gridlinewidth=0.75, gridalpha=0.3)
+hline!([2], color=:red, linewidth=3)
+hline!([3], linestyle=:dash, color=:orange, linewidth=2)
+vline!([4], linestyle=:dash, color=:orange, linewidth=2)
+plot!(xticks=round(Int,xlims(p)[1]):round(Int,xlims(p)[2]), yticks=round(Int,ylims(p)[1]):round(Int,ylims(p)[2]))
+plot!(size=(600, 600))
+annotate!(3.5, 4.5, text(L"$Z=24.67$", :black, :center, 22))
+quiver!([3.5], [4.25], quiver=([0.4], [-0.9]), color=:black, linewidth=3)
+scatter!([(4, 3.17)], markersize=8, markerstrokeecolor=:black, markercolor=:yellow)
+grid_pts = [(4, 3), (3, 3), (2, 3), (1, 3), (1,4), (0, 3), (0, 4)]
+scatter!(grid_pts, color=:brown, markersize=8)
+display(p4)
+
+p5 = plot(x, 3 .+ zeros(length(x)), grid=true, legend=false, xlabel=L"x_1", ylabel=L"x_2", xlims=(0, 6), framestyle=:origin, ylims=(0, 5), guidefontsize=18, tickfontsize=16, bottom_margin=10mm, left_margin=10mm)
+plot!(-2:0.1:6, f1.(-2:0.1:6), color=:purple, linewidth=3)
+vline!([0], color=:black, linewidth=3)
+plot!(-2:0.1:6, f2.(-2:0.1:6), color=:blue, linewidth=3)
+plot!(gridlinewidth=0.75, gridalpha=0.3)
+hline!([2], color=:red, linewidth=3)
+hline!([3], linestyle=:dash, color=:orange, linewidth=2)
+vline!([5], linestyle=:dash, color=:orange, linewidth=2)
+plot!(xticks=round(Int,xlims(p)[1]):round(Int,xlims(p)[2]), yticks=round(Int,ylims(p)[1]):round(Int,ylims(p)[2]))
+plot!(size=(600, 600))
+display(p5)
+```
+
+
+
+## Example MILP: Branch and Bound
+
+![Branch and Bound Node 1](figures/bb-45.png)
+
+## Example MILP: Branch and Bound
+
+![Branch and Bound Node 1](figures/bb-67-pre.png)
+
+## Example MILP: Nodes 6 and 7
+
+```{julia}
+#| layout-ncol: 2
+x = 0:0.1:4.5
+f1(x) = (27 .- 2 .* x) ./ 6.    
+f2(x) = 19 .- 3 .* x
+
+p6 = hline([2], grid=true, color=:orange, linestyle=:dash, linewidth=2, legend=false, xlabel=L"x_1", ylabel=L"x_2", xlims=(0, 6), framestyle=:origin, ylims=(0, 5), guidefontsize=18, tickfontsize=16, bottom_margin=10mm, left_margin=10mm)
+plot!(-2:0.1:6, f1.(-2:0.1:6), color=:purple, linewidth=3)
+vline!([0], color=:black, linewidth=3)
+plot!(-2:0.1:6, f2.(-2:0.1:6), color=:blue, linewidth=3)
+plot!(gridlinewidth=0.75, gridalpha=0.3)
+hline!([2], color=:red, linewidth=3)
+vline!([5], linestyle=:dash, color=:orange, linewidth=2)
+
+plot!(xticks=round(Int,xlims(p)[1]):round(Int,xlims(p)[2]), yticks=round(Int,ylims(p)[1]):round(Int,ylims(p)[2]))
+plot!(size=(600, 600))
+annotate!(4, 1, text(L"Z=23", :black, :center, 22))
+quiver!([4.15], [1.25], quiver=([0.75], [0.6]), color=:black, linewidth=3)
+scatter!([(5, 2)], markersize=8, markerstrokeecolor=:black, markercolor=:yellow)
+grid_pts = [(0, 2), (1, 2), (2, 2), (3, 2), (4, 2)]
+scatter!(grid_pts, color=:brown, markersize=8)
+display(p6)
+
+p7 = hline([2], grid=true, color=:orange, linestyle=:dash, linewidth=2, legend=false, xlabel=L"x_1", ylabel=L"x_2", xlims=(0, 6), framestyle=:origin, ylims=(0, 5), guidefontsize=18, tickfontsize=16, bottom_margin=10mm, left_margin=10mm)
+plot!(-2:0.1:6, f1.(-2:0.1:6), color=:purple, linewidth=3)
+vline!([0], color=:black, linewidth=3)
+plot!(-2:0.1:6, f2.(-2:0.1:6), color=:blue, linewidth=3)
+plot!(gridlinewidth=0.75, gridalpha=0.3)
+hline!([2], color=:red, linewidth=3)
+vline!([6], linestyle=:dash, color=:orange, linewidth=2)
+
+plot!(xticks=round(Int,xlims(p)[1]):round(Int,xlims(p)[2]), yticks=round(Int,ylims(p)[1]):round(Int,ylims(p)[2]))
+plot!(size=(600, 600))
+display(p7)
+```
+
+
+## Example MILP: Branch and Bound
+
+![Branch and Bound Node 1](figures/bb-67.png)
+
+## Example MILP: Branch and Bound
+
+![Branch and Bound Node 1](figures/bb-89-pre.png)
+
+## Example MILP: Nodes 8 and 9
+
+```{julia}
+#| layout-ncol: 2
+x = 0:0.1:1.5
+f1(x) = (27 .- 2 .* x) ./ 6.    
+f2(x) = 19 .- 3 .* x
+
+p8 = hline([3], linestyle=:dash, color=:orange, linewidth=2, grid=true, legend=false, xlabel=L"x_1", ylabel=L"x_2", xlims=(0, 6), framestyle=:origin, ylims=(0, 5), guidefontsize=18, tickfontsize=16, bottom_margin=10mm, left_margin=10mm)
+plot!(-2:0.1:6, f1.(-2:0.1:6), color=:purple, linewidth=3)
+vline!([0], color=:black, linewidth=3)
+plot!(-2:0.1:6, f2.(-2:0.1:6), color=:blue, linewidth=3)
+plot!(gridlinewidth=0.75, gridalpha=0.3)
+hline!([2], color=:red, linewidth=3)
+hline!([3], linestyle=:dash, color=:orange, linewidth=2)
+vline!([4], linestyle=:dash, color=:orange, linewidth=2)
+plot!(xticks=round(Int,xlims(p)[1]):round(Int,xlims(p)[2]), yticks=round(Int,ylims(p)[1]):round(Int,ylims(p)[2]))
+plot!(size=(600, 600))
+annotate!(3.5, 4.5, text(L"$Z=24$", :black, :center, 22))
+quiver!([3.5], [4.25], quiver=([0.4], [-1.15]), color=:black, linewidth=3)
+scatter!([(4, 3)], markersize=8, markerstrokeecolor=:black, markercolor=:yellow)
+grid_pts = [(3, 3), (2, 3), (1, 3), (0, 3)]
+scatter!(grid_pts, color=:brown, markersize=8)
+display(p8)
+
+p9 = plot(x, 4 .+ zeros(length(x)), fillrange=min.(f1(x), f2(x)), color=:lightblue, grid=true, legend=false, xlabel=L"x_1", ylabel=L"x_2", xlims=(0, 6), framestyle=:origin, ylims=(0, 5), guidefontsize=18, tickfontsize=16, bottom_margin=10mm, left_margin=10mm)
+plot!(-2:0.1:6, f1.(-2:0.1:6), color=:purple, linewidth=3)
+vline!([0], color=:black, linewidth=3)
+plot!(-2:0.1:6, f2.(-2:0.1:6), color=:blue, linewidth=3)
+plot!(gridlinewidth=0.75, gridalpha=0.3)
+hline!([2], color=:red, linewidth=3)
+hline!([3, 4], linestyle=:dash, color=:orange, linewidth=2)
+vline!([4], linestyle=:dash, color=:orange, linewidth=2)
+plot!(xticks=round(Int,xlims(p)[1]):round(Int,xlims(p)[2]), yticks=round(Int,ylims(p)[1]):round(Int,ylims(p)[2]))
+plot!(size=(600, 600))
+annotate!(2.5, 4.75, text(L"$Z=20.5$", :black, :center, 22))
+quiver!([2.25], [4.5], quiver=([-0.6], [-0.4]), color=:black, linewidth=3)
+scatter!([(1.5, 4)], markersize=8, markerstrokeecolor=:black, markercolor=:yellow)
+grid_pts = [(1,4), (0, 4)]
+scatter!(grid_pts, color=:brown, markersize=8)
+display(p9)
+
+```
+
+## Example MILP: Branch and Bound
+
+![Branch and Bound Node 1](figures/bb-89.png)
+
+# Key Takeaways
+
+## Mixed Integer Problems
+
+- Integer/binary variables (*e.g.* from operational status) cause several violations of LP assumptions.
+    - Non-linear/discontinuous objectives/constraints;
+    - Loss of variable divisibility.
+- Can solve these problems with **branch and bound** (or more sophisticated refinements, such as branch and cut).
+    - Search only useful refinements, ignore others.
+
+## Upcoming Schedule
+
+**Wednesday/Friday**: Applications of MILP to solid waste management and maybe unit commitment.
+
+## Assessments
+
+**HW4/Regulatory Report**: Due Friday by 9pm on Gradescope.

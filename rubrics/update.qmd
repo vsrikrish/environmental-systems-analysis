@@ -1,0 +1,56 @@
+---
+title: "Project Update Rubric"
+html: default
+pdf:
+    documentclass: article
+    geometry:
+        - margin=1in  
+    include-in-header:
+        text: |
+            \renewcommand\toprule[2]\relax
+            \renewcommand\bottomrule[2]\relax
+    filters:
+        - ../_assets/filters/columns-to-tables.lua
+---
+
+## Rubric
+
+The report is graded out of a total of 15 points. 
+
+Points will be taken off for:
+
+### Project Background and Question (3 points)
+
+| Needs Improvement (0) | Developing (1) | Above Average (2) | Excellent (3) |
+|:------------------------|:-----------------|:--------------------|:---------------|
+| No or insufficient description of background, or description does not make the system background or project clear or question is so unclearly stated that it cannot be easily interpeted. | Background given, but link to question and motivation for project is unclear. | System background given, but question is somewhat unclear. | Question is clearly described and motivated by the system background. | 
+
+### Project Plan (3 points)
+
+| Needs Improvement (0) | Developing (1) | Above Average (2) | Excellent (3) |
+|:------------------------|:-----------------|:--------------------|:---------------|
+| Missing or no specifics provided. | Planned steps provided, but are unclear or insufficient details provided to make connection to aims. | Planned steps provided, but details are slightly sketchy or explicit connection to aims not provided. | Project plan is clearly articulated, with detailed steps well-connected to goals and aims of project. | 
+
+## Model Formulation and Justification (5 points)
+
+| Needs Improvement (0) | Developing (1-2) | Above Average (3-4) | Excellent (5) |
+|:------------------------|:-----------------|:--------------------|:---------------|
+| Missing or no specifics provided. | An overview of the model is provided, but missing critical details and justifications. | Model is clearly specified, but justification is incomplete or key assumptions and potential impacts are not identified. | Model is well specified, justified, and description includes identification and analysis of key impacts. | 
+
+## Data Description (2 points)
+
+| Needs Improvement (0) | Developing (1) | Above Average (2) |
+|:------------------------|:-----------------|:--------------------|
+| Missing or no specifics provided. | Some data sources (or plans to generate data) provided, but unclear how the data will be incorporated into the project to achieve the aims. | Data plan clearly provided and connected to project plan.  | 
+
+## References (1 point)
+
+| Needs Improvement (0) | Above Average (1) |
+|:------------------------|:-----------------|
+| Insufficient references, references not cited within text, or references not consistently formatted | References provided and cited as appropriate and consistently referenced using a standard citation style. |
+
+## Formatting (1 point)
+
+| Needs Improvement (0) | Above Average (1) |
+|:------------------------|:-----------------|
+| Formatting guidelines not followed consistently. | Formatting guidelines followed. |

@@ -1,6 +1,6 @@
 ---
 title: "Waste Management and Network Models"
-subtitle: "Lecture 21"
+subtitle: "Lecture 22"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"

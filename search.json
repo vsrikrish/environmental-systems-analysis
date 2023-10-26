@@ -1456,6 +1456,188 @@
     "text": "Next Classes\nFriday: Managing multiple point sources of air pollution\nNext Week: Mixed-Integer Linear Programming and Applications\n\n\nBEE 4750, Environmental Systems Analysis"
   },
   {
+    "objectID": "slides/lecture10-3.html#solid-waste-management",
+    "href": "slides/lecture10-3.html#solid-waste-management",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Solid Waste Management",
+    "text": "Solid Waste Management\n\nDifferent types of facilities with different residual wastes, which impacts the broader system.\nModel as a network, where we care about the flows between different nodes.\nBecomes a mixed integer program if we can choose not to operate facilities."
+  },
+  {
+    "objectID": "slides/lecture10-3.html#questions",
+    "href": "slides/lecture10-3.html#questions",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture10-3.html#certainty-and-lp",
+    "href": "slides/lecture10-3.html#certainty-and-lp",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Certainty and LP",
+    "text": "Certainty and LP\nCertainty (e.g. all parameters and relationships between decision variables and outcomes are known) is a key assumption of linear programming.\nBut most systems problems aren’t actually deterministic."
+  },
+  {
+    "objectID": "slides/lecture10-3.html#approaches-to-decision-making-under-uncertainty",
+    "href": "slides/lecture10-3.html#approaches-to-decision-making-under-uncertainty",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Approaches to Decision-Making Under Uncertainty",
+    "text": "Approaches to Decision-Making Under Uncertainty\nA Common Approach:\n\nSolve deterministic problem using best estimates.\nStress-test solution with Monte Carlo or include additional safety margins (more on this later)."
+  },
+  {
+    "objectID": "slides/lecture10-3.html#representing-uncertainty-in-mathematical-programs",
+    "href": "slides/lecture10-3.html#representing-uncertainty-in-mathematical-programs",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Representing Uncertainty in Mathematical Programs",
+    "text": "Representing Uncertainty in Mathematical Programs\nAlternative:\n\nSolve a stochastic problem for best expected performance (or similar summary statistic).\n\n\nWe can represent uncertainty through scenarios and (conditional) sequential events, then rewrite the decision problem."
+  },
+  {
+    "objectID": "slides/lecture10-3.html#land-allocationfarmer-problem",
+    "href": "slides/lecture10-3.html#land-allocationfarmer-problem",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Land Allocation/Farmer Problem",
+    "text": "Land Allocation/Farmer Problem\nA farmer can grow wheat, corn, and sugar beets on 500 ha of land. How much land should they allocate to each crop?"
+  },
+  {
+    "objectID": "slides/lecture10-3.html#key-information-for-problem",
+    "href": "slides/lecture10-3.html#key-information-for-problem",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Key information For Problem",
+    "text": "Key information For Problem\n\nPlanting costs are $150, $230, and $260 per acre for wheat, corn, and sugar beets, respectively.\nThe farmer requires 200T of wheat and 240T kg of corn for feed, and excess can be sold for $170 and $150 per T, respectively.\nPurchasing crops costs $40 more than the selling prices.\nSugar beets are sold at $36/T up to 6000T, at which point the price drops to $10 per T."
+  },
+  {
+    "objectID": "slides/lecture10-3.html#farm-yields",
+    "href": "slides/lecture10-3.html#farm-yields",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Farm Yields",
+    "text": "Farm Yields\nFrom prior experience, the farmer knows that in an average year, yields are:\n\n2.5 T/acre for wheat;\n3 T/acre per corn;\n\n20T/acre for beets."
+  },
+  {
+    "objectID": "slides/lecture10-3.html#decision-variables",
+    "href": "slides/lecture10-3.html#decision-variables",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Decision Variables",
+    "text": "Decision Variables\nWhat are the decision variables?\n\n\n\n\nVariable\nDefinition\n\n\n\n\n\\(x_i\\)\nacres of crop \\(i\\) planted\n\n\n\\(y_i\\)\nT of crop \\(i\\) purchased\n\n\n\\(z_i\\)\nT of crop \\(i\\) sold\n\n\n\n\nOne twist: sold beets will be represented by two different \\(z\\)-variables (\\(z_3\\) and \\(z_4\\)), based on whether we exceed 6000T."
+  },
+  {
+    "objectID": "slides/lecture10-3.html#deterministic-problem-formulation",
+    "href": "slides/lecture10-3.html#deterministic-problem-formulation",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Deterministic Problem Formulation",
+    "text": "Deterministic Problem Formulation\n\\[\n\\begin{align}\n\\min_{x, y, z} & \\quad 150x_1 + 230 x_2 + 260 x_3 + 238 y_1 + 210 y_2 - 170 z_1 \\\\\n& \\qquad -150z_2 - 36z_3 - 10z_4 \\\\[1ex]\n\\text{subject to:} \\quad & x_1 + x_2 + x_3 \\leq 500 \\\\[0.5ex]\n& 2.5 x_1 + y_1 - z_1 \\geq 200 \\\\[0.5ex]\n& 3 x_2 + y_2 - z_2 \\geq 240 \\\\[0.5ex]\n& z_3 + z_4 \\leq 20 x_3 \\\\[0.5ex]\n& z_3 \\leq 6000 \\\\[0.5ex]\n& x_i, y_i, z_i \\geq 0\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture10-3.html#deterministic-solution",
+    "href": "slides/lecture10-3.html#deterministic-solution",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Deterministic Solution",
+    "text": "Deterministic Solution\n\n\n\nVariable\nWheat\nCorn\nBeets\n\n\n\n\nArea (acres)\n120\n80\n300\n\n\nYield (T)\n300\n240\n6000\n\n\nSales (T)\n100\n–\n6000\n\n\nPurchased (T)\n–\n–\n–\n\n\n\nThis solution yields a profit of $118,600."
+  },
+  {
+    "objectID": "slides/lecture10-3.html#what-about-uncertainty",
+    "href": "slides/lecture10-3.html#what-about-uncertainty",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "What About Uncertainty?",
+    "text": "What About Uncertainty?\nBut yields tend to vary from year to year. From prior experience, the historical variability is:\n\nin a good year, yields can be 20% above average;\nin a bad year, yields can be 20% below average.\n\n\nTo simplify things, let’s assume these yields vary consistently across crops and that each scenario (average, good, bad) has an equal probability of occurrence."
+  },
+  {
+    "objectID": "slides/lecture10-3.html#stochastic-decision-variables",
+    "href": "slides/lecture10-3.html#stochastic-decision-variables",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Stochastic Decision Variables",
+    "text": "Stochastic Decision Variables\nWhat should change about our decision variables?\n\n\n\n\nVariable\nDefinition\n\n\n\n\n\\(x_i\\)\nacres of crop \\(i\\) planted\n\n\n\\(y_{ij}\\)\nT of crop \\(i\\) purchased in scenario \\(j\\)\n\n\n\\(z_{ij}\\)\nT of crop \\(i\\) sold in scenario \\(j\\)"
+  },
+  {
+    "objectID": "slides/lecture10-3.html#two-stage-problems",
+    "href": "slides/lecture10-3.html#two-stage-problems",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Two-Stage Problems",
+    "text": "Two-Stage Problems\nThis is typical of a two-stage decision problem:\n\nMake an initial decision (e.g. how much to plant) which must be committed to ahead of knowing the stochastic realization;\nMake a subsequent recourse decision based on the realization (e.g. do we have to purchase additional crops?)"
+  },
+  {
+    "objectID": "slides/lecture10-3.html#stochastic-objective",
+    "href": "slides/lecture10-3.html#stochastic-objective",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Stochastic Objective",
+    "text": "Stochastic Objective\nHow can we formulate an objective?\n\nFirst choice: what statistic are we trying to optimize?\n\nLet’s choose the expected value \\(\\mathbb{E}\\left[\\text{Profit}\\right]\\).\nOther possible choices: quantiles (robust optimization) to hedge against worst-case outcomes, variance (to minimize year-on-year fluctuations)."
+  },
+  {
+    "objectID": "slides/lecture10-3.html#probabilities-and-scenario-trees",
+    "href": "slides/lecture10-3.html#probabilities-and-scenario-trees",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Probabilities and Scenario Trees",
+    "text": "Probabilities and Scenario Trees\n\n\nSince we have a discrete (and small) set of possible outcomes, we can use a scenario tree to write out the possible outcomes.\n\n\n\n\nScenario Tree for Farmer Problem"
+  },
+  {
+    "objectID": "slides/lecture10-3.html#stochastic-objective-1",
+    "href": "slides/lecture10-3.html#stochastic-objective-1",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Stochastic Objective",
+    "text": "Stochastic Objective\nOur new objective becomes:\n\\[\\begin{alignedat}{2}\n&\\min_{x, y, z} & & \\quad 150x_1 + 230x_2 + 260x_3 \\\\[0.5ex]\n& &&\\qquad -\\frac{1}{3} \\left(170z_{11} + 150z_{21} + 36z_{31} + 10z_{41} - 238y_{11} - 210 y_{21}\\right) \\\\[0.5ex]\n& &&\\qquad -\\frac{1}{3} \\left(170z_{12} + 150z_{22} + 36z_{32} + 10z_{42} - 238y_{12} - 210 y_{22}\\right) \\\\[0.5ex]\n& &&\\qquad -\\frac{1}{3} \\left(170z_{13} + 150z_{23} + 36z_{33} + 10z_{43} - 238y_{13} - 210 y_{23}\\right)\n\\end{alignedat}\\]"
+  },
+  {
+    "objectID": "slides/lecture10-3.html#stochastic-contraints",
+    "href": "slides/lecture10-3.html#stochastic-contraints",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Stochastic Contraints",
+    "text": "Stochastic Contraints\n\\[\\begin{alignedat}{2}\n&x_1 + x_2 + x_3 \\leq 500 \\\\[0.5ex]\n&\\color{blue}3x_1 + y_{11} - z_{11} \\geq 200, && \\qquad  \\color{blue}3.6x_2 + y_{21} - z_{21} \\geq 240 \\\\[0.5ex]\n&\\color{blue}z_{31} + z_{41} \\leq 24x_3, && \\qquad \\color{blue}z_{31} \\leq 6000 \\\\[0.5ex]\n&\\color{purple}2.5x_1 + y_{12} - z_{12} \\geq 200, && \\qquad \\color{purple}3x_2 + y_{22} - z_{22} \\geq 240 \\\\[0.5ex]\n&\\color{purple}z_{32} + z_{42} \\leq 20x_3, && \\qquad \\color{purple}z_{32} \\leq 6000 \\\\[0.5ex]\n&\\color{red}2x_1 + y_{13} - z_{13} \\geq 200, && \\qquad \\color{red}2.4x_2 + y_{23} - z_{23} \\geq 240 \\\\[0.5ex]\n&\\color{red}z_{33} + z_{43} \\leq 16x_3, && \\qquad \\color{red}z_{33} \\leq 6000 \\\\[0.5ex]\n&x_i, y_i, z_i \\geq 0\n\\end{alignedat}\\]"
+  },
+  {
+    "objectID": "slides/lecture10-3.html#stochastic-solution",
+    "href": "slides/lecture10-3.html#stochastic-solution",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Stochastic Solution",
+    "text": "Stochastic Solution\n\n\n\nVariable\nWheat\nCorn\nBeets\n\n\n\n\nDeterministic Area (acres)\n120\n80\n300\n\n\nStochastic Area (acres)\n170\n80\n250\n\n\n\nHow do we interpret the differences?\n\n\nGood year: Won’t waste acreage on extra beets (6000T yield in stochastic solution, 7200T for deterministic)\nBad year: Will make less off beets, profits from wheat should help cover extra corn purchase."
+  },
+  {
+    "objectID": "slides/lecture10-3.html#comparing-deterministic-and-stochastic-solution",
+    "href": "slides/lecture10-3.html#comparing-deterministic-and-stochastic-solution",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Comparing Deterministic and Stochastic Solution",
+    "text": "Comparing Deterministic and Stochastic Solution\n\nDeterministic Solution: “Expected” Profit (no uncertainty) = $118,600\nStochastic Solution: \\(\\mathbb{E}[\\text{Profit}]\\) = $108,390.\n\n\nCan we directly compare the deterministic and stochastic solution values that we have obtained so far?"
+  },
+  {
+    "objectID": "slides/lecture10-3.html#expected-performance-of-deterministic-solution",
+    "href": "slides/lecture10-3.html#expected-performance-of-deterministic-solution",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Expected Performance of Deterministic Solution",
+    "text": "Expected Performance of Deterministic Solution\n\n\n\nYear\nDeterministic Profit\nStochastic Profit\n\n\n\n\nGood\n$148,000\n$167,000\n\n\nAverage\n$118,600\n$109,350\n\n\nBad\n$56,800\n$48,820\n\n\n\nExpected Profit from Deterministic Solution under uncertainty: $107,240"
+  },
+  {
+    "objectID": "slides/lecture10-3.html#value-of-the-stochastic-solution-1",
+    "href": "slides/lecture10-3.html#value-of-the-stochastic-solution-1",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Value of the Stochastic Solution",
+    "text": "Value of the Stochastic Solution\nWe can now compare the difference in expected profits under uncertainty, which is the fair comparison.\nThis is called the value of the stochastic solution (VSS), or sometimes the expected value of including uncertainty (EVIU).\n\\[\\begin{aligned}\nVSS &= \\mathbb{E}[\\text{Stochastic Profit}] - \\mathbb{E}[\\text{Deterministic Profit}] \\\\[0.5ex]\n&= \\$108,390 - \\$107,240 \\\\[0.5ex]\n&= \\$1,150.\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "slides/lecture10-3.html#expected-value-of-perfect-information",
+    "href": "slides/lecture10-3.html#expected-value-of-perfect-information",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Expected Value of Perfect Information",
+    "text": "Expected Value of Perfect Information\nAnother relevant quantity, the expected value of perfect information (EVPI), concerns the value associated with better forecasts."
+  },
+  {
+    "objectID": "slides/lecture10-3.html#expected-value-of-perfect-information-1",
+    "href": "slides/lecture10-3.html#expected-value-of-perfect-information-1",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Expected Value of Perfect Information",
+    "text": "Expected Value of Perfect Information\nIf the farmer had perfect foresight and could allocate acreage \\(x\\) accordingly and sell/purchase \\(z\\) and \\(y\\) optimally (versus taking the 1/3-probability stochastic solution),\n\\[\\mathbb{E}[\\text{Profits} | \\text{perfect information}] = \\sum_j p_j \\times \\text{Profits}_j = \\$115,405.\\]\n\n\\[\\text{EVPI} = \\$115,405 - \\$108,390 = \\$7,015\\]\nThe EVPI can be interpreted as the amount the farmer might be willing to pay for an improved forecast."
+  },
+  {
+    "objectID": "slides/lecture10-3.html#decision-making-and-uncertainty",
+    "href": "slides/lecture10-3.html#decision-making-and-uncertainty",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Decision-Making and Uncertainty",
+    "text": "Decision-Making and Uncertainty\n\nA solution obtained assuming deterministic outcomes might “on paper” yield better anticipated outcomes.\nCommon approach is a two-stage optimization framework:\n\nMake an initial decision;\nRecourse based on which scenario is realized.\n\nScenario trees help build out the representation of outcomes and probabilities."
+  },
+  {
+    "objectID": "slides/lecture10-3.html#value-of-the-stochastic-solution-2",
+    "href": "slides/lecture10-3.html#value-of-the-stochastic-solution-2",
+    "title": "Linear Programming Under Uncertainty",
+    "section": "Value of the Stochastic Solution",
+    "text": "Value of the Stochastic Solution\n\nSolutions to stochastic problems can produce a better expected outcome than the deterministic solution, but will perform better/worse in any given scenario.\nValue of the stochastic solution quantifies expected improvement in performance.\nExpected value of perfect information: amount you might be willing to pay for improved forecasts.\n\n\n\nBEE 4750, Environmental Systems Analysis"
+  },
+  {
     "objectID": "slides/lecture10-2.html#mixed-integer-linear-programming",
     "href": "slides/lecture10-2.html#mixed-integer-linear-programming",
     "title": "Waste Management and Network Models",
@@ -5387,6 +5569,6 @@
     "href": "schedule.html",
     "title": "BEE 4750: Environmental Systems Analysis",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 06\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nFri, Sep 08\nDissolved Oxygen\n\n\n\n\n\n\n\n\nMon, Sep 11\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n\nWed, Sep 13\nUncertainty and Risk\n\n\n\n\n\n\n\n\nFri, Sep 15\nProbability and Monte Carlo Simulation\n\n\n\n\n\n\n\n5\nMon, Sep 18\nLab: Monte Carlo\n\n\n\n\n\n\n\n\nWed, Sep 20\nMonte Carlo, Formally\n\n\n\n\n\n\n\n\nFri, Sep 22\nSimple Climate Models and Uncertainty Propagation\n\n\n\n\n\n\n\n6\nMon, Sep 25\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nWed, Sep 27\nIntroduction to Optimization\n\n\n\n\n\n\n\n\nFri, Sep 29\nLinear Programming\n\n\n\n\n\n\n\n7\nMon, Oct 02\nProject Proposal Peer Review\n\n\n\n\n\n\n\n\nWed, Oct 04\nGuest Lecture: Diana Hackett\n\n\n\n\n\n\n\n\nFri, Oct 06\nLab: Optimization with JuMP.jl\n\n\n\n\n\n\n\n8\nMon, Oct 09\nNo Class: Indigeneous People’s Day\n\n\n\n\n\n\n\n\nWed, Oct 11\nLP Example: Resource Allocation\n\n\n\n\n\n\n\n\nFri, Oct 13\nPower Systems, Generating Capacity Expansion\n\n\n\n\n\n\n\n9\nMon, Oct 16\nEconomic Dispatch\n\n\n\n\n\n\n\n\nWed, Oct 18\nManaging Multiple Air Pollutant Sources\n\n\n\n\n\n\n\n\nFri, Oct 20\nAir Pollution II\n\n\n\n\n\n\n\n10\nMon, Oct 23\nMixed Integer Programming\n\n\n\n\n\n\n\n\nWed, Oct 25\nSolid Waste Management\n\n\n\n\n\n\n\n\nFri, Oct 27\nUnit Commitment\n\n\n\n\n\n\n\n11\nMon, Oct 30\nNo Class: Project Work\n\n\n\n\n\n\n\n\nWed, Nov 1\nNo Class: Project Work\n\n\n\n\n\n\n\n\nFri, Nov 3\nNo Class: Project Work\n\n\n\n\n\n\n\n12\nMon, Nov 6\nSimulation-Optimization\n\n\n\n\n\n\n\n\nWed, Nov 8\nOptimizing with the Lake Problem\n\n\n\n\n\n\n\n\nFri, Nov 10\nLab: Simulation-Optimization\n\n\n\n\n\n\n\n13\nMon, Nov 13\nDecision-Making Under Uncertainty\n\n\n\n\n\n\n\n\nWed, Nov 15\nDecision Trees\n\n\n\n\n\n\n\n\nFri, Nov 17\nStochastic Programming\n\n\n\n\n\n\n\n14\nMon, Nov 20\nDecision-Making Under Uncertainty: Examples\n\n\n\n\n\n\n\n\nWed, Nov 22\nNo Class: Thanksgiving Break\n\n\n\n\n\n\n\n\nFri, Nov 24\nNo Class: Thanksgiving Break\n\n\n\n\n\n\n\n15\nMon, Nov 27\nDeep Uncertainty\n\n\n\n\n\n\n\n\nWed, Nov 29\nRobustness\n\n\n\n\n\n\n\n\nFri, Dec 1\nSensitivity Analysis\n\n\n\n\n\n\n\n16\nMon, Dec 4\nClass Review and Wrap-Up"
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nProject\n\n\n\n\n\n1\nMon, Aug 21\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 23\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n\nFri, Aug 25\nLab: Julia and GitHub Setup\n\n\n\n\n\n\n\n2\nMon, Aug 28\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Aug 30\nExample: Wastewater Transport\n\n\n\n\n\n\n\n\nFri, Sep 01\nExample: Shallow Lake Eutrophication\n\n\n\n\n\n\n\n3\nMon, Sep 04\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 06\nSimulating Systems and Box Models\n\n\n\n\n\n\n\n\nFri, Sep 08\nDissolved Oxygen\n\n\n\n\n\n\n\n\nMon, Sep 11\nDissolved Oxygen Simulation\n\n\n\n\n\n\n\n\nWed, Sep 13\nUncertainty and Risk\n\n\n\n\n\n\n\n\nFri, Sep 15\nProbability and Monte Carlo Simulation\n\n\n\n\n\n\n\n5\nMon, Sep 18\nLab: Monte Carlo\n\n\n\n\n\n\n\n\nWed, Sep 20\nMonte Carlo, Formally\n\n\n\n\n\n\n\n\nFri, Sep 22\nSimple Climate Models and Uncertainty Propagation\n\n\n\n\n\n\n\n6\nMon, Sep 25\nPrescriptive Modeling\n\n\n\n\n\n\n\n\nWed, Sep 27\nIntroduction to Optimization\n\n\n\n\n\n\n\n\nFri, Sep 29\nLinear Programming\n\n\n\n\n\n\n\n7\nMon, Oct 02\nProject Proposal Peer Review\n\n\n\n\n\n\n\n\nWed, Oct 04\nGuest Lecture: Diana Hackett\n\n\n\n\n\n\n\n\nFri, Oct 06\nLab: Optimization with JuMP.jl\n\n\n\n\n\n\n\n8\nMon, Oct 09\nNo Class: Indigeneous People’s Day\n\n\n\n\n\n\n\n\nWed, Oct 11\nLP Example: Resource Allocation\n\n\n\n\n\n\n\n\nFri, Oct 13\nPower Systems, Generating Capacity Expansion\n\n\n\n\n\n\n\n9\nMon, Oct 16\nEconomic Dispatch\n\n\n\n\n\n\n\n\nWed, Oct 18\nManaging Multiple Air Pollutant Sources\n\n\n\n\n\n\n\n\nFri, Oct 20\nAir Pollution II\n\n\n\n\n\n\n\n10\nMon, Oct 23\nMixed Integer Programming\n\n\n\n\n\n\n\n\nWed, Oct 25\nSolid Waste Management\n\n\n\n\n\n\n\n\nFri, Oct 27\nLinear Programming Under Uncertainty\n\n\n\n\n\n\n\n11\nMon, Oct 30\nNo Class: Project Work\n\n\n\n\n\n\n\n\nWed, Nov 1\nNo Class: Project Work\n\n\n\n\n\n\n\n\nFri, Nov 3\nNo Class: Project Work\n\n\n\n\n\n\n\n12\nMon, Nov 6\nSimulation-Optimization\n\n\n\n\n\n\n\n\nWed, Nov 8\nOptimizing with the Lake Problem\n\n\n\n\n\n\n\n\nFri, Nov 10\nLab: Simulation-Optimization\n\n\n\n\n\n\n\n13\nMon, Nov 13\nDecision-Making Under Uncertainty\n\n\n\n\n\n\n\n\nWed, Nov 15\nDecision Trees\n\n\n\n\n\n\n\n\nFri, Nov 17\nStochastic Programming\n\n\n\n\n\n\n\n14\nMon, Nov 20\nDecision-Making Under Uncertainty: Examples\n\n\n\n\n\n\n\n\nWed, Nov 22\nNo Class: Thanksgiving Break\n\n\n\n\n\n\n\n\nFri, Nov 24\nNo Class: Thanksgiving Break\n\n\n\n\n\n\n\n15\nMon, Nov 27\nDeep Uncertainty\n\n\n\n\n\n\n\n\nWed, Nov 29\nRobustness\n\n\n\n\n\n\n\n\nFri, Dec 1\nSensitivity Analysis\n\n\n\n\n\n\n\n16\nMon, Dec 4\nClass Review and Wrap-Up"
   }
 ]

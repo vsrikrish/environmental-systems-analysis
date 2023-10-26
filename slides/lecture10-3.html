@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.3.283">
 
   <meta name="author" content="Vivek Srikrishnan">
-  <meta name="dcterms.date" content="2023-09-08">
-  <title>BEE 4750 - Fall 2023 - Plume Dispersion Models</title>
+  <meta name="dcterms.date" content="2023-10-25">
+  <title>BEE 4750 - Fall 2023 - Linear Programming Under Uncertainty</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -325,6 +325,8 @@
   window.MathJax = {
       {
         minScale: 0.5
+        loader: {load: ['[tex]/tagformat']},
+        tex: {packages: {'[+]': ['tagformat']}}
       }
     };
     MathJax = {
@@ -339,8 +341,8 @@
     }
   };
   </script>
-<meta property="og:title" content="BEE 4750 - Fall 2023 - Plume Dispersion Models">
-<meta property="og:description" content="Lecture 07">
+<meta property="og:title" content="BEE 4750 - Fall 2023 - Linear Programming Under Uncertainty">
+<meta property="og:description" content="Lecture 21">
 <meta property="og:site-name" content="BEE 4750 - Fall 2023">
 </head>
 <body class="quarto-light">
@@ -348,18 +350,19 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-    <h1 class="title">Plume Dispersion Models</h1>
+    <h1 class="title">Linear Programming Under Uncertainty</h1>
   <hr>
-<p class="subtitle">Lecture 07</p>
-<p class="date">September 8, 2023</p>
+<p class="subtitle">Lecture 21</p>
+<p class="date">October 25, 2023</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Overview</h2>
 <ul>
 <li><a href="#/review-and-questions" id="/toc-review-and-questions">Review and Questions</a></li>
-<li><a href="#/plume-dispersion" id="/toc-plume-dispersion">Plume Dispersion</a></li>
+<li><a href="#/decision-making-under-uncertainty" id="/toc-decision-making-under-uncertainty">Decision-Making Under Uncertainty</a></li>
+<li><a href="#/example-land-allocation" id="/toc-example-land-allocation">Example: Land Allocation</a></li>
+<li><a href="#/value-of-the-stochastic-solution" id="/toc-value-of-the-stochastic-solution">Value of the Stochastic Solution</a></li>
 <li><a href="#/key-takeaways" id="/toc-key-takeaways">Key Takeaways</a></li>
-<li><a href="#/upcoming-schedule" id="/toc-upcoming-schedule">Upcoming Schedule</a></li>
 </ul>
 </nav>
 </section>
@@ -368,77 +371,13 @@
 <h1>Review and Questions</h1>
 
 </section>
-<section id="box-models" class="slide level2">
-<h2>Box Models</h2>
+<section id="solid-waste-management" class="slide level2">
+<h2>Solid Waste Management</h2>
 <ul>
-<li>Mass-balance over a spatial “box”</li>
-<li>Can combine multiple boxes together to represent processes over larger spatial domains</li>
+<li>Different types of facilities with different <strong>residual</strong> wastes, which impacts the broader system.</li>
+<li>Model as a <strong>network</strong>, where we care about the flows between different nodes.</li>
+<li>Becomes a mixed integer program if we can choose not to operate facilities.</li>
 </ul>
-</section>
-<section id="simulation-workflow" class="slide level2">
-<h2>Simulation Workflow</h2>
-<div class="cell" data-fig-height="6">
-<div class="cell-output-display">
-<div id="fig-simulation" class="quarto-figure quarto-figure-center">
-<figure>
-<div>
-<svg width="960" height="576" viewbox="0.00 0.00 501.63 351.80" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 347.8)">
-<title>
-G
-</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-347.8 497.63,-347.8 497.63,4 -4,4"></polygon> <!-- Initial Box --> <g id="node1" class="node">
-<title>
-Initial Box
-</title>
-<ellipse fill="none" stroke="black" cx="276.79" cy="-325.8" rx="52.72" ry="18"></ellipse> <text text-anchor="middle" x="276.79" y="-321.6" font-family="Times,serif" font-size="14.00">Initial Box</text> </g> <!-- Inflows --> <g id="node2" class="node">
-<title>
-Inflows
-</title>
-<ellipse fill="none" stroke="black" cx="211.79" cy="-252.8" rx="40.58" ry="18"></ellipse> <text text-anchor="middle" x="211.79" y="-248.6" font-family="Times,serif" font-size="14.00">Inflows</text> </g> <!-- Initial Box&#45;&gt;Inflows --> <g id="edge1" class="edge">
-<title>
-Initial Box-&gt;Inflows
-</title>
-<path fill="none" stroke="black" d="M261.72,-308.33C253.23,-299.06 242.49,-287.33 233.15,-277.13"></path> <polygon fill="black" stroke="black" points="235.67,-274.7 226.34,-269.69 230.51,-279.43 235.67,-274.7"></polygon> </g> <!-- Mixing/Bulk System --> <g id="node3" class="node">
-<title>
-Mixing/Bulk System
-</title>
-<ellipse fill="none" stroke="black" cx="91.79" cy="-179.8" rx="91.58" ry="18"></ellipse> <text text-anchor="middle" x="91.79" y="-175.6" font-family="Times,serif" font-size="14.00">Mixing/Bulk System</text> </g> <!-- Inflows&#45;&gt;Mixing/Bulk System --> <g id="edge2" class="edge">
-<title>
-Inflows-&gt;Mixing/Bulk System
-</title>
-<path fill="none" stroke="black" d="M188.37,-237.94C171.22,-227.79 147.61,-213.83 128.03,-202.24"></path> <polygon fill="black" stroke="black" points="129.75,-199.19 119.36,-197.11 126.18,-205.22 129.75,-199.19"></polygon> </g> <!-- Fate &amp; Transport --> <g id="node4" class="node">
-<title>
-Fate &amp; Transport
-</title>
-<ellipse fill="none" stroke="black" cx="102.79" cy="-91" rx="77.59" ry="18"></ellipse> <text text-anchor="middle" x="102.79" y="-86.8" font-family="Times,serif" font-size="14.00">Fate &amp; Transport</text> </g> <!-- Mixing/Bulk System&#45;&gt;Fate &amp; Transport --> <g id="edge3" class="edge">
-<title>
-Mixing/Bulk System-&gt;Fate &amp; Transport
-</title>
-<path fill="none" stroke="black" d="M93.96,-161.65C95.5,-149.52 97.59,-133.02 99.35,-119.12"></path> <polygon fill="black" stroke="black" points="102.84,-119.47 100.62,-109.11 95.89,-118.59 102.84,-119.47"></polygon> </g> <!-- Outflows --> <g id="node5" class="node">
-<title>
-Outflows
-</title>
-<ellipse fill="none" stroke="black" cx="211.79" cy="-18" rx="46.96" ry="18"></ellipse> <text text-anchor="middle" x="211.79" y="-13.8" font-family="Times,serif" font-size="14.00">Outflows</text> </g> <!-- Fate &amp; Transport&#45;&gt;Outflows --> <g id="edge4" class="edge">
-<title>
-Fate &amp; Transport-&gt;Outflows
-</title>
-<path fill="none" stroke="black" d="M127.52,-73.89C143.25,-63.65 163.75,-50.3 180.58,-39.33"></path> <polygon fill="black" stroke="black" points="182.54,-42.23 189.01,-33.84 178.72,-36.36 182.54,-42.23"></polygon> </g> <!-- Outflows&#45;&gt;Initial Box --> <g id="edge6" class="edge">
-<title>
-Outflows-&gt;Initial Box
-</title>
-<path fill="none" stroke="brown" d="M255.78,-24.49C293.83,-32 342.79,-49.52 342.79,-90 342.79,-253.8 342.79,-253.8 342.79,-253.8 342.79,-274.58 327.44,-291.83 311.54,-304.13"></path> <polygon fill="brown" stroke="brown" points="309.32,-301.41 303.26,-310.09 313.41,-307.09 309.32,-301.41"></polygon> <text text-anchor="middle" x="418.21" y="-175.6" font-family="Times,serif" font-size="14.00" fill="brown">Repeat for Next Time Step</text> </g> <!-- Outflows&#45;&gt;Inflows --> <g id="edge5" class="edge">
-<title>
-Outflows-&gt;Inflows
-</title>
-<path fill="none" stroke="red" d="M211.79,-36.14C211.79,-76.19 211.79,-176.17 211.79,-224.62"></path> <polygon fill="red" stroke="red" points="208.29,-224.68 211.79,-234.68 215.29,-224.68 208.29,-224.68"></polygon> <text text-anchor="middle" x="269.91" y="-131.2" font-family="Times,serif" font-size="14.00" fill="red">Repeat for Next Box</text> </g> </g>
-</svg>
-</div>
-<p></p><figcaption>Figure&nbsp;1: <strong>?(caption)</strong></figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
 </section>
 <section id="questions" class="slide level2">
 <h2>Questions</h2>
@@ -456,277 +395,367 @@ Outflows-&gt;Inflows
 </div>
 </section></section>
 <section>
-<section id="plume-dispersion" class="title-slide slide level1 center">
-<h1>Plume Dispersion</h1>
+<section id="decision-making-under-uncertainty" class="title-slide slide level1 center">
+<h1>Decision-Making Under Uncertainty</h1>
 
 </section>
-<section id="criteria-air-pollutants" class="slide level2">
-<h2>Criteria Air Pollutants</h2>
-<ul>
-<li>Pollutants which have an ambient air quality standard.</li>
-<li>Most common examples:
-<ul>
-<li>PM2.5, PM10</li>
-<li>O<sub>3</sub></li>
-<li>CO</li>
-<li>SO<sub>2</sub></li>
-<li>NO<sub>2</sub></li>
-</ul></li>
-</ul>
+<section id="certainty-and-lp" class="slide level2">
+<h2>Certainty and LP</h2>
+<p><strong>Certainty</strong> (<em>e.g.</em> all parameters and relationships between decision variables and outcomes are known) is a key assumption of linear programming.</p>
+<p>But most systems problems aren’t actually deterministic.</p>
 </section>
-<section id="impact-of-the-clean-air-act" class="slide level2">
-<h2>Impact of the Clean Air Act</h2>
-
-<img data-src="https://media.rff.org/images/clean_air_PR.width-1480.png" class="r-stretch quarto-figure-center"><p class="caption">Decoupling of GDP and Air Pollution</p><div class="caption">
-<p>Source: <a href="https://www.rff.org/news/press-releases/clean-air-act-successes-and-challenges-1970/">Resources for the Future</a></p>
+<section id="approaches-to-decision-making-under-uncertainty" class="slide level2">
+<h2>Approaches to Decision-Making Under Uncertainty</h2>
+<p><strong>A Common Approach</strong>:</p>
+<ol type="1">
+<li>Solve deterministic problem using best estimates.</li>
+<li>Stress-test solution with Monte Carlo or include additional safety margins (more on this later).</li>
+</ol>
+</section>
+<section id="representing-uncertainty-in-mathematical-programs" class="slide level2">
+<h2>Representing Uncertainty in Mathematical Programs</h2>
+<p><strong>Alternative</strong>:</p>
+<ol type="1">
+<li>Solve a <em>stochastic</em> problem for best expected performance (or similar summary statistic).</li>
+</ol>
+<div class="fragment fade-in">
+<p>We can represent uncertainty through scenarios and (conditional) sequential events, then rewrite the decision problem.</p>
 </div>
+</section></section>
+<section>
+<section id="example-land-allocation" class="title-slide slide level1 center">
+<h1>Example: Land Allocation</h1>
+
 </section>
-<section id="some-approaches-for-modeling-air-pollution" class="slide level2">
-<h2>Some Approaches For Modeling Air Pollution</h2>
-<p><strong>Last Class</strong>: Box (or “airshed”) model of air pollution</p>
+<section id="land-allocationfarmer-problem" class="slide level2">
+<h2>Land Allocation/Farmer Problem</h2>
+<p>A farmer can grow wheat, corn, and sugar beets on 500 ha of land. How much land should they allocate to each crop?</p>
+</section>
+<section id="key-information-for-problem" class="slide level2">
+<h2>Key information For Problem</h2>
 <ul>
-<li>Looks at overall mass-balance.</li>
-<li>Total inputs/outputs in a particular boundary.</li>
+<li>Planting costs are $150, $230, and $260 per acre for wheat, corn, and sugar beets, respectively.</li>
+<li>The farmer requires 200T of wheat and 240T kg of corn for feed, and excess can be sold for $170 and $150 per T, respectively.</li>
+<li>Purchasing crops costs $40 more than the selling prices.</li>
+<li>Sugar beets are sold at $36/T up to 6000T, at which point the price drops to $10 per T.</li>
 </ul>
-<p><strong>Today</strong>: Point sources and receptors (<em>plume</em>/puff models)</p>
 </section>
-<section id="point-sourcesreceptors" class="slide level2">
-<h2>Point Sources/Receptors</h2>
-<p>Concerned about dispersal from a point source:</p>
-
-<img data-src="figures/air-pollution.png" class="r-stretch quarto-figure-center"><p class="caption">Point Source/Receptor Schematic</p></section>
-<section id="point-sourcesreceptors-1" class="slide level2">
-<h2>Point Sources/Receptors</h2>
-<p>At a given instant, flow from source to receptor follows a path:</p>
-
-<img data-src="figures/air-pollution-instant.png" class="r-stretch quarto-figure-center"><p class="caption">Point Source Flow Traces</p></section>
-<section id="point-sourcesreceptors-2" class="slide level2">
-<h2>Point Sources/Receptors</h2>
-<p>Averaging those traces over time gives us a “plume”:</p>
-
-<img data-src="figures/air-pollution-plume-timeavg.png" class="r-stretch quarto-figure-center"><p class="caption">Point Source Average Plume</p></section>
-<section id="point-sourcesreceptors-3" class="slide level2">
-<h2>Point Sources/Receptors</h2>
-<p>What is the distribution of pollutant above the receptor?</p>
-
-<img data-src="figures/air-pollution-plume-timeavg.png" class="r-stretch quarto-figure-center"><p class="caption">Point Source Average Plume</p></section>
-<section id="gaussian-plume" class="slide level2">
-<h2>“Gaussian Plume”</h2>
-<p>We can reason that the concentration follows a “bell curve”:</p>
-
-<img data-src="figures/air-pollution-plume-shape.png" class="r-stretch quarto-figure-center"><p class="caption">Gaussian Plume</p></section>
-<section id="gaussian-plume-1" class="slide level2">
-<h2>“Gaussian Plume”</h2>
-<p>We can reason that the concentration follows a “bell curve”:</p>
-
-<img data-src="figures/air-pollution-plume-dist.png" class="r-stretch quarto-figure-center"><p class="caption">Gaussian Plume Distribution</p></section>
-<section id="gaussian-plume-2" class="slide level2">
-<h2>“Gaussian Plume”</h2>
-<p>Not illustrated, but this reasoning also applies cross-wind (<span class="math inline">\(y\)</span>).</p>
-
-<img data-src="figures/air-pollution-plume-dist.png" class="r-stretch quarto-figure-center"><p class="caption">Gaussian Plume Distribution</p></section>
-<section id="gaussian-plume-model" class="slide level2">
-<h2>Gaussian Plume Model</h2>
-<p><span class="math display">\[\begin{equation}
-C(x,y,z) = \frac{Q}{2\pi u \sigma_y \sigma_z} \exp\left[-\frac{1}{2} \left(\frac{y^2}{\sigma_y^2} + \frac{(z - H)^2}{\sigma_z^2}\right)\right]
-\end{equation}\]</span></p>
+<section id="farm-yields" class="slide level2">
+<h2>Farm Yields</h2>
+<p>From prior experience, the farmer knows that in an average year, yields are:</p>
+<ul>
+<li>2.5 T/acre for wheat;</li>
+<li>3 T/acre per corn;<br>
+</li>
+<li>20T/acre for beets.</li>
+</ul>
+</section>
+<section id="decision-variables" class="slide level2">
+<h2>Decision Variables</h2>
+<p><strong><em>What are the decision variables?</em></strong></p>
+<div class="fragment fade-in">
 <table>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Variable</th>
-<th style="text-align: left;">Meaning</th>
+<th style="text-align: left;">Definition</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(C\)</span></td>
-<td style="text-align: left;">Concentration (g/m<span class="math inline">\(^3\)</span>)</td>
+<td style="text-align: center;"><span class="math inline">\(x_i\)</span></td>
+<td style="text-align: left;">acres of crop <span class="math inline">\(i\)</span> planted</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(Q\)</span></td>
-<td style="text-align: left;">Emissions Rate (g/s)</td>
+<td style="text-align: center;"><span class="math inline">\(y_i\)</span></td>
+<td style="text-align: left;">T of crop <span class="math inline">\(i\)</span> purchased</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(H\)</span></td>
-<td style="text-align: left;">Effective Source Height (m)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(u\)</span></td>
-<td style="text-align: left;">Wind Speed (m/s)</td>
+<td style="text-align: center;"><span class="math inline">\(z_i\)</span></td>
+<td style="text-align: left;">T of crop <span class="math inline">\(i\)</span> sold</td>
 </tr>
 </tbody>
 </table>
+</div>
+<p>One twist: sold beets will be represented by two different <span class="math inline">\(z\)</span>-variables (<span class="math inline">\(z_3\)</span> and <span class="math inline">\(z_4\)</span>), based on whether we exceed 6000T.</p>
 </section>
-<section id="gaussian-plume-derivation" class="slide level2">
-<h2>Gaussian Plume Derivation</h2>
-<p>Use the <strong>advective-diffusion equation</strong> to describe the mass-balance of a small air parcel :</p>
-<p><span class="math display">\[ \frac{\partial C}{\partial t} + \color{blue}\overbrace{[D + K] \nabla^2 C}^\text{diffusion} \color{black} - \color{red}\overbrace{\overrightarrow{u} \cdot \overrightarrow{\nabla} C}^\text{advection}\]</span></p>
-<ul>
-<li><span class="math inline">\(D\)</span> is the diffusion coefficient</li>
-<li><span class="math inline">\(K\)</span> is the dispersion coefficient (turbulent mixing)</li>
-</ul>
-</section>
-<section id="diffusive-flux" class="slide level2">
-<h2>Diffusive Flux</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/diffusion-flux.png"></p>
-<p></p><figcaption>Diffusive Flux</figcaption><p></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<p>Concentration gradient + Diffusion ⇒ Flux</p>
-<p><strong>Fick’s law</strong>: mass transfer by diffusion</p>
-<p><span class="math display">\[F_x = D \frac{dC}{dx}\]</span></p>
-</div>
-</div>
-</section>
-<section id="turbulent-flux" class="slide level2">
-<h2>Turbulent Flux</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/turbulent-flux.png"></p>
-<p></p><figcaption>Turbulent Flux</figcaption><p></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<p>Concentration gradient + Turbulent mixing ⇒ Flux</p>
-<p><span class="math display">\[F_x = K_{xx}\frac{dC}{dx}\]</span></p>
-<p>The dispersion coefficient <span class="math inline">\(K_{xx}\)</span> depends on flow/eddy characteristics.</p>
-</div>
-</div>
-</section>
-<section id="gaussian-plume-model-derivation" class="slide level2">
-<h2>Gaussian Plume Model Derivation</h2>
-<p><span class="math display">\[\frac{\partial C}{\partial t} + \vec{u} \cdot \vec{\nabla} C  - [D + K] \nabla^2 C  = 0\]</span></p>
-<p><strong>Assumptions</strong>:</p>
-<ul>
-<li>Steady-state:</li>
-</ul>
-<p><span class="math display">\[ \frac{\partial C}{\partial t} = 0\]</span></p>
-</section>
-<section id="gaussian-plume-model-derivation-1" class="slide level2">
-<h2>Gaussian Plume Model Derivation</h2>
-<p><span class="math display">\[\frac{\partial C}{\partial t} + \vec{u} \cdot \vec{\nabla} C  - [D + K] \nabla^2 C  = 0\]</span></p>
-<p><strong>Assumptions</strong>:</p>
-<ul>
-<li>Wind only in <span class="math inline">\(x\)</span>-direction:</li>
-</ul>
-<p><span class="math display">\[\vec{u} \cdot \vec{\nabla} C = u_x \frac{\partial C}{\partial x} + \cancel{u_y \frac{\partial C}{\partial y}} + \cancel{u_z \frac{\partial C}{\partial z}}\]</span></p>
-</section>
-<section id="gaussian-plume-model-derivation-2" class="slide level2">
-<h2>Gaussian Plume Model Derivation</h2>
-<p><span class="math display">\[\frac{\partial C}{\partial t} + \vec{u} \cdot \vec{\nabla} C  - [D + K] \nabla^2 C  = 0\]</span></p>
-<p><strong>Assumptions</strong>:</p>
-<ul>
-<li>Turbulence <span class="math inline">\(\gg\)</span> diffusion, e.g.&nbsp;<span class="math inline">\(K \gg D\)</span>, and <span class="math inline">\(K\)</span> is unimportant along <span class="math inline">\(x\)</span>-direction:</li>
-</ul>
-<p><span class="math display">\[-[\cancel{D} + K] \nabla^2 C = \cancel{K_{xx}} \frac{\partial^2 C}{\partial x^2} + K_{yy} \frac{\partial^2 C}{\partial y^2} + K_{zz} \frac{\partial^2 C}{\partial z^2}\]</span></p>
-</section>
-<section id="gaussian-plume-model-derivation-3" class="slide level2">
-<h2>Gaussian Plume Model Derivation</h2>
-<p>With these assumptions, the equation simplifies to:</p>
-<p><span class="math display">\[u \frac{\partial C}{\partial x} = K_{yy} \frac{\partial^2 C}{\partial y^2} + K_{zz}\frac{\partial^2 C}{\partial z^2}\]</span></p>
-<div class="fragment fade-in">
-<div class="columns">
-<div class="column" style="width:70%;">
-<p>Assume mass flow through vertical plane downwind must equal emissions rate <span class="math inline">\(Q\)</span>:</p>
-<p><span class="math display">\[Q = \iint u C dy dz\]</span></p>
-</div><div class="column" style="width:30%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/boundary-mass.png"></p>
-<p></p><figcaption>Boundary Condition for A-D Equation</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="gaussian-plume-model-derivation-4" class="slide level2">
-<h2>Gaussian Plume Model Derivation</h2>
-<p>Solving this PDE:</p>
-<p><span class="math display">\[C(x,y,z) = \frac{Q}{4\pi x \sqrt{K_{yy} + K_{zz}}} \exp\left[-\frac{u}{4x}\left(\frac{y^2}{K_{yy}} + \frac{(z-H)^2}{K_{zz}}\right)\right]\]</span></p>
-<div class="fragment fade-in">
-<p>Now substitute</p>
-<p><span class="math display">\[\begin{aligned}
-\sigma_y^2 &amp;= 2 K_{yy} t = 2 K_{yy} \frac{x}{u} \\
-\sigma_z^2 &amp;= 2 K_{zz} \frac{x}{u}
-\end{aligned}\]</span></p>
-</div>
-</section>
-<section id="gaussian-plume-model-derivation-5" class="slide level2">
-<h2>Gaussian Plume Model Derivation</h2>
-<p>This results in:</p>
+<section id="deterministic-problem-formulation" class="slide level2">
+<h2>Deterministic Problem Formulation</h2>
 <p><span class="math display">\[
-C(x,y,z) = \frac{Q}{2\pi u \sigma_y \sigma_z} \exp\left[-\frac{1}{2}\left(\frac{y^2}{\sigma_y^2} + \frac{(z-H)^2}{\sigma_z^2}\right) \right]\]</span></p>
-<p>which looks like a Gaussian distribution probability distribution if we restrict to <span class="math inline">\(y\)</span> or <span class="math inline">\(z\)</span>.</p>
+\begin{align}
+\min_{x, y, z} &amp; \quad 150x_1 + 230 x_2 + 260 x_3 + 238 y_1 + 210 y_2 - 170 z_1 \\
+&amp; \qquad -150z_2 - 36z_3 - 10z_4 \\[1ex]
+\text{subject to:} \quad &amp; x_1 + x_2 + x_3 \leq 500 \\[0.5ex]
+&amp; 2.5 x_1 + y_1 - z_1 \geq 200 \\[0.5ex]
+&amp; 3 x_2 + y_2 - z_2 \geq 240 \\[0.5ex]
+&amp; z_3 + z_4 \leq 20 x_3 \\[0.5ex]
+&amp; z_3 \leq 6000 \\[0.5ex]
+&amp; x_i, y_i, z_i \geq 0
+\end{align}
+\]</span></p>
 </section>
-<section id="gaussian-plume-model-with-reflection" class="slide level2">
-<h2>Gaussian Plume Model with Reflection</h2>
-<p>Last piece: the ground dampens vertical dispersion.</p>
-
-<img data-src="figures/reflection.png" class="r-stretch quarto-figure-center"><p class="caption">Reflected Mass Off Ground</p></section>
-<section id="gaussian-plume-model-with-reflection-1" class="slide level2">
-<h2>Gaussian Plume Model with Reflection</h2>
+<section id="deterministic-solution" class="slide level2">
+<h2>Deterministic Solution</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: center;">Wheat</th>
+<th style="text-align: center;">Corn</th>
+<th style="text-align: center;">Beets</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Area (acres)</td>
+<td style="text-align: center;">120</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">300</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Yield (T)</td>
+<td style="text-align: center;">300</td>
+<td style="text-align: center;">240</td>
+<td style="text-align: center;">6000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sales (T)</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">6000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Purchased (T)</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+</tr>
+</tbody>
+</table>
+<p>This solution yields a profit of $118,600.</p>
+</section>
+<section id="what-about-uncertainty" class="slide level2">
+<h2>What About Uncertainty?</h2>
+<p>But yields tend to vary from year to year. From prior experience, the historical variability is:</p>
+<ul>
+<li>in a good year, yields can be 20% above average;</li>
+<li>in a bad year, yields can be 20% below average.</li>
+</ul>
+<div class="fragment fade-in">
+<p>To simplify things, let’s assume these yields vary consistently across crops and that each scenario (average, good, bad) has an equal probability of occurrence.</p>
+</div>
+</section>
+<section id="stochastic-decision-variables" class="slide level2">
+<h2>Stochastic Decision Variables</h2>
+<p><strong><em>What should change about our decision variables?</em></strong></p>
+<div class="fragment fade-in">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(x_i\)</span></td>
+<td style="text-align: left;">acres of crop <span class="math inline">\(i\)</span> planted</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(y_{ij}\)</span></td>
+<td style="text-align: left;">T of crop <span class="math inline">\(i\)</span> purchased in scenario <span class="math inline">\(j\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(z_{ij}\)</span></td>
+<td style="text-align: left;">T of crop <span class="math inline">\(i\)</span> sold in scenario <span class="math inline">\(j\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="two-stage-problems" class="slide level2">
+<h2>Two-Stage Problems</h2>
+<p>This is typical of a <strong>two-stage</strong> decision problem:</p>
+<ol type="1">
+<li>Make an <strong>initial</strong> decision (<em>e.g.</em> how much to plant) which must be committed to ahead of knowing the stochastic realization;</li>
+<li>Make a subsequent <strong>recourse</strong> decision based on the realization (<em>e.g.</em> do we have to purchase additional crops?)</li>
+</ol>
+</section>
+<section id="stochastic-objective" class="slide level2">
+<h2>Stochastic Objective</h2>
+<p><strong><em>How can we formulate an objective?</em></strong></p>
+<div class="fragment fade-in">
+<p><strong>First choice: what statistic are we trying to optimize?</strong></p>
+<div class="fragment fade-in">
+<p>Let’s choose the expected value <span class="math inline">\(\mathbb{E}\left[\text{Profit}\right]\)</span>.</p>
+<p>Other possible choices: quantiles (<em>robust optimization</em>) to hedge against worst-case outcomes, variance (to minimize year-on-year fluctuations).</p>
+</div>
+</div>
+</section>
+<section id="probabilities-and-scenario-trees" class="slide level2">
+<h2>Probabilities and Scenario Trees</h2>
 <div class="columns">
-<div class="column" style="width:30%;">
-<p>We can account for this extra term using a flipped “image” of the source.</p>
-</div><div class="column" style="width:40%;">
+<div class="column" style="width:55%;">
+<p>Since we have a discrete (and small) set of possible outcomes, we can use a <strong>scenario tree</strong> to write out the possible outcomes.</p>
+</div><div class="column" style="width:45%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/reflection-image.png"></p>
-<p></p><figcaption>Reflected Mass Off Ground</figcaption><p></p>
+<p><img data-src="figures/farm-scen-tree.svg"></p>
+<p></p><figcaption>Scenario Tree for Farmer Problem</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="final-model-elevated-source-with-reflection" class="slide level2">
-<h2>Final Model: Elevated Source with Reflection</h2>
+<section id="stochastic-objective-1" class="slide level2">
+<h2>Stochastic Objective</h2>
+<p>Our new objective becomes:</p>
+<p><span class="math display">\[\begin{alignedat}{2}
+&amp;\min_{x, y, z} &amp; &amp; \quad 150x_1 + 230x_2 + 260x_3 \\[0.5ex]
+&amp; &amp;&amp;\qquad -\frac{1}{3} \left(170z_{11} + 150z_{21} + 36z_{31} + 10z_{41} - 238y_{11} - 210 y_{21}\right) \\[0.5ex]
+&amp; &amp;&amp;\qquad -\frac{1}{3} \left(170z_{12} + 150z_{22} + 36z_{32} + 10z_{42} - 238y_{12} - 210 y_{22}\right) \\[0.5ex]
+&amp; &amp;&amp;\qquad -\frac{1}{3} \left(170z_{13} + 150z_{23} + 36z_{33} + 10z_{43} - 238y_{13} - 210 y_{23}\right)
+\end{alignedat}\]</span></p>
+</section>
+<section id="stochastic-contraints" class="slide level2">
+<h2>Stochastic Contraints</h2>
+<p><span class="math display">\[\begin{alignedat}{2}
+&amp;x_1 + x_2 + x_3 \leq 500 \\[0.5ex]
+&amp;\color{blue}3x_1 + y_{11} - z_{11} \geq 200, &amp;&amp; \qquad  \color{blue}3.6x_2 + y_{21} - z_{21} \geq 240 \\[0.5ex]
+&amp;\color{blue}z_{31} + z_{41} \leq 24x_3, &amp;&amp; \qquad \color{blue}z_{31} \leq 6000 \\[0.5ex]
+&amp;\color{purple}2.5x_1 + y_{12} - z_{12} \geq 200, &amp;&amp; \qquad \color{purple}3x_2 + y_{22} - z_{22} \geq 240 \\[0.5ex]
+&amp;\color{purple}z_{32} + z_{42} \leq 20x_3, &amp;&amp; \qquad \color{purple}z_{32} \leq 6000 \\[0.5ex]
+&amp;\color{red}2x_1 + y_{13} - z_{13} \geq 200, &amp;&amp; \qquad \color{red}2.4x_2 + y_{23} - z_{23} \geq 240 \\[0.5ex]
+&amp;\color{red}z_{33} + z_{43} \leq 16x_3, &amp;&amp; \qquad \color{red}z_{33} \leq 6000 \\[0.5ex]
+&amp;x_i, y_i, z_i \geq 0
+\end{alignedat}\]</span></p>
+</section>
+<section id="stochastic-solution" class="slide level2">
+<h2>Stochastic Solution</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: center;">Wheat</th>
+<th style="text-align: center;">Corn</th>
+<th style="text-align: center;">Beets</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Deterministic Area (acres)</td>
+<td style="text-align: center;">120</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">300</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stochastic Area (acres)</td>
+<td style="text-align: center;">170</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">250</td>
+</tr>
+</tbody>
+</table>
+<p>How do we interpret the differences?</p>
+<div class="fragment fade-in">
+<ul>
+<li><strong>Good year</strong>: Won’t waste acreage on extra beets (6000T yield in stochastic solution, 7200T for deterministic)</li>
+<li><strong>Bad year</strong>: Will make less off beets, profits from wheat should help cover extra corn purchase.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="value-of-the-stochastic-solution" class="title-slide slide level1 center">
+<h1>Value of the Stochastic Solution</h1>
+
+</section>
+<section id="comparing-deterministic-and-stochastic-solution" class="slide level2">
+<h2>Comparing Deterministic and Stochastic Solution</h2>
+<ul>
+<li><strong>Deterministic Solution</strong>: “Expected” Profit (no uncertainty) = $118,600</li>
+<li><strong>Stochastic Solution</strong>: <span class="math inline">\(\mathbb{E}[\text{Profit}]\)</span> = $108,390.</li>
+</ul>
+<div class="fragment fade-in">
+<p><strong><em>Can we directly compare the deterministic and stochastic solution values that we have obtained so far?</em></strong></p>
+</div>
+</section>
+<section id="expected-performance-of-deterministic-solution" class="slide level2">
+<h2>Expected Performance of Deterministic Solution</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Year</th>
+<th style="text-align: center;">Deterministic Profit</th>
+<th style="text-align: center;">Stochastic Profit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Good</td>
+<td style="text-align: center;">$148,000</td>
+<td style="text-align: center;">$167,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Average</td>
+<td style="text-align: center;">$118,600</td>
+<td style="text-align: center;">$109,350</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bad</td>
+<td style="text-align: center;">$56,800</td>
+<td style="text-align: center;">$48,820</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Expected Profit from Deterministic Solution <em>under uncertainty</em></strong>: $107,240</p>
+</section>
+<section id="value-of-the-stochastic-solution-1" class="slide level2">
+<h2>Value of the Stochastic Solution</h2>
+<p>We can now compare the difference in expected profits <em>under uncertainty</em>, which is the fair comparison.</p>
+<p>This is called the <strong>value of the stochastic solution (VSS)</strong>, or sometimes the <strong>expected value of including uncertainty (EVIU)</strong>.</p>
 <p><span class="math display">\[\begin{aligned}
-C(x,y,z) = &amp;\frac{Q}{2\pi u \sigma_y \sigma_z} \exp\left(\frac{-y^2}{2\sigma_y^2} \right) \times \\\\
-&amp; \quad \left[\exp\left(\frac{-(z-H)^2}{2\sigma_z^2}\right) + \exp\left(\frac{-(z+H)^2}{2\sigma_z^2}\right) \right]
+VSS &amp;= \mathbb{E}[\text{Stochastic Profit}] - \mathbb{E}[\text{Deterministic Profit}] \\[0.5ex]
+&amp;= \$108,390 - \$107,240 \\[0.5ex]
+&amp;= \$1,150.
 \end{aligned}\]</span></p>
 </section>
-<section id="final-model-assumptions" class="slide level2">
-<h2>Final Model Assumptions</h2>
-<p><strong>Assumptions</strong>:</p>
-<ol type="1">
-<li>Steady-State</li>
-<li>Constant wind velocity and direction</li>
-<li>Wind &gt;&gt; dispersion in <span class="math inline">\(x\)</span>-direction</li>
-<li>No reactions</li>
-<li>Smooth ground (avoids turbulent eddies and other reflections)</li>
-</ol>
+<section id="expected-value-of-perfect-information" class="slide level2">
+<h2>Expected Value of Perfect Information</h2>
+<p>Another relevant quantity, the <strong>expected value of perfect information (EVPI)</strong>, concerns the value associated with better forecasts.</p>
+</section>
+<section id="expected-value-of-perfect-information-1" class="slide level2">
+<h2>Expected Value of Perfect Information</h2>
+<p>If the farmer had perfect foresight and could allocate acreage <span class="math inline">\(x\)</span> accordingly and sell/purchase <span class="math inline">\(z\)</span> and <span class="math inline">\(y\)</span> optimally (versus taking the 1/3-probability stochastic solution),</p>
+<p><span class="math display">\[\mathbb{E}[\text{Profits} | \text{perfect information}] = \sum_j p_j \times \text{Profits}_j = \$115,405.\]</span></p>
+<div class="fragment fade-in">
+<p><span class="math display">\[\text{EVPI} = \$115,405 - \$108,390 = \$7,015\]</span></p>
+<p>The EVPI can be interpreted as the amount <em>the farmer might be willing to pay</em> for an improved forecast.</p>
+</div>
 </section></section>
 <section>
 <section id="key-takeaways" class="title-slide slide level1 center">
 <h1>Key Takeaways</h1>
 
 </section>
-<section id="key-takeaways-1" class="slide level2">
-<h2>Key Takeaways</h2>
+<section id="decision-making-and-uncertainty" class="slide level2">
+<h2>Decision-Making and Uncertainty</h2>
 <ul>
-<li>Plume models are commonly used for point sources and point receptors.</li>
-<li><strong>Gaussian plumes</strong>: continuous emissions from an elevated source.</li>
-<li>F&amp;T determined by advection and diffusion/turbulence.</li>
-<li>However, number of critical assumptions.</li>
+<li>A solution obtained assuming deterministic outcomes might “on paper” yield better anticipated outcomes.</li>
+<li>Common approach is a two-stage optimization framework:
+<ul>
+<li>Make an initial decision;</li>
+<li>Recourse based on which scenario is realized.</li>
+</ul></li>
+<li>Scenario trees help build out the representation of outcomes and probabilities.</li>
 </ul>
-</section></section>
-<section>
-<section id="upcoming-schedule" class="title-slide slide level1 center">
-<h1>Upcoming Schedule</h1>
-
 </section>
-<section id="next-classes" class="slide level2">
-<h2>Next Classes</h2>
-<p><strong>Monday</strong>: Gaussian Plume Dispersion and Example</p>
-<p><strong>Wednesday/Friday</strong>: Uncertainty, Risk and Monte Carlo</p>
+<section id="value-of-the-stochastic-solution-2" class="slide level2">
+<h2>Value of the Stochastic Solution</h2>
+<ul>
+<li>Solutions to stochastic problems can produce a better expected outcome than the deterministic solution, but will perform better/worse in any given scenario.</li>
+<li>Value of the stochastic solution quantifies expected improvement in performance.</li>
+<li>Expected value of perfect information: amount you might be willing to pay for improved forecasts.</li>
+</ul>
 
 <div class="footer footer-default">
 <p><a href="https://viveks.me/environmental-systems-analysis">BEE 4750, Environmental Systems Analysis</a></p>

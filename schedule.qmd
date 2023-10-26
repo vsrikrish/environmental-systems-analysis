@@ -38,7 +38,7 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 |    | Fri, Oct 20 | Air Pollution II | [{{< fa sharp presentation-screen >}}](slides/lecture09-3.qmd){target="_blank"} | |  | |
 |  10 | Mon, Oct 23 | Mixed Integer Programming | [{{< fa sharp presentation-screen >}}](slides/lecture10-1.qmd){target="_blank"} |  | | |
 |     | Wed, Oct 25 | Solid Waste Management | [{{< fa sharp presentation-screen >}}](slides/lecture10-2.qmd){target="_blank"} | |  | |
-|     | Fri, Oct 27 |  Unit Commitment | | | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} |
+|     | Fri, Oct 27 |  Linear Programming Under Uncertainty | [{{< fa sharp presentation-screen >}}](slides/lecture10-3.qmd){target="_blank"} | | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} |
 |  11   | Mon, Oct 30 | **No Class: Project Work** | |  | [{{< fa sharp pen-field >}}](hw/hw05/hw05.qmd) | |
 |    | Wed, Nov 1 | **No Class: Project Work** | | | | |
 |   | Fri, Nov 3 | **No Class: Project Work** | | | |

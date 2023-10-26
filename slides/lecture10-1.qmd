@@ -273,8 +273,8 @@ $$
 & x_2 \geq 2 \\
 & 3x_1 + x_2 \leq 19 \\
 & x_1, x_2 \geq 0 \\
-& {\color{red}x_2 \leq 5} \qquad (\text{node}\, 2) \\
-& {\color{blue}x_2 \geq 6} \qquad (\text{node}\, 3) \\
+& {\color{red}x_2 \leq 2} \qquad (\text{node}\, 2) \\
+& {\color{blue}x_2 \geq 3} \qquad (\text{node}\, 3) \\
 \end{align}
 $$
 

@@ -20,3 +20,6 @@
 [submodule "labs/lab03"]
 	path = labs/lab03
 	url = https://github.com/BEE4750/lab03.git
+[submodule "hw/hw05"]
+	path = hw/hw05
+	url = https://github.com/BEE4750/hw05.git

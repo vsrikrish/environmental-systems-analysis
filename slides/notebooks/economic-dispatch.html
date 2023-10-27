@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.283">
+<meta name="generator" content="quarto-1.4.388">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -84,6 +84,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "panel-placement": "start",
   "type": "textbox",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -93,7 +99,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <!-- MathJax 3 -->
@@ -112,9 +119,8 @@ window.MathJax = {
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta property="og:title" content="BEE 4750 - Fall 2023 - Economic Dispatch with JuMP">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://viveks.me/environmental-systems-analysis/slides/figures/duck_curve.jpeg">
-<meta property="og:site-name" content="BEE 4750 - Fall 2023">
+<meta property="og:description" content="Homepage for BEE 4750/57e50, Environmental Systems Analysis, at Cornell University, Fall 2023.">
+<meta property="og:site_name" content="BEE 4750 - Fall 2023">
 </head>
 
 <body class="nav-sidebar docked">
@@ -126,10 +132,12 @@ window.MathJax = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">BEE 4750/5750</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      {{&lt; var course.number &gt;}}
+      </li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -367,7 +375,7 @@ window.MathJax = {
   <li><a href="#jump-implementation" id="toc-jump-implementation" class="nav-link" data-scroll-target="#jump-implementation">JuMP Implementation</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/vsrikrish/environmental-systems-analysis/blob/main/slides/notebooks/economic-dispatch.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/vsrikrish/environmental-systems-analysis/blob/main/slides/notebooks/economic-dispatch.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -399,9 +407,11 @@ window.MathJax = {
   </div>
   
 
+
 </header>
 
-<div class="cell" data-scrolled="true" data-execution_count="183">
+
+<div id="cell-1" class="cell" data-scrolled="true" data-execution_count="183">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
@@ -412,7 +422,7 @@ window.MathJax = {
 <pre><code>  Activating project at `~/Teaching/environmental-systems-analysis/website/slides`</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="184">
+<div id="cell-2" class="cell" data-execution_count="184">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span>
@@ -432,7 +442,7 @@ window.MathJax = {
 <section id="single-period-economic-dispatch" class="level2">
 <h2 class="anchored" data-anchor-id="single-period-economic-dispatch">Single-Period Economic Dispatch</h2>
 <p>Let’s say that we have a fleet of the following generators.</p>
-<div class="cell" data-execution_count="185">
+<div id="cell-spgen-data" class="cell" data-execution_count="185">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>header <span class="op">=</span> [<span class="st">"Plant"</span>, <span class="st">"P&lt;sub&gt;min&lt;/sub&gt; (MW)"</span>, <span class="st">"P&lt;sub&gt;max&lt;/sub&gt; (MW)"</span>, <span class="st">"VarCost (\$/MW)"</span>]</span>
@@ -446,7 +456,7 @@ window.MathJax = {
 <div id="spgen-data" class="cell-output cell-output-display">
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <thead>
-<tr class="header header headerLastRow">
+<tr class="header headerLastRow">
 <th style="text-align: right;" data-quarto-table-cell-role="th">Plant</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">P<sub>min</sub> (MW)</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">P<sub>max</sub> (MW)</th>
@@ -492,7 +502,7 @@ window.MathJax = {
 </section>
 <section id="jump-formulation" class="level2">
 <h2 class="anchored" data-anchor-id="jump-formulation">JuMP Formulation</h2>
-<div class="cell" data-execution_count="186">
+<div id="cell-8" class="cell" data-execution_count="186">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>demand <span class="op">=</span> <span class="fl">1800</span></span>
@@ -522,14 +532,14 @@ window.MathJax = {
 \end{aligned} \]</span></p>
 </div>
 </div>
-<div class="cell" data-execution_count="187">
+<div id="cell-9" class="cell" data-execution_count="187">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set_silent</span>(dispatch)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">optimize!</span>(dispatch)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell" data-execution_count="188">
+<div id="cell-spdispatch-results" class="cell" data-execution_count="188">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>gen_sol <span class="op">=</span> <span class="fu">value</span>.(y).data</span>
@@ -541,7 +551,7 @@ window.MathJax = {
 <div id="spdispatch-results" class="cell-output cell-output-display">
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <thead>
-<tr class="header header headerLastRow">
+<tr class="header headerLastRow">
 <th style="text-align: right;" data-quarto-table-cell-role="th">Plant</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Dispatch (MW)</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">P<sub>min</sub> (MW)</th>
@@ -591,7 +601,7 @@ window.MathJax = {
 <section id="merit-order-and-the-dispatch-stack" class="level3">
 <h3 class="anchored" data-anchor-id="merit-order-and-the-dispatch-stack">Merit Order and the Dispatch Stack</h3>
 <p>This procedure of starting with the lowest-cost generation and adding generation sequentially from generators in order of cost is the concept of <strong>merit order</strong>: plants are scheduled to supply additional electricity based (<em>mostly</em>) on their variable costs. We can visualize the <strong>supply curve</strong> (or the <em>dispatch stack</em>) to see the order in which electricity is dispatched.</p>
-<div class="cell" data-execution_count="189">
+<div id="cell-13" class="cell" data-execution_count="189">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>supply_curve <span class="op">=</span> <span class="fu">DataFrame</span>( </span>
@@ -607,7 +617,7 @@ window.MathJax = {
 <div><div style="float: left;"><span>5×4 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
+<tr class="header">
 <th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">name</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">pmin</th>
@@ -663,7 +673,7 @@ window.MathJax = {
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="190">
+<div id="cell-dispatch-stack" class="cell" data-execution_count="190">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rectangle</span>(w, h, x, y) <span class="op">=</span> <span class="fu">Shape</span>(x <span class="op">.+</span> [<span class="fl">0</span>,w,w,<span class="fl">0</span>], y <span class="op">.+</span> [<span class="fl">0</span>,<span class="fl">0</span>,h,h]) </span>
@@ -771,7 +781,7 @@ window.MathJax = {
 </ul>
 <section id="jump-implementation" class="level3">
 <h3 class="anchored" data-anchor-id="jump-implementation">JuMP Implementation</h3>
-<div class="cell" data-execution_count="191">
+<div id="cell-17" class="cell" data-execution_count="191">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ramp <span class="op">=</span> [<span class="fl">150</span>, <span class="fl">200</span>, <span class="fl">100</span>, <span class="fl">250</span>, <span class="fl">300</span>]</span>
@@ -1289,7 +1299,7 @@ window.MathJax = {
 \end{aligned} \]</span></p>
 </div>
 </div>
-<div class="cell" data-execution_count="192">
+<div id="cell-18" class="cell" data-execution_count="192">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
@@ -1307,7 +1317,7 @@ window.MathJax = {
    40.0    40.0   40.0   40.0   40.0       40.0    40.0    40.0    40.0</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="193">
+<div id="cell-mpdispatch-stacked" class="cell" data-execution_count="193">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">areaplot</span>(gen<span class="op">'</span>, </span>
@@ -1386,7 +1396,7 @@ window.MathJax = {
 <path clip-path="url(#clip100)" d="M4069.6 1383.56 L4069.6 1348.49 L4080.25 1348.49 L4080.25 1438.54 L4069.6 1438.54 L4069.6 1428.82 Q4066.25 1434.6 4061.1 1437.44 Q4056 1440.22 4048.83 1440.22 Q4037.08 1440.22 4029.67 1430.84 Q4022.32 1421.47 4022.32 1406.19 Q4022.32 1390.91 4029.67 1381.54 Q4037.08 1372.16 4048.83 1372.16 Q4056 1372.16 4061.1 1375 Q4066.25 1377.77 4069.6 1383.56 M4033.32 1406.19 Q4033.32 1417.94 4038.12 1424.65 Q4042.98 1431.3 4051.43 1431.3 Q4059.88 1431.3 4064.74 1424.65 Q4069.6 1417.94 4069.6 1406.19 Q4069.6 1394.44 4064.74 1387.79 Q4059.88 1381.07 4051.43 1381.07 Q4042.98 1381.07 4038.12 1387.79 Q4033.32 1394.44 4033.32 1406.19 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip100)" d="M4157.62 1403.47 L4157.62 1408.68 L4108.67 1408.68 Q4109.36 1419.67 4115.26 1425.46 Q4121.22 1431.19 4131.81 1431.19 Q4137.95 1431.19 4143.68 1429.68 Q4149.46 1428.18 4155.14 1425.17 L4155.14 1435.24 Q4149.41 1437.67 4143.39 1438.94 Q4137.37 1440.22 4131.18 1440.22 Q4115.67 1440.22 4106.58 1431.19 Q4097.56 1422.16 4097.56 1406.77 Q4097.56 1390.85 4106.12 1381.54 Q4114.74 1372.16 4129.33 1372.16 Q4142.4 1372.16 4149.99 1380.61 Q4157.62 1389 4157.62 1403.47 M4146.98 1400.34 Q4146.86 1391.61 4142.06 1386.4 Q4137.31 1381.19 4129.44 1381.19 Q4120.53 1381.19 4115.15 1386.22 Q4109.82 1391.26 4109.01 1400.4 L4146.98 1400.34 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip100)" d="M4225.56 1386.17 Q4229.56 1378.99 4235.11 1375.58 Q4240.67 1372.16 4248.19 1372.16 Q4258.32 1372.16 4263.82 1379.28 Q4269.31 1386.34 4269.31 1399.42 L4269.31 1438.54 L4258.61 1438.54 L4258.61 1399.76 Q4258.61 1390.45 4255.31 1385.93 Q4252.01 1381.42 4245.24 1381.42 Q4236.96 1381.42 4232.16 1386.92 Q4227.36 1392.42 4227.36 1401.91 L4227.36 1438.54 L4216.65 1438.54 L4216.65 1399.76 Q4216.65 1390.39 4213.35 1385.93 Q4210.05 1381.42 4203.17 1381.42 Q4195.01 1381.42 4190.21 1386.98 Q4185.4 1392.47 4185.4 1401.91 L4185.4 1438.54 L4174.7 1438.54 L4174.7 1373.72 L4185.4 1373.72 L4185.4 1383.79 Q4189.05 1377.83 4194.14 1375 Q4199.23 1372.16 4206.24 1372.16 Q4213.3 1372.16 4218.21 1375.75 Q4223.19 1379.34 4225.56 1386.17 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip100)" d="M4320.01 1405.96 Q4307.1 1405.96 4302.13 1408.91 Q4297.15 1411.86 4297.15 1418.98 Q4297.15 1424.65 4300.85 1428.01 Q4304.61 1431.3 4311.04 1431.3 Q4319.89 1431.3 4325.22 1425.05 Q4330.6 1418.75 4330.6 1408.33 L4330.6 1405.96 L4320.01 1405.96 M4341.25 1401.56 L4341.25 1438.54 L4330.6 1438.54 L4330.6 1428.7 Q4326.95 1434.6 4321.51 1437.44 Q4316.07 1440.22 4308.2 1440.22 Q4298.25 1440.22 4292.35 1434.66 Q4286.5 1429.05 4286.5 1419.67 Q4286.5 1408.73 4293.79 1403.18 Q4301.14 1397.62 4315.67 1397.62 L4330.6 1397.62 L4330.6 1396.58 Q4330.6 1389.23 4325.74 1385.24 Q4320.93 1381.19 4312.2 1381.19 Q4306.64 1381.19 4301.37 1382.52 Q4296.11 1383.85 4291.25 1386.51 L4291.25 1376.67 Q4297.09 1374.42 4302.59 1373.32 Q4308.09 1372.16 4313.29 1372.16 Q4327.36 1372.16 4334.3 1379.45 Q4341.25 1386.74 4341.25 1401.56 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip100)" d="M4417.06 1399.42 L4417.06 1438.54 L4406.41 1438.54 L4406.41 1399.76 Q4406.41 1390.56 4402.82 1385.99 Q4399.23 1381.42 4392.06 1381.42 Q4383.43 1381.42 4378.46 1386.92 Q4373.48 1392.42 4373.48 1401.91 L4373.48 1438.54 L4362.77 1438.54 L4362.77 1373.72 L4373.48 1373.72 L4373.48 1383.79 Q4377.3 1377.95 4382.45 1375.05 Q4387.66 1372.16 4394.43 1372.16 Q4405.6 1372.16 4411.33 1379.11 Q4417.06 1385.99 4417.06 1399.42 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip100)" d="M4480.94 1383.56 L4480.94 1348.49 L4491.59 1348.49 L4491.59 1438.54 L4480.94 1438.54 L4480.94 1428.82 Q4477.59 1434.6 4472.44 1437.44 Q4467.34 1440.22 4460.17 1440.22 Q4448.42 1440.22 4441.01 1430.84 Q4433.66 1421.47 4433.66 1406.19 Q4433.66 1390.91 4441.01 1381.54 Q4448.42 1372.16 4460.17 1372.16 Q4467.34 1372.16 4472.44 1375 Q4477.59 1377.77 4480.94 1383.56 M4444.66 1406.19 Q4444.66 1417.94 4449.46 1424.65 Q4454.32 1431.3 4462.77 1431.3 Q4471.22 1431.3 4476.08 1424.65 Q4480.94 1417.94 4480.94 1406.19 Q4480.94 1394.44 4476.08 1387.79 Q4471.22 1381.07 4462.77 1381.07 Q4454.32 1381.07 4449.46 1387.79 Q4444.66 1394.44 4444.66 1406.19 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path></svg>
 </div>
 </div>
-<div class="cell" data-execution_count="194">
+<div id="cell-mpdispatch-results" class="cell" data-execution_count="194">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fu">plot</span>(gen<span class="op">'</span>, </span>
@@ -1461,8 +1471,8 @@ window.MathJax = {
 <p>These constraints also play a major role in systems with high levels of renewable penetration. For example, the so-called California “duck curve” is created by the challenges of ramping generation between the early afternoon, when solar generation is at its maximum, and in the evening, when solar generation is decreasing and demand increases rapidly.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../figures/duck_curve.jpeg" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">California Duck Curve</figcaption><p></p>
+<p><img src="../figures/duck_curve.jpeg" class="img-fluid figure-img"></p>
+<figcaption>California Duck Curve</figcaption>
 </figure>
 </div>
 
@@ -1550,10 +1560,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1563,8 +1572,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1577,6 +1595,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1620,6 +1760,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1645,8 +1786,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-      // Handle positioning of the toggle
-      window.addEventListener(
+        // Handle positioning of the toggle
+    window.addEventListener(
       "resize",
       throttle(() => {
         elRect = undefined;
@@ -1654,23 +1795,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           selectCodeLines(selectedAnnoteEl);
         }
       }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
               fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
       for (let i=0; i<annoteTargets.length; i++) {
         const annoteTarget = annoteTargets[i];
@@ -1774,13 +1915,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Content <i class="fa-solid fa-copyright" aria-label="copyright"></i> 2023 by <a href="https://viveks.me">Vivek Srikrishnan</a>. See the <a href="../../about.html">About page</a> for credit information.<br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0)</a></div>   
+    <div class="nav-footer-left">
+<p>Content <i class="fa-solid fa-copyright" aria-label="copyright"></i> 2023 by <a href="https://viveks.me">Vivek Srikrishnan</a>. See the <a href="../../about.html">About page</a> for credit information.<br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0)</a></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">Made with <a href="https://julialang.org">Julia</a> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://www.github.com/vsrikrish/environmental-systems-analysis">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></div>
+    <div class="nav-footer-right">
+<p>Made with <a href="https://julialang.org">Julia</a> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://www.github.com/vsrikrish/environmental-systems-analysis">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

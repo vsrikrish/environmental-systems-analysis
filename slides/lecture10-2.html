@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.283">
+  <meta name="generator" content="quarto-1.4.388">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2023-10-25">
@@ -32,7 +32,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -96,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -222,7 +222,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -407,8 +408,8 @@
   };
   </script>
 <meta property="og:title" content="BEE 4750 - Fall 2023 - Waste Management and Network Models">
-<meta property="og:description" content="Lecture 21">
-<meta property="og:site-name" content="BEE 4750 - Fall 2023">
+<meta property="og:description" content="Lecture 22">
+<meta property="og:site_name" content="BEE 4750 - Fall 2023">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -417,7 +418,7 @@
 <section id="title-slide" class="center">
     <h1 class="title">Waste Management and Network Models</h1>
   <hr>
-<p class="subtitle">Lecture 21</p>
+<p class="subtitle">Lecture 22</p>
 <p class="date">October 25, 2023</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
@@ -447,9 +448,11 @@
 <h2>Questions</h2>
 <div class="columns center">
 <div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/vsrikrish-poll.png" class="quarto-discovered-preview-image" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center" data-fig-align="center" alt="Poll Everywhere QR Code" width="100%">
+<figure class="quarto-float quarto-float-fig">
+<div>
+<img data-src="images/vsrikrish-poll.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code">
+</div>
 </figure>
 </div>
 </div><div class="column" style="width:60%;">
@@ -476,7 +479,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://www.epa.gov/sites/default/files/styles/medium/public/2015-08/hierarchy_hierarchy_and_options_pages.png"></p>
-<p></p><figcaption>Waste Management Hierarchy</figcaption><p></p>
+<figcaption>Waste Management Hierarchy</figcaption>
 </figure>
 </div>
 <div class="caption">
@@ -497,7 +500,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/waste-network-params.svg"></p>
-<p></p><figcaption>Network Parameterization</figcaption><p></p>
+<figcaption>Network Parameterization</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -557,7 +560,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/waste-example-network.svg"></p>
-<p></p><figcaption>Waste Management Example</figcaption><p></p>
+<figcaption>Waste Management Example</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -577,7 +580,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/waste-example-network.svg"></p>
-<p></p><figcaption>Waste Management Example</figcaption><p></p>
+<figcaption>Waste Management Example</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -734,7 +737,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/waste-example-network.svg"></p>
-<p></p><figcaption>Waste Management Example</figcaption><p></p>
+<figcaption>Waste Management Example</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -785,7 +788,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/waste-example-network.svg"></p>
-<p></p><figcaption>Waste Management Example</figcaption><p></p>
+<figcaption>Waste Management Example</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -804,7 +807,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/waste-example-network.svg"></p>
-<p></p><figcaption>Waste Management Example</figcaption><p></p>
+<figcaption>Waste Management Example</figcaption>
 </figure>
 </div>
 <p><strong>Recycling</strong>: 40%, $35/Mg recycled</p>
@@ -829,7 +832,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/waste-example-network.svg"></p>
-<p></p><figcaption>Waste Management Example</figcaption><p></p>
+<figcaption>Waste Management Example</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -848,7 +851,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/waste-example-network.svg"></p>
-<p></p><figcaption>Waste Management Example</figcaption><p></p>
+<figcaption>Waste Management Example</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -880,7 +883,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/waste-example-network.svg"></p>
-<p></p><figcaption>Waste Management Example</figcaption><p></p>
+<figcaption>Waste Management Example</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -896,7 +899,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/waste-example-network.svg"></p>
-<p></p><figcaption>Waste Management Example</figcaption><p></p>
+<figcaption>Waste Management Example</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -918,7 +921,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/waste-example-network.svg"></p>
-<p></p><figcaption>Waste Management Example</figcaption><p></p>
+<figcaption>Waste Management Example</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1036,7 +1039,6 @@ W_{ij}, R_{ij} &amp;\geq 0
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1297,10 +1299,9 @@ W_{ij}, R_{ij} &amp;\geq 0
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1310,8 +1311,17 @@ W_{ij}, R_{ij} &amp;\geq 0
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1366,12 +1376,13 @@ W_{ij}, R_{ij} &amp;\geq 0
         }
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp("https:\/\/viveks\.me\/environmental-systems-analysis");
         var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href);
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

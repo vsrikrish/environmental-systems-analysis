@@ -435,12 +435,12 @@ Due Date
 <section id="load-environment" class="level3 cell markdown">
 <h3 class="anchored" data-anchor-id="load-environment">Load Environment</h3>
 <p>The following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.</p>
-<div id="07206547" class="cell" data-execution_count="1">
+<div id="6393a7c7" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="pp">@__DIR__</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="06c2d53d" class="cell" data-execution_count="2">
+<div id="89bc3439" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">JuMP</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">HiGHS</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span>
@@ -453,7 +453,7 @@ Due Date
 </section>
 <section id="background" class="level2 cell markdown">
 <h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>Three cities are developing a coordinated municipal solid waste (MSW) disposal plan. Three disposal alternatives are being considered: a landfills (LF), a materials recycling facility (MRF), and a waste-to-energy facility (WTE). The capacities of these facilities and the fees for operation and disposal are provided in the table below.</p>
+<p>Three cities are developing a coordinated municipal solid waste (MSW) disposal plan. Three disposal alternatives are being considered: a landfill (LF), a materials recycling facility (MRF), and a waste-to-energy facility (WTE). The capacities of these facilities and the fees for operation and disposal are provided in the table below.</p>
 <table class="table table-sm table-striped small">
 <colgroup>
 <col style="width: 21%">
@@ -480,7 +480,7 @@ Due Date
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">Recycling Facility</td>
+<td style="text-align: center;">Materials Recycling Facility</td>
 <td style="text-align: center;">350</td>
 <td style="text-align: center;">1500</td>
 <td style="text-align: center;">7</td>
@@ -680,7 +680,11 @@ Due Date
 </section>
 <section id="problem-2-18-points" class="level3 cell markdown">
 <h3 class="anchored" data-anchor-id="problem-2-18-points">Problem 2 (18 points)</h3>
-<p>It is projected that in the near future the state will introduce a carbon tax that will increase the cost for transportation and for disposal by incineration. It is estimated that the additional costs will be: * tipping fee for the WTE facility will increase to$75/Mg; and * transportation costs will increase to $2/Mg-km.</p>
+<p>It is projected that in the near future the state will introduce a carbon tax that will increase the cost for transportation and for disposal by incineration. It is estimated that the additional costs will be:</p>
+<ul>
+<li>tipping fee for the WTE facility will increase to$75/Mg; and</li>
+<li>transportation costs will increase to $2/Mg-km.</li>
+</ul>
 <p>In this context, the cities are considering adding another landfill and want to know if this would be cost-effective compared to using the current facilities with the carbon tax. This landfill would have a maximum capacity of 100 Mg/day and would be located with the following distances from the existing sites (excluding LF1):</p>
 <table class="table table-sm table-striped small">
 <thead>

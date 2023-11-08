@@ -116,7 +116,7 @@ a {
 
 
 .reveal .quote .cite {
-    text-align: right;
+    text-align: left;
     font-variant: small-caps;
     border-left: 0;
 }
@@ -194,6 +194,6 @@ strong {color: #EF4035;}
     font-size: 100% !important;
 }
 
-code {
+pre .sourceCode {
     font-size: 1.3em;
 }

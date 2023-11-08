@@ -42,17 +42,17 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 |  11   | Mon, Oct 30 | **No Class: Project Work** | |  | [{{< fa sharp pen-field >}}](hw/hw05/hw05.qmd) | |
 |    | Wed, Nov 1 | **No Class: Project Work** | | | | |
 |   | Fri, Nov 3 | **No Class: Project Work** | | | |
-|  12 | Mon, Nov 6 | Simulation-Optimization | | | | |
-|     | Wed, Nov 8 | Optimizing with the Lake Problem| | | | |
-|    | Fri, Nov 10 | Lab: Simulation-Optimization | | | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | |
-| 13   | Mon, Nov 13 | Decision-Making Under Uncertainty | | | [{{< fa sharp pen-field >}}](hw/hw06/hw06.qmd) | |
+|  12 | Mon, Nov 6 | Challenges for Mathematical Programming and Systems Analysis | [{{< fa sharp presentation-screen >}}](slides/lecture12-1.qmd){target="_blank"} | | | |
+|     | Wed, Nov 8 | Simulation-Optimization | [{{< fa sharp presentation-screen >}}](slides/lecture12-2.qmd){target="_blank"} | | | |
+|    | Fri, Nov 10 | Lab: Simulation-Optimization | | | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} |
+| 13   | Mon, Nov 13 | Decision-Making Under Uncertainty | | | | |
 |    | Wed, Nov 15 | Decision Trees | | | | |
-|    | Fri, Nov 17 | Stochastic Programming | | | | |
-|  14 | Mon, Nov 20 | Decision-Making Under Uncertainty: Examples | | | | |
+|    | Fri, Nov 17 |  Decision-Making Under Uncertainty: Examples | | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | | |
+|  14 | Mon, Nov 20 | Deep Uncertainty | | | | |
 |     | Wed, Nov 22 | **No Class: Thanksgiving Break** | | | | |
 |     | Fri, Nov 24 | **No Class: Thanksgiving Break** | | | | |
-| 15 | Mon, Nov 27 | Deep Uncertainty | | | | |
-|    | Wed, Nov 29 | Robustness | | | | |
-|   |  Fri, Dec 1 | Sensitivity Analysis | | | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | |
-|  16 | Mon, Dec 4 | Class Review and Wrap-Up | | | | |
+| 15 | Mon, Nov 27 | Robustness | | | | |
+|    | Wed, Nov 29 | Sensitivity Analysis | | | | |
+|   |  Fri, Dec 1 | Class Review and Wrap-Up | | |  | |
+|  16 | Mon, Dec 4 | **No Class: Project Work** | | | | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} |
 :::

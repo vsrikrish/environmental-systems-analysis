@@ -1,0 +1,34 @@
+---
+title: "Lab 4 Rubric"
+html: default
+pdf: default
+---
+
+This is the grading rubric for [Lab 4](../labs/lab04/lab04.qmd). The rubric does not provide specifics, but should give an idea of what a complete solution looks like and how different components are prioritized and weighted.
+
+The assignment is out of a total of 10 points.
+
+## Rubric
+
+### Problem 1 (2 Points)
+
+| Missing (0) | Needs Improvement (1) | Above Average (2) | 
+|:------------------------|:-----------------|:-----------------|
+| Problem missing or solution not obtained or unrelated to problem. | Incomplete reporting of solution (consistency with the constraint, objective value, solution, etc).  | Solution found and details are provided as to its objective value and reliability. |
+
+
+
+### Problem 2 (5 points)
+
+
+| Missing (0) | Needs Improvement (1-2) | Above Average (3-4) | Excellent (5)
+|:------------------------|:-----------------|:-----------------|:-----------------|
+| Problem missing or solution not reported. | Limited details given on experimental design, including lack of detail on why different choices were made. | Details provided on experimental design, but overall plan is not fully coherent (*e.g.* choices were made randomly or not moved in a consistent direction). | Experimental design is coherent and the decisions are given clear justifications. |
+
+
+### Problem 3 (3 points)
+
+
+| Missing (0) | Needs Improvement (1) | Above Average (2) | Excellent (3)
+|:------------------------|:-----------------|:-----------------|:-----------------|
+| Problem missing or description is terse and lacks specificity. | Conclusions or thoughts about methods are superficial. | Thoughts about methods are relevant but missing connections to the experiment in Problem 2 or comparisons to other optimization methods. | Conclusions are connected to the experimental results in Problem 2 and include comparisons to other optimization methods. |

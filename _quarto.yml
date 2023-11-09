@@ -75,7 +75,9 @@ website:
           - href: labs/lab02/lab02.qmd
             text: Lab 2
           - href: labs/lab03/lab03.qmd
-            text: Lab 3
+            text: Lab 3          
+          - href: labs/lab04/lab04.qmd
+            text: Lab 4
       - text: "Final Project" 
         href: project.qmd
       - text: "Tools Setup"

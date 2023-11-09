@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.388">
+  <meta name="generator" content="quarto-1.3.283">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2023-10-23">
@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -157,8 +157,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -347,7 +346,7 @@
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <meta property="og:title" content="BEE 4750 - Fall 2023 - Mixed Integer Linear Programming">
 <meta property="og:description" content="Lecture 21">
-<meta property="og:site_name" content="BEE 4750 - Fall 2023">
+<meta property="og:site-name" content="BEE 4750 - Fall 2023">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -392,11 +391,9 @@
 <h2>Questions</h2>
 <div class="columns center">
 <div class="column" style="width:40%;">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center" alt="Poll Everywhere QR Code" data-fig-align="center" width="100%">
-<figure class="quarto-float quarto-float-fig">
-<div>
-<img data-src="images/vsrikrish-poll.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code">
-</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/vsrikrish-poll.png" class="quarto-discovered-preview-image" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
 </figure>
 </div>
 </div><div class="column" style="width:60%;">
@@ -1151,9 +1148,9 @@
 </section>
 <section id="example-milp-nodes-2-and-3" class="slide level2">
 <h2>Example MILP: Nodes 2 and 3</h2>
-<div class="cell quarto-layout-panel" data-execution_count="9" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-execution_count="9">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -1214,7 +1211,7 @@
 <circle clip-path="url(#clip812)" cx="2029.21" cy="1180.02" r="28.8" fill="#a52a2a" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="4.8"></circle>
 <path clip-path="url(#clip810)" d="M1595.79 1511.91 Q1595.79 1512.3 1595.41 1513.85 L1521.66 1596.29 L1544.2 1596.29 Q1550.83 1596.29 1555.86 1595.13 Q1560.88 1593.91 1564.36 1591.85 Q1567.84 1589.79 1570.54 1586.25 Q1573.31 1582.64 1575.12 1578.71 Q1576.92 1574.72 1578.79 1568.85 Q1579.5 1566.6 1579.82 1566.08 Q1580.14 1565.57 1580.98 1565.57 Q1581.82 1565.57 1582.27 1566.08 Q1582.72 1566.54 1582.72 1567.05 Q1582.72 1567.31 1582.59 1567.69 Q1582.52 1568.02 1582.4 1568.4 Q1582.27 1568.79 1582.2 1568.98 L1572.8 1598.16 Q1572.22 1600.03 1571.64 1600.42 Q1571.06 1600.8 1568.74 1600.8 L1511.35 1600.8 Q1509.35 1600.8 1508.71 1600.67 Q1508.06 1600.48 1508.06 1599.64 L1508.58 1597.26 L1582.33 1514.81 L1560.82 1514.81 Q1554.76 1514.81 1550 1515.91 Q1545.29 1516.94 1541.95 1518.87 Q1538.6 1520.74 1536.02 1523.89 Q1533.44 1526.99 1531.7 1530.59 Q1529.96 1534.14 1528.35 1539.1 L1528.16 1539.42 Q1527.97 1539.74 1527.84 1539.93 Q1527.71 1540.06 1527.39 1540.26 Q1527.07 1540.38 1526.68 1540.38 Q1525.97 1540.38 1525.52 1540 Q1525.13 1539.61 1525.13 1539.22 L1525.07 1538.9 Q1525.2 1537.74 1525.46 1537.1 L1532.73 1513.33 Q1533.31 1511.46 1533.89 1511.08 Q1534.47 1510.69 1536.79 1510.69 L1592.51 1510.69 Q1594.57 1510.69 1595.15 1510.88 Q1595.79 1511.08 1595.79 1511.91 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip810)" d="M1633.85 1580.77 Q1633.98 1579.16 1636.49 1579.16 L1717.33 1579.16 Q1721.13 1579.16 1721.19 1580.64 Q1721.19 1582.25 1717.59 1582.19 L1637.4 1582.19 Q1633.85 1582.25 1633.85 1580.77 M1633.85 1555.01 Q1633.85 1553.4 1636.62 1553.46 L1717.2 1553.46 Q1721.13 1553.46 1721.19 1555.01 Q1721.19 1556.49 1717.85 1556.49 L1636.49 1556.49 Q1633.85 1556.49 1633.85 1555.01 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip810)" d="M1772.08 1600.8 Q1772.08 1598.42 1772.27 1597.71 Q1772.53 1597 1773.56 1595.91 L1798.88 1567.69 Q1812.72 1552.11 1812.72 1538.52 Q1812.72 1529.69 1808.09 1523.38 Q1803.51 1517.07 1795.08 1517.07 Q1789.28 1517.07 1784.38 1520.61 Q1779.49 1524.15 1777.23 1530.46 Q1777.62 1530.34 1778.97 1530.34 Q1782.26 1530.34 1784.06 1532.4 Q1785.93 1534.46 1785.93 1537.23 Q1785.93 1540.77 1783.61 1542.51 Q1781.36 1544.18 1779.1 1544.18 Q1778.2 1544.18 1776.98 1543.99 Q1775.82 1543.8 1773.95 1541.99 Q1772.08 1540.13 1772.08 1536.84 Q1772.08 1527.63 1779.04 1520.29 Q1786.06 1512.94 1796.75 1512.94 Q1808.86 1512.94 1816.78 1520.16 Q1824.77 1527.31 1824.77 1538.52 Q1824.77 1542.45 1823.55 1546.05 Q1822.39 1549.6 1820.78 1552.36 Q1819.23 1555.13 1814.98 1559.58 Q1810.73 1564.02 1807.31 1567.18 Q1803.9 1570.34 1796.24 1577.03 L1782.26 1590.63 L1806.03 1590.63 Q1817.62 1590.63 1818.52 1589.59 Q1819.81 1587.73 1821.42 1577.87 L1824.77 1577.87 L1821.03 1600.8 L1772.08 1600.8 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip810)" d="M1837.94 1579.55 Q1837.94 1575.62 1840.06 1574.14 Q1842.19 1572.59 1844.44 1572.59 Q1847.47 1572.59 1849.21 1574.52 Q1851.01 1576.39 1851.01 1579.03 Q1851.01 1581.67 1849.21 1583.6 Q1847.47 1585.47 1844.44 1585.47 Q1842.96 1585.47 1842.19 1585.21 Q1843.93 1591.27 1849.21 1595.65 Q1854.56 1600.03 1861.58 1600.03 Q1870.4 1600.03 1875.68 1591.46 Q1878.84 1585.92 1878.84 1573.36 Q1878.84 1562.28 1876.46 1556.74 Q1872.78 1548.31 1865.25 1548.31 Q1854.56 1548.31 1848.24 1557.52 Q1847.47 1558.68 1846.57 1558.74 Q1845.28 1558.74 1844.96 1558.03 Q1844.7 1557.26 1844.7 1555.26 L1844.7 1516.23 Q1844.7 1513.07 1845.99 1513.07 Q1846.5 1513.07 1847.6 1513.46 Q1855.91 1517.13 1865.12 1517.2 Q1874.59 1517.2 1883.09 1513.33 Q1883.73 1512.94 1884.12 1512.94 Q1885.41 1512.94 1885.47 1514.43 Q1885.47 1514.94 1884.38 1516.49 Q1883.35 1517.97 1881.09 1519.97 Q1878.84 1521.9 1875.94 1523.77 Q1873.04 1525.63 1868.79 1526.92 Q1864.6 1528.15 1859.97 1528.15 Q1854.43 1528.15 1848.76 1526.41 L1848.76 1552.11 Q1855.59 1545.41 1865.51 1545.41 Q1876.07 1545.41 1883.35 1553.91 Q1890.63 1562.41 1890.63 1574.26 Q1890.63 1586.7 1881.99 1595.2 Q1873.43 1603.7 1861.83 1603.7 Q1851.27 1603.7 1844.57 1596.16 Q1837.94 1588.63 1837.94 1579.55 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path></svg>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -1291,9 +1288,9 @@
 <img data-src="figures/bb-45-pre.png" class="r-stretch quarto-figure-center"><p class="caption">Branch and Bound Node 1</p></section>
 <section id="example-milp-nodes-4-and-5" class="slide level2">
 <h2>Example MILP: Nodes 4 and 5</h2>
-<div class="cell quarto-layout-panel" data-execution_count="10" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-execution_count="10">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -1358,7 +1355,7 @@
 <circle clip-path="url(#clip992)" cx="411.483" cy="424.837" r="28.8" fill="#a52a2a" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="4.8"></circle>
 <path clip-path="url(#clip990)" d="M1358.15 190.34 Q1358.15 190.726 1357.77 192.272 L1284.02 274.719 L1306.56 274.719 Q1313.19 274.719 1318.22 273.56 Q1323.24 272.336 1326.72 270.275 Q1330.2 268.214 1332.9 264.671 Q1335.67 261.064 1337.48 257.135 Q1339.28 253.141 1341.15 247.28 Q1341.86 245.025 1342.18 244.51 Q1342.5 243.995 1343.34 243.995 Q1344.18 243.995 1344.63 244.51 Q1345.08 244.961 1345.08 245.476 Q1345.08 245.734 1344.95 246.12 Q1344.88 246.442 1344.76 246.829 Q1344.63 247.215 1344.56 247.409 L1335.16 276.587 Q1334.58 278.455 1334 278.841 Q1333.42 279.228 1331.1 279.228 L1273.71 279.228 Q1271.71 279.228 1271.07 279.099 Q1270.42 278.906 1270.42 278.069 L1270.94 275.685 L1344.69 193.238 L1323.18 193.238 Q1317.12 193.238 1312.36 194.333 Q1307.65 195.364 1304.3 197.296 Q1300.96 199.164 1298.38 202.32 Q1295.8 205.412 1294.06 209.019 Q1292.32 212.562 1290.71 217.522 L1290.52 217.844 Q1290.33 218.166 1290.2 218.359 Q1290.07 218.488 1289.75 218.681 Q1289.43 218.81 1289.04 218.81 Q1288.33 218.81 1287.88 218.423 Q1287.49 218.037 1287.49 217.65 L1287.43 217.328 Q1287.56 216.169 1287.82 215.525 L1295.09 191.757 Q1295.67 189.889 1296.25 189.502 Q1296.83 189.116 1299.15 189.116 L1354.87 189.116 Q1356.93 189.116 1357.51 189.309 Q1358.15 189.502 1358.15 190.34 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip990)" d="M1396.21 259.196 Q1396.34 257.586 1398.85 257.586 L1479.69 257.586 Q1483.49 257.586 1483.55 259.067 Q1483.55 260.677 1479.95 260.613 L1399.75 260.613 Q1396.21 260.677 1396.21 259.196 M1396.21 233.431 Q1396.21 231.821 1398.98 231.885 L1479.56 231.885 Q1483.49 231.885 1483.55 233.431 Q1483.55 234.913 1480.21 234.913 L1398.85 234.913 Q1396.21 234.913 1396.21 233.431 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip990)" d="M1534.44 279.228 Q1534.44 276.845 1534.63 276.136 Q1534.89 275.428 1535.92 274.333 L1561.24 246.12 Q1575.08 230.533 1575.08 216.942 Q1575.08 208.117 1570.45 201.805 Q1565.87 195.493 1557.44 195.493 Q1551.64 195.493 1546.74 199.035 Q1541.85 202.578 1539.59 208.89 Q1539.98 208.762 1541.33 208.762 Q1544.62 208.762 1546.42 210.823 Q1548.29 212.884 1548.29 215.654 Q1548.29 219.196 1545.97 220.935 Q1543.72 222.61 1541.46 222.61 Q1540.56 222.61 1539.34 222.417 Q1538.18 222.224 1536.31 220.42 Q1534.44 218.552 1534.44 215.267 Q1534.44 206.056 1541.4 198.713 Q1548.42 191.37 1559.11 191.37 Q1571.22 191.37 1579.14 198.584 Q1587.13 205.734 1587.13 216.942 Q1587.13 220.871 1585.91 224.478 Q1584.75 228.021 1583.14 230.79 Q1581.59 233.56 1577.34 238.004 Q1573.09 242.449 1569.67 245.605 Q1566.26 248.761 1558.6 255.46 L1544.62 269.051 L1568.39 269.051 Q1579.98 269.051 1580.88 268.02 Q1582.17 266.152 1583.78 256.297 L1587.13 256.297 L1583.39 279.228 L1534.44 279.228 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip990)" d="M1587.28 257.457 L1587.28 253.399 L1627.8 191.499 Q1628.83 189.889 1630.44 189.953 Q1631.92 189.953 1632.24 190.533 Q1632.56 191.113 1632.56 193.367 L1632.56 253.399 L1645.77 253.399 L1645.77 257.457 L1632.56 257.457 L1632.56 268.922 Q1632.56 272.722 1634.11 273.946 Q1635.72 275.17 1642.55 275.17 L1645.32 275.17 L1645.32 279.228 Q1639.91 278.841 1627.41 278.841 Q1614.98 278.841 1609.57 279.228 L1609.57 275.17 L1612.34 275.17 Q1619.17 275.17 1620.78 274.011 Q1622.39 272.787 1622.39 268.922 L1622.39 257.457 L1587.28 257.457 M1591.02 253.399 L1623.16 253.399 L1623.16 204.188 L1591.02 253.399 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip990)" d="M1654.61 277.102 Q1652.61 274.977 1652.61 272.207 Q1652.61 269.437 1654.61 267.441 Q1656.6 265.379 1659.63 265.379 Q1662.53 265.379 1664.46 267.312 Q1666.46 269.18 1666.46 272.271 Q1666.46 275.299 1664.33 277.296 Q1662.27 279.228 1659.63 279.228 Q1656.6 279.228 1654.61 277.102 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip990)" d="M1688.91 237.554 Q1688.91 216.813 1699.47 204.124 Q1710.04 191.37 1723.63 191.37 Q1731.55 191.37 1735.93 195.428 Q1740.38 199.422 1740.38 205.605 Q1740.38 209.019 1738.38 210.501 Q1736.38 211.982 1734.32 211.982 Q1731.94 211.982 1730.07 210.372 Q1728.2 208.762 1728.2 205.863 Q1728.2 199.937 1735.48 199.937 Q1732.07 194.655 1723.89 194.655 Q1721.37 194.655 1718.8 195.428 Q1716.22 196.137 1712.87 198.584 Q1709.52 201.032 1706.95 204.897 Q1704.37 208.762 1702.57 216.04 Q1700.76 223.319 1700.76 232.787 L1700.76 235.943 Q1706.17 222.868 1717.25 222.932 Q1728.33 222.932 1736 231.37 Q1743.66 239.808 1743.66 252.304 Q1743.66 265.122 1735.67 273.624 Q1727.69 282.126 1716.48 282.126 Q1711.45 282.126 1706.88 280.001 Q1702.37 277.94 1698.12 273.173 Q1693.93 268.407 1691.42 259.26 Q1688.91 250.114 1688.91 237.554 M1701.02 249.405 Q1701.02 262.352 1703.4 268.536 Q1703.79 269.566 1704.63 270.983 Q1705.53 272.4 1707.01 274.268 Q1708.56 276.072 1711.07 277.296 Q1713.58 278.455 1716.48 278.455 Q1725.3 278.455 1729.55 269.888 Q1731.81 265.122 1731.81 252.175 Q1731.81 238.971 1729.43 234.14 Q1725.37 225.959 1717.12 225.959 Q1711.58 225.959 1707.72 229.76 Q1703.92 233.56 1702.44 238.649 Q1701.02 243.737 1701.02 249.405 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip990)" d="M1752.03 217.199 L1756.35 190.082 L1759.63 190.082 Q1760.02 191.692 1760.66 192.401 Q1761.37 193.109 1765.11 193.689 Q1768.91 194.269 1776.57 194.269 L1808.59 194.269 Q1808.59 197.296 1807.43 198.907 L1789.58 223.963 Q1783.92 231.885 1781.4 246.507 Q1779.92 256.297 1779.99 268.149 L1779.99 274.848 Q1779.99 282.126 1773.87 282.126 Q1767.81 282.126 1767.81 274.848 Q1767.81 249.663 1784.04 225.251 Q1785.78 222.739 1792.16 213.786 Q1798.6 204.832 1798.86 204.446 L1771.55 204.446 Q1759.57 204.446 1758.6 205.219 Q1757.31 206.378 1755.32 217.199 L1752.03 217.199 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path></svg>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -1424,9 +1421,9 @@
 <img data-src="figures/bb-67-pre.png" class="r-stretch quarto-figure-center"><p class="caption">Branch and Bound Node 1</p></section>
 <section id="example-milp-nodes-6-and-7" class="slide level2">
 <h2>Example MILP: Nodes 6 and 7</h2>
-<div class="cell quarto-layout-panel" data-execution_count="11" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-execution_count="11">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -1487,7 +1484,7 @@
 <circle clip-path="url(#clip172)" cx="1705.66" cy="1180.02" r="28.8" fill="#a52a2a" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="4.8"></circle>
 <path clip-path="url(#clip170)" d="M1595.79 1511.91 Q1595.79 1512.3 1595.41 1513.85 L1521.66 1596.29 L1544.2 1596.29 Q1550.83 1596.29 1555.86 1595.13 Q1560.88 1593.91 1564.36 1591.85 Q1567.84 1589.79 1570.54 1586.25 Q1573.31 1582.64 1575.12 1578.71 Q1576.92 1574.72 1578.79 1568.85 Q1579.5 1566.6 1579.82 1566.08 Q1580.14 1565.57 1580.98 1565.57 Q1581.82 1565.57 1582.27 1566.08 Q1582.72 1566.54 1582.72 1567.05 Q1582.72 1567.31 1582.59 1567.69 Q1582.52 1568.02 1582.4 1568.4 Q1582.27 1568.79 1582.2 1568.98 L1572.8 1598.16 Q1572.22 1600.03 1571.64 1600.42 Q1571.06 1600.8 1568.74 1600.8 L1511.35 1600.8 Q1509.35 1600.8 1508.71 1600.67 Q1508.06 1600.48 1508.06 1599.64 L1508.58 1597.26 L1582.33 1514.81 L1560.82 1514.81 Q1554.76 1514.81 1550 1515.91 Q1545.29 1516.94 1541.95 1518.87 Q1538.6 1520.74 1536.02 1523.89 Q1533.44 1526.99 1531.7 1530.59 Q1529.96 1534.14 1528.35 1539.1 L1528.16 1539.42 Q1527.97 1539.74 1527.84 1539.93 Q1527.71 1540.06 1527.39 1540.26 Q1527.07 1540.38 1526.68 1540.38 Q1525.97 1540.38 1525.52 1540 Q1525.13 1539.61 1525.13 1539.22 L1525.07 1538.9 Q1525.2 1537.74 1525.46 1537.1 L1532.73 1513.33 Q1533.31 1511.46 1533.89 1511.08 Q1534.47 1510.69 1536.79 1510.69 L1592.51 1510.69 Q1594.57 1510.69 1595.15 1510.88 Q1595.79 1511.08 1595.79 1511.91 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip170)" d="M1633.85 1580.77 Q1633.98 1579.16 1636.49 1579.16 L1717.33 1579.16 Q1721.13 1579.16 1721.19 1580.64 Q1721.19 1582.25 1717.59 1582.19 L1637.4 1582.19 Q1633.85 1582.25 1633.85 1580.77 M1633.85 1555.01 Q1633.85 1553.4 1636.62 1553.46 L1717.2 1553.46 Q1721.13 1553.46 1721.19 1555.01 Q1721.19 1556.49 1717.85 1556.49 L1636.49 1556.49 Q1633.85 1556.49 1633.85 1555.01 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip170)" d="M1772.08 1600.8 Q1772.08 1598.42 1772.27 1597.71 Q1772.53 1597 1773.56 1595.91 L1798.88 1567.69 Q1812.72 1552.11 1812.72 1538.52 Q1812.72 1529.69 1808.09 1523.38 Q1803.51 1517.07 1795.08 1517.07 Q1789.28 1517.07 1784.38 1520.61 Q1779.49 1524.15 1777.23 1530.46 Q1777.62 1530.34 1778.97 1530.34 Q1782.26 1530.34 1784.06 1532.4 Q1785.93 1534.46 1785.93 1537.23 Q1785.93 1540.77 1783.61 1542.51 Q1781.36 1544.18 1779.1 1544.18 Q1778.2 1544.18 1776.98 1543.99 Q1775.82 1543.8 1773.95 1541.99 Q1772.08 1540.13 1772.08 1536.84 Q1772.08 1527.63 1779.04 1520.29 Q1786.06 1512.94 1796.75 1512.94 Q1808.86 1512.94 1816.78 1520.16 Q1824.77 1527.31 1824.77 1538.52 Q1824.77 1542.45 1823.55 1546.05 Q1822.39 1549.6 1820.78 1552.36 Q1819.23 1555.13 1814.98 1559.58 Q1810.73 1564.02 1807.31 1567.18 Q1803.9 1570.34 1796.24 1577.03 L1782.26 1590.63 L1806.03 1590.63 Q1817.62 1590.63 1818.52 1589.59 Q1819.81 1587.73 1821.42 1577.87 L1824.77 1577.87 L1821.03 1600.8 L1772.08 1600.8 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip170)" d="M1837.94 1583.02 Q1837.94 1579.1 1840.19 1577.23 Q1842.45 1575.36 1845.34 1575.36 Q1848.37 1575.36 1850.5 1577.36 Q1852.69 1579.29 1852.69 1582.7 Q1852.69 1586.37 1850.11 1588.44 Q1847.6 1590.5 1843.99 1589.98 Q1847.15 1595.26 1852.94 1597.65 Q1858.81 1600.03 1864.22 1600.03 Q1869.89 1600.03 1874.46 1595.13 Q1879.1 1590.24 1879.1 1578.26 Q1879.1 1568.08 1875.1 1562.22 Q1871.17 1556.36 1863.38 1556.36 L1857.58 1556.36 Q1855.59 1556.36 1855.01 1556.17 Q1854.43 1555.97 1854.43 1554.88 Q1854.43 1553.59 1856.42 1553.33 Q1858.42 1553.33 1861.58 1552.94 Q1869.24 1552.69 1873.3 1546.05 Q1876.97 1539.87 1876.97 1531.04 Q1876.97 1522.99 1873.11 1519.64 Q1869.31 1516.23 1864.35 1516.23 Q1859.71 1516.23 1854.62 1518.16 Q1849.53 1520.09 1846.76 1524.41 Q1854.94 1524.41 1854.94 1531.04 Q1854.94 1533.94 1853.07 1535.88 Q1851.27 1537.74 1848.24 1537.74 Q1845.34 1537.74 1843.41 1535.94 Q1841.48 1534.07 1841.48 1530.92 Q1841.48 1523.38 1848.18 1518.16 Q1854.94 1512.94 1864.86 1512.94 Q1874.65 1512.94 1881.87 1518.1 Q1889.14 1523.25 1889.14 1531.17 Q1889.14 1538.97 1883.99 1545.34 Q1878.84 1551.72 1870.66 1554.36 Q1880.71 1556.36 1886.7 1563.19 Q1892.69 1569.95 1892.69 1578.26 Q1892.69 1588.56 1884.57 1596.16 Q1876.46 1603.7 1864.6 1603.7 Q1853.65 1603.7 1845.8 1597.78 Q1837.94 1591.85 1837.94 1583.02 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path></svg>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -1552,9 +1549,9 @@
 <img data-src="figures/bb-89-pre.png" class="r-stretch quarto-figure-center"><p class="caption">Branch and Bound Node 1</p></section>
 <section id="example-milp-nodes-8-and-9" class="slide level2">
 <h2>Example MILP: Nodes 8 and 9</h2>
-<div class="cell quarto-layout-panel" data-execution_count="12" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-execution_count="12">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -1615,7 +1612,7 @@
 <circle clip-path="url(#clip352)" cx="411.483" cy="802.429" r="28.8" fill="#a52a2a" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="4.8"></circle>
 <path clip-path="url(#clip350)" d="M1440.53 191.777 Q1440.53 192.164 1440.14 193.71 L1366.39 276.157 L1388.93 276.157 Q1395.57 276.157 1400.59 274.997 Q1405.62 273.773 1409.1 271.712 Q1412.57 269.651 1415.28 266.108 Q1418.05 262.501 1419.85 258.572 Q1421.66 254.579 1423.52 248.717 Q1424.23 246.463 1424.55 245.948 Q1424.88 245.432 1425.71 245.432 Q1426.55 245.432 1427 245.948 Q1427.45 246.398 1427.45 246.914 Q1427.45 247.171 1427.32 247.558 Q1427.26 247.88 1427.13 248.266 Q1427 248.653 1426.94 248.846 L1417.53 278.025 Q1416.95 279.893 1416.37 280.279 Q1415.79 280.665 1413.48 280.665 L1356.08 280.665 Q1354.09 280.665 1353.44 280.537 Q1352.8 280.343 1352.8 279.506 L1353.31 277.123 L1427.07 194.676 L1405.55 194.676 Q1399.5 194.676 1394.73 195.771 Q1390.03 196.801 1386.68 198.734 Q1383.33 200.602 1380.75 203.758 Q1378.18 206.85 1376.44 210.457 Q1374.7 213.999 1373.09 218.959 L1372.9 219.281 Q1372.7 219.603 1372.57 219.796 Q1372.44 219.925 1372.12 220.118 Q1371.8 220.247 1371.41 220.247 Q1370.71 220.247 1370.25 219.861 Q1369.87 219.474 1369.87 219.088 L1369.8 218.766 Q1369.93 217.606 1370.19 216.962 L1377.47 193.194 Q1378.05 191.326 1378.63 190.94 Q1379.21 190.553 1381.53 190.553 L1437.24 190.553 Q1439.3 190.553 1439.88 190.747 Q1440.53 190.94 1440.53 191.777 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip350)" d="M1478.59 260.633 Q1478.72 259.023 1481.23 259.023 L1562.06 259.023 Q1565.87 259.023 1565.93 260.505 Q1565.93 262.115 1562.32 262.05 L1482.13 262.05 Q1478.59 262.115 1478.59 260.633 M1478.59 234.869 Q1478.59 233.258 1481.36 233.323 L1561.94 233.323 Q1565.87 233.323 1565.93 234.869 Q1565.93 236.35 1562.58 236.35 L1481.23 236.35 Q1478.59 236.35 1478.59 234.869 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip350)" d="M1616.82 280.665 Q1616.82 278.282 1617.01 277.574 Q1617.27 276.865 1618.3 275.77 L1643.61 247.558 Q1657.46 231.97 1657.46 218.379 Q1657.46 209.555 1652.82 203.243 Q1648.25 196.93 1639.81 196.93 Q1634.01 196.93 1629.12 200.473 Q1624.22 204.015 1621.97 210.328 Q1622.35 210.199 1623.71 210.199 Q1626.99 210.199 1628.8 212.26 Q1630.66 214.321 1630.66 217.091 Q1630.66 220.634 1628.35 222.373 Q1626.09 224.048 1623.84 224.048 Q1622.93 224.048 1621.71 223.854 Q1620.55 223.661 1618.68 221.858 Q1616.82 219.99 1616.82 216.705 Q1616.82 207.494 1623.77 200.151 Q1630.79 192.808 1641.49 192.808 Q1653.59 192.808 1661.52 200.022 Q1669.5 207.172 1669.5 218.379 Q1669.5 222.308 1668.28 225.915 Q1667.12 229.458 1665.51 232.228 Q1663.96 234.998 1659.71 239.442 Q1655.46 243.886 1652.05 247.043 Q1648.63 250.199 1640.97 256.898 L1626.99 270.488 L1650.76 270.488 Q1662.35 270.488 1663.26 269.458 Q1664.54 267.59 1666.15 257.735 L1669.5 257.735 L1665.77 280.665 L1616.82 280.665 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip350)" d="M1669.66 258.894 L1669.66 254.836 L1710.17 192.937 Q1711.2 191.326 1712.81 191.391 Q1714.29 191.391 1714.62 191.97 Q1714.94 192.55 1714.94 194.805 L1714.94 254.836 L1728.14 254.836 L1728.14 258.894 L1714.94 258.894 L1714.94 270.36 Q1714.94 274.16 1716.48 275.384 Q1718.09 276.608 1724.92 276.608 L1727.69 276.608 L1727.69 280.665 Q1722.28 280.279 1709.79 280.279 Q1697.35 280.279 1691.94 280.665 L1691.94 276.608 L1694.71 276.608 Q1701.54 276.608 1703.15 275.448 Q1704.76 274.224 1704.76 270.36 L1704.76 258.894 L1669.66 258.894 M1673.39 254.836 L1705.53 254.836 L1705.53 205.626 L1673.39 254.836 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path></svg>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -1740,6 +1737,7 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -2000,9 +1998,10 @@
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -2012,17 +2011,8 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -2077,13 +2067,12 @@
         }
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp("https:\/\/viveks\.me\/environmental-systems-analysis");
         var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+            return filterRegex.test(href) || localhostRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

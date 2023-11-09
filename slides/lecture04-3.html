@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.388">
+  <meta name="generator" content="quarto-1.3.283">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2023-09-15">
@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -157,8 +157,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -347,7 +346,7 @@
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <meta property="og:title" content="BEE 4750 - Fall 2023 - Monte Carlo Simulation">
 <meta property="og:description" content="Lecture 10">
-<meta property="og:site_name" content="BEE 4750 - Fall 2023">
+<meta property="og:site-name" content="BEE 4750 - Fall 2023">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -383,8 +382,8 @@
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/system-conceptual.svg"></p>
-<figcaption>Conceptual Schematic of a Systems Model</figcaption>
+<p><img data-src="images/system-conceptual.svg" class="quarto-discovered-preview-image"></p>
+<p></p><figcaption>Conceptual Schematic of a Systems Model</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -401,11 +400,9 @@
 <h2>Questions?</h2>
 <div class="columns center">
 <div class="column" style="width:40%;">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center" alt="Poll Everywhere QR Code" width="100%" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig">
-<div>
-<img data-src="images/vsrikrish-poll.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code">
-</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/vsrikrish-poll.png" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
 </figure>
 </div>
 </div><div class="column" style="width:60%;">
@@ -460,7 +457,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/Risk_Interactions.jpg" style="width:90.0%"></p>
-<figcaption>Probabilistic interactions between sea-levels and exposure</figcaption>
+<p></p><figcaption>Probabilistic interactions between sea-levels and exposure</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -556,56 +553,38 @@
 <div>
 <svg width="NaN" height="480" viewbox="0.00 0.00 935.80 104.17" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 100.17)">
-<title>G</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-100.17 931.8,-100.17 931.8,4 -4,4"></polygon>
-<!-- a -->
-<g id="node1" class="node">
-<title>a</title>
-<ellipse fill="none" stroke="black" cx="101.18" cy="-48.08" rx="101.36" ry="48.17"></ellipse>
-<text text-anchor="middle" x="101.18" y="-55.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00">Probability</text>
-<text text-anchor="middle" x="101.18" y="-25.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00"> Distribution</text>
-</g>
-<!-- b -->
-<g id="node2" class="node">
-<title>b</title>
-<ellipse fill="none" stroke="black" cx="388.98" cy="-48.08" rx="75.77" ry="48.17"></ellipse>
-<text text-anchor="middle" x="388.98" y="-55.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00">Random</text>
-<text text-anchor="middle" x="388.98" y="-25.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00"> Samples</text>
-</g>
-<!-- a&#45;&gt;b -->
-<g id="edge1" class="edge">
-<title>a-&gt;b</title>
-<path fill="none" stroke="#b31b1b" stroke-width="3" stroke-dasharray="5,2" d="M202.54,-48.08C236.19,-48.08 273.31,-48.08 305.44,-48.08"></path>
-<polygon fill="#b31b1b" stroke="#b31b1b" stroke-width="3" points="305.56,-50.71 313.06,-48.08 305.56,-45.46 305.56,-50.71"></polygon>
-<text text-anchor="middle" x="257.85" y="-55.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00" fill="#b31b1b">Sample</text>
-</g>
-<!-- c -->
-<g id="node3" class="node">
-<title>c</title>
-<ellipse fill="none" stroke="black" cx="610.86" cy="-48.08" rx="57.43" ry="26.74"></ellipse>
-<text text-anchor="middle" x="610.86" y="-40.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00">Model</text>
-</g>
-<!-- b&#45;&gt;c -->
-<g id="edge2" class="edge">
-<title>b-&gt;c</title>
-<path fill="none" stroke="#b31b1b" stroke-width="3" stroke-dasharray="5,2" d="M464.73,-48.08C491.02,-48.08 520.3,-48.08 545.65,-48.08"></path>
-<polygon fill="#b31b1b" stroke="#b31b1b" stroke-width="3" points="545.88,-50.71 553.38,-48.08 545.88,-45.46 545.88,-50.71"></polygon>
-<text text-anchor="middle" x="509" y="-55.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00" fill="#b31b1b">Input</text>
-</g>
-<!-- d -->
-<g id="node4" class="node">
-<title>d</title>
-<ellipse fill="none" stroke="black" cx="860.5" cy="-48.08" rx="67.1" ry="26.74"></ellipse>
-<text text-anchor="middle" x="860.5" y="-40.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00">Outputs</text>
-</g>
-<!-- c&#45;&gt;d -->
-<g id="edge3" class="edge">
-<title>c-&gt;d</title>
-<path fill="none" stroke="#b31b1b" stroke-width="3" stroke-dasharray="5,2" d="M668.36,-48.08C703.01,-48.08 747.77,-48.08 785.26,-48.08"></path>
-<polygon fill="#b31b1b" stroke="#b31b1b" stroke-width="3" points="785.64,-50.71 793.14,-48.08 785.64,-45.46 785.64,-50.71"></polygon>
-<text text-anchor="middle" x="730.76" y="-55.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00" fill="#b31b1b">Simulate</text>
-</g>
-</g>
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-100.17 931.8,-100.17 931.8,4 -4,4"></polygon> <!-- a --> <g id="node1" class="node">
+<title>
+a
+</title>
+<ellipse fill="none" stroke="black" cx="101.18" cy="-48.08" rx="101.36" ry="48.17"></ellipse> <text text-anchor="middle" x="101.18" y="-55.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00">Probability</text> <text text-anchor="middle" x="101.18" y="-25.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00"> Distribution</text> </g> <!-- b --> <g id="node2" class="node">
+<title>
+b
+</title>
+<ellipse fill="none" stroke="black" cx="388.98" cy="-48.08" rx="75.77" ry="48.17"></ellipse> <text text-anchor="middle" x="388.98" y="-55.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00">Random</text> <text text-anchor="middle" x="388.98" y="-25.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00"> Samples</text> </g> <!-- a&#45;&gt;b --> <g id="edge1" class="edge">
+<title>
+a-&gt;b
+</title>
+<path fill="none" stroke="#b31b1b" stroke-width="3" stroke-dasharray="5,2" d="M202.54,-48.08C236.19,-48.08 273.31,-48.08 305.44,-48.08"></path> <polygon fill="#b31b1b" stroke="#b31b1b" stroke-width="3" points="305.56,-50.71 313.06,-48.08 305.56,-45.46 305.56,-50.71"></polygon> <text text-anchor="middle" x="257.85" y="-55.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00" fill="#b31b1b">Sample</text> </g> <!-- c --> <g id="node3" class="node">
+<title>
+c
+</title>
+<ellipse fill="none" stroke="black" cx="610.86" cy="-48.08" rx="57.43" ry="26.74"></ellipse> <text text-anchor="middle" x="610.86" y="-40.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00">Model</text> </g> <!-- b&#45;&gt;c --> <g id="edge2" class="edge">
+<title>
+b-&gt;c
+</title>
+<path fill="none" stroke="#b31b1b" stroke-width="3" stroke-dasharray="5,2" d="M464.73,-48.08C491.02,-48.08 520.3,-48.08 545.65,-48.08"></path> <polygon fill="#b31b1b" stroke="#b31b1b" stroke-width="3" points="545.88,-50.71 553.38,-48.08 545.88,-45.46 545.88,-50.71"></polygon> <text text-anchor="middle" x="509" y="-55.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00" fill="#b31b1b">Input</text> </g> <!-- d --> <g id="node4" class="node">
+<title>
+d
+</title>
+<ellipse fill="none" stroke="black" cx="860.5" cy="-48.08" rx="67.1" ry="26.74"></ellipse> <text text-anchor="middle" x="860.5" y="-40.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00">Outputs</text> </g> <!-- c&#45;&gt;d --> <g id="edge3" class="edge">
+<title>
+c-&gt;d
+</title>
+<path fill="none" stroke="#b31b1b" stroke-width="3" stroke-dasharray="5,2" d="M668.36,-48.08C703.01,-48.08 747.77,-48.08 785.26,-48.08"></path> <polygon fill="#b31b1b" stroke="#b31b1b" stroke-width="3" points="785.64,-50.71 793.14,-48.08 785.64,-45.46 785.64,-50.71"></polygon> <text text-anchor="middle" x="730.76" y="-55.58" font-family="IBM Plex Sans, sans-serif" font-size="25.00" fill="#b31b1b">Simulate</text> </g> </g>
 </svg>
 </div>
 </div>
@@ -727,6 +706,7 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -987,9 +967,10 @@
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -999,17 +980,8 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1064,13 +1036,12 @@
         }
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp("https:\/\/viveks\.me\/environmental-systems-analysis");
         var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+            return filterRegex.test(href) || localhostRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

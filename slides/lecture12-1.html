@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.388">
+  <meta name="generator" content="quarto-1.3.283">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2023-11-06">
@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -157,8 +157,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -347,7 +346,7 @@
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <meta property="og:title" content="BEE 4750 - Fall 2023 - Limits of Mathematical Programming for Systems Analysis">
 <meta property="og:description" content="Lecture 22">
-<meta property="og:site_name" content="BEE 4750 - Fall 2023">
+<meta property="og:site-name" content="BEE 4750 - Fall 2023">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -446,8 +445,8 @@
 </div><div class="column" style="width:65%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/bifurcation.png"></p>
-<figcaption>Bifurcations Diagram</figcaption>
+<p><img data-src="figures/bifurcation.png" class="quarto-discovered-preview-image"></p>
+<p></p><figcaption>Bifurcations Diagram</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -463,7 +462,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/reinforcing-feedback.png"></p>
-<figcaption>Reinforcing Feedback Example</figcaption>
+<p></p><figcaption>Reinforcing Feedback Example</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -490,7 +489,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Schellings.gif" style="width:75.0%"></p>
-<figcaption>Schelling Model Animation</figcaption>
+<p></p><figcaption>Schelling Model Animation</figcaption><p></p>
 </figure>
 </div>
 <div class="caption">
@@ -549,7 +548,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/eutrophication-system-all.png"></p>
-<figcaption>Shallow Lake Problem Diagram</figcaption>
+<p></p><figcaption>Shallow Lake Problem Diagram</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -601,9 +600,9 @@ y_t &amp;\sim \text{LogNormal}(\mu, \sigma^2)
 </section>
 <section id="lake-model-dynamics" class="slide level2">
 <h2>Lake Model Dynamics</h2>
-<div id="fc5a3f31" class="cell quarto-layout-panel" data-execution_count="3" data-layout-ncol="2">
+<div id="fc5a3f31" class="cell quarto-layout-panel" data-execution_count="3">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -656,7 +655,7 @@ y_t &amp;\sim \text{LogNormal}(\mu, \sigma^2)
 <path clip-path="url(#clip320)" d="M715.088 461.055 Q715.088 467.801 711.669 474.406 Q708.296 480.964 702.862 485.087 Q697.475 489.209 691.947 489.209 Q686.56 489.209 683.14 485.087 Q679.767 480.918 679.767 474.125 Q679.767 471.736 680.048 470.049 Q680.329 468.363 681.313 464.428 L689.183 433.136 Q690.542 427.28 690.542 427.233 Q690.542 426.671 690.307 426.39 Q690.12 426.062 688.996 425.828 Q687.871 425.594 685.717 425.594 Q684.827 425.594 684.405 425.547 Q684.03 425.5 683.702 425.266 Q683.421 424.985 683.421 424.423 Q683.421 423.626 683.749 423.205 Q684.124 422.736 684.405 422.642 Q684.686 422.549 685.248 422.502 Q686.045 422.455 688.715 422.221 Q691.385 421.94 693.68 421.752 Q695.976 421.565 696.959 421.565 Q697.522 421.565 697.803 421.846 Q698.13 422.08 698.13 422.361 L698.177 422.596 L691.104 451.499 Q696.678 445.737 702.347 445.737 Q708.015 445.737 711.528 450.094 Q715.088 454.45 715.088 461.055 M708.155 456.839 Q708.155 452.389 706.469 450.14 Q704.829 447.845 702.112 447.845 Q699.817 447.845 696.819 449.578 Q693.821 451.312 690.635 455.528 Q690.026 456.324 689.792 456.792 Q689.605 457.261 689.183 458.854 L687.075 467.707 Q685.529 473.75 685.529 477.404 Q685.529 482.37 687.356 484.712 Q689.183 487.054 691.947 487.054 Q694.851 487.054 697.896 484.478 Q700.941 481.901 703.283 477.217 Q704.736 474.125 706.422 467.473 Q708.155 460.774 708.155 456.839 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M747.115 473.563 Q747.209 472.392 749.036 472.392 L807.826 472.392 Q810.59 472.392 810.637 473.469 Q810.637 474.64 808.014 474.593 L749.692 474.593 Q747.115 474.64 747.115 473.563 M747.115 454.825 Q747.115 453.654 749.13 453.701 L807.733 453.701 Q810.59 453.701 810.637 454.825 Q810.637 455.902 808.201 455.902 L749.036 455.902 Q747.115 455.902 747.115 454.825 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M847.636 457.448 Q847.636 443.348 851.196 435.665 Q856.161 424.235 867.873 424.235 Q870.355 424.235 872.932 424.938 Q875.555 425.594 878.834 428.17 Q882.16 430.747 884.175 434.963 Q888.016 443.114 888.016 457.448 Q888.016 471.455 884.456 479.091 Q879.256 490.24 867.779 490.24 Q863.469 490.24 859.066 488.038 Q854.709 485.836 851.945 480.543 Q847.636 472.626 847.636 457.448 M855.599 456.277 Q855.599 470.752 856.63 476.514 Q857.801 482.744 860.986 485.461 Q864.219 488.132 867.779 488.132 Q871.62 488.132 874.806 485.274 Q878.038 482.37 879.022 476.139 Q880.099 470.003 880.052 456.277 Q880.052 442.926 879.115 437.586 Q877.851 431.356 874.478 428.873 Q871.152 426.343 867.779 426.343 Q866.514 426.343 865.156 426.718 Q863.844 427.093 861.923 428.17 Q860.003 429.248 858.504 431.918 Q857.051 434.588 856.349 438.617 Q855.599 443.816 855.599 456.277 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M896.596 486.586 Q895.143 485.04 895.143 483.026 Q895.143 481.011 896.596 479.559 Q898.048 478.06 900.25 478.06 Q902.358 478.06 903.763 479.465 Q905.215 480.824 905.215 483.072 Q905.215 485.274 903.669 486.726 Q902.17 488.132 900.25 488.132 Q898.048 488.132 896.596 486.586 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M921.542 472.298 L921.542 469.347 L951.007 424.329 Q951.757 423.158 952.928 423.205 Q954.005 423.205 954.24 423.626 Q954.474 424.048 954.474 425.687 L954.474 469.347 L964.077 469.347 L964.077 472.298 L954.474 472.298 L954.474 480.636 Q954.474 483.4 955.598 484.29 Q956.769 485.18 961.735 485.18 L963.749 485.18 L963.749 488.132 Q959.814 487.851 950.726 487.851 Q941.685 487.851 937.75 488.132 L937.75 485.18 L939.764 485.18 Q944.73 485.18 945.901 484.337 Q947.072 483.447 947.072 480.636 L947.072 472.298 L921.542 472.298 M924.259 469.347 L947.634 469.347 L947.634 433.557 L924.259 469.347 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><circle clip-path="url(#clip320)" cx="568.429" cy="559.898" r="43.8857" fill="#ffd700" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="5.85143"></circle>
 <path clip-path="url(#clip320)" d="M654.421 525.338 L698.124 525.338 L698.124 533.208 L663.773 533.208 L663.773 553.671 L696.689 553.671 L696.689 561.541 L663.773 561.541 L663.773 586.587 L698.958 586.587 L698.958 594.458 L654.421 594.458 L654.421 525.338 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M719.05 568.578 Q719.05 577.976 722.893 583.347 Q726.782 588.671 733.541 588.671 Q740.3 588.671 744.189 583.347 Q748.078 577.976 748.078 568.578 Q748.078 559.18 744.189 553.856 Q740.3 548.486 733.541 548.486 Q726.782 548.486 722.893 553.856 Q719.05 559.18 719.05 568.578 M748.078 586.68 Q745.393 591.309 741.272 593.578 Q737.198 595.8 731.458 595.8 Q722.059 595.8 716.134 588.3 Q710.254 580.8 710.254 568.578 Q710.254 556.356 716.134 548.856 Q722.059 541.356 731.458 541.356 Q737.198 541.356 741.272 543.624 Q745.393 545.847 748.078 550.476 L748.078 542.606 L756.596 542.606 L756.596 614.18 L748.078 614.18 L748.078 586.68 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M773.263 573.995 L773.263 542.606 L781.781 542.606 L781.781 573.671 Q781.781 581.032 784.652 584.735 Q787.522 588.393 793.263 588.393 Q800.161 588.393 804.142 583.995 Q808.17 579.597 808.17 572.004 L808.17 542.606 L816.689 542.606 L816.689 594.458 L808.17 594.458 L808.17 586.495 Q805.068 591.217 800.948 593.532 Q796.874 595.8 791.457 595.8 Q782.522 595.8 777.892 590.245 Q773.263 584.689 773.263 573.995 M794.698 541.356 L794.698 541.356 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M834.235 542.606 L842.753 542.606 L842.753 594.458 L834.235 594.458 L834.235 542.606 M834.235 522.421 L842.753 522.421 L842.753 533.208 L834.235 533.208 L834.235 522.421 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M860.577 522.421 L869.096 522.421 L869.096 594.458 L860.577 594.458 L860.577 522.421 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M886.92 542.606 L895.438 542.606 L895.438 594.458 L886.92 594.458 L886.92 542.606 M886.92 522.421 L895.438 522.421 L895.438 533.208 L886.92 533.208 L886.92 522.421 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M950.484 568.578 Q950.484 559.18 946.595 553.856 Q942.753 548.486 935.993 548.486 Q929.234 548.486 925.345 553.856 Q921.503 559.18 921.503 568.578 Q921.503 577.976 925.345 583.347 Q929.234 588.671 935.993 588.671 Q942.753 588.671 946.595 583.347 Q950.484 577.976 950.484 568.578 M921.503 550.476 Q924.188 545.847 928.262 543.624 Q932.382 541.356 938.077 541.356 Q947.521 541.356 953.401 548.856 Q959.327 556.356 959.327 568.578 Q959.327 580.8 953.401 588.3 Q947.521 595.8 938.077 595.8 Q932.382 595.8 928.262 593.578 Q924.188 591.309 921.503 586.68 L921.503 594.458 L912.938 594.458 L912.938 522.421 L921.503 522.421 L921.503 550.476 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M1003.49 550.569 Q1002.06 549.736 1000.35 549.365 Q998.678 548.949 996.641 548.949 Q989.419 548.949 985.53 553.671 Q981.688 558.347 981.688 567.143 L981.688 594.458 L973.123 594.458 L973.123 542.606 L981.688 542.606 L981.688 550.661 Q984.373 545.939 988.678 543.671 Q992.984 541.356 999.141 541.356 Q1000.02 541.356 1001.09 541.495 Q1002.15 541.587 1003.45 541.819 L1003.49 550.569 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M1012.43 542.606 L1020.95 542.606 L1020.95 594.458 L1012.43 594.458 L1012.43 542.606 M1012.43 522.421 L1020.95 522.421 L1020.95 533.208 L1012.43 533.208 L1012.43 522.421 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M1062.34 568.393 Q1052.01 568.393 1048.03 570.754 Q1044.05 573.115 1044.05 578.809 Q1044.05 583.347 1047.01 586.032 Q1050.02 588.671 1055.16 588.671 Q1062.24 588.671 1066.5 583.671 Q1070.81 578.624 1070.81 570.291 L1070.81 568.393 L1062.34 568.393 M1079.33 564.874 L1079.33 594.458 L1070.81 594.458 L1070.81 586.587 Q1067.89 591.309 1063.54 593.578 Q1059.19 595.8 1052.89 595.8 Q1044.93 595.8 1040.21 591.356 Q1035.53 586.865 1035.53 579.365 Q1035.53 570.615 1041.36 566.171 Q1047.24 561.726 1058.86 561.726 L1070.81 561.726 L1070.81 560.893 Q1070.81 555.013 1066.92 551.819 Q1063.08 548.578 1056.09 548.578 Q1051.64 548.578 1047.43 549.643 Q1043.22 550.708 1039.33 552.837 L1039.33 544.967 Q1044 543.162 1048.4 542.282 Q1052.8 541.356 1056.97 541.356 Q1068.22 541.356 1073.77 547.189 Q1079.33 553.023 1079.33 564.874 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path></svg>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -806,6 +805,7 @@ y_t &amp;\sim \text{LogNormal}(\mu, \sigma^2)
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1066,9 +1066,10 @@ y_t &amp;\sim \text{LogNormal}(\mu, \sigma^2)
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1078,17 +1079,8 @@ y_t &amp;\sim \text{LogNormal}(\mu, \sigma^2)
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1143,13 +1135,12 @@ y_t &amp;\sim \text{LogNormal}(\mu, \sigma^2)
         }
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp("https:\/\/viveks\.me\/environmental-systems-analysis");
         var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+            return filterRegex.test(href) || localhostRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

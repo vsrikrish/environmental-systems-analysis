@@ -1,0 +1,32 @@
+---
+title: "Project Presentation Rubric"
+html: default
+pdf:
+    documentclass: article
+    geometry:
+        - margin=1in  
+    include-in-header:
+        text: |
+            \renewcommand\toprule[2]\relax
+            \renewcommand\bottomrule[2]\relax
+    filters:
+        - ../_assets/filters/columns-to-tables.lua
+---
+
+## Rubric
+
+The presentation is graded out of a total of 10 points. You may record the presentation using any method, but it should include audio narration as well as slides.
+
+If your presentation goes over the 10 minute limit, only the first 10 minutes will be evaluated for your grade.
+
+Group members who do not contribute equally to the presentation will not be given credit, with the penalty scaling based on the level of non-involvement.
+
+
+## Rubric
+
+Rather than a formal rubric (since the presentation is meant to be a relatively short overview, and there is some flexibility allowed for where you spend your time), your grade will be determined based on the following:
+
+- 4 points: Presentation Content (does your presentation contain all of the requested information?). Points would be lost for missing information or not providing enough context to understand the key project components.
+- 3 points: Presentation Quality (how easy to follow and well-structured is your presentation?). Points would be lost for disorganized presentation or presentations that are too text- or equation-heavy to follow easily.
+- 3 points: Peer Reviews (peer assessment of how clear your presentation was to your classmates). These are general assessments of how easy to understand your project was.
+

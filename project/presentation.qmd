@@ -1,0 +1,34 @@
+---
+title: Project Presentation Instructions
+format:
+    html: default
+    pdf:
+        documentclass: article
+        geometry:
+            - margin=1in  
+        include-in-header:
+            text: |
+                \renewcommand\toprule[2]\relax
+                \renewcommand\bottomrule[2]\relax
+        filters:
+            - ../_assets/filters/columns-to-tables.lua
+---
+
+## Overview
+
+Your project presentation will provide a narrative overview of your project. This presentation should be aimed at your classmates, who will be conducting peer evaluations of your presentation.
+
+Cornell's Help for Engineering Communications provides [these tips for effective presentations](https://chec.engineering.cornell.edu/presentations/).
+
+## Instructions
+
+Your recorded video should be no longer than 10 minutes. **Every member of the group must participate equally in the recording**. The following should be included:
+
+You should feel free to structure in the way which makes the most narrative sense to you, but you should include the following (you can choose the order and how much you want to dedicate to each piece):
+
+- Problem background and key question;
+- Short (**not too technical!**) overview of the modeling and analytic method;
+- Central result(s);
+- Conclusions and discussion.
+
+Submit the video to Canvas by 9:00 PM on the due date. 

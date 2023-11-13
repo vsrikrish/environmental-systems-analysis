@@ -1,0 +1,38 @@
+---
+title: Project Poster Instructions
+format:
+    html: default
+    pdf:
+        documentclass: article
+        geometry:
+            - margin=1in  
+        include-in-header:
+            text: |
+                \renewcommand\toprule[2]\relax
+                \renewcommand\bottomrule[2]\relax
+        filters:
+            - ../_assets/filters/columns-to-tables.lua
+---
+
+## Overview
+
+This poster is the final summary of your project. It should include all relevant information to understand your modeled system, the question of interest, your methods, and results in a largely visual presentation. Too much text will be difficult to interpret and may be judged in rubric terms as unclear.
+
+## Template
+
+A Google Drive folder with example poster templates will be shared on Ed Discussion. These templates may vary in dimension; any similar dimension is fine. You do not need to restrict yourself to the layout in the templates so long as the necessary information is included.
+
+## Instructions
+
+You should include the following information in your poster:
+
+- An overview of your system, including (and emphasizing) a diagram of the modeled components and a description of relevant dynamics;
+- A statement of the key question, in a way which connects to the system overview and background;
+- A description of the methods used in your project, including your adopted approach, key equations or methods, and critical assumptions.
+- Description (emphasizing visualizations) of the results;
+- Conclusions synthesizing the results and interpreting them in light of the system, key question, and assumptions;
+- Discussion of what you learned and did, with particular emphasis on how it connects to the class material;
+- References for key sources; this does not need to be comprehensive given space constraints, but cite any source that is directly referenced in the text;
+- Include a title and name(s) of the project group at the top of the poster;
+- The poster should not be too crowded (feel free to ask if unsure what this means, but use the templates as a guide) and should have a font size large enough to read from a distance given the poster size (this is not specified as different fonts may be used);
+- Submit a PDF of the update to Gradescope by 9:00 PM on the due date. 

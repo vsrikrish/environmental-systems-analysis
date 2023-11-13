@@ -21,9 +21,9 @@ Milestones which are only for BEE 5750 or 4750 students are in *italics*.
 | Proposal Peer Review | 10 | [{{< fa sharp pen-field >}}](project/proposal-review.qmd) | [{{< fa sharp list-check >}}](rubrics/proposal-review.qmd) | Mon, Oct 2 |
 | Regulations Report | 20 | [{{< fa sharp pen-field >}}](project/regulation.qmd)  | [{{< fa sharp list-check >}}](rubrics/regulation.qmd) | Fri, Oct 27 |
 | Project Update | 15 | [{{< fa sharp pen-field >}}](project/update.qmd) | [{{< fa sharp list-check >}}](rubrics/update.qmd) | Fri, Nov 10 |
-| Presentation | 10 | | | Fri, Dec 4 |
+| Presentation | 10 | [{{< fa sharp pen-field >}}](project/presentation.qmd) | [{{< fa sharp list-check >}}](rubrics/presentation.qmd) | Fri, Dec 4 |
 | Presentation Peer Review | 10 | | | Fri, Dec 15 |
-| Poster | 20  | | | Fri, Dec 15 |
+| Poster | 20  | [{{< fa sharp pen-field >}}](project/poster.qmd) | [{{< fa sharp list-check >}}](rubrics/poster.qmd) | Fri, Dec 15 |
 | *Literature Review* (5750 only) | 5 | [{{< fa sharp pen-field >}}](project/literature.qmd) | | Fri, Dec 15 |
 | *Team Evaluations* (4750 only) | 5 | [{{< fa sharp pen-field >}}](project/evaluation.qmd) | | Fri, Dec 15 |
 

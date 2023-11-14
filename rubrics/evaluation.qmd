@@ -1,0 +1,18 @@
+---
+title: "Team Evaluation Rubric"
+html: default
+pdf:
+    documentclass: article
+    geometry:
+        - margin=1in  
+    include-in-header:
+        text: |
+            \renewcommand\toprule[2]\relax
+            \renewcommand\bottomrule[2]\relax
+    filters:
+        - ../_assets/filters/columns-to-tables.lua
+---
+
+## Rubric
+
+You will be graded on completing the team evaluation form in Canvas. The outcome of this evaluation will impact grades if teammates were evaluated as not having contributed to their project outcomes.

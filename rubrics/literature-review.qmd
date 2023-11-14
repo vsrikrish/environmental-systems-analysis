@@ -1,0 +1,25 @@
+---
+title: "Literature Review Rubric"
+html: default
+pdf:
+    documentclass: article
+    geometry:
+        - margin=1in  
+    include-in-header:
+        text: |
+            \renewcommand\toprule[2]\relax
+            \renewcommand\bottomrule[2]\relax
+    filters:
+        - ../_assets/filters/columns-to-tables.lua
+---
+
+## Rubric
+
+The literature review will be graded on a scape of 0 (Missing) through 5 (Excellent) based on how well you synthesize the papers:
+
+- What are the key question(s) of the studies, and how are they related?
+- What were the key findings?
+- How appropriate were the methods in addressing the questions, and are the findings well supported by the analysis?
+- What are your takeaways from the papers, and what opportunities to expand or improve exist?
+
+Points will be deducted for missing or inconsistent referencing (-2) and failure to follow formatting guidelines (-1).

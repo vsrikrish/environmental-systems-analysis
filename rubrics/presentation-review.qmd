@@ -1,0 +1,18 @@
+---
+title: "Presentation Peer Review Rubric"
+html: default
+pdf:
+    documentclass: article
+    geometry:
+        - margin=1in  
+    include-in-header:
+        text: |
+            \renewcommand\toprule[2]\relax
+            \renewcommand\bottomrule[2]\relax
+    filters:
+        - ../_assets/filters/columns-to-tables.lua
+---
+
+## Rubric
+
+The peer review is graded out of 10 points. You will be graded based on the constructiveness of your rubric and how you responded to the prompts in the instructions.

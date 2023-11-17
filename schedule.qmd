@@ -46,8 +46,8 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 |     | Wed, Nov 8 | Simulation-Optimization | [{{< fa sharp presentation-screen >}}](slides/lecture12-2.qmd){target="_blank"} | | | |
 |    | Fri, Nov 10 | Lab: Simulation-Optimization | | [{{< fa sharp laptop-code >}}](labs/lab04/lab04.qmd) | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} |
 | 13   | Mon, Nov 13 | Deep Uncertainty | [{{< fa sharp presentation-screen >}}](slides/lecture13-1.qmd){target="_blank"} | | | |
-|    | Wed, Nov 15 | Robustness | | | | |
-|    | Fri, Nov 17 |  Sensitivity Analysis | | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | | |
+|    | Wed, Nov 15 | Robustness | [{{< fa sharp presentation-screen >}}](slides/lecture13-2.qmd){target="_blank"} | | | |
+|    | Fri, Nov 17 |  Sensitivity Analysis | [{{< fa sharp presentation-screen >}}](slides/lecture13-3.qmd){target="_blank"} | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | | |
 |  14 | Mon, Nov 20 | Tradeoffs and Multiple Objectives | | | | |
 |     | Wed, Nov 22 | **No Class: Thanksgiving Break** | | | | |
 |     | Fri, Nov 24 | **No Class: Thanksgiving Break** | | | | |

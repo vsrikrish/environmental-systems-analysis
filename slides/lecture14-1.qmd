@@ -1,0 +1,364 @@
+---
+title: "Multiple Objectives and Tradeoffs"
+subtitle: "Lecture 27"
+author: "Vivek Srikrishnan"
+course: "BEE 4750"
+institution: "Cornell University"
+date: "November 20, 2023"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        footer: "[BEE 4750, Environmental Systems Analysis](https://viveks.me/environmental-systems-analysis)"
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: mathjax
+        include-in-header: mathjax-config.html
+        date-format: long
+
+execute:
+    freeze: auto
+---
+
+```{julia}
+import Pkg
+Pkg.activate(".")
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+
+using Random
+using Distributions
+using Roots
+using DataFrames
+using Plots
+using LaTeXStrings
+using Measures
+
+Random.seed!(1)
+```
+
+# Review and Questions
+
+## Sensitivity Analysis
+
+- **Sensitivity Analysis**: How is uncertainty in the output(s) affected by uncertainty in the outputs?
+
+## Sensitivity Analysis: Modes
+
+:::: {.columns}
+::: {.column width=50%}
+- Factor Prioritization
+- Factor Fixing
+- Factor Mapping
+:::
+::: {.column width=50%}
+![Sensitivity analysis modes](https://uc-ebook.org/docs/html/_images/figure3_2_factor_mapping.png){width=90%}
+
+::: {.caption}
+Source: [Reed et al (2022)](https://uc-ebook.org/)
+:::
+:::
+::::
+
+## Types of Sensitivity Analysis
+
+- One-At-A-Time vs. All-At-Once
+- Local vs. Global
+
+## Some Common Methods
+
+- Perturbation/Derivatives (OAT, Local)
+- Method of Morris (OAT, Global)
+- Sobol' (OAT/All At Once, Global)
+- Regression: Linear Regression, Tree-based, Logistic (OAT/All At Once, Global)
+
+# Multiple Objectives
+
+## Multiple Objectives and Environmental Systems
+
+Often have multiple objectives at play when designing or managing environmental systems:
+
+::: {.fragment .fade-in}
+**Some examples**:
+
+- Cost
+- Environmental quality
+- Reliability/Variability
+:::
+
+## Example: Power Systems
+
+- Total generation cost (including reserves);
+- CO~2~ emissions;
+- Resource adequacy (do we have enough resources available);
+- Reliability;
+- Other environmental impacts
+
+## Example: Reservoir Operations
+
+- Municipal demand;
+- Irrigation;
+- Recreation;
+- Hydropower potential;
+- Flood management;
+- Streamflow (ecosystem management)
+
+## How Can We Incorporate Multiple Objectives Into Models?
+
+Approaches are method specific!
+
+Key Question: ***what does it mean to "optimize" multiple objectives?***
+
+## How Can We Incorporate Multiple Objectives Into Models?
+
+**Linear Programming**:
+
+::: {.fragment .fade-in}
+::: {.incremental}
+
+1. Identify thresholds and establish constraints for non-objective "objectives";
+2. Weight objectives based on preferences, *e.g.*
+    $$\min_\mathbf{x} Z(\mathbf{x}) = \sum_i w_i \hat{Z_i}(\mathbf{x}), \qquad \sum_i w_i =1$$
+
+:::
+:::
+
+## How Can We Incorporate Multiple Objectives Into Models?
+
+**Simulation-Optimization**:
+
+- Could use the LP approaches
+- Can also have the simulation model (or wrapper) return multiple metrics
+
+## Back To The Key Question...
+
+***What does it mean to "optimize" multiple objectives?***
+
+::: {.fragment .fade-in}
+
+Straightforward with weighting, requires but *a priori* elicitation of weights.
+
+What about if we leave the objectives unaggregated?
+
+:::
+
+## Example: Lake Problem
+
+:::: {.columns}
+::: {.column width=50%}
+Simulated 100 random decisions with two objectives:
+
+- Maximize mean P releases
+- Minimize probability of exceeding critical P concentration
+:::
+
+::: {.column width=50%}
+```{julia}
+function lake(a, y, q, b, T)
+    X = zeros(T+1, size(y, 2))
+    # calculate states
+
+    for t = 1:T
+        X[t+1, :] = X[t, :] .+ a[t] .+ y[t, :] .+ (X[t, :].^q./(1 .+ X[t, :].^q)) .- b.*X[t, :]
+    end
+    return X
+end
+
+# set parameters and draw samples
+
+T = 100
+nsamp = 10_000
+lnorm = LogNormal(log(0.03), 0.15)
+y = rand(lnorm, (T, nsamp))
+q = 2.5
+b = 0.4
+a = rand(Uniform(0.0, 0.05), (T, 100))
+
+# find critical value
+crit(x) = (x^q/(1+x^q)) - b*x
+Xcrit = find_zero(crit, (0.1, 1.5))
+
+# write wrapper to evaluate model and return outputs
+function lake_eval(a, y, q, b, T, Xcrit)
+    P = zeros(T+1, size(y, 2))
+    for i = 1:size(y, 2)
+        P[:, i] = lake(a, y[:, i], q, b, T)
+    end
+    return (mean(a), sum(P[101, :]) / size(P, 2))
+end
+
+lake_out = map(x -> lake_eval(x, y, q, b, T, Xcrit), eachslice(a; dims=2))
+obj = DataFrame(mean_a = getindex.(lake_out, 1), worst_P = getindex.(lake_out, 2))
+
+p_pareto = scatter(obj[:, 1], obj[:, 2], markersize=6, label="Candidate Decisions", tickfontsize=16, guidefontsize=18, legendfontsize=14, right_margin=10mm)
+xlabel!("Mean P Release")
+ylabel!("Probability of Eutrophication")
+plot!(size=(600, 600))
+xlims!(0.021, 0.03)
+ylims!(0.10, 0.25)
+```
+:::
+::::
+
+## Tradeoffs
+
+:::: {.columns}
+::: {.column width=50%}
+There is a tradeoff between these two objectives:
+
+Greater releases **typically** means lower reliability.
+
+***What does it mean to find an "optimum" across these two objectives?***
+:::
+
+::: {.column width=50%}
+```{julia}
+annotate!(0.029, 0.17, text("Preferred Direction", color=:purple, pointsize=16, rotation=90))
+annotate!(0.025, 0.11, text("Preferred Direction", color=:purple, pointsize=16))
+quiver!([0.0225], [0.103], quiver=([0.0055], [0]), color=:purple, linewidth=5)
+quiver!([0.0295], [0.215], quiver=([0], [-0.09]), color=:purple, linewidth=5)
+```
+:::
+::::
+
+## Non-Dominated Decisions
+
+:::: {.columns}
+::: {.column width=50%}
+We say that a decision $\mathbf{x}$ is **dominated** if there exists another solution $\mathbf{y}$ such that for every objective metric $Z_i(\cdot)$, $$Z_i(\mathbf{x}) > Z_i(\mathbf{y}).$$
+:::
+
+::: {.column width=50%}
+```{julia}
+sort!(obj, rev=true)
+pareto = obj[1:1, :]
+foreach(row -> row[2] < pareto[end, 2] && push!(pareto, row), eachrow(obj));
+scatter!(p_pareto, pareto[:, 1], pareto[:, 2], label="Non-Dominated Decisions", markersize=6, color=:orange)
+```
+:::
+::::
+
+## Non-Dominated Decisions
+
+:::: {.columns}
+::: {.column width=50%}
+$\mathbf{x}$ is **non-dominated** if it is not dominated by any $\mathbf{y} \neq \mathbf{x}$.
+:::
+
+::: {.column width=50%}
+```{julia}
+p_pareto
+```
+:::
+::::
+
+
+## Pareto Fronts
+
+:::: {.columns}
+::: {.column width=50%}
+The set of non-dominated solutions is called the **Pareto front** (solutions are **Pareto-optimal**).
+
+Every member of a Pareto front represents a different tradeoff between objectives.
+
+:::
+
+::: {.column width=50%}
+```{julia}
+p_pareto
+```
+:::
+::::
+
+## *A Priori* vs *A Posteriori* Decision-Making
+
+This gives us two frameworks for evaluating tradeoffs:
+
+1. ***A Priori***: Establish weights ahead of time and combine objectives;
+2. ***A Posteriori***: Identify Pareto-optimal solutions and then discuss what tradeoffs are tolerable.
+
+## Identifying Pareto Fronts
+
+In higher dimensions, manually screening of a Pareto front is difficult.
+
+Can use **multi-objective optimization** with (certain) evolutionary algorithms.
+
+# Key Takeaways
+
+## Key Takeaways
+
+- Management of environmental systems often involves multiple objectives.
+- Multiple objectives often have tradeoffs.
+- Can combine multiple objectives with weights (***a priori*** decision-making) or identifying non-dominated solutions (***a posteriori*** decision-making)
+- Set of non-dominated solutions (**Pareto front**) represent different choices about tradeoffs.
+
+# Course Review
+
+## Recap of Topics
+
+**Systems Dynamics and Models**
+
+::: {.fragment .fade-in}
+::: {.incremental}
+- Nonlinear dynamics result in a need to view the entire system, not individual components.
+- Models allow us to understand how a system could/would evolve under different conditions.
+- No model is "right", results in a need to consider relevant uncertainties.
+:::
+:::
+
+## Recap of Topics
+
+**Simulating Systems**:
+
+::: {.fragment .fade-in}
+::: {.incremental}
+- **Descriptive Modeling**: using a model to generate data about how a system would behave
+- Typically involves looping over a domain (spatial or temporal) and evaluating
+- "Box" models
+:::
+:::
+
+## Recap of Topics
+
+**Decision-Making**:
+
+::: {.fragment .fade-in}
+::: {.incremental}
+- **Prescriptive Modeling**: using a model to prescribe a decision
+- Linear programming vs. simulation-optimization
+- Can stress-test decisions for robustness or with sensitivity analysis
+:::
+:::
+
+## Recap of Examples
+
+- Water quality
+- Air quality
+- Power systems
+
+**Key**: These methods require domain knowledge but are generally applicable to all environmental systems management or design problems.
+
+# Upcoming Schedule
+
+## Upcoming Schedule
+
+**After Thanksgiving**:
+
+- Project check-ins
+- Presentations due 12/4
+- Peer reviews, posters, evaluations/lit reviews due 12/15.

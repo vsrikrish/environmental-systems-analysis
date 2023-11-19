@@ -351,7 +351,7 @@ p2 = bar([L"$q$", L"$b$", "ymean", "ystd"], (s.ST .+ 0.01), legend=false, yaxis=
 ## Sobol' Method: Second Order
 
 ```{julia}
-heatmap([L"$q$", L"$b$", "ymean", "ystd"], [L"$q$", L"$b$", "ymean", "ystd"], s.S2, , guidefontsize=18, titlefontsize=22, tickfontsize=16, title="Second Order Sensitivity Indices")
+heatmap([L"$q$", L"$b$", "ymean", "ystd"], [L"$q$", L"$b$", "ymean", "ystd"], s.S2, guidefontsize=18, titlefontsize=22, tickfontsize=16, title="Second Order Sensitivity Indices")
 ```
 
 ## Example: Cumulative CO~2~ Emissions

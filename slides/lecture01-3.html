@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.388">
+  <meta name="generator" content="quarto-1.3.283">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2023-08-25">
@@ -33,7 +33,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -159,8 +159,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -346,7 +345,7 @@
   </script>
 <meta property="og:title" content="BEE 4750 - Fall 2023 - Getting Started with Julia and GitHub">
 <meta property="og:description" content="Lab 01">
-<meta property="og:site_name" content="BEE 4750 - Fall 2023">
+<meta property="og:site-name" content="BEE 4750 - Fall 2023">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -408,8 +407,8 @@
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/github-clone.png"></p>
-<figcaption>Code Clone Interface on GitHub</figcaption>
+<p><img data-src="images/github-clone.png" class="quarto-discovered-preview-image"></p>
+<p></p><figcaption>Code Clone Interface on GitHub</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -428,7 +427,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/vs-code-clone.png"></p>
-<figcaption>VS Code New Window</figcaption>
+<p></p><figcaption>VS Code New Window</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -477,7 +476,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/kernel-selection.png"></p>
-<figcaption>Kernel Selection Button</figcaption>
+<p></p><figcaption>Kernel Selection Button</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -501,7 +500,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/new-cell.png"></p>
-<figcaption>Create New Cell</figcaption>
+<p></p><figcaption>Create New Cell</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -530,7 +529,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/vscode-github.png"></p>
-<figcaption>VS Code Source Control Icon</figcaption>
+<p></p><figcaption>VS Code Source Control Icon</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -540,13 +539,7 @@
 <p>Click this and the “Explorer” panel will change to the “Source Control” panel.</p>
 <p>Click the “+” button next to any files you want to commit, add a message, and click “Commit”.</p>
 </div><div class="column" style="width:30%;">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center" width="80%">
-<figure class="quarto-float quarto-float-fig">
-<div>
-<img data-src="images/vscode-source.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" style="width:80.0%">
-</div>
-</figure>
-</div>
+<p><img data-src="images/vscode-source.png" style="width:80.0%"></p>
 </div>
 </div>
 </section>
@@ -571,7 +564,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/vscode-push.png"></p>
-<figcaption>VS Code Sync</figcaption>
+<p></p><figcaption>VS Code Sync</figcaption><p></p>
 </figure>
 </div>
 <div class="fragment fade-in">
@@ -639,6 +632,7 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -899,9 +893,10 @@
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -911,17 +906,8 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -976,13 +962,12 @@
         }
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp("https:\/\/viveks\.me\/environmental-systems-analysis");
         var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+            return filterRegex.test(href) || localhostRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

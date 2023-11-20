@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.388">
+  <meta name="generator" content="quarto-1.3.283">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2023-08-30">
@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -157,8 +157,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -344,7 +343,7 @@
   </script>
 <meta property="og:title" content="BEE 4750 - Fall 2023 - Wastewater Modeling Example">
 <meta property="og:description" content="Lecture 04">
-<meta property="og:site_name" content="BEE 4750 - Fall 2023">
+<meta property="og:site-name" content="BEE 4750 - Fall 2023">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -379,8 +378,8 @@
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/system-conceptual.svg" style="width:100.0%"></p>
-<figcaption>Conceptual Model of an Environmental System</figcaption>
+<p><img data-src="images/system-conceptual.svg" class="quarto-discovered-preview-image" style="width:100.0%"></p>
+<p></p><figcaption>Conceptual Model of an Environmental System</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -400,11 +399,9 @@
 <h2>Questions?</h2>
 <div class="columns center">
 <div class="column" style="width:40%;">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center" width="100%" alt="Poll Everywhere QR Code" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig">
-<div>
-<img data-src="images/vsrikrish-poll.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code">
-</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/vsrikrish-poll.png" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
 </figure>
 </div>
 </div><div class="column" style="width:60%;">
@@ -455,13 +452,7 @@
 <li>How does this impact the concentration downstream?</li>
 </ol>
 </div><div class="column" style="width:60%;">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div>
-<img data-src="images/crud-baseline.svg" id="fig-539a35d47e664c97a50115a146a7f1bd-2">
-</div>
-</figure>
-</div>
+<p><img data-src="images/crud-baseline.svg"></p>
 <p><span class="math display">\[\begin{align*}
 \text{(recall that } 1 \ \text{mg/L} &amp;= 1 \ \text{g/m}^3 \\
 &amp;= 10^{-3} \ \text{kg/m}^3\text{)}
@@ -476,13 +467,7 @@
 <p>Factory 1 releases <span class="math inline">\(1000 \ \text{kg/d}\)</span> without treatment.</p>
 <p><strong>What is the outflow for a given treatment fraction <span class="math inline">\(E_1\)</span>?</strong></p>
 </div><div class="column" style="width:60%;">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div>
-<img data-src="images/crud-baseline.svg" id="fig-539a35d47e664c97a50115a146a7f1bd-3">
-</div>
-</figure>
-</div>
+<p><img data-src="images/crud-baseline.svg"></p>
 </div>
 </div>
 </section>
@@ -493,13 +478,7 @@
 <p>Factory 1 releases <span class="math inline">\(1000 \ \text{kg/d}\)</span> without treatment.</p>
 <p><strong>What is the outflow for a given <span class="math inline">\(E_1\)</span>?</strong></p>
 </div><div class="column" style="width:60%;">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div>
-<img data-src="images/crud-release-1.svg" id="fig-539a35d47e664c97a50115a146a7f1bd-4">
-</div>
-</figure>
-</div>
+<p><img data-src="images/crud-release-1.svg"></p>
 <div class="fragment fade-in">
 <p>Total CRUD after factory 1 release: <span class="math inline">\(\color{blue}100 + \color{red} 1000(1-E_1) \color{black} \ \text{kg/d}\)</span></p>
 </div>
@@ -512,13 +491,7 @@
 <div class="column" style="width:40%;">
 <p>Is this the inflow at Release 2?</p>
 </div><div class="column" style="width:60%;">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div>
-<img data-src="images/crud-release-1-total.svg" id="fig-539a35d47e664c97a50115a146a7f1bd-5">
-</div>
-</figure>
-</div>
+<p><img data-src="images/crud-release-1-total.svg"></p>
 </div>
 </div>
 </section>
@@ -558,13 +531,7 @@
 <p>This means that after factory 2 releases CRUD, the mass is:</p>
 <p><span class="math display">\[\color{red}(1100 - 1000E_1) \exp(-0.18) \color{black}+ \color{blue}1200(1 - E_2) \ \color{black}\text{kg/d}.\]</span></p>
 </div><div class="column" style="width:60%;">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div>
-<img data-src="images/crud-release-2-treated.svg" id="fig-539a35d47e664c97a50115a146a7f1bd-6">
-</div>
-</figure>
-</div>
+<p><img data-src="images/crud-release-2-treated.svg"></p>
 </div>
 </div>
 </section>
@@ -661,6 +628,7 @@ M_1 &amp;= (1100 - 1000E_1) \exp(-0.18) + 1200(1 - E_2).
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -921,9 +889,10 @@ M_1 &amp;= (1100 - 1000E_1) \exp(-0.18) + 1200(1 - E_2).
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -933,17 +902,8 @@ M_1 &amp;= (1100 - 1000E_1) \exp(-0.18) + 1200(1 - E_2).
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -998,13 +958,12 @@ M_1 &amp;= (1100 - 1000E_1) \exp(-0.18) + 1200(1 - E_2).
         }
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp("https:\/\/viveks\.me\/environmental-systems-analysis");
         var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+            return filterRegex.test(href) || localhostRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

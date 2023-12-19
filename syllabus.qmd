@@ -122,6 +122,10 @@ If your programming or statistics skills are a little rusty, don't worry! We wil
 * Robustness of solutions and sensitivity analysis
 
 
+## Course Meetings
+
+This course meets MWF from 1:25--2:15 in 105 Riley-Robb Hall. In addition to the course meetings (a total of 42 lectures, 50 minutes each), the final project will be due during the university finals period. In addition to the work during the semester, students can expect to devote, on average, 4 hours of effort during the exam period.
+
 ## Course Philosophy and Expectations
 
 The goal of our course is to help you gain competancy and knowledge in the area of environmental systems analysis. This involves a dual responsibility on the part of the instructor and the student. As the instructor, my responsibility is to provide you with a structure and opportunity to learn. To this end, I will commit to:
@@ -240,6 +244,25 @@ As noted, all work submitted for a grade in this course must reflect your own un
 In general, late work will be subjected to a 10% penalty per day, *which can accumulate to 100% of the total grade*. However, sometimes things come up in life. Please reach out *ahead of time* if you have extenuating circumstances (including University-approved absences or illnesses) which would make it difficult for you to submit your work on time. Work which would be late for appropriate reasons will be given extensions and the late penalty will be waived.
 
 ## Assessments
+
+### Grading Scale
+
+The following grading scale will be used to convert the numerical weighted average from the assessments (below) to 
+
+| Grade | Range |
+|:---:|:--------|
+| A | 93--100 |
+| A- | 90--92 |
+| B+ | 87--89 |
+| B | 83--86 |
+| B- | 80--82 |
+| C+ | 77--79 |
+| C | 73--76 |
+| C- | 70--72 |
+| D+ | 67--69 |
+| D | 63--66 |
+| D- | 60--62 |
+| F | < 59 |
 
 ### Lab Notebooks: 20%
 

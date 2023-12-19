@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.283">
+  <meta name="generator" content="quarto-1.4.519">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2023-11-13">
@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -157,7 +157,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -346,7 +347,7 @@
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <meta property="og:title" content="BEE 4750 - Fall 2023 - Deep Uncertainty">
 <meta property="og:description" content="Lecture 24">
-<meta property="og:site-name" content="BEE 4750 - Fall 2023">
+<meta property="og:site_name" content="BEE 4750 - Fall 2023">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -404,8 +405,8 @@
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/bifurcation.png" class="quarto-discovered-preview-image"></p>
-<p></p><figcaption>Bifurcation Diagram</figcaption><p></p>
+<p><img data-src="figures/bifurcation.png"></p>
+<figcaption>Bifurcation Diagram</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -416,9 +417,9 @@
 </section>
 <section id="bifurcations-and-misspecifications" class="slide level2">
 <h2>Bifurcations and Misspecifications</h2>
-<div id="a04e3385" class="cell quarto-layout-panel" data-execution_count="3">
+<div id="a04e3385" class="cell quarto-layout-panel" data-execution_count="3" data-layout-ncol="2">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -468,7 +469,7 @@
 <path clip-path="url(#clip410)" d="M651.12 369.793 L651.12 395.765 L662.879 395.765 Q669.406 395.765 672.971 392.385 Q676.536 389.006 676.536 382.756 Q676.536 376.552 672.971 373.172 Q669.406 369.793 662.879 369.793 L651.12 369.793 M641.768 362.108 L662.879 362.108 Q674.499 362.108 680.425 367.385 Q686.397 372.617 686.397 382.756 Q686.397 392.987 680.425 398.219 Q674.499 403.45 662.879 403.45 L651.12 403.45 L651.12 431.228 L641.768 431.228 L641.768 362.108 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip410)" d="M761.86 398.82 Q764.869 399.839 767.693 403.172 Q770.563 406.506 773.434 412.339 L782.924 431.228 L772.878 431.228 L764.036 413.496 Q760.61 406.552 757.369 404.283 Q754.175 402.015 748.619 402.015 L738.434 402.015 L738.434 431.228 L729.082 431.228 L729.082 362.108 L750.193 362.108 Q762.045 362.108 767.878 367.061 Q773.711 372.015 773.711 382.015 Q773.711 388.543 770.656 392.848 Q767.647 397.154 761.86 398.82 M738.434 369.793 L738.434 394.33 L750.193 394.33 Q756.952 394.33 760.378 391.228 Q763.85 388.08 763.85 382.015 Q763.85 375.95 760.378 372.895 Q756.952 369.793 750.193 369.793 L738.434 369.793 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip410)" d="M834.683 403.172 L834.683 407.339 L795.517 407.339 Q796.072 416.135 800.795 420.765 Q805.563 425.348 814.035 425.348 Q818.943 425.348 823.526 424.144 Q828.156 422.941 832.693 420.533 L832.693 428.589 Q828.109 430.533 823.295 431.552 Q818.48 432.57 813.526 432.57 Q801.119 432.57 793.85 425.348 Q786.628 418.126 786.628 405.811 Q786.628 393.08 793.48 385.626 Q800.378 378.126 812.045 378.126 Q822.507 378.126 828.572 384.885 Q834.683 391.598 834.683 403.172 M826.165 400.672 Q826.072 393.682 822.23 389.515 Q818.433 385.348 812.137 385.348 Q805.008 385.348 800.702 389.376 Q796.443 393.404 795.795 400.719 L826.165 400.672 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip410)" d="M885.979 381.367 L885.979 389.33 Q882.368 387.339 878.711 386.367 Q875.1 385.348 871.396 385.348 Q863.109 385.348 858.526 390.626 Q853.942 395.858 853.942 405.348 Q853.942 414.839 858.526 420.117 Q863.109 425.348 871.396 425.348 Q875.1 425.348 878.711 424.376 Q882.368 423.357 885.979 421.367 L885.979 429.237 Q882.415 430.904 878.572 431.737 Q874.776 432.57 870.47 432.57 Q858.757 432.57 851.859 425.209 Q844.961 417.848 844.961 405.348 Q844.961 392.663 851.905 385.395 Q858.896 378.126 871.026 378.126 Q874.961 378.126 878.711 378.959 Q882.461 379.747 885.979 381.367 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip410)" d="M922.368 436.043 Q918.757 445.302 915.331 448.126 Q911.905 450.95 906.164 450.95 L899.359 450.95 L899.359 443.82 L904.359 443.82 Q907.877 443.82 909.822 442.154 Q911.766 440.487 914.127 434.283 L915.655 430.394 L894.683 379.376 L903.711 379.376 L919.914 419.931 L936.118 379.376 L945.146 379.376 L922.368 436.043 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip410)" d="M994.22 381.367 L994.22 389.33 Q990.608 387.339 986.951 386.367 Q983.34 385.348 979.636 385.348 Q971.349 385.348 966.766 390.626 Q962.183 395.858 962.183 405.348 Q962.183 414.839 966.766 420.117 Q971.349 425.348 979.636 425.348 Q983.34 425.348 986.951 424.376 Q990.608 423.357 994.22 421.367 L994.22 429.237 Q990.655 430.904 986.812 431.737 Q983.016 432.57 978.71 432.57 Q966.997 432.57 960.099 425.209 Q953.201 417.848 953.201 405.348 Q953.201 392.663 960.146 385.395 Q967.136 378.126 979.266 378.126 Q983.201 378.126 986.951 378.959 Q990.701 379.747 994.22 381.367 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip410)" d="M1009.03 359.191 L1017.55 359.191 L1017.55 431.228 L1009.03 431.228 L1009.03 359.191 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip410)" d="M1035.38 379.376 L1043.9 379.376 L1043.9 431.228 L1035.38 431.228 L1035.38 379.376 M1035.38 359.191 L1043.9 359.191 L1043.9 369.978 L1035.38 369.978 L1035.38 359.191 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip410)" d="M1104.82 399.932 L1104.82 431.228 L1096.3 431.228 L1096.3 400.209 Q1096.3 392.848 1093.43 389.191 Q1090.56 385.534 1084.82 385.534 Q1077.92 385.534 1073.94 389.932 Q1069.96 394.33 1069.96 401.922 L1069.96 431.228 L1061.4 431.228 L1061.4 379.376 L1069.96 379.376 L1069.96 387.432 Q1073.02 382.756 1077.14 380.441 Q1081.3 378.126 1086.72 378.126 Q1095.65 378.126 1100.24 383.682 Q1104.82 389.191 1104.82 399.932 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip410)" d="M1155.93 404.7 Q1155.93 395.441 1152.09 390.348 Q1148.29 385.256 1141.39 385.256 Q1134.54 385.256 1130.7 390.348 Q1126.9 395.441 1126.9 404.7 Q1126.9 413.913 1130.7 419.006 Q1134.54 424.098 1141.39 424.098 Q1148.29 424.098 1152.09 419.006 Q1155.93 413.913 1155.93 404.7 M1164.45 424.793 Q1164.45 438.033 1158.57 444.468 Q1152.69 450.95 1140.56 450.95 Q1136.07 450.95 1132.09 450.255 Q1128.11 449.607 1124.36 448.218 L1124.36 439.931 Q1128.11 441.968 1131.77 442.941 Q1135.42 443.913 1139.22 443.913 Q1147.6 443.913 1151.76 439.515 Q1155.93 435.163 1155.93 426.32 L1155.93 422.107 Q1153.29 426.691 1149.17 428.959 Q1145.05 431.228 1139.31 431.228 Q1129.77 431.228 1123.94 423.959 Q1118.11 416.691 1118.11 404.7 Q1118.11 392.663 1123.94 385.395 Q1129.77 378.126 1139.31 378.126 Q1145.05 378.126 1149.17 380.395 Q1153.29 382.663 1155.93 387.246 L1155.93 379.376 L1164.45 379.376 L1164.45 424.793 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><polyline clip-path="url(#clip410)" style="stroke:#88ccee; stroke-linecap:round; stroke-linejoin:round; stroke-width:24; stroke-opacity:1; fill:none" stroke-dasharray="96, 60" points="447.222,500.348 580.166,500.348 "></polyline>
 <path clip-path="url(#clip410)" d="M669.823 472.13 Q659.638 472.13 653.619 479.723 Q647.647 487.315 647.647 500.417 Q647.647 513.473 653.619 521.065 Q659.638 528.658 669.823 528.658 Q680.008 528.658 685.934 521.065 Q691.906 513.473 691.906 500.417 Q691.906 487.315 685.934 479.723 Q680.008 472.13 669.823 472.13 M669.823 464.538 Q684.36 464.538 693.064 474.306 Q701.767 484.028 701.767 500.417 Q701.767 516.76 693.064 526.528 Q684.36 536.25 669.823 536.25 Q655.24 536.25 646.49 526.528 Q637.786 516.806 637.786 500.417 Q637.786 484.028 646.49 474.306 Q655.24 464.538 669.823 464.538 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip410)" d="M715.147 514.445 L715.147 483.056 L723.665 483.056 L723.665 514.121 Q723.665 521.482 726.536 525.186 Q729.406 528.843 735.147 528.843 Q742.045 528.843 746.026 524.445 Q750.054 520.047 750.054 512.454 L750.054 483.056 L758.573 483.056 L758.573 534.908 L750.054 534.908 L750.054 526.945 Q746.952 531.667 742.832 533.982 Q738.758 536.25 733.341 536.25 Q724.406 536.25 719.777 530.695 Q715.147 525.139 715.147 514.445 M736.582 481.806 L736.582 481.806 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip410)" d="M784.545 468.334 L784.545 483.056 L802.091 483.056 L802.091 489.676 L784.545 489.676 L784.545 517.824 Q784.545 524.167 786.258 525.973 Q788.017 527.778 793.341 527.778 L802.091 527.778 L802.091 534.908 L793.341 534.908 Q783.48 534.908 779.73 531.25 Q775.98 527.547 775.98 517.824 L775.98 489.676 L769.73 489.676 L769.73 483.056 L775.98 483.056 L775.98 468.334 L784.545 468.334 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip410)" d="M839.544 462.871 L839.544 469.954 L831.396 469.954 Q826.813 469.954 825.007 471.806 Q823.248 473.658 823.248 478.473 L823.248 483.056 L837.276 483.056 L837.276 489.676 L823.248 489.676 L823.248 534.908 L814.683 534.908 L814.683 489.676 L806.535 489.676 L806.535 483.056 L814.683 483.056 L814.683 479.445 Q814.683 470.788 818.711 466.853 Q822.739 462.871 831.489 462.871 L839.544 462.871 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip410)" d="M846.674 462.871 L855.192 462.871 L855.192 534.908 L846.674 534.908 L846.674 462.871 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip410)" d="M893.109 489.028 Q886.257 489.028 882.276 494.399 Q878.294 499.723 878.294 509.028 Q878.294 518.334 882.229 523.704 Q886.211 529.028 893.109 529.028 Q899.914 529.028 903.896 523.658 Q907.877 518.287 907.877 509.028 Q907.877 499.815 903.896 494.445 Q899.914 489.028 893.109 489.028 M893.109 481.806 Q904.22 481.806 910.563 489.028 Q916.905 496.251 916.905 509.028 Q916.905 521.76 910.563 529.028 Q904.22 536.25 893.109 536.25 Q881.952 536.25 875.609 529.028 Q869.313 521.76 869.313 509.028 Q869.313 496.251 875.609 489.028 Q881.952 481.806 893.109 481.806 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip410)" d="M926.072 483.056 L934.59 483.056 L945.238 523.519 L955.84 483.056 L965.886 483.056 L976.534 523.519 L987.136 483.056 L995.655 483.056 L982.09 534.908 L972.044 534.908 L960.886 492.408 L949.683 534.908 L939.636 534.908 L926.072 483.056 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path></svg>
 </div>
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -609,7 +610,7 @@
 <div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/vsrikrish-poll.png" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
+<p><img data-src="images/vsrikrish-poll.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
 </figure>
 </div>
 </div><div class="column" style="width:60%;">
@@ -655,7 +656,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://d26tpo4cm8sb6k.cloudfront.net/img/dice.jpg"></p>
-<p></p><figcaption>Mixed Dice Shapes</figcaption><p></p>
+<figcaption>Mixed Dice Shapes</figcaption>
 </figure>
 </div>
 </div>
@@ -688,7 +689,7 @@
 <div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/vsrikrish-poll.png" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
+<p><img data-src="images/vsrikrish-poll.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
 </figure>
 </div>
 </div><div class="column" style="width:60%;">
@@ -721,7 +722,7 @@
 <div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/vsrikrish-poll.png" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
+<p><img data-src="images/vsrikrish-poll.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
 </figure>
 </div>
 </div><div class="column" style="width:60%;">
@@ -746,7 +747,7 @@
 <div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/vsrikrish-poll.png" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
+<p><img data-src="images/vsrikrish-poll.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
 </figure>
 </div>
 </div><div class="column" style="width:60%;">
@@ -821,7 +822,6 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1082,10 +1082,27 @@
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/viveks\.me\/environmental-systems-analysis");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+              // target, if specified
+              link.setAttribute("target", "_blank");
+              if (link.getAttribute("rel") === null) {
+                link.setAttribute("rel", "noopener");
+              }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1095,8 +1112,17 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1150,20 +1176,6 @@
           });
         }
       }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var filterRegex = new RegExp("https:\/\/viveks\.me\/environmental-systems-analysis");
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-              // target, if specified
-              link.setAttribute("target", "_blank");
-          }
-        }
     });
     </script>
     

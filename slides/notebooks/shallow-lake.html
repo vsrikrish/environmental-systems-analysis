@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.283">
+<meta name="generator" content="quarto-1.4.519">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,6 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -78,7 +79,7 @@ div.csl-indent {
 }</style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -102,7 +103,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -111,8 +118,10 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <!-- MathJax 3 -->
@@ -124,18 +133,15 @@ window.MathJax = {
   };
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta property="og:title" content="BEE 4750 - Fall 2023 - Shallow Lake Problem">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://viveks.me/environmental-systems-analysis/slides/images/eutrophication-system-all.png">
-<meta property="og:site-name" content="BEE 4750 - Fall 2023">
-<meta property="og:image:height" content="521">
-<meta property="og:image:width" content="750">
+<meta property="og:description" content="Homepage for BEE 4750/57e50, Environmental Systems Analysis, at Cornell University, Fall 2023.">
+<meta property="og:site_name" content="BEE 4750 - Fall 2023">
 </head>
 
 <body class="nav-sidebar docked slimcontent">
@@ -144,13 +150,15 @@ window.MathJax = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">BEE 4750/5750</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      {{&lt; var course.number &gt;}}
+      </li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -159,7 +167,7 @@ window.MathJax = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="../../index.html" class="sidebar-logo-link">
       <img src="../../_assets/logos/cornell-reduced-red.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -381,7 +389,7 @@ window.MathJax = {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -397,7 +405,7 @@ window.MathJax = {
   <li><a href="#lake-problem-dynamics" id="toc-lake-problem-dynamics" class="nav-link" data-scroll-target="#lake-problem-dynamics">Lake Problem Dynamics</a></li>
   <li><a href="#simulating-the-model-under-constant-inflows" id="toc-simulating-the-model-under-constant-inflows" class="nav-link" data-scroll-target="#simulating-the-model-under-constant-inflows">Simulating The Model Under Constant Inflows</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/vsrikrish/environmental-systems-analysis/blob/main/slides/notebooks/shallow-lake.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/vsrikrish/environmental-systems-analysis/blob/main/slides/notebooks/shallow-lake.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
@@ -429,14 +437,16 @@ window.MathJax = {
   </div>
   
 
+
 </header>
 
-<div class="cell" data-execution_count="3">
+
+<div id="cell-1" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="fu">dirname</span>(<span class="pp">@__DIR__</span>))</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="4">
+<div id="cell-2" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LaTeXStrings</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Distributions</span></span>
@@ -475,8 +485,8 @@ Carpenter, S. R., Ludwig, D., &amp; Brock, W. A. (1999). Management of eutrophic
 <p>There is also some nutrient cycling in the lake which naturally reduces phosphorous concentrations. This cycling is the result of accumulation in the sediment and turnover (water motion disturbing the sediment and carrying the nutrients upwards) and consumers, such as mussels. This cycling is dependent on the state <span class="math inline">\(X_t\)</span>, <span class="math inline">\(\frac{X_t^q}{1 + X_t^q}\)</span>. The lake also loses some of its P each time period of its due to outflows and consumption, which we assume is linearly proportional to the state, <span class="math inline">\(bX_t\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/eutrophication-system-all.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Shallow Lake Problem Diagram</figcaption><p></p>
+<p><img src="../images/eutrophication-system-all.png" class="img-fluid figure-img"></p>
+<figcaption>Shallow Lake Problem Diagram</figcaption>
 </figure>
 </div>
 <p>As a result, the lake dynamics are given by:</p>
@@ -527,7 +537,7 @@ Carpenter, S. R., Ludwig, D., &amp; Brock, W. A. (1999). Management of eutrophic
 <div class="no-row-height column-margin column-container"><div id="ref-Quinn2017-vn" class="csl-entry" role="listitem">
 Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for robust multi-objective management of deeply uncertain socio-ecological tipping points. <em>Environmental Modelling &amp; Software</em>, <em>92</em>, 125–141. <a href="https://doi.org/10.1016/j.envsoft.2017.02.017">https://doi.org/10.1016/j.envsoft.2017.02.017</a>
 </div></div><p>First, let’s look at how the balance of P recycling and outflows affects the accumulation of P in the lake absent additional inputs (<span class="math inline">\(a=y=0\)</span>).</p>
-<div class="cell" data-execution_count="5">
+<div id="cell-6" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># define functions for lake recycling and outflows</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lake_P_cycling</span>(x, q) <span class="op">=</span> x<span class="op">.^</span>q <span class="op">./</span> (<span class="fl">1</span> <span class="op">.+</span> x<span class="op">.^</span>q);</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lake_P_out</span>(x, b) <span class="op">=</span> b <span class="op">.*</span> x;</span>
@@ -535,7 +545,7 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># define range of lake states X</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">0.05</span><span class="op">:</span><span class="fl">2.5</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-fig-width="100%" data-execution_count="6">
+<div id="cell-fig-lake-noinput" class="cell" data-fig-width="100%" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot recycling and outflows for selected values of b and q</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> <span class="fu">plot</span>(x, <span class="fu">lake_P_cycling</span>(x, <span class="fl">2.5</span>), color<span class="op">=:</span>black, linewidth<span class="op">=</span><span class="fl">5</span>,legend<span class="op">=:</span>topleft, label<span class="op">=:</span><span class="cn">false</span>, ylabel<span class="op">=</span><span class="st">"P Flux"</span>, xlabel<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>X_t<span class="sc">$</span><span class="st">", </span>tickfontsize<span class="st">=14, guidefontsize=16, legendfontsize=14, palette=:tol_muted, framestyle=:zerolines, grid=:false)</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(x, <span class="fu">lake_P_out</span>(x, <span class="fl">0.6</span>), linewidth<span class="op">=</span><span class="fl">3</span>, linestyle<span class="op">=:</span>dash, label<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>b<span class="st">=0.6</span><span class="sc">$</span><span class="st">")</span></span>
@@ -546,8 +556,9 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">quiver!</span>([<span class="fl">2.5</span>], [<span class="fl">0.97</span>], quiver<span class="op">=</span>([<span class="op">-</span><span class="fl">0.125</span>], [<span class="op">-</span><span class="fl">0.05</span>]), color<span class="op">=:</span>red, linewidth<span class="op">=</span><span class="fl">2</span>)</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(ylims<span class="op">=</span>(<span class="op">-</span><span class="fl">0.02</span>, <span class="fl">1</span>))</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">600</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-lake-noinput" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
+<div id="fig-lake-noinput" class="cell-output cell-output-display quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lake-noinput-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -599,17 +610,21 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 <path clip-path="url(#clip140)" d="M652.164 210.723 Q652.164 216.625 649.172 222.404 Q646.221 228.143 641.466 231.75 Q636.752 235.357 631.915 235.357 Q627.202 235.357 624.209 231.75 Q621.258 228.102 621.258 222.159 Q621.258 220.068 621.504 218.592 Q621.75 217.117 622.611 213.674 L629.497 186.293 Q630.686 181.169 630.686 181.128 Q630.686 180.636 630.481 180.39 Q630.317 180.104 629.333 179.899 Q628.349 179.694 626.464 179.694 Q625.685 179.694 625.316 179.653 Q624.988 179.612 624.701 179.407 Q624.455 179.161 624.455 178.669 Q624.455 177.972 624.742 177.603 Q625.07 177.193 625.316 177.111 Q625.562 177.029 626.054 176.988 Q626.751 176.947 629.087 176.742 Q631.423 176.496 633.432 176.332 Q635.44 176.169 636.301 176.169 Q636.793 176.169 637.039 176.414 Q637.326 176.619 637.326 176.865 L637.367 177.07 L631.177 202.361 Q636.055 197.319 641.015 197.319 Q645.975 197.319 649.049 201.131 Q652.164 204.943 652.164 210.723 M646.098 207.033 Q646.098 203.139 644.622 201.172 Q643.187 199.164 640.81 199.164 Q638.801 199.164 636.178 200.68 Q633.555 202.197 630.768 205.886 Q630.235 206.583 630.03 206.992 Q629.866 207.402 629.497 208.796 L627.652 216.543 Q626.3 221.831 626.3 225.028 Q626.3 229.373 627.898 231.422 Q629.497 233.472 631.915 233.472 Q634.457 233.472 637.121 231.217 Q639.785 228.963 641.835 224.864 Q643.105 222.159 644.581 216.338 Q646.098 210.477 646.098 207.033 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip140)" d="M680.192 221.667 Q680.274 220.642 681.872 220.642 L733.314 220.642 Q735.732 220.642 735.773 221.585 Q735.773 222.609 733.478 222.568 L682.446 222.568 Q680.192 222.609 680.192 221.667 M680.192 205.271 Q680.192 204.246 681.954 204.287 L733.232 204.287 Q735.732 204.287 735.773 205.271 Q735.773 206.214 733.642 206.214 L681.872 206.214 Q680.192 206.214 680.192 205.271 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip140)" d="M768.152 207.566 Q768.152 195.229 771.267 188.506 Q775.612 178.505 785.859 178.505 Q788.032 178.505 790.286 179.12 Q792.581 179.694 795.451 181.948 Q798.361 184.202 800.123 187.891 Q803.485 195.024 803.485 207.566 Q803.485 219.822 800.369 226.503 Q795.82 236.259 785.777 236.259 Q782.006 236.259 778.153 234.332 Q774.341 232.406 771.923 227.774 Q768.152 220.847 768.152 207.566 M775.12 206.542 Q775.12 219.207 776.022 224.249 Q777.046 229.701 779.834 232.078 Q782.662 234.414 785.777 234.414 Q789.138 234.414 791.926 231.914 Q794.754 229.373 795.615 223.921 Q796.557 218.551 796.516 206.542 Q796.516 194.86 795.697 190.187 Q794.59 184.735 791.639 182.563 Q788.728 180.349 785.777 180.349 Q784.671 180.349 783.482 180.677 Q782.334 181.005 780.654 181.948 Q778.973 182.891 777.661 185.227 Q776.391 187.564 775.776 191.089 Q775.12 195.638 775.12 206.542 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip140)" d="M810.993 233.062 Q809.722 231.709 809.722 229.946 Q809.722 228.184 810.993 226.913 Q812.263 225.602 814.19 225.602 Q816.034 225.602 817.264 226.831 Q818.535 228.02 818.535 229.987 Q818.535 231.914 817.182 233.185 Q815.871 234.414 814.19 234.414 Q812.263 234.414 810.993 233.062 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip140)" d="M832.821 207.894 Q832.821 194.696 839.543 186.621 Q846.266 178.505 854.914 178.505 Q859.956 178.505 862.743 181.087 Q865.572 183.629 865.572 187.564 Q865.572 189.736 864.301 190.679 Q863.03 191.622 861.719 191.622 Q860.202 191.622 859.013 190.597 Q857.825 189.572 857.825 187.728 Q857.825 183.957 862.457 183.957 Q860.284 180.595 855.078 180.595 Q853.48 180.595 851.84 181.087 Q850.201 181.538 848.069 183.096 Q845.938 184.653 844.298 187.113 Q842.659 189.572 841.511 194.204 Q840.363 198.836 840.363 204.861 L840.363 206.87 Q843.806 198.549 850.857 198.59 Q857.907 198.59 862.784 203.959 Q867.662 209.329 867.662 217.281 Q867.662 225.438 862.579 230.848 Q857.497 236.259 850.365 236.259 Q847.168 236.259 844.257 234.906 Q841.388 233.595 838.683 230.561 Q836.018 227.528 834.42 221.708 Q832.821 215.887 832.821 207.894 M840.527 215.436 Q840.527 223.675 842.044 227.61 Q842.29 228.266 842.823 229.168 Q843.396 230.069 844.339 231.258 Q845.323 232.406 846.922 233.185 Q848.52 233.922 850.365 233.922 Q855.98 233.922 858.685 228.471 Q860.12 225.438 860.12 217.199 Q860.12 208.796 858.604 205.722 Q856.021 200.516 850.775 200.516 Q847.249 200.516 844.79 202.935 Q842.372 205.353 841.429 208.591 Q840.527 211.829 840.527 215.436 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><polyline clip-path="url(#clip140)" style="stroke:#44aa99; stroke-linecap:round; stroke-linejoin:round; stroke-width:21; stroke-opacity:1; fill:none" stroke-dasharray="84, 53" points="467.834,297.205 599.34,297.205 "></polyline>
 <path clip-path="url(#clip140)" d="M652.164 301.443 Q652.164 307.345 649.172 313.124 Q646.221 318.863 641.466 322.47 Q636.752 326.077 631.915 326.077 Q627.202 326.077 624.209 322.47 Q621.258 318.822 621.258 312.879 Q621.258 310.788 621.504 309.312 Q621.75 307.837 622.611 304.394 L629.497 277.013 Q630.686 271.889 630.686 271.848 Q630.686 271.356 630.481 271.11 Q630.317 270.824 629.333 270.619 Q628.349 270.414 626.464 270.414 Q625.685 270.414 625.316 270.373 Q624.988 270.332 624.701 270.127 Q624.455 269.881 624.455 269.389 Q624.455 268.692 624.742 268.323 Q625.07 267.913 625.316 267.831 Q625.562 267.749 626.054 267.708 Q626.751 267.667 629.087 267.462 Q631.423 267.216 633.432 267.052 Q635.44 266.889 636.301 266.889 Q636.793 266.889 637.039 267.134 Q637.326 267.339 637.326 267.585 L637.367 267.79 L631.177 293.081 Q636.055 288.039 641.015 288.039 Q645.975 288.039 649.049 291.851 Q652.164 295.663 652.164 301.443 M646.098 297.753 Q646.098 293.859 644.622 291.892 Q643.187 289.884 640.81 289.884 Q638.801 289.884 636.178 291.4 Q633.555 292.917 630.768 296.606 Q630.235 297.303 630.03 297.712 Q629.866 298.122 629.497 299.516 L627.652 307.263 Q626.3 312.551 626.3 315.748 Q626.3 320.093 627.898 322.142 Q629.497 324.192 631.915 324.192 Q634.457 324.192 637.121 321.937 Q639.785 319.683 641.835 315.584 Q643.105 312.879 644.581 307.058 Q646.098 301.197 646.098 297.753 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip140)" d="M680.192 312.387 Q680.274 311.362 681.872 311.362 L733.314 311.362 Q735.732 311.362 735.773 312.305 Q735.773 313.329 733.478 313.288 L682.446 313.288 Q680.192 313.329 680.192 312.387 M680.192 295.991 Q680.192 294.966 681.954 295.007 L733.232 295.007 Q735.732 295.007 735.773 295.991 Q735.773 296.934 733.642 296.934 L681.872 296.934 Q680.192 296.934 680.192 295.991 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip140)" d="M768.152 298.286 Q768.152 285.949 771.267 279.226 Q775.612 269.225 785.859 269.225 Q788.032 269.225 790.286 269.84 Q792.581 270.414 795.451 272.668 Q798.361 274.922 800.123 278.611 Q803.485 285.744 803.485 298.286 Q803.485 310.542 800.369 317.223 Q795.82 326.979 785.777 326.979 Q782.006 326.979 778.153 325.052 Q774.341 323.126 771.923 318.494 Q768.152 311.567 768.152 298.286 M775.12 297.262 Q775.12 309.927 776.022 314.969 Q777.046 320.421 779.834 322.798 Q782.662 325.134 785.777 325.134 Q789.138 325.134 791.926 322.634 Q794.754 320.093 795.615 314.641 Q796.557 309.271 796.516 297.262 Q796.516 285.58 795.697 280.907 Q794.59 275.455 791.639 273.283 Q788.728 271.069 785.777 271.069 Q784.671 271.069 783.482 271.397 Q782.334 271.725 780.654 272.668 Q778.973 273.611 777.661 275.947 Q776.391 278.284 775.776 281.809 Q775.12 286.358 775.12 297.262 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip140)" d="M810.993 323.782 Q809.722 322.429 809.722 320.666 Q809.722 318.904 810.993 317.633 Q812.263 316.322 814.19 316.322 Q816.034 316.322 817.264 317.551 Q818.535 318.74 818.535 320.707 Q818.535 322.634 817.182 323.905 Q815.871 325.134 814.19 325.134 Q812.263 325.134 810.993 323.782 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip140)" d="M832.821 311.28 L832.821 308.698 L858.604 269.307 Q859.259 268.282 860.284 268.323 Q861.227 268.323 861.432 268.692 Q861.637 269.061 861.637 270.496 L861.637 308.698 L870.04 308.698 L870.04 311.28 L861.637 311.28 L861.637 318.576 Q861.637 320.994 862.62 321.773 Q863.645 322.552 867.99 322.552 L869.753 322.552 L869.753 325.134 Q866.309 324.888 858.358 324.888 Q850.447 324.888 847.004 325.134 L847.004 322.552 L848.766 322.552 Q853.111 322.552 854.136 321.814 Q855.16 321.035 855.16 318.576 L855.16 311.28 L832.821 311.28 M835.199 308.698 L855.652 308.698 L855.652 277.382 L835.199 308.698 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><polyline clip-path="url(#clip140)" style="stroke:#117733; stroke-linecap:round; stroke-linejoin:round; stroke-width:21; stroke-opacity:1; fill:none" stroke-dasharray="84, 53" points="467.834,387.925 599.34,387.925 "></polyline>
 <path clip-path="url(#clip140)" d="M652.164 392.163 Q652.164 398.065 649.172 403.844 Q646.221 409.583 641.466 413.19 Q636.752 416.797 631.915 416.797 Q627.202 416.797 624.209 413.19 Q621.258 409.542 621.258 403.599 Q621.258 401.508 621.504 400.032 Q621.75 398.557 622.611 395.114 L629.497 367.733 Q630.686 362.609 630.686 362.568 Q630.686 362.076 630.481 361.83 Q630.317 361.544 629.333 361.339 Q628.349 361.134 626.464 361.134 Q625.685 361.134 625.316 361.093 Q624.988 361.052 624.701 360.847 Q624.455 360.601 624.455 360.109 Q624.455 359.412 624.742 359.043 Q625.07 358.633 625.316 358.551 Q625.562 358.469 626.054 358.428 Q626.751 358.387 629.087 358.182 Q631.423 357.936 633.432 357.772 Q635.44 357.609 636.301 357.609 Q636.793 357.609 637.039 357.854 Q637.326 358.059 637.326 358.305 L637.367 358.51 L631.177 383.801 Q636.055 378.759 641.015 378.759 Q645.975 378.759 649.049 382.571 Q652.164 386.383 652.164 392.163 M646.098 388.473 Q646.098 384.579 644.622 382.612 Q643.187 380.604 640.81 380.604 Q638.801 380.604 636.178 382.12 Q633.555 383.637 630.768 387.326 Q630.235 388.023 630.03 388.432 Q629.866 388.842 629.497 390.236 L627.652 397.983 Q626.3 403.271 626.3 406.468 Q626.3 410.813 627.898 412.862 Q629.497 414.912 631.915 414.912 Q634.457 414.912 637.121 412.657 Q639.785 410.403 641.835 406.304 Q643.105 403.599 644.581 397.778 Q646.098 391.917 646.098 388.473 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip140)" d="M680.192 403.107 Q680.274 402.082 681.872 402.082 L733.314 402.082 Q735.732 402.082 735.773 403.025 Q735.773 404.049 733.478 404.008 L682.446 404.008 Q680.192 404.049 680.192 403.107 M680.192 386.711 Q680.192 385.686 681.954 385.727 L733.232 385.727 Q735.732 385.727 735.773 386.711 Q735.773 387.654 733.642 387.654 L681.872 387.654 Q680.192 387.654 680.192 386.711 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip140)" d="M768.152 389.006 Q768.152 376.669 771.267 369.946 Q775.612 359.945 785.859 359.945 Q788.032 359.945 790.286 360.56 Q792.581 361.134 795.451 363.388 Q798.361 365.642 800.123 369.331 Q803.485 376.464 803.485 389.006 Q803.485 401.262 800.369 407.943 Q795.82 417.699 785.777 417.699 Q782.006 417.699 778.153 415.772 Q774.341 413.846 771.923 409.214 Q768.152 402.287 768.152 389.006 M775.12 387.982 Q775.12 400.647 776.022 405.689 Q777.046 411.141 779.834 413.518 Q782.662 415.854 785.777 415.854 Q789.138 415.854 791.926 413.354 Q794.754 410.813 795.615 405.361 Q796.557 399.991 796.516 387.982 Q796.516 376.3 795.697 371.627 Q794.59 366.175 791.639 364.003 Q788.728 361.789 785.777 361.789 Q784.671 361.789 783.482 362.117 Q782.334 362.445 780.654 363.388 Q778.973 364.331 777.661 366.667 Q776.391 369.004 775.776 372.529 Q775.12 377.078 775.12 387.982 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip140)" d="M810.993 414.502 Q809.722 413.149 809.722 411.386 Q809.722 409.624 810.993 408.353 Q812.263 407.042 814.19 407.042 Q816.034 407.042 817.264 408.271 Q818.535 409.46 818.535 411.427 Q818.535 413.354 817.182 414.625 Q815.871 415.854 814.19 415.854 Q812.263 415.854 810.993 414.502 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip140)" d="M832.821 415.854 Q832.821 414.338 832.944 413.887 Q833.108 413.436 833.764 412.739 L849.873 394.786 Q858.685 384.866 858.685 376.218 Q858.685 370.602 855.734 366.585 Q852.824 362.568 847.454 362.568 Q843.765 362.568 840.65 364.823 Q837.535 367.077 836.1 371.094 Q836.346 371.012 837.207 371.012 Q839.298 371.012 840.445 372.324 Q841.634 373.635 841.634 375.398 Q841.634 377.652 840.158 378.759 Q838.724 379.825 837.289 379.825 Q836.715 379.825 835.936 379.702 Q835.199 379.579 834.01 378.431 Q832.821 377.242 832.821 375.152 Q832.821 369.29 837.248 364.618 Q841.716 359.945 848.52 359.945 Q856.226 359.945 861.268 364.536 Q866.35 369.086 866.35 376.218 Q866.35 378.718 865.572 381.013 Q864.834 383.268 863.809 385.03 Q862.825 386.793 860.12 389.621 Q857.415 392.449 855.242 394.458 Q853.07 396.466 848.192 400.729 L839.298 409.378 L854.423 409.378 Q861.801 409.378 862.375 408.722 Q863.194 407.533 864.219 401.262 L866.35 401.262 L863.973 415.854 L832.821 415.854 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path></svg>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter <span class="math inline">\(b\)</span>). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux.</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lake-noinput-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter <span class="math inline">\(b\)</span>). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux.
+</figcaption>
 </figure>
 </div>
 </div>
-<p>Based on <a href="#fig-lake-noinput">Figure&nbsp;1</a>, we can see that there are typically three equilibria: a stable equilibrium at <span class="math inline">\(X=0\)</span>, an unstable, oligotrophic equilibrium <span class="math inline">\(X_o\)</span>, and a stable, eutrophic equilibrium <span class="math inline">\(X_e\)</span>. When <span class="math inline">\(X_t &lt; X_o\)</span>, the lake tends towards a zero P level without external inputs, while when <span class="math inline">\(X_t &gt; X_o\)</span>, the lake will inevitably undergo eutrophication, as the P level will tend towards <span class="math inline">\(X_e\)</span>. This means that <span class="math inline">\(X_t=X_o\)</span> corresponds to a <strong>tipping point</strong>: beyond that level, the lake will abruptly switch to a eutrophic state from which it cannot recover.</p>
-<p>This lake is subject to a <strong>bifurcation</strong> depending on the values of <span class="math inline">\(b\)</span> and <span class="math inline">\(q\)</span>. To see this, let’s fix <span class="math inline">\(q=2.5\)</span>, as in <a href="#fig-lake-noinput">Figure&nbsp;1</a>. For <span class="math inline">\(b=0.4\)</span>, there are the two equilibria mentioned previously. However, when <span class="math inline">\(b=0.2\)</span>, there is only the unstable equilibrium <span class="math inline">\(X=X_o\)</span> in addition to <span class="math inline">\(X=0\)</span>. For <span class="math inline">\(b=0.6\)</span>, the only equilibrium is <span class="math inline">\(X=0\)</span>, so any positive P input would result in eutrophication. This highlights the delicacy of systems which exhibit bifurcations: whether an equilibrium is stable or unstable, or even exists, can depend on a characteristic of the system which is often highly uncertain.</p>
-<div class="cell" data-fig-width="100%" data-execution_count="7">
+<p>Based on <a href="#fig-lake-noinput" class="quarto-xref">Figure&nbsp;1</a>, we can see that there are typically three equilibria: a stable equilibrium at <span class="math inline">\(X=0\)</span>, an unstable, oligotrophic equilibrium <span class="math inline">\(X_o\)</span>, and a stable, eutrophic equilibrium <span class="math inline">\(X_e\)</span>. When <span class="math inline">\(X_t &lt; X_o\)</span>, the lake tends towards a zero P level without external inputs, while when <span class="math inline">\(X_t &gt; X_o\)</span>, the lake will inevitably undergo eutrophication, as the P level will tend towards <span class="math inline">\(X_e\)</span>. This means that <span class="math inline">\(X_t=X_o\)</span> corresponds to a <strong>tipping point</strong>: beyond that level, the lake will abruptly switch to a eutrophic state from which it cannot recover.</p>
+<p>This lake is subject to a <strong>bifurcation</strong> depending on the values of <span class="math inline">\(b\)</span> and <span class="math inline">\(q\)</span>. To see this, let’s fix <span class="math inline">\(q=2.5\)</span>, as in <a href="#fig-lake-noinput" class="quarto-xref">Figure&nbsp;1</a>. For <span class="math inline">\(b=0.4\)</span>, there are the two equilibria mentioned previously. However, when <span class="math inline">\(b=0.2\)</span>, there is only the unstable equilibrium <span class="math inline">\(X=X_o\)</span> in addition to <span class="math inline">\(X=0\)</span>. For <span class="math inline">\(b=0.6\)</span>, the only equilibrium is <span class="math inline">\(X=0\)</span>, so any positive P input would result in eutrophication. This highlights the delicacy of systems which exhibit bifurcations: whether an equilibrium is stable or unstable, or even exists, can depend on a characteristic of the system which is often highly uncertain.</p>
+<div id="cell-fig-lake-noinput-eq" class="cell" data-fig-width="100%" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> [<span class="fl">0</span>, <span class="fl">0.67</span>, <span class="fl">2.2</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(p1, eq, (y <span class="op">-&gt;</span> <span class="fu">lake_P_cycling</span>(y, <span class="fl">2.5</span>)).(eq), label<span class="op">=</span><span class="st">"Equilibria"</span>, markersize<span class="op">=</span><span class="fl">10</span>, markercolor<span class="op">=:</span>red)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-lake-noinput-eq" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
+<div id="fig-lake-noinput-eq" class="cell-output cell-output-display quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lake-noinput-eq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -665,18 +680,22 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 <path clip-path="url(#clip230)" d="M652.164 301.443 Q652.164 307.345 649.172 313.124 Q646.221 318.863 641.466 322.47 Q636.752 326.077 631.915 326.077 Q627.202 326.077 624.209 322.47 Q621.258 318.822 621.258 312.879 Q621.258 310.788 621.504 309.312 Q621.75 307.837 622.611 304.394 L629.497 277.013 Q630.686 271.889 630.686 271.848 Q630.686 271.356 630.481 271.11 Q630.317 270.824 629.333 270.619 Q628.349 270.414 626.464 270.414 Q625.685 270.414 625.316 270.373 Q624.988 270.332 624.701 270.127 Q624.455 269.881 624.455 269.389 Q624.455 268.692 624.742 268.323 Q625.07 267.913 625.316 267.831 Q625.562 267.749 626.054 267.708 Q626.751 267.667 629.087 267.462 Q631.423 267.216 633.432 267.052 Q635.44 266.889 636.301 266.889 Q636.793 266.889 637.039 267.134 Q637.326 267.339 637.326 267.585 L637.367 267.79 L631.177 293.081 Q636.055 288.039 641.015 288.039 Q645.975 288.039 649.049 291.851 Q652.164 295.663 652.164 301.443 M646.098 297.753 Q646.098 293.859 644.622 291.892 Q643.187 289.884 640.81 289.884 Q638.801 289.884 636.178 291.4 Q633.555 292.917 630.768 296.606 Q630.235 297.303 630.03 297.712 Q629.866 298.122 629.497 299.516 L627.652 307.263 Q626.3 312.551 626.3 315.748 Q626.3 320.093 627.898 322.142 Q629.497 324.192 631.915 324.192 Q634.457 324.192 637.121 321.937 Q639.785 319.683 641.835 315.584 Q643.105 312.879 644.581 307.058 Q646.098 301.197 646.098 297.753 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M680.192 312.387 Q680.274 311.362 681.872 311.362 L733.314 311.362 Q735.732 311.362 735.773 312.305 Q735.773 313.329 733.478 313.288 L682.446 313.288 Q680.192 313.329 680.192 312.387 M680.192 295.991 Q680.192 294.966 681.954 295.007 L733.232 295.007 Q735.732 295.007 735.773 295.991 Q735.773 296.934 733.642 296.934 L681.872 296.934 Q680.192 296.934 680.192 295.991 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M768.152 298.286 Q768.152 285.949 771.267 279.226 Q775.612 269.225 785.859 269.225 Q788.032 269.225 790.286 269.84 Q792.581 270.414 795.451 272.668 Q798.361 274.922 800.123 278.611 Q803.485 285.744 803.485 298.286 Q803.485 310.542 800.369 317.223 Q795.82 326.979 785.777 326.979 Q782.006 326.979 778.153 325.052 Q774.341 323.126 771.923 318.494 Q768.152 311.567 768.152 298.286 M775.12 297.262 Q775.12 309.927 776.022 314.969 Q777.046 320.421 779.834 322.798 Q782.662 325.134 785.777 325.134 Q789.138 325.134 791.926 322.634 Q794.754 320.093 795.615 314.641 Q796.557 309.271 796.516 297.262 Q796.516 285.58 795.697 280.907 Q794.59 275.455 791.639 273.283 Q788.728 271.069 785.777 271.069 Q784.671 271.069 783.482 271.397 Q782.334 271.725 780.654 272.668 Q778.973 273.611 777.661 275.947 Q776.391 278.284 775.776 281.809 Q775.12 286.358 775.12 297.262 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M810.993 323.782 Q809.722 322.429 809.722 320.666 Q809.722 318.904 810.993 317.633 Q812.263 316.322 814.19 316.322 Q816.034 316.322 817.264 317.551 Q818.535 318.74 818.535 320.707 Q818.535 322.634 817.182 323.905 Q815.871 325.134 814.19 325.134 Q812.263 325.134 810.993 323.782 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M832.821 311.28 L832.821 308.698 L858.604 269.307 Q859.259 268.282 860.284 268.323 Q861.227 268.323 861.432 268.692 Q861.637 269.061 861.637 270.496 L861.637 308.698 L870.04 308.698 L870.04 311.28 L861.637 311.28 L861.637 318.576 Q861.637 320.994 862.62 321.773 Q863.645 322.552 867.99 322.552 L869.753 322.552 L869.753 325.134 Q866.309 324.888 858.358 324.888 Q850.447 324.888 847.004 325.134 L847.004 322.552 L848.766 322.552 Q853.111 322.552 854.136 321.814 Q855.16 321.035 855.16 318.576 L855.16 311.28 L832.821 311.28 M835.199 308.698 L855.652 308.698 L855.652 277.382 L835.199 308.698 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><polyline clip-path="url(#clip230)" style="stroke:#117733; stroke-linecap:round; stroke-linejoin:round; stroke-width:21; stroke-opacity:1; fill:none" stroke-dasharray="84, 53" points="467.834,387.925 599.34,387.925 "></polyline>
 <path clip-path="url(#clip230)" d="M652.164 392.163 Q652.164 398.065 649.172 403.844 Q646.221 409.583 641.466 413.19 Q636.752 416.797 631.915 416.797 Q627.202 416.797 624.209 413.19 Q621.258 409.542 621.258 403.599 Q621.258 401.508 621.504 400.032 Q621.75 398.557 622.611 395.114 L629.497 367.733 Q630.686 362.609 630.686 362.568 Q630.686 362.076 630.481 361.83 Q630.317 361.544 629.333 361.339 Q628.349 361.134 626.464 361.134 Q625.685 361.134 625.316 361.093 Q624.988 361.052 624.701 360.847 Q624.455 360.601 624.455 360.109 Q624.455 359.412 624.742 359.043 Q625.07 358.633 625.316 358.551 Q625.562 358.469 626.054 358.428 Q626.751 358.387 629.087 358.182 Q631.423 357.936 633.432 357.772 Q635.44 357.609 636.301 357.609 Q636.793 357.609 637.039 357.854 Q637.326 358.059 637.326 358.305 L637.367 358.51 L631.177 383.801 Q636.055 378.759 641.015 378.759 Q645.975 378.759 649.049 382.571 Q652.164 386.383 652.164 392.163 M646.098 388.473 Q646.098 384.579 644.622 382.612 Q643.187 380.604 640.81 380.604 Q638.801 380.604 636.178 382.12 Q633.555 383.637 630.768 387.326 Q630.235 388.023 630.03 388.432 Q629.866 388.842 629.497 390.236 L627.652 397.983 Q626.3 403.271 626.3 406.468 Q626.3 410.813 627.898 412.862 Q629.497 414.912 631.915 414.912 Q634.457 414.912 637.121 412.657 Q639.785 410.403 641.835 406.304 Q643.105 403.599 644.581 397.778 Q646.098 391.917 646.098 388.473 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M680.192 403.107 Q680.274 402.082 681.872 402.082 L733.314 402.082 Q735.732 402.082 735.773 403.025 Q735.773 404.049 733.478 404.008 L682.446 404.008 Q680.192 404.049 680.192 403.107 M680.192 386.711 Q680.192 385.686 681.954 385.727 L733.232 385.727 Q735.732 385.727 735.773 386.711 Q735.773 387.654 733.642 387.654 L681.872 387.654 Q680.192 387.654 680.192 386.711 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M768.152 389.006 Q768.152 376.669 771.267 369.946 Q775.612 359.945 785.859 359.945 Q788.032 359.945 790.286 360.56 Q792.581 361.134 795.451 363.388 Q798.361 365.642 800.123 369.331 Q803.485 376.464 803.485 389.006 Q803.485 401.262 800.369 407.943 Q795.82 417.699 785.777 417.699 Q782.006 417.699 778.153 415.772 Q774.341 413.846 771.923 409.214 Q768.152 402.287 768.152 389.006 M775.12 387.982 Q775.12 400.647 776.022 405.689 Q777.046 411.141 779.834 413.518 Q782.662 415.854 785.777 415.854 Q789.138 415.854 791.926 413.354 Q794.754 410.813 795.615 405.361 Q796.557 399.991 796.516 387.982 Q796.516 376.3 795.697 371.627 Q794.59 366.175 791.639 364.003 Q788.728 361.789 785.777 361.789 Q784.671 361.789 783.482 362.117 Q782.334 362.445 780.654 363.388 Q778.973 364.331 777.661 366.667 Q776.391 369.004 775.776 372.529 Q775.12 377.078 775.12 387.982 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M810.993 414.502 Q809.722 413.149 809.722 411.386 Q809.722 409.624 810.993 408.353 Q812.263 407.042 814.19 407.042 Q816.034 407.042 817.264 408.271 Q818.535 409.46 818.535 411.427 Q818.535 413.354 817.182 414.625 Q815.871 415.854 814.19 415.854 Q812.263 415.854 810.993 414.502 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M832.821 415.854 Q832.821 414.338 832.944 413.887 Q833.108 413.436 833.764 412.739 L849.873 394.786 Q858.685 384.866 858.685 376.218 Q858.685 370.602 855.734 366.585 Q852.824 362.568 847.454 362.568 Q843.765 362.568 840.65 364.823 Q837.535 367.077 836.1 371.094 Q836.346 371.012 837.207 371.012 Q839.298 371.012 840.445 372.324 Q841.634 373.635 841.634 375.398 Q841.634 377.652 840.158 378.759 Q838.724 379.825 837.289 379.825 Q836.715 379.825 835.936 379.702 Q835.199 379.579 834.01 378.431 Q832.821 377.242 832.821 375.152 Q832.821 369.29 837.248 364.618 Q841.716 359.945 848.52 359.945 Q856.226 359.945 861.268 364.536 Q866.35 369.086 866.35 376.218 Q866.35 378.718 865.572 381.013 Q864.834 383.268 863.809 385.03 Q862.825 386.793 860.12 389.621 Q857.415 392.449 855.242 394.458 Q853.07 396.466 848.192 400.729 L839.298 409.378 L854.423 409.378 Q861.801 409.378 862.375 408.722 Q863.194 407.533 864.219 401.262 L866.35 401.262 L863.973 415.854 L832.821 415.854 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><circle clip-path="url(#clip230)" cx="533.587" cy="478.645" r="38.4" fill="#ff0000" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="5.12"></circle>
 <path clip-path="url(#clip230)" d="M621.258 448.405 L659.499 448.405 L659.499 455.291 L629.441 455.291 L629.441 473.196 L658.243 473.196 L658.243 480.083 L629.441 480.083 L629.441 501.998 L660.228 501.998 L660.228 508.885 L621.258 508.885 L621.258 448.405 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M677.809 486.24 Q677.809 494.463 681.171 499.162 Q684.574 503.821 690.488 503.821 Q696.402 503.821 699.805 499.162 Q703.208 494.463 703.208 486.24 Q703.208 478.017 699.805 473.358 Q696.402 468.659 690.488 468.659 Q684.574 468.659 681.171 473.358 Q677.809 478.017 677.809 486.24 M703.208 502.079 Q700.858 506.13 697.253 508.115 Q693.688 510.059 688.665 510.059 Q680.442 510.059 675.257 503.497 Q670.112 496.934 670.112 486.24 Q670.112 475.546 675.257 468.983 Q680.442 462.421 688.665 462.421 Q693.688 462.421 697.253 464.406 Q700.858 466.35 703.208 470.401 L703.208 463.514 L710.662 463.514 L710.662 526.141 L703.208 526.141 L703.208 502.079 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M725.245 490.98 L725.245 463.514 L732.698 463.514 L732.698 490.696 Q732.698 497.137 735.21 500.378 Q737.722 503.578 742.745 503.578 Q748.781 503.578 752.264 499.73 Q755.789 495.881 755.789 489.238 L755.789 463.514 L763.242 463.514 L763.242 508.885 L755.789 508.885 L755.789 501.917 Q753.074 506.049 749.469 508.074 Q745.904 510.059 741.165 510.059 Q733.347 510.059 729.296 505.198 Q725.245 500.337 725.245 490.98 M744 462.421 L744 462.421 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M778.595 463.514 L786.049 463.514 L786.049 508.885 L778.595 508.885 L778.595 463.514 M778.595 445.853 L786.049 445.853 L786.049 455.291 L778.595 455.291 L778.595 445.853 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M801.645 445.853 L809.099 445.853 L809.099 508.885 L801.645 508.885 L801.645 445.853 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M824.694 463.514 L832.148 463.514 L832.148 508.885 L824.694 508.885 L824.694 463.514 M824.694 445.853 L832.148 445.853 L832.148 455.291 L824.694 455.291 L824.694 445.853 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M880.313 486.24 Q880.313 478.017 876.911 473.358 Q873.548 468.659 867.634 468.659 Q861.72 468.659 858.317 473.358 Q854.955 478.017 854.955 486.24 Q854.955 494.463 858.317 499.162 Q861.72 503.821 867.634 503.821 Q873.548 503.821 876.911 499.162 Q880.313 494.463 880.313 486.24 M854.955 470.401 Q857.304 466.35 860.869 464.406 Q864.474 462.421 869.457 462.421 Q877.721 462.421 882.865 468.983 Q888.051 475.546 888.051 486.24 Q888.051 496.934 882.865 503.497 Q877.721 510.059 869.457 510.059 Q864.474 510.059 860.869 508.115 Q857.304 506.13 854.955 502.079 L854.955 508.885 L847.461 508.885 L847.461 445.853 L854.955 445.853 L854.955 470.401 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M926.696 470.482 Q925.44 469.753 923.942 469.429 Q922.483 469.064 920.701 469.064 Q914.382 469.064 910.979 473.196 Q907.616 477.288 907.616 484.984 L907.616 508.885 L900.122 508.885 L900.122 463.514 L907.616 463.514 L907.616 470.563 Q909.966 466.431 913.733 464.446 Q917.501 462.421 922.888 462.421 Q923.658 462.421 924.59 462.542 Q925.521 462.623 926.656 462.826 L926.696 470.482 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M934.514 463.514 L941.968 463.514 L941.968 508.885 L934.514 508.885 L934.514 463.514 M934.514 445.853 L941.968 445.853 L941.968 455.291 L934.514 455.291 L934.514 445.853 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip230)" d="M978.183 486.078 Q969.15 486.078 965.666 488.144 Q962.182 490.21 962.182 495.193 Q962.182 499.162 964.775 501.512 Q967.408 503.821 971.904 503.821 Q978.102 503.821 981.829 499.446 Q985.596 495.031 985.596 487.739 L985.596 486.078 L978.183 486.078 M993.05 482.999 L993.05 508.885 L985.596 508.885 L985.596 501.998 Q983.044 506.13 979.236 508.115 Q975.429 510.059 969.919 510.059 Q962.952 510.059 958.82 506.171 Q954.729 502.241 954.729 495.679 Q954.729 488.022 959.833 484.134 Q964.977 480.245 975.145 480.245 L985.596 480.245 L985.596 479.516 Q985.596 474.371 982.194 471.576 Q978.831 468.74 972.715 468.74 Q968.826 468.74 965.139 469.672 Q961.453 470.604 958.05 472.467 L958.05 465.58 Q962.142 464.001 965.99 463.231 Q969.838 462.421 973.484 462.421 Q983.328 462.421 988.189 467.525 Q993.05 472.629 993.05 482.999 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path></svg>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter <span class="math inline">\(b\)</span>). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux.</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lake-noinput-eq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter <span class="math inline">\(b\)</span>). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux.
+</figcaption>
 </figure>
 </div>
 </div>
-<div class="cell" data-fig-width="100%" data-execution_count="8">
+<div id="cell-fig-lake-input" class="cell" data-fig-width="100%" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>p2 <span class="op">=</span> <span class="fu">plot</span>(x, <span class="fl">0.05</span> <span class="op">.+</span> <span class="fu">lake_P_cycling</span>(x, <span class="fl">2.5</span>), color<span class="op">=:</span>black, linewidth<span class="op">=</span><span class="fl">5</span>,legend<span class="op">=:</span>topleft, label<span class="op">=:</span><span class="cn">false</span>, ylabel<span class="op">=</span><span class="st">"P Flux"</span>, xlabel<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>X_t<span class="sc">$</span><span class="st">", </span>tickfontsize<span class="st">=14, guidefontsize=16, legendfontsize=14, palette=:tol_muted, framestyle=:zerolines, grid=:false)</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(x, <span class="fu">lake_P_out</span>(x, <span class="fl">0.6</span>), linewidth<span class="op">=</span><span class="fl">3</span>, linestyle<span class="op">=:</span>dash, label<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>b<span class="st">=0.6</span><span class="sc">$</span><span class="st">")</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plot<span class="st">!(x, lake_P_out(x, 0.4), linewidth=3, linestyle=:dash, label=L"</span><span class="op">$</span>b<span class="op">=</span><span class="fl">0.4</span><span class="op">$</span><span class="st">")</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(x, <span class="fu">lake_P_out</span>(x, <span class="fl">0.2</span>), linewidth<span class="op">=</span><span class="fl">3</span>, linestyle<span class="op">=:</span>dash, label<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>b<span class="st">=0.2</span><span class="sc">$</span><span class="st">")</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plot<span class="st">!(size=(600, 600))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-lake-input" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
+<div id="fig-lake-input" class="cell-output cell-output-display quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lake-input-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -718,7 +737,10 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 <path clip-path="url(#clip320)" d="M605.832 210.723 Q605.832 216.625 602.84 222.404 Q599.889 228.143 595.134 231.75 Q590.42 235.357 585.583 235.357 Q580.87 235.357 577.877 231.75 Q574.926 228.102 574.926 222.159 Q574.926 220.068 575.172 218.592 Q575.418 217.117 576.279 213.674 L583.165 186.293 Q584.354 181.169 584.354 181.128 Q584.354 180.636 584.149 180.39 Q583.985 180.104 583.001 179.899 Q582.017 179.694 580.132 179.694 Q579.353 179.694 578.984 179.653 Q578.656 179.612 578.369 179.407 Q578.123 179.161 578.123 178.669 Q578.123 177.972 578.41 177.603 Q578.738 177.193 578.984 177.111 Q579.23 177.029 579.722 176.988 Q580.419 176.947 582.755 176.742 Q585.091 176.496 587.1 176.332 Q589.108 176.169 589.969 176.169 Q590.461 176.169 590.707 176.414 Q590.994 176.619 590.994 176.865 L591.035 177.07 L584.845 202.361 Q589.723 197.319 594.683 197.319 Q599.643 197.319 602.717 201.131 Q605.832 204.943 605.832 210.723 M599.766 207.033 Q599.766 203.139 598.29 201.172 Q596.855 199.164 594.478 199.164 Q592.469 199.164 589.846 200.68 Q587.223 202.197 584.436 205.886 Q583.903 206.583 583.698 206.992 Q583.534 207.402 583.165 208.796 L581.32 216.543 Q579.968 221.831 579.968 225.028 Q579.968 229.373 581.566 231.422 Q583.165 233.472 585.583 233.472 Q588.125 233.472 590.789 231.217 Q593.453 228.963 595.503 224.864 Q596.773 222.159 598.249 216.338 Q599.766 210.477 599.766 207.033 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M633.86 221.667 Q633.942 220.642 635.54 220.642 L686.982 220.642 Q689.4 220.642 689.441 221.585 Q689.441 222.609 687.146 222.568 L636.114 222.568 Q633.86 222.609 633.86 221.667 M633.86 205.271 Q633.86 204.246 635.622 204.287 L686.9 204.287 Q689.4 204.287 689.441 205.271 Q689.441 206.214 687.31 206.214 L635.54 206.214 Q633.86 206.214 633.86 205.271 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M721.82 207.566 Q721.82 195.229 724.935 188.506 Q729.28 178.505 739.527 178.505 Q741.7 178.505 743.954 179.12 Q746.249 179.694 749.119 181.948 Q752.029 184.202 753.791 187.891 Q757.153 195.024 757.153 207.566 Q757.153 219.822 754.037 226.503 Q749.488 236.259 739.445 236.259 Q735.674 236.259 731.821 234.332 Q728.009 232.406 725.591 227.774 Q721.82 220.847 721.82 207.566 M728.788 206.542 Q728.788 219.207 729.69 224.249 Q730.715 229.701 733.502 232.078 Q736.33 234.414 739.445 234.414 Q742.806 234.414 745.594 231.914 Q748.422 229.373 749.283 223.921 Q750.225 218.551 750.184 206.542 Q750.184 194.86 749.365 190.187 Q748.258 184.735 745.307 182.563 Q742.396 180.349 739.445 180.349 Q738.339 180.349 737.15 180.677 Q736.002 181.005 734.322 181.948 Q732.641 182.891 731.329 185.227 Q730.059 187.564 729.444 191.089 Q728.788 195.638 728.788 206.542 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M764.661 233.062 Q763.39 231.709 763.39 229.946 Q763.39 228.184 764.661 226.913 Q765.931 225.602 767.858 225.602 Q769.702 225.602 770.932 226.831 Q772.203 228.02 772.203 229.987 Q772.203 231.914 770.85 233.185 Q769.539 234.414 767.858 234.414 Q765.931 234.414 764.661 233.062 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M786.489 207.894 Q786.489 194.696 793.212 186.621 Q799.934 178.505 808.582 178.505 Q813.624 178.505 816.411 181.087 Q819.24 183.629 819.24 187.564 Q819.24 189.736 817.969 190.679 Q816.698 191.622 815.387 191.622 Q813.87 191.622 812.681 190.597 Q811.493 189.572 811.493 187.728 Q811.493 183.957 816.125 183.957 Q813.952 180.595 808.746 180.595 Q807.148 180.595 805.508 181.087 Q803.869 181.538 801.737 183.096 Q799.606 184.653 797.966 187.113 Q796.327 189.572 795.179 194.204 Q794.031 198.836 794.031 204.861 L794.031 206.87 Q797.474 198.549 804.525 198.59 Q811.575 198.59 816.452 203.959 Q821.33 209.329 821.33 217.281 Q821.33 225.438 816.247 230.848 Q811.165 236.259 804.033 236.259 Q800.836 236.259 797.925 234.906 Q795.056 233.595 792.351 230.561 Q789.686 227.528 788.088 221.708 Q786.489 215.887 786.489 207.894 M794.195 215.436 Q794.195 223.675 795.712 227.61 Q795.958 228.266 796.491 229.168 Q797.064 230.069 798.007 231.258 Q798.991 232.406 800.59 233.185 Q802.188 233.922 804.033 233.922 Q809.648 233.922 812.353 228.471 Q813.788 225.438 813.788 217.199 Q813.788 208.796 812.272 205.722 Q809.689 200.516 804.443 200.516 Q800.917 200.516 798.458 202.935 Q796.04 205.353 795.097 208.591 Q794.195 211.829 794.195 215.436 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><polyline clip-path="url(#clip320)" style="stroke:#44aa99; stroke-linecap:round; stroke-linejoin:round; stroke-width:21; stroke-opacity:1; fill:none" stroke-dasharray="84, 53" points="417.397,297.205 552.422,297.205 "></polyline>
 <path clip-path="url(#clip320)" d="M605.832 301.443 Q605.832 307.345 602.84 313.124 Q599.889 318.863 595.134 322.47 Q590.42 326.077 585.583 326.077 Q580.87 326.077 577.877 322.47 Q574.926 318.822 574.926 312.879 Q574.926 310.788 575.172 309.312 Q575.418 307.837 576.279 304.394 L583.165 277.013 Q584.354 271.889 584.354 271.848 Q584.354 271.356 584.149 271.11 Q583.985 270.824 583.001 270.619 Q582.017 270.414 580.132 270.414 Q579.353 270.414 578.984 270.373 Q578.656 270.332 578.369 270.127 Q578.123 269.881 578.123 269.389 Q578.123 268.692 578.41 268.323 Q578.738 267.913 578.984 267.831 Q579.23 267.749 579.722 267.708 Q580.419 267.667 582.755 267.462 Q585.091 267.216 587.1 267.052 Q589.108 266.889 589.969 266.889 Q590.461 266.889 590.707 267.134 Q590.994 267.339 590.994 267.585 L591.035 267.79 L584.845 293.081 Q589.723 288.039 594.683 288.039 Q599.643 288.039 602.717 291.851 Q605.832 295.663 605.832 301.443 M599.766 297.753 Q599.766 293.859 598.29 291.892 Q596.855 289.884 594.478 289.884 Q592.469 289.884 589.846 291.4 Q587.223 292.917 584.436 296.606 Q583.903 297.303 583.698 297.712 Q583.534 298.122 583.165 299.516 L581.32 307.263 Q579.968 312.551 579.968 315.748 Q579.968 320.093 581.566 322.142 Q583.165 324.192 585.583 324.192 Q588.125 324.192 590.789 321.937 Q593.453 319.683 595.503 315.584 Q596.773 312.879 598.249 307.058 Q599.766 301.197 599.766 297.753 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M633.86 312.387 Q633.942 311.362 635.54 311.362 L686.982 311.362 Q689.4 311.362 689.441 312.305 Q689.441 313.329 687.146 313.288 L636.114 313.288 Q633.86 313.329 633.86 312.387 M633.86 295.991 Q633.86 294.966 635.622 295.007 L686.9 295.007 Q689.4 295.007 689.441 295.991 Q689.441 296.934 687.31 296.934 L635.54 296.934 Q633.86 296.934 633.86 295.991 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M721.82 298.286 Q721.82 285.949 724.935 279.226 Q729.28 269.225 739.527 269.225 Q741.7 269.225 743.954 269.84 Q746.249 270.414 749.119 272.668 Q752.029 274.922 753.791 278.611 Q757.153 285.744 757.153 298.286 Q757.153 310.542 754.037 317.223 Q749.488 326.979 739.445 326.979 Q735.674 326.979 731.821 325.052 Q728.009 323.126 725.591 318.494 Q721.82 311.567 721.82 298.286 M728.788 297.262 Q728.788 309.927 729.69 314.969 Q730.715 320.421 733.502 322.798 Q736.33 325.134 739.445 325.134 Q742.806 325.134 745.594 322.634 Q748.422 320.093 749.283 314.641 Q750.225 309.271 750.184 297.262 Q750.184 285.58 749.365 280.907 Q748.258 275.455 745.307 273.283 Q742.396 271.069 739.445 271.069 Q738.339 271.069 737.15 271.397 Q736.002 271.725 734.322 272.668 Q732.641 273.611 731.329 275.947 Q730.059 278.284 729.444 281.809 Q728.788 286.358 728.788 297.262 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M764.661 323.782 Q763.39 322.429 763.39 320.666 Q763.39 318.904 764.661 317.633 Q765.931 316.322 767.858 316.322 Q769.702 316.322 770.932 317.551 Q772.203 318.74 772.203 320.707 Q772.203 322.634 770.85 323.905 Q769.539 325.134 767.858 325.134 Q765.931 325.134 764.661 323.782 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M786.489 311.28 L786.489 308.698 L812.272 269.307 Q812.927 268.282 813.952 268.323 Q814.895 268.323 815.1 268.692 Q815.305 269.061 815.305 270.496 L815.305 308.698 L823.708 308.698 L823.708 311.28 L815.305 311.28 L815.305 318.576 Q815.305 320.994 816.288 321.773 Q817.313 322.552 821.658 322.552 L823.421 322.552 L823.421 325.134 Q819.978 324.888 812.026 324.888 Q804.115 324.888 800.672 325.134 L800.672 322.552 L802.434 322.552 Q806.779 322.552 807.804 321.814 Q808.828 321.035 808.828 318.576 L808.828 311.28 L786.489 311.28 M788.867 308.698 L809.32 308.698 L809.32 277.382 L788.867 308.698 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><polyline clip-path="url(#clip320)" style="stroke:#117733; stroke-linecap:round; stroke-linejoin:round; stroke-width:21; stroke-opacity:1; fill:none" stroke-dasharray="84, 53" points="417.397,387.925 552.422,387.925 "></polyline>
 <path clip-path="url(#clip320)" d="M605.832 392.163 Q605.832 398.065 602.84 403.844 Q599.889 409.583 595.134 413.19 Q590.42 416.797 585.583 416.797 Q580.87 416.797 577.877 413.19 Q574.926 409.542 574.926 403.599 Q574.926 401.508 575.172 400.032 Q575.418 398.557 576.279 395.114 L583.165 367.733 Q584.354 362.609 584.354 362.568 Q584.354 362.076 584.149 361.83 Q583.985 361.544 583.001 361.339 Q582.017 361.134 580.132 361.134 Q579.353 361.134 578.984 361.093 Q578.656 361.052 578.369 360.847 Q578.123 360.601 578.123 360.109 Q578.123 359.412 578.41 359.043 Q578.738 358.633 578.984 358.551 Q579.23 358.469 579.722 358.428 Q580.419 358.387 582.755 358.182 Q585.091 357.936 587.1 357.772 Q589.108 357.609 589.969 357.609 Q590.461 357.609 590.707 357.854 Q590.994 358.059 590.994 358.305 L591.035 358.51 L584.845 383.801 Q589.723 378.759 594.683 378.759 Q599.643 378.759 602.717 382.571 Q605.832 386.383 605.832 392.163 M599.766 388.473 Q599.766 384.579 598.29 382.612 Q596.855 380.604 594.478 380.604 Q592.469 380.604 589.846 382.12 Q587.223 383.637 584.436 387.326 Q583.903 388.023 583.698 388.432 Q583.534 388.842 583.165 390.236 L581.32 397.983 Q579.968 403.271 579.968 406.468 Q579.968 410.813 581.566 412.862 Q583.165 414.912 585.583 414.912 Q588.125 414.912 590.789 412.657 Q593.453 410.403 595.503 406.304 Q596.773 403.599 598.249 397.778 Q599.766 391.917 599.766 388.473 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M633.86 403.107 Q633.942 402.082 635.54 402.082 L686.982 402.082 Q689.4 402.082 689.441 403.025 Q689.441 404.049 687.146 404.008 L636.114 404.008 Q633.86 404.049 633.86 403.107 M633.86 386.711 Q633.86 385.686 635.622 385.727 L686.9 385.727 Q689.4 385.727 689.441 386.711 Q689.441 387.654 687.31 387.654 L635.54 387.654 Q633.86 387.654 633.86 386.711 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M721.82 389.006 Q721.82 376.669 724.935 369.946 Q729.28 359.945 739.527 359.945 Q741.7 359.945 743.954 360.56 Q746.249 361.134 749.119 363.388 Q752.029 365.642 753.791 369.331 Q757.153 376.464 757.153 389.006 Q757.153 401.262 754.037 407.943 Q749.488 417.699 739.445 417.699 Q735.674 417.699 731.821 415.772 Q728.009 413.846 725.591 409.214 Q721.82 402.287 721.82 389.006 M728.788 387.982 Q728.788 400.647 729.69 405.689 Q730.715 411.141 733.502 413.518 Q736.33 415.854 739.445 415.854 Q742.806 415.854 745.594 413.354 Q748.422 410.813 749.283 405.361 Q750.225 399.991 750.184 387.982 Q750.184 376.3 749.365 371.627 Q748.258 366.175 745.307 364.003 Q742.396 361.789 739.445 361.789 Q738.339 361.789 737.15 362.117 Q736.002 362.445 734.322 363.388 Q732.641 364.331 731.329 366.667 Q730.059 369.004 729.444 372.529 Q728.788 377.078 728.788 387.982 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M764.661 414.502 Q763.39 413.149 763.39 411.386 Q763.39 409.624 764.661 408.353 Q765.931 407.042 767.858 407.042 Q769.702 407.042 770.932 408.271 Q772.203 409.46 772.203 411.427 Q772.203 413.354 770.85 414.625 Q769.539 415.854 767.858 415.854 Q765.931 415.854 764.661 414.502 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip320)" d="M786.489 415.854 Q786.489 414.338 786.612 413.887 Q786.776 413.436 787.432 412.739 L803.541 394.786 Q812.353 384.866 812.353 376.218 Q812.353 370.602 809.402 366.585 Q806.492 362.568 801.122 362.568 Q797.433 362.568 794.318 364.823 Q791.203 367.077 789.768 371.094 Q790.014 371.012 790.875 371.012 Q792.966 371.012 794.113 372.324 Q795.302 373.635 795.302 375.398 Q795.302 377.652 793.826 378.759 Q792.392 379.825 790.957 379.825 Q790.383 379.825 789.604 379.702 Q788.867 379.579 787.678 378.431 Q786.489 377.242 786.489 375.152 Q786.489 369.29 790.916 364.618 Q795.384 359.945 802.188 359.945 Q809.894 359.945 814.936 364.536 Q820.018 369.086 820.018 376.218 Q820.018 378.718 819.24 381.013 Q818.502 383.268 817.477 385.03 Q816.493 386.793 813.788 389.621 Q811.083 392.449 808.91 394.458 Q806.738 396.466 801.86 400.729 L792.966 409.378 L808.091 409.378 Q815.469 409.378 816.043 408.722 Q816.862 407.533 817.887 401.262 L820.018 401.262 L817.641 415.854 L786.489 415.854 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path></svg>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: Lake eutrophication dynamics based on the shallow lake model with. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter <span class="math inline">\(b\)</span>). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux.</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lake-input-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Lake eutrophication dynamics based on the shallow lake model with. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter <span class="math inline">\(b\)</span>). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -762,7 +784,7 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 </tr>
 </tbody>
 </table>
-<div class="cell" data-execution_count="9">
+<div id="cell-12" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Random</span>.<span class="fu">seed!</span>(<span class="fl">1</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># set parameters</span></span>
@@ -777,15 +799,16 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 <pre><code>50</code></pre>
 </div>
 </div>
-<div class="cell" data-fig-width="100%" data-execution_count="27">
+<div id="cell-fig-lake-inflows" class="cell" data-fig-width="100%" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">LogNormal</span>(μ, σ²), T)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(y; label<span class="op">=</span><span class="st">"Non-Point Source Inflows"</span>, color<span class="op">=:</span>black, marker<span class="op">=</span>(<span class="op">:</span>x, <span class="fl">5</span>), guidefontsize<span class="op">=</span><span class="fl">18</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, legendfontsize<span class="op">=</span><span class="fl">14</span>, linewidth<span class="op">=</span><span class="fl">3</span>, legend<span class="op">=:</span>topright)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">xlabel!</span>(L<span class="st">"t"</span>)</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel!</span>(L<span class="st">"y_t"</span>)</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">600</span>))</span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ylims!</span>((<span class="fl">0.025</span>, <span class="fl">0.042</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-lake-inflows" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
+<div id="fig-lake-inflows" class="cell-output cell-output-display quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lake-inflows-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -1036,11 +1059,14 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 <line clip-path="url(#clip850)" x1="1167.03" y1="206.053" x2="1178.13" y2="217.149" style="stroke:#000000; stroke-width:21; stroke-opacity:1"></line>
 <line clip-path="url(#clip850)" x1="1167.03" y1="206.053" x2="1178.13" y2="194.957" style="stroke:#000000; stroke-width:21; stroke-opacity:1"></line>
 <path clip-path="url(#clip850)" d="M1250.92 175.813 L1261.94 175.813 L1288.75 226.408 L1288.75 175.813 L1296.69 175.813 L1296.69 236.293 L1285.67 236.293 L1258.86 185.697 L1258.86 236.293 L1250.92 236.293 L1250.92 175.813 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M1330.23 196.148 Q1324.24 196.148 1320.76 200.847 Q1317.27 205.506 1317.27 213.648 Q1317.27 221.79 1320.71 226.489 Q1324.2 231.148 1330.23 231.148 Q1336.19 231.148 1339.67 226.449 Q1343.16 221.75 1343.16 213.648 Q1343.16 205.587 1339.67 200.888 Q1336.19 196.148 1330.23 196.148 M1330.23 189.829 Q1339.96 189.829 1345.51 196.148 Q1351.06 202.468 1351.06 213.648 Q1351.06 224.788 1345.51 231.148 Q1339.96 237.467 1330.23 237.467 Q1320.47 237.467 1314.92 231.148 Q1309.41 224.788 1309.41 213.648 Q1309.41 202.468 1314.92 196.148 Q1320.47 189.829 1330.23 189.829 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M1401.13 208.909 L1401.13 236.293 L1393.67 236.293 L1393.67 209.152 Q1393.67 202.711 1391.16 199.51 Q1388.65 196.31 1383.63 196.31 Q1377.59 196.31 1374.11 200.159 Q1370.62 204.007 1370.62 210.65 L1370.62 236.293 L1363.13 236.293 L1363.13 190.922 L1370.62 190.922 L1370.62 197.971 Q1373.3 193.88 1376.9 191.854 Q1380.55 189.829 1385.29 189.829 Q1393.1 189.829 1397.11 194.69 Q1401.13 199.51 1401.13 208.909 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M1412.22 210.245 L1434.06 210.245 L1434.06 216.889 L1412.22 216.889 L1412.22 210.245 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M1454.44 182.537 L1454.44 205.263 L1464.72 205.263 Q1470.44 205.263 1473.56 202.306 Q1476.67 199.348 1476.67 193.88 Q1476.67 188.451 1473.56 185.494 Q1470.44 182.537 1464.72 182.537 L1454.44 182.537 M1446.25 175.813 L1464.72 175.813 Q1474.89 175.813 1480.08 180.431 Q1485.3 185.008 1485.3 193.88 Q1485.3 202.832 1480.08 207.41 Q1474.89 211.987 1464.72 211.987 L1454.44 211.987 L1454.44 236.293 L1446.25 236.293 L1446.25 175.813 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M1510.58 196.148 Q1504.59 196.148 1501.1 200.847 Q1497.62 205.506 1497.62 213.648 Q1497.62 221.79 1501.06 226.489 Q1504.54 231.148 1510.58 231.148 Q1516.54 231.148 1520.02 226.449 Q1523.5 221.75 1523.5 213.648 Q1523.5 205.587 1520.02 200.888 Q1516.54 196.148 1510.58 196.148 M1510.58 189.829 Q1520.3 189.829 1525.85 196.148 Q1531.4 202.468 1531.4 213.648 Q1531.4 224.788 1525.85 231.148 Q1520.3 237.467 1510.58 237.467 Q1500.82 237.467 1495.27 231.148 Q1489.76 224.788 1489.76 213.648 Q1489.76 202.468 1495.27 196.148 Q1500.82 189.829 1510.58 189.829 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M1543.76 190.922 L1551.21 190.922 L1551.21 236.293 L1543.76 236.293 L1543.76 190.922 M1543.76 173.261 L1551.21 173.261 L1551.21 182.699 L1543.76 182.699 L1543.76 173.261 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M1604.52 208.909 L1604.52 236.293 L1597.07 236.293 L1597.07 209.152 Q1597.07 202.711 1594.56 199.51 Q1592.04 196.31 1587.02 196.31 Q1580.99 196.31 1577.5 200.159 Q1574.02 204.007 1574.02 210.65 L1574.02 236.293 L1566.52 236.293 L1566.52 190.922 L1574.02 190.922 L1574.02 197.971 Q1576.69 193.88 1580.3 191.854 Q1583.94 189.829 1588.68 189.829 Q1596.5 189.829 1600.51 194.69 Q1604.52 199.51 1604.52 208.909 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M1626.76 178.041 L1626.76 190.922 L1642.11 190.922 L1642.11 196.715 L1626.76 196.715 L1626.76 221.345 Q1626.76 226.895 1628.26 228.474 Q1629.8 230.054 1634.46 230.054 L1642.11 230.054 L1642.11 236.293 L1634.46 236.293 Q1625.83 236.293 1622.55 233.092 Q1619.27 229.852 1619.27 221.345 L1619.27 196.715 L1613.8 196.715 L1613.8 190.922 L1619.27 190.922 L1619.27 178.041 L1626.76 178.041 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M1714.87 177.798 L1714.87 185.778 Q1710.21 183.55 1706.08 182.456 Q1701.95 181.362 1698.1 181.362 Q1691.41 181.362 1687.77 183.955 Q1684.16 186.548 1684.16 191.328 Q1684.16 195.338 1686.55 197.404 Q1688.98 199.429 1695.71 200.685 L1700.65 201.698 Q1709.8 203.44 1714.14 207.855 Q1718.51 212.23 1718.51 219.603 Q1718.51 228.393 1712.6 232.93 Q1706.73 237.467 1695.34 237.467 Q1691.05 237.467 1686.19 236.495 Q1681.37 235.523 1676.18 233.619 L1676.18 225.193 Q1681.16 227.988 1685.94 229.406 Q1690.72 230.824 1695.34 230.824 Q1702.35 230.824 1706.16 228.069 Q1709.97 225.315 1709.97 220.211 Q1709.97 215.755 1707.21 213.243 Q1704.5 210.731 1698.26 209.476 L1693.28 208.503 Q1684.12 206.681 1680.03 202.792 Q1675.94 198.903 1675.94 191.976 Q1675.94 183.955 1681.57 179.337 Q1687.24 174.719 1697.17 174.719 Q1701.42 174.719 1705.83 175.489 Q1710.25 176.258 1714.87 177.798 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M1748.53 196.148 Q1742.54 196.148 1739.05 200.847 Q1735.57 205.506 1735.57 213.648 Q1735.57 221.79 1739.01 226.489 Q1742.49 231.148 1748.53 231.148 Q1754.49 231.148 1757.97 226.449 Q1761.45 221.75 1761.45 213.648 Q1761.45 205.587 1757.97 200.888 Q1754.49 196.148 1748.53 196.148 M1748.53 189.829 Q1758.25 189.829 1763.8 196.148 Q1769.35 202.468 1769.35 213.648 Q1769.35 224.788 1763.8 231.148 Q1758.25 237.467 1748.53 237.467 Q1738.77 237.467 1733.22 231.148 Q1727.71 224.788 1727.71 213.648 Q1727.71 202.468 1733.22 196.148 Q1738.77 189.829 1748.53 189.829 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M1780.94 218.388 L1780.94 190.922 L1788.39 190.922 L1788.39 218.104 Q1788.39 224.545 1790.9 227.786 Q1793.41 230.986 1798.44 230.986 Q1804.47 230.986 1807.96 227.138 Q1811.48 223.289 1811.48 216.646 L1811.48 190.922 L1818.94 190.922 L1818.94 236.293 L1811.48 236.293 L1811.48 229.325 Q1808.77 233.457 1805.16 235.482 Q1801.6 237.467 1796.86 237.467 Q1789.04 237.467 1784.99 232.606 Q1780.94 227.745 1780.94 218.388 M1799.69 189.829 L1799.69 189.829 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M1860.58 197.89 Q1859.32 197.161 1857.82 196.837 Q1856.37 196.472 1854.58 196.472 Q1848.26 196.472 1844.86 200.604 Q1841.5 204.696 1841.5 212.392 L1841.5 236.293 L1834 236.293 L1834 190.922 L1841.5 190.922 L1841.5 197.971 Q1843.85 193.839 1847.62 191.854 Q1851.38 189.829 1856.77 189.829 Q1857.54 189.829 1858.47 189.95 Q1859.4 190.031 1860.54 190.234 L1860.58 197.89 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M1899.22 192.664 L1899.22 199.632 Q1896.06 197.89 1892.86 197.039 Q1889.7 196.148 1886.46 196.148 Q1879.21 196.148 1875.2 200.766 Q1871.19 205.344 1871.19 213.648 Q1871.19 221.952 1875.2 226.57 Q1879.21 231.148 1886.46 231.148 Q1889.7 231.148 1892.86 230.297 Q1896.06 229.406 1899.22 227.664 L1899.22 234.551 Q1896.11 236.009 1892.74 236.738 Q1889.42 237.467 1885.65 237.467 Q1875.4 237.467 1869.37 231.026 Q1863.33 224.586 1863.33 213.648 Q1863.33 202.549 1869.41 196.189 Q1875.53 189.829 1886.14 189.829 Q1889.58 189.829 1892.86 190.558 Q1896.15 191.247 1899.22 192.664 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M1950.99 211.744 L1950.99 215.39 L1916.72 215.39 Q1917.21 223.087 1921.34 227.138 Q1925.51 231.148 1932.93 231.148 Q1937.22 231.148 1941.23 230.095 Q1945.28 229.042 1949.25 226.935 L1949.25 233.984 Q1945.24 235.685 1941.03 236.576 Q1936.82 237.467 1932.48 237.467 Q1921.63 237.467 1915.27 231.148 Q1908.95 224.829 1908.95 214.053 Q1908.95 202.913 1914.94 196.391 Q1920.98 189.829 1931.19 189.829 Q1940.34 189.829 1945.65 195.743 Q1950.99 201.617 1950.99 211.744 M1943.54 209.557 Q1943.46 203.44 1940.1 199.794 Q1936.78 196.148 1931.27 196.148 Q1925.03 196.148 1921.26 199.672 Q1917.53 203.197 1916.97 209.597 L1943.54 209.557 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M1989.92 175.813 L1998.11 175.813 L1998.11 236.293 L1989.92 236.293 L1989.92 175.813 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M2051.78 208.909 L2051.78 236.293 L2044.33 236.293 L2044.33 209.152 Q2044.33 202.711 2041.82 199.51 Q2039.3 196.31 2034.28 196.31 Q2028.25 196.31 2024.76 200.159 Q2021.28 204.007 2021.28 210.65 L2021.28 236.293 L2013.78 236.293 L2013.78 190.922 L2021.28 190.922 L2021.28 197.971 Q2023.95 193.88 2027.56 191.854 Q2031.2 189.829 2035.94 189.829 Q2043.76 189.829 2047.77 194.69 Q2051.78 199.51 2051.78 208.909 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M2089.62 173.261 L2089.62 179.458 L2082.49 179.458 Q2078.48 179.458 2076.9 181.079 Q2075.36 182.699 2075.36 186.912 L2075.36 190.922 L2087.63 190.922 L2087.63 196.715 L2075.36 196.715 L2075.36 236.293 L2067.86 236.293 L2067.86 196.715 L2060.73 196.715 L2060.73 190.922 L2067.86 190.922 L2067.86 187.763 Q2067.86 180.188 2071.39 176.744 Q2074.91 173.261 2082.57 173.261 L2089.62 173.261 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M2095.86 173.261 L2103.31 173.261 L2103.31 236.293 L2095.86 236.293 L2095.86 173.261 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M2136.49 196.148 Q2130.49 196.148 2127.01 200.847 Q2123.52 205.506 2123.52 213.648 Q2123.52 221.79 2126.97 226.489 Q2130.45 231.148 2136.49 231.148 Q2142.44 231.148 2145.92 226.449 Q2149.41 221.75 2149.41 213.648 Q2149.41 205.587 2145.92 200.888 Q2142.44 196.148 2136.49 196.148 M2136.49 189.829 Q2146.21 189.829 2151.76 196.148 Q2157.31 202.468 2157.31 213.648 Q2157.31 224.788 2151.76 231.148 Q2146.21 237.467 2136.49 237.467 Q2126.72 237.467 2121.17 231.148 Q2115.66 224.788 2115.66 213.648 Q2115.66 202.468 2121.17 196.148 Q2126.72 189.829 2136.49 189.829 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M2165.33 190.922 L2172.78 190.922 L2182.1 226.327 L2191.38 190.922 L2200.17 190.922 L2209.48 226.327 L2218.76 190.922 L2226.21 190.922 L2214.34 236.293 L2205.55 236.293 L2195.79 199.105 L2185.99 236.293 L2177.2 236.293 L2165.33 190.922 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip850)" d="M2266.44 192.259 L2266.44 199.308 Q2263.28 197.688 2259.88 196.877 Q2256.47 196.067 2252.83 196.067 Q2247.28 196.067 2244.48 197.769 Q2241.73 199.47 2241.73 202.873 Q2241.73 205.465 2243.71 206.964 Q2245.7 208.422 2251.69 209.759 L2254.25 210.326 Q2262.19 212.028 2265.51 215.147 Q2268.87 218.226 2268.87 223.775 Q2268.87 230.095 2263.85 233.781 Q2258.86 237.467 2250.11 237.467 Q2246.47 237.467 2242.5 236.738 Q2238.57 236.05 2234.19 234.632 L2234.19 226.935 Q2238.33 229.082 2242.34 230.176 Q2246.35 231.229 2250.28 231.229 Q2255.54 231.229 2258.38 229.447 Q2261.21 227.624 2261.21 224.342 Q2261.21 221.304 2259.15 219.684 Q2257.12 218.064 2250.19 216.565 L2247.6 215.957 Q2240.68 214.499 2237.6 211.501 Q2234.52 208.463 2234.52 203.197 Q2234.52 196.796 2239.05 193.313 Q2243.59 189.829 2251.94 189.829 Q2256.07 189.829 2259.71 190.436 Q2263.36 191.044 2266.44 192.259 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path></svg>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: Inflows <span class="math inline">\(y_t\)</span> for this lake problem simulation.</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lake-inflows-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Inflows <span class="math inline">\(y_t\)</span> for this lake problem simulation.
+</figcaption>
 </figure>
 </div>
 </div>
-<div class="cell" data-fig-width="100%" data-execution_count="28">
+<div id="cell-fig-lake-state" class="cell" data-fig-width="100%" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>X₁ <span class="op">=</span> <span class="fu">zeros</span>(T<span class="op">+</span><span class="fl">1</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>X₂ <span class="op">=</span> <span class="fu">zeros</span>(T<span class="op">+</span><span class="fl">1</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1054,8 +1080,9 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">xlabel!</span>(L<span class="st">"t"</span>)</span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel!</span>(L<span class="st">"X_t"</span>)</span>
 <span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">600</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-lake-state" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
+<div id="fig-lake-state" class="cell-output cell-output-display quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lake-state-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="600" height="600" viewbox="0 0 2400 2400">
 <defs>
@@ -1106,7 +1133,10 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 <polyline clip-path="url(#clip940)" style="stroke:#0000ff; stroke-linecap:round; stroke-linejoin:round; stroke-width:21; stroke-opacity:1; fill:none" points="433.909,206.053 567.782,206.053 "></polyline>
 <path clip-path="url(#clip940)" d="M628.542 210.004 Q627.435 215.291 626.001 218.324 Q623.705 222.956 619.811 222.956 Q616.86 222.956 614.77 221.153 Q612.679 219.349 612.187 216.644 Q606.818 222.956 601.243 222.956 Q596.324 222.956 593.209 219.226 Q590.094 215.455 590.094 209.512 Q590.094 203.527 593.045 197.789 Q596.038 192.05 600.751 188.484 Q605.465 184.918 610.302 184.918 Q615.425 184.918 618.049 190.288 Q618.254 188.812 619.196 187.705 Q620.139 186.599 621.574 186.599 Q622.681 186.599 623.336 187.214 Q623.992 187.787 623.992 188.853 Q623.992 189.386 623.418 191.722 L620.385 203.445 L618.541 211.028 Q617.844 213.816 617.639 214.84 Q617.475 215.865 617.475 217.218 Q617.475 221.071 619.975 221.071 Q621.205 221.071 622.189 220.292 Q623.172 219.513 623.951 217.873 Q624.73 216.234 625.222 214.717 Q625.714 213.16 626.37 210.7 Q626.575 209.717 626.738 209.471 Q626.943 209.184 627.517 209.184 Q628.542 209.184 628.542 210.004 M617.024 194.141 Q617.024 193.772 616.737 192.747 Q616.45 191.722 615.794 190.288 Q615.139 188.853 613.704 187.828 Q612.31 186.763 610.425 186.763 Q607.883 186.763 605.219 188.935 Q602.596 191.107 600.669 194.797 Q599.194 197.748 597.595 203.937 Q596.038 210.127 596.038 213.201 Q596.038 215.086 596.447 216.767 Q596.898 218.406 598.169 219.759 Q599.44 221.071 601.407 221.071 Q606.203 221.071 610.917 215.127 Q611.818 214.102 612.023 213.693 Q612.269 213.242 612.597 212.012 L616.778 195.575 Q617.024 194.346 617.024 194.141 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip940)" d="M655.18 220.135 Q655.18 220.938 654.807 221.139 Q654.434 221.311 653.401 221.311 L647.892 221.311 L643.531 238.642 Q643.186 240.162 643.186 241.454 Q643.186 242.888 643.617 243.519 Q644.076 244.151 645.023 244.151 Q646.888 244.151 648.896 242.458 Q650.933 240.765 652.655 236.633 Q652.884 236.088 652.999 235.973 Q653.143 235.83 653.516 235.83 Q654.233 235.83 654.233 236.404 Q654.233 236.605 653.831 237.523 Q653.458 238.441 652.626 239.789 Q651.823 241.138 650.761 242.4 Q649.728 243.663 648.15 244.581 Q646.572 245.471 644.879 245.471 Q642.498 245.471 640.977 243.95 Q639.485 242.429 639.485 240.048 Q639.485 239.273 640.088 236.805 Q640.69 234.309 643.961 221.311 L638.768 221.311 Q638.05 221.311 637.763 221.283 Q637.505 221.254 637.304 221.111 Q637.132 220.938 637.132 220.594 Q637.132 220.049 637.362 219.819 Q637.591 219.561 637.878 219.533 Q638.194 219.475 638.911 219.475 L644.42 219.475 L646.716 210.15 Q646.945 209.232 647.519 208.715 Q648.121 208.17 648.466 208.113 Q648.81 208.027 649.068 208.027 Q649.843 208.027 650.302 208.457 Q650.761 208.859 650.761 209.605 Q650.761 210.007 648.351 219.475 L653.516 219.475 Q654.176 219.475 654.434 219.504 Q654.721 219.533 654.95 219.676 Q655.18 219.819 655.18 220.135 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip940)" d="M687.255 209.266 Q687.337 208.241 688.935 208.241 L740.377 208.241 Q742.795 208.241 742.836 209.184 Q742.836 210.208 740.541 210.167 L689.509 210.167 Q687.255 210.208 687.255 209.266 M687.255 192.87 Q687.255 191.845 689.017 191.886 L740.295 191.886 Q742.795 191.886 742.836 192.87 Q742.836 193.813 740.705 193.813 L688.935 193.813 Q687.255 193.813 687.255 192.87 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip940)" d="M775.215 195.165 Q775.215 182.828 778.33 176.105 Q782.675 166.104 792.922 166.104 Q795.094 166.104 797.349 166.719 Q799.644 167.293 802.513 169.547 Q805.424 171.802 807.186 175.491 Q810.547 182.623 810.547 195.165 Q810.547 207.421 807.432 214.102 Q802.882 223.858 792.84 223.858 Q789.069 223.858 785.216 221.931 Q781.404 220.005 778.986 215.373 Q775.215 208.446 775.215 195.165 M782.183 194.141 Q782.183 206.806 783.084 211.848 Q784.109 217.3 786.896 219.677 Q789.725 222.013 792.84 222.013 Q796.201 222.013 798.988 219.513 Q801.817 216.972 802.677 211.52 Q803.62 206.151 803.579 194.141 Q803.579 182.459 802.759 177.786 Q801.653 172.334 798.701 170.162 Q795.791 167.949 792.84 167.949 Q791.733 167.949 790.545 168.276 Q789.397 168.604 787.716 169.547 Q786.036 170.49 784.724 172.826 Q783.453 175.163 782.839 178.688 Q782.183 183.238 782.183 194.141 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip940)" d="M818.056 220.661 Q816.785 219.308 816.785 217.546 Q816.785 215.783 818.056 214.512 Q819.326 213.201 821.253 213.201 Q823.097 213.201 824.327 214.43 Q825.598 215.619 825.598 217.587 Q825.598 219.513 824.245 220.784 Q822.933 222.013 821.253 222.013 Q819.326 222.013 818.056 220.661 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip940)" d="M839.884 195.165 Q839.884 182.828 842.999 176.105 Q847.344 166.104 857.591 166.104 Q859.764 166.104 862.018 166.719 Q864.314 167.293 867.183 169.547 Q870.093 171.802 871.856 175.491 Q875.217 182.623 875.217 195.165 Q875.217 207.421 872.102 214.102 Q867.552 223.858 857.509 223.858 Q853.738 223.858 849.885 221.931 Q846.073 220.005 843.655 215.373 Q839.884 208.446 839.884 195.165 M846.852 194.141 Q846.852 206.806 847.754 211.848 Q848.779 217.3 851.566 219.677 Q854.394 222.013 857.509 222.013 Q860.87 222.013 863.658 219.513 Q866.486 216.972 867.347 211.52 Q868.29 206.151 868.249 194.141 Q868.249 182.459 867.429 177.786 Q866.322 172.334 863.371 170.162 Q860.461 167.949 857.509 167.949 Q856.403 167.949 855.214 168.276 Q854.066 168.604 852.386 169.547 Q850.705 170.49 849.393 172.826 Q848.123 175.163 847.508 178.688 Q846.852 183.238 846.852 194.141 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip940)" d="M881.79 222.013 Q881.79 220.497 881.913 220.046 Q882.077 219.595 882.733 218.898 L898.842 200.945 Q907.655 191.026 907.655 182.377 Q907.655 176.761 904.703 172.744 Q901.793 168.727 896.423 168.727 Q892.734 168.727 889.619 170.982 Q886.504 173.236 885.069 177.253 Q885.315 177.171 886.176 177.171 Q888.267 177.171 889.414 178.483 Q890.603 179.794 890.603 181.557 Q890.603 183.811 889.127 184.918 Q887.693 185.984 886.258 185.984 Q885.684 185.984 884.905 185.861 Q884.168 185.738 882.979 184.59 Q881.79 183.402 881.79 181.311 Q881.79 175.45 886.217 170.777 Q890.685 166.104 897.489 166.104 Q905.195 166.104 910.237 170.695 Q915.32 175.245 915.32 182.377 Q915.32 184.877 914.541 187.173 Q913.803 189.427 912.778 191.189 Q911.794 192.952 909.089 195.78 Q906.384 198.609 904.211 200.617 Q902.039 202.625 897.161 206.888 L888.267 215.537 L903.392 215.537 Q910.77 215.537 911.344 214.881 Q912.163 213.693 913.188 207.421 L915.32 207.421 L912.942 222.013 L881.79 222.013 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip940)" d="M923.697 208.487 Q923.697 205.987 925.049 205.044 Q926.402 204.06 927.837 204.06 Q929.763 204.06 930.87 205.29 Q932.017 206.478 932.017 208.159 Q932.017 209.84 930.87 211.069 Q929.763 212.258 927.837 212.258 Q926.894 212.258 926.402 212.094 Q927.509 215.947 930.87 218.734 Q934.272 221.522 938.74 221.522 Q944.355 221.522 947.716 216.07 Q949.725 212.545 949.725 204.552 Q949.725 197.502 948.208 193.977 Q945.872 188.607 941.076 188.607 Q934.272 188.607 930.255 194.469 Q929.763 195.206 929.189 195.247 Q928.369 195.247 928.164 194.797 Q928 194.305 928 193.034 L928 168.194 Q928 166.186 928.82 166.186 Q929.148 166.186 929.845 166.432 Q935.133 168.768 940.994 168.809 Q947.019 168.809 952.43 166.35 Q952.84 166.104 953.086 166.104 Q953.906 166.104 953.947 167.047 Q953.947 167.375 953.25 168.358 Q952.594 169.301 951.159 170.572 Q949.725 171.802 947.88 172.99 Q946.036 174.179 943.33 174.999 Q940.666 175.777 937.715 175.777 Q934.19 175.777 930.583 174.671 L930.583 191.026 Q934.928 186.763 941.24 186.763 Q947.962 186.763 952.594 192.173 Q957.226 197.584 957.226 205.126 Q957.226 213.037 951.733 218.447 Q946.282 223.858 938.904 223.858 Q932.181 223.858 927.918 219.062 Q923.697 214.266 923.697 208.487 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><polyline clip-path="url(#clip940)" style="stroke:#800080; stroke-linecap:round; stroke-linejoin:round; stroke-width:21; stroke-opacity:1; fill:none" points="433.909,296.773 567.782,296.773 "></polyline>
 <path clip-path="url(#clip940)" d="M628.542 300.724 Q627.435 306.011 626.001 309.044 Q623.705 313.676 619.811 313.676 Q616.86 313.676 614.77 311.873 Q612.679 310.069 612.187 307.364 Q606.818 313.676 601.243 313.676 Q596.324 313.676 593.209 309.946 Q590.094 306.175 590.094 300.232 Q590.094 294.247 593.045 288.509 Q596.038 282.77 600.751 279.204 Q605.465 275.638 610.302 275.638 Q615.425 275.638 618.049 281.008 Q618.254 279.532 619.196 278.425 Q620.139 277.319 621.574 277.319 Q622.681 277.319 623.336 277.934 Q623.992 278.507 623.992 279.573 Q623.992 280.106 623.418 282.442 L620.385 294.165 L618.541 301.748 Q617.844 304.536 617.639 305.56 Q617.475 306.585 617.475 307.938 Q617.475 311.791 619.975 311.791 Q621.205 311.791 622.189 311.012 Q623.172 310.233 623.951 308.593 Q624.73 306.954 625.222 305.437 Q625.714 303.88 626.37 301.42 Q626.575 300.437 626.738 300.191 Q626.943 299.904 627.517 299.904 Q628.542 299.904 628.542 300.724 M617.024 284.861 Q617.024 284.492 616.737 283.467 Q616.45 282.442 615.794 281.008 Q615.139 279.573 613.704 278.548 Q612.31 277.483 610.425 277.483 Q607.883 277.483 605.219 279.655 Q602.596 281.827 600.669 285.517 Q599.194 288.468 597.595 294.657 Q596.038 300.847 596.038 303.921 Q596.038 305.806 596.447 307.487 Q596.898 309.126 598.169 310.479 Q599.44 311.791 601.407 311.791 Q606.203 311.791 610.917 305.847 Q611.818 304.822 612.023 304.413 Q612.269 303.962 612.597 302.732 L616.778 286.295 Q617.024 285.066 617.024 284.861 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip940)" d="M655.18 310.855 Q655.18 311.658 654.807 311.859 Q654.434 312.031 653.401 312.031 L647.892 312.031 L643.531 329.362 Q643.186 330.882 643.186 332.174 Q643.186 333.608 643.617 334.239 Q644.076 334.871 645.023 334.871 Q646.888 334.871 648.896 333.178 Q650.933 331.485 652.655 327.353 Q652.884 326.808 652.999 326.693 Q653.143 326.55 653.516 326.55 Q654.233 326.55 654.233 327.124 Q654.233 327.325 653.831 328.243 Q653.458 329.161 652.626 330.509 Q651.823 331.858 650.761 333.12 Q649.728 334.383 648.15 335.301 Q646.572 336.191 644.879 336.191 Q642.498 336.191 640.977 334.67 Q639.485 333.149 639.485 330.768 Q639.485 329.993 640.088 327.525 Q640.69 325.029 643.961 312.031 L638.768 312.031 Q638.05 312.031 637.763 312.003 Q637.505 311.974 637.304 311.831 Q637.132 311.658 637.132 311.314 Q637.132 310.769 637.362 310.539 Q637.591 310.281 637.878 310.253 Q638.194 310.195 638.911 310.195 L644.42 310.195 L646.716 300.87 Q646.945 299.952 647.519 299.435 Q648.121 298.89 648.466 298.833 Q648.81 298.747 649.068 298.747 Q649.843 298.747 650.302 299.177 Q650.761 299.579 650.761 300.325 Q650.761 300.727 648.351 310.195 L653.516 310.195 Q654.176 310.195 654.434 310.224 Q654.721 310.253 654.95 310.396 Q655.18 310.539 655.18 310.855 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip940)" d="M687.255 299.986 Q687.337 298.961 688.935 298.961 L740.377 298.961 Q742.795 298.961 742.836 299.904 Q742.836 300.928 740.541 300.887 L689.509 300.887 Q687.255 300.928 687.255 299.986 M687.255 283.59 Q687.255 282.565 689.017 282.606 L740.295 282.606 Q742.795 282.606 742.836 283.59 Q742.836 284.533 740.705 284.533 L688.935 284.533 Q687.255 284.533 687.255 283.59 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip940)" d="M775.215 285.885 Q775.215 273.548 778.33 266.825 Q782.675 256.824 792.922 256.824 Q795.094 256.824 797.349 257.439 Q799.644 258.013 802.513 260.267 Q805.424 262.522 807.186 266.211 Q810.547 273.343 810.547 285.885 Q810.547 298.141 807.432 304.822 Q802.882 314.578 792.84 314.578 Q789.069 314.578 785.216 312.651 Q781.404 310.725 778.986 306.093 Q775.215 299.166 775.215 285.885 M782.183 284.861 Q782.183 297.526 783.084 302.568 Q784.109 308.02 786.896 310.397 Q789.725 312.733 792.84 312.733 Q796.201 312.733 798.988 310.233 Q801.817 307.692 802.677 302.24 Q803.62 296.871 803.579 284.861 Q803.579 273.179 802.759 268.506 Q801.653 263.054 798.701 260.882 Q795.791 258.669 792.84 258.669 Q791.733 258.669 790.545 258.996 Q789.397 259.324 787.716 260.267 Q786.036 261.21 784.724 263.546 Q783.453 265.883 782.839 269.408 Q782.183 273.958 782.183 284.861 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip940)" d="M818.056 311.381 Q816.785 310.028 816.785 308.266 Q816.785 306.503 818.056 305.232 Q819.326 303.921 821.253 303.921 Q823.097 303.921 824.327 305.15 Q825.598 306.339 825.598 308.307 Q825.598 310.233 824.245 311.504 Q822.933 312.733 821.253 312.733 Q819.326 312.733 818.056 311.381 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip940)" d="M839.884 285.885 Q839.884 273.548 842.999 266.825 Q847.344 256.824 857.591 256.824 Q859.764 256.824 862.018 257.439 Q864.314 258.013 867.183 260.267 Q870.093 262.522 871.856 266.211 Q875.217 273.343 875.217 285.885 Q875.217 298.141 872.102 304.822 Q867.552 314.578 857.509 314.578 Q853.738 314.578 849.885 312.651 Q846.073 310.725 843.655 306.093 Q839.884 299.166 839.884 285.885 M846.852 284.861 Q846.852 297.526 847.754 302.568 Q848.779 308.02 851.566 310.397 Q854.394 312.733 857.509 312.733 Q860.87 312.733 863.658 310.233 Q866.486 307.692 867.347 302.24 Q868.29 296.871 868.249 284.861 Q868.249 273.179 867.429 268.506 Q866.322 263.054 863.371 260.882 Q860.461 258.669 857.509 258.669 Q856.403 258.669 855.214 258.996 Q854.066 259.324 852.386 260.267 Q850.705 261.21 849.393 263.546 Q848.123 265.883 847.508 269.408 Q846.852 273.958 846.852 284.861 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip940)" d="M881.79 299.207 Q881.79 296.707 883.143 295.764 Q884.496 294.78 885.93 294.78 Q887.857 294.78 888.963 296.01 Q890.111 297.198 890.111 298.879 Q890.111 300.56 888.963 301.789 Q887.857 302.978 885.93 302.978 Q884.987 302.978 884.496 302.814 Q885.602 306.667 888.963 309.454 Q892.366 312.242 896.833 312.242 Q902.449 312.242 905.81 306.79 Q907.818 303.265 907.818 295.272 Q907.818 288.222 906.302 284.697 Q903.965 279.327 899.17 279.327 Q892.366 279.327 888.349 285.189 Q887.857 285.926 887.283 285.967 Q886.463 285.967 886.258 285.517 Q886.094 285.025 886.094 283.754 L886.094 258.914 Q886.094 256.906 886.914 256.906 Q887.242 256.906 887.939 257.152 Q893.226 259.488 899.088 259.529 Q905.113 259.529 910.524 257.07 Q910.934 256.824 911.18 256.824 Q911.999 256.824 912.04 257.767 Q912.04 258.095 911.344 259.078 Q910.688 260.021 909.253 261.292 Q907.818 262.522 905.974 263.71 Q904.129 264.899 901.424 265.719 Q898.76 266.497 895.809 266.497 Q892.284 266.497 888.676 265.391 L888.676 281.746 Q893.021 277.483 899.334 277.483 Q906.056 277.483 910.688 282.893 Q915.32 288.304 915.32 295.846 Q915.32 303.757 909.827 309.167 Q904.375 314.578 896.997 314.578 Q890.275 314.578 886.012 309.782 Q881.79 304.986 881.79 299.207 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path></svg>
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: State of the lake under two different constant release scenarios.</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lake-state-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: State of the lake under two different constant release scenarios.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1195,10 +1225,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1208,8 +1237,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1222,6 +1260,135 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1265,6 +1432,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1290,8 +1458,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-      // Handle positioning of the toggle
-      window.addEventListener(
+        // Handle positioning of the toggle
+    window.addEventListener(
       "resize",
       throttle(() => {
         elRect = undefined;
@@ -1299,23 +1467,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           selectCodeLines(selectedAnnoteEl);
         }
       }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
               fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
       for (let i=0; i<annoteTargets.length; i++) {
         const annoteTarget = annoteTargets[i];
@@ -1362,7 +1530,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
               options: {
                 flipVariations: false, // true by default
                 allowedAutoPlacements: ['right'],
-                fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
               },
             },
             {
@@ -1419,13 +1587,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Content <i class="fa-solid fa-copyright" aria-label="copyright"></i> 2023 by <a href="https://viveks.me">Vivek Srikrishnan</a>. See the <a href="../../about.html">About page</a> for credit information.<br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0)</a></div>   
+    <div class="nav-footer-left">
+<p>Content <i class="fa-solid fa-copyright" aria-label="copyright"></i> 2023 by <a href="https://viveks.me">Vivek Srikrishnan</a>. See the <a href="../../about.html">About page</a> for credit information.<br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0)</a></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">Made with <a href="https://julialang.org">Julia</a> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://www.github.com/vsrikrish/environmental-systems-analysis">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></div>
+    <div class="nav-footer-right">
+<p>Made with <a href="https://julialang.org">Julia</a> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://www.github.com/vsrikrish/environmental-systems-analysis">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

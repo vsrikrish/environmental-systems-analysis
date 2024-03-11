@@ -1,0 +1,33 @@
+---
+title: "Grading Policies"
+anchor-sections: true
+---
+
+## How Work Is Graded
+
+- **Application exercises** are auto-graded on Gradescope. These can be submitted as often as you'd like prior to the deadline.
+- **Homework assignments** are graded by the TA on Gradescope based on the [rubrics](../rubrics/standard.qmd). Homework will be graded as soon as possible, ideally within a couple of weeks.
+- **Exams** are graded by Prof. Srikrishnan and the TA using similar rubrics to the homework, though exams will focus less on solving problems. These will be scanned and graded on Gradescope.
+- **Projects** are graded by Prof. Srikrishnan. The proposals will be graded primarily for completeness and for feedback and will be returned ASAP. Presentations will be graded by a combination of peer reviewers and Prof. Srikrishnan.
+
+## Late Policies and Extension requests
+
+- **Assignments (exercises and homeworks) can be submitted up to 24 hours late for 50% credit.** Submissions after 24 hours will not be accepted unless an extension was granted (in which case there is no late penalty until the extension date). This lets us release solutions and return grades ASAP.
+- **Request extensions ahead of the deadline.** Justified extensions will only be granted for university-approved reasons or emergencies such as illness, injury, learning accomodations, etc and will be limited to 1-2 days, depending on the circumstance. Deadlines in other courses, job interviews, etc. are not reasons for extensions. Ask yourself if the circumstances leading to your extension request only interfered with submission due to *poor planning* or because they rendered you incapable of work and/or submission. Extensions requested after the deadline will only be considered prior to solution release and for extreme circumstances (*e.g.* hospitalization during the last day; hence limited communication access).
+- **Under extreme circumstances, we will forgive assignments.** There are circumstances under which a 24 hour extension is insufficient, such as long-term illness or serious injury. In these cases, we will compute your course grade as if the forgiven assignment never occurred, which will result in your exams and other assignments having more weight. 
+
+## Regrade Requests
+
+- **Submit regrade requests on Gradescope within one week of the grade release.** We recommend talking to Prof. Srikrishnan or your TA about grading concerns before submitting a regrade request, but no grades will be changed outside of a formal request through Gradescope.
+- **All regrade requests must include a *brief* justification for the request** or they will not be considered. Good justifications include (but are not limited to):
+  - *My answer agrees with the posted solution, but I still lost points.*
+  - *I lost 4 points for something, but the rubric says it should only be worth 2 points.*
+  - *You took points off for something, but it's right here.*
+  - *My answer is correct, even though it does not match the posted solution*.
+  - *There is no explanation for my grade*.
+  - *I got a perfect score, but my solution has a mistake* (you will receive extra credit for this! see below!)
+  - *There is a major error in the posted solution; here is an explanation* (full credit for everyone, but Prof. Srikrishnan will decide what constitutes a "major error"! see below!).
+- **We will only regrade what you submitted.** Any "new" information in the regrade request will not be considered beyond the justification (any explanation may help us identify where to look if your solution is different than the official solution but correct, but the submitted answer must be interpretable as a correct solution on its own merits.
+- The first regrade request will be handled by the member of the course staff who graded the problem. If Prof. Srikrishnan did not review the first request, he will handle any subsequent regrade requests for the same submission. **Once Prof. Srikrishnan issues a response to a regrade request, further requests for that submission will be ignored.**
+- If you submit a regrade request correctly reporting that your problem was graded too *leniently*, your score will be increased by the difference (we want to reward this type of honesty and self-awareness!). For example, if your score was 8/10, and you point out that you should have  gotten a 3/10, your score will be a 13/10.
+- If a *significant* error is found in the official solutions, everyone in the class will receive full credit for the relevant (sub)problem. Prof. Srikrishnan has discretion as to what errors are "significant."

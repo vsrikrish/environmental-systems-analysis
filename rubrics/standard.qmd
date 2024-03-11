@@ -1,0 +1,101 @@
+---
+format:
+  html:
+    toc-depth: 3
+    title: "Standard Rubrics"
+  pdf:
+    documentclass: article
+    geometry:
+      - margin=1in  
+    include-in-header:
+      text: |
+        \renewcommand\toprule[2]\relax
+        \renewcommand\bottomrule[2]\relax
+    filters:
+      - _assets/filters/columns-to-tables.lua
+    title: "{{< var course.number >}} ({{< var course.title >}}) Standard Rubric"
+    subtitle: "{{< var course.semester >}}"
+---
+
+These rubrics are intended as a description for students and a guide to the TA for how to assign partial credit. 
+
+## Meta-Rubric
+
+- Individual problems may vary from these standard rubrics based on the assessed learning outcomes for the problem, but they should provide an overview of what features students ought to be included in a given solution.
+- Each bullet point should appear as a separate rubric item in Gradescope. We will use *positive* grading (points awarded for each component).
+- Each standard rubric describes partial credit for a problem with 10 points. Partial credit for (sub)problems worth less than 10 points should be scaled appropriately. Full problems usually combine one of the modeling methods with some interpretation questions, so the rubric will be a combination of the individual components.
+- Generally, rubrics for 10 point "entire problems" can be summarized with the following:
+    - +4 points for an answer with a correct implementation (including model setup).
+    - +2 points for the correct solution (including details such as labels, units, etc.).
+    - +4 points for the interpretation.
+  These points may be broken up across subproblems, but the general assignment of points should follow this summary.
+- Note that the points may not scale with the distribution of work for a given problem. That's life! It may take more work to derive and implement your model than it does to intrepret your results, but in this class we care a lot about your ability to critically evaluate and interpret modeling results.
+- Sometimes problems will be broken up into 
+- ***The graders cannot read your mind and will not try to.*** Submissions that are unclear for any reason, including but not limited to unclear syntax (English or code), uncommented code, lack of reasoning or derivation, too much detail or writing, will not be given credit. The TA has complete discretion here. If something in your solution is ambiguous, the TA has been instructed to interpret it the "wrong" way. Clear responses are a sign of understanding, which is part of what we're assessing.
+- You will not be doubly penalized for getting the "right" solution to the "wrong" setup (you would have been penalized above), but this requires the TA to be able to *easily* identify that your implementation is correct given the wrong model. If your implementation is unclear, you are likely to lose points here because we have no way of knowing that your answer is "right" without re-coding your problem. 
+- You will not be given credit for your code (this isn't a programming class); the code is a means to solving the problem, and we're more interested in how you set up the problem and interpret the solution.  This does mean that code that is sloppy but *works* is perfectly acceptable. However, your code may get you partial credit if the TA can **easily** find where you made a mistake, so make sure your submitted code is well commented. It's important to write down the mathematics of what your code is trying to implement, because the TA will only take a cursory look at your code.
+- Some rubrics include "***deadly sins***" which will cause an immediate zero to be given for the problem. Do not do these!
+- Regardless of the problem type, the following penalties will be applied ***per incident***:
+    - -1 for missing units.
+
+## Standard Rubrics
+
+### Optimization Rubric
+
+10 points =
+
+- +3 for clear specification of decision variables;
+    - This includes units and meaning for each variable used.
+- +2 for the correct objective;
+    - You must write down the derivation for the objective, starting with the quantity being optimized and breaking it into decision-relevant components. Don't treat any part of this as though it's obvious; part of technical communication is communicating to people who aren't as clever as you.
+- +3 for the correct constraints;
+    - Make sure you include derivations for all constraints, starting with the meaning and explanation in intuitive terms for the constraint. Don't treat any constraints as though they're obvious.
+    - -2/-3 for an incomplete set of constraints, even if the constraints that are presented are correct.
+- +2 for the correct solution.
+
+### Simulation Rubric
+
+10 points = 
+
+- +4 for the model derivation.
+    - This includes any relevant reasoning from mass-balance or other principles.
+- +4 for discretizing the model correctly.
+    - -1 if no justification is provided for the chosen step-size(s).
+- +2 points for obtaining the correct solution.
+    - -1 if the error is from a minor bug. I recommend providing an explicit sketch of your code's procedure, so if that is correct any differences are likely to be the result of a minor bug, such as a misentered number (not ideal, but you understand what you're doing!). Otherwise you are relying on the TA to interpret your code.
+
+### Monte Carlo Rubric
+
+10 points =
+
+- +4 for a clear English explanation of the sampling plan
+  - You *must* justify each distribution used, including your choice of mean and standard deviation.
+- +2 for justification of Monte Carlo sample size.
+  - **Deadly Sin**: No points will be given for a Monte Carlo solution with an arbitrary sample size.
+- +2 for an estimate of the Monte Carlo standard error.
+- +1 for setting a seed for reproducibility.
+- +2 for correct estimate.
+  - Deviations from the posted solution are ok if they're within the Monte Carlo standard error.
+
+### Figure Rubrics
+
+10 points = 
+
+- +2 for appropriate choice of axes.
+  - ***Deadly Sin!***: No points will be given for the figure if the axes are not labelled.
+- +4 for the correct data series.
+- +2 for a descriptive legend.
+- +2 for a *succinct* description or caption.
+  - -1 for a description which is too wordy but contains the relevant information.
+
+### Interpretation Rubrics
+
+10 points = 
+
+- +4 for specific reference to the modeling results;
+  - -2 if the results are not specifically referenced and the reader has to refer to the previous problems to understand the interpretation.
+- +6 for thoughtfulness of the interpretation;
+  - -4 for not specifically referencing relevant model assumptions;
+  - ***Deadly Sin***: Do not neglect fundamental engineering principles in any of your interpretations. You will be given a zero if you make a recommendation which *e.g.* violates an engineering code or standard.
+  - ***Deadly Sin***: Completely generic interpretations will result in zero points.
+

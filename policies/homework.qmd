@@ -1,0 +1,53 @@
+---
+title: "Homework Policies"
+anchor-sections: true
+---
+
+This page includes some information on the homework assignments for BEE 4750/5750, including policies and logistics. The goal is to help you get as many points on your homework as possible and to return them as soon as possible.
+
+This document is long, but please do read the whole thing (particularly [What Homework Is For](#what-homework-is-for)and the [Logistics](#logistics)). Hopefully most of this is obvious, but some of it may not be.
+
+## What Homework Is For 
+
+This class involves two components which are somewhat in tension pedagogically:
+
+1. **Conceptual** *what* are systems, *how* do they behave, *what* are methods for their analysis and *why* do we use them;
+2. **Computational** *how* to implement systems analysis methods.
+
+Out of these, we are more interested in the *conceptual*: the computational methods are a means to an end. What matters more is the *act* of translating an environmental system into an appropriate mathematical model and interpreting the results of that model to provide insights into the design and management of the system. Getting better at that act requires *practice*: this is what homework is for! It's easy to nod and follow along in lecture, or read a derivation, but that's a trap. **You can only learn by doing, and often, failing.**
+
+**Homework is the opportunity to practice *doing***. The practice is more important than the solution, which is why the solution is the least "rewarded" part of [the homework rubrics](../rubrics/standard.qmd). You can only learn by trying to solve the problem, and, often, getting stuck, because these are new skills that you are developing. And that's ok --- we encourage you to collaborate so you can share ideas and suggestions and give feedback, not to get *solutions* (and that's also true for office hours, TA sessions, etc).
+
+You also may not even be able to tell what parts of your homework solution are correct. And that's also ok! We grade your homework and give you homework solutions so you can identify what, if anything, went wrong, and how to do better next time. We always aim for *improvement*, not perfection, and every homework problem is an opportunity to practice doing that type of problem. 
+
+But this emphasis on homework as practice also means that you should start the homework *early*. If you start early, and get stuck, you have the opportunity to get yourself unstuck, either by banging your head against the problem or by talking to others, and that's how you learn. If you start late and get stuck, you either have to not finish or cheat. 
+
+
+## Homework Logistics
+
+## How To Write Assignments
+
+Here are some tips for how to make the grader (the TA or Prof. Srikrishnan) understand what you mean in the time they're looking at your problem: as noted in the [rubrics](../rubrics/standard.qmd), if your solution isn't clear enough for us to follow, you will not receive the points even if your answer is technically correct, because part of demonstrating understanding is the ability to organize and communicate.
+
+### Be Honest
+
+- **Write everything in your own words.** It's perfectly ok to work with others; in fact, we encourage it! But you should write up and implement everything yourself; it's very easy to convince yourself that you understand something when you're mimicking someone else's solution, and often we realize we don't actually understand something when we try to write it ourselves.
+- **Cite *every* outside source you use.** You are allowed, in fact encouraged, to use *any* outside source^[Yes, including ChatGPT, though you should ask and describe how you used it.] Getting an idea from an outside source is not a problem, and will not lower your grade; if you're critically evaluating the idea and implementing and writing your solution yourself (see above), then you're demonstrating understanding even if the idea originated with someone else. But you *must* give appropriate credit to that source. Taking credit for someone else's ideas and failing to properly cite an outside source, including your classmates, is plagiarism, and will be treated accordingly.
+- **The only sources you do not have to cite are official class materials.** If you use the lectures, lecture notes, website materials, homework solutions, etc, you do not have to cite these.
+- **List everyone that you worked with.** Give your classmates proper credit for their assistance. If you get an idea from Ed Discussion, credit the poster. If you're not sure if you should list someone as a collaborator, err on the side of including them. For discussions in class or in office hours, you don't have to list everyone who participated in the discussion (though you should if you worked one on one with them), but mention that the class discussion or the office hour was useful.
+
+### Be Clear
+
+- **Write legibly**. This doesn't refer to handwriting (since you'll be submitting PDFs of Jupyter notebooks), but the text itself should be clearly written and well organized, so that it's easy for the grader to follow your reasoning or explanation. Structuring your solution, and not writing in a stream of consciousness, helps you think more clearly. To reiterate: *You will be given no points if the grader cannot easily follow your answer, and the graders have complete discretion to determine this.*
+- **Write clearly**. Use proper spelling, grammar, logic, etc. We will try not to penalize people for not having complete mastery of English, but again, we need to be able to follow your reasoning.
+- **Write carefully and completely**. We can only grade what you write; nobody can read your mind, and we will not try. The solution that you submit must stand on its own. If your answer is ambiguous, the TA has been instructed to interpret it the wrong way. Regrade requests also cannot be used to add more information to a solution.
+- **Don't submit your first draft**. For most people, first drafts are terrible. They are often poorly organized, unclear, and contain gaps or jumps in reasoning. You will likely need to revise, possibly several times, for your answer to be clear, careful, and complete. This is another reason to start the assignment early --- if you start late, you may be stuck with your first draft, and your grade is likely to suffer for it.
+- **State your assumptions**. If you think a problem statement is ambiguous and your solution depends on a particular interpretation, or you need to make some assumptions to solve the problem, make it explicit (though do also ask for clarification in class or on Ed Discussion).
+- **Don't rely on your code**. The TA will not try to scrutinize your code, which is a waste of time (again, the code is a means to an end --- it works or it doesn't). If you make it clear what your code is supposed to do, then the TA can tell if this logic is correct and any mistake must be something minor in the code. If you just provide code (even if commented), the TA can't do this without running your code and debugging, which is not a valuable use of time. We want to focus on your ideas.
+
+## Be Concise
+
+- **Keep solutions short**. Organized answers should not be long. There's a fine balance between conciseness and completeness: find it!
+- **Don't regurgitate**. You can reference concepts, models, etc from class without repeating them. Just make it clear what you're modifying and how you're using those concepts for that particular problem.
+- **Don't bullshit**. You will get no points for word salad, even if you accidentally hit on the right answer.
+

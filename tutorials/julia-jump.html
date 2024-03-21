@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.519">
+<meta name="generator" content="quarto-1.4.388">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -83,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
+  "limit": 20,
   "keyboard-shortcut": [
     "f",
     "/",
@@ -98,7 +98,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -130,11 +129,11 @@ window.MathJax = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/julia-basics.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/julia-jump.html">Solving Linear Programs</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -145,7 +144,7 @@ window.MathJax = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../_assets/logos/cornell-reduced-red.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -367,7 +366,7 @@ window.MathJax = {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -604,7 +603,7 @@ y &amp;\geq 0 \label{eq:constrainty}
 <polyline clip-path="url(#clip432)" style="stroke:#3da44d; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:0.3; fill:none" points="181.719,395.513 258.564,420.612 335.409,445.711 412.254,470.809 489.099,495.908 565.944,521.007 642.789,546.106 719.634,571.205 796.479,596.304 873.323,621.402 950.168,646.501 1027.01,671.6 1103.86,696.699 1180.7,721.798 1257.55,746.896 1334.39,771.995 1411.24,797.094 1488.08,822.193 1564.93,847.292 1641.77,872.391 1718.62,897.489 1795.46,922.588 1872.31,947.687 1949.15,972.786 2026,997.885 2102.84,1022.98 2179.69,1048.08 2256.53,1073.18 2333.38,1098.28 2410.22,1123.38 2487.07,1148.48 2563.91,1173.58 2640.76,1198.68 "></polyline>
 </svg>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-widget-space-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-widget-space-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Decision space for the widget linear program <span class="math inline">\(\eqref{eq:widget}\)</span>. The gradient contours for the objective function are shown, as well as the constraints.
 </figcaption>
 </figure>
@@ -840,7 +839,7 @@ HiGHS run time      :          0.01</code></pre>
 <circle clip-path="url(#clip522)" cx="1889.38" cy="953.265" r="18" fill="#0000ff" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
 </svg>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-widget-solution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-widget-solution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Solution for the widget problem <span class="math inline">\(\eqref{eq:widget}\)</span>. The blue dot shows the optimal solution.
 </figcaption>
 </figure>
@@ -1087,15 +1086,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
         }
         typesetMath(container);
         return container.innerHTML
@@ -1318,7 +1310,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
               options: {
                 flipVariations: false, // true by default
                 allowedAutoPlacements: ['right'],
-                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
               },
             },
             {
@@ -1374,12 +1366,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../tutorials/latex-notebook.html" class="pagination-link  aria-label=" math="" in="" notebooks"="">
+      <a href="../tutorials/latex-notebook.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Math in Notebooks</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../resources/julia.html" class="pagination-link" aria-label="Julia">
+      <a href="../resources/julia.html" class="pagination-link">
         <span class="nav-page-text">Julia</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

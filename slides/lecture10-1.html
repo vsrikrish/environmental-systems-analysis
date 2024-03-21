@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.519">
+  <meta name="generator" content="quarto-1.4.388">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2023-10-23">
@@ -392,9 +392,11 @@
 <h2>Questions</h2>
 <div class="columns center">
 <div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/vsrikrish-poll.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center" data-fig-align="center" width="100%" alt="Poll Everywhere QR Code">
+<figure class="quarto-float quarto-float-fig">
+<div>
+<img data-src="images/vsrikrish-poll.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code">
+</div>
 </figure>
 </div>
 </div><div class="column" style="width:60%;">
@@ -1149,7 +1151,7 @@
 </section>
 <section id="example-milp-nodes-2-and-3" class="slide level2">
 <h2>Example MILP: Nodes 2 and 3</h2>
-<div class="cell quarto-layout-panel" data-execution_count="9" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="9">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -1289,7 +1291,7 @@
 <img data-src="figures/bb-45-pre.png" class="r-stretch quarto-figure-center"><p class="caption">Branch and Bound Node 1</p></section>
 <section id="example-milp-nodes-4-and-5" class="slide level2">
 <h2>Example MILP: Nodes 4 and 5</h2>
-<div class="cell quarto-layout-panel" data-execution_count="10" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="10">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -1422,7 +1424,7 @@
 <img data-src="figures/bb-67-pre.png" class="r-stretch quarto-figure-center"><p class="caption">Branch and Bound Node 1</p></section>
 <section id="example-milp-nodes-6-and-7" class="slide level2">
 <h2>Example MILP: Nodes 6 and 7</h2>
-<div class="cell quarto-layout-panel" data-execution_count="11" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="11">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -1550,7 +1552,7 @@
 <img data-src="figures/bb-89-pre.png" class="r-stretch quarto-figure-center"><p class="caption">Branch and Bound Node 1</p></section>
 <section id="example-milp-nodes-8-and-9" class="slide level2">
 <h2>Example MILP: Nodes 8 and 9</h2>
-<div class="cell quarto-layout-panel" data-execution_count="12" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="12">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -1998,24 +2000,6 @@
         // clear code selection
         e.clearSelection();
       });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/viveks\.me\/environmental-systems-analysis");
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-              // target, if specified
-              link.setAttribute("target", "_blank");
-              if (link.getAttribute("rel") === null) {
-                link.setAttribute("rel", "noopener");
-              }
-          }
-        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -2092,6 +2076,21 @@
           });
         }
       }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/viveks\.me\/environmental-systems-analysis");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+              // target, if specified
+              link.setAttribute("target", "_blank");
+          }
+        }
     });
     </script>
     

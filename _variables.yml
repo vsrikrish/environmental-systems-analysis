@@ -14,13 +14,13 @@ instructor:
 course:
   number: "BEE 4750/5750"
   title: "Environmental Systems Analysis"
-  semester: "Spring 2023"
-  days: "MWF"
-  time: "1:25-2:15pm"
+  semester: "Fall 2024"
+  days: "MW"
+  time: "2:55-4:10pm"
   location: "105 Riley-Robb"
   github: "https://www.github.com/vsrikrish/environmental-systems-analysis"
   url: "https://viveks.me/environmental-systems-analysis"
-  copyright_year: "2023"
+  copyright_year: "2024"
 
 university:
   name: Cornell University

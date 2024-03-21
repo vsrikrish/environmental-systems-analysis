@@ -14,12 +14,16 @@ This page contains information about and a schedule of the homework assignments 
 - Submissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.
 - To convert the assignment notebook to PDF, you can use VS Code to render the notebook to HTML, and then use your browser to print to PDF. If you have set up LaTeX with VS Code, you can convert directly to a PDF.
 
+## Grading
+
+Make sure to look over the [standard homework rubric](rubrics/standard.qmd) and familiarize yourself with the [homework](policies/homework.qmd) and [grading policies](policies/grading.qmd).
+
 ## Schedule
 
-| Assignment | Instructions | Rubric | Solutions | Due Date |
-|:----------:|:------------:|:------:|:---------:|:--------:|
-| HW1 | [{{< fa sharp pen-field >}}](hw/hw01/hw01.html) | [{{< fa sharp list-check >}}](rubrics/hw01.qmd) | [{{< fa sharp key-skeleton >}}](solutions/hw01/hw01-solution.html) | Sep 08, 2023 |
-| HW2 | [{{< fa sharp pen-field >}}](hw/hw02/hw02.html) | [{{< fa sharp list-check >}}](rubrics/hw02.qmd) | [{{< fa sharp key-skeleton >}}](solutions/hw02/hw02-solution.html)  | Sep 22, 2023 |
-| HW3 | [{{< fa sharp pen-field >}}](hw/hw03/hw03.html) | [{{< fa sharp list-check >}}](rubrics/hw03.qmd) | [{{< fa sharp key-skeleton >}}](solutions/hw03/hw03-solution.html) | Oct 06, 2023 |
-| HW4 | [{{< fa sharp pen-field >}}](hw/hw04/hw04.html) | [{{< fa sharp list-check >}}](rubrics/hw04.qmd) | [{{< fa sharp key-skeleton >}}](solutions/hw04/hw04-solution.html) | Oct 27, 2023 |
-| HW5 | [{{< fa sharp pen-field >}}](hw/hw05/hw05.html) | [{{< fa sharp list-check >}}](rubrics/hw05.qmd) | [{{< fa sharp key-skeleton >}}]{style="color:grey"} | Nov 10, 2023 |
+| Assignment | Instructions | Solutions | Due Date |
+|:----------:|:------------:|:---------:|:--------:|
+| HW1 | [{{< fa sharp pen-field >}}](hw/hw01/hw01.html) | {{< fa sharp key-skeleton >}}{style="color:grey"} | Sep 06, 2024 |
+| HW2 | {{< fa sharp pen-field >}}| {{< fa sharp key-skeleton >}}{style="color:grey"}  | Sep 20, 2024 |
+| HW3 | {{< fa sharp pen-field >}}| {{< fa sharp key-skeleton >}}{style="color:grey"}  | Oct 04, 2024 |
+| HW4 | {{< fa sharp pen-field >}}| {{< fa sharp key-skeleton >}}{style="color:grey"}  | Nov 08, 2024 |
+| HW5 | {{< fa sharp pen-field >}}| {{< fa sharp key-skeleton >}}{style="color:grey"} | Dec 06, 2024 |

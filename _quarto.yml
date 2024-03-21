@@ -5,8 +5,8 @@ project:
 
 website:
   page-navigation: true
-  title: "BEE 4750 - Fall 2023"
-  description: "Homepage for BEE 4750/57e50, Environmental Systems Analysis, at Cornell University, Fall 2023."
+  title: "BEE 4750 - Fall 2024"
+  description: "Homepage for BEE 4750/5750, Environmental Systems Analysis, at Cornell University, Fall 2024."
   site-url: "https://viveks.me/environmental-systems-analysis"
 
   repo-url: https://github.com/vsrikrish/environmental-systems-analysis
@@ -54,36 +54,30 @@ website:
             text: Overview
           - href: schedule.qmd
             text: Schedule
+          - text: Setup
+            href: setup.qmd
+          - text: FAQ
+            href: faq.qmd
           - href: syllabus.qmd
             text: Syllabus
+      - section: "Policies"
+        contents:
+          - href: policies/homework.qmd
+            text: "Homework Policies"
+          - href: policies/homework.qmd
+            text: "Exam Policies"
+          - href: policies/grading.qmd
+            text: "Grading Policies"
+          - href: policies/integrity.qmd
+            text: "Academic Integrity"
       - section: hw.qmd
-        contents:
-          - href: hw/hw01/hw01.qmd
-            text: Homework 1
-          - href: hw/hw02/hw02.qmd
-            text: Homework 2
-          - href: hw/hw03/hw03.qmd
-            text: Homework 3
-          - href: hw/hw04/hw04.qmd
-            text: Homework 4
-          - href: hw/hw05/hw05.qmd
-            text: Homework 5
-      - section: labs.qmd
-        contents:
-          - href: labs/lab01/lab01.qmd
-            text: Lab 1
-          - href: labs/lab02/lab02.qmd
-            text: Lab 2
-          - href: labs/lab03/lab03.qmd
-            text: Lab 3          
-          - href: labs/lab04/lab04.qmd
-            text: Lab 4
+      - section: exercises.qmd
       - text: "Final Project" 
-        href: project.qmd
-      - text: "Tools Setup"
-        href: setup.qmd
-      - text: "FAQ"
-        href: faq.qmd
+        contents:
+          - href: project.qmd
+            text: "Project Materials"
+          - href: groups.qmd
+            text: "Group Expectations"
       - section: "Tutorials"
         contents:
           - href: tutorials/julia-basics.qmd
@@ -94,7 +88,6 @@ website:
             text: Math in Notebooks
           - href: tutorials/julia-jump.qmd
             text: Solving Linear Programs
-      - section: "Supplemental Notes"
       - section: Resources
         contents:
           - href: resources/julia.qmd
@@ -126,6 +119,6 @@ format:
 bibliography: references.bib
 csl: _assets/references/american-geophysical-union.csl
 
-jupyter: julia-1.9
+jupyter: julia-1.10
 execute:
   freeze: auto  

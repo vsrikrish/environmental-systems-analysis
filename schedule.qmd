@@ -7,52 +7,41 @@ This page contains a schedule of the topics, content, and assignments for the se
 Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.
 
 ::: column-screen-inset-right
-| Week | Date        | Topic | Slides | Lab | HW | Project |
+| Week | Date        | Topic | Slides | Lab | HW | Reading |
 :-----:|:------------|:------|:------:|:--:|:---:|:--:|:-------:|
-| 1    | Mon, Aug 21 | Welcome to BEE 4750! | [{{< fa sharp presentation-screen >}}](slides/lecture01-1.qmd){target="_blank"}  | | | |
-|      | Wed, Aug 23 | Introduction to Systems Analysis | [{{< fa sharp presentation-screen >}}](slides/lecture01-2.qmd){target="_blank"}   | | | | 
-|      | Fri, Aug 25 | Lab: Julia and GitHub Setup | [{{< fa sharp presentation-screen >}}](slides/lecture01-3.qmd){target="_blank"} | [{{< fa sharp laptop-code >}}](labs/lab01/lab01.qmd) |  [{{< fa sharp pen-field title="HW1" >}}](hw/hw01/hw01.qmd) | | 
-| 2    | Mon, Aug 28 | Modeling Systems | [{{< fa sharp presentation-screen >}}](slides/lecture02-1.qmd){target="_blank"} | | | |
-|      | Wed, Aug 30 | Example: Wastewater Transport | [{{< fa sharp presentation-screen >}}](slides/lecture02-2.qmd){target="_blank"} | | | | 
-|      | Fri, Sep 01 | Example: Shallow Lake Eutrophication | [{{< fa sharp presentation-screen >}}](slides/lecture02-3.qmd){target="_blank"} | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | | |
-| 3    | Mon, Sep 04 | **No Class: Labor Day** | | | |
-|       | Wed, Sep 06 | Simulating Systems and Box Models | [{{< fa sharp presentation-screen >}}](slides/lecture03-2.qmd){target="_blank"} | | | |
-|     | Fri, Sep 08 | Dissolved Oxygen | [{{< fa sharp presentation-screen >}}](slides/lecture03-3.qmd){target="_blank"} | | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | | 
-|     | Mon, Sep 11 | Dissolved Oxygen Simulation |  [{{< fa sharp presentation-screen >}}](slides/lecture04-1.qmd){target="_blank"} | |  [{{< fa sharp pen-field >}}](hw/hw02/hw02.qmd) | |
-|    | Wed, Sep 13 | Uncertainty and Risk |  [{{< fa sharp presentation-screen >}}](slides/lecture04-2.qmd){target="_blank"} | | | |
-|   | Fri, Sep 15 | Probability and Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture04-3.qmd){target="_blank"} | | | |
-|  5  | Mon, Sep 18 | Lab: Monte Carlo | [{{< fa sharp presentation-screen >}}](slides/lecture05-1.qmd) | [{{< fa sharp laptop-code >}}](labs/lab02/lab02.qmd) | | |
-|       | Wed, Sep 20 | Monte Carlo, Formally | [{{< fa sharp presentation-screen >}}](slides/lecture05-2.qmd){target="_blank"} | | | |
-|    | Fri, Sep 22 | Simple Climate Models and Uncertainty Propagation| [{{< fa sharp presentation-screen >}}](slides/lecture05-3.qmd){target="_blank"} | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} |  [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | |
-|  6  | Mon, Sep 25 | Prescriptive Modeling | [{{< fa sharp presentation-screen >}}](slides/lecture06-1.qmd){target="_blank"}  | | [{{< fa sharp pen-field >}}](hw/hw03/hw03.qmd) | |
-|   | Wed, Sep 27 | Introduction to Optimization | [{{< fa sharp presentation-screen >}}](slides/lecture06-2.qmd){target="_blank"} | |   | |
-|      | Fri, Sep 29 | Linear Programming | [{{< fa sharp presentation-screen >}}](slides/lecture06-3.qmd){target="_blank"} |  | | |
-|  7   | Mon, Oct 02 | **Project Proposal Peer Review** | | | |
-|      | Wed, Oct 04 | **Guest Lecture**: Diana Hackett | | | | |
-|      | Fri, Oct 06 | Lab: Optimization with JuMP.jl | [{{< fa sharp presentation-screen >}}](slides/lecture07-3.qmd){target="_blank"}  | [{{< fa sharp laptop-code >}}](labs/lab03/lab03.qmd) | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} |  |
-|  8  | Mon, Oct 09 | **No Class: Indigeneous People's Day** | | | | |
-|     | Wed, Oct 11 | LP Example: Resource Allocation | [{{< fa sharp presentation-screen >}}](slides/lecture08-2.qmd){target="_blank"}
-|     | Fri, Oct 13 | Power Systems, Generating Capacity Expansion | [{{< fa sharp presentation-screen >}}](slides/lecture08-3.qmd){target="_blank"} | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | | |
-|  9  | Mon, Oct 16 | Economic Dispatch | [{{< fa sharp presentation-screen >}}](slides/lecture09-1.qmd){target="_blank"} | | [{{< fa sharp pen-field >}}](hw/hw04/hw04.qmd) | |
-|    | Wed, Oct 18 | Managing Multiple Air Pollutant Sources | [{{< fa sharp presentation-screen >}}](slides/lecture09-2.qmd){target="_blank"} | |  | |
-|    | Fri, Oct 20 | Air Pollution II | [{{< fa sharp presentation-screen >}}](slides/lecture09-3.qmd){target="_blank"} | |  | |
-|  10 | Mon, Oct 23 | Mixed Integer Programming | [{{< fa sharp presentation-screen >}}](slides/lecture10-1.qmd){target="_blank"} |  | | |
-|     | Wed, Oct 25 | Solid Waste Management | [{{< fa sharp presentation-screen >}}](slides/lecture10-2.qmd){target="_blank"} | |  | |
-|     | Fri, Oct 27 |  Linear Programming Under Uncertainty | [{{< fa sharp presentation-screen >}}](slides/lecture10-3.qmd){target="_blank"} | | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} |
-|  11   | Mon, Oct 30 | **No Class: Project Work** | |  | [{{< fa sharp pen-field >}}](hw/hw05/hw05.qmd) | |
-|    | Wed, Nov 1 | **No Class: Project Work** | | | | |
-|   | Fri, Nov 3 | **No Class: Project Work** | | | |
-|  12 | Mon, Nov 6 | Challenges for Mathematical Programming and Systems Analysis | [{{< fa sharp presentation-screen >}}](slides/lecture12-1.qmd){target="_blank"} | | | |
-|     | Wed, Nov 8 | Simulation-Optimization | [{{< fa sharp presentation-screen >}}](slides/lecture12-2.qmd){target="_blank"} | | | |
-|    | Fri, Nov 10 | Lab: Simulation-Optimization | | [{{< fa sharp laptop-code >}}](labs/lab04/lab04.qmd) | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} |
-| 13   | Mon, Nov 13 | Deep Uncertainty | [{{< fa sharp presentation-screen >}}](slides/lecture13-1.qmd){target="_blank"} | | | |
-|    | Wed, Nov 15 | Robustness | [{{< fa sharp presentation-screen >}}](slides/lecture13-2.qmd){target="_blank"} | | | |
-|    | Fri, Nov 17 |  Sensitivity Analysis | [{{< fa sharp presentation-screen >}}](slides/lecture13-3.qmd){target="_blank"} | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} | | |
-|  14 | Mon, Nov 20 | Tradeoffs and Multiple Objectives | [{{< fa sharp presentation-screen >}}](slides/lecture14-1.qmd){target="_blank"} | | | |
-|     | Wed, Nov 22 | **No Class: Thanksgiving Break** | | | | |
-|     | Fri, Nov 24 | **No Class: Thanksgiving Break** | | | | |
-| 15 | Mon, Nov 27 | **No Class: Project Check-Ins** | | | | |
-|    | Wed, Nov 29 | **No Class: Project Check-Ins** | | | | |
-|   |  Fri, Dec 1 | **No Class: Project Check-Ins** | | |  | |
-|  16 | Mon, Dec 4 | **No Class: Project Work** | | | | [{{< fa sharp check-to-slot >}}]{style="color:#6EB43F"} |
+| | | ***Module 1: Introduction to Systems Analysis*** | | | | |
+| 1    | Mon, Aug 26 | Welcome to BEE 4750! |  | |  {{< fa sharp pen-field >}}{style="color:grey"} | |
+|      | Wed, Aug 28 | Lab: Setting up Julia and GitHub | |  [{{< fa sharp laptop-code >}}](labs/lab01/lab01.qmd) | | | 
+| 2    | Mon, Sep 02 | **No Class: Labor Day** |  | | | |
+|      | Wed, Sep 04 | Introduction to Systems Analysis | | | |  |
+| 3    | Mon, Sep 09 | Modeling Systems | | | {{< fa sharp pen-field >}}{style="color:grey"} | |
+|      | Wed, Sep 11 | Feedbacks and Bifurcations | | | | |
+| | | ***Module 2: Systems Simulation*** | | | |
+|  4   | Mon, Sep 16 | Simulation Modeling | | | | | 
+|      | Wed, Sep 18 | Dissolved Oxygen  | | | |
+|  5    | Mon, Sep 23 | Uncertainty and Monte Carlo Simulation | | | {{< fa sharp pen-field >}}{style="color:grey"} | |
+|   | Wed, Sep 25 | Lab: Monte Carlo Simulation |  | {{< fa sharp laptop-code >}}{style="color:grey"} | | |
+|  6  | Mon, Sep 30 | Multiple Objectives and Tradeoffs | | |  | |
+|    | Wed, Oct 02 | Model Calibration and Validation  |  |  | | |
+| | | ***Module 3: Optimization and Linear Programming*** | | | |
+|  7   | Mon, Oct 07 | Linear Programming |  | |   | |
+|      | Wed, Oct 09 |  **Prelim 1** | | | |
+|  8  | Mon, Oct 14 | **No Class: Fall Break** |  | |  | |
+|   | Wed, Oct 16 | Lab: Optimization with JuMP.jl  | | | {{< fa sharp laptop-code >}}{style="color:grey"}   | |
+|  9 | Mon, Oct 21 | Power Systems and Economic Dispatch  | | | | |
+|    | Wed, Oct 23 | Prelim 1 Review | | |  |  |
+|  10  | Mon, Oct 28 |  Fixed Costs and Unit Commitment | |  | {{< fa sharp pen-field >}}{style="color:grey"} | | 
+|     | Wed, Oct 30 | Network Models | | |  | | 
+|  11  | Mon, Nov 04 | Simulation-Optimization  |  |  |  | |
+|    | Wed, Nov 06 | Lab: Simulation-Optimization |  | {{< fa sharp laptop-code >}}{style="color:grey"} |  | |
+| | | ***Module 4: Decision-Making Under Uncertainty*** | | | |
+| 12    | Mon, Nov 11 | **Prelim 2**  |  |  | | |
+|    | Wed, Nov 13 | Robustness and Sensitivity Analysis  | |  | | |
+| 13   | Mon, Nov 18 |  Scenario Trees and Value of Uncertainty | | | {{< fa sharp pen-field >}}{style="color:grey"} | |
+|    | Wed, Nov 20 | Lab: Two-Stage Linear Programs |  | {{< fa sharp laptop-code >}}{style="color:grey"} | | |
+|  14  | Mon, Nov 25 |  Prelim 2 Review |   |  |  |  |
+|     | Wed, Nov 27 | **No Class: Thanksgiving Break** | | | | |
+| 15 | Mon, Dec 02 | Sequential Decision-Making  | | | | |
+|    | Wed, Dec 04 | Reservoir Management  | | | | |
+|  16 | Mon, Dec 09 | **No Class: Project Work** | | | |  |
 :::

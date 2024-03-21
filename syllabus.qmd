@@ -47,16 +47,16 @@ This is a 3 credit course which is required for the Environmental Engineering ma
 - {{< fa sharp user title="Name" >}} [[{{< var instructor.name_no_title >}}]({{< var instructor.url >}})]{.ms-1}
 - {{< fa sharp envelope title="Email" >}} [[{{< var instructor.email >}}](mailto:{{< var instructor.email >}})]{.ms-1}
 - {{< fa sharp building title="Office" >}} [{{< var instructor.office >}}]{.ms-2}
-- {{< fa sharp door-open title="Office Hours" >}}[MW 10-11am, Th 1-2pm]{.ms-1}
+- {{< fa sharp door-open title="Office Hours" >}}[TBD]{.ms-1}
 :::
 
 ::: {.column width="30%"}
 ### TA
 
-- {{< fa sharp user title="Name" >}} [Gabriela Ackermann Logan]{.ms-1}
-- {{< fa sharp envelope title="Email" >}} [[ga345@cornell.edu](mailto:ga345@cornell.edu)]{.ms-1}
-- {{< fa sharp building title="Office" >}} [319 Riley-Robb]{.ms-2}
-- {{< fa sharp door-open title="Office Hours" >}}[Tu 10-11am]{.ms-1}
+- {{< fa sharp user title="Name" >}} [TBD]{.ms-1}
+- {{< fa sharp envelope title="Email" >}} [TBD]{.ms-1}
+- {{< fa sharp building title="Office" >}} [TBD]{.ms-2}
+- {{< fa sharp door-open title="Office Hours" >}}[TBD]{.ms-1}
 ::::
 
 ::: {.column width="30%"}
@@ -82,7 +82,7 @@ Environmental systems involve multiple interacting processes, uncertainties, and
 * make decisions under uncertainty; and
 * explore trade-offs across competing objectives. 
 
-## Learning Objectives
+## Learning Outcomes
 
 At the end of this class, students will:
 
@@ -97,9 +97,9 @@ At the end of this class, students will:
 
 The following courses/material would be ideal preparation:
 
-- Environmental Processes (BEE 2510 or BEE 2600)
-- Engineering Computation (ENGRD/CEE 3200)
-- One course in probability or statistics (ENGRD 2700, CEE 3040, or equivalent) 
+- **Environmental Processes (BEE 2510 or BEE 2600)**: mass and energy balance, fate and transport
+- **Engineering Computation (ENGRD/CEE 3200)**: basic programming, discretization of ODEs
+- **One course in probability or statistics (ENGRD 2700, CEE 3040, or equivalent)**: probability, probability distributions, summary statistics
 
 In the absence of one or more these prerequisites, you can seek the permission of instructor.
 
@@ -111,15 +111,27 @@ If your programming or statistics skills are a little rusty, don't worry! We wil
 
 ## Topics
 
-* Introduction to environmental systems, 
+This class will cover the following topics:
+
+* Introduction to environmental systems
 * Modeling system dynamics
 * Multiple objectives and trade-offs
-* Uncertainty and risk (Monte Carlo analysis)
-* Dissolved oxygen in streams and rivers; waste load allocation (system simulation)
-* Modeling of watersheds & lakes (defining objectives, constraints)
-* Modeling for air pollution control (model linearization; linear programming)
-* Location of waste disposal facilities (integer linear programming)
-* Robustness of solutions and sensitivity analysis
+* Model discretization and simulation 
+* Uncertainty and Monte Carlo analysis 
+* Linear programming 
+* Simulation-optimization
+* Decision making under uncertainty 
+* Sensitivity and robustness
+
+To motivate and illustrate these topics, we will draw on application areas including:
+
+* Climate change
+* Water quality
+* Air quality
+* Electric power systems
+* Solid waste management
+* Resource allocation
+* Reservoir management
 
 
 ## Course Philosophy and Expectations
@@ -157,6 +169,12 @@ In all communications and interactions with each other, members of this class co
 
 Please let me know if you feel any aspect(s) of class could be made more inclusive. Please also share any preferred name(s) and/or your pronouns with me if you wish: I use he/him/his, and you can refer to me either as Vivek or Prof. Srikrishnan.
 
+Please be professional and courteous on all course interactions and platforms, and (except in designated off-topic boards or forums) please keep all online discussion relevant to the course. We do not anticipate this as a problem given our experience; almost all students in almost all classes meet these expectations. However, even a single incident can do serious damage to the learning environment and the well-being of your fellow students.
+
+Sexually explicit, harassing, threatening, bullying, trolling, racist, sexist, homophobic, transphobic, or otherwise grossly unprofessional content will be removed. Anyone behaving in these fashions or posting such content will be blocked/banned from the appropriate platform and may be given an F if they are consistently disruptive. 
+
+We have configured our Ed Discussion board to allow anonymous posts; we will restrict posts to real names only if anyonmous posts become problematic.
+
 ::: {.callout-important}
 ## Please, Be Excellent To Teach Other
 
@@ -179,8 +197,9 @@ Announcements will be made on the course website and in Ed. Emergency announceme
 ::: {.callout-important}
 ## Ed Tips
 
+- **Do not take screenshots of code**. I will not respond. Screenshots can be difficult to read and limit accessibility. Put your code on GitHub, share the link, and point to specific line numbers if relevant, or provide a *simple*, self-contained example of the problem you're running into.
 - If you wait until the day an assignment is due (or even late the previous night) to ask a question on Ed, there is a strong chance that I will not see your post prior to the deadline. 
-- But if you see unanswered questions and you have some insight, please answer! This class will work best when we all work together as a community.
+- If you see unanswered questions and you have some insight, please answer! This class will work best when we all work together as a community.
 :::
 
 
@@ -198,6 +217,8 @@ I am not a trained counselor, but I am here to support you in whatever capacity 
 
 ## Course Policies
 
+Many policies below (including grading policies) are broken out and discussed further on the course website. Lack of familiarity with any of these policies is not an excuse for violating any of them.
+
 ### Attendance
 
 Attendance is not *required*, but in general, students who attend class regularly will do better and get more out of the class than students who do not. Your class participation grade will reflect both the quantity and quality of your participation, only some of which can occur asynchronously. I will put as many course materials, such as lecture notes and announcements, as possible online, but viewing materials online is not the same as active participation and engagement. Life happens, of course, and this may lead you to miss class. Let me know if you need any appropriate arrangements ahead of time. 
@@ -211,7 +232,7 @@ Please stay home if you're feeling sick! This is beneficial for both for your ow
 
 ### Mask Policies
 
-**Masks are encouraged but not required in the classroom**, per [university policy](https://covid.cornell.edu/updates/20220727-students-fall-semester.cfm). However, the University *strongly encourages* compliance with requests to mask from students, faculty, and staff who are concerned about the risk of infection. Please be respectful of these concerns and requests if you cannot wear a mask.
+**Masks are encouraged but not required in the classroom**, per [university policy](https://covid.cornell.edu/updates/20220727-students-fall-semester.cfm). However, the University *strongly encourages* compliance with requests to mask from students, faculty, and staff who are concerned about the risk of infection. Please be respectful of these concerns and requests if you cannot wear a mask. This policy may change if there is another outbreak of COVID-19 (or other illness), but will be kept consistent with broader Cornell mask policies.
 
 ### Academic Integrity
 
@@ -227,7 +248,17 @@ The collaborative environment in this class **should not be viewed as an invitat
 
 ### AI/ML Resource Policy
 
-As noted, all work submitted for a grade in this course must reflect your own understanding. The use and consulation of AI/ML tools, such as ChatGPT or similar, must be pre-approved and clearly referenced. If approved, you must:
+As noted, all work submitted for a grade in this course must reflect your own understanding. The use and consulation of AI/ML tools, such as ChatGPT or similar, for any purpose whatsoever, **must be pre-approved and clearly referenced**. 
+
+::: {.callout-important}
+## What Is ChatGPT Useful For?
+
+ChatGPT and other large-language models can predictively generate text, but note that there is no *idea* underlying its prediction model (it is purely statistical). You should therefore think about it as a glorified and stochastic Google search, albeit one which synthesizes the material for you, so you can't access or understand its judgement or reasoning.
+
+As a result, simply submitting ChatGPT output is likely to get you zero credit for any analysis or interpretation questions, and may be less helpful than you think for questions about derivations or model setups. Where ChatGPT can be helpful is in starting or debugging code (particularly interpreting error messages), especially if you're unsure about syntax. However, in our experience, the interpretations and solutions from ChatGPT may often also just be wrong due to the LLM drawing from sufficiently different code examples users have provided in other forums; you'll still need to exercise judgement and figure out if what ChatGPT output works or makes sense to ensure credit. You'd be surprised --- careful use of LLMs does not actually save very much time!
+:::
+
+If approved, you must:
 
 - reference the URL of the service you are using, including the specific date you accessed it;
 - provide the exact query or queries used to interact with the tool; and
@@ -237,43 +268,177 @@ As noted, all work submitted for a grade in this course must reflect your own un
 
 ### Late Work Policy
 
-In general, late work will be subjected to a 10% penalty per day, *which can accumulate to 100% of the total grade*. However, sometimes things come up in life. Please reach out *ahead of time* if you have extenuating circumstances (including University-approved absences or illnesses) which would make it difficult for you to submit your work on time. Work which would be late for appropriate reasons will be given extensions and the late penalty will be waived.
+In general, late work can be submitted up to 24 hours late at a 50% penalty, and will not be accepted after that point. This policy may seem strict, but allows for prompt release of solutions and discussion of assignments. Please reach out *as soon as possible* (ideally before the due date) if legitimate circumstances emerge which prevent you from submitting work within 24 hours of the due date; we will make accomodations for approved reasons, which might included a limited extension or dropping the assignment.
+
+### Regrade Requests
+
+Regrade requests can be submitted up to one week after the graded work is released on Gradescope. 
+
+All regrade requests must include a **brief** justification for the request or they will not be considered. Good justifications include (but are not limited to):
+  - *My answer agrees with the posted solution, but I still lost points.*
+  - *I lost 4 points for something, but the rubric says it should only be worth 2 points.*
+  - *You took points off for something, but it's right here.*
+  - *My answer is correct, even though it does not match the posted solution; here is an explanation*.
+  - *There is no explanation for my grade*.
+  - *I got a perfect score, but my solution has a mistake* (you will receive extra credit for this! see below!)
+  - *There is a major error in the posted solution; here is an explanation* (full credit for everyone, but Prof. Srikrishnan will decide what constitutes a "major error"! see below!).
+
+::: {.callout-important}
+## We Can Only Grade What You Submitted
+
+All regrades will be assessed based only on the submitted work. You cannot get a higher grade by explanating what you meant (either in person or online) or by adding information or reasoning to what is submitted after the fact. The goal of the regrade is to draw attention to a potential grading problem, not to supplement the submission. 
+:::
+
+The first regrade request for any submission will be handled by the person who graded that homework problem. The first regrade request for any exam submission will be handled by whoever graded that exam problem. If the submission was graded by the TA, additional regrade requests for the same submission will be handled directly by the instructor. Once Prof. Srikrishnan issues a final response to a regrade request, further requests for that submission will be ignored.
+
+
+::: {.callout-warning}
+## Regrade Requests Can Be A Gamble! 
+
+While you should submit regrade requests for legitimate errors, using them for fishing expeditions can also result in lost points if the TA or Prof. Srikrishnan decide that your initial grade was too lenient or if additional errors are identified.
+:::
+
+::: {.callout-tip}
+## What If I Find A Different Type of Mistake?
+
+- If you submit a regrade request *correctly* reporting that a problem was graded too leniently --- that is, that your score was higher than it should be based on the rubric --- your score will be increased by the difference. For example, if your original score on a problem was 8/10 and you successfully argue that your score should have been 3/10, your new score will be 13/10. However, don't fish --- your grade might be lowered if the TA finds an independent mistake while regrading.
+- If a significant error is discovered in a posted homework solution or in the exam solutions, everyone will in the class will receive *full* credit for the (sub)problem. Prof. Srikrishnan will decide what is "significant".
+:::
+
+### Office Hours
+
+Office hours with both Prof. Srikrishnan and the TA will be available each week at times TBA. Changes to the office hour schedule (cancellations/rescheduling) will be announced in class and on Ed Discussion. 
+
+Office hours are intended to help all students who attend. This time is limited, and is best spent on issues that are relevant to as many students as possible. While we will do our best to answer individual questions, students asking us to verify or debug homework solutions will have the lowest priority (**but please do ask about how to verify or debug your own solutions!**). However, we are happy to discuss conceptual approaches to solving homework problems, which may help to reveal bugs.
+
+Space at office hours can be limited (we may shift to the conference room in 316 Riley-Robb if offices are full and it is available). If the room is crowded and you can find an alternative source of assistance, or if your question is low priority (*e.g.* debugging) please be kind and make room for others.
+
+
+::: {.callout-tip}
+## What If I Can't Make Office Hours?
+
+While we will try to select office hours that work for as much of the class as possible, both the course staff and students have busy schedules and no time will work for everyone. **If you need help outside of office hours (*e.g.* office hours do not fit your schedule), please send an email to the TA or Prof. Srikrishnan as soon as possible**. These requests may not be accepted on short notice (*e.g.* if you have a question about a homework due on Friday and send a request on Thursday; schedules for course staff may already be full). We recommend starting your homework promptly so you can take advantage of office hours or make an appointment over a longer period.
+:::
 
 ## Assessments
 
-### Lab Notebooks: 20%
+Your grade will be computed as the weighted average of the following assessment categories:
 
-Some classes will involve hands-on exercises (which we will call "labs") which will give you guided practice applying the concepts and methods from class. These classes will be announced on [the course website](https://viveks.me/environmental-systems-analysis) ahead of time so anyone who is able can bring a laptop to class, and notebooks will be provided on GitHub. These labs can be done in groups; if you cannot bring a laptop to class for whatever reason, you will be able to (and are encouraged to) work with other students, though you must turn in your own notebook for grading.
+| Category | Weight |
+|:--------|:------:|
+| Participation | 10% |
+| Exercises | 10% |
+| Labs | 10% |
+| Homework | 20% |
+| Prelims | 30% |
+| Term Project | 20%
 
-Some details on lab logistics:
+::: {.callout-note}
+## Will There Be a Curve?
 
-- Some of the labs may some time outside of class, but they will not be as intensive as a homework assignment. 
-- You will be required to submit a PDF of your completed notebook to Gradescope by 9:00pm by the due date (which will be approximately one week) after the lab session. Tag the answers to each question: points will be deducted if this is not done.
-- While your lowest lab grade will not be dropped, late penalties will be waived for appropriate reasons discussed with the instructor (ideally ahead of time when circumstances allow).
-- Rubrics will be provided for lab grading as part of the lab assignments.
+Grades on individual assessments will not be curved. It is unlikely that the final grades will be adjusted, but we may apply a curve **if and only if** circumstances arise which would make this appropriate, such as if the exams turn out to be longer or more difficult than intended. Grades will not be curved to meet any pre-defined distribution; it is entirely possible that everyone earns an A or everyone earns an F. Asking about a curve will not make one more likely.
+:::
 
-### Homework Assignments: 40%
+### Participation
 
-Approximately 5-6 homework assignments will be assigned throughout the semester; the specifics depend on how quickly we move through the material. You will typically have 10 days to 2 weeks to work on Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but  plagiarism is a violation of academic integrity.
+Participating fully in the class allows you to gain more from the class and contribute more to the learning of your classmates. Some ways to participate include:
+
+* Attending every class;
+* Asking questions in class or on Ed;
+* Answering questions in class or on Ed;
+* Coming to office hours.
+
+Participation points are not free: you are likely to lose points if you consistently skip class or do not ask or answer questions online or in person. At the end of the term, you will be asked to evaluate your own participation over the course of the semester, in addition to my documentation of your participation.
+
+### Exercises
+
+Most weeks will involve a problem set aimed at assessing key concepts or getting practice with new workflows and packages. We will use Canvas for these exercises, but starter code will be made available on GitHub Classroom for code-based exercises. These will be released Monday before class and are due Friday by 9pm ET. The exercises will be multiple choice, automatically graded, and you can submit them as often as you like. It is highly recommended that you do these promptly and take them seriously, as concepts and code practice will be useful for the homeworks and midterm exams.
+
+### Labs
+
+Approximately 5 class periods will be dedicated to working through simple examples to guide you through applying concepts and methods from class. Students should bring their laptops to class, and will be given a worksheet to complete (as much as they can) during these lab classes. Labs will be designed to be completed in class, though you may occasionally require additional time; however, lab worksheets must be submitted by 9:00pm on the lab day. These will be graded on the basis of demonstrated work, rather than absolute correctness or completion. No labs will be dropped by default. If you cannot bring a laptop to class, you can work with other students, though you must turn in your own worksheet for grading.
+
+### Homework Assignments
+
+Approximately 5 homework assignments will be assigned throughout the semester, one per course module (plus an initial homework to build or refresh programming and debugging skills). The homework assignments are more in-depth problem sets involving the modeling (derivation and implementation) and analysis of one or more environmental systems problems.
+
+You will generally have two class weeks to work on an assignment. This is intended to provide you enough time to work on the problem and debug and evaluate your code (including troubleshooting any technical problems); these are not excuses for late submission. Each homework assignment will build on material from the prior classes and possibly from the day the homework is assigned, but no later.
+
+Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but plagiarism is a violation of academic integrity. Graduate students in BEE 5850 can expect one additional problem for each homework assignment aimed at developing greater depth or familiarity with the material.
 
 Some notes on assignment and grading logistics:
 
-  * Homework assignments will be distributed using GitHub Classroom. Students should make sure they update their GitHub repositories as they work on the assignments; this helps with answering questions and gives you a backstop in case something goes wrong and you can't submit your assignment on time.
+  * Homework assignments will be distributed using GitHub Classroom. While GitHub use is not required for the class aside from accepting and cloning assignments, students are encouraged to update their GitHub repositories as they work on the assignments; this helps with answering questions and gives you a backstop in case something goes wrong and you can't submit your assignment on time. 
   * Homeworks are due by 9:00pm Eastern Time on the designed due date. Your assignment notebook (which include your writeup and codes) should be submitted to Gradescope as a PDF with the answers to each question tagged (a failure to do this will result in deductions). 
-  * Rubrics will be provided for the homeworks as part of the assignments.
-  * Your lowest homework grade will be dropped. We can discuss arrangements if multiple assignments will be missed for university-approved reasons, preferably ahead of time. 
-  * Regrade requests for specific problems must be made within a week of the grading of that assignment. However, note that regrades can cut both ways: the TA can take away points as well!
+  * A meta-rubric is provided on the website, under the Homework page. These are not customized for each assignment but the principles will apply generally.
+  * No homework assignments will be dropped, but you can turn in assignments within 24 hours of the due date with a 50% penalty. If you need a further accomodation for a particular assignment, talk to Prof. Srikrishnan ***before the due date.*** Requests for extensions made after the due date will only be considered under extraordinary and unexpected circumstances. Technical challenges submitting assignments are not acceptable reasons for extensions to be granted, and late penalties will apply.
+  * **Your submitted homework must stand on its own***! We cannot grade you on the basis of information which was not included in the submitted assignment. While regrade requests should include a justification for why your grade is incorrect, we will not consider explanations or additional reasoning outside of the submission.
 
-### Final Term Project: 40%
+### Prelims
 
-This course will culminate with a term project with a topic selected from a suggested list (provided mid-semester). The goal of this project is to apply and extend the tools and approaches we will learn in class. While we encourage drawing on other classes or interests when developing and working on your project, **submitting work from another course or work which was completed prior to the course is not permitted**.
+Two in-class prelims will be given as an opportunity to review relevant material. The dates for the exams are **Wednesday, 10/09** and **Monday, 11/11**. The exams are closed-book and closed-note. As a result, the exams will emphasize conceptual material such as model derivations and interpretation of results; any calculations can be done with a pen(cil) and paper. Conflict and extended-time exams will be handled through SDS. Exams will be scanned into Gradescope for grading and feedback.
 
-The term project will be completed in small groups (2-3 students) for students enrolled in BEE 4750 and individually for those in BEE 5750. The final deliverable for this project will be a poster summarizing the project and results. Ahead of that, you will submit the following:
+Solutions will not be posted for the midterms, but Prof. Srikrishnan will review and discuss midterm problems in class. The review will occur approximately two weeks after the exam to provide time for conflict exams.
 
-- a proposal for feedback on the scope of your project; and
-- a 2-3 page report on the status and history of a regulation of interest relevant to the system you are studying.
+### Final Term Project
 
-Rubrics will be provided for the components of the project.
+This course will culminate with a term project. The goal of this project is to apply and extend the tools and approaches we will learn in class to an application of your choosing. While we encourage drawing on other classes or interests when developing and working on your project, **submitting work from another course or work which was completed prior to the course is not permitted**.
+
+The term project will be completed in groups (3-4 students). The final deliverable for this project will be a report summarizing the project and results, including a section detailing research you have conducted on relevant regulations and how they were incorporated into your project. Ahead of that, you will submit the following a proposal for feedback on the scope of your project as well as a description of task coordination.
+
+The project will be assessed on the basis of both group and individual components:
+
+1. ***Group*** (80 points):
+   1. (10 points) **Proposal**: Groups will develop a proposal for their final project, which will include two main components. The first is a research plan, which should (succinctly) describe the background for the problem and articulate the key question (system overview, model specification) as well as providing a brief overview of proposed methods (data sources, planned analytic approach). The second is a work plan, which will include task assignments across group members, deadlines for interim tasks, and a plan for coordination (meeting frequency, materials sharing, etc). 
+   2. (20 points) **Presentation**: Groups will present their projects to the class at the end of the semester. Due to time restrictions, these may be recorded and uploaded to Canvas if there are too many projects for the time available. Presentations should be no more than 10 minutes long and should be aimed at a general audience. 
+   3. (10 points) **Peer Review**: Each group will be asked to provide a peer review on two of their classmates' presentations. The format for the review will be made available on the class website included all expected components, but all members of the group(s) should provide their reviews as part of the overall synthesis. =
+   4. (40 points) **Final Report**: Each group will submit a final report aimed at an engineering audience. A rubric will be provided with detailed expectations. 
+2. **Individual** (20 points):
+   1. (5 points) **Self-Assessment**: Each individual in a group will submit a short self-assessment of their project, including a description of the work they contributed to the project (< 1/2 page) and reflections on what worked well or less well (< 1/2 page). 
+   2. (15 points) **Peer Evaluation**: Each individual in a group will submit an evaluation of their teammates' contributions to the final project and the group dynamic, including assessments of participation, work quality, and inclusivity. Points will be awarded based on the evaluations from your group; different scales will be applied for undergraduate (4750) and graduate (5750) students. *No points will be given for any student who fails to submit evaluations for their groupmates*. 
+
+## Grading
+
+### Grading Scale
+
+The following grading scale will be used to convert the numerical weighted average from the assessments (above) to letter grades.
+
+| Grade | Range |
+|:---:|:--------|
+| A | 93--100 |
+| A- | 90--92 |
+| B+ | 87--89 |
+| B | 83--86 |
+| B- | 80--82 |
+| C+ | 77--79 |
+| C | 73--76 |
+| C- | 70--72 |
+| D+ | 67--69 |
+| D | 63--66 |
+| D- | 60--62 
+| F | < 59 |
+
+We reserve the right to lower these cutoffs as appropriate, but will not raise them from these levels.
+
+::: {.callout-note}
+## Will You Round Up My Grade?
+
+Grades **may** be rounded up if they are just below the cutoff, but this is not a given, and requests for grade round-ups will be ignored. For example, you should assume that a score of 92.9% has missed the A cutoff of 93% (it is, after all, below the cutoff). Consider it a pleasant surprise if the round-up is given.
+:::
+
+### Forgiven Assignments
+
+Forgiven assignments (due to extenuating circumstances, ***discussed with and approved by Prof. Srikrishnan***) will be treated as though they do not exist, and the appropriate grading component will be computed without them. This does mean that *e.g.* submitted homeworks will carry more weight in the overall grade computation. In exceptional cases, we will compute course grades based entirely on exams.
+
+### Exceptions
+
+We reserve the right to give any student meeting at least one of the following conditions an automatic F:
+
+1. Overall exam average below 25%;
+2. Submitted less than half of the assigned homework problems;
+3. Extremely low levels of participation and effort.
+
+This should not generally be a concern; students putting in a good faith effort by attending class, participating in online discussions, doing most of the work, and taking the exams will not be at risk of this policy.
 
 ::: {.content-visible unless-format="html"}
 ## Tentative Schedule
@@ -282,11 +447,11 @@ Rubrics will be provided for the components of the project.
 #| echo: false
 #| output: false
 
-start_date = Date(2023, 8, 21)
-end_date = Date(2023, 12, 4)
+start_date = Date(2024, 8, 26)
+end_date = Date(2024, 12, 9)
 
 # set vector of class dates (including holidays)
-cdates = filter(d -> Dates.dayname(d) ∈ ["Monday", "Wednesday", "Friday"], Date(start_date):Day(1):Date(end_date));
+cdates = filter(d -> Dates.dayname(d) ∈ ["Monday", "Wednesday"], Date(start_date):Day(1):Date(end_date));
 # find weeks from first week of classes
 cweeks = week.(cdates) .- (week(Date(start_date)) - 1);
 # get days of the week
@@ -294,53 +459,39 @@ cdays = dayabbr.(cdates)
 
 # set vector of class topics
 topics = [ 
-  "Class overview",
-  "Intro to Julia and GitHub",
-  "Lab 1: Julia Basics",
-  "Defining System Boundaries",
-  "Examples of Systems Dynamics",
-  "Examples of Systems Dynamics cont'd",
+  "Welcome to BEE 4750!",
+  "Lab 1: Setting up Julia and GitHub",
+  "Introduction to Systems Analysis",
   "Modeling Systems",
-  "Simulating Systems with Models",
-  "Simulation Example: Dissolved Oxygen",
-  "Simulation Example: Dissolved Oxygen cont'd",
-  "Lab 2: Systems Simulation",
-  "Probability and Statistics Review",
-  "Probability and Statistics Review cont'd",
-  "Introduction to Monte Carlo",
-  "Monte Carlo Error Analysis",
-  "Lab 3: Monte Carlo",
-  "Risk Analysis for Systems",
-  "Systems Management Decisions",
-  "Introduction to Optimization",
-  "Introduction to Optimization, cont'd",
-  "Guest Lecture on Researching Regulations",
+  "Feedbacks and Bifurcations",
+  "Simulation Modeling",
+  "Dissolved Oxygen",
+  "Uncertainty and Monte Carlo Simulation",
+  "Lab: Monte Carlo Simulation",
+  "Multiple Objectives and Tradeoffs",
+  "Model Calibration and Validation",
   "Linear Programming",
-  "Linear Programming cont'd",
-  "Lab 4: Linear Programming with JuMP",
-  "Emissions and Plume Models",
-  "Plume Models cont'd",
-  "Power Systems Modeling and Economic Dispatch",
-  "Economic Dispatch cont'd",
-  "Mixed-Integer Programming",
-  "Unit Commitment",
-  "Unit Commitment cont'd",
-  "Network Models and Solid Waste Management",
-  "Solid Waste Management cont'd",
+  "Prelim 1",
+  "Lab 3: Optimization with JuMP.jl",
+  "Power Systems and Economic Dispatch",
+  "Prelim 1 Review",
+  "Fixed Costs and Unit Commitment",
+  "Network Models ",
   "Simulation-Optimization",
-  "Lab 5: Simulation-Optimization", 
-  "Robustness",
-  "Sensitivity Analysis",
-  "Sensitivity Analysis cont'd", 
-  "Multiple Objectives and Trade-Offs",
-  "Scenario Trees",
-  "Decision-Making Under Uncertainty cont'd",
-  "Value of Uncertainty"
+  "Lab 4: Simulation-Optimization",
+  "Prelim 2",
+  "Robustness and Sensitivity Analysis",
+  "Scenario Trees and Value of Uncertainty",
+  "Lab 5: Two-Stage Linear Programs",
+  "Prelim 2 Review",
+  "Sequential Decision-Making",
+  "Reservoir Management",
+  "Project Work"
 ]
 
-holiday_dates = ["2024-09-04", "2024-10-09", "2024-11-22", "2024-11-24"];
+holiday_dates = ["2024-09-02", "2024-10-14", "2024-11-27"];
 holidays = DataFrame(Date=Dates.format.(Date.(holiday_dates), "mm-dd"), 
-                    Holiday=["Labor Day", "Fall Break", "Thanksgiving Break", "Thanksgiving Break"]);
+                    Holiday=["Labor Day", "Fall Break", "Thanksgiving Break"]);
 
 # add in holidays
 ctopics = Vector{String}(undef, length(cdates)); # initialize array
@@ -355,13 +506,11 @@ class_nums = missings(Int, length(cdates))
 class_nums[cschedule.Date .∉ [holidays.Date]] = collect(range(1, length=length(cdates) - nrow(holidays)))
 
 # set headers
-headers_idx = [1, 5, 11, 22, 42, 49]
+headers_idx = [1, 8, 15, 27]
 headers = DataFrame([
-  "" "" "Course Introduction";
   "" "" "Introduction to Systems Analysis";
   "" "" "Systems Simulation";
-  "" "" "Optimization and Systems Management";
-  "" "" "Examining Assumptions";
+  "" "" "Optimization and Decision-Making";
   "" "" "Decision-Making Under Uncertainty";
 ], ["Date", "Day", "Topic"])
 
@@ -388,9 +537,8 @@ hl_hol = LatexHighlighter((data, i, j) -> data[i, :Date] ∈ holidays[:, :Date],
 hl_header = LatexHighlighter((data, i, j) -> i ∈ headers_idx, ["emph", "textbf", "small"])
 
 pretty_table(cschedule, highlighters=(hl_header, hl_hol, hl_smallfont), 
-  body_hlines = headers_idx[2:end] .- 1,
-  nosubheader=true, backend=Val(:latex), tf=tf_latex_modern, formatters=ft_nomissing,
-  row_names=class_nums, row_name_alignment=:r, row_name_column_title = "\\#", wrap_table=true, wrap_table_environment="center", table_type=:longtable,
+  body_hlines = headers_idx[2:end] .- 1, show_subheader=false,
+  backend=Val(:latex), tf=tf_latex_modern, formatters=ft_nomissing, wrap_table=true, table_type=:longtable,
   alignment = [:c, :c, :l])
 ```
 :::

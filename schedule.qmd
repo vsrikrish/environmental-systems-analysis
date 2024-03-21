@@ -10,35 +10,35 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 | Week | Date        | Topic | Slides | Lab | HW | Reading |
 :-----:|:------------|:------|:------:|:--:|:---:|:--:|:-------:|
 | | | ***Module 1: Introduction to Systems Analysis*** | | | | |
-| 1    | Mon, Aug 26 | Welcome to BEE 4750! |  | |  {{< fa sharp pen-field >}}{style="color:grey"} | |
+| 1    | Mon, Aug 26 | Welcome to BEE 4750! |  | |  [{{< fa sharp pen-field >}}](hw/hw01/hw01.qmd) | |
 |      | Wed, Aug 28 | Lab: Setting up Julia and GitHub | |  [{{< fa sharp laptop-code >}}](labs/lab01/lab01.qmd) | | | 
 | 2    | Mon, Sep 02 | **No Class: Labor Day** |  | | | |
 |      | Wed, Sep 04 | Introduction to Systems Analysis | | | |  |
-| 3    | Mon, Sep 09 | Modeling Systems | | | {{< fa sharp pen-field >}}{style="color:grey"} | |
+| 3    | Mon, Sep 09 | Modeling Systems | | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
 |      | Wed, Sep 11 | Feedbacks and Bifurcations | | | | |
 | | | ***Module 2: Systems Simulation*** | | | |
 |  4   | Mon, Sep 16 | Simulation Modeling | | | | | 
 |      | Wed, Sep 18 | Dissolved Oxygen  | | | |
-|  5    | Mon, Sep 23 | Uncertainty and Monte Carlo Simulation | | | {{< fa sharp pen-field >}}{style="color:grey"} | |
-|   | Wed, Sep 25 | Lab: Monte Carlo Simulation |  | {{< fa sharp laptop-code >}}{style="color:grey"} | | |
+|  5    | Mon, Sep 23 | Uncertainty and Monte Carlo Simulation | | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
+|   | Wed, Sep 25 | Lab: Monte Carlo Simulation |  | [{{< fa sharp laptop-code >}}]{style="color:grey"} | | |
 |  6  | Mon, Sep 30 | Multiple Objectives and Tradeoffs | | |  | |
 |    | Wed, Oct 02 | Model Calibration and Validation  |  |  | | |
 | | | ***Module 3: Optimization and Linear Programming*** | | | |
 |  7   | Mon, Oct 07 | Linear Programming |  | |   | |
 |      | Wed, Oct 09 |  **Prelim 1** | | | |
 |  8  | Mon, Oct 14 | **No Class: Fall Break** |  | |  | |
-|   | Wed, Oct 16 | Lab: Optimization with JuMP.jl  | | | {{< fa sharp laptop-code >}}{style="color:grey"}   | |
+|   | Wed, Oct 16 | Lab: Optimization with JuMP.jl  | |  [{{< fa sharp laptop-code >}}]{style="color:grey"}  | | |
 |  9 | Mon, Oct 21 | Power Systems and Economic Dispatch  | | | | |
 |    | Wed, Oct 23 | Prelim 1 Review | | |  |  |
-|  10  | Mon, Oct 28 |  Fixed Costs and Unit Commitment | |  | {{< fa sharp pen-field >}}{style="color:grey"} | | 
+|  10  | Mon, Oct 28 |  Fixed Costs and Unit Commitment | |  | [{{< fa sharp pen-field >}}]{style="color:grey"} | | 
 |     | Wed, Oct 30 | Network Models | | |  | | 
 |  11  | Mon, Nov 04 | Simulation-Optimization  |  |  |  | |
-|    | Wed, Nov 06 | Lab: Simulation-Optimization |  | {{< fa sharp laptop-code >}}{style="color:grey"} |  | |
+|    | Wed, Nov 06 | Lab: Simulation-Optimization |  | [{{< fa sharp laptop-code >}}]{style="color:grey"} |  | |
 | | | ***Module 4: Decision-Making Under Uncertainty*** | | | |
 | 12    | Mon, Nov 11 | **Prelim 2**  |  |  | | |
 |    | Wed, Nov 13 | Robustness and Sensitivity Analysis  | |  | | |
-| 13   | Mon, Nov 18 |  Scenario Trees and Value of Uncertainty | | | {{< fa sharp pen-field >}}{style="color:grey"} | |
-|    | Wed, Nov 20 | Lab: Two-Stage Linear Programs |  | {{< fa sharp laptop-code >}}{style="color:grey"} | | |
+| 13   | Mon, Nov 18 |  Scenario Trees and Value of Uncertainty | | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
+|    | Wed, Nov 20 | Lab: Two-Stage Linear Programs |  | [{{< fa sharp laptop-code >}}]{style="color:grey"} | | |
 |  14  | Mon, Nov 25 |  Prelim 2 Review |   |  |  |  |
 |     | Wed, Nov 27 | **No Class: Thanksgiving Break** | | | | |
 | 15 | Mon, Dec 02 | Sequential Decision-Making  | | | | |

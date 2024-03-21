@@ -70,9 +70,10 @@ website:
             text: "Grading Policies"
           - href: policies/integrity.qmd
             text: "Academic Integrity"
-      - section: hw.qmd
-      - section: exercises.qmd
-      - text: "Final Project" 
+      - hw.qmd
+      - labs.qmd
+      - exercises.qmd
+      - section: "Final Project" 
         contents:
           - href: project.qmd
             text: "Project Materials"

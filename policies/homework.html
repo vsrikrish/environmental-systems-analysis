@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.519">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../policies/grading.html" rel="next">
+<link href="../policies/exam.html" rel="next">
 <link href="../syllabus.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -186,7 +186,7 @@ window.MathJax = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../policies/homework.html" class="sidebar-item-text sidebar-link">
+  <a href="../policies/exam.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exam Policies</span></a>
   </div>
 </li>
@@ -383,7 +383,7 @@ window.MathJax = {
 <li><strong>The only sources you do not have to cite are official class materials.</strong> If you use the lectures, lecture notes, website materials, homework solutions, etc, you do not have to cite these.</li>
 <li><strong>List everyone that you worked with.</strong> Give your classmates proper credit for their assistance. If you get an idea from Ed Discussion, credit the poster. If you’re not sure if you should list someone as a collaborator, err on the side of including them. For discussions in class or in office hours, you don’t have to list everyone who participated in the discussion (though you should if you worked one on one with them), but mention that the class discussion or the office hour was useful.</li>
 </ul>
-<div class="no-row-height column-margin column-container"><p><sup>1</sup>&nbsp;Yes, including ChatGPT, though you should ask and describe how you used it.</p></div></section>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Yes, including ChatGPT, though you should ask and describe how you used it.</p></li></div></section>
 <section id="be-clear" class="level3">
 <h3 class="anchored" data-anchor-id="be-clear">Be Clear</h3>
 <ul>
@@ -537,6 +537,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -551,14 +572,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
+        typesetMath(container);
         return container.innerHTML
       } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -567,15 +584,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      typesetMath(note);
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -839,13 +849,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../syllabus.html" class="pagination-link" aria-label="Syllabus">
+      <a href="../syllabus.html" class="pagination-link  aria-label=" syllabus"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Syllabus</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../policies/grading.html" class="pagination-link" aria-label="Grading Policies">
-        <span class="nav-page-text">Grading Policies</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../policies/exam.html" class="pagination-link" aria-label="Exam Policies">
+        <span class="nav-page-text">Exam Policies</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -857,7 +867,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/policies/homework.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    </div>
     <div class="nav-footer-right">
 <p>Made with <a href="https://julialang.org">Julia</a> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://www.github.com/vsrikrish/environmental-systems-analysis">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
 </div>

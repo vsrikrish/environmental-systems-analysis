@@ -12,7 +12,7 @@ format:
         \renewcommand\toprule[2]\relax
         \renewcommand\bottomrule[2]\relax
     filters:
-      - _assets/filters/columns-to-tables.lua
+      - ../_assets/filters/columns-to-tables.lua
     title: "{{< var course.number >}} ({{< var course.title >}}) Standard Rubric"
     subtitle: "{{< var course.semester >}}"
 ---

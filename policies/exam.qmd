@@ -1,0 +1,44 @@
+---
+title: "Exam Policies"
+anchor-sections: true
+---
+
+This page includes some information on the exams for BEE 4750/5750, including policies and logistics. 
+
+
+## Exam Logistics
+
+This class has two prelims, both in class:
+
+* **Prelim 1**: Wednesday, October 09;
+* **Prelim 2**: Monday, November 11.
+
+Each is worth 10% of your grade. Exams will be hand-written and then will be scanned into Gradescope (by course staff) for grading and feedback; the physical copy of your exam will not be returned.
+
+### Exam Topics and Structure
+
+The emphasis is on concepts; there will be no major formulas that you will need to use, and no programming. You will be potentially be asked to derive mathematical versions of models, apply concepts from class, and interpret model outputs. The problems are largely short- or medium-answer.
+
+In general, the same [homework grading rubric](../rubrics/standard.qmd) applies to exam problems, as appropriate (*.e.g.* nothing about code). The deadly sins will still be penalized, and your solutions should be clear with transparent and well-communicated reasoning.
+
+### Academic Integrity
+
+The exams are closed-book and closed-note, and closed everything else. **No medically unnecessary electronic devices are allowed to be used during the exam**, including headphones and smart watches. 
+
+Exams are also strictly confidential until the conflict and accomodation exams have been taken. Do not discuss your exam with anyone in person or online. Once all exams are taken, we will discuss the exams in class.
+
+### Difficulty
+
+While we will not hand out sample exams, exam problems will be closer in difficulty to lab or exercise problems than the homework, since you have two full weeks to solve the problem and have full acccess to external resources, course staff, and classmates. The goal is to assess your ability to set up problems, determine appropriateness of methods, and interpret the output, rather than on doing computations. We cannot, and do not, expect you to solve problems with homework-level difficulty in the restricted exam setting.
+
+## Accomodations, Conflicts, and Makeup Exams
+
+### SDS Accomodations
+
+Please make sure that any exam-related accomodations have been provided to the course staff ahead of the first exam. All exams requiring accomodations will be scheduled and delivered through the [Alternative Testing Program](https://sds.cornell.edu/accommodations-services/academic/exam-accommodations/atp).
+
+### Conflict and Makeup Exams
+
+If you have an academic conflict or a university-approved reason why you cannot take the exam in class, you should schedule your conflict exam through the [Alternative Testing Program](https://sds.cornell.edu/accommodations-services/academic/exam-accommodations/atp). 
+
+In **extreme** circumstances, such as long-term illnesses or injuries, that prevent taking both the regular and the conflict exam, we may forgive the prelim and compute your grade without it. This will dramatically increase the weight given to other assessments.

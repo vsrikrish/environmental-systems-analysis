@@ -1,5 +1,6 @@
 ---
 title: "FAQ"
+toc-expand: true
 ---
 
 ## Julia
@@ -20,6 +21,15 @@ Ultimately, there are trade-offs with any language, and in this case, some speci
 ### Are there any resources I can use to learn Julia basics?
 
 There are a few on the [Julia Resources page](resources/julia.html); please suggest additional resources!
+
+### I have a Julia syntax question. Where should I look?
+
+First, look at the Julia tutorials on the website to see if the relevant syntax is covered. If not, check the [Julia Resources page](https://viveks.me/environmental-systems-analysis/resources/julia.html) to see if one of the provided cheatsheets lets you translate from another programming language to Julia. If those still don't help, try Google; in particular, look for answers from <https://stackoverflow.com> or <https://discourse.julialang.org>.
+
+If all of that fails, please post on Ed Discussion, and include what you've searched for and why they aren't quite what you need. A stylized example of what you'd like to achieve is also helpful. As a last resort, come to office hours, but be aware you'll have a low priority if you haven't done the above steps, and the odds are that we'll have to do those as well.
+
+
+
 
 ## GitHub
 
@@ -62,18 +72,26 @@ Here are some steps I would follow:
     - ***Provide code***. It's very difficult to get a sense of what might be going wrong if you just say that you have a problem, even if you share the error message. If you have a small question (you can demonstrate the error with a brief snippet of code), you can directly put this into your Ed post, but otherwise, please provide a link to your GitHub repository and where to find the relevant codes.
 
       ::: {.callout-note}
-         ## Update Your Repository!
+      ## Update Your Repository!
       
-         You must commit and push your current files to GitHub prior to asking for help, or we won't be able to see the code that you're having trouble with.
+      You must commit and push your current files to GitHub prior to asking for help, or we won't be able to see the code that you're having trouble with.
       :::
 
 3. ***Come to office hours***. If you can identify the problem, but we're having trouble solving it via Ed or more urgency is required, please come to office hours and we can try to work through the issue. This is most helpful if you've already done some problem-solving on your own.
 
    ::: {.callout-warning}
-      ## Give Yourself Time To Problem-Solve
+   ## Give Yourself Time To Problem-Solve
    
-       Waiting until the last day or two to start an assignment can cause problems if you don't have time to work through the following steps. If office hours are busy and you haven't gone through the prior steps, you may be prioritized below than students who are have, and we may not have time to solve your problem. **Running into coding challenges is not a valid reason to get an extension on an assignment!**
+      Waiting until the last day or two to start an assignment can cause problems if you don't have time to work through the following steps. If office hours are busy and you haven't gone through the prior steps, you may be prioritized below than students who are have, and we may not have time to solve your problem. **Running into coding challenges is not a valid reason to get an extension on an assignment!**
    :::
+
+### Can you help me debug my code?
+
+Your first task should be to identify what part of your code works as desired, to help narrow down where the bug could be. If your code is broken into functions or smaller blocks, set up simple tests to make find which block(s) are causing the problem. If your code is just one big script, try to divide it into logical sections, then conduct these tests. Once you identify the part of the code that is not working, go line by line to see what particular command is doing something unexpected. Once you've identified what line is doing something strange, try to search for how to solve the problem and/or post on Ed with your code snippet (actually copy the code into the post or provide a link to your GitHub repository, with the line number; **do not paste a screenshot**) and a description of what you're trying to accomplish and what the specific problem is.
+
+If you are not sure how to articular what your code is trying to do (or are similarly unsure how to divide your code into logical units), that suggests that your problem is not *debugging*, but rather conceptual: step back and try to write out the logic of your code and how it aligns with the strategy you've developed to solve the problem. It might be that there is a conceptual problem rather than a bug, which we can definitely discuss! 
+
+If, however, you've tried the above steps and cannot figure out the bug, come to office hours, but if you have not done the above steps (and so cannot point to where exactly you're running into a problem and cannot describe what that part of code is trying to accomplish), we will ask you to figure that out on your own first. Otherwise, we cannot fruitfully help --- nobody is more familiar with your code and problem-solving strategy than you are.
 
 ### How do I get a PDF of my notebook for submission?
 
@@ -102,6 +120,6 @@ The instructions for submitting your assignment to Gradescope can be found [here
 ::: {.callout-important}
 ## Tag Pages
 
-Make sure that you mark/tag the pages corresponding to each question! Otherwise, we will deduct 10%. If a problem spans multiple pages, tag them all; if a page includes multiple problems, tag it several times.
+Make sure that you mark/tag the pages corresponding to each question! Otherwise, we will deduct 10%. If a problem spans multiple pages, tag them all; if a page includes multiple problems, tag it several times. You may lose points if part of your answer is untagged (these will not be returned through a regrade request).
 :::
 

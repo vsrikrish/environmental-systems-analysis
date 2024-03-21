@@ -36,15 +36,15 @@ If you have a Mac, open a terminal (such as the Terminal app) and enter:
 curl -fsSL https://install.julialang.org | sh
 ```
 
-#### Installing Julia 1.9.2
+#### Installing Julia 1.10.2
 
-Once you install Juliaup, install Julia version 1.9.2 by opening a terminal (in MacOS or Linux) or the command line (in Windows) and entering:
+Once you install Juliaup, install Julia version 1.10.2 by opening a terminal (in MacOS or Linux) or the command line (in Windows) and entering:
 ```shell
-juliaup add 1.9.2
-juliaup default 1.9.2
+juliaup add 1.10.2
+juliaup default 1.10.2
 ```
 
-This will install Julia 1.9.2 and make it the default version, which should maximize package compatibility throughout this course. Going forward, if you want to add new versions or change the default, you can [follow the Juliaup instructions](https://github.com/JuliaLang/juliaup#using-juliaup).
+This will install Julia 1.10.2 and make it the default version, which should maximize package compatibility throughout this course. Going forward, if you want to add new versions or change the default, you can [follow the Juliaup instructions](https://github.com/JuliaLang/juliaup#using-juliaup).
 
 
 ### Install and Set Up VS Code {#sec-install-code}
@@ -60,7 +60,7 @@ You can download it [here](https://code.visualstudio.com/download); open the dow
 1. Open VS Code. 
 2. Select View and click Extensions to open the Extension View. This view can also be found on the sidebar with the following logo: 
 
-    ![VS Code Extensions View Logo](figures/vs-code-extensions.png).
+    ![VS Code Extensions View Logo](slides/images/vs-code-extensions.png)
 3. Search for `julia` in the search box. Click the green install button.
 4. Restart VS Code once the installation is complete. It should automatically find your Julia installation; talk to Vivek if not.
 
@@ -89,7 +89,7 @@ If you already have a GitHub account, you can use that for this course and do no
 
 Otherwise, [create an account](https://github.com/join). It doesn't have to be linked to your Cornell email or use your Cornell NetID.
 
-For labs and homework assignments (we will work on Lab 1 in class on Friday and Homework 1 is available), you should use the GitHub Classroom link to "accept" the assignment provided on Ed Discussion, which will give you your own GitHub repository for that assignment. The first time you click one of these links, you will need to link your place on the course roster with your GitHub account.
+For labs and homework assignments (we will work on Lab 1 in class and Homework 1 is available), you should use the GitHub Classroom link to "accept" the assignment provided on Ed Discussion, which will give you your own GitHub repository for that assignment. The first time you click one of these links, you will need to link your place on the course roster with your GitHub account.
 
 When application exercises require notebook use (which is the case here, but will not always be), you can follow the workflow in these next steps, and will be prompted to do so in the instructions for that exercise.
 

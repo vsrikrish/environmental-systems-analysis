@@ -64,7 +64,7 @@ website:
         contents:
           - href: policies/homework.qmd
             text: "Homework Policies"
-          - href: policies/homework.qmd
+          - href: policies/exam.qmd
             text: "Exam Policies"
           - href: policies/grading.qmd
             text: "Grading Policies"

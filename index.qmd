@@ -8,6 +8,7 @@ This is the course website for the {{< var course.semester >}} edition of {{< va
 
 - Details on the class and course policies are provided in the [syllabus](syllabus.html).
 - Topics and weekly materials can be found in the [schedule](schedule.html).
+- Make sure you familiarize yourself with the [FAQ](faq.html).
 
 ## Software Tools
 

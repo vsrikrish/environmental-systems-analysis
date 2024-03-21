@@ -98,7 +98,7 @@ At the end of this class, students will:
 The following courses/material would be ideal preparation:
 
 - **Environmental Processes (BEE 2510 or BEE 2600)**: mass and energy balance, fate and transport
-- **Engineering Computation (ENGRD/CEE 3200)**: basic programming, discretization of ODEs
+- **Engineering Computation (ENGRD/CEE 3200)**: basic programming, discretization of ODEs, curve fitting
 - **One course in probability or statistics (ENGRD 2700, CEE 3040, or equivalent)**: probability, probability distributions, summary statistics
 
 In the absence of one or more these prerequisites, you can seek the permission of instructor.
@@ -106,7 +106,7 @@ In the absence of one or more these prerequisites, you can seek the permission o
 ::: {.callout-tip}
 ## What If My Programming or Stats Skills Are Rusty?
 
-If your programming or statistics skills are a little rusty, don't worry! We will review concepts and build skills as needed.
+If your programming or statistics skills are a little rusty, don't worry! We will review concepts and build skills as needed. While we will use the Julia programming language in class, if you are familiar with Python or MATLAB, the fundamentals are similar.
 :::
 
 ## Topics
@@ -309,7 +309,7 @@ While you should submit regrade requests for legitimate errors, using them for f
 
 Office hours with both Prof. Srikrishnan and the TA will be available each week at times TBA. Changes to the office hour schedule (cancellations/rescheduling) will be announced in class and on Ed Discussion. 
 
-Office hours are intended to help all students who attend. This time is limited, and is best spent on issues that are relevant to as many students as possible. While we will do our best to answer individual questions, students asking us to verify or debug homework solutions will have the lowest priority (**but please do ask about how to verify or debug your own solutions!**). However, we are happy to discuss conceptual approaches to solving homework problems, which may help to reveal bugs.
+Office hours are intended to help all students who attend. This time is limited, and is best spent on issues that are relevant to as many students as possible. While we will do our best to answer individual questions, students asking us to verify or debug homework solutions or help with syntax will have the lowest priority (**but please do ask about how to verify or debug your own solutions!**). However, we are happy to discuss conceptual approaches to solving homework problems, which may help to reveal bugs.
 
 Space at office hours can be limited (we may shift to the conference room in 316 Riley-Robb if offices are full and it is available). If the room is crowded and you can find an alternative source of assistance, or if your question is low priority (*e.g.* debugging) please be kind and make room for others.
 

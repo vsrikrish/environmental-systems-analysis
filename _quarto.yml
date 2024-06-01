@@ -70,9 +70,11 @@ website:
             text: "Grading Policies"
           - href: policies/integrity.qmd
             text: "Academic Integrity"
-      - hw.qmd
+      - section: hw.qmd
+        contents:
+          - href: hw/hw01/hw01.html
+            text: "HW 1"
       - labs.qmd
-      - exercises.qmd
       - section: "Final Project" 
         contents:
           - href: project.qmd
@@ -120,6 +122,7 @@ format:
 bibliography: references.bib
 csl: _assets/references/american-geophysical-union.csl
 
-jupyter: julia-1.10
-execute:
+engine: julia
+execute: 
+  daemon: 600
   freeze: auto  

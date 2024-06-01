@@ -1,0 +1,379 @@
+---
+title: "Introduction to Systems Analysis"
+subtitle: "Lecture 03"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "September 04, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: mathjax
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+
+execute:
+    freeze: auto
+---
+
+```{julia}
+import Pkg
+Pkg.activate(".")
+```
+
+```{julia}
+using Random
+using Plots
+using Measures
+```
+
+# Review of Last Week
+
+## Course Policies
+
+If you missed last class, make sure you [read the syllabus!](../syllabus.qmd).
+
+## Tools Setup Lab
+
+If you missed last Wednesday:
+
+- Go through the lab by Wednesday to make sure you're set up for the semester.
+- Email Prof. Srikrishnan to get an extension so you can submit.
+- Come to office hours for help if something isn't working.
+
+## Questions?
+
+{{< include _poll-prompt.qmd >}}
+
+# Systems Basics
+
+## What Is A System?
+
+A system is:
+
+::: {.quote}
+> "an interconnected set of elements that is coherently organized in a way that achieves something...
+>
+> A system must consist of three kinds of things: *elements*, *interconnections* and *a function or purpose*."
+
+::: {.cite} 
+--- Donella Meadows, *Thinking in Systems: A Primer*, 2008 
+:::
+:::
+
+##  Why Are Systems Interesting?
+
+::: {.incremental}
+- "**Interconnected** set of **elements**"
+- "**Function** or **purpose**"
+:::
+
+## Example: Climate Change
+
+Changes to climate occur bassed on a variety of processes across scales, including:
+
+- carbon sources/sinks;
+- aerosol emissions;
+- ocean heat uptake;
+- surface albedo;
+- El Niño/La Niña (ENSO)
+
+## Example: Climate Change
+
+![Correlations among Climate Parameters](figures/climate-correlate.svg)
+
+::: {.caption}
+Source: @Errickson2021-kr
+:::
+
+## Example: Climate Change
+
+![Correlations among Climate Parameters](figures/temperature-projections.svg)
+
+::: {.caption}
+Source: @Errickson2021-kr
+:::
+
+
+## Example: Water Pollution
+
+Contaminant levels in a body of water also depend on a number of processes which may have different scales and rates.
+
+**Can we think of some?**
+
+## System State
+
+**System State**: quantities or variables which evolve over time based on external inputs and system dynamics.
+
+The state gives you a "snapshot" of the system at a given point in time.
+
+## Stocks and Flows
+
+::: {.incremental}
+- A **stock** is the amount of a system property: concentrations of a pollutant, numbers of currency units, etc.
+- A **flow** is the way in which a stock changes: decay, diffusion, production, consumption, etc.
+:::
+
+## How Do We Develop Models?
+
+::: {.incremental}
+- Mass balance equations let us track changes in stocks at particular points;
+- Equilibrium conditions are requirements that there is no net flow, and thus that stocks are preserved;
+- Fate and transport modeling involves quantifying how stocks change as they move through the system.
+:::
+
+## Systems Analysis
+
+:::: {.columns}
+
+::: {.column width=50%}
+### What We Study
+
+- System dynamics;
+- Response to inputs;
+- Alternatives for management or design.
+
+:::
+
+::: {.column width=50%}
+### Needs
+
+::: {.fragment  .fade-in}
+- *Definition of the system*
+- System model
+
+:::
+:::
+::::
+
+## What Do We Need To Define A System?
+
+::: {.incremental}
+- **Components**: relevant processes, agents, etc
+- **Interconnections**: relationships between system components
+- **Control volume**: unit of the system we are trying to model and/or manage
+- **Inputs**: control policies and/or external forcings
+- **Outputs**: measured quantities of interest
+:::
+
+## Example: River System
+
+![Illustration of a system, including notation.](figures/control-volume-base.svg){#fig-reservoir width=50%}
+
+# Modeling Systems
+
+## What Is A Model?
+
+:::: {.columns}
+::: {.column width=50%}
+### Physical Models
+
+![Falling Water Miniature Model](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Fallingwater_miniature_model_at_MRRV%2C_Carnegie_Science_Center.JPG/640px-Fallingwater_miniature_model_at_MRRV%2C_Carnegie_Science_Center.JPG){width=75%}
+
+::: {.caption}
+Source: [Wikimedia](https://commons.wikimedia.org/wiki/File:Fallingwater_miniature_model_at_MRRV,_Carnegie_Science_Center.JPG)
+:::
+:::
+
+::: {.column width=50%}
+::: {.fragment .fade-in}
+
+### Mathematical Models
+
+![Mathematical Model Machine](images/math-model.png)
+
+:::
+:::
+::::
+
+## Mathematical Models of Systems
+
+![Conceptual Model of a System](images/system-conceptual.svg)
+
+## Environmental Systems
+
+:::: {.columns}
+::: {.column width=60%}
+![Conceptual Model of an Environmental System](images/system-environmental.svg){width=100%}
+:::
+
+::: {.column width=40%}
+
+- Municipal sewage into lakes, rivers, etc.
+- Power plant emissions into air
+- Solid waste placed on landfill
+- CO<sub>2</sub> into atmosphere
+
+:::
+::::
+
+## Deterministic vs. Stochastic Models
+
+:::: {.columns}
+::: {.column width=50%}
+### Deterministic Models
+
+```{julia}
+#| echo: false
+#| fig-align: center
+
+x = [0, 1]
+y = [3, 5]
+plot(x, y, marker=:circle, markersize=10, linewidth=3, xlabel="Time", legend=:false, grid=:x, yticks=:false, yaxis=:false, ylabel="State", gridalpha=1, left_margin=8mm, right_margin=90mm, bottom_margin=10mm, color=:black, guidefontsize=18, tickfontsize=16, x_foreground_color_border=:white)
+xticks!([0, 1], ["t", "t+1"])
+ylims!((2, 6))
+```
+
+:::
+::: {.column width=50%}
+### Stochastic Models
+
+```{julia}
+#| echo: false
+#| fig-align: center
+
+Random.seed!(12)
+x = [0, 1] # hide
+y = 3 .+ zeros(2, 8)
+y[2, :] .+= (rand(8) * 4) .- 1
+plot(x, y, marker=:circle, markersize=10, linewidth=3, xlabel="Time", label=false, grid=:x, yticks=false, yaxis=false, ylabel="State", gridalpha=1, left_margin=8mm, right_margin=90mm, bottom_margin=10mm, guidefontsize=18, tickfontsize=16, x_foreground_color_border=:white) # hide
+xticks!(0:1, ["t", "t+1"])
+ylims!((2, 6))
+scatter!([0], [3], color=:black, legend=false, markersize=10)
+```
+:::
+::::
+
+## Descriptive vs. Prescriptive Models
+
+:::: {.columns}
+::: {.column width=50%}
+
+### Descriptive Models
+
+- Used primarily for describing or simulating dynamics.
+- Intended for *simulations* and *exploratory* and/or *Monte Carlo analysis*.
+
+:::
+::: {.column width=50%}
+::: {.fragment .fade-in}
+
+### Prescriptive Models
+
+- Specify (prescribe) an action, decision, or policy.
+- Intended for *optimization* or *decision analysis*.
+:::
+:::
+::::
+
+## Analytic vs. Numerical Solutions
+
+Mathematical models can be solved:
+
+1. **Analytically**: can find the exact solution in closed form;
+2. **Numerically**: can only find solutions (exact or approximate) using computational tools.
+
+
+## "All Models Are Wrong, But Some Are Useful"
+
+::: {.quote}
+
+> ...all models are approximations. Essentially, all models are wrong, but some are useful. However, the approximate nature of the model must always be borne in mind....
+
+::: {.cite}
+--- Box & Draper, *Empirical Model Building and Response Surfaces*, 1987
+:::
+:::
+
+## What Are Models Good For?
+
+::: {.quote}
+
+> Models can corroborate a hypothesis by offering evidence to strengthen what may be already partly established through other means... 
+>
+>
+> **Thus, the primary value of models is heuristic: Models are representations, useful for guiding further study but not susceptible to proof.**
+
+::: {.cite} 
+--- Oreskes et al, ["Verification, Validation, and Confirmation of Numerical Models in the Earth Sciences"](https://www.science.org/doi/10.1126/science.263.5147.641), 1994
+:::
+:::
+
+## Models And Assumptions
+
+![XKCD Comic 2355](https://imgs.xkcd.com/comics/university_covid_model_2x.png)
+
+::: {.caption}
+Source: [XKCD 2355](https://xkcd.com/2355)
+:::
+
+# Key Takeaways
+
+## Key Takeaways (Systems)
+
+- A **system** is an interconnected set of components.
+- Systems are interesting because interconnections can result in unexpected outcomes.
+- Key terms:
+    - **state**
+    - **stocks**
+    - **flows**
+
+## Key Takeaways (Systems Definition)
+
+- To define a system, need to specify:
+    - components
+    - interconnections
+    - control volume
+    - external inputs
+    - outputs of interest
+
+## Key Takeaways (Models)
+
+- Mathematical models allow us to understand how external inputs combine with internal system dynamics to produce outputs.
+- Models can be **prescriptive** or **descriptive** depending on goal of analysis.
+- For most interesting problems, cannot solve analytically and need to use numerical methods.
+
+## Key Takeaways (Models)
+
+- **Simulation** models: Generate data by evaluating model to represent system dynamics.
+- **Optimization** model: Find parameters which maximize/minimize some criterion.
+
+## Key Takeaways (Warning!)
+
+- **All models are at best approximations**: be conscious of what assumptions you've made and how they might change the modeled outcomes (you will be asked to do this on homeworks).
+
+
+# Upcoming Schedule
+
+## Next Classes
+
+**Monday**: Examples of Formulating/Analyzing Models.
+
+**Wednesday**: Overview of System Dynamics
+
+## Assessments
+
+**Homework 2**: Due Friday at 9pm.
+
+# References
+
+## References

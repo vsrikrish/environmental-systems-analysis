@@ -251,7 +251,7 @@ The collaborative environment in this class **should not be viewed as an invitat
 As noted, all work submitted for a grade in this course must reflect your own understanding. The use and consulation of AI/ML tools, such as ChatGPT or similar, for any purpose whatsoever, **must be pre-approved and clearly referenced**. 
 
 ::: {.callout-important}
-## What Is ChatGPT Useful For?
+## What are Large Language Models Useful For?
 
 ChatGPT and other large-language models can predictively generate text, but note that there is no *idea* underlying its prediction model (it is purely statistical). You should therefore think about it as a glorified and stochastic Google search, albeit one which synthesizes the material for you, so you can't access or understand its judgement or reasoning.
 
@@ -343,20 +343,20 @@ Grades on individual assessments will not be curved. It is unlikely that the fin
 
 Participating fully in the class allows you to gain more from the class and contribute more to the learning of your classmates. Some ways to participate include:
 
-* Attending every class;
 * Asking questions in class or on Ed;
 * Answering questions in class or on Ed;
+* Actively engaging in in-class activities;
 * Coming to office hours.
 
-Participation points are not free: you are likely to lose points if you consistently skip class or do not ask or answer questions online or in person. At the end of the term, you will be asked to evaluate your own participation over the course of the semester, in addition to my documentation of your participation.
+Note that just passively attending class will not yield full participation points. Participation points are not free: you are likely to lose points if you consistently skip class or do not ask or answer questions online or in person. At the end of the term, you will be asked to evaluate your own participation over the course of the semester, in addition to my documentation of your participation.
 
 ### Exercises
 
-Most weeks will involve a problem set aimed at assessing key concepts or getting practice with new workflows and packages. We will use Canvas for these exercises, but starter code will be made available on GitHub Classroom for code-based exercises. These will be released Monday before class and are due Friday by 9pm ET. The exercises will be multiple choice, automatically graded, and you can submit them as often as you like. It is highly recommended that you do these promptly and take them seriously, as concepts and code practice will be useful for the homeworks and midterm exams.
+Most weeks will involve a problem set aimed at assessing key concepts or getting practice with new workflows and packages. We will use Canvas for these exercises, but starter code will be made available on GitHub Classroom for code-based exercises. These will be released Monday at the start of class and are due before class (2:55PM) the following Monday. The exercises will be multiple choice or similar (categorization, multiple answer, etc), automatically graded, and you can submit them as often as you like. It is highly recommended that you do these promptly and take them seriously, as concepts and simple code practice will be useful for the homeworks and midterm exams. We will automaticaly drop one exercise set, but no late exercises will be accepted.
 
 ### Labs
 
-Approximately 5 class periods will be dedicated to working through simple examples to guide you through applying concepts and methods from class. Students should bring their laptops to class, and will be given a worksheet to complete (as much as they can) during these lab classes. Labs will be designed to be completed in class, though you may occasionally require additional time; however, lab worksheets must be submitted by 9:00pm on the lab day. These will be graded on the basis of demonstrated work, rather than absolute correctness or completion. No labs will be dropped by default. If you cannot bring a laptop to class, you can work with other students, though you must turn in your own worksheet for grading.
+Approximately 5 class periods will be dedicated to working through simple examples to guide you through applying concepts and methods from class. Students should bring their laptops to class, and will be given a worksheet to complete (as much as they can) during these lab classes. Labs will be designed to be completed in class, though you may occasionally require additional time; however, lab worksheets must be submitted by 9:00pm on the lab day. As a result, I encourage you to make sure that you download and set up the lab materials ahead of time; these will be provided for you on Ed Discussion. Labs will be graded on a scale of 0-3 on the basis of effort towards demonstrated work, rather than absolute correctness or completion. No labs will be dropped by default. If you cannot bring a laptop to class, you can work with other students, though you must turn in your own worksheet for grading.
 
 ### Homework Assignments
 
@@ -369,7 +369,7 @@ Students are encouraged to collaborate and learn from each other on homework ass
 Some notes on assignment and grading logistics:
 
   * Homework assignments will be distributed using GitHub Classroom. While GitHub use is not required for the class aside from accepting and cloning assignments, students are encouraged to update their GitHub repositories as they work on the assignments; this helps with answering questions and gives you a backstop in case something goes wrong and you can't submit your assignment on time. 
-  * Homeworks are due by 9:00pm Eastern Time on the designed due date. Your assignment notebook (which include your writeup and codes) should be submitted to Gradescope as a PDF with the answers to each question tagged (a failure to do this will result in deductions). 
+  * Homeworks are due by 9:00pm Eastern Time on the designed due date (usually a Thursday). Your assignment notebook (which include your writeup and codes) should be submitted to Gradescope as a PDF with the answers to each question tagged (a failure to do this will result in deductions). 
   * A meta-rubric is provided on the website, under the Homework page. These are not customized for each assignment but the principles will apply generally.
   * No homework assignments will be dropped, but you can turn in assignments within 24 hours of the due date with a 50% penalty. If you need a further accomodation for a particular assignment, talk to Prof. Srikrishnan ***before the due date.*** Requests for extensions made after the due date will only be considered under extraordinary and unexpected circumstances. Technical challenges submitting assignments are not acceptable reasons for extensions to be granted, and late penalties will apply.
   * **Your submitted homework must stand on its own***! We cannot grade you on the basis of information which was not included in the submitted assignment. While regrade requests should include a justification for why your grade is incorrect, we will not consider explanations or additional reasoning outside of the submission.
@@ -405,25 +405,28 @@ The following grading scale will be used to convert the numerical weighted avera
 
 | Grade | Range |
 |:---:|:--------|
-| A | 93--100 |
-| A- | 90--92 |
-| B+ | 87--89 |
-| B | 83--86 |
-| B- | 80--82 |
-| C+ | 77--79 |
-| C | 73--76 |
-| C- | 70--72 |
-| D+ | 67--69 |
-| D | 63--66 |
-| D- | 60--62 
-| F | < 59 |
+| A+ | 97--100 |
+| A | 93--97 |
+| A- | 90--93 |
+| B+ | 87--90 |
+| B | 83--87 |
+| B- | 80--83 |
+| C+ | 77--80 |
+| C | 73--77 |
+| C- | 70--73 |
+| D+ | 67--70 |
+| D | 63--67 |
+| D- | 60--63 | 
+| F | < 60 |
 
 We reserve the right to lower these cutoffs as appropriate, but will not raise them from these levels.
 
 ::: {.callout-note}
-## Will You Round Up My Grade?
+## Will You Round Up or Curve My Grade?
 
 Grades **may** be rounded up if they are just below the cutoff, but this is not a given, and requests for grade round-ups will be ignored. For example, you should assume that a score of 92.9% has missed the A cutoff of 93% (it is, after all, below the cutoff). Consider it a pleasant surprise if the round-up is given.
+
+While final grades will **not** be curved, individual assessments (mainly exams) may be curved if they prove to be more difficult than intended, but this will not be with a view towards achieving a particular grade distribution.
 :::
 
 ### Forgiven Assignments

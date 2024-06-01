@@ -79,6 +79,7 @@ h3 {
 
 #TOC ul {
     line-height: 2em;
+    font-size: 40px;
 }
 
 ol ol {
@@ -167,6 +168,10 @@ strong {color: #EF4035;}
     margin-right: auto;
 }
 
+.quarto-figure {
+    margin-bottom: 0;
+}
+
 .reveal p.caption {
     display: none;
 }
@@ -191,7 +196,7 @@ strong {color: #EF4035;}
 }
   
 .math.display .MathJax  {
-    font-size: 100% !important;
+    font-size: 110% !important;
 }
 
 pre .sourceCode {

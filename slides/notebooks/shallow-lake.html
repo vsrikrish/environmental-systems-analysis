@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.32">
+<meta name="generator" content="quarto-1.5.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -279,7 +279,7 @@ Carpenter, S. R., Ludwig, D., &amp; Brock, W. A. (1999). Management of eutrophic
 <p>As a result, the lake dynamics are given by:</p>
 <p><span class="math display">\[X_{t+1} = X_t + a_t + y_t + \frac{X_t^q}{1 + X_t^q} - bX_t, \quad y_t \sim LogNormal(\mu, \sigma^2),\]</span></p>
 <p>where parameter interpretation is given in the table below.</p>
-<table class="table">
+<table class="caption-top table">
 <caption>Lake problem parameters</caption>
 <thead>
 <tr class="header">
@@ -343,7 +343,7 @@ Quinn, J. D., Reed, P. M., &amp; Keller, K. (2017). Direct policy search for rob
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">quiver!</span>([<span class="fl">2.5</span>], [<span class="fl">0.97</span>], quiver<span class="op">=</span>([<span class="op">-</span><span class="fl">0.125</span>], [<span class="op">-</span><span class="fl">0.05</span>]), color<span class="op">=:</span>red, linewidth<span class="op">=</span><span class="fl">2</span>)</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(ylims<span class="op">=</span>(<span class="op">-</span><span class="fl">0.02</span>, <span class="fl">1</span>))</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">600</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-lake-noinput" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-lake-noinput" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lake-noinput-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -409,7 +409,7 @@ Figure&nbsp;1: Lake eutrophication dynamics based on the shallow lake modelwitho
 <div id="cell-fig-lake-noinput-eq" class="cell" data-fig-width="100%" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>eq <span class="op">=</span> [<span class="fl">0</span>, <span class="fl">0.67</span>, <span class="fl">2.2</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(p1, eq, (y <span class="op">-&gt;</span> <span class="fu">lake_P_cycling</span>(y, <span class="fl">2.5</span>)).(eq), label<span class="op">=</span><span class="st">"Equilibria"</span>, markersize<span class="op">=</span><span class="fl">10</span>, markercolor<span class="op">=:</span>red)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-lake-noinput-eq" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-lake-noinput-eq" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lake-noinput-eq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -480,7 +480,7 @@ Figure&nbsp;2: Lake eutrophication dynamics based on the shallow lake modelwitho
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plot<span class="st">!(x, lake_P_out(x, 0.4), linewidth=3, linestyle=:dash, label=L"</span><span class="op">$</span>b<span class="op">=</span><span class="fl">0.4</span><span class="op">$</span><span class="st">")</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(x, <span class="fu">lake_P_out</span>(x, <span class="fl">0.2</span>), linewidth<span class="op">=</span><span class="fl">3</span>, linestyle<span class="op">=:</span>dash, label<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>b<span class="st">=0.2</span><span class="sc">$</span><span class="st">")</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plot<span class="st">!(size=(600, 600))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-lake-input" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-lake-input" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lake-input-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -535,7 +535,7 @@ Figure&nbsp;3: Lake eutrophication dynamics based on the shallow lake model with
 <section id="simulating-the-model-under-constant-inflows" class="level2">
 <h2 class="anchored" data-anchor-id="simulating-the-model-under-constant-inflows">Simulating The Model Under Constant Inflows</h2>
 <p>Let’s simulate the model when we fix <span class="math inline">\(a\)</span> as a constant. Other parameters:</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Variable</th>
@@ -593,7 +593,7 @@ Figure&nbsp;3: Lake eutrophication dynamics based on the shallow lake model with
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel!</span>(L<span class="st">"y_t"</span>)</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">600</span>))</span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ylims!</span>((<span class="fl">0.025</span>, <span class="fl">0.042</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-lake-inflows" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-lake-inflows" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lake-inflows-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -867,7 +867,7 @@ Figure&nbsp;4: Inflows <span class="math inline">\(y_t\)</span> for this lake pr
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">xlabel!</span>(L<span class="st">"t"</span>)</span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel!</span>(L<span class="st">"X_t"</span>)</span>
 <span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">600</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-lake-state" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-lake-state" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lake-state-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->

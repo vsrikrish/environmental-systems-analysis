@@ -1,0 +1,294 @@
+---
+title: "Homework 1 Solutions"
+date: last-modified
+format:
+    html:        
+        warning: true
+        error: true
+        code-annotation: 
+    ipynb:
+        warning: true
+        error: true
+        code-annotation: below
+execute: 
+    echo: true
+engine: julia
+format-links: [ipynb]
+---
+
+## Overview
+
+
+```{julia}
+#| output: false
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+using Random
+using Plots
+using GraphRecipes
+using LaTeXStrings
+```
+
+```{julia}
+# this sets a random seed, which ensures reproducibility of random number generation. You should always set a seed when working with random numbers.
+Random.seed!(1)
+```
+
+## Problems (Total: 50 Points)
+
+### Problem 1 (15 points)
+
+The following subproblems all involve code snippets that require debugging. For each of them:
+
+* identify and describe the logic and/or syntax error;
+* write a fixed version of the function;
+* use your fixed function to solve the problem.
+
+#### Problem 1.1
+
+The problem is with the initialization `min_value = 0`, which means no other values can be below it. Instead, we can initialize `min_value` to be `array[1]` and start looping at index `i=2`:
+
+```{julia}
+function minimum(array)
+    min_value = array[1]        # <1>
+    for i in 2:length(array)    # <1>
+        if array[i] < min_value
+            min_value = array[i]
+        end
+    end
+    return min_value
+end
+
+array_values = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]
+@show minimum(array_values);
+```
+1. Initializing `min_value` at `array[1]` ensures that we start with a candidate value; then we can loop beginning with index 2.
+
+#### Problem 1.2
+
+There are two issues here. 
+
+1. The first error is trying to access `average_grades`, which is only defined inside the `class_average()` function. This is an issue of *scope*: the variable `average_grades` doesn't exist *globally*. 
+2. The second error is that `mean()` is not part of the `Base` Julia library, but rather the `Statistics` package (part of the usual Julia installation, but needs to be explicitly imported). We could import it with `using Statistics` and use `mean()`, but in this case let's just take the sum and divide by the length.
+
+```{julia}
+student_grades = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]
+function class_average(grades)
+  average_grade = sum(grades) / length(grades)
+  return average_grade
+end
+
+avg_grade = class_average(student_grades) # <1>
+@show avg_grade; 
+```
+1. Now `avg_grade` exists after being assigned the output of `class_average()`. Note that we didn't reuse the name `average_grade` as that could result in strange outcomes if notebook cells were run out of order.
+
+#### Problem 1.3 
+
+The `setindex` error comes from the use of `zero()` instead of `zeros()`:
+
+* [`zero(n)`](https://docs.julialang.org/en/v1/base/numbers/#Base.zero) creates a zero variable of the same type of the argument `n` (*e.g.* `zero(1)` is `0` and `zero(1.5)` is `0.0`).
+* [`zeros(n)`](https://docs.julialang.org/en/v1/base/arrays/#Base.zeros) creates an array of zeroes of dimension `n`, where `n` can be an integer or a tuple (for a matrix or higher-dimensional array).
+
+As a result, the original call `outcomes = zero(n_trials)` sets `outcomes=0`, but then when we try to set `outcomes[1]` in the loop, this is undefined as a scalar does not have an index, resulting in the error.
+
+```{julia}
+function passadieci()
+    # this rand() call samples 3 values from the vector [1, 6]
+    roll = rand(1:6, 3) 
+    return roll
+end
+n_trials = 1_000
+outcomes = zeros(n_trials) # <1>
+for i = 1:n_trials
+    outcomes[i] = (sum(passadieci()) > 11) # <2>
+end
+win_prob = sum(outcomes) / n_trials # compute average number of wins
+@show win_prob;
+```
+1. Changed `zero` to `zeroes`; note that it's generally preferable to initialize an array of the desired size instead of creating an empty vector and using `append`, as that approach can get quite slow as the number of `append` calls increases. 
+2. Now that `outcomes` is a vector, we can access its indexed values.
+
+We could also use [comprehensions](https://viveks.me/environmental-systems-analysis/tutorials/julia-basics.html#comprehensions) and [broadcasting](https://docs.julialang.org/en/v1/manual/arrays/#Broadcasting) (applying a function across each element of an array) instead of initializing `outcomes` as a zero vector and looping to fill it:
+
+```{julia}
+rolls = [passadieci() for i in 1:n_trials] # <1>
+outcomes = sum.(rolls) .> 11 # <2>
+
+win_prob = sum(outcomes) / n_trials # compute average number of wins
+@show win_prob;
+```
+1. This is an example of a *comprehension*, which is an inline loop that produces an array; the advantage is that this is sometimes more readable than an explicit loop when the in-loop commands are short. 
+2. This is an example of *broadcasting* (actually twice), indicated by the use of the decimal `.` in function calls. `sum.(v)` applies the function `sum` to every element of `v`, so that adds each of the individual roll vectors to get the sum of those three dice, and `.>` does an element-wise comparison of each of those sums to `11`. You would get an error if you tried `sum.(rolls) > 11` because Julia does not want to make assumptions about your intent in comparing a vector with a scalar.
+
+### Problem 2 (5 points)
+
+Let's outline the steps in `mystery_function`:
+
+1. Initialize an empty vector.
+2. If a value `v` is not already in `y`, add `v` to `y`.
+3. Return after looking at all values.
+
+This means that `mystery_function` selects and returns the unique values in `values`, which is confirmed by the test case.
+
+There are many ways to add comments, but we could comment as follows:
+
+```{julia}
+# mystery_function: 
+#    Inputs: 
+#       - values: vector of numeric values
+#    Outputs: 
+#       - vector of unique values from the input 
+function mystery_function(values)
+    y = [] # initialize as an empty vector because we don't know how many values we will end up with
+    for v in values
+        if !(v in y) # if a value is not already in y
+            append!(y, v) # append to y
+        end
+    end
+    return y
+end
+
+list_of_values = [1, 2, 3, 4, 3, 4, 2, 1]
+@show mystery_function(list_of_values);
+```
+
+The built-in Julia function which does the same thing is `unique()` (found using a Google search for "unique Julia vector function").
+
+```{julia}
+@show unique(list_of_values);
+```
+
+### Problem 3 (10 points)
+
+You're interested in writing some code to remove the mean of a vector. 
+
+* Write a function `compute_mean(v)` which sums all of the elements of a vector `v` using a `for` loop and computes the mean. 
+* Make a random vector `random_vect` of length 10 using Julia's `rand()` function. Use your `compute_mean()` function to calculate its mean and subtract it from `random_vect` **without a loop** (using a Julia technique called *broadcasting*; feel free to consult the Julia documentation and search as necessary). Check that the new vector has mean zero.
+
+Our `compute_mean` function should:
+
+1. Initialize a running sum at 0;
+2. Loop over all elements of `v`;
+3. Add each element in turn to the running sum;
+4. Divide the running sum by the number of elements and return.
+
+```{julia}
+function compute_mean(v)
+    v_sum = 0
+    for val in v
+        v_sum += val
+    end
+    return v_sum / length(v)
+end
+
+random_vect = rand(10)
+rand_mean = compute_mean(random_vect)
+@show rand_mean;
+```
+
+To subtract off the mean from `random_vect`, we can broadcast the subtraction operator by putting a decimal in front: `.-`.^[As a reminder, broadcasting involves applying a function element-wise. If we just tried to subtract `random_vect - rand_mean`, Julia would throw an error because it doesn't know if it should try element-wise subtraction or if we made a mistake in trying to subtract a scalar from a vector, and Julia's design is to err on the side of throwing an error unless we specifically say that we want an element-wise operation through broadcasting.]
+
+```{julia}
+random_vect_demean = random_vect .- rand_mean
+@show compute_mean(random_vect_demean);
+```
+
+We have produced a mean-zero random vector!
+
+### Problem 4 (20 points)
+
+
+```{julia}
+#| label: fig-wastewater
+#| fig-cap: "System diagram of the wastewater treatment options in Problem 4."
+
+A = [0 1 1 1;
+	0 0 0 1;
+	0 0 0 1;
+	0 0 0 0]
+
+names = ["Plant", "Land Treatment", "Chem Treatment", "Pristine Brook"]
+# modify this dictionary to add labels
+edge_labels = Dict((1, 2) => "", (1,3) => "", (1, 4) => "",(2, 4) => "",(3, 4) => "")
+shapes=[:hexagon, :rect, :rect, :hexagon]
+xpos = [0, -1.5, -0.25, 1]
+ypos = [1, 0, 0, -1]
+
+p = graphplot(A, names=names,edgelabel=edge_labels, markersize=0.15, markershapes=shapes, markercolor=:white, x=xpos, y=ypos)
+display(p)
+```
+
+These equations will be derived in terms of $X_1$ (the land disposal amount, in kg/day) and $X_2$ (the chemically treated amount, in kg/day), where $X_1 + X_2 \leq 100\ \mathrm{kg/day}$. Note that we don't need to explicitly represent the amount of directly disposed YUK, as this is $100 - X_1 - X_2$ and so is not a free variable.
+
+The amount of YUK which will be discharged is
+$$
+\begin{align*}
+D(X_1, X_2) &= 100 - X_1 - X_2 + 0.2 X_1 + 0.005X_2^2 \\
+&= 100 - 0.8 X_1 + (0.005X_2 - 1)X_2 \\
+&= 100 - 0.8 X_1 + 0.005 X_2^2 - X_2
+\end{align*}
+$$
+
+The cost is
+$$
+C(X_1, X_2) = X_1^2/20 + 1.5 X_2.
+$$
+
+A Julia function for this model could look like:
+
+```{julia}
+# we will assume that X₁, X₂ are vectors so we can vectorize
+# the function; hence the use of broadcasting. This makes unpacking
+# the different outputs easier as each will be returned as a vector.
+# Note that even though this is vectorized, passing scalar inputs
+# will still work fine.
+function yuk_discharge(X₁, X₂)
+    # Make sure X₁ + X₂ <= 100! Throw an error if not.
+    if any(X₁ .+ X₂ .> 100) # <1>
+        error("X₁ + X₂ must be less than 200")
+    end
+    yuk = 100 .- 0.8X₁ .+ (0.005X₂ .- 1) .* X₂ # <2>
+    cost = X₁.^2/20 .+ 1.5X₂
+    return (yuk, cost)
+end
+```
+1. Checking for these kinds of errors is useful when there are hard limits on what arguments can be passed in. This syntax lets you throw an error which says something is going wrong in the code. In general, Julia style is to try to do a computation and throw an error if something goes wrong.
+2. We use broadcasting here to work on vectors of arguments for efficiency. This is in no way required.
+
+Now, let's experiment with different outcomes.^[We left this intentionally open for you to conceptualize how to generate combinations and to look into different ways of implementing these in Julia. For a more systematic approach, we can sample combinations from a [Dirichlet distribution](https://en.wikipedia.org/wiki/Dirichlet_distribution), which samples combinations which add up to 1. This will require installing and loading the `Distributions.jl` package (we will spend more time working with `Distributions.jl` later).] Some other options include just randomly sampling values (but be careful of not sampling impossible combinations of $X_1$ and $X_2$), manually searching, or setting up a grid of combinations.
+
+```{julia}
+#| label: fig-yuk-solution
+#| fig-cap: Sampled solutions for the wastewater allocation problem in Problem 4, showing cost vs. YUK concentration. The red line marks the regulatory discharge limit of 20kg/day.
+#| fig-align: center
+
+# Install and load Distributions.jl
+Pkg.add("Distributions") # <1>
+using Distributions # <1>
+
+yuk_distribution = Dirichlet(3, 1) # <2>
+# Need to scale samples from 0 to 200, not 0 to 1
+yuk_samples = 100 * rand(yuk_distribution, 1000)
+D, C = yuk_discharge(yuk_samples[1,:], yuk_samples[2, :])
+
+# Plot the discharge vs. cost and add a line for the regulatory limit
+p = scatter(D, C, markersize=2, label="Treatment Samples") # <3>
+vline!(p, [20], color=:red, label="Regulatory Limit") # <4>
+# Label axes
+xaxis!(p, "YUK Discharge (kg/day)") # <5>
+# For the y-axis label, we need to "escape" the $ by adding a slash
+# otherwise it interprets that as starting math mode
+yaxis!(p, "Treatment Cost (\$/day)") # <5>
+```
+1. This is how we add new packages that are not in the existing environment and then load them.
+2. The Dirichlet distribution is over combinations of values which add up to 1, which is what we want for shares of the total YUK discharge. The 3D Dirichlet distribution with parameters equal to 1 is basically uniform over these combinations. See: <https://juliastats.org/Distributions.jl/stable/multivariate/#Distributions.Dirichlet>.
+3. This is a basic scatter plot with a label for the plot elements. If we wanted to turn the legend off in any plot, use `legend=false` as an argument.
+4. This is how to add a vertical line to a plot with a label. The syntax for a horizontal line is `hline(...)`. The `!` at the end of `vline!()` is important: this is standard Julia syntax to distinguish commands which *mutate* (or change) their input (in this case, the first argument `p`, the plot object), as this is not always desirable behavior.
+5. This is how to change axis labels. Notice that this also mutates the input plot.
+
+We can see that there are a few treatment strategies which comply with the limit, but they are fairly expensive. This is an example of a *tradeoff* between two objectives^[More on this later in the semester!], where one has to make a choice between what objectives to prioritize. But one thing to note is that just choosing an expensive strategy does not guarantee compliance

@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.388">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>BEE 4750 - Fall 2023 - Homework 2 Solutions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- MathJax 3 -->
+<script>
+window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta property="og:title" content="BEE 4750 - Fall 2023 - Homework 2 Solutions">
+<meta property="og:description" content="Homepage for BEE 4750/57e50, Environmental Systems Analysis, at Cornell University, Fall 2023.">
+<meta property="og:site_name" content="BEE 4750 - Fall 2023">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      {{&lt; var course.number &gt;}}
+      </li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../_assets/logos/cornell-reduced-red.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">BEE 4750/5750</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/vsrikrish/environmental-systems-analysis" title="Github Repository" class="quarto-navigation-tool px-1" aria-label="Github Repository"><i class="bi bi-github"></i></a>
+    <a href="https://canvas.cornell.edu" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-journal-check"></i></a>
+    <a href="https://edstem.org" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-chat-fill"></i></a>
+    <a href="https://gradescope.com" title="Gradescope" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-bar-chart-fill"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Course Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../hw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../hw/hw01/hw01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../hw/hw02/hw02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../hw/hw03/hw03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../hw/hw04/hw04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../hw/hw05/hw05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 5</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../labs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab01/lab01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab02/lab02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab03/lab03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs/lab04/lab04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final Project</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tools Setup</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tutorials/julia-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Julia Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tutorials/julia-plots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making Plots</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tutorials/latex-notebook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math in Notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tutorials/julia-jump.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solving Linear Programs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Supplemental Notes</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Resources</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../resources/julia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Julia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../resources/github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../resources/markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Markdown</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../resources/optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optimization and Decision-Making</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#problems-total-40-points" id="toc-problems-total-40-points" class="nav-link" data-scroll-target="#problems-total-40-points">Problems (Total: 40 Points)</a>
+  <ul class="collapse">
+  <li><a href="#problem-1-8-points" id="toc-problem-1-8-points" class="nav-link" data-scroll-target="#problem-1-8-points">Problem 1 (8 points)</a></li>
+  <li><a href="#problem-2-4-points" id="toc-problem-2-4-points" class="nav-link" data-scroll-target="#problem-2-4-points">Problem 2 (4 points)</a></li>
+  <li><a href="#problem-3-3-points" id="toc-problem-3-3-points" class="nav-link" data-scroll-target="#problem-3-3-points">Problem 3 (3 points)</a></li>
+  <li><a href="#problem-4-5-points" id="toc-problem-4-5-points" class="nav-link" data-scroll-target="#problem-4-5-points">Problem 4 (5 points)</a></li>
+  <li><a href="#problem-5-5-points" id="toc-problem-5-5-points" class="nav-link" data-scroll-target="#problem-5-5-points">Problem 5 (5 points)</a></li>
+  <li><a href="#problem-6-5-points" id="toc-problem-6-5-points" class="nav-link" data-scroll-target="#problem-6-5-points">Problem 6 (5 points)</a></li>
+  <li><a href="#problem-7-5-points" id="toc-problem-7-5-points" class="nav-link" data-scroll-target="#problem-7-5-points">Problem 7 (5 points)</a></li>
+  <li><a href="#problem-8-5-points" id="toc-problem-8-5-points" class="nav-link" data-scroll-target="#problem-8-5-points">Problem 8 (5 points)</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/solutions/hw02/hw02-solution.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="hw02-solution.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Homework 2 Solutions</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Due Date
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Friday, 09/22/23, 9:00pm</p>
+</div>
+</div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<div id="d1448a7f" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="pp">@__DIR__</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="8d286290" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LaTeXStrings</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Distributions</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="problems-total-40-points" class="level2">
+<h2 class="anchored" data-anchor-id="problems-total-40-points">Problems (Total: 40 Points)</h2>
+<div class="cell markdown">
+<p>A river which flows at 6 km/d is receiving waste discharges from two sources which are 15 km apart, as shown in <a href="#fig-river" class="quarto-xref">Figure&nbsp;1</a>. The oxygen reaeration rate is 0.55 day<sup>-1</sup>, and the decay rates of CBOD and NBOD are are 0.35 and 0.25 day<sup>-1</sup>, respectively. The river’s saturated dissolved oxygen concentration is 10m g/L. The inflow values are measured at the point where the first waste discharge enters the river.</p>
+<div id="fig-river" class="quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-river-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/river_diagram.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-river-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Schematic of the system
+</figcaption>
+</figure>
+</div>
+</div>
+<p>::: {.cell .markdown}</p>
+<section id="problem-1-8-points" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1-8-points">Problem 1 (8 points)</h3>
+<p>If the characteristics of the river inflow and waste discharges are given in <a href="#tbl-river" class="quarto-xref">Table&nbsp;1</a>, write a Julia model to compute the dissolved oxygen concentration from the first wastewater discharge to an arbitrary distance <code>d</code> km downstream. Use your model to compute the minimum dissolved oxygen concentration up to 50km downstream and how far downriver this minimum occurs.</p>
+<div id="tbl-river" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-river-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: River inflow and waste stream characteristics for Problem 1.
+</figcaption>
+<div aria-describedby="tbl-river-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Parameter</th>
+<th style="text-align: right;">River Inflow</th>
+<th style="text-align: right;">Waste Stream 1</th>
+<th style="text-align: right;">Waste Stream 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Inflow</td>
+<td style="text-align: right;">100 m<sup>3</sup>/d</td>
+<td style="text-align: right;">10 m<sup>3</sup>/d</td>
+<td style="text-align: right;">15 m<sup>3</sup>/d</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DO Concentration</td>
+<td style="text-align: right;">7.5 mg/L</td>
+<td style="text-align: right;">5 mg/L</td>
+<td style="text-align: right;">5 mg/L</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">CBOD</td>
+<td style="text-align: right;">5 mg/L</td>
+<td style="text-align: right;">50 mg/L</td>
+<td style="text-align: right;">45 mg/L</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">NBOD</td>
+<td style="text-align: right;">5 mg/L</td>
+<td style="text-align: right;">35 mg/L</td>
+<td style="text-align: right;">35 mg/L</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong><em>Solution</em></strong>:</p>
+<p>We can think of each segment of the river between discharges as a box model, and the overall river as a combination of two boxes:</p>
+<ul>
+<li>Box 1 goes from discharge 1 to discharge 2;</li>
+<li>Box 2 goes from discharge 2 downstream.</li>
+</ul>
+<p>As a result, we can structure our code in two functions, one to compute the dissolved oxygen for each box (<code>do_box()</code>), and the main function to loop over the boxes (<code>do_simulate()</code>). Note that <code>do_box()</code> should return the CBOD and NBOD as well as the DO, because we will need this output to compute the initial conditions of the next box.</p>
+<p>We will also write a helper function <code>mixed_concentration()</code> to compute mixtures of the inflows and the discharges, as we will reuse that calculation multiple times for each box.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Design Choices
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>However, this is not essential, and there are other solutions which would work. For example, you could just write a single function and use <code>if-else</code> statements to capture the different boundary conditions, but the disadvantage of this approach is that it’s a bit messier, might be harder to debug, and would require more work to adapt to changes in the problem.</p>
+</div>
+</div>
+<div id="56bb4b84" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">## mixed_concentration calculates the concentration after a mixing of flow 0 and flow 1; C is the concentration and V is the volume</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">mixed_concentration</span>(C0, C1, V0, V1)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (V0 <span class="op">*</span> C0 <span class="op">+</span> V1 <span class="op">*</span> C1) <span class="op">/</span> (V0 <span class="op">+</span> V1)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">## do_box will accept three parameters: the initial conditions (the results of mixing the discharge and the inflow), the river DO dynamics properties, and the length of the box (d). The first two of these will be tuples, so we can unpack and refer to names, which will make the code more readable, but using other data structures would be fine.</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">do_box</span>(init_cond, river, d)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    C₀, B₀, N₀ <span class="op">=</span> init_cond <span class="co"># unpack initial conditions</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    ka, kc, kn, Cs, U <span class="op">=</span> river <span class="co"># unpack river properties</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># broadcast the DO computation over the box; this avoids a loop (but looping is also fine, you'll just need to pre-allocate storage and maybe set the initial conditions to be the first value)</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="fl">0</span><span class="op">:</span>d <span class="co"># creates a step from the initial values to length d</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    B <span class="op">=</span> B₀ <span class="op">.*</span> <span class="fu">exp</span>.(<span class="op">-</span>kc <span class="op">.*</span> x <span class="op">./</span> U)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    N <span class="op">=</span> N₀ <span class="op">.*</span> <span class="fu">exp</span>.(<span class="op">-</span>kn <span class="op">.*</span> x <span class="op">./</span> U)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    α<span class="fl">1</span> <span class="op">=</span> <span class="fu">exp</span>.(<span class="op">-</span>ka <span class="op">.*</span> x <span class="op">./</span> U)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    α<span class="fl">2</span> <span class="op">=</span> (kc<span class="op">/</span>(ka<span class="op">-</span>kc)) <span class="op">.*</span> (<span class="fu">exp</span>.(<span class="op">-</span>kc <span class="op">.*</span> x <span class="op">/</span> U) <span class="op">.-</span> α<span class="fl">1</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    α<span class="fl">3</span> <span class="op">=</span> (kn<span class="op">/</span>(ka<span class="op">-</span>kn)) <span class="op">.*</span> (<span class="fu">exp</span>.(<span class="op">-</span>kn <span class="op">.*</span> x <span class="op">/</span> U) <span class="op">.-</span> α<span class="fl">1</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    C <span class="op">=</span> Cs <span class="op">.*</span> (<span class="fl">1</span> <span class="op">.-</span> α<span class="fl">1</span>) <span class="op">+</span> (C₀ <span class="op">.*</span> α<span class="fl">1</span>) <span class="op">-</span> (B₀ <span class="op">.*</span> α<span class="fl">2</span>) <span class="op">-</span> (N₀ <span class="op">.*</span> α<span class="fl">3</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (C, B, N)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co"># For do_simulate(), we will write the function to accept tuples with the inflow, discharges (this will be an array of tuples, one for each box), and river characteristics, and an array of box lengths</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">do_simulate</span>(inflow, discharges, river, box_lengths)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># initialize storage</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    C <span class="op">=</span> <span class="fu">zeros</span>(<span class="fu">sum</span>(box_lengths) <span class="op">+</span> <span class="fl">1</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    B <span class="op">=</span> <span class="fu">zeros</span>(<span class="fu">sum</span>(box_lengths) <span class="op">+</span> <span class="fl">1</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    N <span class="op">=</span> <span class="fu">zeros</span>(<span class="fu">sum</span>(box_lengths) <span class="op">+</span> <span class="fl">1</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    V <span class="op">=</span> inflow[<span class="fl">4</span>] <span class="co"># initialize volume</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    init_idx <span class="op">=</span> <span class="fl">1</span> <span class="co"># initialize initial index</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># loop over the boxes and do the computations</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(box_lengths)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        <span class="co"># if this is the first box, the initial mixture uses the inflow, otherwise, the last value of the prior computation; we'll also compute the initial index for storing this box's simulation</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> i <span class="op">==</span> <span class="fl">1</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>            Cin, Bin, Nin <span class="op">=</span> inflow <span class="co"># this ignores Vin at position 4</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>            Cin <span class="op">=</span> C[box_lengths[i<span class="op">-</span><span class="fl">1</span>] <span class="op">+</span> <span class="fl">1</span>]</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>            Bin <span class="op">=</span> B[box_lengths[i<span class="op">-</span><span class="fl">1</span>] <span class="op">+</span> <span class="fl">1</span>]</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>            Nin <span class="op">=</span> B[box_lengths[i<span class="op">-</span><span class="fl">1</span>] <span class="op">+</span> <span class="fl">1</span>]</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>            init_idx <span class="op">+=</span> box_lengths[i<span class="op">-</span><span class="fl">1</span>]  <span class="co"># note that this will overwrite the values we just pulled, as this is the "true" value at the point of mixing</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>        Cd, Bd, Nd, Vd <span class="op">=</span> discharges[i] <span class="co"># unpack discharge concentrations and volume</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>        <span class="co"># compute initial conditions for this box by mixing</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>        C₀ <span class="op">=</span> <span class="fu">mixed_concentration</span>(Cin, Cd, V, Vd)</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>        B₀ <span class="op">=</span> <span class="fu">mixed_concentration</span>(Bin, Bd, V, Vd)</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>        N₀ <span class="op">=</span> <span class="fu">mixed_concentration</span>(Nin, Nd, V, Vd)</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>        V <span class="op">+=</span> Vd <span class="co"># update volume</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>        init_cond <span class="op">=</span> (C₀, B₀, N₀)</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>        <span class="co"># simulate the next box and store the values</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>        sim_out <span class="op">=</span> <span class="fu">do_box</span>(init_cond, river, box_lengths[i])</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>        C[init_idx<span class="op">:</span>(init_idx <span class="op">+</span> box_lengths[i])] <span class="op">=</span> sim_out[<span class="fl">1</span>] </span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>        B[init_idx<span class="op">:</span>(init_idx <span class="op">+</span> box_lengths[i])] <span class="op">=</span> sim_out[<span class="fl">2</span>] </span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>        N[init_idx<span class="op">:</span>(init_idx <span class="op">+</span> box_lengths[i])] <span class="op">=</span> sim_out[<span class="fl">3</span>] </span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (C, B, N)</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>do_simulate (generic function with 1 method)</code></pre>
+</div>
+</div>
+<div id="11f0e33f" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>river <span class="op">=</span> (<span class="fl">0.55</span>, <span class="fl">0.35</span>, <span class="fl">0.25</span>, <span class="fl">10</span>, <span class="fl">6</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>inflow <span class="op">=</span> (<span class="fl">7.5</span>, <span class="fl">5</span>, <span class="fl">5</span>, <span class="fl">100000</span>) <span class="co"># after converting volume to L</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>discharges <span class="op">=</span> [(<span class="fl">5</span>, <span class="fl">50</span>, <span class="fl">35</span>, <span class="fl">10000</span>), (<span class="fl">5</span>, <span class="fl">45</span>, <span class="fl">35</span>, <span class="fl">15000</span>)]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>box_lengths <span class="op">=</span> [<span class="fl">15</span>, <span class="fl">35</span>]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>C, B, N <span class="op">=</span> <span class="fu">do_simulate</span>(inflow, discharges, river, box_lengths)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>min_C <span class="op">=</span> <span class="fu">findmin</span>(C)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>(3.8135299699779512, 23)</code></pre>
+</div>
+</div>
+<p>The minimum value is approximately 3.8 mg/L, and occurs 22 km downstream of the initial discharge (since position 1 is <span class="math inline">\(x=0\)</span>).</p>
+</section>
+<section id="problem-2-4-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-2-4-points">Problem 2 (4 points)</h3>
+<p>Plot the dissolved oxygen concentration in the river from the first waste stream to 50km downstream, along with the CBOD and NBOD (on the same axes). What do you observe?</p>
+</section>
+<p><strong><em>Solution</em></strong>:</p>
+<div id="3a7f9b38" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fl">0</span><span class="op">:</span><span class="fl">50</span>, C, color<span class="op">=:</span>black, linewidth<span class="op">=</span><span class="fl">2</span>, label<span class="op">=</span><span class="st">"DO"</span>, grid<span class="op">=:</span><span class="cn">false</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(<span class="fl">0</span><span class="op">:</span><span class="fl">50</span>, B, color<span class="op">=:</span>blue, linestyle<span class="op">=:</span>dash, label<span class="op">=</span><span class="st">"CBOD"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot!</span>(<span class="fl">0</span><span class="op">:</span><span class="fl">50</span>, N, color<span class="op">=:</span>red, linestyle<span class="op">=:</span>dash, label<span class="op">=</span><span class="st">"NBOD"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">xlabel!</span>(<span class="st">"Downstream Distance (km)"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel!</span>(<span class="st">"Concentration (mg/L)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<!--?xml version="1.0" encoding="utf-8"?-->
+<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="672" height="480" viewbox="0 0 2688 1920">
+<defs>
+  <clippath id="clip460">
+    <rect x="0" y="0" width="2688" height="1920"></rect>
+  </clippath>
+</defs>
+<path clip-path="url(#clip460)" d="M0 1920 L2688 1920 L2688 0 L0 0  Z" fill="#ffffff" fill-rule="evenodd" fill-opacity="1"></path>
+<defs>
+  <clippath id="clip461">
+    <rect x="537" y="0" width="1883" height="1883"></rect>
+  </clippath>
+</defs>
+<path clip-path="url(#clip460)" d="M181.719 1734.12 L2640.76 1734.12 L2640.76 47.2441 L181.719 47.2441  Z" fill="#ffffff" fill-rule="evenodd" fill-opacity="1"></path>
+<defs>
+  <clippath id="clip462">
+    <rect x="181" y="47" width="2460" height="1688"></rect>
+  </clippath>
+</defs>
+<polyline clip-path="url(#clip460)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="181.719,1734.12 2640.76,1734.12 "></polyline>
+<polyline clip-path="url(#clip460)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="251.315,1734.12 251.315,1715.22 "></polyline>
+<polyline clip-path="url(#clip460)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="715.284,1734.12 715.284,1715.22 "></polyline>
+<polyline clip-path="url(#clip460)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="1179.25,1734.12 1179.25,1715.22 "></polyline>
+<polyline clip-path="url(#clip460)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="1643.22,1734.12 1643.22,1715.22 "></polyline>
+<polyline clip-path="url(#clip460)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="2107.19,1734.12 2107.19,1715.22 "></polyline>
+<polyline clip-path="url(#clip460)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="2571.16,1734.12 2571.16,1715.22 "></polyline>
+<path clip-path="url(#clip460)" d="M251.315 1767.34 Q247.704 1767.34 245.875 1770.9 Q244.07 1774.45 244.07 1781.58 Q244.07 1788.68 245.875 1792.25 Q247.704 1795.79 251.315 1795.79 Q254.949 1795.79 256.755 1792.25 Q258.583 1788.68 258.583 1781.58 Q258.583 1774.45 256.755 1770.9 Q254.949 1767.34 251.315 1767.34 M251.315 1763.64 Q257.125 1763.64 260.181 1768.24 Q263.259 1772.83 263.259 1781.58 Q263.259 1790.3 260.181 1794.91 Q257.125 1799.49 251.315 1799.49 Q245.505 1799.49 242.426 1794.91 Q239.37 1790.3 239.37 1781.58 Q239.37 1772.83 242.426 1768.24 Q245.505 1763.64 251.315 1763.64 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M689.972 1794.89 L697.61 1794.89 L697.61 1768.52 L689.3 1770.19 L689.3 1765.93 L697.564 1764.26 L702.24 1764.26 L702.24 1794.89 L709.879 1794.89 L709.879 1798.82 L689.972 1798.82 L689.972 1794.89 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M729.323 1767.34 Q725.712 1767.34 723.883 1770.9 Q722.078 1774.45 722.078 1781.58 Q722.078 1788.68 723.883 1792.25 Q725.712 1795.79 729.323 1795.79 Q732.958 1795.79 734.763 1792.25 Q736.592 1788.68 736.592 1781.58 Q736.592 1774.45 734.763 1770.9 Q732.958 1767.34 729.323 1767.34 M729.323 1763.64 Q735.133 1763.64 738.189 1768.24 Q741.268 1772.83 741.268 1781.58 Q741.268 1790.3 738.189 1794.91 Q735.133 1799.49 729.323 1799.49 Q723.513 1799.49 720.434 1794.91 Q717.379 1790.3 717.379 1781.58 Q717.379 1772.83 720.434 1768.24 Q723.513 1763.64 729.323 1763.64 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1158.03 1794.89 L1174.35 1794.89 L1174.35 1798.82 L1152.4 1798.82 L1152.4 1794.89 Q1155.06 1792.13 1159.65 1787.5 Q1164.25 1782.85 1165.43 1781.51 Q1167.68 1778.98 1168.56 1777.25 Q1169.46 1775.49 1169.46 1773.8 Q1169.46 1771.04 1167.52 1769.31 Q1165.6 1767.57 1162.49 1767.57 Q1160.29 1767.57 1157.84 1768.34 Q1155.41 1769.1 1152.63 1770.65 L1152.63 1765.93 Q1155.46 1764.79 1157.91 1764.21 Q1160.36 1763.64 1162.4 1763.64 Q1167.77 1763.64 1170.97 1766.32 Q1174.16 1769.01 1174.16 1773.5 Q1174.16 1775.63 1173.35 1777.55 Q1172.56 1779.45 1170.46 1782.04 Q1169.88 1782.71 1166.78 1785.93 Q1163.67 1789.12 1158.03 1794.89 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1194.16 1767.34 Q1190.55 1767.34 1188.72 1770.9 Q1186.92 1774.45 1186.92 1781.58 Q1186.92 1788.68 1188.72 1792.25 Q1190.55 1795.79 1194.16 1795.79 Q1197.79 1795.79 1199.6 1792.25 Q1201.43 1788.68 1201.43 1781.58 Q1201.43 1774.45 1199.6 1770.9 Q1197.79 1767.34 1194.16 1767.34 M1194.16 1763.64 Q1199.97 1763.64 1203.03 1768.24 Q1206.1 1772.83 1206.1 1781.58 Q1206.1 1790.3 1203.03 1794.91 Q1199.97 1799.49 1194.16 1799.49 Q1188.35 1799.49 1185.27 1794.91 Q1182.22 1790.3 1182.22 1781.58 Q1182.22 1772.83 1185.27 1768.24 Q1188.35 1763.64 1194.16 1763.64 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1632.06 1780.19 Q1635.42 1780.9 1637.3 1783.17 Q1639.19 1785.44 1639.19 1788.77 Q1639.19 1793.89 1635.68 1796.69 Q1632.16 1799.49 1625.68 1799.49 Q1623.5 1799.49 1621.19 1799.05 Q1618.89 1798.64 1616.44 1797.78 L1616.44 1793.27 Q1618.38 1794.4 1620.7 1794.98 Q1623.01 1795.56 1625.54 1795.56 Q1629.94 1795.56 1632.23 1793.82 Q1634.54 1792.08 1634.54 1788.77 Q1634.54 1785.72 1632.39 1784.01 Q1630.26 1782.27 1626.44 1782.27 L1622.41 1782.27 L1622.41 1778.43 L1626.63 1778.43 Q1630.07 1778.43 1631.9 1777.06 Q1633.73 1775.67 1633.73 1773.08 Q1633.73 1770.42 1631.83 1769.01 Q1629.96 1767.57 1626.44 1767.57 Q1624.52 1767.57 1622.32 1767.99 Q1620.12 1768.4 1617.48 1769.28 L1617.48 1765.12 Q1620.14 1764.38 1622.46 1764.01 Q1624.8 1763.64 1626.86 1763.64 Q1632.18 1763.64 1635.28 1766.07 Q1638.38 1768.47 1638.38 1772.59 Q1638.38 1775.46 1636.74 1777.46 Q1635.1 1779.42 1632.06 1780.19 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1658.06 1767.34 Q1654.45 1767.34 1652.62 1770.9 Q1650.81 1774.45 1650.81 1781.58 Q1650.81 1788.68 1652.62 1792.25 Q1654.45 1795.79 1658.06 1795.79 Q1661.69 1795.79 1663.5 1792.25 Q1665.33 1788.68 1665.33 1781.58 Q1665.33 1774.45 1663.5 1770.9 Q1661.69 1767.34 1658.06 1767.34 M1658.06 1763.64 Q1663.87 1763.64 1666.93 1768.24 Q1670 1772.83 1670 1781.58 Q1670 1790.3 1666.93 1794.91 Q1663.87 1799.49 1658.06 1799.49 Q1652.25 1799.49 1649.17 1794.91 Q1646.12 1790.3 1646.12 1781.58 Q1646.12 1772.83 1649.17 1768.24 Q1652.25 1763.64 1658.06 1763.64 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M2095.36 1768.34 L2083.56 1786.78 L2095.36 1786.78 L2095.36 1768.34 M2094.14 1764.26 L2100.02 1764.26 L2100.02 1786.78 L2104.95 1786.78 L2104.95 1790.67 L2100.02 1790.67 L2100.02 1798.82 L2095.36 1798.82 L2095.36 1790.67 L2079.76 1790.67 L2079.76 1786.16 L2094.14 1764.26 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M2122.68 1767.34 Q2119.07 1767.34 2117.24 1770.9 Q2115.43 1774.45 2115.43 1781.58 Q2115.43 1788.68 2117.24 1792.25 Q2119.07 1795.79 2122.68 1795.79 Q2126.31 1795.79 2128.12 1792.25 Q2129.95 1788.68 2129.95 1781.58 Q2129.95 1774.45 2128.12 1770.9 Q2126.31 1767.34 2122.68 1767.34 M2122.68 1763.64 Q2128.49 1763.64 2131.54 1768.24 Q2134.62 1772.83 2134.62 1781.58 Q2134.62 1790.3 2131.54 1794.91 Q2128.49 1799.49 2122.68 1799.49 Q2116.87 1799.49 2113.79 1794.91 Q2110.73 1790.3 2110.73 1781.58 Q2110.73 1772.83 2113.79 1768.24 Q2116.87 1763.64 2122.68 1763.64 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M2545.86 1764.26 L2564.22 1764.26 L2564.22 1768.2 L2550.14 1768.2 L2550.14 1776.67 Q2551.16 1776.32 2552.18 1776.16 Q2553.2 1775.97 2554.22 1775.97 Q2560 1775.97 2563.38 1779.15 Q2566.76 1782.32 2566.76 1787.73 Q2566.76 1793.31 2563.29 1796.41 Q2559.82 1799.49 2553.5 1799.49 Q2551.32 1799.49 2549.05 1799.12 Q2546.81 1798.75 2544.4 1798.01 L2544.4 1793.31 Q2546.48 1794.45 2548.71 1795 Q2550.93 1795.56 2553.41 1795.56 Q2557.41 1795.56 2559.75 1793.45 Q2562.09 1791.34 2562.09 1787.73 Q2562.09 1784.12 2559.75 1782.02 Q2557.41 1779.91 2553.41 1779.91 Q2551.53 1779.91 2549.66 1780.33 Q2547.8 1780.74 2545.86 1781.62 L2545.86 1764.26 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M2585.98 1767.34 Q2582.36 1767.34 2580.54 1770.9 Q2578.73 1774.45 2578.73 1781.58 Q2578.73 1788.68 2580.54 1792.25 Q2582.36 1795.79 2585.98 1795.79 Q2589.61 1795.79 2591.42 1792.25 Q2593.24 1788.68 2593.24 1781.58 Q2593.24 1774.45 2591.42 1770.9 Q2589.61 1767.34 2585.98 1767.34 M2585.98 1763.64 Q2591.79 1763.64 2594.84 1768.24 Q2597.92 1772.83 2597.92 1781.58 Q2597.92 1790.3 2594.84 1794.91 Q2591.79 1799.49 2585.98 1799.49 Q2580.17 1799.49 2577.09 1794.91 Q2574.03 1790.3 2574.03 1781.58 Q2574.03 1772.83 2577.09 1768.24 Q2580.17 1763.64 2585.98 1763.64 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M977.813 1841.06 L977.813 1878.02 L985.579 1878.02 Q995.414 1878.02 999.965 1873.56 Q1004.55 1869.11 1004.55 1859.49 Q1004.55 1849.94 999.965 1845.52 Q995.414 1841.06 985.579 1841.06 L977.813 1841.06 M971.383 1835.78 L984.592 1835.78 Q998.406 1835.78 1004.87 1841.54 Q1011.33 1847.27 1011.33 1859.49 Q1011.33 1871.78 1004.84 1877.54 Q998.342 1883.3 984.592 1883.3 L971.383 1883.3 L971.383 1835.78 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1035.14 1851.76 Q1030.43 1851.76 1027.69 1855.45 Q1024.95 1859.11 1024.95 1865.51 Q1024.95 1871.91 1027.66 1875.6 Q1030.39 1879.26 1035.14 1879.26 Q1039.81 1879.26 1042.55 1875.57 Q1045.29 1871.87 1045.29 1865.51 Q1045.29 1859.17 1042.55 1855.48 Q1039.81 1851.76 1035.14 1851.76 M1035.14 1846.79 Q1042.77 1846.79 1047.14 1851.76 Q1051.5 1856.72 1051.5 1865.51 Q1051.5 1874.26 1047.14 1879.26 Q1042.77 1884.22 1035.14 1884.22 Q1027.47 1884.22 1023.1 1879.26 Q1018.78 1874.26 1018.78 1865.51 Q1018.78 1856.72 1023.1 1851.76 Q1027.47 1846.79 1035.14 1846.79 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1057.8 1847.65 L1063.65 1847.65 L1070.97 1875.47 L1078.26 1847.65 L1085.17 1847.65 L1092.49 1875.47 L1099.78 1847.65 L1105.64 1847.65 L1096.31 1883.3 L1089.4 1883.3 L1081.73 1854.08 L1074.03 1883.3 L1067.12 1883.3 L1057.8 1847.65 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1144.15 1861.78 L1144.15 1883.3 L1138.29 1883.3 L1138.29 1861.98 Q1138.29 1856.92 1136.32 1854.4 Q1134.35 1851.89 1130.4 1851.89 Q1125.66 1851.89 1122.92 1854.91 Q1120.18 1857.93 1120.18 1863.15 L1120.18 1883.3 L1114.29 1883.3 L1114.29 1847.65 L1120.18 1847.65 L1120.18 1853.19 Q1122.28 1849.98 1125.12 1848.39 Q1127.98 1846.79 1131.7 1846.79 Q1137.85 1846.79 1141 1850.61 Q1144.15 1854.4 1144.15 1861.78 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1178.56 1848.7 L1178.56 1854.24 Q1176.07 1852.97 1173.4 1852.33 Q1170.73 1851.7 1167.86 1851.7 Q1163.5 1851.7 1161.3 1853.03 Q1159.14 1854.37 1159.14 1857.04 Q1159.14 1859.08 1160.7 1860.26 Q1162.26 1861.4 1166.97 1862.45 L1168.97 1862.9 Q1175.21 1864.24 1177.82 1866.69 Q1180.46 1869.11 1180.46 1873.47 Q1180.46 1878.43 1176.52 1881.33 Q1172.6 1884.22 1165.73 1884.22 Q1162.86 1884.22 1159.74 1883.65 Q1156.66 1883.11 1153.22 1882 L1153.22 1875.95 Q1156.47 1877.64 1159.62 1878.49 Q1162.77 1879.32 1165.86 1879.32 Q1169.99 1879.32 1172.22 1877.92 Q1174.45 1876.49 1174.45 1873.91 Q1174.45 1871.52 1172.83 1870.25 Q1171.23 1868.98 1165.79 1867.8 L1163.75 1867.32 Q1158.31 1866.18 1155.89 1863.82 Q1153.47 1861.43 1153.47 1857.3 Q1153.47 1852.27 1157.04 1849.53 Q1160.6 1846.79 1167.16 1846.79 Q1170.41 1846.79 1173.27 1847.27 Q1176.14 1847.75 1178.56 1848.7 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1195.58 1837.53 L1195.58 1847.65 L1207.65 1847.65 L1207.65 1852.2 L1195.58 1852.2 L1195.58 1871.56 Q1195.58 1875.92 1196.76 1877.16 Q1197.97 1878.4 1201.63 1878.4 L1207.65 1878.4 L1207.65 1883.3 L1201.63 1883.3 Q1194.85 1883.3 1192.27 1880.79 Q1189.7 1878.24 1189.7 1871.56 L1189.7 1852.2 L1185.4 1852.2 L1185.4 1847.65 L1189.7 1847.65 L1189.7 1837.53 L1195.58 1837.53 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1236.01 1853.13 Q1235.02 1852.55 1233.84 1852.3 Q1232.7 1852.01 1231.3 1852.01 Q1226.33 1852.01 1223.66 1855.26 Q1221.01 1858.47 1221.01 1864.52 L1221.01 1883.3 L1215.13 1883.3 L1215.13 1847.65 L1221.01 1847.65 L1221.01 1853.19 Q1222.86 1849.94 1225.82 1848.39 Q1228.78 1846.79 1233.01 1846.79 Q1233.62 1846.79 1234.35 1846.89 Q1235.08 1846.95 1235.97 1847.11 L1236.01 1853.13 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1271.21 1864.01 L1271.21 1866.88 L1244.28 1866.88 Q1244.66 1872.92 1247.91 1876.11 Q1251.19 1879.26 1257.01 1879.26 Q1260.39 1879.26 1263.54 1878.43 Q1266.72 1877.6 1269.84 1875.95 L1269.84 1881.49 Q1266.69 1882.82 1263.38 1883.52 Q1260.07 1884.22 1256.66 1884.22 Q1248.13 1884.22 1243.14 1879.26 Q1238.17 1874.29 1238.17 1865.83 Q1238.17 1857.07 1242.88 1851.95 Q1247.62 1846.79 1255.64 1846.79 Q1262.84 1846.79 1267.01 1851.44 Q1271.21 1856.06 1271.21 1864.01 M1265.35 1862.29 Q1265.29 1857.49 1262.65 1854.62 Q1260.04 1851.76 1255.71 1851.76 Q1250.81 1851.76 1247.85 1854.53 Q1244.92 1857.3 1244.47 1862.33 L1265.35 1862.29 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1297.02 1865.38 Q1289.92 1865.38 1287.19 1867 Q1284.45 1868.63 1284.45 1872.54 Q1284.45 1875.66 1286.49 1877.51 Q1288.55 1879.32 1292.09 1879.32 Q1296.96 1879.32 1299.89 1875.88 Q1302.85 1872.42 1302.85 1866.69 L1302.85 1865.38 L1297.02 1865.38 M1308.7 1862.96 L1308.7 1883.3 L1302.85 1883.3 L1302.85 1877.89 Q1300.84 1881.14 1297.85 1882.7 Q1294.86 1884.22 1290.53 1884.22 Q1285.05 1884.22 1281.81 1881.17 Q1278.59 1878.08 1278.59 1872.92 Q1278.59 1866.91 1282.6 1863.85 Q1286.64 1860.8 1294.63 1860.8 L1302.85 1860.8 L1302.85 1860.23 Q1302.85 1856.18 1300.17 1853.99 Q1297.53 1851.76 1292.72 1851.76 Q1289.67 1851.76 1286.77 1852.49 Q1283.88 1853.22 1281.2 1854.69 L1281.2 1849.28 Q1284.42 1848.03 1287.44 1847.43 Q1290.46 1846.79 1293.33 1846.79 Q1301.06 1846.79 1304.88 1850.8 Q1308.7 1854.81 1308.7 1862.96 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1348.52 1854.5 Q1350.72 1850.55 1353.77 1848.67 Q1356.83 1846.79 1360.96 1846.79 Q1366.53 1846.79 1369.56 1850.71 Q1372.58 1854.59 1372.58 1861.78 L1372.58 1883.3 L1366.69 1883.3 L1366.69 1861.98 Q1366.69 1856.85 1364.88 1854.37 Q1363.07 1851.89 1359.34 1851.89 Q1354.79 1851.89 1352.15 1854.91 Q1349.51 1857.93 1349.51 1863.15 L1349.51 1883.3 L1343.62 1883.3 L1343.62 1861.98 Q1343.62 1856.82 1341.8 1854.37 Q1339.99 1851.89 1336.2 1851.89 Q1331.71 1851.89 1329.07 1854.94 Q1326.43 1857.97 1326.43 1863.15 L1326.43 1883.3 L1320.54 1883.3 L1320.54 1847.65 L1326.43 1847.65 L1326.43 1853.19 Q1328.44 1849.91 1331.24 1848.35 Q1334.04 1846.79 1337.89 1846.79 Q1341.77 1846.79 1344.48 1848.77 Q1347.21 1850.74 1348.52 1854.5 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1411.67 1841.06 L1411.67 1878.02 L1419.43 1878.02 Q1429.27 1878.02 1433.82 1873.56 Q1438.4 1869.11 1438.4 1859.49 Q1438.4 1849.94 1433.82 1845.52 Q1429.27 1841.06 1419.43 1841.06 L1411.67 1841.06 M1405.24 1835.78 L1418.45 1835.78 Q1432.26 1835.78 1438.72 1841.54 Q1445.18 1847.27 1445.18 1859.49 Q1445.18 1871.78 1438.69 1877.54 Q1432.2 1883.3 1418.45 1883.3 L1405.24 1883.3 L1405.24 1835.78 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1455.18 1847.65 L1461.03 1847.65 L1461.03 1883.3 L1455.18 1883.3 L1455.18 1847.65 M1455.18 1833.78 L1461.03 1833.78 L1461.03 1841.19 L1455.18 1841.19 L1455.18 1833.78 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1496.01 1848.7 L1496.01 1854.24 Q1493.53 1852.97 1490.86 1852.33 Q1488.18 1851.7 1485.32 1851.7 Q1480.96 1851.7 1478.76 1853.03 Q1476.6 1854.37 1476.6 1857.04 Q1476.6 1859.08 1478.16 1860.26 Q1479.72 1861.4 1484.43 1862.45 L1486.43 1862.9 Q1492.67 1864.24 1495.28 1866.69 Q1497.92 1869.11 1497.92 1873.47 Q1497.92 1878.43 1493.98 1881.33 Q1490.06 1884.22 1483.19 1884.22 Q1480.32 1884.22 1477.2 1883.65 Q1474.11 1883.11 1470.68 1882 L1470.68 1875.95 Q1473.92 1877.64 1477.08 1878.49 Q1480.23 1879.32 1483.31 1879.32 Q1487.45 1879.32 1489.68 1877.92 Q1491.91 1876.49 1491.91 1873.91 Q1491.91 1871.52 1490.28 1870.25 Q1488.69 1868.98 1483.25 1867.8 L1481.21 1867.32 Q1475.77 1866.18 1473.35 1863.82 Q1470.93 1861.43 1470.93 1857.3 Q1470.93 1852.27 1474.5 1849.53 Q1478.06 1846.79 1484.62 1846.79 Q1487.86 1846.79 1490.73 1847.27 Q1493.59 1847.75 1496.01 1848.7 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1513.04 1837.53 L1513.04 1847.65 L1525.1 1847.65 L1525.1 1852.2 L1513.04 1852.2 L1513.04 1871.56 Q1513.04 1875.92 1514.22 1877.16 Q1515.43 1878.4 1519.09 1878.4 L1525.1 1878.4 L1525.1 1883.3 L1519.09 1883.3 Q1512.31 1883.3 1509.73 1880.79 Q1507.15 1878.24 1507.15 1871.56 L1507.15 1852.2 L1502.86 1852.2 L1502.86 1847.65 L1507.15 1847.65 L1507.15 1837.53 L1513.04 1837.53 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1549.01 1865.38 Q1541.91 1865.38 1539.17 1867 Q1536.44 1868.63 1536.44 1872.54 Q1536.44 1875.66 1538.47 1877.51 Q1540.54 1879.32 1544.07 1879.32 Q1548.94 1879.32 1551.87 1875.88 Q1554.83 1872.42 1554.83 1866.69 L1554.83 1865.38 L1549.01 1865.38 M1560.69 1862.96 L1560.69 1883.3 L1554.83 1883.3 L1554.83 1877.89 Q1552.83 1881.14 1549.84 1882.7 Q1546.84 1884.22 1542.51 1884.22 Q1537.04 1884.22 1533.79 1881.17 Q1530.58 1878.08 1530.58 1872.92 Q1530.58 1866.91 1534.59 1863.85 Q1538.63 1860.8 1546.62 1860.8 L1554.83 1860.8 L1554.83 1860.23 Q1554.83 1856.18 1552.16 1853.99 Q1549.52 1851.76 1544.71 1851.76 Q1541.66 1851.76 1538.76 1852.49 Q1535.86 1853.22 1533.19 1854.69 L1533.19 1849.28 Q1536.4 1848.03 1539.43 1847.43 Q1542.45 1846.79 1545.32 1846.79 Q1553.05 1846.79 1556.87 1850.8 Q1560.69 1854.81 1560.69 1862.96 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1602.38 1861.78 L1602.38 1883.3 L1596.53 1883.3 L1596.53 1861.98 Q1596.53 1856.92 1594.55 1854.4 Q1592.58 1851.89 1588.63 1851.89 Q1583.89 1851.89 1581.15 1854.91 Q1578.42 1857.93 1578.42 1863.15 L1578.42 1883.3 L1572.53 1883.3 L1572.53 1847.65 L1578.42 1847.65 L1578.42 1853.19 Q1580.52 1849.98 1583.35 1848.39 Q1586.22 1846.79 1589.94 1846.79 Q1596.08 1846.79 1599.23 1850.61 Q1602.38 1854.4 1602.38 1861.78 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1639.72 1849.02 L1639.72 1854.5 Q1637.24 1853.13 1634.72 1852.46 Q1632.24 1851.76 1629.69 1851.76 Q1624 1851.76 1620.84 1855.39 Q1617.69 1858.98 1617.69 1865.51 Q1617.69 1872.03 1620.84 1875.66 Q1624 1879.26 1629.69 1879.26 Q1632.24 1879.26 1634.72 1878.59 Q1637.24 1877.89 1639.72 1876.52 L1639.72 1881.93 Q1637.27 1883.08 1634.63 1883.65 Q1632.02 1884.22 1629.06 1884.22 Q1621 1884.22 1616.26 1879.16 Q1611.52 1874.1 1611.52 1865.51 Q1611.52 1856.79 1616.29 1851.79 Q1621.1 1846.79 1629.44 1846.79 Q1632.14 1846.79 1634.72 1847.37 Q1637.3 1847.91 1639.72 1849.02 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1680.4 1864.01 L1680.4 1866.88 L1653.47 1866.88 Q1653.85 1872.92 1657.1 1876.11 Q1660.38 1879.26 1666.2 1879.26 Q1669.57 1879.26 1672.73 1878.43 Q1675.91 1877.6 1679.03 1875.95 L1679.03 1881.49 Q1675.88 1882.82 1672.57 1883.52 Q1669.26 1884.22 1665.85 1884.22 Q1657.32 1884.22 1652.32 1879.26 Q1647.36 1874.29 1647.36 1865.83 Q1647.36 1857.07 1652.07 1851.95 Q1656.81 1846.79 1664.83 1846.79 Q1672.02 1846.79 1676.19 1851.44 Q1680.4 1856.06 1680.4 1864.01 M1674.54 1862.29 Q1674.48 1857.49 1671.83 1854.62 Q1669.22 1851.76 1664.9 1851.76 Q1659.99 1851.76 1657.03 1854.53 Q1654.11 1857.3 1653.66 1862.33 L1674.54 1862.29 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1724.8 1833.84 Q1720.53 1841.16 1718.46 1848.32 Q1716.39 1855.48 1716.39 1862.84 Q1716.39 1870.19 1718.46 1877.41 Q1720.56 1884.61 1724.8 1891.89 L1719.7 1891.89 Q1714.93 1884.41 1712.54 1877.19 Q1710.19 1869.96 1710.19 1862.84 Q1710.19 1855.74 1712.54 1848.54 Q1714.9 1841.35 1719.7 1833.84 L1724.8 1833.84 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1735.94 1833.78 L1741.82 1833.78 L1741.82 1863.03 L1759.3 1847.65 L1766.78 1847.65 L1747.87 1864.33 L1767.57 1883.3 L1759.94 1883.3 L1741.82 1865.89 L1741.82 1883.3 L1735.94 1883.3 L1735.94 1833.78 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1801.66 1854.5 Q1803.86 1850.55 1806.91 1848.67 Q1809.97 1846.79 1814.11 1846.79 Q1819.68 1846.79 1822.7 1850.71 Q1825.72 1854.59 1825.72 1861.78 L1825.72 1883.3 L1819.84 1883.3 L1819.84 1861.98 Q1819.84 1856.85 1818.02 1854.37 Q1816.21 1851.89 1812.48 1851.89 Q1807.93 1851.89 1805.29 1854.91 Q1802.65 1857.93 1802.65 1863.15 L1802.65 1883.3 L1796.76 1883.3 L1796.76 1861.98 Q1796.76 1856.82 1794.95 1854.37 Q1793.13 1851.89 1789.34 1851.89 Q1784.86 1851.89 1782.22 1854.94 Q1779.57 1857.97 1779.57 1863.15 L1779.57 1883.3 L1773.69 1883.3 L1773.69 1847.65 L1779.57 1847.65 L1779.57 1853.19 Q1781.58 1849.91 1784.38 1848.35 Q1787.18 1846.79 1791.03 1846.79 Q1794.91 1846.79 1797.62 1848.77 Q1800.36 1850.74 1801.66 1854.5 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M1836.48 1833.84 L1841.58 1833.84 Q1846.35 1841.35 1848.7 1848.54 Q1851.09 1855.74 1851.09 1862.84 Q1851.09 1869.96 1848.7 1877.19 Q1846.35 1884.41 1841.58 1891.89 L1836.48 1891.89 Q1840.72 1884.61 1842.78 1877.41 Q1844.89 1870.19 1844.89 1862.84 Q1844.89 1855.48 1842.78 1848.32 Q1840.72 1841.16 1836.48 1833.84 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><polyline clip-path="url(#clip460)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="181.719,1734.12 181.719,47.2441 "></polyline>
+<polyline clip-path="url(#clip460)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="181.719,1513.16 200.617,1513.16 "></polyline>
+<polyline clip-path="url(#clip460)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="181.719,1113.16 200.617,1113.16 "></polyline>
+<polyline clip-path="url(#clip460)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="181.719,713.163 200.617,713.163 "></polyline>
+<polyline clip-path="url(#clip460)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="181.719,313.166 200.617,313.166 "></polyline>
+<path clip-path="url(#clip460)" d="M125.08 1526.5 L141.399 1526.5 L141.399 1530.44 L119.455 1530.44 L119.455 1526.5 Q122.117 1523.75 126.7 1519.12 Q131.307 1514.46 132.488 1513.12 Q134.733 1510.6 135.612 1508.86 Q136.515 1507.1 136.515 1505.41 Q136.515 1502.66 134.571 1500.92 Q132.65 1499.19 129.548 1499.19 Q127.349 1499.19 124.895 1499.95 Q122.464 1500.71 119.687 1502.26 L119.687 1497.54 Q122.511 1496.41 124.964 1495.83 Q127.418 1495.25 129.455 1495.25 Q134.825 1495.25 138.02 1497.94 Q141.214 1500.62 141.214 1505.11 Q141.214 1507.24 140.404 1509.16 Q139.617 1511.06 137.511 1513.65 Q136.932 1514.32 133.83 1517.54 Q130.728 1520.74 125.08 1526.5 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M131.816 1099.95 L120.011 1118.4 L131.816 1118.4 L131.816 1099.95 M130.589 1095.88 L136.469 1095.88 L136.469 1118.4 L141.399 1118.4 L141.399 1122.29 L136.469 1122.29 L136.469 1130.44 L131.816 1130.44 L131.816 1122.29 L116.214 1122.29 L116.214 1117.78 L130.589 1095.88 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M129.872 711.299 Q126.724 711.299 124.872 713.452 Q123.043 715.605 123.043 719.355 Q123.043 723.081 124.872 725.257 Q126.724 727.41 129.872 727.41 Q133.02 727.41 134.849 725.257 Q136.7 723.081 136.7 719.355 Q136.7 715.605 134.849 713.452 Q133.02 711.299 129.872 711.299 M139.154 696.646 L139.154 700.906 Q137.395 700.072 135.589 699.632 Q133.807 699.193 132.048 699.193 Q127.418 699.193 124.964 702.318 Q122.534 705.443 122.187 711.762 Q123.552 709.748 125.613 708.683 Q127.673 707.595 130.15 707.595 Q135.358 707.595 138.367 710.767 Q141.399 713.915 141.399 719.355 Q141.399 724.679 138.251 727.896 Q135.103 731.114 129.872 731.114 Q123.876 731.114 120.705 726.53 Q117.534 721.924 117.534 713.197 Q117.534 705.003 121.423 700.142 Q125.312 695.258 131.863 695.258 Q133.622 695.258 135.404 695.605 Q137.21 695.952 139.154 696.646 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M129.548 314.034 Q126.214 314.034 124.293 315.816 Q122.395 317.599 122.395 320.724 Q122.395 323.849 124.293 325.631 Q126.214 327.413 129.548 327.413 Q132.881 327.413 134.802 325.631 Q136.724 323.825 136.724 320.724 Q136.724 317.599 134.802 315.816 Q132.904 314.034 129.548 314.034 M124.872 312.043 Q121.863 311.302 120.173 309.242 Q118.506 307.182 118.506 304.219 Q118.506 300.076 121.446 297.668 Q124.409 295.261 129.548 295.261 Q134.71 295.261 137.65 297.668 Q140.589 300.076 140.589 304.219 Q140.589 307.182 138.9 309.242 Q137.233 311.302 134.247 312.043 Q137.626 312.83 139.501 315.122 Q141.399 317.413 141.399 320.724 Q141.399 325.747 138.321 328.432 Q135.265 331.117 129.548 331.117 Q123.83 331.117 120.751 328.432 Q117.696 325.747 117.696 320.724 Q117.696 317.413 119.594 315.122 Q121.492 312.83 124.872 312.043 M123.159 304.659 Q123.159 307.344 124.826 308.849 Q126.515 310.353 129.548 310.353 Q132.557 310.353 134.247 308.849 Q135.96 307.344 135.96 304.659 Q135.96 301.974 134.247 300.469 Q132.557 298.964 129.548 298.964 Q126.515 298.964 124.826 300.469 Q123.159 301.974 123.159 304.659 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M17.7787 1195.66 L24.5582 1195.66 Q21.5345 1198.91 20.0386 1202.6 Q18.5426 1206.26 18.5426 1210.4 Q18.5426 1218.55 23.5397 1222.87 Q28.5049 1227.2 37.9262 1227.2 Q47.3156 1227.2 52.3127 1222.87 Q57.2779 1218.55 57.2779 1210.4 Q57.2779 1206.26 55.782 1202.6 Q54.2861 1198.91 51.2623 1195.66 L57.9782 1195.66 Q60.2698 1199.04 61.4156 1202.82 Q62.5615 1206.58 62.5615 1210.78 Q62.5615 1221.57 55.973 1227.78 Q49.3526 1233.98 37.9262 1233.98 Q26.4679 1233.98 19.8794 1227.78 Q13.2591 1221.57 13.2591 1210.78 Q13.2591 1206.52 14.4049 1202.76 Q15.5189 1198.97 17.7787 1195.66 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M30.0964 1172.17 Q30.0964 1176.88 33.7885 1179.62 Q37.4488 1182.36 43.8463 1182.36 Q50.2438 1182.36 53.9359 1179.65 Q57.5962 1176.91 57.5962 1172.17 Q57.5962 1167.49 53.9041 1164.76 Q50.212 1162.02 43.8463 1162.02 Q37.5124 1162.02 33.8203 1164.76 Q30.0964 1167.49 30.0964 1172.17 M25.1311 1172.17 Q25.1311 1164.53 30.0964 1160.17 Q35.0616 1155.81 43.8463 1155.81 Q52.5991 1155.81 57.5962 1160.17 Q62.5615 1164.53 62.5615 1172.17 Q62.5615 1179.84 57.5962 1184.2 Q52.5991 1188.53 43.8463 1188.53 Q35.0616 1188.53 30.0964 1184.2 Q25.1311 1179.84 25.1311 1172.17 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M40.1224 1116.47 L61.6384 1116.47 L61.6384 1122.33 L40.3133 1122.33 Q35.2526 1122.33 32.7381 1124.3 Q30.2237 1126.28 30.2237 1130.22 Q30.2237 1134.96 33.2474 1137.7 Q36.2711 1140.44 41.491 1140.44 L61.6384 1140.44 L61.6384 1146.33 L25.9905 1146.33 L25.9905 1140.44 L31.5287 1140.44 Q28.314 1138.34 26.7225 1135.51 Q25.1311 1132.64 25.1311 1128.92 Q25.1311 1122.77 28.9505 1119.62 Q32.7381 1116.47 40.1224 1116.47 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M27.3591 1079.14 L32.8336 1079.14 Q31.465 1081.62 30.7966 1084.13 Q30.0964 1086.62 30.0964 1089.16 Q30.0964 1094.86 33.7248 1098.01 Q37.3214 1101.16 43.8463 1101.16 Q50.3711 1101.16 53.9996 1098.01 Q57.5962 1094.86 57.5962 1089.16 Q57.5962 1086.62 56.9278 1084.13 Q56.2276 1081.62 54.859 1079.14 L60.2698 1079.14 Q61.4156 1081.59 61.9886 1084.23 Q62.5615 1086.84 62.5615 1089.8 Q62.5615 1097.85 57.5007 1102.59 Q52.44 1107.34 43.8463 1107.34 Q35.1253 1107.34 30.1282 1102.56 Q25.1311 1097.76 25.1311 1089.42 Q25.1311 1086.71 25.704 1084.13 Q26.2451 1081.56 27.3591 1079.14 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M42.3504 1038.46 L45.2149 1038.46 L45.2149 1065.39 Q51.2623 1065.01 54.4452 1061.76 Q57.5962 1058.48 57.5962 1052.66 Q57.5962 1049.28 56.7687 1046.13 Q55.9411 1042.95 54.2861 1039.83 L59.8242 1039.83 Q61.161 1042.98 61.8612 1046.29 Q62.5615 1049.6 62.5615 1053.01 Q62.5615 1061.54 57.5962 1066.53 Q52.631 1071.5 44.1646 1071.5 Q35.4117 1071.5 30.2873 1066.79 Q25.1311 1062.05 25.1311 1054.02 Q25.1311 1046.83 29.7781 1042.66 Q34.3932 1038.46 42.3504 1038.46 M40.6316 1044.32 Q35.8255 1044.38 32.9609 1047.02 Q30.0964 1049.63 30.0964 1053.96 Q30.0964 1058.86 32.8654 1061.82 Q35.6345 1064.75 40.6634 1065.2 L40.6316 1044.32 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M40.1224 999.216 L61.6384 999.216 L61.6384 1005.07 L40.3133 1005.07 Q35.2526 1005.07 32.7381 1007.05 Q30.2237 1009.02 30.2237 1012.97 Q30.2237 1017.71 33.2474 1020.45 Q36.2711 1023.18 41.491 1023.18 L61.6384 1023.18 L61.6384 1029.07 L25.9905 1029.07 L25.9905 1023.18 L31.5287 1023.18 Q28.314 1021.08 26.7225 1018.25 Q25.1311 1015.38 25.1311 1011.66 Q25.1311 1005.52 28.9505 1002.37 Q32.7381 999.216 40.1224 999.216 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M15.869 981.742 L25.9905 981.742 L25.9905 969.679 L30.542 969.679 L30.542 981.742 L49.8937 981.742 Q54.2542 981.742 55.4955 980.564 Q56.7368 979.355 56.7368 975.695 L56.7368 969.679 L61.6384 969.679 L61.6384 975.695 Q61.6384 982.474 59.124 985.052 Q56.5777 987.63 49.8937 987.63 L30.542 987.63 L30.542 991.927 L25.9905 991.927 L25.9905 987.63 L15.869 987.63 L15.869 981.742 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M31.465 941.32 Q30.8921 942.306 30.6375 943.484 Q30.351 944.63 30.351 946.03 Q30.351 950.996 33.5975 953.669 Q36.8122 956.311 42.8596 956.311 L61.6384 956.311 L61.6384 962.199 L25.9905 962.199 L25.9905 956.311 L31.5287 956.311 Q28.2821 954.465 26.7225 951.505 Q25.1311 948.545 25.1311 944.312 Q25.1311 943.707 25.2266 942.975 Q25.2903 942.243 25.4494 941.352 L31.465 941.32 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M43.719 918.976 Q43.719 926.074 45.3422 928.811 Q46.9655 931.548 50.8804 931.548 Q53.9996 931.548 55.8457 929.511 Q57.6599 927.442 57.6599 923.91 Q57.6599 919.04 54.2224 916.112 Q50.7531 913.151 45.0239 913.151 L43.719 913.151 L43.719 918.976 M41.3 907.295 L61.6384 907.295 L61.6384 913.151 L56.2276 913.151 Q59.4741 915.157 61.0337 918.149 Q62.5615 921.14 62.5615 925.469 Q62.5615 930.944 59.5059 934.19 Q56.4186 937.405 51.2623 937.405 Q45.2467 937.405 42.1912 933.394 Q39.1357 929.352 39.1357 921.363 L39.1357 913.151 L38.5628 913.151 Q34.5205 913.151 32.3244 915.825 Q30.0964 918.467 30.0964 923.273 Q30.0964 926.328 30.8284 929.225 Q31.5605 932.121 33.0246 934.795 L27.6137 934.795 Q26.3724 931.58 25.7677 928.556 Q25.1311 925.533 25.1311 922.668 Q25.1311 914.934 29.1415 911.114 Q33.1519 907.295 41.3 907.295 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M15.869 889.439 L25.9905 889.439 L25.9905 877.376 L30.542 877.376 L30.542 889.439 L49.8937 889.439 Q54.2542 889.439 55.4955 888.262 Q56.7368 887.052 56.7368 883.392 L56.7368 877.376 L61.6384 877.376 L61.6384 883.392 Q61.6384 890.171 59.124 892.749 Q56.5777 895.328 49.8937 895.328 L30.542 895.328 L30.542 899.624 L25.9905 899.624 L25.9905 895.328 L15.869 895.328 L15.869 889.439 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M25.9905 869.674 L25.9905 863.817 L61.6384 863.817 L61.6384 869.674 L25.9905 869.674 M12.1132 869.674 L12.1132 863.817 L19.5293 863.817 L19.5293 869.674 L12.1132 869.674 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M30.0964 837.75 Q30.0964 842.46 33.7885 845.198 Q37.4488 847.935 43.8463 847.935 Q50.2438 847.935 53.9359 845.229 Q57.5962 842.492 57.5962 837.75 Q57.5962 833.071 53.9041 830.334 Q50.212 827.596 43.8463 827.596 Q37.5124 827.596 33.8203 830.334 Q30.0964 833.071 30.0964 837.75 M25.1311 837.75 Q25.1311 830.111 30.0964 825.75 Q35.0616 821.39 43.8463 821.39 Q52.5991 821.39 57.5962 825.75 Q62.5615 830.111 62.5615 837.75 Q62.5615 845.42 57.5962 849.781 Q52.5991 854.11 43.8463 854.11 Q35.0616 854.11 30.0964 849.781 Q25.1311 845.42 25.1311 837.75 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M40.1224 782.05 L61.6384 782.05 L61.6384 787.906 L40.3133 787.906 Q35.2526 787.906 32.7381 789.88 Q30.2237 791.853 30.2237 795.8 Q30.2237 800.542 33.2474 803.279 Q36.2711 806.017 41.491 806.017 L61.6384 806.017 L61.6384 811.905 L25.9905 811.905 L25.9905 806.017 L31.5287 806.017 Q28.314 803.916 26.7225 801.083 Q25.1311 798.219 25.1311 794.495 Q25.1311 788.352 28.9505 785.201 Q32.7381 782.05 40.1224 782.05 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M12.1769 735.58 Q19.4975 739.845 26.6589 741.914 Q33.8203 743.983 41.1727 743.983 Q48.5251 743.983 55.7502 741.914 Q62.9434 739.813 70.2321 735.58 L70.2321 740.673 Q62.7524 745.447 55.5274 747.834 Q48.3023 750.189 41.1727 750.189 Q34.0749 750.189 26.8817 747.834 Q19.6884 745.479 12.1769 740.673 L12.1769 735.58 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M32.8336 696.463 Q28.8869 694.267 27.009 691.211 Q25.1311 688.156 25.1311 684.018 Q25.1311 678.448 29.046 675.424 Q32.9291 672.4 40.1224 672.4 L61.6384 672.4 L61.6384 678.289 L40.3133 678.289 Q35.1889 678.289 32.7063 680.103 Q30.2237 681.917 30.2237 685.641 Q30.2237 690.193 33.2474 692.834 Q36.2711 695.476 41.491 695.476 L61.6384 695.476 L61.6384 701.364 L40.3133 701.364 Q35.1571 701.364 32.7063 703.179 Q30.2237 704.993 30.2237 708.78 Q30.2237 713.268 33.2792 715.91 Q36.3029 718.552 41.491 718.552 L61.6384 718.552 L61.6384 724.44 L25.9905 724.44 L25.9905 718.552 L31.5287 718.552 Q28.2503 716.547 26.6907 713.746 Q25.1311 710.945 25.1311 707.094 Q25.1311 703.21 27.1045 700.505 Q29.0779 697.768 32.8336 696.463 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M43.4007 637.262 Q37.035 637.262 33.5338 639.904 Q30.0327 642.513 30.0327 647.256 Q30.0327 651.967 33.5338 654.608 Q37.035 657.218 43.4007 657.218 Q49.7346 657.218 53.2357 654.608 Q56.7368 651.967 56.7368 647.256 Q56.7368 642.513 53.2357 639.904 Q49.7346 637.262 43.4007 637.262 M57.2143 631.405 Q66.3172 631.405 70.7414 635.448 Q75.1974 639.49 75.1974 647.829 Q75.1974 650.916 74.72 653.653 Q74.2744 656.391 73.3195 658.969 L67.6222 658.969 Q69.0227 656.391 69.6911 653.876 Q70.3595 651.362 70.3595 648.752 Q70.3595 642.991 67.3358 640.126 Q64.3439 637.262 58.2646 637.262 L55.3682 637.262 Q58.5192 639.076 60.0788 641.909 Q61.6384 644.741 61.6384 648.688 Q61.6384 655.245 56.6414 659.255 Q51.6443 663.266 43.4007 663.266 Q35.1253 663.266 30.1282 659.255 Q25.1311 655.245 25.1311 648.688 Q25.1311 644.741 26.6907 641.909 Q28.2503 639.076 31.4013 637.262 L25.9905 637.262 L25.9905 631.405 L57.2143 631.405 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M14.1184 608.934 L14.1184 603.524 L67.6859 620.074 L67.6859 625.485 L14.1184 608.934 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M14.1184 597.126 L14.1184 590.697 L56.2276 590.697 L56.2276 567.557 L61.6384 567.557 L61.6384 597.126 L14.1184 597.126 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M12.1769 561.987 L12.1769 556.895 Q19.6884 552.12 26.8817 549.765 Q34.0749 547.378 41.1727 547.378 Q48.3023 547.378 55.5274 549.765 Q62.7524 552.12 70.2321 556.895 L70.2321 561.987 Q62.9434 557.754 55.7502 555.685 Q48.5251 553.585 41.1727 553.585 Q33.8203 553.585 26.6589 555.685 Q19.4975 557.754 12.1769 561.987 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><polyline clip-path="url(#clip462)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:8; stroke-opacity:1; fill:none" points="251.315,458.619 297.712,569.49 344.109,662.616 390.506,739.966 436.903,803.317 483.299,854.268 529.696,894.26 576.093,924.588 622.49,946.415 668.887,960.787 715.284,968.642 761.681,970.82 808.078,968.076 854.475,961.082 900.872,950.44 947.269,933.865 993.665,997.755 1040.06,1048.29 1086.46,1087.05 1132.86,1115.44 1179.25,1134.74 1225.65,1146.06 1272.05,1150.45 1318.44,1148.81 1364.84,1141.97 1411.24,1130.64 1457.63,1115.49 1504.03,1097.1 1550.43,1075.98 1596.83,1052.6 1643.22,1027.36 1689.62,1000.62 1736.02,972.712 1782.41,943.91 1828.81,914.462 1875.21,884.586 1921.6,854.473 1968,824.287 2014.4,794.171 2060.79,764.25 2107.19,734.63 2153.59,705.402 2199.99,676.641 2246.38,648.412 2292.78,620.769 2339.18,593.754 2385.57,567.402 2431.97,541.74 2478.37,516.789 2524.76,492.563 2571.16,469.072 "></polyline>
+<polyline clip-path="url(#clip462)" style="stroke:#0000ff; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" stroke-dasharray="16, 10" points="251.315,94.9858 297.712,198.011 344.109,295.199 390.506,386.88 436.903,473.365 483.299,554.95 529.696,631.912 576.093,704.513 622.49,773 668.887,837.606 715.284,898.552 761.681,956.044 808.078,1010.28 854.475,1061.44 900.872,1109.7 947.269,166.188 993.665,265.179 1040.06,358.56 1086.46,446.651 1132.86,529.749 1179.25,608.139 1225.65,682.087 1272.05,751.845 1318.44,817.65 1364.84,879.726 1411.24,938.285 1457.63,993.525 1504.03,1045.64 1550.43,1094.79 1596.83,1141.16 1643.22,1184.91 1689.62,1226.17 1736.02,1265.1 1782.41,1301.82 1828.81,1336.46 1875.21,1369.14 1921.6,1399.97 1968,1429.05 2014.4,1456.48 2060.79,1482.36 2107.19,1506.77 2153.59,1529.79 2199.99,1551.52 2246.38,1572.01 2292.78,1591.34 2339.18,1609.58 2385.57,1626.78 2431.97,1643 2478.37,1658.31 2524.76,1672.75 2571.16,1686.38 "></polyline>
+<polyline clip-path="url(#clip462)" style="stroke:#ff0000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" stroke-dasharray="16, 10" points="251.315,367.711 297.712,430.781 344.109,491.278 390.506,549.305 436.903,604.964 483.299,658.352 529.696,709.561 576.093,758.681 622.49,805.795 668.887,850.987 715.284,894.335 761.681,935.913 808.078,975.795 854.475,1014.05 900.872,1050.74 947.269,406.186 993.665,467.686 1040.06,526.676 1086.46,583.259 1132.86,637.533 1179.25,689.591 1225.65,739.526 1272.05,787.422 1318.44,833.364 1364.84,877.43 1411.24,919.699 1457.63,960.242 1504.03,999.131 1550.43,1036.43 1596.83,1072.21 1643.22,1106.53 1689.62,1139.45 1736.02,1171.03 1782.41,1201.31 1828.81,1230.36 1875.21,1258.23 1921.6,1284.96 1968,1310.59 2014.4,1335.18 2060.79,1358.77 2107.19,1381.4 2153.59,1403.1 2199.99,1423.91 2246.38,1443.88 2292.78,1463.03 2339.18,1481.4 2385.57,1499.02 2431.97,1515.92 2478.37,1532.13 2524.76,1547.68 2571.16,1562.6 "></polyline>
+<path clip-path="url(#clip460)" d="M2179.37 310.833 L2558.79 310.833 L2558.79 103.473 L2179.37 103.473  Z" fill="#ffffff" fill-rule="evenodd" fill-opacity="1"></path>
+<polyline clip-path="url(#clip460)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="2179.37,310.833 2558.79,310.833 2558.79,103.473 2179.37,103.473 2179.37,310.833 "></polyline>
+<polyline clip-path="url(#clip460)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:8; stroke-opacity:1; fill:none" points="2206.69,155.313 2370.62,155.313 "></polyline>
+<path clip-path="url(#clip460)" d="M2402.62 141.876 L2402.62 168.751 L2408.27 168.751 Q2415.42 168.751 2418.73 165.51 Q2422.07 162.269 2422.07 155.278 Q2422.07 148.334 2418.73 145.116 Q2415.42 141.876 2408.27 141.876 L2402.62 141.876 M2397.95 138.033 L2407.55 138.033 Q2417.6 138.033 2422.3 142.223 Q2427 146.39 2427 155.278 Q2427 164.214 2422.28 168.403 Q2417.55 172.593 2407.55 172.593 L2397.95 172.593 L2397.95 138.033 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M2448.48 141.204 Q2443.39 141.204 2440.38 145.001 Q2437.39 148.797 2437.39 155.348 Q2437.39 161.876 2440.38 165.672 Q2443.39 169.468 2448.48 169.468 Q2453.57 169.468 2456.54 165.672 Q2459.52 161.876 2459.52 155.348 Q2459.52 148.797 2456.54 145.001 Q2453.57 141.204 2448.48 141.204 M2448.48 137.408 Q2455.75 137.408 2460.1 142.292 Q2464.45 147.154 2464.45 155.348 Q2464.45 163.519 2460.1 168.403 Q2455.75 173.264 2448.48 173.264 Q2441.19 173.264 2436.81 168.403 Q2432.46 163.542 2432.46 155.348 Q2432.46 147.154 2436.81 142.292 Q2441.19 137.408 2448.48 137.408 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><polyline clip-path="url(#clip460)" style="stroke:#0000ff; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" stroke-dasharray="16, 10" points="2206.69,207.153 2370.62,207.153 "></polyline>
+<path clip-path="url(#clip460)" d="M2425.82 192.535 L2425.82 197.466 Q2423.46 195.267 2420.77 194.179 Q2418.11 193.091 2415.1 193.091 Q2409.17 193.091 2406.03 196.725 Q2402.88 200.336 2402.88 207.188 Q2402.88 214.017 2406.03 217.651 Q2409.17 221.262 2415.1 221.262 Q2418.11 221.262 2420.77 220.174 Q2423.46 219.086 2425.82 216.887 L2425.82 221.771 Q2423.36 223.438 2420.61 224.271 Q2417.88 225.104 2414.82 225.104 Q2406.98 225.104 2402.46 220.313 Q2397.95 215.498 2397.95 207.188 Q2397.95 198.855 2402.46 194.063 Q2406.98 189.248 2414.82 189.248 Q2417.92 189.248 2420.66 190.082 Q2423.41 190.892 2425.82 192.535 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M2437.72 207.929 L2437.72 220.591 L2445.22 220.591 Q2448.99 220.591 2450.79 219.04 Q2452.62 217.466 2452.62 214.248 Q2452.62 211.007 2450.79 209.48 Q2448.99 207.929 2445.22 207.929 L2437.72 207.929 M2437.72 193.716 L2437.72 204.132 L2444.64 204.132 Q2448.06 204.132 2449.73 202.859 Q2451.42 201.563 2451.42 198.924 Q2451.42 196.308 2449.73 195.012 Q2448.06 193.716 2444.64 193.716 L2437.72 193.716 M2433.04 189.873 L2444.98 189.873 Q2450.33 189.873 2453.23 192.095 Q2456.12 194.318 2456.12 198.415 Q2456.12 201.586 2454.64 203.461 Q2453.16 205.336 2450.29 205.799 Q2453.73 206.54 2455.63 208.901 Q2457.55 211.239 2457.55 214.757 Q2457.55 219.387 2454.41 221.91 Q2451.26 224.433 2445.45 224.433 L2433.04 224.433 L2433.04 189.873 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M2478.76 193.044 Q2473.66 193.044 2470.66 196.841 Q2467.67 200.637 2467.67 207.188 Q2467.67 213.716 2470.66 217.512 Q2473.66 221.308 2478.76 221.308 Q2483.85 221.308 2486.81 217.512 Q2489.8 213.716 2489.8 207.188 Q2489.8 200.637 2486.81 196.841 Q2483.85 193.044 2478.76 193.044 M2478.76 189.248 Q2486.03 189.248 2490.38 194.132 Q2494.73 198.994 2494.73 207.188 Q2494.73 215.359 2490.38 220.243 Q2486.03 225.104 2478.76 225.104 Q2471.47 225.104 2467.09 220.243 Q2462.74 215.382 2462.74 207.188 Q2462.74 198.994 2467.09 194.132 Q2471.47 189.248 2478.76 189.248 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M2506.72 193.716 L2506.72 220.591 L2512.37 220.591 Q2519.52 220.591 2522.83 217.35 Q2526.16 214.109 2526.16 207.118 Q2526.16 200.174 2522.83 196.956 Q2519.52 193.716 2512.37 193.716 L2506.72 193.716 M2502.04 189.873 L2511.65 189.873 Q2521.7 189.873 2526.4 194.063 Q2531.1 198.23 2531.1 207.118 Q2531.1 216.054 2526.37 220.243 Q2521.65 224.433 2511.65 224.433 L2502.04 224.433 L2502.04 189.873 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><polyline clip-path="url(#clip460)" style="stroke:#ff0000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" stroke-dasharray="16, 10" points="2206.69,258.993 2370.62,258.993 "></polyline>
+<path clip-path="url(#clip460)" d="M2397.95 241.713 L2404.24 241.713 L2419.57 270.625 L2419.57 241.713 L2424.1 241.713 L2424.1 276.273 L2417.81 276.273 L2402.48 247.361 L2402.48 276.273 L2397.95 276.273 L2397.95 241.713 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M2438.09 259.769 L2438.09 272.431 L2445.59 272.431 Q2449.36 272.431 2451.16 270.88 Q2452.99 269.306 2452.99 266.088 Q2452.99 262.847 2451.16 261.32 Q2449.36 259.769 2445.59 259.769 L2438.09 259.769 M2438.09 245.556 L2438.09 255.972 L2445.01 255.972 Q2448.43 255.972 2450.1 254.699 Q2451.79 253.403 2451.79 250.764 Q2451.79 248.148 2450.1 246.852 Q2448.43 245.556 2445.01 245.556 L2438.09 245.556 M2433.41 241.713 L2445.35 241.713 Q2450.7 241.713 2453.6 243.935 Q2456.49 246.158 2456.49 250.255 Q2456.49 253.426 2455.01 255.301 Q2453.53 257.176 2450.66 257.639 Q2454.1 258.38 2456 260.741 Q2457.92 263.079 2457.92 266.597 Q2457.92 271.227 2454.78 273.75 Q2451.63 276.273 2445.82 276.273 L2433.41 276.273 L2433.41 241.713 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M2479.13 244.884 Q2474.04 244.884 2471.03 248.681 Q2468.04 252.477 2468.04 259.028 Q2468.04 265.556 2471.03 269.352 Q2474.04 273.148 2479.13 273.148 Q2484.22 273.148 2487.18 269.352 Q2490.17 265.556 2490.17 259.028 Q2490.17 252.477 2487.18 248.681 Q2484.22 244.884 2479.13 244.884 M2479.13 241.088 Q2486.4 241.088 2490.75 245.972 Q2495.1 250.834 2495.1 259.028 Q2495.1 267.199 2490.75 272.083 Q2486.4 276.944 2479.13 276.944 Q2471.84 276.944 2467.46 272.083 Q2463.11 267.222 2463.11 259.028 Q2463.11 250.834 2467.46 245.972 Q2471.84 241.088 2479.13 241.088 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip460)" d="M2507.09 245.556 L2507.09 272.431 L2512.74 272.431 Q2519.89 272.431 2523.2 269.19 Q2526.53 265.949 2526.53 258.958 Q2526.53 252.014 2523.2 248.796 Q2519.89 245.556 2512.74 245.556 L2507.09 245.556 M2502.41 241.713 L2512.02 241.713 Q2522.07 241.713 2526.77 245.903 Q2531.47 250.07 2531.47 258.958 Q2531.47 267.894 2526.74 272.083 Q2522.02 276.273 2512.02 276.273 L2502.41 276.273 L2502.41 241.713 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path></svg>
+</div>
+</div>
+<p>We can see the spike in the NBOD and CBOD immediately after the discharge and the corresponding drop in the DO. As the CBOD and NBOD decrease, the DO can recover from reaeration.</p>
+<section id="problem-3-3-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-3-3-points">Problem 3 (3 points)</h3>
+<p>Under the assumptions of Problem 1, determine the distance from waste stream 2 it will take for the dissolved oxygen concentration of the river to recover to 6 mg/L.</p>
+</section>
+<p><strong><em>Solution</em></strong>:</p>
+<div id="03ac1552" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>low_do <span class="op">=</span> <span class="fu">findall</span>(C <span class="op">.&gt;=</span> <span class="fl">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>13-element Vector{Int64}:
+  1
+  2
+  3
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51</code></pre>
+</div>
+</div>
+<p>The DO concentration recovers to 6 mg/L 41 km downstream (since <span class="math inline">\(x=0\)</span> is index 1) from the initial discharge, or 26 km downstream from the second waste stream.</p>
+<section id="problem-4-5-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-4-5-points">Problem 4 (5 points)</h3>
+<p>What is the minimum level of treatment (% removal of organic waste from the stream) for waste stream 2 that will ensure that the dissolved oxygen concentration never drops below 4 mg/L, assuming that waste stream 1 remains untreated?</p>
+</section>
+<p><strong><em>Solution</em></strong>:</p>
+<p>Due to how we structured the solution in Problem 1, we can modify the discharge 2 CBOD and NBOD values and leave everything else alone. We will do this using a function which takes in a treatment efficiency and the problem properties, runs the DO simulation with that level of treatment, and returns the minimum value. One advantage of this approach is the original <code>discharges</code> data remains the same, so we can reuse it in subsequent simulations. We can then broadcast that function over an efficiency range, and find the first minimum that is greater than 4 mg/L.</p>
+<div id="2e611559" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>eff <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">1</span> <span class="co"># range of treatment efficiencies to consider </span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">waste2_treatment</span>(eff, inflow, discharges, river, box_lengths)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    treated_discharge2 <span class="op">=</span> (<span class="fl">5</span>, (<span class="fl">1</span><span class="op">-</span>eff) <span class="op">*</span> <span class="fl">45</span>, (<span class="fl">1</span><span class="op">-</span>eff) <span class="op">*</span> <span class="fl">35</span>, <span class="fl">15000</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    C, B, N <span class="op">=</span> <span class="fu">do_simulate</span>(inflow, [discharges[<span class="fl">1</span>], treated_discharge2], river, box_lengths)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">minimum</span>(C)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># use a comprehension to loop over the efficiency values; we could do this with a regular loop as well</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>min_do <span class="op">=</span> [<span class="fu">waste2_treatment</span>(<span class="cn">e</span>, inflow, discharges, river, box_lengths) for <span class="cn">e</span> <span class="kw">in</span> eff]</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>eff[<span class="fu">findfirst</span>(min_do <span class="op">.&gt;=</span> <span class="fl">4</span>)] <span class="co"># get the efficiency value by finding the index of the first minimum value which complies</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>0.09</code></pre>
+</div>
+</div>
+<p>So the lowest treatment level that will meet the requirement is 9%.</p>
+<section id="problem-5-5-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-5-5-points">Problem 5 (5 points)</h3>
+<p>If both waste streams are treated equally, what is the minimum level of treatment (% removal of organic waste) for the two sources required to ensure that the dissolved oxygen concentration never drops below 4 mg/L?</p>
+</section>
+<p><strong><em>Solution</em></strong>:</p>
+<div id="02ad147d" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">waste_both_treatment</span>(eff, inflow, discharges, river, box_lengths)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    treated_discharges <span class="op">=</span> [(<span class="fl">5</span>, (<span class="fl">1</span><span class="op">-</span>eff) <span class="op">*</span> <span class="fl">50</span>, (<span class="fl">1</span><span class="op">-</span>eff) <span class="op">*</span> <span class="fl">35</span>, <span class="fl">10000</span>), (<span class="fl">5</span>, (<span class="fl">1</span><span class="op">-</span>eff) <span class="op">*</span> <span class="fl">45</span>, (<span class="fl">1</span><span class="op">-</span>eff) <span class="op">*</span> <span class="fl">35</span>, <span class="fl">15000</span>)]</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    C, B, N <span class="op">=</span> <span class="fu">do_simulate</span>(inflow, treated_discharges, river, box_lengths)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">minimum</span>(C)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># use a comprehension to loop over the efficiency values; we could do this with a regular loop as well</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>min_do <span class="op">=</span> [<span class="fu">waste_both_treatment</span>(<span class="cn">e</span>, inflow, discharges, river, box_lengths) for <span class="cn">e</span> <span class="kw">in</span> eff]</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>eff[<span class="fu">findfirst</span>(min_do <span class="op">.&gt;=</span> <span class="fl">4</span>)] <span class="co"># get the efficiency value by finding the index of the first minimum value which complies</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>0.05</code></pre>
+</div>
+</div>
+<p>Both sources would have to be treated at 5%.</p>
+<section id="problem-6-5-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-6-5-points">Problem 6 (5 points)</h3>
+<p>Suppose you are responsible for designing a waste treatment plan for discharges into the river, with a regulatory mandate to keep the dissolved oxygen concentration above 4 mg/L. Discuss whether you’d opt to treat waste stream 2 alone or both waste streams equally. What other information might you need to make a conclusion, if any?</p>
+</section>
+<p><strong><em>Solution</em></strong>:</p>
+<p>Either choice is defensible depending on the reasoning. Some relevant information might include costs (which is unknown) for each source to treat its waste, or the larger volume of wastewater produced by source 2.</p>
+<section id="problem-7-5-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-7-5-points">Problem 7 (5 points)</h3>
+<p>Suppose that it is known that the DO concentrations at the river inflow can vary uniformly between 6 mg/L and 8 mg/L. How often will the treatment plan identified in Problem 5 (both waste streams treated equally) fail to comply with the regulatory standard?</p>
+</section>
+<p><strong><em>Solution</em></strong>:</p>
+<p>There are a few ways to solve this, but in this case, we’ll just loop over values between 6 and 8 mg/L since the values vary uniformly.</p>
+<div id="129e0bb0" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>inflow_do <span class="op">=</span> <span class="fl">6</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">8</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>min_do <span class="op">=</span> [<span class="fu">waste_both_treatment</span>(<span class="fl">0.05</span>, (k, <span class="fl">5</span>, <span class="fl">5</span>, <span class="fl">100000</span>), discharges, river, box_lengths) for k <span class="kw">in</span> inflow_do]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(min_do <span class="op">.&lt;</span> <span class="fl">4</span>) <span class="op">/</span> <span class="fu">length</span>(min_do) <span class="co"># get the fraction of values which fall short</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>0.746268656716418</code></pre>
+</div>
+</div>
+<p>The plan will fail 75% of the time.</p>
+<section id="problem-8-5-points" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-8-5-points">Problem 8 (5 points)</h3>
+<p>A factory is planning a third wastewater discharge into the river downstream of the second plant. This discharge would consist of 5 m<sup>3</sup>/day of wastewater with a dissolved oxygen content of 4.5 mg/L and CBOD and NBOD levels of 50 and 45 mg/L, respectively.</p>
+<p>Assume that the treatment plan you identified in Problem 5 is still in place for the existing discharges. If the third discharge will not be treated, under the original inflow conditions (7.5 mg/L DO), how far downstream from the second discharge does this third discharge need to be placed to keep the river concentration from dropping below 4 mg/L?</p>
+</section>
+<p><strong><em>Solution</em></strong>:</p>
+<div id="e4d6ca30" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">add_third_discharge</span>(pos, inflow, all_discharges, river, box_lengths)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    positions <span class="op">=</span> [box_lengths[<span class="fl">1</span>], box_lengths[<span class="fl">1</span>] <span class="op">+</span> pos, <span class="fl">50</span> <span class="op">-</span> box_lengths[<span class="fl">1</span>] <span class="op">-</span> pos] <span class="co"># find new box lengths</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    C, B, N <span class="op">=</span> <span class="fu">do_simulate</span>(inflow, all_discharges, river, positions)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> C</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>all_discharges <span class="op">=</span> [(<span class="fl">5</span>, (<span class="fl">1</span><span class="op">-</span><span class="fl">0.09</span>) <span class="op">*</span> <span class="fl">50</span>, (<span class="fl">1</span><span class="op">-</span><span class="fl">0.09</span>) <span class="op">*</span> <span class="fl">35</span>, <span class="fl">10000</span>), (<span class="fl">5</span>, (<span class="fl">1</span><span class="op">-</span><span class="fl">0.09</span>) <span class="op">*</span> <span class="fl">45</span>, (<span class="fl">1</span><span class="op">-</span><span class="fl">0.09</span>) <span class="op">*</span> <span class="fl">35</span>, <span class="fl">15000</span>), (<span class="fl">4.5</span>, <span class="fl">50</span>, <span class="fl">45</span>, <span class="fl">5000</span>)]</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>pos <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>third_do_min <span class="op">=</span> [<span class="fu">minimum</span>(<span class="fu">add_third_discharge</span>(p, inflow, all_discharges, river, box_lengths)) for p <span class="kw">in</span> pos]</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="fu">findfirst</span>(third_do_min <span class="op">.&gt;=</span> <span class="fl">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>9</code></pre>
+</div>
+</div>
+<p>So the third discharge needs to be placed at least 9 km downstream of the second discharge.</p>
+</section>
+<section id="references" class="level2 cell markdown">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>List any external references consulted, including classmates.</p>
+</section>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+      for (let i=0; i<annoteTargets.length; i++) {
+        const annoteTarget = annoteTargets[i];
+        const targetCell = annoteTarget.getAttribute("data-target-cell");
+        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+        const contentFn = () => {
+          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          if (content) {
+            const tipContent = content.cloneNode(true);
+            tipContent.classList.add("code-annotation-tip-content");
+            return tipContent.outerHTML;
+          }
+        }
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          onShow: (instance) => {
+            selectCodeLines(instance.reference);
+            instance.reference.classList.add('code-annotation-active');
+            window.tippy.hideAll();
+          },
+          onHide: (instance) => {
+            unselectCodeLines();
+            instance.reference.classList.remove('code-annotation-active');
+          },
+          maxWidth: 300,
+          delay: [50, 0],
+          duration: [200, 0],
+          offset: [5, 10],
+          arrow: true,
+          trigger: 'click',
+          appendTo: function(el) {
+            return el.parentElement.parentElement.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto',
+          placement: 'right',
+          positionFixed: true,
+          popperOptions: {
+            modifiers: [
+            {
+              name: 'flip',
+              options: {
+                flipVariations: false, // true by default
+                allowedAutoPlacements: ['right'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
+              },
+            },
+            {
+              name: 'preventOverflow',
+              options: {
+                mainAxis: false,
+                altAxis: false
+              }
+            }
+            ]        
+          }      
+        };
+        window.tippy(annoteTarget, config); 
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Content <i class="fa-solid fa-copyright" aria-label="copyright"></i> 2023 by <a href="https://viveks.me">Vivek Srikrishnan</a>. See the <a href="../../about.html">About page</a> for credit information.<br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0)</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Made with <a href="https://julialang.org">Julia</a> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://www.github.com/vsrikrish/environmental-systems-analysis">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

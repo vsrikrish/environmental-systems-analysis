@@ -4,7 +4,7 @@
     "href": "schedule.html",
     "title": "BEE 4750: Environmental Systems Analysis",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nReading\n\n\n\n\n\n\n\nModule 1: Introduction to Systems Analysis\n\n\n\n\n\n\n\n1\nMon, Aug 26\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 28\nLab: Setting up Julia and GitHub\n\n\n\n\n\n\n\n2\nMon, Sep 02\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 04\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n3\nMon, Sep 09\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Sep 11\nFeedbacks and Bifurcations\n\n\n\n\n\n\n\n\n\nModule 2: Systems Simulation\n\n\n\n\n\n\n\n4\nMon, Sep 16\nSimulation Modeling\n\n\n\n\n\n\n\n\nWed, Sep 18\nDissolved Oxygen\n\n\n\n\n\n\n\n5\nMon, Sep 23\nUncertainty and Monte Carlo Simulation\n\n\n\n\n\n\n\n\nWed, Sep 25\nLab: Monte Carlo Simulation\n\n\n\n\n\n\n\n6\nMon, Sep 30\nMultiple Objectives and Tradeoffs\n\n\n\n\n\n\n\n\nWed, Oct 02\nModel Calibration and Validation\n\n\n\n\n\n\n\n\n\nModule 3: Optimization and Linear Programming\n\n\n\n\n\n\n\n7\nMon, Oct 07\nLinear Programming\n\n\n\n\n\n\n\n\nWed, Oct 09\nPrelim 1\n\n\n\n\n\n\n\n8\nMon, Oct 14\nNo Class: Fall Break\n\n\n\n\n\n\n\n\nWed, Oct 16\nLab: Optimization with JuMP.jl\n\n\n\n\n\n\n\n9\nMon, Oct 21\nPower Systems and Economic Dispatch\n\n\n\n\n\n\n\n\nWed, Oct 23\nPrelim 1 Review\n\n\n\n\n\n\n\n10\nMon, Oct 28\nFixed Costs and Unit Commitment\n\n\n\n\n\n\n\n\nWed, Oct 30\nNetwork Models\n\n\n\n\n\n\n\n11\nMon, Nov 04\nSimulation-Optimization\n\n\n\n\n\n\n\n\nWed, Nov 06\nLab: Simulation-Optimization\n\n\n\n\n\n\n\n\n\nModule 4: Decision-Making Under Uncertainty\n\n\n\n\n\n\n\n12\nMon, Nov 11\nPrelim 2\n\n\n\n\n\n\n\n\nWed, Nov 13\nRobustness and Sensitivity Analysis\n\n\n\n\n\n\n\n13\nMon, Nov 18\nScenario Trees and Value of Uncertainty\n\n\n\n\n\n\n\n\nWed, Nov 20\nLab: Two-Stage Linear Programs\n\n\n\n\n\n\n\n14\nMon, Nov 25\nPrelim 2 Review\n\n\n\n\n\n\n\n\nWed, Nov 27\nNo Class: Thanksgiving Break\n\n\n\n\n\n\n\n15\nMon, Dec 02\nSequential Decision-Making\n\n\n\n\n\n\n\n\nWed, Dec 04\nReservoir Management\n\n\n\n\n\n\n\n16\nMon, Dec 09\nNo Class: Project Work",
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nReading\n\n\n\n\n\n\n\nModule 1: Introduction to Systems Analysis\n\n\n\n\n\n\n\n1\nMon, Aug 26\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 28\nLab: Setting up Julia and GitHub\n\n\n\n\n\n\n\n2\nMon, Sep 02\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 04\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n3\nMon, Sep 09\nModeling Systems\n\n\n\n\n\n\n\n\nWed, Sep 11\nFeedbacks and Bifurcations\n\n\n\n\n\n\n\n\n\nModule 2: Systems Simulation and Risk\n\n\n\n\n\n\n\n4\nMon, Sep 16\nSimulation Modeling\n\n\n\n\n\n\n\n\nWed, Sep 18\nDissolved Oxygen\n\n\n\n\n\n\n\n5\nMon, Sep 23\nUncertainty and Monte Carlo Simulation\n\n\n\n\n\n\n\n\nWed, Sep 25\nLab: Monte Carlo Simulation\n\n\n\n\n\n\n\n6\nMon, Sep 30\nMultiple Objectives and Tradeoffs\n\n\n\n\n\n\n\n\nWed, Oct 02\nModel Calibration and Validation\n\n\n\n\n\n\n\n\n\nModule 3: Systems Management and Optimization\n\n\n\n\n\n\n\n7\nMon, Oct 07\nLinear Programming\n\n\n\n\n\n\n\n\nWed, Oct 09\nPrelim 1\n\n\n\n\n\n\n\n8\nMon, Oct 14\nNo Class: Fall Break\n\n\n\n\n\n\n\n\nWed, Oct 16\nLab: Optimization with JuMP.jl\n\n\n\n\n\n\n\n9\nMon, Oct 21\nPower Systems and Economic Dispatch\n\n\n\n\n\n\n\n\nWed, Oct 23\nPrelim 1 Review\n\n\n\n\n\n\n\n10\nMon, Oct 28\nFixed Costs and Unit Commitment\n\n\n\n\n\n\n\n\nWed, Oct 30\nNetwork Models\n\n\n\n\n\n\n\n11\nMon, Nov 04\nSimulation-Optimization\n\n\n\n\n\n\n\n\nWed, Nov 06\nLab: Simulation-Optimization\n\n\n\n\n\n\n\n\n\nModule 4: Decision-Making Under Uncertainty\n\n\n\n\n\n\n\n12\nMon, Nov 11\nPrelim 2\n\n\n\n\n\n\n\n\nWed, Nov 13\nRobustness and Sensitivity Analysis\n\n\n\n\n\n\n\n13\nMon, Nov 18\nScenario Trees and Value of Uncertainty\n\n\n\n\n\n\n\n\nWed, Nov 20\nLab: Two-Stage Linear Programs\n\n\n\n\n\n\n\n14\nMon, Nov 25\nPrelim 2 Review\n\n\n\n\n\n\n\n\nWed, Nov 27\nNo Class: Thanksgiving Break\n\n\n\n\n\n\n\n15\nMon, Dec 02\nSequential Decision-Making\n\n\n\n\n\n\n\n\nWed, Dec 04\nClass Review\n\n\n\n\n\n\n\n16\nMon, Dec 09\nNo Class: Project Work",
     "crumbs": [
       "Course Information",
       "Schedule"
@@ -147,7 +147,7 @@
     "href": "syllabus.html#course-policies",
     "title": "Syllabus",
     "section": "Course Policies",
-    "text": "Course Policies\nMany policies below (including grading policies) are broken out and discussed further on the course website. Lack of familiarity with any of these policies is not an excuse for violating any of them.\n\nAttendance\nAttendance is not required, but in general, students who attend class regularly will do better and get more out of the class than students who do not. Your class participation grade will reflect both the quantity and quality of your participation, only some of which can occur asynchronously. I will put as many course materials, such as lecture notes and announcements, as possible online, but viewing materials online is not the same as active participation and engagement. Life happens, of course, and this may lead you to miss class. Let me know if you need any appropriate arrangements ahead of time.\n\n\n\n\n\n\nWhat If I’m Sick?\n\n\n\nPlease stay home if you’re feeling sick! This is beneficial for both for your own recovery and the health and safety of your classmates. We will also make any necessary arrangements for you to stay on top of the class material and if whatever is going on will negatively impact your grade, for example by causing you to be unable to submit an assignment on time.\n\n\n\n\nMask Policies\nMasks are encouraged but not required in the classroom, per university policy. However, the University strongly encourages compliance with requests to mask from students, faculty, and staff who are concerned about the risk of infection. Please be respectful of these concerns and requests if you cannot wear a mask. This policy may change if there is another outbreak of COVID-19 (or other illness), but will be kept consistent with broader Cornell mask policies.\n\n\nAcademic Integrity\n\n\n\n\n\n\nTL;DR: Don’t cheat, copy, or plagiarize!\n\n\n\nThis class is designed to encourage collaboration, and students are encouraged to discuss their work with other students. However, I expect students to abide by the Cornell University Code of Academic Integrity in all aspects of this class. All work submitted must represent the students’ own work and understanding, whether individually or as a group (depending on the particulars of the assignment). This includes analyses, code, software runs, and reports. Engineering as a profession relies upon the honesty and integrity of its practitioners (see e.g. the American Society for Civil Engineers’ Code of Ethics).\n\n\nExternal Resources\nThe collaborative environment in this class should not be viewed as an invitation for plagiarism. Plagiarism occurs when a writer intentionally misrepresents another’s words or ideas (including code!) as their own without acknowledging the source. All external resources which are consulted while working on an assignment should be referenced, including other students and faculty with whom the assignment is discussed. You will never be penalized for consulting an external source for help and referencing it, but plagiarism will result in a zero for that assignment as well as the potential for your case to be passed on for additional disciplinary action.\n\n\nAI/ML Resource Policy\nAs noted, all work submitted for a grade in this course must reflect your own understanding. The use and consulation of AI/ML tools, such as ChatGPT or similar, for any purpose whatsoever, must be pre-approved and clearly referenced.\n\n\n\n\n\n\nWhat Is ChatGPT Useful For?\n\n\n\nChatGPT and other large-language models can predictively generate text, but note that there is no idea underlying its prediction model (it is purely statistical). You should therefore think about it as a glorified and stochastic Google search, albeit one which synthesizes the material for you, so you can’t access or understand its judgement or reasoning.\nAs a result, simply submitting ChatGPT output is likely to get you zero credit for any analysis or interpretation questions, and may be less helpful than you think for questions about derivations or model setups. Where ChatGPT can be helpful is in starting or debugging code (particularly interpreting error messages), especially if you’re unsure about syntax. However, in our experience, the interpretations and solutions from ChatGPT may often also just be wrong due to the LLM drawing from sufficiently different code examples users have provided in other forums; you’ll still need to exercise judgement and figure out if what ChatGPT output works or makes sense to ensure credit. You’d be surprised — careful use of LLMs does not actually save very much time!\n\n\nIf approved, you must:\n\nreference the URL of the service you are using, including the specific date you accessed it;\nprovide the exact query or queries used to interact with the tool; and\nreport the exact response received.\n\nFailure to attain prior approval or fully reference the interaction, as described above, will be treated as plagiarism and referred to the University accordingly.\n\n\nLate Work Policy\nIn general, late work can be submitted up to 24 hours late at a 50% penalty, and will not be accepted after that point. This policy may seem strict, but allows for prompt release of solutions and discussion of assignments. Please reach out as soon as possible (ideally before the due date) if legitimate circumstances emerge which prevent you from submitting work within 24 hours of the due date; we will make accomodations for approved reasons, which might included a limited extension or dropping the assignment.\n\n\nRegrade Requests\nRegrade requests can be submitted up to one week after the graded work is released on Gradescope.\nAll regrade requests must include a brief justification for the request or they will not be considered. Good justifications include (but are not limited to): - My answer agrees with the posted solution, but I still lost points. - I lost 4 points for something, but the rubric says it should only be worth 2 points. - You took points off for something, but it’s right here. - My answer is correct, even though it does not match the posted solution; here is an explanation. - There is no explanation for my grade. - I got a perfect score, but my solution has a mistake (you will receive extra credit for this! see below!) - There is a major error in the posted solution; here is an explanation (full credit for everyone, but Prof. Srikrishnan will decide what constitutes a “major error”! see below!).\n\n\n\n\n\n\nWe Can Only Grade What You Submitted\n\n\n\nAll regrades will be assessed based only on the submitted work. You cannot get a higher grade by explanating what you meant (either in person or online) or by adding information or reasoning to what is submitted after the fact. The goal of the regrade is to draw attention to a potential grading problem, not to supplement the submission.\n\n\nThe first regrade request for any submission will be handled by the person who graded that homework problem. The first regrade request for any exam submission will be handled by whoever graded that exam problem. If the submission was graded by the TA, additional regrade requests for the same submission will be handled directly by the instructor. Once Prof. Srikrishnan issues a final response to a regrade request, further requests for that submission will be ignored.\n\n\n\n\n\n\nRegrade Requests Can Be A Gamble!\n\n\n\nWhile you should submit regrade requests for legitimate errors, using them for fishing expeditions can also result in lost points if the TA or Prof. Srikrishnan decide that your initial grade was too lenient or if additional errors are identified.\n\n\n\n\n\n\n\n\nWhat If I Find A Different Type of Mistake?\n\n\n\n\nIf you submit a regrade request correctly reporting that a problem was graded too leniently — that is, that your score was higher than it should be based on the rubric — your score will be increased by the difference. For example, if your original score on a problem was 8/10 and you successfully argue that your score should have been 3/10, your new score will be 13/10. However, don’t fish — your grade might be lowered if the TA finds an independent mistake while regrading.\nIf a significant error is discovered in a posted homework solution or in the exam solutions, everyone will in the class will receive full credit for the (sub)problem. Prof. Srikrishnan will decide what is “significant”.\n\n\n\n\n\nOffice Hours\nOffice hours with both Prof. Srikrishnan and the TA will be available each week at times TBA. Changes to the office hour schedule (cancellations/rescheduling) will be announced in class and on Ed Discussion.\nOffice hours are intended to help all students who attend. This time is limited, and is best spent on issues that are relevant to as many students as possible. While we will do our best to answer individual questions, students asking us to verify or debug homework solutions or help with syntax will have the lowest priority (but please do ask about how to verify or debug your own solutions!). However, we are happy to discuss conceptual approaches to solving homework problems, which may help to reveal bugs.\nSpace at office hours can be limited (we may shift to the conference room in 316 Riley-Robb if offices are full and it is available). If the room is crowded and you can find an alternative source of assistance, or if your question is low priority (e.g. debugging) please be kind and make room for others.\n\n\n\n\n\n\nWhat If I Can’t Make Office Hours?\n\n\n\nWhile we will try to select office hours that work for as much of the class as possible, both the course staff and students have busy schedules and no time will work for everyone. If you need help outside of office hours (e.g. office hours do not fit your schedule), please send an email to the TA or Prof. Srikrishnan as soon as possible. These requests may not be accepted on short notice (e.g. if you have a question about a homework due on Friday and send a request on Thursday; schedules for course staff may already be full). We recommend starting your homework promptly so you can take advantage of office hours or make an appointment over a longer period.",
+    "text": "Course Policies\nMany policies below (including grading policies) are broken out and discussed further on the course website. Lack of familiarity with any of these policies is not an excuse for violating any of them.\n\nAttendance\nAttendance is not required, but in general, students who attend class regularly will do better and get more out of the class than students who do not. Your class participation grade will reflect both the quantity and quality of your participation, only some of which can occur asynchronously. I will put as many course materials, such as lecture notes and announcements, as possible online, but viewing materials online is not the same as active participation and engagement. Life happens, of course, and this may lead you to miss class. Let me know if you need any appropriate arrangements ahead of time.\n\n\n\n\n\n\nWhat If I’m Sick?\n\n\n\nPlease stay home if you’re feeling sick! This is beneficial for both for your own recovery and the health and safety of your classmates. We will also make any necessary arrangements for you to stay on top of the class material and if whatever is going on will negatively impact your grade, for example by causing you to be unable to submit an assignment on time.\n\n\n\n\nMask Policies\nMasks are encouraged but not required in the classroom, per university policy. However, the University strongly encourages compliance with requests to mask from students, faculty, and staff who are concerned about the risk of infection. Please be respectful of these concerns and requests if you cannot wear a mask. This policy may change if there is another outbreak of COVID-19 (or other illness), but will be kept consistent with broader Cornell mask policies.\n\n\nAcademic Integrity\n\n\n\n\n\n\nTL;DR: Don’t cheat, copy, or plagiarize!\n\n\n\nThis class is designed to encourage collaboration, and students are encouraged to discuss their work with other students. However, I expect students to abide by the Cornell University Code of Academic Integrity in all aspects of this class. All work submitted must represent the students’ own work and understanding, whether individually or as a group (depending on the particulars of the assignment). This includes analyses, code, software runs, and reports. Engineering as a profession relies upon the honesty and integrity of its practitioners (see e.g. the American Society for Civil Engineers’ Code of Ethics).\n\n\nExternal Resources\nThe collaborative environment in this class should not be viewed as an invitation for plagiarism. Plagiarism occurs when a writer intentionally misrepresents another’s words or ideas (including code!) as their own without acknowledging the source. All external resources which are consulted while working on an assignment should be referenced, including other students and faculty with whom the assignment is discussed. You will never be penalized for consulting an external source for help and referencing it, but plagiarism will result in a zero for that assignment as well as the potential for your case to be passed on for additional disciplinary action.\n\n\nAI/ML Resource Policy\nAs noted, all work submitted for a grade in this course must reflect your own understanding. The use and consulation of AI/ML tools, such as ChatGPT or similar, for any purpose whatsoever, must be pre-approved and clearly referenced.\n\n\n\n\n\n\nWhat are Large Language Models Useful For?\n\n\n\nChatGPT and other large-language models can predictively generate text, but note that there is no idea underlying its prediction model (it is purely statistical). You should therefore think about it as a glorified and stochastic Google search, albeit one which synthesizes the material for you, so you can’t access or understand its judgement or reasoning.\nAs a result, simply submitting ChatGPT output is likely to get you zero credit for any analysis or interpretation questions, and may be less helpful than you think for questions about derivations or model setups. Where ChatGPT can be helpful is in starting or debugging code (particularly interpreting error messages), especially if you’re unsure about syntax. However, in our experience, the interpretations and solutions from ChatGPT may often also just be wrong due to the LLM drawing from sufficiently different code examples users have provided in other forums; you’ll still need to exercise judgement and figure out if what ChatGPT output works or makes sense to ensure credit. You’d be surprised — careful use of LLMs does not actually save very much time!\n\n\nIf approved, you must:\n\nreference the URL of the service you are using, including the specific date you accessed it;\nprovide the exact query or queries used to interact with the tool; and\nreport the exact response received.\n\nFailure to attain prior approval or fully reference the interaction, as described above, will be treated as plagiarism and referred to the University accordingly.\n\n\nLate Work Policy\nIn general, late work can be submitted up to 24 hours late at a 50% penalty, and will not be accepted after that point. This policy may seem strict, but allows for prompt release of solutions and discussion of assignments. Please reach out as soon as possible (ideally before the due date) if legitimate circumstances emerge which prevent you from submitting work within 24 hours of the due date; we will make accomodations for approved reasons, which might included a limited extension or dropping the assignment.\n\n\nRegrade Requests\nRegrade requests can be submitted up to one week after the graded work is released on Gradescope.\nAll regrade requests must include a brief justification for the request or they will not be considered. Good justifications include (but are not limited to): - My answer agrees with the posted solution, but I still lost points. - I lost 4 points for something, but the rubric says it should only be worth 2 points. - You took points off for something, but it’s right here. - My answer is correct, even though it does not match the posted solution; here is an explanation. - There is no explanation for my grade. - I got a perfect score, but my solution has a mistake (you will receive extra credit for this! see below!) - There is a major error in the posted solution; here is an explanation (full credit for everyone, but Prof. Srikrishnan will decide what constitutes a “major error”! see below!).\n\n\n\n\n\n\nWe Can Only Grade What You Submitted\n\n\n\nAll regrades will be assessed based only on the submitted work. You cannot get a higher grade by explanating what you meant (either in person or online) or by adding information or reasoning to what is submitted after the fact. The goal of the regrade is to draw attention to a potential grading problem, not to supplement the submission.\n\n\nThe first regrade request for any submission will be handled by the person who graded that homework problem. The first regrade request for any exam submission will be handled by whoever graded that exam problem. If the submission was graded by the TA, additional regrade requests for the same submission will be handled directly by the instructor. Once Prof. Srikrishnan issues a final response to a regrade request, further requests for that submission will be ignored.\n\n\n\n\n\n\nRegrade Requests Can Be A Gamble!\n\n\n\nWhile you should submit regrade requests for legitimate errors, using them for fishing expeditions can also result in lost points if the TA or Prof. Srikrishnan decide that your initial grade was too lenient or if additional errors are identified.\n\n\n\n\n\n\n\n\nWhat If I Find A Different Type of Mistake?\n\n\n\n\nIf you submit a regrade request correctly reporting that a problem was graded too leniently — that is, that your score was higher than it should be based on the rubric — your score will be increased by the difference. For example, if your original score on a problem was 8/10 and you successfully argue that your score should have been 3/10, your new score will be 13/10. However, don’t fish — your grade might be lowered if the TA finds an independent mistake while regrading.\nIf a significant error is discovered in a posted homework solution or in the exam solutions, everyone will in the class will receive full credit for the (sub)problem. Prof. Srikrishnan will decide what is “significant”.\n\n\n\n\n\nOffice Hours\nOffice hours with both Prof. Srikrishnan and the TA will be available each week at times TBA. Changes to the office hour schedule (cancellations/rescheduling) will be announced in class and on Ed Discussion.\nOffice hours are intended to help all students who attend. This time is limited, and is best spent on issues that are relevant to as many students as possible. While we will do our best to answer individual questions, students asking us to verify or debug homework solutions or help with syntax will have the lowest priority (but please do ask about how to verify or debug your own solutions!). However, we are happy to discuss conceptual approaches to solving homework problems, which may help to reveal bugs.\nSpace at office hours can be limited (we may shift to the conference room in 316 Riley-Robb if offices are full and it is available). If the room is crowded and you can find an alternative source of assistance, or if your question is low priority (e.g. debugging) please be kind and make room for others.\n\n\n\n\n\n\nWhat If I Can’t Make Office Hours?\n\n\n\nWhile we will try to select office hours that work for as much of the class as possible, both the course staff and students have busy schedules and no time will work for everyone. If you need help outside of office hours (e.g. office hours do not fit your schedule), please send an email to the TA or Prof. Srikrishnan as soon as possible. These requests may not be accepted on short notice (e.g. if you have a question about a homework due on Friday and send a request on Thursday; schedules for course staff may already be full). We recommend starting your homework promptly so you can take advantage of office hours or make an appointment over a longer period.",
     "crumbs": [
       "Course Information",
       "Syllabus"
@@ -158,7 +158,7 @@
     "href": "syllabus.html#assessments",
     "title": "Syllabus",
     "section": "Assessments",
-    "text": "Assessments\nYour grade will be computed as the weighted average of the following assessment categories:\n\n\n\nCategory\nWeight\n\n\n\n\nParticipation\n10%\n\n\nExercises\n10%\n\n\nLabs\n10%\n\n\nHomework\n20%\n\n\nPrelims\n30%\n\n\nTerm Project\n20%\n\n\n\n\n\n\n\n\n\nWill There Be a Curve?\n\n\n\nGrades on individual assessments will not be curved. It is unlikely that the final grades will be adjusted, but we may apply a curve if and only if circumstances arise which would make this appropriate, such as if the exams turn out to be longer or more difficult than intended. Grades will not be curved to meet any pre-defined distribution; it is entirely possible that everyone earns an A or everyone earns an F. Asking about a curve will not make one more likely.\n\n\n\nParticipation\nParticipating fully in the class allows you to gain more from the class and contribute more to the learning of your classmates. Some ways to participate include:\n\nAttending every class;\nAsking questions in class or on Ed;\nAnswering questions in class or on Ed;\nComing to office hours.\n\nParticipation points are not free: you are likely to lose points if you consistently skip class or do not ask or answer questions online or in person. At the end of the term, you will be asked to evaluate your own participation over the course of the semester, in addition to my documentation of your participation.\n\n\nExercises\nMost weeks will involve a problem set aimed at assessing key concepts or getting practice with new workflows and packages. We will use Canvas for these exercises, but starter code will be made available on GitHub Classroom for code-based exercises. These will be released Monday before class and are due Friday by 9pm ET. The exercises will be multiple choice, automatically graded, and you can submit them as often as you like. It is highly recommended that you do these promptly and take them seriously, as concepts and code practice will be useful for the homeworks and midterm exams.\n\n\nLabs\nApproximately 5 class periods will be dedicated to working through simple examples to guide you through applying concepts and methods from class. Students should bring their laptops to class, and will be given a worksheet to complete (as much as they can) during these lab classes. Labs will be designed to be completed in class, though you may occasionally require additional time; however, lab worksheets must be submitted by 9:00pm on the lab day. These will be graded on the basis of demonstrated work, rather than absolute correctness or completion. No labs will be dropped by default. If you cannot bring a laptop to class, you can work with other students, though you must turn in your own worksheet for grading.\n\n\nHomework Assignments\nApproximately 5 homework assignments will be assigned throughout the semester, one per course module (plus an initial homework to build or refresh programming and debugging skills). The homework assignments are more in-depth problem sets involving the modeling (derivation and implementation) and analysis of one or more environmental systems problems.\nYou will generally have two class weeks to work on an assignment. This is intended to provide you enough time to work on the problem and debug and evaluate your code (including troubleshooting any technical problems); these are not excuses for late submission. Each homework assignment will build on material from the prior classes and possibly from the day the homework is assigned, but no later.\nStudents are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but plagiarism is a violation of academic integrity. Graduate students in BEE 5850 can expect one additional problem for each homework assignment aimed at developing greater depth or familiarity with the material.\nSome notes on assignment and grading logistics:\n\nHomework assignments will be distributed using GitHub Classroom. While GitHub use is not required for the class aside from accepting and cloning assignments, students are encouraged to update their GitHub repositories as they work on the assignments; this helps with answering questions and gives you a backstop in case something goes wrong and you can’t submit your assignment on time.\nHomeworks are due by 9:00pm Eastern Time on the designed due date. Your assignment notebook (which include your writeup and codes) should be submitted to Gradescope as a PDF with the answers to each question tagged (a failure to do this will result in deductions).\nA meta-rubric is provided on the website, under the Homework page. These are not customized for each assignment but the principles will apply generally.\nNo homework assignments will be dropped, but you can turn in assignments within 24 hours of the due date with a 50% penalty. If you need a further accomodation for a particular assignment, talk to Prof. Srikrishnan before the due date. Requests for extensions made after the due date will only be considered under extraordinary and unexpected circumstances. Technical challenges submitting assignments are not acceptable reasons for extensions to be granted, and late penalties will apply.\nYour submitted homework must stand on its own*! We cannot grade you on the basis of information which was not included in the submitted assignment. While regrade requests should include a justification for why your grade is incorrect, we will not consider explanations or additional reasoning outside of the submission.\n\n\n\nPrelims\nTwo in-class prelims will be given as an opportunity to review relevant material. The dates for the exams are Wednesday, 10/09 and Monday, 11/11. The exams are closed-book and closed-note. As a result, the exams will emphasize conceptual material such as model derivations and interpretation of results; any calculations can be done with a pen(cil) and paper. Conflict and extended-time exams will be handled through SDS. Exams will be scanned into Gradescope for grading and feedback.\nSolutions will not be posted for the midterms, but Prof. Srikrishnan will review and discuss midterm problems in class. The review will occur approximately two weeks after the exam to provide time for conflict exams.\n\n\nFinal Term Project\nThis course will culminate with a term project. The goal of this project is to apply and extend the tools and approaches we will learn in class to an application of your choosing. While we encourage drawing on other classes or interests when developing and working on your project, submitting work from another course or work which was completed prior to the course is not permitted.\nThe term project will be completed in groups (3-4 students). The final deliverable for this project will be a report summarizing the project and results, including a section detailing research you have conducted on relevant regulations and how they were incorporated into your project. Ahead of that, you will submit the following a proposal for feedback on the scope of your project as well as a description of task coordination.\nThe project will be assessed on the basis of both group and individual components:\n\nGroup (80 points):\n\n(10 points) Proposal: Groups will develop a proposal for their final project, which will include two main components. The first is a research plan, which should (succinctly) describe the background for the problem and articulate the key question (system overview, model specification) as well as providing a brief overview of proposed methods (data sources, planned analytic approach). The second is a work plan, which will include task assignments across group members, deadlines for interim tasks, and a plan for coordination (meeting frequency, materials sharing, etc).\n(20 points) Presentation: Groups will present their projects to the class at the end of the semester. Due to time restrictions, these may be recorded and uploaded to Canvas if there are too many projects for the time available. Presentations should be no more than 10 minutes long and should be aimed at a general audience.\n(10 points) Peer Review: Each group will be asked to provide a peer review on two of their classmates’ presentations. The format for the review will be made available on the class website included all expected components, but all members of the group(s) should provide their reviews as part of the overall synthesis. =\n(40 points) Final Report: Each group will submit a final report aimed at an engineering audience. A rubric will be provided with detailed expectations.\n\nIndividual (20 points):\n\n(5 points) Self-Assessment: Each individual in a group will submit a short self-assessment of their project, including a description of the work they contributed to the project (&lt; 1/2 page) and reflections on what worked well or less well (&lt; 1/2 page).\n(15 points) Peer Evaluation: Each individual in a group will submit an evaluation of their teammates’ contributions to the final project and the group dynamic, including assessments of participation, work quality, and inclusivity. Points will be awarded based on the evaluations from your group; different scales will be applied for undergraduate (4750) and graduate (5750) students. No points will be given for any student who fails to submit evaluations for their groupmates.",
+    "text": "Assessments\nYour grade will be computed as the weighted average of the following assessment categories:\n\n\n\nCategory\nWeight\n\n\n\n\nParticipation\n10%\n\n\nExercises\n10%\n\n\nLabs\n10%\n\n\nHomework\n20%\n\n\nPrelims\n30%\n\n\nTerm Project\n20%\n\n\n\n\n\n\n\n\n\nWill There Be a Curve?\n\n\n\nGrades on individual assessments will not be curved. It is unlikely that the final grades will be adjusted, but we may apply a curve if and only if circumstances arise which would make this appropriate, such as if the exams turn out to be longer or more difficult than intended. Grades will not be curved to meet any pre-defined distribution; it is entirely possible that everyone earns an A or everyone earns an F. Asking about a curve will not make one more likely.\n\n\n\nParticipation\nParticipating fully in the class allows you to gain more from the class and contribute more to the learning of your classmates. Some ways to participate include:\n\nAsking questions in class or on Ed;\nAnswering questions in class or on Ed;\nActively engaging in in-class activities;\nComing to office hours.\n\nNote that just passively attending class will not yield full participation points. Participation points are not free: you are likely to lose points if you consistently skip class or do not ask or answer questions online or in person. At the end of the term, you will be asked to evaluate your own participation over the course of the semester, in addition to my documentation of your participation.\n\n\nExercises\nMost weeks will involve a problem set aimed at assessing key concepts or getting practice with new workflows and packages. We will use Canvas for these exercises, but starter code will be made available on GitHub Classroom for code-based exercises. These will be released Monday at the start of class and are due before class (2:55PM) the following Monday. The exercises will be multiple choice or similar (categorization, multiple answer, etc), automatically graded, and you can submit them as often as you like. It is highly recommended that you do these promptly and take them seriously, as concepts and simple code practice will be useful for the homeworks and midterm exams. We will automaticaly drop one exercise set, but no late exercises will be accepted.\n\n\nLabs\nApproximately 5 class periods will be dedicated to working through simple examples to guide you through applying concepts and methods from class. Students should bring their laptops to class, and will be given a worksheet to complete (as much as they can) during these lab classes. Labs will be designed to be completed in class, though you may occasionally require additional time; however, lab worksheets must be submitted by 9:00pm on the lab day. As a result, I encourage you to make sure that you download and set up the lab materials ahead of time; these will be provided for you on Ed Discussion. Labs will be graded on a scale of 0-3 on the basis of effort towards demonstrated work, rather than absolute correctness or completion. No labs will be dropped by default. If you cannot bring a laptop to class, you can work with other students, though you must turn in your own worksheet for grading.\n\n\nHomework Assignments\nApproximately 5 homework assignments will be assigned throughout the semester, one per course module (plus an initial homework to build or refresh programming and debugging skills). The homework assignments are more in-depth problem sets involving the modeling (derivation and implementation) and analysis of one or more environmental systems problems.\nYou will generally have two class weeks to work on an assignment. This is intended to provide you enough time to work on the problem and debug and evaluate your code (including troubleshooting any technical problems); these are not excuses for late submission. Each homework assignment will build on material from the prior classes and possibly from the day the homework is assigned, but no later.\nStudents are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but plagiarism is a violation of academic integrity. Graduate students in BEE 5850 can expect one additional problem for each homework assignment aimed at developing greater depth or familiarity with the material.\nSome notes on assignment and grading logistics:\n\nHomework assignments will be distributed using GitHub Classroom. While GitHub use is not required for the class aside from accepting and cloning assignments, students are encouraged to update their GitHub repositories as they work on the assignments; this helps with answering questions and gives you a backstop in case something goes wrong and you can’t submit your assignment on time.\nHomeworks are due by 9:00pm Eastern Time on the designed due date (usually a Thursday). Your assignment notebook (which include your writeup and codes) should be submitted to Gradescope as a PDF with the answers to each question tagged (a failure to do this will result in deductions).\nA meta-rubric is provided on the website, under the Homework page. These are not customized for each assignment but the principles will apply generally.\nNo homework assignments will be dropped, but you can turn in assignments within 24 hours of the due date with a 50% penalty. If you need a further accomodation for a particular assignment, talk to Prof. Srikrishnan before the due date. Requests for extensions made after the due date will only be considered under extraordinary and unexpected circumstances. Technical challenges submitting assignments are not acceptable reasons for extensions to be granted, and late penalties will apply.\nYour submitted homework must stand on its own*! We cannot grade you on the basis of information which was not included in the submitted assignment. While regrade requests should include a justification for why your grade is incorrect, we will not consider explanations or additional reasoning outside of the submission.\n\n\n\nPrelims\nTwo in-class prelims will be given as an opportunity to review relevant material. The dates for the exams are Wednesday, 10/09 and Monday, 11/11. The exams are closed-book and closed-note. As a result, the exams will emphasize conceptual material such as model derivations and interpretation of results; any calculations can be done with a pen(cil) and paper. Conflict and extended-time exams will be handled through SDS. Exams will be scanned into Gradescope for grading and feedback.\nSolutions will not be posted for the midterms, but Prof. Srikrishnan will review and discuss midterm problems in class. The review will occur approximately two weeks after the exam to provide time for conflict exams.\n\n\nFinal Term Project\nThis course will culminate with a term project. The goal of this project is to apply and extend the tools and approaches we will learn in class to an application of your choosing. While we encourage drawing on other classes or interests when developing and working on your project, submitting work from another course or work which was completed prior to the course is not permitted.\nThe term project will be completed in groups (3-4 students). The final deliverable for this project will be a report summarizing the project and results, including a section detailing research you have conducted on relevant regulations and how they were incorporated into your project. Ahead of that, you will submit the following a proposal for feedback on the scope of your project as well as a description of task coordination.\nThe project will be assessed on the basis of both group and individual components:\n\nGroup (80 points):\n\n(10 points) Proposal: Groups will develop a proposal for their final project, which will include two main components. The first is a research plan, which should (succinctly) describe the background for the problem and articulate the key question (system overview, model specification) as well as providing a brief overview of proposed methods (data sources, planned analytic approach). The second is a work plan, which will include task assignments across group members, deadlines for interim tasks, and a plan for coordination (meeting frequency, materials sharing, etc).\n(20 points) Presentation: Groups will present their projects to the class at the end of the semester. Due to time restrictions, these may be recorded and uploaded to Canvas if there are too many projects for the time available. Presentations should be no more than 10 minutes long and should be aimed at a general audience.\n(10 points) Peer Review: Each group will be asked to provide a peer review on two of their classmates’ presentations. The format for the review will be made available on the class website included all expected components, but all members of the group(s) should provide their reviews as part of the overall synthesis. =\n(40 points) Final Report: Each group will submit a final report aimed at an engineering audience. A rubric will be provided with detailed expectations.\n\nIndividual (20 points):\n\n(5 points) Self-Assessment: Each individual in a group will submit a short self-assessment of their project, including a description of the work they contributed to the project (&lt; 1/2 page) and reflections on what worked well or less well (&lt; 1/2 page).\n(15 points) Peer Evaluation: Each individual in a group will submit an evaluation of their teammates’ contributions to the final project and the group dynamic, including assessments of participation, work quality, and inclusivity. Points will be awarded based on the evaluations from your group; different scales will be applied for undergraduate (4750) and graduate (5750) students. No points will be given for any student who fails to submit evaluations for their groupmates.",
     "crumbs": [
       "Course Information",
       "Syllabus"
@@ -169,7 +169,7 @@
     "href": "syllabus.html#grading",
     "title": "Syllabus",
     "section": "Grading",
-    "text": "Grading\n\nGrading Scale\nThe following grading scale will be used to convert the numerical weighted average from the assessments (above) to letter grades.\n\n\n\nGrade\nRange\n\n\n\n\nA\n93–100\n\n\nA-\n90–92\n\n\nB+\n87–89\n\n\nB\n83–86\n\n\nB-\n80–82\n\n\nC+\n77–79\n\n\nC\n73–76\n\n\nC-\n70–72\n\n\nD+\n67–69\n\n\nD\n63–66\n\n\nD-\n60–62\n\n\nF\n&lt; 59\n\n\n\nWe reserve the right to lower these cutoffs as appropriate, but will not raise them from these levels.\n\n\n\n\n\n\nWill You Round Up My Grade?\n\n\n\nGrades may be rounded up if they are just below the cutoff, but this is not a given, and requests for grade round-ups will be ignored. For example, you should assume that a score of 92.9% has missed the A cutoff of 93% (it is, after all, below the cutoff). Consider it a pleasant surprise if the round-up is given.\n\n\n\n\nForgiven Assignments\nForgiven assignments (due to extenuating circumstances, discussed with and approved by Prof. Srikrishnan) will be treated as though they do not exist, and the appropriate grading component will be computed without them. This does mean that e.g. submitted homeworks will carry more weight in the overall grade computation. In exceptional cases, we will compute course grades based entirely on exams.\n\n\nExceptions\nWe reserve the right to give any student meeting at least one of the following conditions an automatic F:\n\nOverall exam average below 25%;\nSubmitted less than half of the assigned homework problems;\nExtremely low levels of participation and effort.\n\nThis should not generally be a concern; students putting in a good faith effort by attending class, participating in online discussions, doing most of the work, and taking the exams will not be at risk of this policy.",
+    "text": "Grading\n\nGrading Scale\nThe following grading scale will be used to convert the numerical weighted average from the assessments (above) to letter grades.\n\n\n\nGrade\nRange\n\n\n\n\nA+\n97–100\n\n\nA\n93–97\n\n\nA-\n90–93\n\n\nB+\n87–90\n\n\nB\n83–87\n\n\nB-\n80–83\n\n\nC+\n77–80\n\n\nC\n73–77\n\n\nC-\n70–73\n\n\nD+\n67–70\n\n\nD\n63–67\n\n\nD-\n60–63\n\n\nF\n&lt; 60\n\n\n\nWe reserve the right to lower these cutoffs as appropriate, but will not raise them from these levels.\n\n\n\n\n\n\nWill You Round Up or Curve My Grade?\n\n\n\nGrades may be rounded up if they are just below the cutoff, but this is not a given, and requests for grade round-ups will be ignored. For example, you should assume that a score of 92.9% has missed the A cutoff of 93% (it is, after all, below the cutoff). Consider it a pleasant surprise if the round-up is given.\nWhile final grades will not be curved, individual assessments (mainly exams) may be curved if they prove to be more difficult than intended, but this will not be with a view towards achieving a particular grade distribution.\n\n\n\n\nForgiven Assignments\nForgiven assignments (due to extenuating circumstances, discussed with and approved by Prof. Srikrishnan) will be treated as though they do not exist, and the appropriate grading component will be computed without them. This does mean that e.g. submitted homeworks will carry more weight in the overall grade computation. In exceptional cases, we will compute course grades based entirely on exams.\n\n\nExceptions\nWe reserve the right to give any student meeting at least one of the following conditions an automatic F:\n\nOverall exam average below 25%;\nSubmitted less than half of the assigned homework problems;\nExtremely low levels of participation and effort.\n\nThis should not generally be a concern; students putting in a good faith effort by attending class, participating in online discussions, doing most of the work, and taking the exams will not be at risk of this policy.",
     "crumbs": [
       "Course Information",
       "Syllabus"
@@ -459,14 +459,14 @@
     "href": "slides/notebooks/economic-dispatch.html#single-period-economic-dispatch",
     "title": "Economic Dispatch with JuMP",
     "section": "Single-Period Economic Dispatch",
-    "text": "Single-Period Economic Dispatch\nLet’s say that we have a fleet of the following generators.\n\n\nCode\nheader = [\"Plant\", \"P&lt;sub&gt;min&lt;/sub&gt; (MW)\", \"P&lt;sub&gt;max&lt;/sub&gt; (MW)\", \"VarCost (\\$/MW)\"]\ngen_names = [\"Hydro\", \"Wind\", \"Nuclear\", \"Coal\", \"Natural Gas\"]\ngen_minpower = [0, 0, 200, 160, 40]\ngen_maxpower = [150, 200, 1000, 700, 500]\ngen_varcost = [0, 0, 2, 21.50, 23]\ngen_data = DataFrame(name=gen_names, Pmin=gen_minpower, Pmax=gen_maxpower, varcost=gen_varcost)\npretty_table(gen_data; backend = Val(:html), header=header, allow_html_in_cells=true)\n\n\n\n\n\nPlant\nPmin (MW)\nPmax (MW)\nVarCost ($/MW)\n\n\n\n\nHydro\n0\n150\n0.0\n\n\nWind\n0\n200\n0.0\n\n\nNuclear\n200\n1000\n2.0\n\n\nCoal\n160\n700\n21.5\n\n\nNatural Gas\n40\n500\n23.0\n\n\n\n\n\nLet’s also assume that demand in this period is 1800 MW."
+    "text": "Single-Period Economic Dispatch\nLet’s say that we have a fleet of the following generators.\n\n\nCode\nheader = [\"Plant\", \"P&lt;sub&gt;min&lt;/sub&gt; (MW)\", \"P&lt;sub&gt;max&lt;/sub&gt; (MW)\", \"VarCost (\\$/MW)\"]\ngen_names = [\"Hydro\", \"Wind\", \"Nuclear\", \"Coal\", \"Natural Gas\"]\ngen_minpower = [0, 0, 200, 160, 40]\ngen_maxpower = [150, 200, 1000, 700, 500]\ngen_varcost = [0, 0, 2, 21.50, 23]\ngen_data = DataFrame(name=gen_names, Pmin=gen_minpower, Pmax=gen_maxpower, varcost=gen_varcost)\npretty_table(gen_data; backend = Val(:html), header=header, allow_html_in_cells=true)\n\n\n\n\n\n\nPlant\nPmin (MW)\nPmax (MW)\nVarCost ($/MW)\n\n\n\n\nHydro\n0\n150\n0.0\n\n\nWind\n0\n200\n0.0\n\n\nNuclear\n200\n1000\n2.0\n\n\nCoal\n160\n700\n21.5\n\n\nNatural Gas\n40\n500\n23.0\n\n\n\n\n\n\nLet’s also assume that demand in this period is 1800 MW."
   },
   {
     "objectID": "slides/notebooks/economic-dispatch.html#jump-formulation",
     "href": "slides/notebooks/economic-dispatch.html#jump-formulation",
     "title": "Economic Dispatch with JuMP",
     "section": "JuMP Formulation",
-    "text": "JuMP Formulation\n\n\nCode\ndemand = 1800\n\nG = 1:nrow(gen_data)\ndispatch = Model(HiGHS.Optimizer)\n@variable(dispatch, gen_minpower[g] &lt;= y[g in G] &lt;= gen_maxpower[g])\n@objective(dispatch, Min, sum(gen_varcost .* y))\n@constraint(dispatch, load, sum(y) == demand)\n\nlatex_formulation(dispatch)\n\n\n\\[ \\begin{aligned}\n\\min\\quad & 2 y_{3} + 21.5 y_{4} + 23 y_{5}\\\\\n\\text{Subject to} \\quad & y_{1} + y_{2} + y_{3} + y_{4} + y_{5} = 1800.0\\\\\n& y_{1} \\geq 0.0\\\\\n& y_{2} \\geq 0.0\\\\\n& y_{3} \\geq 200.0\\\\\n& y_{4} \\geq 160.0\\\\\n& y_{5} \\geq 40.0\\\\\n& y_{1} \\leq 150.0\\\\\n& y_{2} \\leq 200.0\\\\\n& y_{3} \\leq 1000.0\\\\\n& y_{4} \\leq 700.0\\\\\n& y_{5} \\leq 500.0\\\\\n\\end{aligned} \\]\n\n\n\n\nCode\nset_silent(dispatch)\noptimize!(dispatch)\n\n\n\n\nCode\ngen_sol = value.(y).data\nresults = DataFrame(name=gen_names, dispatch=gen_sol\n, pmin=gen_minpower, pmax=gen_maxpower)\nresults_header = [\"Plant\", \"Dispatch (MW)\", \"P&lt;sub&gt;min&lt;/sub&gt; (MW)\", \"P&lt;sub&gt;max&lt;/sub&gt; (MW)\"]\npretty_table(results; backend = Val(:html), header=results_header, allow_html_in_cells=true)\n\n\n\n\n\nPlant\nDispatch (MW)\nPmin (MW)\nPmax (MW)\n\n\n\n\nHydro\n150.0\n0\n150\n\n\nWind\n200.0\n0\n200\n\n\nNuclear\n1000.0\n200\n1000\n\n\nCoal\n410.0\n160\n700\n\n\nNatural Gas\n40.0\n40\n500\n\n\n\n\n\n\nMarginal Generators\nOnce we hit the minimum for each generator, we then “fill up” capacity from lowest-cost generators first, then move on.\nFor this problem, the coal generator is the marginal generator. If we had used all of our coal capacity, the natural gas unit would be the marginal generator. The concept of the marginal generator is important, as the marginal generation unit sets the price of electricity.\n\n\nMerit Order and the Dispatch Stack\nThis procedure of starting with the lowest-cost generation and adding generation sequentially from generators in order of cost is the concept of merit order: plants are scheduled to supply additional electricity based (mostly) on their variable costs. We can visualize the supply curve (or the dispatch stack) to see the order in which electricity is dispatched.\n\n\nCode\nsupply_curve = DataFrame( \n    name = gen_names, \n    pmin = gen_minpower, \n    cap = gen_maxpower .- gen_minpower,\n    varcost = gen_varcost \n)\n\nsort!(supply_curve, [:varcost, order(:cap, rev=true)])\n\n\n5×4 DataFrame\n\n\n\nRow\nname\npmin\ncap\nvarcost\n\n\n\nString\nInt64\nInt64\nFloat64\n\n\n\n\n1\nWind\n0\n200\n0.0\n\n\n2\nHydro\n0\n150\n0.0\n\n\n3\nNuclear\n200\n800\n2.0\n\n\n4\nCoal\n160\n540\n21.5\n\n\n5\nNatural Gas\n40\n460\n23.0\n\n\n\n\n\n\n\n\nCode\nrectangle(w, h, x, y) = Shape(x .+ [0,w,w,0], y .+ [0,0,h,h]) \n\np = plot(grid=:false, color_palette=:tol_muted, legend=:left, legendfontsize=20, tickfontsize=20, guidefontsize=20) \nmarg_gen = 0 \nmarg_price = 0 \nx = 0 \n\nplot!(p, rectangle(sum(supply_curve.pmin), 0.5, x, 0), opacity=.5, label = \"minimum\", color=\"black\") \nx = x + sum(supply_curve.pmin) \nfor i in 1:nrow(supply_curve) \n    if supply_curve[i, :varcost] == 0 \n        plot!(p, rectangle(supply_curve[i, :cap], 0.5,x,0), opacity=.5, label = supply_curve[i, :name]) \n    else \n        plot!(p, rectangle(supply_curve[i, :cap], supply_curve[i, :varcost],x,0), opacity=.5, label = supply_curve[i, :name]) \n    end \n    if (x &lt; demand) && (x + supply_curve[i,:cap] &gt; demand) \n        marg_gen = i \n        marg_price = supply_curve[i,:varcost] \n    end \n    x = x + supply_curve[i,:cap] \nend \nvline!([demand],linecolor=\"black\",linewidth=5, linestyle=:dash, label = \"demand\") \nhline!([marg_price],linecolor=\"blue\", linestyle=:dot, linewidth=5, label = \"Electricity Price\") \nxlabel!(\"Capacity (MW)\") \nylabel!(\"Marginal Cost (\\$/MW)\") \nplot!(size=(800, 600))\nplot!(right_margin=13mm, left_margin=5mm, bottom_margin=5mm)"
+    "text": "JuMP Formulation\n\n\nCode\ndemand = 1800\n\nG = 1:nrow(gen_data)\ndispatch = Model(HiGHS.Optimizer)\n@variable(dispatch, gen_minpower[g] &lt;= y[g in G] &lt;= gen_maxpower[g])\n@objective(dispatch, Min, sum(gen_varcost .* y))\n@constraint(dispatch, load, sum(y) == demand)\n\nlatex_formulation(dispatch)\n\n\n\\[ \\begin{aligned}\n\\min\\quad & 2 y_{3} + 21.5 y_{4} + 23 y_{5}\\\\\n\\text{Subject to} \\quad & y_{1} + y_{2} + y_{3} + y_{4} + y_{5} = 1800.0\\\\\n& y_{1} \\geq 0.0\\\\\n& y_{2} \\geq 0.0\\\\\n& y_{3} \\geq 200.0\\\\\n& y_{4} \\geq 160.0\\\\\n& y_{5} \\geq 40.0\\\\\n& y_{1} \\leq 150.0\\\\\n& y_{2} \\leq 200.0\\\\\n& y_{3} \\leq 1000.0\\\\\n& y_{4} \\leq 700.0\\\\\n& y_{5} \\leq 500.0\\\\\n\\end{aligned} \\]\n\n\n\n\nCode\nset_silent(dispatch)\noptimize!(dispatch)\n\n\n\n\nCode\ngen_sol = value.(y).data\nresults = DataFrame(name=gen_names, dispatch=gen_sol\n, pmin=gen_minpower, pmax=gen_maxpower)\nresults_header = [\"Plant\", \"Dispatch (MW)\", \"P&lt;sub&gt;min&lt;/sub&gt; (MW)\", \"P&lt;sub&gt;max&lt;/sub&gt; (MW)\"]\npretty_table(results; backend = Val(:html), header=results_header, allow_html_in_cells=true)\n\n\n\n\n\n\nPlant\nDispatch (MW)\nPmin (MW)\nPmax (MW)\n\n\n\n\nHydro\n150.0\n0\n150\n\n\nWind\n200.0\n0\n200\n\n\nNuclear\n1000.0\n200\n1000\n\n\nCoal\n410.0\n160\n700\n\n\nNatural Gas\n40.0\n40\n500\n\n\n\n\n\n\n\nMarginal Generators\nOnce we hit the minimum for each generator, we then “fill up” capacity from lowest-cost generators first, then move on.\nFor this problem, the coal generator is the marginal generator. If we had used all of our coal capacity, the natural gas unit would be the marginal generator. The concept of the marginal generator is important, as the marginal generation unit sets the price of electricity.\n\n\nMerit Order and the Dispatch Stack\nThis procedure of starting with the lowest-cost generation and adding generation sequentially from generators in order of cost is the concept of merit order: plants are scheduled to supply additional electricity based (mostly) on their variable costs. We can visualize the supply curve (or the dispatch stack) to see the order in which electricity is dispatched.\n\n\nCode\nsupply_curve = DataFrame( \n    name = gen_names, \n    pmin = gen_minpower, \n    cap = gen_maxpower .- gen_minpower,\n    varcost = gen_varcost \n)\n\nsort!(supply_curve, [:varcost, order(:cap, rev=true)])\n\n\n\n5×4 DataFrame\n\n\n\nRow\nname\npmin\ncap\nvarcost\n\n\n\nString\nInt64\nInt64\nFloat64\n\n\n\n\n1\nWind\n0\n200\n0.0\n\n\n2\nHydro\n0\n150\n0.0\n\n\n3\nNuclear\n200\n800\n2.0\n\n\n4\nCoal\n160\n540\n21.5\n\n\n5\nNatural Gas\n40\n460\n23.0\n\n\n\n\n\n\n\n\n\nCode\nrectangle(w, h, x, y) = Shape(x .+ [0,w,w,0], y .+ [0,0,h,h]) \n\np = plot(grid=:false, color_palette=:tol_muted, legend=:left, legendfontsize=20, tickfontsize=20, guidefontsize=20) \nmarg_gen = 0 \nmarg_price = 0 \nx = 0 \n\nplot!(p, rectangle(sum(supply_curve.pmin), 0.5, x, 0), opacity=.5, label = \"minimum\", color=\"black\") \nx = x + sum(supply_curve.pmin) \nfor i in 1:nrow(supply_curve) \n    if supply_curve[i, :varcost] == 0 \n        plot!(p, rectangle(supply_curve[i, :cap], 0.5,x,0), opacity=.5, label = supply_curve[i, :name]) \n    else \n        plot!(p, rectangle(supply_curve[i, :cap], supply_curve[i, :varcost],x,0), opacity=.5, label = supply_curve[i, :name]) \n    end \n    if (x &lt; demand) && (x + supply_curve[i,:cap] &gt; demand) \n        marg_gen = i \n        marg_price = supply_curve[i,:varcost] \n    end \n    x = x + supply_curve[i,:cap] \nend \nvline!([demand],linecolor=\"black\",linewidth=5, linestyle=:dash, label = \"demand\") \nhline!([marg_price],linecolor=\"blue\", linestyle=:dot, linewidth=5, label = \"Electricity Price\") \nxlabel!(\"Capacity (MW)\") \nylabel!(\"Marginal Cost (\\$/MW)\") \nplot!(size=(800, 600))\nplot!(right_margin=13mm, left_margin=5mm, bottom_margin=5mm)"
   },
   {
     "objectID": "slides/notebooks/economic-dispatch.html#multiple-period-dispatch",
@@ -480,7 +480,549 @@
     "href": "slides/notebooks/dissolved-oxygen.html",
     "title": "BEE 4750 - Fall 2024",
     "section": "",
-    "text": "---\ntitle: \"Dissolved Oxygen\"\nauthor: \"Vivek Srikrishnan\"\ndate: \"5/13/2023\"\nformat:\n  html:\n    code-fold: true\n  ipynb: default\njupyter: julia-1.9\n---\n\nErrorException: syntax: invalid operator \"--\"\n\n\n\nimport Pkg\nPkg.activate(\"..\")\nPkg.instantiate()\n\n  Activating project at `~/Teaching/environmental-systems-analysis/website/slides`\n\n\n\nusing Plots\nusing Measures\nusing LaTeXStrings\n\nA first-order model for dissolved oxygen (DO) is\n\\[\\begin{align}\nU \\frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B - k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right) - k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)\n\\end{align}\\]\nwhich has solution\n\\[C(x) = C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1),\\]\nbut we’ll ignore \\(P\\), \\(R\\), and \\(S_B\\) as these just modify \\(C_s\\).\n\n## function to simulate DO given parameters\n\nfunction do_simulate(x, C0, B0, N0, ka, kn, kc, Cs, U)\n    B = B0 .* exp.(-kc .* x ./ U)\n    N = N0 .* exp.(-kn .* x ./ U)\n    alpha1 = exp.(-ka .* x ./ U)\n    alpha2 = (kc/(ka-kc)) .* (exp.(-kc .* x / U) - exp.(-ka .* x / U))\n    alpha3 = (kn/(ka-kn)) .* (exp.(-kn .* x / U) - exp.(-ka .* x / U))\n    C = Cs .* (1 .- alpha1) + (C0 .* alpha1) - (B0 .* alpha2) - (N0 .* alpha3)\n    return (C, B, N)\nend  \n\ndo_simulate (generic function with 1 method)\n\n\n\n\nka = 0.8\nkc = 0.4\nkn = 0.25\n\nx = 0:40\n\nC, B, N = do_simulate(x, 12, 10, 6, ka, kc, kn, 10, 6)\n\n([12.0, 11.00645310548937, 10.175859173274619, 9.485735592776512, 8.916529246889715, 8.451243511008714, 8.075112259659466, 7.7753149851202945, 7.540727870097758, 7.3617063020117754  …  8.192305787065738, 8.267173709636479, 8.339934969497461, 8.410487111173717, 8.47875989610827, 8.544710197112913, 8.608317593145037, 8.669580573208266, 8.72851326979175, 8.785142652415068], [10.0, 9.591894571091382, 9.200444146293233, 8.824969025845954, 8.464817248906142, 8.11936346150635, 7.788007830714049, 7.470175003104326, 7.1653131057378925, 6.872892787909723  …  2.748123805594897, 2.6359713811572676, 2.5283959580474646, 2.425210746356487, 2.326236579172927, 2.231301601484298, 2.140240971774475, 2.052896575799093, 1.9691167520419406, 1.8887560283756186], [6.0, 5.613041910189707, 5.251039914257685, 4.912384518467891, 4.595570030187892, 4.299187863442736, 4.0219202762138355, 3.7625345116383366, 3.5198773170601907, 3.292869816564159  …  0.7596426167345016, 0.7106509740828222, 0.6648189501740032, 0.6219427716691671, 0.5818318071864303, 0.5443077197364751, 0.5092036738201045, 0.47636359366246933, 0.44564146928600323, 0.4169007073368093])\n\n\n\np1 = plot(x, C, grid=false, color=:black, ylabel=\"DO/OD (mg/l)\", xlabel=\"Distance (km)\", label=\"DO\", linewidth=3, left_margin=8mm, top_margin=10mm, guidefontsize=16, legendfontsize=16, tickfontsize=14, xticks=:false, yticks=:false, legend=:right)\nplot!(x, B, color=:green, label=\"CBOD\", linestyle=:dash, linewidth=3)\nplot!(x, N, color=:blue, label=\"NBOD\", linestyle=:dash, linewidth=3)\nplot!(x, 10 * ones(length(x)), color=:purple, label=L\"C_s\", linestyle=:dot, linewidth=3)\n\nannotate!(1.5, 12.75, text(\"Waste Discharge\", pointsize=16, color=:red))\nvline!([0], color=:red, linewidth=2, label=:false)\nplot!(size=(700, 500))\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Sag curve for dissolved oxygen.\n\n\n\n\n\nC0 = 6.2\nB0 = 9\nN0 = 7\n\nka = 0.8\nkc = 0.5\nkn = 0.4\nCs = 7\nU = 5\n\n5\n\n\n\nfunction dissolved_oxygen(x, Cs, C0, B0, N0, ka, kc, kn, U)\n    α1 = exp(-ka * x / U)\n    α2 = (kc / (ka - kc)) * (exp(-kc * x / U) - α1)\n    α3 = (kn / (ka - kn)) * (exp(-kn * x / U) - α1)\n    C = (Cs * (1 - α1)) + (C0 * α1) - (B0 * α2) - (N0 * α3)\n    return C\nend\n\nx = 0:0.1:20\nC = (y -&gt; dissolved_oxygen(y, Cs, C0, B0, N0, ka, kc, kn, U)).(x)\n\n\n\nCode\nplot(x, C; linewidth=3, \n    label=\"Dissolved Oxygen\", \n    tickfontsize=16, \n    guidefontsize=16, \n    legendfontsize=16)\nxlabel!(L\"$x$ (km)\")\nylabel!(\"DO Concentration (mg/L)\")\nhline!([3], color=:red, \n    linestyle=:dash, \n    label=\"Regulatory Standard\")\nplot!(size=(500, 500))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Single-Release Dissolved Oxygen Example\n\n\n\n\n\nQ1 = 100000\nQ2 = 20000\nQ3 = 25000\n\nx0 = 0\nx1 = 18\nx2 = 30\nx3 = 45\n\nC01 = 6\nB01 = 5\nN01 = 4.5\n\nC1, B1, N1 = do_simulate(x0:x1, C01, B01, N01, ka, kc, kn, 9, 6)\n\nC02 = (C1[length(C1)] * Q1 + 3 * Q2) / (Q1 + Q2)\nB02 = (B1[length(B1)] * Q1 + 50 * Q2) / (Q1 + Q2)\nN02 = (N1[length(N1)] * Q1 + 45 * Q2) / (Q1 + Q2)\n\nC2, B2, N2 = do_simulate(x0:(x2-x1), C02, B02, N02, ka, kc, kn, 9, 6)\n\nC03 = (C2[length(C2)] * (Q1 + Q2) + 4 * Q3) / (Q1 + Q2 + Q3)\nB03 = (B2[length(B2)] * (Q1 + Q2) + 40 * Q3) / (Q1 + Q2 + Q3)\nN03 = (N2[length(N2)] * (Q1 + Q2) + 30 * Q3) / (Q1 + Q2 + Q3)\n\nC3, B3, N3 = do_simulate(x0:(x3-x2), C03, B03, N03, ka, kc, kn, 9, 6)\n\nplot(x0:x1, C1, grid=false, color=:black, ylabel=\"DO (mg/L)\", xlabel=\"Distance (km)\", label=\"DO\", xticks=:false, yticks=:false, linewidth=3, left_margin=12mm, top_margin=10mm, bottom_margin=20mm, guidefontsize=16, tickfontsize=16, legendfontsize=16)\nplot!(x1:x2, C2, color=:black, label=false, linewidth=3)\nplot!(x2:x3, C3, color=:black, label=false, linewidth=3)\nplot!(size=(1200, 500))\n\nvline!([x0, x1, x2], color=:green, linewidth=3, label=\"Discharge\")\nhline!([3], color=:red, linewidth=3, label=\"Regulation\", linestyle=:dash)\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Multi-Release Dissolved Oxygen Example"
+    "text": "---\ntitle: \"Dissolved Oxygen\"\nauthor: \"Vivek Srikrishnan\"\ndate: \"5/13/2023\"\nformat:\n  html:\n    code-fold: true\n  ipynb: default\njupyter: julia-1.9\n---\n\nErrorException: syntax: invalid operator \"--\"\nsyntax: invalid operator \"--\"\n\n\n\nStacktrace:\n\n [1] top-level scope\n\n   @ ~/Teaching/environmental-systems-analysis/website/slides/notebooks/dissolved-oxygen.ipynb:1\n\n\n\nimport Pkg\nPkg.activate(\"..\")\nPkg.instantiate()\n\n  Activating project at `~/Teaching/environmental-systems-analysis/website/slides`\n\n\n\nusing Plots\nusing Measures\nusing LaTeXStrings\n\nA first-order model for dissolved oxygen (DO) is\n\\[\\begin{align}\nU \\frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B - k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right) - k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)\n\\end{align}\\]\nwhich has solution\n\\[C(x) = C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1),\\]\nbut we’ll ignore \\(P\\), \\(R\\), and \\(S_B\\) as these just modify \\(C_s\\).\n\n## function to simulate DO given parameters\n\nfunction do_simulate(x, C0, B0, N0, ka, kn, kc, Cs, U)\n    B = B0 .* exp.(-kc .* x ./ U)\n    N = N0 .* exp.(-kn .* x ./ U)\n    alpha1 = exp.(-ka .* x ./ U)\n    alpha2 = (kc/(ka-kc)) .* (exp.(-kc .* x / U) - exp.(-ka .* x / U))\n    alpha3 = (kn/(ka-kn)) .* (exp.(-kn .* x / U) - exp.(-ka .* x / U))\n    C = Cs .* (1 .- alpha1) + (C0 .* alpha1) - (B0 .* alpha2) - (N0 .* alpha3)\n    return (C, B, N)\nend  \n\ndo_simulate (generic function with 1 method)\n\n\n\n\nka = 0.8\nkc = 0.4\nkn = 0.25\n\nx = 0:40\n\nC, B, N = do_simulate(x, 12, 10, 6, ka, kc, kn, 10, 6)\n\n([12.0, 11.00645310548937, 10.175859173274619, 9.485735592776512, 8.916529246889715, 8.451243511008714, 8.075112259659466, 7.7753149851202945, 7.540727870097758, 7.3617063020117754  …  8.192305787065738, 8.267173709636479, 8.339934969497461, 8.410487111173717, 8.47875989610827, 8.544710197112913, 8.608317593145037, 8.669580573208266, 8.72851326979175, 8.785142652415068], [10.0, 9.591894571091382, 9.200444146293233, 8.824969025845954, 8.464817248906142, 8.11936346150635, 7.788007830714049, 7.470175003104326, 7.1653131057378925, 6.872892787909723  …  2.748123805594897, 2.6359713811572676, 2.5283959580474646, 2.425210746356487, 2.326236579172927, 2.231301601484298, 2.140240971774475, 2.052896575799093, 1.9691167520419406, 1.8887560283756186], [6.0, 5.613041910189707, 5.251039914257685, 4.912384518467891, 4.595570030187892, 4.299187863442736, 4.0219202762138355, 3.7625345116383366, 3.5198773170601907, 3.292869816564159  …  0.7596426167345016, 0.7106509740828222, 0.6648189501740032, 0.6219427716691671, 0.5818318071864303, 0.5443077197364751, 0.5092036738201045, 0.47636359366246933, 0.44564146928600323, 0.4169007073368093])\n\n\n\np1 = plot(x, C, grid=false, color=:black, ylabel=\"DO/OD (mg/l)\", xlabel=\"Distance (km)\", label=\"DO\", linewidth=3, left_margin=8mm, top_margin=10mm, guidefontsize=16, legendfontsize=16, tickfontsize=14, xticks=:false, yticks=:false, legend=:right)\nplot!(x, B, color=:green, label=\"CBOD\", linestyle=:dash, linewidth=3)\nplot!(x, N, color=:blue, label=\"NBOD\", linestyle=:dash, linewidth=3)\nplot!(x, 10 * ones(length(x)), color=:purple, label=L\"C_s\", linestyle=:dot, linewidth=3)\n\nannotate!(1.5, 12.75, text(\"Waste Discharge\", pointsize=16, color=:red))\nvline!([0], color=:red, linewidth=2, label=:false)\nplot!(size=(700, 500))\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Sag curve for dissolved oxygen.\n\n\n\n\n\nC0 = 6.2\nB0 = 9\nN0 = 7\n\nka = 0.8\nkc = 0.5\nkn = 0.4\nCs = 7\nU = 5\n\n5\n\n\n\nfunction dissolved_oxygen(x, Cs, C0, B0, N0, ka, kc, kn, U)\n    α1 = exp(-ka * x / U)\n    α2 = (kc / (ka - kc)) * (exp(-kc * x / U) - α1)\n    α3 = (kn / (ka - kn)) * (exp(-kn * x / U) - α1)\n    C = (Cs * (1 - α1)) + (C0 * α1) - (B0 * α2) - (N0 * α3)\n    return C\nend\n\nx = 0:0.1:20\nC = (y -&gt; dissolved_oxygen(y, Cs, C0, B0, N0, ka, kc, kn, U)).(x)\n\n\n\nCode\nplot(x, C; linewidth=3, \n    label=\"Dissolved Oxygen\", \n    tickfontsize=16, \n    guidefontsize=16, \n    legendfontsize=16)\nxlabel!(L\"$x$ (km)\")\nylabel!(\"DO Concentration (mg/L)\")\nhline!([3], color=:red, \n    linestyle=:dash, \n    label=\"Regulatory Standard\")\nplot!(size=(500, 500))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Single-Release Dissolved Oxygen Example\n\n\n\n\n\nQ1 = 100000\nQ2 = 20000\nQ3 = 25000\n\nx0 = 0\nx1 = 18\nx2 = 30\nx3 = 45\n\nC01 = 6\nB01 = 5\nN01 = 4.5\n\nC1, B1, N1 = do_simulate(x0:x1, C01, B01, N01, ka, kc, kn, 9, 6)\n\nC02 = (C1[length(C1)] * Q1 + 3 * Q2) / (Q1 + Q2)\nB02 = (B1[length(B1)] * Q1 + 50 * Q2) / (Q1 + Q2)\nN02 = (N1[length(N1)] * Q1 + 45 * Q2) / (Q1 + Q2)\n\nC2, B2, N2 = do_simulate(x0:(x2-x1), C02, B02, N02, ka, kc, kn, 9, 6)\n\nC03 = (C2[length(C2)] * (Q1 + Q2) + 4 * Q3) / (Q1 + Q2 + Q3)\nB03 = (B2[length(B2)] * (Q1 + Q2) + 40 * Q3) / (Q1 + Q2 + Q3)\nN03 = (N2[length(N2)] * (Q1 + Q2) + 30 * Q3) / (Q1 + Q2 + Q3)\n\nC3, B3, N3 = do_simulate(x0:(x3-x2), C03, B03, N03, ka, kc, kn, 9, 6)\n\nplot(x0:x1, C1, grid=false, color=:black, ylabel=\"DO (mg/L)\", xlabel=\"Distance (km)\", label=\"DO\", xticks=:false, yticks=:false, linewidth=3, left_margin=12mm, top_margin=10mm, bottom_margin=20mm, guidefontsize=16, tickfontsize=16, legendfontsize=16)\nplot!(x1:x2, C2, color=:black, label=false, linewidth=3)\nplot!(x2:x3, C3, color=:black, label=false, linewidth=3)\nplot!(size=(1200, 500))\n\nvline!([x0, x1, x2], color=:green, linewidth=3, label=\"Discharge\")\nhline!([3], color=:red, linewidth=3, label=\"Regulation\", linestyle=:dash)\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Multi-Release Dissolved Oxygen Example"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#about-me",
+    "href": "slides/lecture02-lab-setup.html#about-me",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "About Me",
+    "text": "About Me\nProf. Vivek Srikrishnan, viveks at cornell dot edu, 318 Riley-Robb\n\nFrom Wappingers Falls, NY (via Champaign-Urbana, IL and State College, PA);\nNon-academic highlight: Was on Jeopardy! in 2016;\nResearches climate risk management;\nParticular interested in unintended consequences which result from neglecting uncertainty or system dynamics."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#meet-my-supervisors",
+    "href": "slides/lecture02-lab-setup.html#meet-my-supervisors",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Meet My Supervisors",
+    "text": "Meet My Supervisors\n\n\n\n\nMy Supervisors"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#about-the-ta",
+    "href": "slides/lecture02-lab-setup.html#about-the-ta",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "About the TA",
+    "text": "About the TA\nGabriela Ackermann Logan, M.S./Ph.D. student, ga345 at cornell dot edu, 319 Riley-Robb\n\nFrom (via Medford, MA)\nInterested in energy system transitions and supply chain/logistical needs."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#what-is-a-system",
+    "href": "slides/lecture02-lab-setup.html#what-is-a-system",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "What Is A System?",
+    "text": "What Is A System?\nA system is:\n\n\n“an interconnected set of elements that is coherently organized in a way that achieves something…\nA system must consist of three kinds of things: elements, interconnections and a function or purpose.”\n\n\n— Donella Meadows, Thinking in Systems: A Primer, 2008"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#examples-of-systems",
+    "href": "slides/lecture02-lab-setup.html#examples-of-systems",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Examples of Systems",
+    "text": "Examples of Systems\nCan we think of any examples of systems?\n\nWhat about things that are not systems?"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#why-are-systems-interesting",
+    "href": "slides/lecture02-lab-setup.html#why-are-systems-interesting",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Why Are Systems Interesting?",
+    "text": "Why Are Systems Interesting?\nIn other words, a system involves an interconnected set of components.\nThose interconnections can lead to very different dynamics and outcomes than if the component processes were studied in isolation."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#example-topics",
+    "href": "slides/lecture02-lab-setup.html#example-topics",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Example Topics",
+    "text": "Example Topics\n\n\nTopics\n\n\nDefine systems\nSimulate system dynamics\nAnalyze and assess risk\nMake decisions with optimization\nExplore trade-offs across objectives\n\n\n\n\n\nExample Systems\n\n\nAir pollution\nWastewater management\nElectric power systems\nSolid waste management"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#what-do-you-hope-to-get-out-of-this-course",
+    "href": "slides/lecture02-lab-setup.html#what-do-you-hope-to-get-out-of-this-course",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "What Do You Hope To Get Out Of This Course?",
+    "text": "What Do You Hope To Get Out Of This Course?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#course-organization",
+    "href": "slides/lecture02-lab-setup.html#course-organization",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Course Organization",
+    "text": "Course Organization\n\nIntroduction to Systems Analysis\nSimulating Systems and Risk\nSystems Management and Optimization\nDecision-Making Under Uncertainty"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#disclaimer",
+    "href": "slides/lecture02-lab-setup.html#disclaimer",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nSitting in class/looking at these notes is not a substitute for reading the syllabus."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#attendance",
+    "href": "slides/lecture02-lab-setup.html#attendance",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Attendance",
+    "text": "Attendance\nNot required, but students tend to do better when they’re actively engaged in class"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#office-hours",
+    "href": "slides/lecture02-lab-setup.html#office-hours",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Office Hours",
+    "text": "Office Hours\n\nTime TBD (will send out poll)\nAlmost impossible to find a time that works for all (or even most); please feel free to email to make appointments as/if needed.\nCan be busy, will triage based on urgency (e.g. if you want code help but have not done basic debugging steps, you will be asked to wait until others are helped)."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#accomodations",
+    "href": "slides/lecture02-lab-setup.html#accomodations",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Accomodations",
+    "text": "Accomodations\nIf you have any access barriers in this class, please seek out any helpful accomodations.\n\nGet an SDS letter.\nIf you need an accomodation before you have an official letter, please reach out to me ASAP!"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#course-website",
+    "href": "slides/lecture02-lab-setup.html#course-website",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Course Website",
+    "text": "Course Website\nhttps://viveks.me/environmental-systems-analysis\n\nCentral hub for information, schedule, and policies\nWill add link and some information to Canvas (assignment due dates, etc)"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#communications",
+    "href": "slides/lecture02-lab-setup.html#communications",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Communications",
+    "text": "Communications\nUse Ed Discussion for questions and discussions about class, homework assignments, etc.\n\nTry to use public posts so others can benefit from questions and can weigh in.\nI will make announcements through Ed, so check regularly.\nUrgent announcements will also be emailed.\n\nWhen urgency or privacy is required, email is ok."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#julia",
+    "href": "slides/lecture02-lab-setup.html#julia",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Julia",
+    "text": "Julia\nIn this course, we will use the Julia programming language.\nAll assignments, labs, and AEs will be provided as Jupyter Notebooks."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#what-is-your-programming-experience",
+    "href": "slides/lecture02-lab-setup.html#what-is-your-programming-experience",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "What Is Your Programming Experience?",
+    "text": "What Is Your Programming Experience?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#jupyter-notebooks",
+    "href": "slides/lecture02-lab-setup.html#jupyter-notebooks",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Jupyter Notebooks",
+    "text": "Jupyter Notebooks\nWe will use Jupyter Notebooks for most computing tasks (including assignments).\n\nAllow for interactive evaluation of code and integration with text (including nicely typeset mathematics)\nCan export to PDF (or HTML -&gt; PDF) for submission to Gradescope.\nBe careful before submitting: Evaluate all cells in order"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#github-classroom",
+    "href": "slides/lecture02-lab-setup.html#github-classroom",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "GitHub Classroom",
+    "text": "GitHub Classroom\nHomework assignments and labs will be distributed using GitHub Classroom.\n\nEvery student will have a unique “repository.”\nWhen assignment is released, I will share the link for repository creation on Ed Discussion.\nMakes it easy to share code for assistance and debugging (share links to repositories, not out-of-context code and screenshots)."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#debugging-code",
+    "href": "slides/lecture02-lab-setup.html#debugging-code",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Debugging Code",
+    "text": "Debugging Code\n\nLook at the class FAQ!\nSearch for the error message you’re seeing.\nTry to divide code into logical “chunks” and test each one to isolate the error where there’s a syntax or conceptual error.\nPost on Ed. Do not include a screenshot, link to GitHub or provide a small snippet showing the syntax you’re trying.\nCome to office hours (last recourse!)."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#assessments",
+    "href": "slides/lecture02-lab-setup.html#assessments",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Assessments",
+    "text": "Assessments\n\n\n\nCategory\nWeight\n\n\n\n\nParticipation\n10% (5% for 5750)\n\n\nReadings (5750 only)\n5%\n\n\nExercises\n10%\n\n\nLabs\n10%\n\n\nHomework\n20%\n\n\nPrelims\n30%\n\n\nTerm Project\n20%"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#overall-guidelines",
+    "href": "slides/lecture02-lab-setup.html#overall-guidelines",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Overall Guidelines",
+    "text": "Overall Guidelines\n\nCollaboration highly encouraged, but all work must reflect your own understanding\nSubmit PDFs on Gradescope\n24 hour late submissions, 10% penalty\n“Standard” rubric available for HW/exams\nAlways cite external references\nCurve unlikely (not worth asking about…)"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#late-work-policy",
+    "href": "slides/lecture02-lab-setup.html#late-work-policy",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Late Work Policy",
+    "text": "Late Work Policy\n\nMost work can be submitted up to 24 hours late at a 50% penalty.\nIf you have an approved reason (illness, injury, etc), let me know ahead of time and we will make accomodations."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#regrade-requests",
+    "href": "slides/lecture02-lab-setup.html#regrade-requests",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Regrade Requests",
+    "text": "Regrade Requests\n\nCan be submitted on Gradescope up to 1 week after grades are released.\nMust include a brief justification.\nWill be evaluated only on the basis of the work in the submission.\nCan lose points if me/TA notice we missed a mistake initially!"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#regrade-requests-special-cases",
+    "href": "slides/lecture02-lab-setup.html#regrade-requests-special-cases",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Regrade Requests: Special Cases",
+    "text": "Regrade Requests: Special Cases\n\nIf you (correctly) point out that your grade was graded too leniently, you will get bonus points back.\nIf a significant error (as defined by me) is found in the solutions, everyone in the class will receive full credit for that (sub)problem."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#labs",
+    "href": "slides/lecture02-lab-setup.html#labs",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Labs",
+    "text": "Labs\n\nIn-class guided activities, but may need some time after class to complete\nFocus on “how” to apply methods and concepts from class\nIf you can’t bring a laptop to these classes, you can work with someone else\nCan work in groups, but must submit your own work.\nDue by 9:00pm on the lab day, will drop one.\nGraded on a scale of 0-3, largely based on effort."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#exercises",
+    "href": "slides/lecture02-lab-setup.html#exercises",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Exercises",
+    "text": "Exercises\n\nAuto-graded “quizzes” on Canvas, auto-graded\nFocus on conceptual questions or quick setups/calculations (no coding)\nCan submit as many times as you like.\nDue by 9:00pm by the end of the week (Friday).\nWill drop one."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#homework-assignments",
+    "href": "slides/lecture02-lab-setup.html#homework-assignments",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Homework Assignments",
+    "text": "Homework Assignments\n\n5 in total, due two weeks after assignment.\nFocus on new or extended applications\nManaged with GitHub Classroom\nDue by 9:00pm on the due date (usually Friday)\nNo drops.\nGraded on correctness."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#term-project",
+    "href": "slides/lecture02-lab-setup.html#term-project",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Term Project",
+    "text": "Term Project\n\nAnalyze a system of interest, including the regulatory environment, going beyond class examples/methods.\nWork in groups of 3–4.\nSubmit proposal on 11/1/24.\nRecord presentation by end of semester for peer review by classmates.\nSubmit report, peer reviews, group/self evaluations by end of finals week."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#participation",
+    "href": "slides/lecture02-lab-setup.html#participation",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Participation",
+    "text": "Participation\n\nThe class works best when everyone is engaged and collaborative\n\nAttending every class;\nAsking questions in class or on Ed;\nAnswering questions in class or on Ed;\nComing to office hours.\n\nWe’re paying attention! Participation points not “free”."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#prelims",
+    "href": "slides/lecture02-lab-setup.html#prelims",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Prelims",
+    "text": "Prelims\n\nTwo in-class prelims (10/09, 11/11);\nWill resemble exercises/labs more than homework.\nFocus on concepts, problem formulations, interpretation.\nNot trying to make these long or particularly difficult!\nExams will be scanned and put on Gradescope for grades/feedback.\nWill discuss two weeks after the exams after grades are returned."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#readings",
+    "href": "slides/lecture02-lab-setup.html#readings",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Readings",
+    "text": "Readings\n\nStudents in 5750 will be assigned one-two readings per module.\nOption to peer annotate on Canvas.\nWill need to submit a written summary/synthesis.\nStudents in 4750 should feel free to do the reading to go more deeply, but optional."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#hopefully-not-a-concern",
+    "href": "slides/lecture02-lab-setup.html#hopefully-not-a-concern",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Hopefully Not a Concern…",
+    "text": "Hopefully Not a Concern…\n\nCollaboration is great and is encouraged!\nKnowing how to find, evaluate, and use helpful resources is a skill we want to develop.\nDon’t just copy…learn from others and give credit.\nSubmit your own original work."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#academic-integrity-1",
+    "href": "slides/lecture02-lab-setup.html#academic-integrity-1",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nObviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok.\nBut often lines aren’t that simple. Let’s quickly consider some scenarios (h/t to Tony Wong for these)."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#academic-integrity-scenario-1",
+    "href": "slides/lecture02-lab-setup.html#academic-integrity-scenario-1",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Academic Integrity: Scenario 1",
+    "text": "Academic Integrity: Scenario 1\nDan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. They cites the source of the codes.\n\n\n\n\n\n\nIs this ok?\n\n\n\nProbably Not\n\nWhat portion of the work is Dan’s?\nHow important were the codes?\nDid Dan understand what they copied?"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#academic-integrity-scenario-1-1",
+    "href": "slides/lecture02-lab-setup.html#academic-integrity-scenario-1-1",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Academic Integrity: Scenario 1",
+    "text": "Academic Integrity: Scenario 1\nDan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. They cites the source of the codes.\n\n\n\n\n\n\nWhat Should Dan Do?\n\n\n\nDan should paraphrase the codes they found to incorporate them with his own code, and then also cite them."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#academic-integrity-scenario-2",
+    "href": "slides/lecture02-lab-setup.html#academic-integrity-scenario-2",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Academic Integrity: Scenario 2",
+    "text": "Academic Integrity: Scenario 2\nMatthew and Rhonda work together to figure out how to implement the codes, but each works on their own computer and develops their own solutions.\n\n\n\n\n\n\nIs this ok?\n\n\n\nDefinitely!\n\nIndependent implementations shows understanding."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#academic-integrity-scenario-3",
+    "href": "slides/lecture02-lab-setup.html#academic-integrity-scenario-3",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Academic Integrity: Scenario 3",
+    "text": "Academic Integrity: Scenario 3\nFelix and Rachel are working together on a problem involving a derivation. Rachel types it up in LaTeX and sends the code to Felix, who pastes it into his Jupyter notebook.\n\n\n\n\n\n\nIs this ok?\n\n\n\nLikely Not\n\nDid Felix contribute enough to the derivation?\nDefinitely not OK if Felix doesn’t give Rachel credit for their contribution."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#academic-integrity-scenario-4",
+    "href": "slides/lecture02-lab-setup.html#academic-integrity-scenario-4",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Academic Integrity: Scenario 4",
+    "text": "Academic Integrity: Scenario 4\nDarren uses ChatGPT to debug an error in their homework code. They fix the error and credits ChatGPT in his References section.\n\n\n\n\n\n\nIs this ok?\n\n\n\nWell-meaning, but no!\n\nUsing ChatGPT (or other ML tools) can be ok, but…\nNeed to ask permission and thoroughly document the query and the exact response."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#chatgpt-the-stochastic-parrot",
+    "href": "slides/lecture02-lab-setup.html#chatgpt-the-stochastic-parrot",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "ChatGPT: The Stochastic Parrot",
+    "text": "ChatGPT: The Stochastic Parrot\nWhy is ChatGPT (and other ML/AI tools) singled out?\n\n\nLack of Transparency: Not clear what the training data is, so documentation is essential (ML is not great at extrapolation).\nNot Well-Suited to All Tasks: Can be useful for getting a skeleton, starter code, or debugging. Really (and obviously) bad at interpretation and analysis.\nHallucinations: ChatGPT often just makes stuff up. Do you want to be credited for a ChatGPT hallucination?"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#chatgpt-the-stochastic-parrot-1",
+    "href": "slides/lecture02-lab-setup.html#chatgpt-the-stochastic-parrot-1",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "ChatGPT: The Stochastic Parrot",
+    "text": "ChatGPT: The Stochastic Parrot\n\nThink of ChatGPT as a ranting drunk\nIt’s stringing together words or code it heard in a way that sounds reasonable, but there’s no sense of concept.\nChatGPT debugging can be useful, but can also lead to new errors with no clear way to fix them, since you don’t understand what you did."
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#next-classes",
+    "href": "slides/lecture02-lab-setup.html#next-classes",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: Lab 1: Setting up Julia and GitHub\n\nLab 1 link is available on Ed. Click it to accept the lab before class.\nCome to class with downloaded lab and try to follow the setup instructions on the website.\n\nNext Week: Introduction to Systems Analysis"
+  },
+  {
+    "objectID": "slides/lecture02-lab-setup.html#assessments-1",
+    "href": "slides/lecture02-lab-setup.html#assessments-1",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Assessments",
+    "text": "Assessments\n\nLab 1: Wednesday\nHW 1: Available, due 9/6."
+  },
+  {
+    "objectID": "policies/exam.html",
+    "href": "policies/exam.html",
+    "title": "Exam Policies",
+    "section": "",
+    "text": "This page includes some information on the exams for BEE 4750/5750, including policies and logistics.",
+    "crumbs": [
+      "Policies",
+      "Exam Policies"
+    ]
+  },
+  {
+    "objectID": "policies/exam.html#exam-logistics",
+    "href": "policies/exam.html#exam-logistics",
+    "title": "Exam Policies",
+    "section": "Exam Logistics",
+    "text": "Exam Logistics\nThis class has two prelims, both in class:\n\nPrelim 1: Wednesday, October 09;\nPrelim 2: Monday, November 11.\n\nEach is worth 10% of your grade. Exams will be hand-written and then will be scanned into Gradescope (by course staff) for grading and feedback; the physical copy of your exam will not be returned.\n\nExam Topics and Structure\nThe emphasis is on concepts; there will be no major formulas that you will need to use, and no programming. You will be potentially be asked to derive mathematical versions of models, apply concepts from class, and interpret model outputs. The problems are largely short- or medium-answer.\nIn general, the same homework grading rubric applies to exam problems, as appropriate (.e.g. nothing about code). The deadly sins will still be penalized, and your solutions should be clear with transparent and well-communicated reasoning.\n\n\nAcademic Integrity\nThe exams are closed-book and closed-note, and closed everything else. No medically unnecessary electronic devices are allowed to be used during the exam, including headphones and smart watches.\nExams are also strictly confidential until the conflict and accomodation exams have been taken. Do not discuss your exam with anyone in person or online. Once all exams are taken, we will discuss the exams in class.\n\n\nDifficulty\nWhile we will not hand out sample exams, exam problems will be closer in difficulty to lab or exercise problems than the homework, since you have two full weeks to solve the problem and have full acccess to external resources, course staff, and classmates. The goal is to assess your ability to set up problems, determine appropriateness of methods, and interpret the output, rather than on doing computations. We cannot, and do not, expect you to solve problems with homework-level difficulty in the restricted exam setting.",
+    "crumbs": [
+      "Policies",
+      "Exam Policies"
+    ]
+  },
+  {
+    "objectID": "policies/exam.html#accomodations-conflicts-and-makeup-exams",
+    "href": "policies/exam.html#accomodations-conflicts-and-makeup-exams",
+    "title": "Exam Policies",
+    "section": "Accomodations, Conflicts, and Makeup Exams",
+    "text": "Accomodations, Conflicts, and Makeup Exams\n\nSDS Accomodations\nPlease make sure that any exam-related accomodations have been provided to the course staff ahead of the first exam. All exams requiring accomodations will be scheduled and delivered through the Alternative Testing Program.\n\n\nConflict and Makeup Exams\nIf you have an academic conflict or a university-approved reason why you cannot take the exam in class, you should schedule your conflict exam through the Alternative Testing Program.\nIn extreme circumstances, such as long-term illnesses or injuries, that prevent taking both the regular and the conflict exam, we may forgive the prelim and compute your grade without it. This will dramatically increase the weight given to other assessments.",
+    "crumbs": [
+      "Policies",
+      "Exam Policies"
+    ]
+  },
+  {
+    "objectID": "policies/grading.html",
+    "href": "policies/grading.html",
+    "title": "Grading Policies",
+    "section": "",
+    "text": "Application exercises are auto-graded on Gradescope. These can be submitted as often as you’d like prior to the deadline.\nHomework assignments are graded by the TA on Gradescope based on the rubrics. Homework will be graded as soon as possible, ideally within a couple of weeks.\nExams are graded by Prof. Srikrishnan and the TA using similar rubrics to the homework, though exams will focus less on solving problems. These will be scanned and graded on Gradescope.\nProjects are graded by Prof. Srikrishnan. The proposals will be graded primarily for completeness and for feedback and will be returned ASAP. Presentations will be graded by a combination of peer reviewers and Prof. Srikrishnan.",
+    "crumbs": [
+      "Policies",
+      "Grading Policies"
+    ]
+  },
+  {
+    "objectID": "policies/grading.html#how-work-is-graded",
+    "href": "policies/grading.html#how-work-is-graded",
+    "title": "Grading Policies",
+    "section": "",
+    "text": "Application exercises are auto-graded on Gradescope. These can be submitted as often as you’d like prior to the deadline.\nHomework assignments are graded by the TA on Gradescope based on the rubrics. Homework will be graded as soon as possible, ideally within a couple of weeks.\nExams are graded by Prof. Srikrishnan and the TA using similar rubrics to the homework, though exams will focus less on solving problems. These will be scanned and graded on Gradescope.\nProjects are graded by Prof. Srikrishnan. The proposals will be graded primarily for completeness and for feedback and will be returned ASAP. Presentations will be graded by a combination of peer reviewers and Prof. Srikrishnan.",
+    "crumbs": [
+      "Policies",
+      "Grading Policies"
+    ]
+  },
+  {
+    "objectID": "policies/grading.html#late-policies-and-extension-requests",
+    "href": "policies/grading.html#late-policies-and-extension-requests",
+    "title": "Grading Policies",
+    "section": "Late Policies and Extension requests",
+    "text": "Late Policies and Extension requests\n\nAssignments (exercises and homeworks) can be submitted up to 24 hours late for 50% credit. Submissions after 24 hours will not be accepted unless an extension was granted (in which case there is no late penalty until the extension date). This lets us release solutions and return grades ASAP.\nRequest extensions ahead of the deadline. Justified extensions will only be granted for university-approved reasons or emergencies such as illness, injury, learning accomodations, etc and will be limited to 1-2 days, depending on the circumstance. Deadlines in other courses, job interviews, etc. are not reasons for extensions. Ask yourself if the circumstances leading to your extension request only interfered with submission due to poor planning or because they rendered you incapable of work and/or submission. Extensions requested after the deadline will only be considered prior to solution release and for extreme circumstances (e.g. hospitalization during the last day; hence limited communication access).\nUnder extreme circumstances, we will forgive assignments. There are circumstances under which a 24 hour extension is insufficient, such as long-term illness or serious injury. In these cases, we will compute your course grade as if the forgiven assignment never occurred, which will result in your exams and other assignments having more weight.",
+    "crumbs": [
+      "Policies",
+      "Grading Policies"
+    ]
+  },
+  {
+    "objectID": "policies/grading.html#regrade-requests",
+    "href": "policies/grading.html#regrade-requests",
+    "title": "Grading Policies",
+    "section": "Regrade Requests",
+    "text": "Regrade Requests\n\nSubmit regrade requests on Gradescope within one week of the grade release. We recommend talking to Prof. Srikrishnan or your TA about grading concerns before submitting a regrade request, but no grades will be changed outside of a formal request through Gradescope.\nAll regrade requests must include a brief justification for the request or they will not be considered. Good justifications include (but are not limited to):\n\nMy answer agrees with the posted solution, but I still lost points.\nI lost 4 points for something, but the rubric says it should only be worth 2 points.\nYou took points off for something, but it’s right here.\nMy answer is correct, even though it does not match the posted solution.\nThere is no explanation for my grade.\nI got a perfect score, but my solution has a mistake (you will receive extra credit for this! see below!)\nThere is a major error in the posted solution; here is an explanation (full credit for everyone, but Prof. Srikrishnan will decide what constitutes a “major error”! see below!).\n\nWe will only regrade what you submitted. Any “new” information in the regrade request will not be considered beyond the justification (any explanation may help us identify where to look if your solution is different than the official solution but correct, but the submitted answer must be interpretable as a correct solution on its own merits.\nThe first regrade request will be handled by the member of the course staff who graded the problem. If Prof. Srikrishnan did not review the first request, he will handle any subsequent regrade requests for the same submission. Once Prof. Srikrishnan issues a response to a regrade request, further requests for that submission will be ignored.\nIf you submit a regrade request correctly reporting that your problem was graded too leniently, your score will be increased by the difference (we want to reward this type of honesty and self-awareness!). For example, if your score was 8/10, and you point out that you should have gotten a 3/10, your score will be a 13/10.\nIf a significant error is found in the official solutions, everyone in the class will receive full credit for the relevant (sub)problem. Prof. Srikrishnan has discretion as to what errors are “significant.”",
+    "crumbs": [
+      "Policies",
+      "Grading Policies"
+    ]
+  },
+  {
+    "objectID": "website.html",
+    "href": "website.html",
+    "title": "website",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "website.html#quarto",
+    "href": "website.html#quarto",
+    "title": "website",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "resources/julia.html",
+    "href": "resources/julia.html",
+    "title": "Julia Resources",
+    "section": "",
+    "text": "Setting up VS Code and Julia (Youtube)\nJulia Documentation\nJuliaAcademy: Check out the “Introduction to Julia (for programmers)” or “Julia Programming for Nervous Beginners” courses\nQuantEcon MATLAB-Python-Julia cheatsheet\nFastTrack to Julia cheatsheet\nPlotting cheatsheet\nIntroduction to Computational Thinking: a great Julia based course at MIT!\nComprehensive Julia Tutorials: YouTube playlist covering a variety of Julia topics, starting with an introduciton to the language.",
+    "crumbs": [
+      "Resources",
+      "Julia"
+    ]
+  },
+  {
+    "objectID": "resources/markdown.html",
+    "href": "resources/markdown.html",
+    "title": "Markdown Resources",
+    "section": "",
+    "text": "Markdown Cheatsheet\nGitHub Markdown Cheatsheet (note that not all of these commands may work in Jupyter notebooks, as GitHub Markdown is an expanded syntax\nLaTeX Cheatsheet",
+    "crumbs": [
+      "Resources",
+      "Markdown"
+    ]
+  },
+  {
+    "objectID": "hw/hw01/hw01.html",
+    "href": "hw/hw01/hw01.html",
+    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "section": "",
+    "text": "Due Date\n\n\n\nThursday, 9/5/23, 9:00pm",
+    "crumbs": [
+      "Homework",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw01/hw01.html#overview",
+    "href": "hw/hw01/hw01.html#overview",
+    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "section": "Overview",
+    "text": "Overview\n\nInstructions\n\nProblem 1 consist of a series of code snippets for you to interpret and debug. You will be asked to identify relevant error(s) and fix the code.\nProblem 2 gives you some code that works as intended; your goal is to identify the code’s purpose by following its logic.\nProblem 3 asks you to write code to generate a random vector and subtract off its mean, using a Julia syntax called broadcasting.\nProblem 4 asks you to convert a verbal description of a wastewater treatment system into a Julia function, and then to use that function to explore the impact of different wastewater allocation strategies.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\nStandard Julia practice is to load all needed packages at the top of a file. If you need to load any additional packages in any assignments beyond those which are loaded by default, feel free to add a using statement, though you may need to install the package.\n\nusing Random\nusing Plots\nusing GraphRecipes\nusing LaTeXStrings\n\n\n# this sets a random seed, which ensures reproducibility of random number generation. You should always set a seed when working with random numbers.\nRandom.seed!(1)\n\nTaskLocalRNG()",
+    "crumbs": [
+      "Homework",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw01/hw01.html#problems-total-50-points",
+    "href": "hw/hw01/hw01.html#problems-total-50-points",
+    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "section": "Problems (Total: 50 Points)",
+    "text": "Problems (Total: 50 Points)\n\nProblem 1 (15 points)\nThe following subproblems all involve code snippets that require debugging. For each of them:\n\nidentify and describe the logic and/or syntax error;\nwrite a fixed version of the function;\nuse your fixed function to solve the problem.\n\n\nProblem 1.1\nYou’ve been tasked with writing code to identify the minimum value in an array. You cannot use a predefined function. Your colleague suggested the function below, but it does not return the minimum value.\n\nfunction minimum(array)\n    min_value = 0\n    for i in 1:length(array)\n        if array[i] &lt; min_value\n            min_value = array[i]\n        end\n    end\n    return min_value\nend\n\narray_values = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\n@show minimum(array_values);\n\nminimum(array_values) = 0\n\n\n\n\nProblem 1.2\nYour team is trying to compute the average grade for your class, but the following code produces an error.\n\nstudent_grades = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\nfunction class_average(grades)\n  average_grade = mean(student_grades)\n  return average_grade\nend\n\n@show average_grade;\n\n\nUndefVarError: `average_grade` not defined\nStacktrace:\n [1] top-level scope\n   @ show.jl:1128\n\n\n\n\n\nProblem 1.3\nYour team wants to know the expected payout of an old Italian dice game called passadieci (which was analyzed by Galileo as one of the first examples of a rigorous study of probability). The goal of passadieci is to get at least an 11 from rolling three fair, six-sided dice. Your strategy is to compute the average wins from 1,000 trials, but the code you’ve written below produces an error.\n\nfunction passadieci()\n    # this rand() call samples 3 values from the vector [1, 6]\n    roll = rand(1:6, 3) \n    return roll\nend\nn_trials = 1_000\noutcomes = zero(n_trials)\nfor i = 1:n_trials\n    outcomes[i] = (sum(passadieci()) &gt; 11)\nend\nwin_prob = sum(outcomes) / n_trials # compute average number of wins\n@show win_prob;\n\n\nMethodError: no method matching setindex!(::Int64, ::Bool, ::Int64)\nStacktrace:\n [1] top-level scope\n   @ ~/Teaching/environmental-systems-analysis/website/hw/hw01/hw01.qmd:128\n\n\n\n\n\n\nProblem 2 (5 points)\nYou’ve been handed some code to analyze. The original coder was not very considerate of other potential users: the function is called mystery_function and there are no comments explaining the purpose of the code. It appears to take in an array and return some numbers, and you’ve been assured that the code works as intended.\n\nfunction mystery_function(values)\n    y = []\n    for v in values\n        if !(v in y)\n            append!(y, v)\n        end\n    end\n    return y\nend\n\nlist_of_values = [1, 2, 3, 4, 3, 4, 2, 1]\n@show mystery_function(list_of_values);\n\nmystery_function(list_of_values) = Any[1, 2, 3, 4]\n\n\n\nExplain the purpose of mystery_function.\nAdd comments to the code, explaining why and how it works. Refer to “Best Practices for Writing Code Comments”, and remember that bad comments can be just as bad as no comments at all. You do not need to add comments to every line (in fact, this is very bad practice), but you should note the purpose of every “section” of code, and add comments explaining any code sequences that you don’t immediately understand.\nIs there a built-in Julia function that does the same thing as mystery_function? If so, what is it? Use it to do the same thing as the code above.\n\n\n\nProblem 3 (10 points)\nYou’re interested in writing some code to remove the mean of a vector.\n\nWrite a function compute_mean(v) which sums all of the elements of a vector v using a for loop and computes the mean.\nMake a random vector random_vect of length 10 using Julia’s rand() function. Use your compute_mean() function to calculate its mean and subtract it from random_vect without a loop (using a Julia technique called broadcasting; feel free to consult the Julia documentation and search as necessary). Check that the new vector has mean zero.\n\n\n\nProblem 4 (20 points)\nCheap Plastic Products, Inc. is operating a plant that produces \\(100 \\text{m}^3\\text{/day}\\) of wastewater that is discharged into Pristine Brook. The wastewater contains \\(1 \\text{kg/m}^3\\) of YUK, a toxic substance. The US Environmental Protection Agency has imposed an effluent standard on the plant prohibiting discharge of more than \\(20 \\text{kg/day}\\) of YUK into Pristine Brook.\nCheap Plastic Products has analyzed two methods for reducing its discharges of YUK. Method 1 is land disposal, which costs \\(X_1^2/20\\) dollars per day, where \\(X_1\\) is the amount of wastewater disposed of on the land (\\(\\text{m}^3\\text{/day}\\)). With this method, 20% of the YUK applied to the land will eventually drain into the stream (i.e., 80% of the YUK is removed by the soil).\nMethod 2 is a chemical treatment procedure which costs $1.50 per \\(\\text{m}^3\\) of wastewater treated. The chemical treatment has an efficiency of \\(e= 1 - 0.005X_2\\), where \\(X_2\\) is the quantity of wastewater (\\(\\text{m}^3\\text{/day}\\)) treated. For example, if \\(X_2 = 50 \\text{m}^3\\text{/day}\\), then \\(e = 1 - 0.005(50) = 0.75\\), so that 75% of the YUK is removed.\nCheap Plastic Products is wondering how to allocate their wastewater between these three disposal and treatment methods (land disposal, and chemical treatment, and land disposal) to meet the effluent standard while keeping costs manageable.\nThe flow of wastewater through this treatment system is shown in Figure 1. Modify the edge labels (by editing the edge_labels dictionary in the code producing Figure 1) to show how the wastewater allocations result in the final YUK discharge into Pristine Brook. For the edge_label dictionary, the tuple \\((i, j)\\) corresponds to the arrow going from node \\(i\\) to node \\(j\\). The syntax for any entry is (i, j) =&gt; \"label text\", and the label text can include mathematical notation if the string is prefaced with an L, as in L\"x_1\" will produce \\(x_1\\).\n\nA = [0 1 1 1;\n    0 0 0 1;\n    0 0 0 1;\n    0 0 0 0]\n\nnames = [\"Plant\", \"Land Treatment\", \"Chem Treatment\", \"Pristine Brook\"]\n# modify this dictionary to add labels\nedge_labels = Dict((1, 2) =&gt; \"\", (1,3) =&gt; \"\", (1, 4) =&gt; \"\",(2, 4) =&gt; \"\",(3, 4) =&gt; \"\")\nshapes=[:hexagon, :rect, :rect, :hexagon]\nxpos = [0, -1.5, -0.25, 1]\nypos = [1, 0, 0, -1]\n\np = graphplot(A, names=names,edgelabel=edge_labels, markersize=0.15, markershapes=shapes, markercolor=:white, x=xpos, y=ypos)\ndisplay(p)\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: System diagram of the wastewater treatment options in Problem 4.\n\n\n\n\n\nFormulate a mathematical model for the treatment cost and the amount of YUK that will be discharged into Pristine Brook based on the wastewater allocations. This is best done with some equations and supporting text explaining the derivation. Make sure you include, as additional equations in the model, any needed constraints on relevant values. You can find some basics on writing mathematical equations using the LaTeX typesetting syntax here, and a cheatsheet with LaTeX commands can be found on the course website’s Resources page.\nImplement your systems model as a Julia function which computes the resulting YUK concentration and cost for a particular treatment plan. You can return multiple values from a function with a tuple, as in:\n\n\nfunction multiple_return_values(x, y)\n    return (x+y, x*y)\nend\n\na, b = multiple_return_values(2, 5)\n@show a;\n@show b;\n\na = 7\nb = 10\n\n\nTo evalute the function over vectors of inputs, you can broadcast the function by adding a decimal . before the function arguments and accessing the resulting values by writing a comprehension to loop over the individual outputs in the vector:\n\nx = [1, 2, 3, 4, 5]\ny = [6, 7, 8, 9, 10]\n\noutput = multiple_return_values.(x, y)\na = [out[1] for out in output]\nb = [out[2] for out in output]\n@show a;\n@show b;\n\na = [7, 9, 11, 13, 15]\nb = [6, 14, 24, 36, 50]\n\n\nMake sure you comment your code appropriately to make it clear what is going on and why.\n\nUse your function to experiment with some different combinations of wastewater discharge and treatment and plot the results of these experiments. Can you find one that satisfies the YUK effluent standard (plot this as well as a dashed red line)? What was the cost? What can you say about the tradeoff between treatment cost and YUK concentration? You don’t have to find an “optimal” solution to this problem, but what do you think would be needed to find a better solution?",
+    "crumbs": [
+      "Homework",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "resources/github.html",
+    "href": "resources/github.html",
+    "title": "GitHub Resources",
+    "section": "",
+    "text": "Git Basics from The Odin Project.\nLearn Git Branching: An interactive, visual tutorial to how git works.\nVersion Control from MIT’s “CS: Your Missing Semester” course.\nGit and GitHub for Poets: YouTube playlist covering the basics of git and GitHub.",
+    "crumbs": [
+      "Resources",
+      "GitHub"
+    ]
+  },
+  {
+    "objectID": "resources/optimization.html",
+    "href": "resources/optimization.html",
+    "title": "Optimization Resources",
+    "section": "",
+    "text": "Decision Modeling e-Book: this uses Excel Solver, but may have useful information on problem setup and optimization methods.\nAlgorithms for Decision-Making: open-access book based on Julia with more depth on optimization and decision-making algorithms than we will cover in this class.",
+    "crumbs": [
+      "Resources",
+      "Optimization and Decision-Making"
+    ]
+  },
+  {
+    "objectID": "labs.html",
+    "href": "labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "This page contains information about and a schedule of the lab assignments for the semester.",
+    "crumbs": [
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "labs.html#general-information",
+    "href": "labs.html#general-information",
+    "title": "Labs",
+    "section": "General Information",
+    "text": "General Information\n\nYou can download each lab notebook through the link below..\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.\nTo convert the assignment notebook to PDF, you can use VS Code to render the notebook to HTML, and then use your browser to print to PDF. If you have set up LaTeX with VS Code, you can convert directly to a PDF.",
+    "crumbs": [
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "labs.html#grading",
+    "href": "labs.html#grading",
+    "title": "Labs",
+    "section": "Grading",
+    "text": "Grading\nLabs will be graded on a scale of 0-3:\n\nMissing (0/3): Lab solution is missing or is not responsive to the lab prompt(s);\nNeeds Improvement (1/3): Lab is largely incomplete or is missing key concepts;\nDeveloping (2/3): Lab is mostly complete but may contain major conceptual or implementation errors;\nAcceptable (3/3): Lab is mostly or fully complete without any major errors.",
+    "crumbs": [
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "labs.html#schedule",
+    "href": "labs.html#schedule",
+    "title": "Labs",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\nLab\nInstructions\nSolutions\nDue Date\n\n\n\n\nLab 1\n\n\nAug 28, 2024\n\n\nLab 2\n\n\nSep 25, 2024\n\n\nLab 3\n\n\nOct 16, 2023\n\n\nLab 4\n\n\nNov 06, 2023\n\n\nLab 5\n\n\nNov 20, 2023",
+    "crumbs": [
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BEE 4750/5750: Environmental Systems Analysis",
+    "section": "",
+    "text": "This is the course website for the Fall 2024 edition of BEE 4750/5750, Environmental Systems Analysis, taught at Cornell University by Vivek Srikrishnan.",
+    "crumbs": [
+      "Course Information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#course-information",
+    "href": "index.html#course-information",
+    "title": "BEE 4750/5750: Environmental Systems Analysis",
+    "section": "Course Information",
+    "text": "Course Information\n\nDetails on the class and course policies are provided in the syllabus.\nTopics and weekly materials can be found in the schedule.\nMake sure you familiarize yourself with the FAQ.",
+    "crumbs": [
+      "Course Information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#software-tools",
+    "href": "index.html#software-tools",
+    "title": "BEE 4750/5750: Environmental Systems Analysis",
+    "section": "Software Tools",
+    "text": "Software Tools\n\nThis course will use the Julia programming language. Julia is a modern, free, open source language which is designed for scientific computing. No prior knowledge of Julia is required. My recommendation is to use Visual Studio Code with the official Julia extension for coding.\nAssignments will be distributed using GitHub Classroom. You should create a GitHub account, but we will walk through how to use it.",
+    "crumbs": [
+      "Course Information",
+      "Overview"
+    ]
   },
   {
     "objectID": "policies/homework.html",
@@ -538,212 +1080,529 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BEE 4750/5750: Environmental Systems Analysis",
-    "section": "",
-    "text": "This is the course website for the Fall 2024 edition of BEE 4750/5750, Environmental Systems Analysis, taught at Cornell University by Vivek Srikrishnan.",
-    "crumbs": [
-      "Course Information",
-      "Overview"
-    ]
+    "objectID": "slides/lecture01-intro.html#about-me",
+    "href": "slides/lecture01-intro.html#about-me",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "About Me",
+    "text": "About Me\nProf. Vivek Srikrishnan, viveks at cornell dot edu, 318 Riley-Robb\n\nFrom Wappingers Falls, NY (via Champaign-Urbana, IL and State College, PA);\nNon-academic highlight: Was on Jeopardy! in 2016;\nResearches climate risk management;\nParticular interested in unintended consequences which result from neglecting uncertainty or system dynamics."
   },
   {
-    "objectID": "index.html#course-information",
-    "href": "index.html#course-information",
-    "title": "BEE 4750/5750: Environmental Systems Analysis",
-    "section": "Course Information",
-    "text": "Course Information\n\nDetails on the class and course policies are provided in the syllabus.\nTopics and weekly materials can be found in the schedule.\nMake sure you familiarize yourself with the FAQ.",
-    "crumbs": [
-      "Course Information",
-      "Overview"
-    ]
+    "objectID": "slides/lecture01-intro.html#meet-my-supervisors",
+    "href": "slides/lecture01-intro.html#meet-my-supervisors",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Meet My Supervisors",
+    "text": "Meet My Supervisors\n\n\n\n\nMy Supervisors"
   },
   {
-    "objectID": "index.html#software-tools",
-    "href": "index.html#software-tools",
-    "title": "BEE 4750/5750: Environmental Systems Analysis",
-    "section": "Software Tools",
-    "text": "Software Tools\n\nThis course will use the Julia programming language. Julia is a modern, free, open source language which is designed for scientific computing. No prior knowledge of Julia is required. My recommendation is to use Visual Studio Code with the official Julia extension for coding.\nAssignments will be distributed using GitHub Classroom. You should create a GitHub account, but we will walk through how to use it.",
-    "crumbs": [
-      "Course Information",
-      "Overview"
-    ]
+    "objectID": "slides/lecture01-intro.html#about-the-ta",
+    "href": "slides/lecture01-intro.html#about-the-ta",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "About the TA",
+    "text": "About the TA\nGabriela Ackermann Logan, M.S./Ph.D. student, ga345 at cornell dot edu, 319 Riley-Robb\n\nFrom (via Medford, MA)\nInterested in energy system transitions and supply chain/logistical needs."
   },
   {
-    "objectID": "labs.html",
-    "href": "labs.html",
-    "title": "Labs",
-    "section": "",
-    "text": "This page contains information about and a schedule of the lab assignments for the semester.",
-    "crumbs": [
-      "Labs"
-    ]
+    "objectID": "slides/lecture01-intro.html#what-is-a-system",
+    "href": "slides/lecture01-intro.html#what-is-a-system",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "What Is A System?",
+    "text": "What Is A System?\nA system is:\n\n\n“an interconnected set of elements that is coherently organized in a way that achieves something…\nA system must consist of three kinds of things: elements, interconnections and a function or purpose.”\n\n\n— Donella Meadows, Thinking in Systems: A Primer, 2008"
   },
   {
-    "objectID": "labs.html#general-information",
-    "href": "labs.html#general-information",
-    "title": "Labs",
-    "section": "General Information",
-    "text": "General Information\n\nYou can download each lab notebook through the link below..\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.\nTo convert the assignment notebook to PDF, you can use VS Code to render the notebook to HTML, and then use your browser to print to PDF. If you have set up LaTeX with VS Code, you can convert directly to a PDF.",
-    "crumbs": [
-      "Labs"
-    ]
+    "objectID": "slides/lecture01-intro.html#examples-of-systems",
+    "href": "slides/lecture01-intro.html#examples-of-systems",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Examples of Systems",
+    "text": "Examples of Systems\nCan we think of any examples of systems?\n\nWhat about things that are not systems?"
   },
   {
-    "objectID": "labs.html#grading",
-    "href": "labs.html#grading",
-    "title": "Labs",
-    "section": "Grading",
-    "text": "Grading\nLabs will be graded on a scale of 0-3:\n\nMissing (0/3): Lab solution is missing or is not responsive to the lab prompt(s);\nNeeds Improvement (1/3): Lab is largely incomplete or is missing key concepts;\nDeveloping (2/3): Lab is mostly complete but may contain major conceptual or implementation errors;\nAcceptable (3/3): Lab is mostly or fully complete without any major errors.",
-    "crumbs": [
-      "Labs"
-    ]
+    "objectID": "slides/lecture01-intro.html#why-are-systems-interesting",
+    "href": "slides/lecture01-intro.html#why-are-systems-interesting",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Why Are Systems Interesting?",
+    "text": "Why Are Systems Interesting?\nIn other words, a system involves an interconnected set of components.\nThose interconnections can lead to very different dynamics and outcomes than if the component processes were studied in isolation."
   },
   {
-    "objectID": "labs.html#schedule",
-    "href": "labs.html#schedule",
-    "title": "Labs",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\nLab\nInstructions\nSolutions\nDue Date\n\n\n\n\nLab 1\n\n\nAug 28, 2024\n\n\nLab 2\n\n\nSep 25, 2024\n\n\nLab 3\n\n\nOct 16, 2023\n\n\nLab 4\n\n\nNov 06, 2023\n\n\nLab 5\n\n\nNov 20, 2023",
-    "crumbs": [
-      "Labs"
-    ]
+    "objectID": "slides/lecture01-intro.html#example-topics",
+    "href": "slides/lecture01-intro.html#example-topics",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Example Topics",
+    "text": "Example Topics\n\n\nTopics\n\n\nDefine systems\nSimulate system dynamics\nAnalyze and assess risk\nMake decisions with optimization\nExplore trade-offs across objectives\n\n\n\n\n\nExample Systems\n\n\nAir pollution\nWastewater management\nElectric power systems\nSolid waste management"
   },
   {
-    "objectID": "resources/optimization.html",
-    "href": "resources/optimization.html",
-    "title": "Optimization Resources",
-    "section": "",
-    "text": "Decision Modeling e-Book: this uses Excel Solver, but may have useful information on problem setup and optimization methods.\nAlgorithms for Decision-Making: open-access book based on Julia with more depth on optimization and decision-making algorithms than we will cover in this class.",
-    "crumbs": [
-      "Resources",
-      "Optimization and Decision-Making"
-    ]
+    "objectID": "slides/lecture01-intro.html#what-do-you-hope-to-get-out-of-this-course",
+    "href": "slides/lecture01-intro.html#what-do-you-hope-to-get-out-of-this-course",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "What Do You Hope To Get Out Of This Course?",
+    "text": "What Do You Hope To Get Out Of This Course?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "resources/github.html",
-    "href": "resources/github.html",
-    "title": "GitHub Resources",
-    "section": "",
-    "text": "Git Basics from The Odin Project.\nLearn Git Branching: An interactive, visual tutorial to how git works.\nVersion Control from MIT’s “CS: Your Missing Semester” course.\nGit and GitHub for Poets: YouTube playlist covering the basics of git and GitHub.",
-    "crumbs": [
-      "Resources",
-      "GitHub"
-    ]
+    "objectID": "slides/lecture01-intro.html#course-organization",
+    "href": "slides/lecture01-intro.html#course-organization",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Course Organization",
+    "text": "Course Organization\n\nIntroduction to Systems Analysis\nSimulating Systems and Risk\nSystems Management and Optimization\nDecision-Making Under Uncertainty"
   },
   {
-    "objectID": "resources/markdown.html",
-    "href": "resources/markdown.html",
-    "title": "Markdown Resources",
-    "section": "",
-    "text": "Markdown Cheatsheet\nGitHub Markdown Cheatsheet (note that not all of these commands may work in Jupyter notebooks, as GitHub Markdown is an expanded syntax\nLaTeX Cheatsheet",
-    "crumbs": [
-      "Resources",
-      "Markdown"
-    ]
+    "objectID": "slides/lecture01-intro.html#disclaimer",
+    "href": "slides/lecture01-intro.html#disclaimer",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nSitting in class/looking at these notes is not a substitute for reading the syllabus."
   },
   {
-    "objectID": "resources/julia.html",
-    "href": "resources/julia.html",
-    "title": "Julia Resources",
-    "section": "",
-    "text": "Setting up VS Code and Julia (Youtube)\nJulia Documentation\nJuliaAcademy: Check out the “Introduction to Julia (for programmers)” or “Julia Programming for Nervous Beginners” courses\nQuantEcon MATLAB-Python-Julia cheatsheet\nFastTrack to Julia cheatsheet\nPlotting cheatsheet\nIntroduction to Computational Thinking: a great Julia based course at MIT!\nComprehensive Julia Tutorials: YouTube playlist covering a variety of Julia topics, starting with an introduciton to the language.",
-    "crumbs": [
-      "Resources",
-      "Julia"
-    ]
+    "objectID": "slides/lecture01-intro.html#attendance",
+    "href": "slides/lecture01-intro.html#attendance",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Attendance",
+    "text": "Attendance\nNot required, but students tend to do better when they’re actively engaged in class"
   },
   {
-    "objectID": "website.html",
-    "href": "website.html",
-    "title": "website",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "objectID": "slides/lecture01-intro.html#office-hours",
+    "href": "slides/lecture01-intro.html#office-hours",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Office Hours",
+    "text": "Office Hours\n\nTime TBD (will send out poll)\nAlmost impossible to find a time that works for all (or even most); please feel free to email to make appointments as/if needed.\nCan be busy, will triage based on urgency (e.g. if you want code help but have not done basic debugging steps, you will be asked to wait until others are helped)."
   },
   {
-    "objectID": "website.html#quarto",
-    "href": "website.html#quarto",
-    "title": "website",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "objectID": "slides/lecture01-intro.html#accomodations",
+    "href": "slides/lecture01-intro.html#accomodations",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Accomodations",
+    "text": "Accomodations\nIf you have any access barriers in this class, please seek out any helpful accomodations.\n\nGet an SDS letter.\nIf you need an accomodation before you have an official letter, please reach out to me ASAP!"
   },
   {
-    "objectID": "policies/grading.html",
-    "href": "policies/grading.html",
-    "title": "Grading Policies",
-    "section": "",
-    "text": "Application exercises are auto-graded on Gradescope. These can be submitted as often as you’d like prior to the deadline.\nHomework assignments are graded by the TA on Gradescope based on the rubrics. Homework will be graded as soon as possible, ideally within a couple of weeks.\nExams are graded by Prof. Srikrishnan and the TA using similar rubrics to the homework, though exams will focus less on solving problems. These will be scanned and graded on Gradescope.\nProjects are graded by Prof. Srikrishnan. The proposals will be graded primarily for completeness and for feedback and will be returned ASAP. Presentations will be graded by a combination of peer reviewers and Prof. Srikrishnan.",
-    "crumbs": [
-      "Policies",
-      "Grading Policies"
-    ]
+    "objectID": "slides/lecture01-intro.html#course-website",
+    "href": "slides/lecture01-intro.html#course-website",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Course Website",
+    "text": "Course Website\nhttps://viveks.me/environmental-systems-analysis\n\nCentral hub for information, schedule, and policies\nWill add link and some information to Canvas (assignment due dates, etc)"
   },
   {
-    "objectID": "policies/grading.html#how-work-is-graded",
-    "href": "policies/grading.html#how-work-is-graded",
-    "title": "Grading Policies",
-    "section": "",
-    "text": "Application exercises are auto-graded on Gradescope. These can be submitted as often as you’d like prior to the deadline.\nHomework assignments are graded by the TA on Gradescope based on the rubrics. Homework will be graded as soon as possible, ideally within a couple of weeks.\nExams are graded by Prof. Srikrishnan and the TA using similar rubrics to the homework, though exams will focus less on solving problems. These will be scanned and graded on Gradescope.\nProjects are graded by Prof. Srikrishnan. The proposals will be graded primarily for completeness and for feedback and will be returned ASAP. Presentations will be graded by a combination of peer reviewers and Prof. Srikrishnan.",
-    "crumbs": [
-      "Policies",
-      "Grading Policies"
-    ]
+    "objectID": "slides/lecture01-intro.html#communications",
+    "href": "slides/lecture01-intro.html#communications",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Communications",
+    "text": "Communications\nUse Ed Discussion for questions and discussions about class, homework assignments, etc.\n\nTry to use public posts so others can benefit from questions and can weigh in.\nI will make announcements through Ed, so check regularly.\nUrgent announcements will also be emailed.\n\nWhen urgency or privacy is required, email is ok."
   },
   {
-    "objectID": "policies/grading.html#late-policies-and-extension-requests",
-    "href": "policies/grading.html#late-policies-and-extension-requests",
-    "title": "Grading Policies",
-    "section": "Late Policies and Extension requests",
-    "text": "Late Policies and Extension requests\n\nAssignments (exercises and homeworks) can be submitted up to 24 hours late for 50% credit. Submissions after 24 hours will not be accepted unless an extension was granted (in which case there is no late penalty until the extension date). This lets us release solutions and return grades ASAP.\nRequest extensions ahead of the deadline. Justified extensions will only be granted for university-approved reasons or emergencies such as illness, injury, learning accomodations, etc and will be limited to 1-2 days, depending on the circumstance. Deadlines in other courses, job interviews, etc. are not reasons for extensions. Ask yourself if the circumstances leading to your extension request only interfered with submission due to poor planning or because they rendered you incapable of work and/or submission. Extensions requested after the deadline will only be considered prior to solution release and for extreme circumstances (e.g. hospitalization during the last day; hence limited communication access).\nUnder extreme circumstances, we will forgive assignments. There are circumstances under which a 24 hour extension is insufficient, such as long-term illness or serious injury. In these cases, we will compute your course grade as if the forgiven assignment never occurred, which will result in your exams and other assignments having more weight.",
-    "crumbs": [
-      "Policies",
-      "Grading Policies"
-    ]
+    "objectID": "slides/lecture01-intro.html#julia",
+    "href": "slides/lecture01-intro.html#julia",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Julia",
+    "text": "Julia\nIn this course, we will use the Julia programming language.\nAll assignments, labs, and AEs will be provided as Jupyter Notebooks."
   },
   {
-    "objectID": "policies/grading.html#regrade-requests",
-    "href": "policies/grading.html#regrade-requests",
-    "title": "Grading Policies",
+    "objectID": "slides/lecture01-intro.html#what-is-your-programming-experience",
+    "href": "slides/lecture01-intro.html#what-is-your-programming-experience",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "What Is Your Programming Experience?",
+    "text": "What Is Your Programming Experience?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#jupyter-notebooks",
+    "href": "slides/lecture01-intro.html#jupyter-notebooks",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Jupyter Notebooks",
+    "text": "Jupyter Notebooks\nWe will use Jupyter Notebooks for most computing tasks (including assignments).\n\nAllow for interactive evaluation of code and integration with text (including nicely typeset mathematics)\nCan export to PDF (or HTML -&gt; PDF) for submission to Gradescope.\nBe careful before submitting: Evaluate all cells in order"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#github-classroom",
+    "href": "slides/lecture01-intro.html#github-classroom",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "GitHub Classroom",
+    "text": "GitHub Classroom\nHomework assignments and labs will be distributed using GitHub Classroom.\n\nEvery student will have a unique “repository.”\nWhen assignment is released, I will share the link for repository creation on Ed Discussion.\nMakes it easy to share code for assistance and debugging (share links to repositories, not out-of-context code and screenshots)."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#debugging-code",
+    "href": "slides/lecture01-intro.html#debugging-code",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Debugging Code",
+    "text": "Debugging Code\n\nLook at the class FAQ!\nSearch for the error message you’re seeing.\nTry to divide code into logical “chunks” and test each one to isolate the error where there’s a syntax or conceptual error.\nPost on Ed. Do not include a screenshot, link to GitHub or provide a small snippet showing the syntax you’re trying.\nCome to office hours (last recourse!)."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#assessments",
+    "href": "slides/lecture01-intro.html#assessments",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Assessments",
+    "text": "Assessments\n\n\n\nCategory\nWeight\n\n\n\n\nParticipation\n10% (5% for 5750)\n\n\nReadings (5750 only)\n5%\n\n\nExercises\n10%\n\n\nLabs\n10%\n\n\nHomework\n20%\n\n\nPrelims\n30%\n\n\nTerm Project\n20%"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#overall-guidelines",
+    "href": "slides/lecture01-intro.html#overall-guidelines",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Overall Guidelines",
+    "text": "Overall Guidelines\n\nCollaboration highly encouraged, but all work must reflect your own understanding\nSubmit PDFs on Gradescope\n24 hour late submissions, 10% penalty\n“Standard” rubric available for HW/exams\nAlways cite external references\nCurve unlikely (not worth asking about…)"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#late-work-policy",
+    "href": "slides/lecture01-intro.html#late-work-policy",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Late Work Policy",
+    "text": "Late Work Policy\n\nMost work can be submitted up to 24 hours late at a 50% penalty.\nIf you have an approved reason (illness, injury, etc), let me know ahead of time and we will make accomodations."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#regrade-requests",
+    "href": "slides/lecture01-intro.html#regrade-requests",
+    "title": "Welcome to BEE 4750/5750!",
     "section": "Regrade Requests",
-    "text": "Regrade Requests\n\nSubmit regrade requests on Gradescope within one week of the grade release. We recommend talking to Prof. Srikrishnan or your TA about grading concerns before submitting a regrade request, but no grades will be changed outside of a formal request through Gradescope.\nAll regrade requests must include a brief justification for the request or they will not be considered. Good justifications include (but are not limited to):\n\nMy answer agrees with the posted solution, but I still lost points.\nI lost 4 points for something, but the rubric says it should only be worth 2 points.\nYou took points off for something, but it’s right here.\nMy answer is correct, even though it does not match the posted solution.\nThere is no explanation for my grade.\nI got a perfect score, but my solution has a mistake (you will receive extra credit for this! see below!)\nThere is a major error in the posted solution; here is an explanation (full credit for everyone, but Prof. Srikrishnan will decide what constitutes a “major error”! see below!).\n\nWe will only regrade what you submitted. Any “new” information in the regrade request will not be considered beyond the justification (any explanation may help us identify where to look if your solution is different than the official solution but correct, but the submitted answer must be interpretable as a correct solution on its own merits.\nThe first regrade request will be handled by the member of the course staff who graded the problem. If Prof. Srikrishnan did not review the first request, he will handle any subsequent regrade requests for the same submission. Once Prof. Srikrishnan issues a response to a regrade request, further requests for that submission will be ignored.\nIf you submit a regrade request correctly reporting that your problem was graded too leniently, your score will be increased by the difference (we want to reward this type of honesty and self-awareness!). For example, if your score was 8/10, and you point out that you should have gotten a 3/10, your score will be a 13/10.\nIf a significant error is found in the official solutions, everyone in the class will receive full credit for the relevant (sub)problem. Prof. Srikrishnan has discretion as to what errors are “significant.”",
-    "crumbs": [
-      "Policies",
-      "Grading Policies"
-    ]
+    "text": "Regrade Requests\n\nCan be submitted on Gradescope up to 1 week after grades are released.\nMust include a brief justification.\nWill be evaluated only on the basis of the work in the submission.\nCan lose points if me/TA notice we missed a mistake initially!"
   },
   {
-    "objectID": "policies/exam.html",
-    "href": "policies/exam.html",
-    "title": "Exam Policies",
-    "section": "",
-    "text": "This page includes some information on the exams for BEE 4750/5750, including policies and logistics.",
-    "crumbs": [
-      "Policies",
-      "Exam Policies"
-    ]
+    "objectID": "slides/lecture01-intro.html#regrade-requests-special-cases",
+    "href": "slides/lecture01-intro.html#regrade-requests-special-cases",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Regrade Requests: Special Cases",
+    "text": "Regrade Requests: Special Cases\n\nIf you (correctly) point out that your grade was graded too leniently, you will get bonus points back.\nIf a significant error (as defined by me) is found in the solutions, everyone in the class will receive full credit for that (sub)problem."
   },
   {
-    "objectID": "policies/exam.html#exam-logistics",
-    "href": "policies/exam.html#exam-logistics",
-    "title": "Exam Policies",
-    "section": "Exam Logistics",
-    "text": "Exam Logistics\nThis class has two prelims, both in class:\n\nPrelim 1: Wednesday, October 09;\nPrelim 2: Monday, November 11.\n\nEach is worth 10% of your grade. Exams will be hand-written and then will be scanned into Gradescope (by course staff) for grading and feedback; the physical copy of your exam will not be returned.\n\nExam Topics and Structure\nThe emphasis is on concepts; there will be no major formulas that you will need to use, and no programming. You will be potentially be asked to derive mathematical versions of models, apply concepts from class, and interpret model outputs. The problems are largely short- or medium-answer.\nIn general, the same homework grading rubric applies to exam problems, as appropriate (.e.g. nothing about code). The deadly sins will still be penalized, and your solutions should be clear with transparent and well-communicated reasoning.\n\n\nAcademic Integrity\nThe exams are closed-book and closed-note, and closed everything else. No medically unnecessary electronic devices are allowed to be used during the exam, including headphones and smart watches.\nExams are also strictly confidential until the conflict and accomodation exams have been taken. Do not discuss your exam with anyone in person or online. Once all exams are taken, we will discuss the exams in class.\n\n\nDifficulty\nWhile we will not hand out sample exams, exam problems will be closer in difficulty to lab or exercise problems than the homework, since you have two full weeks to solve the problem and have full acccess to external resources, course staff, and classmates. The goal is to assess your ability to set up problems, determine appropriateness of methods, and interpret the output, rather than on doing computations. We cannot, and do not, expect you to solve problems with homework-level difficulty in the restricted exam setting.",
-    "crumbs": [
-      "Policies",
-      "Exam Policies"
-    ]
+    "objectID": "slides/lecture01-intro.html#labs",
+    "href": "slides/lecture01-intro.html#labs",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Labs",
+    "text": "Labs\n\nIn-class guided activities, but may need some time after class to complete\nFocus on “how” to apply methods and concepts from class\nIf you can’t bring a laptop to these classes, you can work with someone else\nCan work in groups, but must submit your own work.\nDue by 9:00pm on the lab day, will drop one.\nGraded on a scale of 0-3, largely based on effort."
   },
   {
-    "objectID": "policies/exam.html#accomodations-conflicts-and-makeup-exams",
-    "href": "policies/exam.html#accomodations-conflicts-and-makeup-exams",
-    "title": "Exam Policies",
-    "section": "Accomodations, Conflicts, and Makeup Exams",
-    "text": "Accomodations, Conflicts, and Makeup Exams\n\nSDS Accomodations\nPlease make sure that any exam-related accomodations have been provided to the course staff ahead of the first exam. All exams requiring accomodations will be scheduled and delivered through the Alternative Testing Program.\n\n\nConflict and Makeup Exams\nIf you have an academic conflict or a university-approved reason why you cannot take the exam in class, you should schedule your conflict exam through the Alternative Testing Program.\nIn extreme circumstances, such as long-term illnesses or injuries, that prevent taking both the regular and the conflict exam, we may forgive the prelim and compute your grade without it. This will dramatically increase the weight given to other assessments.",
-    "crumbs": [
-      "Policies",
-      "Exam Policies"
-    ]
+    "objectID": "slides/lecture01-intro.html#exercises",
+    "href": "slides/lecture01-intro.html#exercises",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Exercises",
+    "text": "Exercises\n\nAuto-graded “quizzes” on Canvas, auto-graded\nFocus on conceptual questions or quick setups/calculations (no coding)\nCan submit as many times as you like.\nDue by 9:00pm by the end of the week (Friday).\nWill drop one."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#homework-assignments",
+    "href": "slides/lecture01-intro.html#homework-assignments",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Homework Assignments",
+    "text": "Homework Assignments\n\n5 in total, due two weeks after assignment.\nFocus on new or extended applications\nManaged with GitHub Classroom\nDue by 9:00pm on the due date (usually Friday)\nNo drops.\nGraded on correctness."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#term-project",
+    "href": "slides/lecture01-intro.html#term-project",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Term Project",
+    "text": "Term Project\n\nAnalyze a system of interest, including the regulatory environment, going beyond class examples/methods.\nWork in groups of 3–4.\nSubmit proposal on 11/1/24.\nRecord presentation by end of semester for peer review by classmates.\nSubmit report, peer reviews, group/self evaluations by end of finals week."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#participation",
+    "href": "slides/lecture01-intro.html#participation",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Participation",
+    "text": "Participation\n\nThe class works best when everyone is engaged and collaborative\n\nAttending every class;\nAsking questions in class or on Ed;\nAnswering questions in class or on Ed;\nComing to office hours.\n\nWe’re paying attention! Participation points not “free”."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#prelims",
+    "href": "slides/lecture01-intro.html#prelims",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Prelims",
+    "text": "Prelims\n\nTwo in-class prelims (10/09, 11/11);\nWill resemble exercises/labs more than homework.\nFocus on concepts, problem formulations, interpretation.\nNot trying to make these long or particularly difficult!\nExams will be scanned and put on Gradescope for grades/feedback.\nWill discuss two weeks after the exams after grades are returned."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#readings",
+    "href": "slides/lecture01-intro.html#readings",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Readings",
+    "text": "Readings\n\nStudents in 5750 will be assigned one-two readings per module.\nOption to peer annotate on Canvas.\nWill need to submit a written summary/synthesis.\nStudents in 4750 should feel free to do the reading to go more deeply, but optional."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#hopefully-not-a-concern",
+    "href": "slides/lecture01-intro.html#hopefully-not-a-concern",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Hopefully Not a Concern…",
+    "text": "Hopefully Not a Concern…\n\nCollaboration is great and is encouraged!\nKnowing how to find, evaluate, and use helpful resources is a skill we want to develop.\nDon’t just copy…learn from others and give credit.\nSubmit your own original work."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#academic-integrity-1",
+    "href": "slides/lecture01-intro.html#academic-integrity-1",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nObviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok.\nBut often lines aren’t that simple. Let’s quickly consider some scenarios (h/t to Tony Wong for these)."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#academic-integrity-scenario-1",
+    "href": "slides/lecture01-intro.html#academic-integrity-scenario-1",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Academic Integrity: Scenario 1",
+    "text": "Academic Integrity: Scenario 1\nDan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. They cites the source of the codes.\n\n\n\n\n\n\nIs this ok?\n\n\n\nProbably Not\n\nWhat portion of the work is Dan’s?\nHow important were the codes?\nDid Dan understand what they copied?"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#academic-integrity-scenario-1-1",
+    "href": "slides/lecture01-intro.html#academic-integrity-scenario-1-1",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Academic Integrity: Scenario 1",
+    "text": "Academic Integrity: Scenario 1\nDan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. They cites the source of the codes.\n\n\n\n\n\n\nWhat Should Dan Do?\n\n\n\nDan should paraphrase the codes they found to incorporate them with his own code, and then also cite them."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#academic-integrity-scenario-2",
+    "href": "slides/lecture01-intro.html#academic-integrity-scenario-2",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Academic Integrity: Scenario 2",
+    "text": "Academic Integrity: Scenario 2\nMatthew and Rhonda work together to figure out how to implement the codes, but each works on their own computer and develops their own solutions.\n\n\n\n\n\n\nIs this ok?\n\n\n\nDefinitely!\n\nIndependent implementations shows understanding."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#academic-integrity-scenario-3",
+    "href": "slides/lecture01-intro.html#academic-integrity-scenario-3",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Academic Integrity: Scenario 3",
+    "text": "Academic Integrity: Scenario 3\nFelix and Rachel are working together on a problem involving a derivation. Rachel types it up in LaTeX and sends the code to Felix, who pastes it into his Jupyter notebook.\n\n\n\n\n\n\nIs this ok?\n\n\n\nLikely Not\n\nDid Felix contribute enough to the derivation?\nDefinitely not OK if Felix doesn’t give Rachel credit for their contribution."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#academic-integrity-scenario-4",
+    "href": "slides/lecture01-intro.html#academic-integrity-scenario-4",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Academic Integrity: Scenario 4",
+    "text": "Academic Integrity: Scenario 4\nDarren uses ChatGPT to debug an error in their homework code. They fix the error and credits ChatGPT in his References section.\n\n\n\n\n\n\nIs this ok?\n\n\n\nWell-meaning, but no!\n\nUsing ChatGPT (or other ML tools) can be ok, but…\nNeed to ask permission and thoroughly document the query and the exact response."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#chatgpt-the-stochastic-parrot",
+    "href": "slides/lecture01-intro.html#chatgpt-the-stochastic-parrot",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "ChatGPT: The Stochastic Parrot",
+    "text": "ChatGPT: The Stochastic Parrot\nWhy is ChatGPT (and other ML/AI tools) singled out?\n\n\nLack of Transparency: Not clear what the training data is, so documentation is essential (ML is not great at extrapolation).\nNot Well-Suited to All Tasks: Can be useful for getting a skeleton, starter code, or debugging. Really (and obviously) bad at interpretation and analysis.\nHallucinations: ChatGPT often just makes stuff up. Do you want to be credited for a ChatGPT hallucination?"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#chatgpt-the-stochastic-parrot-1",
+    "href": "slides/lecture01-intro.html#chatgpt-the-stochastic-parrot-1",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "ChatGPT: The Stochastic Parrot",
+    "text": "ChatGPT: The Stochastic Parrot\n\nThink of ChatGPT as a ranting drunk\nIt’s stringing together words or code it heard in a way that sounds reasonable, but there’s no sense of concept.\nChatGPT debugging can be useful, but can also lead to new errors with no clear way to fix them, since you don’t understand what you did."
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#next-classes",
+    "href": "slides/lecture01-intro.html#next-classes",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: Lab 1: Setting up Julia and GitHub\n\nLab 1 link is available on Ed. Click it to accept the lab before class.\nCome to class with downloaded lab and try to follow the setup instructions on the website.\n\nNext Week: Introduction to Systems Analysis"
+  },
+  {
+    "objectID": "slides/lecture01-intro.html#assessments-1",
+    "href": "slides/lecture01-intro.html#assessments-1",
+    "title": "Welcome to BEE 4750/5750!",
+    "section": "Assessments",
+    "text": "Assessments\n\nLab 1: Wednesday\nHW 1: Available, due 9/6."
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#course-policies",
+    "href": "slides/lecture03-systems-intro.html#course-policies",
+    "title": "Introduction to Systems Analysis",
+    "section": "Course Policies",
+    "text": "Course Policies\nIf you missed last class, make sure you read the syllabus!."
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#tools-setup-lab",
+    "href": "slides/lecture03-systems-intro.html#tools-setup-lab",
+    "title": "Introduction to Systems Analysis",
+    "section": "Tools Setup Lab",
+    "text": "Tools Setup Lab\nIf you missed last Wednesday:\n\nGo through the lab by Wednesday to make sure you’re set up for the semester.\nEmail Prof. Srikrishnan to get an extension so you can submit.\nCome to office hours for help if something isn’t working."
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#questions",
+    "href": "slides/lecture03-systems-intro.html#questions",
+    "title": "Introduction to Systems Analysis",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#what-is-a-system",
+    "href": "slides/lecture03-systems-intro.html#what-is-a-system",
+    "title": "Introduction to Systems Analysis",
+    "section": "What Is A System?",
+    "text": "What Is A System?\nA system is:\n\n\n“an interconnected set of elements that is coherently organized in a way that achieves something…\nA system must consist of three kinds of things: elements, interconnections and a function or purpose.”\n\n\n— Donella Meadows, Thinking in Systems: A Primer, 2008"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#why-are-systems-interesting",
+    "href": "slides/lecture03-systems-intro.html#why-are-systems-interesting",
+    "title": "Introduction to Systems Analysis",
+    "section": "Why Are Systems Interesting?",
+    "text": "Why Are Systems Interesting?\n\n\n“Interconnected set of elements”\n“Function or purpose”"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#example-climate-change",
+    "href": "slides/lecture03-systems-intro.html#example-climate-change",
+    "title": "Introduction to Systems Analysis",
+    "section": "Example: Climate Change",
+    "text": "Example: Climate Change\nChanges to climate occur bassed on a variety of processes across scales, including:\n\ncarbon sources/sinks;\naerosol emissions;\nocean heat uptake;\nsurface albedo;\nEl Niño/La Niña (ENSO)"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#example-climate-change-1",
+    "href": "slides/lecture03-systems-intro.html#example-climate-change-1",
+    "title": "Introduction to Systems Analysis",
+    "section": "Example: Climate Change",
+    "text": "Example: Climate Change\n\nCorrelations among Climate Parameters\nSource: Errickson et al. (2021)"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#example-climate-change-2",
+    "href": "slides/lecture03-systems-intro.html#example-climate-change-2",
+    "title": "Introduction to Systems Analysis",
+    "section": "Example: Climate Change",
+    "text": "Example: Climate Change\n\nCorrelations among Climate Parameters\nSource: Errickson et al. (2021)"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#example-water-pollution",
+    "href": "slides/lecture03-systems-intro.html#example-water-pollution",
+    "title": "Introduction to Systems Analysis",
+    "section": "Example: Water Pollution",
+    "text": "Example: Water Pollution\nContaminant levels in a body of water also depend on a number of processes which may have different scales and rates.\nCan we think of some?"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#system-state",
+    "href": "slides/lecture03-systems-intro.html#system-state",
+    "title": "Introduction to Systems Analysis",
+    "section": "System State",
+    "text": "System State\nSystem State: quantities or variables which evolve over time based on external inputs and system dynamics.\nThe state gives you a “snapshot” of the system at a given point in time."
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#stocks-and-flows",
+    "href": "slides/lecture03-systems-intro.html#stocks-and-flows",
+    "title": "Introduction to Systems Analysis",
+    "section": "Stocks and Flows",
+    "text": "Stocks and Flows\n\n\nA stock is the amount of a system property: concentrations of a pollutant, numbers of currency units, etc.\nA flow is the way in which a stock changes: decay, diffusion, production, consumption, etc."
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#how-do-we-develop-models",
+    "href": "slides/lecture03-systems-intro.html#how-do-we-develop-models",
+    "title": "Introduction to Systems Analysis",
+    "section": "How Do We Develop Models?",
+    "text": "How Do We Develop Models?\n\n\nMass balance equations let us track changes in stocks at particular points;\nEquilibrium conditions are requirements that there is no net flow, and thus that stocks are preserved;\nFate and transport modeling involves quantifying how stocks change as they move through the system."
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#systems-analysis",
+    "href": "slides/lecture03-systems-intro.html#systems-analysis",
+    "title": "Introduction to Systems Analysis",
+    "section": "Systems Analysis",
+    "text": "Systems Analysis\n\n\nWhat We Study\n\nSystem dynamics;\nResponse to inputs;\nAlternatives for management or design.\n\n\nNeeds\n\n\nDefinition of the system\nSystem model"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#what-do-we-need-to-define-a-system",
+    "href": "slides/lecture03-systems-intro.html#what-do-we-need-to-define-a-system",
+    "title": "Introduction to Systems Analysis",
+    "section": "What Do We Need To Define A System?",
+    "text": "What Do We Need To Define A System?\n\n\nComponents: relevant processes, agents, etc\nInterconnections: relationships between system components\nControl volume: unit of the system we are trying to model and/or manage\nInputs: control policies and/or external forcings\nOutputs: measured quantities of interest"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#example-river-system",
+    "href": "slides/lecture03-systems-intro.html#example-river-system",
+    "title": "Introduction to Systems Analysis",
+    "section": "Example: River System",
+    "text": "Example: River System\n\n\nFigure 1: Illustration of a system, including notation."
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#what-is-a-model",
+    "href": "slides/lecture03-systems-intro.html#what-is-a-model",
+    "title": "Introduction to Systems Analysis",
+    "section": "What Is A Model?",
+    "text": "What Is A Model?\n\n\nPhysical Models\n\n\n\nFalling Water Miniature Model\n\n\n\nSource: Wikimedia\n\n\n\n\nMathematical Models\n\n\n\nMathematical Model Machine"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#mathematical-models-of-systems",
+    "href": "slides/lecture03-systems-intro.html#mathematical-models-of-systems",
+    "title": "Introduction to Systems Analysis",
+    "section": "Mathematical Models of Systems",
+    "text": "Mathematical Models of Systems\n\nConceptual Model of a System"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#environmental-systems",
+    "href": "slides/lecture03-systems-intro.html#environmental-systems",
+    "title": "Introduction to Systems Analysis",
+    "section": "Environmental Systems",
+    "text": "Environmental Systems\n\n\n\n\n\nConceptual Model of an Environmental System\n\n\n\n\nMunicipal sewage into lakes, rivers, etc.\nPower plant emissions into air\nSolid waste placed on landfill\nCO2 into atmosphere"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#deterministic-vs.-stochastic-models",
+    "href": "slides/lecture03-systems-intro.html#deterministic-vs.-stochastic-models",
+    "title": "Introduction to Systems Analysis",
+    "section": "Deterministic vs. Stochastic Models",
+    "text": "Deterministic vs. Stochastic Models\n\n\nDeterministic Models\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\nStochastic Models"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#descriptive-vs.-prescriptive-models",
+    "href": "slides/lecture03-systems-intro.html#descriptive-vs.-prescriptive-models",
+    "title": "Introduction to Systems Analysis",
+    "section": "Descriptive vs. Prescriptive Models",
+    "text": "Descriptive vs. Prescriptive Models\n\n\nDescriptive Models\n\nUsed primarily for describing or simulating dynamics.\nIntended for simulations and exploratory and/or Monte Carlo analysis.\n\n\n\n\nPrescriptive Models\n\nSpecify (prescribe) an action, decision, or policy.\nIntended for optimization or decision analysis."
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#analytic-vs.-numerical-solutions",
+    "href": "slides/lecture03-systems-intro.html#analytic-vs.-numerical-solutions",
+    "title": "Introduction to Systems Analysis",
+    "section": "Analytic vs. Numerical Solutions",
+    "text": "Analytic vs. Numerical Solutions\nMathematical models can be solved:\n\nAnalytically: can find the exact solution in closed form;\nNumerically: can only find solutions (exact or approximate) using computational tools."
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#all-models-are-wrong-but-some-are-useful",
+    "href": "slides/lecture03-systems-intro.html#all-models-are-wrong-but-some-are-useful",
+    "title": "Introduction to Systems Analysis",
+    "section": "“All Models Are Wrong, But Some Are Useful”",
+    "text": "“All Models Are Wrong, But Some Are Useful”\n\n\n…all models are approximations. Essentially, all models are wrong, but some are useful. However, the approximate nature of the model must always be borne in mind….\n\n\n— Box & Draper, Empirical Model Building and Response Surfaces, 1987"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#what-are-models-good-for",
+    "href": "slides/lecture03-systems-intro.html#what-are-models-good-for",
+    "title": "Introduction to Systems Analysis",
+    "section": "What Are Models Good For?",
+    "text": "What Are Models Good For?\n\n\nModels can corroborate a hypothesis by offering evidence to strengthen what may be already partly established through other means…\nThus, the primary value of models is heuristic: Models are representations, useful for guiding further study but not susceptible to proof.\n\n\n— Oreskes et al, “Verification, Validation, and Confirmation of Numerical Models in the Earth Sciences”, 1994"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#models-and-assumptions",
+    "href": "slides/lecture03-systems-intro.html#models-and-assumptions",
+    "title": "Introduction to Systems Analysis",
+    "section": "Models And Assumptions",
+    "text": "Models And Assumptions\n\nXKCD Comic 2355\nSource: XKCD 2355"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#key-takeaways-systems",
+    "href": "slides/lecture03-systems-intro.html#key-takeaways-systems",
+    "title": "Introduction to Systems Analysis",
+    "section": "Key Takeaways (Systems)",
+    "text": "Key Takeaways (Systems)\n\nA system is an interconnected set of components.\nSystems are interesting because interconnections can result in unexpected outcomes.\nKey terms:\n\nstate\nstocks\nflows"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#key-takeaways-systems-definition",
+    "href": "slides/lecture03-systems-intro.html#key-takeaways-systems-definition",
+    "title": "Introduction to Systems Analysis",
+    "section": "Key Takeaways (Systems Definition)",
+    "text": "Key Takeaways (Systems Definition)\n\nTo define a system, need to specify:\n\ncomponents\ninterconnections\ncontrol volume\nexternal inputs\noutputs of interest"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#key-takeaways-models",
+    "href": "slides/lecture03-systems-intro.html#key-takeaways-models",
+    "title": "Introduction to Systems Analysis",
+    "section": "Key Takeaways (Models)",
+    "text": "Key Takeaways (Models)\n\nMathematical models allow us to understand how external inputs combine with internal system dynamics to produce outputs.\nModels can be prescriptive or descriptive depending on goal of analysis.\nFor most interesting problems, cannot solve analytically and need to use numerical methods."
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#key-takeaways-models-1",
+    "href": "slides/lecture03-systems-intro.html#key-takeaways-models-1",
+    "title": "Introduction to Systems Analysis",
+    "section": "Key Takeaways (Models)",
+    "text": "Key Takeaways (Models)\n\nSimulation models: Generate data by evaluating model to represent system dynamics.\nOptimization model: Find parameters which maximize/minimize some criterion."
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#key-takeaways-warning",
+    "href": "slides/lecture03-systems-intro.html#key-takeaways-warning",
+    "title": "Introduction to Systems Analysis",
+    "section": "Key Takeaways (Warning!)",
+    "text": "Key Takeaways (Warning!)\n\nAll models are at best approximations: be conscious of what assumptions you’ve made and how they might change the modeled outcomes (you will be asked to do this on homeworks)."
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#next-classes",
+    "href": "slides/lecture03-systems-intro.html#next-classes",
+    "title": "Introduction to Systems Analysis",
+    "section": "Next Classes",
+    "text": "Next Classes\nMonday: Examples of Formulating/Analyzing Models.\nWednesday: Overview of System Dynamics"
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#assessments",
+    "href": "slides/lecture03-systems-intro.html#assessments",
+    "title": "Introduction to Systems Analysis",
+    "section": "Assessments",
+    "text": "Assessments\nHomework 2: Due Friday at 9pm."
+  },
+  {
+    "objectID": "slides/lecture03-systems-intro.html#references-1",
+    "href": "slides/lecture03-systems-intro.html#references-1",
+    "title": "Introduction to Systems Analysis",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\n\n\nErrickson, F. C., Keller, K., Collins, W. D., Srikrishnan, V., & Anthoff, D. (2021). Equity is more important for the social cost of methane than climate uncertainty. Nature, 592, 564–570. https://doi.org/10.1038/s41586-021-03386-6"
   },
   {
     "objectID": "slides/notebooks/shallow-lake.html",
@@ -881,7 +1740,7 @@
     "href": "faq.html#assignments-homework-labs-and-aes",
     "title": "FAQ",
     "section": "Assignments (Homework, Labs, and AEs)",
-    "text": "Assignments (Homework, Labs, and AEs)\n\nHow do I access assignments?\nWe will use GitHub Classroom to manage assessments. Links to accept the assignments and create your repository will be posted on Ed Discussion as they are released, and posts with the links for active assignments will be pinned. The class schedule will link to a page which has a preview of the assignment, but links are not provided from this page to accept the assignment.\nFor the first assignment you accept, you will need to link your GitHub account to your entry in the class roster. You will not need to do this again for the rest of the semester.\n\n\nWhat if there’s an error in the assignment repository?\nThat’s certainly possible! If you believe I’ve made a mistake in writing the assignment, please document it in the Ed Discussion forum. I’ll describe steps for how to fix your files (unfortunately, I can’t do this remotely and push it to everyone’s repositories).\n\n\nHelp! My code isn’t working.\nHere are some steps I would follow:\n\nSearch for the error message you’re seeing. Often, you can find posts in the r/Julia subreddit, the official Julia forum, or Stack Overflow for the same or similar issues. You should do this first: if you can find the answer this way, it will be faster than other options, and if you can rule out some approaches that you’ve already tried, it will make the following steps go more smoothly.\nPost on Ed Discussion. For the most effective help, follow the following guidelines (adapted from Stack Overflow’s “How Do I Ask A Good Question?”):\n\nMake your post subject specific and descriptive. “Problem with HW 1 Problem 3” makes it hard for other members of the class community to know if they’re having a similar issue or if they can help. Since the TA and I may not be checking Ed religiously, you’ll get faster responses if other students feel prepared to help.\nIntroduce the problem. What have you tried? What error message are you getting? Have you been able to identify a specific line of code or section of code that’s causing the problem?\nProvide code. It’s very difficult to get a sense of what might be going wrong if you just say that you have a problem, even if you share the error message. If you have a small question (you can demonstrate the error with a brief snippet of code), you can directly put this into your Ed post, but otherwise, please provide a link to your GitHub repository and where to find the relevant codes.\n\n\n\n\n\n\nUpdate Your Repository!\n\n\n\nYou must commit and push your current files to GitHub prior to asking for help, or we won’t be able to see the code that you’re having trouble with.\n\n\n\nCome to office hours. If you can identify the problem, but we’re having trouble solving it via Ed or more urgency is required, please come to office hours and we can try to work through the issue. This is most helpful if you’ve already done some problem-solving on your own.\n\n\n\n\n\n\nGive Yourself Time To Problem-Solve\n\n\n\nWaiting until the last day or two to start an assignment can cause problems if you don’t have time to work through the following steps. If office hours are busy and you haven’t gone through the prior steps, you may be prioritized below than students who are have, and we may not have time to solve your problem. Running into coding challenges is not a valid reason to get an extension on an assignment!\n\n\n\n\n\nCan you help me debug my code?\nYour first task should be to identify what part of your code works as desired, to help narrow down where the bug could be. If your code is broken into functions or smaller blocks, set up simple tests to make find which block(s) are causing the problem. If your code is just one big script, try to divide it into logical sections, then conduct these tests. Once you identify the part of the code that is not working, go line by line to see what particular command is doing something unexpected. Once you’ve identified what line is doing something strange, try to search for how to solve the problem and/or post on Ed with your code snippet (actually copy the code into the post or provide a link to your GitHub repository, with the line number; do not paste a screenshot) and a description of what you’re trying to accomplish and what the specific problem is.\nIf you are not sure how to articular what your code is trying to do (or are similarly unsure how to divide your code into logical units), that suggests that your problem is not debugging, but rather conceptual: step back and try to write out the logic of your code and how it aligns with the strategy you’ve developed to solve the problem. It might be that there is a conceptual problem rather than a bug, which we can definitely discuss!\nIf, however, you’ve tried the above steps and cannot figure out the bug, come to office hours, but if you have not done the above steps (and so cannot point to where exactly you’re running into a problem and cannot describe what that part of code is trying to accomplish), we will ask you to figure that out on your own first. Otherwise, we cannot fruitfully help — nobody is more familiar with your code and problem-solving strategy than you are.\n\n\nHow do I get a PDF of my notebook for submission?\nThere are two main options, depending on what you’ve already got set up on your computer.\n\n\n\n\n\n\nRun Notebook Cells Before Submission\n\n\n\nRemember to “Run All” cells prior to conversion and submission, or else we won’t see your results!\n\n\n\nIf you have a Python installation, you can use a tool called nbconvert to convert to a PDF (if you also have LaTeX installed) or HTML (and then you can use your browser to print to a PDF).\nIf you don’t have a Python installation, within VS Code, you can use IJulia.jl (which will be included in the environments provided with assignments in this class) as follows (enter these commands into the REPL) to open your notebook in your browser:\nusing IJulia\nnotebook()\nThis should open a Jupyter notebook interface in your browser. Navigate to and open the notebook, and once it has completed running, go to File -&gt; Print Preview in the browser menu and Print to PDF.\n\n\n\nHow do I submit my PDF to Gradescope?\nThe instructions for submitting your assignment to Gradescope can be found here.\n\n\n\n\n\n\nTag Pages\n\n\n\nMake sure that you mark/tag the pages corresponding to each question! Otherwise, we will deduct 10%. If a problem spans multiple pages, tag them all; if a page includes multiple problems, tag it several times. You may lose points if part of your answer is untagged (these will not be returned through a regrade request).",
+    "text": "Assignments (Homework, Labs, and AEs)\n\nHow do I access assignments?\nWe will use GitHub Classroom to manage assessments. Links to accept the assignments and create your repository will be posted on Ed Discussion as they are released, and posts with the links for active assignments will be pinned. The class schedule will link to a page which has a preview of the assignment, but links are not provided from this page to accept the assignment.\nFor the first assignment you accept, you will need to link your GitHub account to your entry in the class roster. You will not need to do this again for the rest of the semester.\n\n\nWhat if there’s an error in the assignment repository?\nThat’s certainly possible! If you believe I’ve made a mistake in writing the assignment, please document it in the Ed Discussion forum. I’ll describe steps for how to fix your files (unfortunately, I can’t do this remotely and push it to everyone’s repositories).\n\n\nHelp! My code isn’t working.\nHere are some steps I would follow:\n\nSearch for the error message you’re seeing. Often, you can find posts in the r/Julia subreddit, the official Julia forum, or Stack Overflow for the same or similar issues. You should do this first: if you can find the answer this way, it will be faster than other options, and if you can rule out some approaches that you’ve already tried, it will make the following steps go more smoothly.\nPost on Ed Discussion. For the most effective help, follow the following guidelines (adapted from Stack Overflow’s “How Do I Ask A Good Question?”):\n\nMake your post subject specific and descriptive. “Problem with HW 1 Problem 3” makes it hard for other members of the class community to know if they’re having a similar issue or if they can help. Since the TA and I may not be checking Ed religiously, you’ll get faster responses if other students feel prepared to help.\nIntroduce the problem. What have you tried? What error message are you getting? Have you been able to identify a specific line of code or section of code that’s causing the problem?\nProvide code. It’s very difficult to get a sense of what might be going wrong if you just say that you have a problem, even if you share the error message. If you have a small question (you can demonstrate the error with a brief snippet of code), you can directly put this into your Ed post, but otherwise, please provide a link to your GitHub repository and where to find the relevant codes.\n\n\n\n\n\n\nUpdate Your Repository!\n\n\n\nYou must commit and push your current files to GitHub prior to asking for help, or we won’t be able to see the code that you’re having trouble with.\n\n\n\nCome to office hours. If you can identify the problem, but we’re having trouble solving it via Ed or more urgency is required, please come to office hours and we can try to work through the issue. This is most helpful if you’ve already done some problem-solving on your own.\n\n\n\n\n\n\nGive Yourself Time To Problem-Solve\n\n\n\nWaiting until the last day or two to start an assignment can cause problems if you don’t have time to work through the following steps. If office hours are busy and you haven’t gone through the prior steps, you may be prioritized below than students who are have, and we may not have time to solve your problem. Running into coding challenges is not a valid reason to get an extension on an assignment!\n\n\n\n\n\nCan you help me debug my code?\nYour first task should be to identify what part of your code works as desired, to help narrow down where the bug could be. If your code is broken into functions or smaller blocks, set up simple tests to make find which block(s) are causing the problem. If your code is just one big script, try to divide it into logical sections, then conduct these tests. Once you identify the part of the code that is not working, go line by line to see what particular command is doing something unexpected. Once you’ve identified what line is doing something strange, try to search for how to solve the problem and/or post on Ed with your code snippet (actually copy the code into the post or provide a link to your GitHub repository, with the line number; do not paste a screenshot) and a description of what you’re trying to accomplish and what the specific problem is.\nIf you are not sure how to articulate what your code is trying to do (or are similarly unsure how to divide your code into logical units), that suggests that your problem is not debugging, but rather conceptual: step back and try to write out the logic of your code and how it aligns with the strategy you’ve developed to solve the problem. It might be that there is a conceptual problem rather than a bug, which we can definitely discuss!\nIf, however, you’ve tried the above steps and cannot figure out the bug, come to office hours, but if you have not done the above steps (and so cannot point to where exactly you’re running into a problem and cannot describe what that part of code is trying to accomplish), we will ask you to figure that out on your own first. Otherwise, we cannot fruitfully help — nobody is more familiar with your code and problem-solving strategy than you are.\n\n\nHow do I get a PDF of my notebook for submission?\nThere are two main options, depending on what you’ve already got set up on your computer.\n\n\n\n\n\n\nRun Notebook Cells Before Submission\n\n\n\nRemember to “Run All” cells prior to conversion and submission, or else we won’t see your results!\n\n\n\nIf you have a Python installation, you can use a tool called nbconvert to convert to a PDF (if you also have LaTeX installed) or HTML (and then you can use your browser to print to a PDF).\nIf you don’t have a Python installation, within VS Code, you can use IJulia.jl (which will be included in the environments provided with assignments in this class) as follows (enter these commands into the REPL) to open your notebook in your browser:\nusing IJulia\nnotebook()\nThis should open a Jupyter notebook interface in your browser. Navigate to and open the notebook, and once it has completed running, go to File -&gt; Print Preview in the browser menu and Print to PDF.\n\n\n\nHow do I submit my PDF to Gradescope?\nThe instructions for submitting your assignment to Gradescope can be found here.\n\n\n\n\n\n\nTag Pages\n\n\n\nMake sure that you mark/tag the pages corresponding to each question! Otherwise, we will deduct 10%. If a problem spans multiple pages, tag them all; if a page includes multiple problems, tag it several times. You may lose points if part of your answer is untagged (these will not be returned through a regrade request).",
     "crumbs": [
       "Course Information",
       "FAQ"
@@ -1054,7 +1913,7 @@
     "href": "hw.html#schedule",
     "title": "Homework",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nSolutions\nDue Date\n\n\n\n\nHW1\n\n\nSep 06, 2024\n\n\nHW2\n\n\nSep 20, 2024\n\n\nHW3\n\n\nOct 04, 2024\n\n\nHW4\n\n\nNov 08, 2024\n\n\nHW5\n\n\nDec 06, 2024",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nSolutions\nDue Date\n\n\n\n\nHW1\n\n\nSep 05, 2024\n\n\nHW2\n\n\nSep 20, 2024\n\n\nHW3\n\n\nOct 04, 2024\n\n\nHW4\n\n\nNov 08, 2024\n\n\nHW5\n\n\nDec 06, 2024",
     "crumbs": [
       "Homework"
     ]
@@ -1075,7 +1934,7 @@
     "href": "setup.html#instructions",
     "title": "First Time: Tools Setup",
     "section": "Instructions",
-    "text": "Instructions\n\nInstall Git\nIf you have already installed git, you don’t need to worry about this section. If you haven’t, download the appropriate version for your operating system.\n\n\n\n\n\n\nMac Versions\n\n\n\nIf you have a Mac, be aware if you have an Apple Silicon (M1 or M2) Mac or an Intel Mac. Many of the installations you will go through in this exercise have different versions for each processor type, and the program may not work properly if you still the wrong version. There’s nothing that can’t be undone, but it’s easier to be install the correct version first!\n\n\n\n\nInstall Julia\nI recommend installing Julia using the juliaup tool, which will let you easily manage versions in the future and works seamlessly with VS Code. The instructions can be found at the JuliaUp GitHub repository, but we will summarize them here.\n\nInstalling Juliaup on Windows\nIf your computer uses Windows, you can install Juliaup from the Windows Store.\n\n\nInstalling Juliaup on MacOS\nIf you have a Mac, open a terminal (such as the Terminal app) and enter:\ncurl -fsSL https://install.julialang.org | sh\n\n\nInstalling Julia 1.10.2\nOnce you install Juliaup, install Julia version 1.10.2 by opening a terminal (in MacOS or Linux) or the command line (in Windows) and entering:\njuliaup add 1.10.2\njuliaup default 1.10.2\nThis will install Julia 1.10.2 and make it the default version, which should maximize package compatibility throughout this course. Going forward, if you want to add new versions or change the default, you can follow the Juliaup instructions.\n\n\n\nInstall and Set Up VS Code\nYou can skip this section if you already have a coding environment you like; just set it up to work with Julia. Otherwise, VS Code is as close to an officially supported editor for Julia as you can get. We will follow this guide for setting up VS Code with Julia.\n\nInstalling VS Code\nYou can download it here; open the downloaded file to install.\n\n\nInstall the Julia Extension\n\nOpen VS Code.\nSelect View and click Extensions to open the Extension View. This view can also be found on the sidebar with the following logo:\n.\nSearch for julia in the search box. Click the green install button.\nRestart VS Code once the installation is complete. It should automatically find your Julia installation; talk to Vivek if not.\n\nThe Julia VS Code extension offers you some nice features. You can start a REPL (an interactive Julia coding environment) by opening the “Command Palette” (View -&gt; Command Palette, or CTRL/CMD+SHIFT+P) and typing “REPL” to bring up “Julia: Start REPL”. You can also create *.jl files to write Julia code and execute line by line. However, we will primarily use Jupyter notebooks in this class, but this might be useful for testing code or for your project.\n\n\nInstall the Jupyter Notebook Extension\nThe Jupyter Notebook extension allows you to export a Jupyter notebook to PDF or to HTML and then to PDF.\n\n\n\n\n\n\nPDF Export for Gradescope\n\n\n\nYou will need to export every notebook to a PDF for submission to Gradescope. Direct export to PDF requires a LaTeX installation. If you would like to go this route, please look at the LaTeX installation instructions for your operating system.\nOtherwise, exporting to HTML and then using your browser to save the resulting page to a PDF is a perfect solution.\n\n\nFollow the same instructions as above, but search for jupyter and install the Jupyter extension. Restart VS Code.\n\n\n\nSet Up GitHub\n\nCreate GitHub Account\nIf you already have a GitHub account, you can use that for this course and do not need to create a new account.\nOtherwise, create an account. It doesn’t have to be linked to your Cornell email or use your Cornell NetID.\nFor labs and homework assignments (we will work on Lab 1 in class and Homework 1 is available), you should use the GitHub Classroom link to “accept” the assignment provided on Ed Discussion, which will give you your own GitHub repository for that assignment. The first time you click one of these links, you will need to link your place on the course roster with your GitHub account.\nWhen application exercises require notebook use (which is the case here, but will not always be), you can follow the workflow in these next steps, and will be prompted to do so in the instructions for that exercise.\nYou can do almost everything that you will need to do for this course with GitHub directly through VS Code, or you can use the GitHub UI or the Terminal. We will assume in these instructions that you will just work through VS Code.",
+    "text": "Instructions\n\nInstall Git\nIf you have already installed git, you don’t need to worry about this section. If you haven’t, download the appropriate version for your operating system.\n\n\n\n\n\n\nMac Versions\n\n\n\nIf you have a Mac, be aware if you have an Apple Silicon (M1 or M2) Mac or an Intel Mac. Many of the installations you will go through in this exercise have different versions for each processor type, and the program may not work properly if you still the wrong version. There’s nothing that can’t be undone, but it’s easier to be install the correct version first!\n\n\n\n\nInstall Julia\nI recommend installing Julia using the juliaup tool, which will let you easily manage versions in the future and works seamlessly with VS Code. The instructions can be found at the JuliaUp GitHub repository, but we will summarize them here.\n\nInstalling Juliaup on Windows\nIf your computer uses Windows, you can install Juliaup from the Windows Store.\n\n\nInstalling Juliaup on MacOS\nIf you have a Mac, open a terminal (such as the Terminal app) and enter:\ncurl -fsSL https://install.julialang.org | sh\n\n\nInstalling Julia 1.10.2\nOnce you install Juliaup, install Julia version 1.10.2 by opening a terminal (in MacOS or Linux) or the command line (in Windows) and entering:\njuliaup add 1.10.2\njuliaup default 1.10.2\nThis will install Julia 1.10.2 and make it the default version, which should maximize package compatibility throughout this course. Going forward, if you want to add new versions or change the default, you can follow the Juliaup instructions.\n\n\n\nInstall and Set Up VS Code\nYou can skip this section if you already have a coding environment you like; just set it up to work with Julia. Otherwise, VS Code is as close to an officially supported editor for Julia as you can get. We will follow this guide for setting up VS Code with Julia.\n\nInstalling VS Code\nYou can download it here; open the downloaded file to install.\n\n\nInstall the Julia Extension\n\nOpen VS Code.\nSelect View and click Extensions to open the Extension View. This view can also be found on the sidebar with the following logo:\n\n\n\nVS Code Extensions View Logo\n\n\nSearch for julia in the search box. Click the green install button.\nRestart VS Code once the installation is complete. It should automatically find your Julia installation; talk to Vivek if not.\n\nThe Julia VS Code extension offers you some nice features. You can start a REPL (an interactive Julia coding environment) by opening the “Command Palette” (View -&gt; Command Palette, or CTRL/CMD+SHIFT+P) and typing “REPL” to bring up “Julia: Start REPL”. You can also create *.jl files to write Julia code and execute line by line. However, we will primarily use Jupyter notebooks in this class, but this might be useful for testing code or for your project.\n\n\nInstall the Jupyter Notebook Extension\nThe Jupyter Notebook extension allows you to export a Jupyter notebook to PDF or to HTML and then to PDF.\n\n\n\n\n\n\nPDF Export for Gradescope\n\n\n\nYou will need to export every notebook to a PDF for submission to Gradescope. Direct export to PDF requires a LaTeX installation. If you would like to go this route, please look at the LaTeX installation instructions for your operating system.\nOtherwise, exporting to HTML and then using your browser to save the resulting page to a PDF is a perfect solution.\n\n\nFollow the same instructions as above, but search for jupyter and install the Jupyter extension. Restart VS Code.\n\n\n\nSet Up GitHub\n\nCreate GitHub Account\nIf you already have a GitHub account, you can use that for this course and do not need to create a new account.\nOtherwise, create an account. It doesn’t have to be linked to your Cornell email or use your Cornell NetID.\nFor labs and homework assignments (we will work on Lab 1 in class and Homework 1 is available), you should use the GitHub Classroom link to “accept” the assignment provided on Ed Discussion, which will give you your own GitHub repository for that assignment. The first time you click one of these links, you will need to link your place on the course roster with your GitHub account.\nWhen application exercises require notebook use (which is the case here, but will not always be), you can follow the workflow in these next steps, and will be prompted to do so in the instructions for that exercise.\nYou can do almost everything that you will need to do for this course with GitHub directly through VS Code, or you can use the GitHub UI or the Terminal. We will assume in these instructions that you will just work through VS Code.",
     "crumbs": [
       "Course Information",
       "Setup"

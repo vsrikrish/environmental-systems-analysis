@@ -124,5 +124,4 @@ csl: _assets/references/american-geophysical-union.csl
 
 engine: julia
 execute: 
-  daemon: 600
   freeze: auto  

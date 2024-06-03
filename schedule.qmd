@@ -14,7 +14,7 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 |      | Wed, Aug 28 | Lab: Setting up Julia and GitHub | |  [{{< fa sharp laptop-code >}}](labs/lab01/lab01.qmd) | | | 
 | 2    | Mon, Sep 02 | **No Class: Labor Day** |  | | | |
 |      | Wed, Sep 04 | Introduction to Systems Analysis | [{{< fa sharp presentation-screen >}}](slides/lecture03-systems-intro.qmd) | | |  |
-| 3    | Mon, Sep 09 | Modeling Systems | | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
+| 3    | Mon, Sep 09 | Modeling Example: Lake Eutrophication | | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
 |      | Wed, Sep 11 | Feedbacks and Bifurcations | | | | |
 | | | ***Module 2: Systems Simulation and Risk*** | | | |
 |  4   | Mon, Sep 16 | Simulation Modeling | | | | | 

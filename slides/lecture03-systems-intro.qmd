@@ -30,17 +30,21 @@ format:
         chalkboard:
             theme: whiteboard
             buttons: true
-
+engine: julia
 execute:
     freeze: auto
+    daemon: 600
 ---
 
 ```{julia}
+#| output: false
 import Pkg
-Pkg.activate(".")
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
 ```
 
 ```{julia}
+#| output: false
 using Random
 using Plots
 using Measures

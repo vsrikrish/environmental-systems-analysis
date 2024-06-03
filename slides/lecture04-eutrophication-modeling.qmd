@@ -1,0 +1,342 @@
+---
+title: "Modeling Example: Lake Eutrophication"
+subtitle: "Lecture 04"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "September 09, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: mathjax
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+engine: julia
+execute:
+    freeze: auto
+    daemon: 600
+---
+
+```{julia}
+#| output: false
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+using Random
+using Plots
+using Measures
+```
+
+# Review of Last Class
+
+## Systems Analysis
+
+:::: {.columns}
+
+::: {.column width=50%}
+### What We Study
+
+- System dynamics;
+- Response to inputs;
+- Alternatives for management or design.
+
+:::
+
+::: {.column width=50%}
+### Needs
+
+::: {.fragment  .fade-in}
+- *Definition of the system*
+- System model
+
+:::
+:::
+::::
+
+
+## What Do We Need To Define A System?
+
+::: {.incremental}
+- **Components**: relevant processes, agents, etc
+- **Interconnections**: relationships between system components
+- **Control volume**: unit of the system we are trying to model and/or manage
+- **Inputs**: control policies and/or external forcings
+- **Outputs**: measured quantities of interest
+:::
+
+## Mathematical Models of Systems
+
+![Conceptual Model of a System](images/system-conceptual.svg)
+
+## Environmental Systems
+
+:::: {.columns}
+::: {.column width=60%}
+![Conceptual Model of an Environmental System](images/system-environmental.svg){width=100%}
+:::
+
+::: {.column width=40%}
+
+- Municipal sewage into lakes, rivers, etc.
+- Power plant emissions into air
+- Solid waste placed on landfill
+- CO<sub>2</sub> into atmosphere
+
+:::
+::::
+
+## Other Aspects of Models
+
+- Deterministic vs. Stochastic
+- Descriptive vs. Prescriptive
+- Mechanistic vs. Statistical
+
+## "All Models Are Wrong, But Some Are Useful"
+
+::: {.quote}
+
+> ...all models are approximations. Essentially, all models are wrong, but some are useful. However, the approximate nature of the model must always be borne in mind....
+
+::: {.cite}
+--- Box & Draper, *Empirical Model Building and Response Surfaces*, 1987
+:::
+:::
+
+## Questions?
+
+{{< include _poll-prompt.qmd >}}
+
+
+# Lake Eutrophication Overview
+
+## What is Eutrophication?
+
+:::: {.columns}
+::: {.column width=50%}
+**Eutrophication**: common environmental problem in which plants and algae feed on excess nutrients and become overabundant. 
+:::
+::: {.column width=50%}
+![Algae Bloom in Cayuga Lake in July 2021](https://bloximages.chicago2.vip.townnews.com/ithaca.com/content/tncms/assets/v3/editorial/a/68/a68bf742-fabf-11eb-a12a-63bb6e876a8a/6113f82477bb7.image.jpg)
+:::
+
+::: {.caption}
+*Source*: [Ithaca Journal](https://www.ithaca.com/news/ithaca/climate-change-shore-run-off-lead-to-increase-in-harmful-algal-blooms/article_2e3894a8-fabf-11eb-be74-bb1ee74a5f89.html)
+:::
+::::
+
+## Effects of Lake Eutrophication
+
+- **hypoxia** (reduction in oxygen from the decomposition of organic matter), leading to "dead zones";
+- **acidification**(from the CO<sub>2</sub> produced by decomposition);
+- **reduced sunlight** (from an accumulation of surface algae);
+- **clogged water intakes**; and
+- **reduction in recreational value and drinking water quality**.
+
+## Lake Eutrophication Causes
+
+Excess N and P can come from: 
+
+- point sources (such as industrial/sewage processes); and/or 
+- **non-point sources (such as agricultural runoff)**.
+
+Excess nutrients are stored in sediment and recycled back into the lake, as well as transported by organisms/consumers.
+
+## Non-Point Source Pollution
+
+**Non-Point Source (NPS) Pollution**: Intermittent, distributed waste input to surface or groundwater
+
+## Types of NPS Pollution
+
+- **Excess fertilizers, herbicides, insecticides** (ag runoff)
+- **Oil, grease, chemicals** (urban runoff, energy production)
+- **Sediment** from constructions sites, crop/forest land, eroding streambanks
+- **Salts** from irrigation and acid drainage
+- **Bacteria and nutrients** (livestock, pet wastes, septic systems)
+- **Atmospheric deposition**
+
+## NPS Pollution Flows
+
+![Flows of Surface Water Contamination](https://amwater.com/wvaw/resources/images/examples%20of%20source%20water%20contamination.jpg?language_id=1)
+
+::: {.caption}
+*Source*: [American Water](https://amwater.com/wvaw/water-wastewater-information/water-learning-center/source-water)
+:::
+
+## Management of Eutrophication
+
+It can be difficult to restore to *oligotrophic* state:
+
+- Reduce N and P going forward to reduce pressure;
+- Remove and treat sediment/water;
+- Biofiltration.
+
+Restoration takes a long time and is not guaranteed (**hysteresis**)!
+
+# Eutrophication Modeling Example
+
+## Watershed As Environmental System
+
+![Conceptual Model of an Environmental System](images/system-environmental.svg)
+
+## Information Needs
+
+1. What will happen to the waste in the environment (fate & transport)?
+2. What are potential impacts and acceptable levels or critical thresholds?
+3. *What are options to manage the waste?*
+
+## Fate & Transport
+
+**Common Approach**: Mass-Balance
+
+$$\frac{\partial\text{Mass}}{\partial t} = \text{Inputs} - \text{Outputs} - \text{Decay}$$
+
+## Fate & Transport
+
+Assuming steady-state and decay is linear w.r.t mass:
+
+$$\begin{align*}
+\frac{\partial\text{Mass}}{\partial t} &= \text{Inputs} - \text{Outputs} - \text{Decay} = 0 \\
+\frac{\partial(CV)}{\partial t} &= \sum_i P_i - CQ - \alpha CV = 0
+\end{align*}$$
+
+## Fate & Transport
+
+$$\begin{gather*}
+\sum_i P_i - CQ - \alpha CV = 0 \\
+C(Q + \alpha V) = \sum_i P_i \\
+C = \frac{\sum_i P_i}{Q + \alpha V} \\
+C = \frac{\sum_i \frac{P_i}{V}}{\frac{Q}{V} + \alpha}
+\end{gather*}$$
+
+## Fate & Transport
+
+Can split inflows $P_i$ into PS ($PS_i$) and NPS ($NPS_i$):
+
+$$C = \frac{\sum_i \frac{PS_i + NPS_i}{V}}{\frac{Q}{V} + \alpha}$$
+
+## Example
+
+
+
+## F&T Model Assumptions
+
+$$C = \frac{\sum_i \frac{P_i}{V}}{\frac{Q}{V} + \alpha}$$
+
+::: {.fragment .fade-in}
+**What does this model assume?**
+:::
+
+## F&T Model Assumptions
+
+- Steady-state ($\partial\text{Mass} / \partial t = 0$)
+- 1st order (linear) decay
+- Lake is:
+  - Well-mixed
+  - Constant volume
+
+## Environmental Impacts
+
+**What are potential impacts and acceptable levels or critical thresholds?**
+
+Generally need to limit average P concentrations to $< 0.01-0.02$ mg/L.
+
+## Incorporating Threshold
+
+$$\begin{align*}
+C &= \frac{\sum_i \frac{P_i}{V}}{\frac{Q}{V} + \alpha} \leq 0.01 \\
+\sum_i \frac{P_i}{V} &\leq 0.01 \left(\frac{Q}{V} + \alpha\right) \\
+\sum_i \frac{PS_i}{V} + \sum_i \frac{NPS_i}{V} &\leq 0.01 \left(\frac{Q}{V} + \alpha\right) 
+\end{align*}$$
+
+## Prescriptive vs. Descriptive Modeling
+
+What we do next depends on whether we're taking a prescriptive or a descriptive approach.
+
+::: {.incremental}
+- **Prescriptive**: How should we treat waste to ensure non-
+- **Descriptive**: How will the lake respond to different point and non-point source contributions?
+:::
+
+## Response to PS and NPS inputs
+
+## What About Non-Steady State?
+
+$$\sum_i P_i(t) - C(t)Q(t) - \alpha C(t)V = F(t)$$
+
+- More complex, may not be able to solve analytically! 
+- Need to use numerical **simulation** methods (next week!)
+
+# Key Takeaways
+
+## Key Takeaways (Systems)
+
+- A **system** is an interconnected set of components.
+- Systems are interesting because interconnections can result in unexpected outcomes.
+- Key terms:
+    - **state**
+    - **stocks**
+    - **flows**
+
+## Key Takeaways (Systems Definition)
+
+- To define a system, need to specify:
+    - components
+    - interconnections
+    - control volume
+    - external inputs
+    - outputs of interest
+
+## Key Takeaways (Models)
+
+- Mathematical models allow us to understand how external inputs combine with internal system dynamics to produce outputs.
+- Models can be **prescriptive** or **descriptive** depending on goal of analysis.
+- For most interesting problems, cannot solve analytically and need to use numerical methods.
+
+## Key Takeaways (Models)
+
+- **Simulation** models: Generate data by evaluating model to represent system dynamics.
+- **Optimization** model: Find parameters which maximize/minimize some criterion.
+
+## Key Takeaways (Warning!)
+
+- **All models are at best approximations**: be conscious of what assumptions you've made and how they might change the modeled outcomes (you will be asked to do this on homeworks).
+
+
+# Upcoming Schedule
+
+## Next Classes
+
+**Monday**: Examples of Formulating/Analyzing Models.
+
+**Wednesday**: Overview of System Dynamics
+
+## Assessments
+
+**Homework 2**: Due Friday at 9pm.
+
+# References
+
+## References

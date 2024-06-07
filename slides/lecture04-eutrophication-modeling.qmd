@@ -199,7 +199,19 @@ Restoration takes a long time and is not guaranteed (**hysteresis**)!
 
 ## Watershed As Environmental System
 
-![Conceptual Model of an Environmental System](images/system-environmental.svg)
+![Conceptual Model of an Environmental System](figures/system-environmental.svg)
+
+## Watershed/Lake Systems Diagram
+
+![Conceptual Model of an Environmental System](figures/eutrophication-system-diagram.svg)
+
+## Watershed/Lake Systems Diagram
+
+![Conceptual Model of an Environmental System](figures/eutrophication-system-diagram.svg){width=70%}
+
+- $V = 600 \times 10^6\ m^3$
+- $A = 30 \times 10^6\ m^2$
+- $Q_\text{in} = Q_\text{out} = 400 \times 10^6\ m^3/yr$
 
 ## Information Needs
 
@@ -219,26 +231,16 @@ Assuming steady-state and decay is linear w.r.t mass:
 
 $$\begin{align*}
 \frac{\partial\text{Mass}}{\partial t} &= \text{Inputs} - \text{Outputs} - \text{Decay} = 0 \\
-\frac{\partial(CV)}{\partial t} &= \sum_i P_i - CQ - \alpha CV = 0
+\frac{\partial(CV)}{\partial t} &= \sum_j PS_j + \sum_i NPS_i - CQ_\text{out} - \alpha CV = 0
 \end{align*}$$
 
 ## Fate & Transport
 
 $$\begin{gather*}
-\sum_i P_i - CQ - \alpha CV = 0 \\
-C(Q + \alpha V) = \sum_i P_i \\
-C = \frac{\sum_i P_i}{Q + \alpha V} \\
-C = \frac{\sum_i \frac{P_i}{V}}{\frac{Q}{V} + \alpha}
+\sum_j PS_j + \sum_i NPS_i - CQ_\text{out} - \alpha CV = 0 \\
+\Rightarrow \qquad C(Q_\text{out} + \alpha V) = \sum_j PS_j + \sum_i NPS_i \\
+\Rightarrow \qquad \bbox[5pt, border: 5px solid red]{C = \frac{\sum_j PS_j + \sum_i NPS_i}{Q_\text{out} + \alpha V}}
 \end{gather*}$$
-
-## Fate & Transport
-
-Can split inflows $P_i$ into PS ($PS_i$) and NPS ($NPS_i$):
-
-$$C = \frac{\sum_i \frac{PS_i + NPS_i}{V}}{\frac{Q}{V} + \alpha}$$
-
-## Example
-
 
 
 ## F&T Model Assumptions
@@ -266,76 +268,97 @@ Generally need to limit average P concentrations to $< 0.01-0.02$ mg/L.
 ## Incorporating Threshold
 
 $$\begin{align*}
-C &= \frac{\sum_i \frac{P_i}{V}}{\frac{Q}{V} + \alpha} \leq 0.01 \\
-\sum_i \frac{P_i}{V} &\leq 0.01 \left(\frac{Q}{V} + \alpha\right) \\
-\sum_i \frac{PS_i}{V} + \sum_i \frac{NPS_i}{V} &\leq 0.01 \left(\frac{Q}{V} + \alpha\right) 
+C = \frac{\sum_j PS_j + \sum_i NPS_i}{Q_\text{out} + \alpha V} &\leq \left(0.01\ \text{mg/L}\right)\left(\frac{1\ \text{mg/L}}{1000\ \text{kg/m}^3}\right) \\[0.5em]
+\Rightarrow \qquad \sum_j PS_j + \sum_i NPS_i &\leq \left(1 \times 10^{-5}\right) \left(Q_\text{out} + \alpha V\right) 
 \end{align*}$$
+
+## What Is The Decay Rate?
+
+Vollenweider model for lake P sedimentation: 
+
+$$\alpha = \frac{10}{\bar{H}} \approx \frac{10A}{V}$$
+
+::: {.fragment .fade-in}
+$$\begin{gather*}
+\Rightarrow \qquad \sum_j PS_j + \sum_i NPS_i \leq \left(1 \times 10^{-5}\right) \left(Q_\text{out} + 10A\right)  \\
+\Rightarrow \qquad \sum_j PS_j + \sum_i NPS_i \leq 7000\ \text{kg/yr}  \\
+\end{gather*}$$
+:::
+
+## NPS from Watershed Land Use
+
+| Type | Area (ha) | Unit P Load (kg/ha) |
+|:----:|--------:|----:|
+| Forest | 20,000 | 0.11 |
+| Corn | 1,000 | 2.0 |
+| Pasture | 3,000 | 1.0 |
+| Residential | 1,000 | 1.2 |
+| Business | 200 | 3.0 |
+
+Unit loads taken from @Osmond1997.
+
+## NPS from Watershed Land Use
+
+| Type | Area (ha) | Unit P Load (kg/ha) |
+|:----:|--------:|----:|
+| Forest | 20,000 | 0.11 |
+| Corn | 1,000 | 2.0 |
+| Pasture | 3,000 | 1.0 |
+| Residential | 1,000 | 1.2 |
+| Business | 200 | 3.0 |
+
+$$\sum_i NPS_i = 9000\ \text{kg}$$
+
+## Implications...
+
+In other words, the "typical" NPS load is
+
+$$\sum_i NPS_i = 9000\ \text{kg}.$$
+
+This is greater than the acceptable total P load for a target concentration of 0.01 mg/L!
+
+::: {.fragment .fade-in}
+**What can we do?**
+:::
+
 
 ## Prescriptive vs. Descriptive Modeling
 
 What we do next depends on whether we're taking a prescriptive or a descriptive approach.
 
 ::: {.incremental}
-- **Prescriptive**: How should we treat waste to ensure non-
+- **Prescriptive**: How should we treat PS waste/control NPS load to ensure compliance?
 - **Descriptive**: How will the lake respond to different point and non-point source contributions?
 :::
 
-## Response to PS and NPS inputs
 
 ## What About Non-Steady State?
 
-$$\sum_i P_i(t) - C(t)Q(t) - \alpha C(t)V = F(t)$$
+$$\sum_j PS_j(t) + \sum_i NPS_i(t) - C(t)Q(t) - \alpha C(t)V = F(t)$$
 
 - More complex, may not be able to solve analytically! 
 - Need to use numerical **simulation** methods (next week!)
 
 # Key Takeaways
 
-## Key Takeaways (Systems)
+## Key Takeaways
 
-- A **system** is an interconnected set of components.
-- Systems are interesting because interconnections can result in unexpected outcomes.
-- Key terms:
-    - **state**
-    - **stocks**
-    - **flows**
-
-## Key Takeaways (Systems Definition)
-
-- To define a system, need to specify:
-    - components
-    - interconnections
-    - control volume
-    - external inputs
-    - outputs of interest
-
-## Key Takeaways (Models)
-
-- Mathematical models allow us to understand how external inputs combine with internal system dynamics to produce outputs.
-- Models can be **prescriptive** or **descriptive** depending on goal of analysis.
-- For most interesting problems, cannot solve analytically and need to use numerical methods.
-
-## Key Takeaways (Models)
-
-- **Simulation** models: Generate data by evaluating model to represent system dynamics.
-- **Optimization** model: Find parameters which maximize/minimize some criterion.
-
-## Key Takeaways (Warning!)
-
-- **All models are at best approximations**: be conscious of what assumptions you've made and how they might change the modeled outcomes (you will be asked to do this on homeworks).
-
+- Systems modeling lets us account for influence of multiple inputs, controls, and dynamics
+- Mass (or equivalent) Balances as starting points for fate & transport models
+- Constraints and thresholds from environmental quality/regulatory standards
+- Need to identify prescriptive vs. descriptive use for model
 
 # Upcoming Schedule
 
 ## Next Classes
 
-**Monday**: Examples of Formulating/Analyzing Models.
+**Wednesday**: System Dynamics (Feedbacks/Bifurcations)
 
-**Wednesday**: Overview of System Dynamics
+**Next Week**: Simulation Models
 
 ## Assessments
 
-**Homework 2**: Due Friday at 9pm.
+**Homework 2**: Released, due 9/19 at 9pm
 
 # References
 

@@ -991,7 +991,7 @@
     "href": "slides/lecture05-dynamics-feedbacks.html#shallow-lake-model-1",
     "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
     "section": "Shallow Lake Model",
-    "text": "Shallow Lake Model\n\n\n\nModel introduced by Carpenter et al (1999).\n(Simplified) lake management problem\nTradeoff between economic benefits and the health of the lake.\n\n\n\n\n\nLake Eutrophication Example"
+    "text": "Shallow Lake Model\n\n\n\nModel introduced by Carpenter et al. (1999).\nThis lecture builds off Quinn et al. (2017).\nTradeoff between economic benefits and the health of the lake.\n\n\n\n\n\nLake Eutrophication Example"
   },
   {
     "objectID": "slides/lecture05-dynamics-feedbacks.html#shallow-lake-model-variables",
@@ -1124,7 +1124,7 @@
     "href": "slides/lecture05-dynamics-feedbacks.html#references-1",
     "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
     "section": "References",
-    "text": "References"
+    "text": "References\n\n\n\n\n\n\n\n\nCarpenter, S. R., Ludwig, D., & Brock, W. A. (1999). Management of eutrophication for lakes subject to potentially irreversible change. Ecol. Appl., 9(3), 751–771. https://doi.org/10.2307/2641327\n\n\nQuinn, J. D., Reed, P. M., & Keller, K. (2017). Direct policy search for robust multi-objective management of deeply uncertain socio-ecological tipping points. Environmental Modelling & Software, 92, 125–141. https://doi.org/10.1016/j.envsoft.2017.02.017"
   },
   {
     "objectID": "policies/exam.html",

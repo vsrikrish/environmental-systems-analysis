@@ -2,3 +2,7 @@
 	path = hw/hw01
 	url = https://github.com/BEE4750/hw01.git
 	branch = Fall24
+[submodule "hw/hw02"]
+	branch = Fall24
+	path = hw/hw02
+	url = https://github.com/BEE4750/hw02.git

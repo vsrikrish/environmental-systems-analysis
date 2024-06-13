@@ -1,0 +1,70 @@
+---
+title: "Academic Integrity"
+anchor-sections: true
+---
+
+While we don't expect academic integrity to be a problem (**we trust you, which is why the course is designed to be open and collaborative!**), these policy statements are unfortunately necessary due to a very small minority of students. If you are worried about whether something you are doing is in danger of violating this course's academic integrity policy, please don't hesitate to ask during lecture, in office hours, by email, or on Ed Discussion.
+
+## Expectations
+
+::: {.callout-important }
+### Our Expectations
+
+Each student or group must write their own solutions in their own words and submit work that reflects their understanding. All external sources, including classmates, must be properly credited and referenced.**
+:::
+
+If something is submitted with your name on it, you should be able to explain and defend its choices and outcomes. This is true in the workplace as well as in academia.
+
+For example, see:
+
+* The [Cornell University Code of Academic Integrity](http://theuniversityfaculty.cornell.edu/academic-integrity/);
+* The [American Society for Civil Engineers' Code of Ethics](https://www.asce.org/-/media/asce-images-and-files/career-and-growth/ethics/documents/asce-code-ethics.pdf).
+
+This issue is particularly important in engineering, as lives and well-being depend on the honesty and integrity of engineers. While the stakes are obviously lower in our class, the habits you develop now are related to your practices in the future. 
+
+### Cite Your Sources and Collaborators
+
+This course is designed to be highly collaborative: you are free to work with classmates, seek out their advice and insights when you are stuck, and provide help to them when they are stuck. You are also highly encouraged to take advantage of external resources to help you solve problems. But **you must cite your sources**, with only three exceptions:
+
+1. Help from the instructor or course staff;
+2. Course materials *from this semester*;
+3. Sources used in prerequisite courses.
+
+Submitting someone else's work or ideas without proper credit is plagiarism, *even if you have their permission*. Plagiarism, and facilitating plagiarism, are academic integrity violations and will be treated accordingly. Conversely, citing your sources will never negatively impact your grade, and may help if you relied on poor information which you then used properly.
+
+### Use Your Own Words
+
+Duplication of any source, *even with proper citation*, is plagiarism. **Your submissions must reflect your own ideas, understanding, and work**. This means:
+
+* Verbatim copying of lecture notes (including code samples) is plagiarism;
+* Copying from old homework or exam solutions is plagiarism;
+* Submitting work in your name done by another student is plagiarism;
+* Allowing another student is submit your work in their name is an academic integrity violation.
+* Minor wordsmithing to change individual words while preserving a duplicated text's flow of ideas is also an academic integrity violation. For example, taking ChatGPT output and copying it is clearly an academic integrity violation; changing a few words here or there to avoid "duplication" is still a violation.
+
+This also goes for any code that you submit. While you are welcome to draw on sources such as ChatGPT or Stack Overflow for debugging, syntax help, or programming patterns, you should independently incorporate these ideas into your independently written problem solutions and code (**and credit them in the comments!)**. If the instructor or TA ask you to explain what is going on in your code, and you cannot, there's a problem.
+
+## Don't Cheat or Lie
+
+The usual no-nos from other classes apply: don't do anything like
+
+- Collaborate on or copy exam answers;
+- Modify or destroy another students' work;
+- Have an imposter complete work on your behalf;
+- Change answers before asking for a regrade;
+- Falsely claim to have submitted an assignment or have taken an exam.
+
+## Penalties
+
+- If you commit an academic integrity violation on a homework assignment, you will be given a zero for that entire homework assignment, **which will not be dropped under any circumstances**.
+- If you commit an academic integrity violation on an exam, you will be given a zero for the entire exam, **which will not be dropped under any circumstances**.
+- If you commit a second academic integrity violation, you will be given an F for the course.
+- If your first violation is particularly egregious, you will be given an F for the course.
+
+All academic integrity violations will also be reported to the students' college and department.
+
+## Group Work
+
+Your term project involves the submission of work jointly as a group. This means that every member of the group is responsible for the entire project. At a minimum, every person whose name is on a submission must **read, understand, and approve** the entirety of the submission (this is the same standard used for authorship on academic publications). **Allowing someone else to add your name to something you did not contribute to is an academic integrity violation** and will result in a zero for the entire submission. 
+
+

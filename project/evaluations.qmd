@@ -1,0 +1,30 @@
+---
+title: Presentation Evaluations Instructions
+format:
+    html: default
+    pdf:
+        documentclass: article
+        geometry:
+            - margin=1in  
+        include-in-header:
+            text: |
+                \renewcommand\toprule[2]\relax
+                \renewcommand\bottomrule[2]\relax
+        filters:
+            - ../_assets/filters/columns-to-tables.lua
+---
+
+## Overview
+
+The goal of this evaluation is to assess your group process to ensure that group members are fairly graded based on both the project outputs (group products) and their contributions to the group as individuals. The evaluation is your opportunity to provide feedback on how your group dynamic operated during the duration of your project, as well as reflect on the contributions that you made to your group and what opportunities there might be to improve.
+
+## Instructions
+
+An evaluation quiz will be released on Canvas on the last day of class. Please make sure you fill this out before the end of the finals period, though you may (and probably should) wait until your project is completed.
+
+The quiz will consist of two sections:
+
+1. Self evaluation: Summarize your project and your contribution. How much do you believe you contributed to the project outputs? What were the opportunities for improvement of your contribution to the group dynamic and outcomes?
+2. Group contribution evaluation: How much did each other group member contribute to the group effort? What were the opportunities for improvement of the group process?
+
+Please be honest and fair in this evaluation and complete them independently from your other group members. While your grade for the Team Evaluation portion of the project only relies on completing this form, your individual overall project grade may be modified by up to 10% (in either direction; the full 10% is reserved for particularly extreme cases) based on a combination of the self and group evaluations. These adjustments may differ based on whether a student is an undergraduate (4750) or graduate (5750), as graduate students would be expected to take on a leadership role within their group.

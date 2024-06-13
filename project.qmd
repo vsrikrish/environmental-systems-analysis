@@ -15,13 +15,13 @@ The final project gives you an opportunity to use and extend the methods we have
 
 Milestones which are only for BEE 5750 or 4750 students are in *italics*.
 
-| Milestone | Points | Instructions | Rubric | Due Date |
+| Milestone | Points | Instructions |  Due Date |
 |:---------:|:------------:|:-------:|:-----------|:---------:|
-| Proposal | 10 |  |  | Nov 01, 2024 |
-| Presentation | 20 |  |  | Dec 09, 2024 |
-| Peer Review | 10 |  |  | Dec 13, 2024 |
-| Report | 40  | |  | Dec 20, 2024 |
-| Team and Self Evaluations | 20 |  |  | Dec 20, 2024 |
+| Proposal | 10 | [{{< fa sharp pen-field >}}](project/proposal.qmd)  |  Nov 01, 2024 |
+| Presentation | 20 |  [{{< fa sharp pen-field >}}](project/presentation.qmd) | Dec 09, 2024 |
+| Peer Review | 10 | [{{< fa sharp pen-field >}}](project/peer-review.qmd)   | Dec 13, 2024 |
+| Report | 40  | [{{< fa sharp pen-field >}}](project/report.qmd)|  Dec 20, 2024 |
+| Team and Self Evaluations | 20 | [{{< fa sharp pen-field >}}](project/evaluations.qmd) | Dec 20, 2024 |
 
 ## Scope and Topics
 

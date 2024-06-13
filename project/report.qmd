@@ -1,0 +1,37 @@
+---
+title: Project Report Instructions
+format:
+    html: default
+    pdf:
+        documentclass: article
+        geometry:
+            - margin=1in  
+        include-in-header:
+            text: |
+                \renewcommand\toprule[2]\relax
+                \renewcommand\bottomrule[2]\relax
+        filters:
+            - ../_assets/filters/columns-to-tables.lua
+---
+
+## Overview
+
+Your project report is the final submission for the semester. It should be a self-contained description of your project, including sections for:
+
+1. Background on your selected system and the project question (why did you pick this problem and why does it matter?);
+2. Relevant regulatory context, including the current state of regulations and a timeline including at least three specific instances of rule-making drawn from reputable sources;
+3. Methods, including problem formulation (how you defined your system and the mathematical formulation of your problem) and the specific approach(es) you are taking for the analysis;
+4. Results, including visual and quantitative analyses to support your insights;
+5. Discussion and Conclusions connecting your results to the motivating problem,  including how assumptions made in your project may have influenced the results or their interpretation as well as reflections on how your project connected to or extended the course material.
+
+## Instructions
+
+Your report should be no longer than 10 pages, using the following format:
+
+- 1/2 inch margins on each side;
+- 12 point Calibri font;
+- 1.5x line spacing.
+
+Make sure to include references; the referencing style does not matter but should be a common one.
+
+Submit a PDF of the report to Gradescope by 9:00 PM on the due date. 

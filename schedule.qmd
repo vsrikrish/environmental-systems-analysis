@@ -15,7 +15,7 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 | 2    | Mon, Sep 02 | **No Class: Labor Day** |  | | | |
 |      | Wed, Sep 04 | Introduction to Systems Analysis | [{{< fa sharp presentation-screen >}}](slides/lecture03-systems-intro.qmd) | | |  |
 | 3    | Mon, Sep 09 | Modeling Example: Lake Eutrophication | | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
-|      | Wed, Sep 11 | Feedbacks and Bifurcations | | | | |
+|      | Wed, Sep 11 | System Dynamics | | | | |
 | | | ***Module 2: Systems Simulation and Risk*** | | | |
 |  4   | Mon, Sep 16 | Simulation Modeling | | | | | 
 |      | Wed, Sep 18 | Dissolved Oxygen  | | | |

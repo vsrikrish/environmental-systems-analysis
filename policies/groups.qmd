@@ -1,0 +1,25 @@
+---
+title: "Group Expectations"
+anchor-sections: true
+---
+
+## Expectations
+
+
+We expect that members of groups will contribute to the group effort as equal participants. This means:
+
+- Setting and fulfilling expectations that are fairly agreed upon by the group;
+- Contributing to discussions and the generation of ideas (note: these contributions don't have to be *good*, necessarily; brainstorming will necessarily involve throwing out half-baked ideas, but this is still a contribution);
+- Contributing to the analysis and writing efforts (at minimum, reading, understanding, and agreeing to everything submitted);
+- Communicating actively and proactively about statuses and challenges.
+
+Every member of a group will be evaluated on these bases at the end of the semester by their groupmates, which could influence their grade.
+
+## Recommended Practices
+
+To facilitate these contributions, we recommend the following practices (though specifics may vary depending on the group):
+
+- Clearly set expectations and timelines for each group members' contributions (for example, create a schedule or a [Gantt chart](https://en.wikipedia.org/wiki/Gantt_chart#:~:text=10%20External%20links-,Definition,the%20duration%20of%20each%20activity.)), including backup plans if unexpected challenges or circumstances arise during the semester;
+- Use collaborative writing and coding/code-sharing platforms (*e.g.* Google Docs, Overleaf, and GitHub) to update work frequently and solicit feedback from group members;
+- Schedule regular meetings for updates on status and progress;
+- Seek advice from the course staff proactively if challenges emerge that might compromise your plan or timeline.

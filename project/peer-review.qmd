@@ -1,0 +1,38 @@
+---
+title: Presentation Peer Review Instructions
+format:
+    html: default
+    pdf:
+        documentclass: article
+        geometry:
+            - margin=1in  
+        include-in-header:
+            text: |
+                \renewcommand\toprule[2]\relax
+                \renewcommand\bottomrule[2]\relax
+        filters:
+            - ../_assets/filters/columns-to-tables.lua
+---
+
+## Overview
+
+The goal of this peer review is for you to evaluate the efficacy of the communication and framing of the project in the presentation video. It is **not** to evaluate the content of the project itself.
+
+## Instructions
+
+You should be prompted to review two videos in Canvas starting on 12/10. Submit your reviews there.
+
+***Note***: If you do not see the prompt or the instructions are not clear, reach out to Prof. Srikrishnan ASAP. You **will not** be able to submit reviews after the due date.
+
+Your review should, in no more than 1 page, answer the following questions:
+
+- How well did you understand the key question of the project? Can you restate it?
+- What were the key results (be specific; do not just repeat the video!)?
+- What were three things the presenters did well (be specific!)?
+- What were three things the presenters could have done better (be specific!)?
+
+Conclude with an overview rating: 1. Excellent; 2. Fine as is; 3. Needs some improvement; 4. Needs a lot of improvement.
+
+## Submission
+
+Submit your reviews to Canvas by 9:00 PM on the due date. 

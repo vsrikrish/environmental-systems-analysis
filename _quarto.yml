@@ -68,6 +68,9 @@ website:
             text: "Exam Policies"
           - href: policies/grading.qmd
             text: "Grading Policies"
+          - href: policies/groups.qmd
+            text: "Group Expectations"
+
           - href: policies/integrity.qmd
             text: "Academic Integrity"
       - section: hw.qmd
@@ -75,12 +78,7 @@ website:
           - href: hw/hw01/hw01.html
             text: "HW 1"
       - labs.qmd
-      - section: "Final Project" 
-        contents:
-          - href: project.qmd
-            text: "Project Materials"
-          - href: groups.qmd
-            text: "Group Expectations"
+      - section: project.qmd
       - section: "Tutorials"
         contents:
           - href: tutorials/julia-basics.qmd

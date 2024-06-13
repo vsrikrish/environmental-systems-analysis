@@ -1,0 +1,444 @@
+---
+title: "System Dynamics: Equilibria, Bifurcations, and Feedbacks"
+subtitle: "Lecture 07"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "September 18, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: mathjax
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+engine: julia
+execute:
+    freeze: auto
+    daemon: 600
+---
+
+```{julia}
+#| output: false
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+using Random
+using Plots
+using Measures
+using Distributions
+using StatsPlots
+using LaTeXStrings
+using Roots
+
+plot_font = "Computer Modern"
+default(
+    fontfamily=plot_font,
+    linewidth=2, 
+    framestyle=:box, 
+    label=nothing, 
+    grid=false
+)
+```
+
+# Review of Last Class
+
+## Lake Eutrophication Model
+
+![Schematic of processes resulting in lake eutrophication](figures/eutrophication-system-schematic.svg)
+
+## Modeling Information Needs
+
+1. What will happen to the waste in the environment (fate & transport)?
+2. What are potential impacts and acceptable levels or critical thresholds?
+3. *What are options to manage the waste?*
+
+## Mass-Balance and Fate & Transport
+
+- Used principles of mass-balance to derive a fate & transport model for the system dynamics.
+- Accounted for point and non-point source loading and environmental quality thresholds.
+- Use of model depends on **prescriptive** vs. **descriptive** purpose.
+
+## Questions?
+
+{{< include _poll-prompt.qmd >}}
+
+
+# Shallow Lake Model
+
+## Limitations Of Our Prior Eutrophication Model
+
+- Steady-state
+- Assumed first-order (linear) decay for lake P
+
+## Shallow Lake Model
+
+:::: {.columns}
+::: {.column width=40%}
+- Model introduced by @Carpenter1999-wx.
+- This lecture builds off @Quinn2017-vn.
+- Tradeoff between economic benefits and the health of the lake.
+:::
+::: {.column width=60%}
+![Lake Eutrophication Example](figures/eutrophication-system-all.png)
+:::
+::::
+
+## Shallow Lake Model: Variables
+
+| Variable | Meaning | Units |
+|:--------:|:--------|:-----|
+| $X_t$ | P level in lake at time $t$ | dimensionless |
+| $a_t$ | Controllable (point-source) P release | dimensionless |
+| $y_t$ | Random (non-point-source) P runoff | dimensionless |
+
+## Shallow Lake Model: Runoff
+
+Random runoffs $y_t$ are sampled from a LogNormal distribution.
+
+```{julia}
+#| code-fold: true
+#| label: fig-lognorm
+#| fig-cap: "Lognormal Distributions"
+#| fig-alt: "Lognormal Distributions"
+#| fig-align: center
+#| echo: true
+
+# this uses StatsPlots.jl's recipe for plotting distributions directly; otherwise use something like plot(-5:0.01:5, pdf.(LogNormal(0.25, 1), -5:0.1:5))
+plot(LogNormal(0.25, 1), linewidth=3, label="LogNormal(0.25, 1)", guidefontsize=18, legendfontsize=16, tickfontsize=16)
+plot!(LogNormal(0.5, 1), linewidth=3, label="LogNormal(0.5, 2)")
+plot!(LogNormal(0.25, 2), linewidth=3, label="LogNormal(0.25, 2)")
+plot!(size=(1000, 400), grid=:false, left_margin=10mm, right_margin=10mm, bottom_margin=10mm)
+xlims!((0, 6))
+ylabel!("Density")
+xlabel!(L"y_t")
+```
+
+## Shallow Lake Model: P Dynamics
+
+- Lake loses P at a linear rate, $bX_t$.
+- Nutrient cycling reintroduces P from sediment: $$\frac{X_t^q}{1 + X_t^q}.$$
+
+## Shallow Lake Model
+
+So the P level (state) $X_{t+1}$ is given by:
+$$\begin{gather*}
+X_{t+1} = X_t + a_t + y_t + \frac{X_t^q}{1 + X_t^q} - bX_t, \\[0.5em]
+y_t \underset{\underset{\Large\text{\color{red}sample}}{\color{red}\uparrow}}{\sim} \text{LogNormal}(\mu, \sigma^2).
+\end{gather*}
+$$
+
+# Equilibria and Bifurcations
+
+## Lake Dynamics (Without Inflows)
+
+:::: {.columns}
+::: {.column width=50%}
+- $a_t = y_t = 0$, 
+- $q=2.5$
+- $b=0.4$
+:::
+
+::: {.column width=50%}
+
+```{julia}
+#| label: fig-lake-noinput-ic
+#| fig-cap: "Dynamics of lake model with different initial conditions"
+#| fig-width: 100%
+#| echo: true
+#| code-fold: true
+
+# define functions for lake recycling and outflows
+lake_P_cycling(x, q) = x.^q ./ (1 .+ x.^q);
+lake_P_out(x, b) = b .* x;
+
+T = 30
+X_vals = collect(0.0:0.1:2.5)
+function simulate_lake_P(X_ic, T, b, q, a, y)
+    X = zeros(T)
+    X[1] = X_ic
+    for t = 2:T
+        X[t] = X[t-1] .+ a[t] .+ y[t].+ lake_P_cycling(X[t-1], q) .- lake_P_out(X[t-1], b)
+    end
+    return X
+end
+X = map(x -> simulate_lake_P(x, T, 0.4, 2.5, zeros(T), zeros(T)), X_vals)
+p_noinflow = plot(X, label=false, ylabel=L"X_t", xlabel="Time", guidefontsize=18, tickfontsize=16, size=(600, 500), left_margin=5mm, bottom_margin=5mm)
+```
+:::
+::::
+
+## Lake Dynamics (Without Inflows)
+
+:::: {.columns}
+::: {.column width=50%}
+- $a_t = y_t = 0$, 
+- $q=2.5$
+- $b=0.4$
+:::
+
+::: {.column width=50%}
+```{julia}
+#| label: fig-lake-noinput
+#| fig-cap: "Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter $b$). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake's P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+#| fig-width: 100%
+#| code-fold: true
+#| echo: true
+
+# define range of lake states X
+x = 0:0.05:2.5;
+
+# plot recycling and outflows for selected values of b and q
+p1 = plot(x, lake_P_cycling(x, 2.5), color=:black, linewidth=5,legend=:topleft, label="P Recycling", ylabel="P Flux", xlabel=L"$X_t$", tickfontsize=16, guidefontsize=18, legendfontsize=16, palette=:tol_muted, framestyle=:zerolines, grid=:false)
+plot!(x, lake_P_out(x, 0.4), linewidth=3, linestyle=:dash, label=L"$b=0.4$", color=:blue)
+quiver!([1], [0.35], quiver=([1], [0.4]), color=:red, linewidth=2)
+quiver!([0.4], [0.13], quiver=([-0.125], [-0.05]), color=:red, linewidth=2)
+quiver!([2.5], [0.97], quiver=([-0.125], [-0.05]), color=:red, linewidth=2)
+plot!(ylims=(-0.02, 1.1))
+plot!(size=(600, 500))
+```
+:::
+::::
+
+## Where Are the Equilibria?
+
+:::: {.columns}
+::: {.column width=50%}
+**Equilibria**: Fixed points of the dynamics (no state change).
+
+Equilibria occur where $$\Delta X = X_{t+1} - X_t = 0,$$ so the outflows and sediment recycling are in balance.
+:::
+
+::: {.column width=50%}
+
+```{julia}
+#| label: fig-lake-noinput-eq
+#| fig-cap: "Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5$), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter $b$). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake's P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+#| fig-width: 100%
+#| echo: true
+#| code-fold: true
+
+eq1 = [0.0, 0.67, 2.2]
+scatter!(p1, eq1, (y -> lake_P_cycling(y, 2.5)).(eq1), label="Equilibria", markersize=10, markercolor=:blue)
+```
+:::
+::::
+
+## Implications of Unstable Equilibria
+
+:::: {.columns}
+::: {.column width=50%}
+```{julia}
+#| label: fig-lake-noinflow-dynamics
+#| fig-cap: "Dynamics of Lake Model With No Inflows"
+#| code-fold: true
+#| echo: true
+
+plot!(p_noinflow, title="Lake P Without Inflows", titlefontsize=20)
+```
+:::
+::: {.column width=50%}
+```{julia}
+#| label: fig-lake-inflow-dynamics
+#| fig-cap: "Dynamics of Lake Model With No Inflows"
+#| code-fold: true
+#| echo: true
+
+a = zeros(T)
+y = rand(LogNormal(log(0.08), 0.01), T)
+X = map(x -> simulate_lake_P(x, T, 0.4, 2.5, a, y), X_vals) 
+plot(X, label=false, ylabel=L"$X_t$", xlabel="Time", title="Lake P With Inflows", guidefontsize=18, tickfontsize=16, size=(600, 500), left_margin=5mm, bottom_margin=5mm, titlefontsize=20)
+```
+:::
+::::
+
+
+## How do Equilibria Change?
+
+:::: {.columns}
+::: {.column width=50%}
+How do the equilibria change as system parameters vary?
+:::
+
+::: {.column width=50%}
+
+```{julia}
+#| label: fig-lake-noinput-eq-3
+#| fig-cap: "Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5$), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter $b$). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake's P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+#| fig-width: 100%
+#| echo: true
+#| code-fold: true
+
+eq_45 = [0.8, 1.8]
+eq_5 = [1.0, 1.4]
+plot!(x, lake_P_out(x, 0.45), linewidth=3, linestyle=:dash, label=L"$b=0.45$", color=:orange)
+plot!(x, lake_P_out(x, 0.5), linewidth=3, linestyle=:dash, label=L"$b=0.5$", color=:purple)
+plot!(x, lake_P_out(x, 0.6), linewidth=3, linestyle=:dash, label=L"$b=0.6$", color=:green)
+scatter!(p1, eq_45, (y -> lake_P_cycling(y, 2.5)).(eq_45), label=false, markersize=10, markercolor=:orange)
+scatter!(p1, eq_5, (y -> lake_P_cycling(y, 2.5)).(eq_5), label=false, markersize=10, markercolor=:purple)
+
+```
+:::
+::::
+
+## Equilibria vs. $b$ Value
+
+```{julia}
+#| label: fig-lake-noinput-bifurcation
+#| fig-cap: "Bifurcation diagram for the lake problem with no inputs."
+#| fig-width: 100%
+#| echo: true
+#| code-fold: true
+
+function plot_P_flux(b_vals)
+    p = plot(; xlabel=L"b", ylabel=L"X", legend=:outerright, tickfontsize=16, legendfontsize=16, guidefontsize=18, left_margin=5mm, bottom_margin=10mm, size=(1200, 500))
+
+    flux_func(x, b) = lake_P_cycling(x, 2.5) - lake_P_out(x, b)
+    X_un = []
+    X_st = []
+    for b in b_vals
+        # try to find the unstable (oligotrophic) equilibrium
+        try
+            x_eq = Roots.find_zero(x -> flux_func(x, b), 0.5)
+            push!(X_un, (b, x_eq))
+        catch err
+            if isa(err, DomainError)
+            end
+        end
+        # try to find the stable (eutrophic) equilibrium
+        try
+            x_eq = Roots.find_zero(x -> flux_func(x, b), 2.0)
+            push!(X_st, (b, x_eq))
+        catch err
+            if isa(err, DomainError)
+            end
+        end
+    end
+    plot!(p, first.(X_un), last.(X_un), label="Unstable Equilibrium", linewidth=3, color=:red, linestyle=:dash)
+    plot!(p, first.(X_st), last.(X_st), label="Stable (Eutrophic) Equilibrium", linewidth=3, color=:red)
+    plot!(p, b_vals, repeat([0.0], length(b_vals)), label="Stable (Oligotrophic) Equilibrium", linewidth=3, color=:blue)
+
+    quiver!(p, [0.01], [0.15], quiver=([0.0], [5.85]), color=:black)
+    quiver!(p, [0.05], [0.2], quiver=([0.0], [5.8]), color=:black)
+    quiver!(p, [0.1], [0.4], quiver=([0.0], [5.6]), color=:black)
+    quiver!(p, [0.15], [0.5], quiver=([0.0], [5.5]), color=:black)
+    quiver!(p, [0.2], [0.5], quiver=([0.0], [4.0]), color=:black)
+    quiver!(p, [0.25], [0.6], quiver=([0.0], [3.0]), color=:black)
+    quiver!(p, [0.3], [0.6], quiver=([0.0], [2.4]), color=:black)
+    quiver!(p, [0.35], [0.7], quiver=([0.0], [1.7]), color=:black)
+    quiver!(p, [0.4], [0.8], quiver=([0.0], [1.3]), color=:black)
+    quiver!(p, [0.45], [0.9], quiver=([0.0], [0.75]), color=:black)
+    quiver!(p, [0.5], [1.1], quiver=([0.0], [0.25]), color=:black)
+
+    quiver!(p, [0.1], [0.15], quiver=([0.0], [-0.15]), color=:black)
+    quiver!(p, [0.15], [0.2], quiver=([0.0], [-0.15]), color=:black)
+    quiver!(p, [0.2], [0.25], quiver=([0.0], [-0.2]), color=:black)
+    quiver!(p, [0.25], [0.35], quiver=([0.0], [-0.3]), color=:black)
+    quiver!(p, [0.3], [0.4], quiver=([0.0], [-0.35]), color=:black)
+    quiver!(p, [0.35], [0.45], quiver=([0.0], [-0.4]), color=:black)
+    quiver!(p, [0.4], [0.55], quiver=([0.0], [-0.45]), color=:black)
+    quiver!(p, [0.45], [0.7], quiver=([0.0], [-0.6]), color=:black)
+    quiver!(p, [0.5], [0.9], quiver=([0.0], [-0.8]), color=:black)
+
+    quiver!(p, [0.2], [6.0], quiver=([0.0], [-0.9]), color=:black)
+    quiver!(p, [0.25], [6.0], quiver=([0.0], [-2.0]), color=:black)
+    quiver!(p, [0.3], [6.0], quiver=([0.0], [-2.7]), color=:black)
+    quiver!(p, [0.35], [6.0], quiver=([0.0], [-3.2]), color=:black)
+    quiver!(p, [0.4], [6.0], quiver=([0.0], [-3.8]), color=:black)
+    quiver!(p, [0.45], [6.0], quiver=([0.0], [-4.0]), color=:black)
+    quiver!(p, [0.5], [6.0], quiver=([0.0], [-4.5]), color=:black)
+    quiver!(p, [0.55], [6.0], quiver=([0.0], [-5.9]), color=:black)
+    quiver!(p, [0.6], [6.0], quiver=([0.0], [-5.9]), color=:black)
+
+    return p
+end
+b_vals = 0.01:0.01:0.6
+
+p = plot_P_flux(b_vals)
+display(p)
+```
+
+## Implications of Bifurcations
+
+Bifurcations have the following implications:
+
+- Uncertainty about system dynamics can dramatically change equilibria locations and behavior;
+- "Shocks" (in this case, sedimentation/recycling disturbances or massive non-point source inflows) can irreversibly alter system outcomes.
+
+# Feedbacks
+
+## Feedback Loops
+
+:::: {.columns}
+
+::: {.column width=60%}
+Unstable equilibria can result from **reinforcing (positive) feedback loops**, where a shock to the system state gets amplified.
+
+Feedback loops can also be **dampening (negative)**, where a shock is weakened (stable equilibria).
+:::
+
+::: {.column width=40%}
+![Ice-Albedo Feedback Loop](figures/ice-albedo.svg){width=100%}
+:::
+
+::::
+
+## Feedbacks for Lake Eutrophication
+
+![Eutrophication Feedback Loop](figures/eutrophication-feedbacks.svg)
+
+## Other Environmental Feedbacks
+
+**Can we think of other examples of environmental feedback loops?**
+
+**Are they reinforcing or dampening?**
+
+# Key Takeaways
+
+## Key Takeaways (Equilibria)
+
+- System equilibria states can be **stable** or **unstable**.
+- Unstable equilbria can be responsible for thresholds/tipping points.
+- **Bifurcations**: Changes to number/qualitative behavior of equilibria as system properties vary.
+
+## Key Takeaways (Feedbacks)
+
+- Feedback loops can be **reinforcing** or **dampening**.
+- Reinforcing feedbacks: changes to system state are amplified, resulting in instability and evolution away from equilibrium state.
+- Dampening feedbacks: changes to system state are dampened, system reverts to stable equilibrium state.
+
+# Upcoming Schedule
+
+## Next Classes
+
+**Next Week**: Simulation Models
+
+## Assessments
+
+**Homework 2**: Due 9/19 at 9pm
+
+# References
+
+## References

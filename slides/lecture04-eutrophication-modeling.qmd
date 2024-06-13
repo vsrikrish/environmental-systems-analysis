@@ -155,6 +155,10 @@ using Measures
 - **clogged water intakes**; and
 - **reduction in recreational value and drinking water quality**.
 
+## Lake Eutrophication Dynamics
+
+![Schematic of processes resulting in lake eutrophication](figures/eutrophication-system-schematic.svg)
+
 ## Lake Eutrophication Causes
 
 Excess N and P can come from: 

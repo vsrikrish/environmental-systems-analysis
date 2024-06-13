@@ -362,9 +362,9 @@ Approximately 5 class periods will be dedicated to working through simple exampl
 
 Approximately 5 homework assignments will be assigned throughout the semester, one per course module (plus an initial homework to build or refresh programming and debugging skills). The homework assignments are more in-depth problem sets involving the modeling (derivation and implementation) and analysis of one or more environmental systems problems.
 
-You will generally have two class weeks to work on an assignment. This is intended to provide you enough time to work on the problem and debug and evaluate your code (including troubleshooting any technical problems); these are not excuses for late submission. Each homework assignment will build on material from the prior classes and possibly from the day the homework is assigned, but no later.
+You will generally have approximately two class weeks to work on an assignment. This is intended to provide you enough time to work on the problem and debug and evaluate your code (including troubleshooting any technical problems); these are not excuses for late submission. Each homework assignment will build on material from the prior classes and possibly from the day the homework is assigned, but no later.
 
-Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but plagiarism is a violation of academic integrity. Graduate students in BEE 5850 can expect one additional problem for each homework assignment aimed at developing greater depth or familiarity with the material.
+Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but plagiarism is a violation of academic integrity. Graduate students in BEE 5750 can expect one additional problem for each homework assignment aimed at developing greater depth or familiarity with the material.
 
 Some notes on assignment and grading logistics:
 

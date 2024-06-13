@@ -20,7 +20,7 @@ Out of these, we are more interested in the *conceptual*: the computational meth
 
 You also may not even be able to tell what parts of your homework solution are correct. And that's also ok! We grade your homework and give you homework solutions so you can identify what, if anything, went wrong, and how to do better next time. We always aim for *improvement*, not perfection, and every homework problem is an opportunity to practice doing that type of problem. 
 
-But this emphasis on homework as practice also means that you should start the homework *early*. If you start early, and get stuck, you have the opportunity to get yourself unstuck, either by banging your head against the problem or by talking to others, and that's how you learn. If you start late and get stuck, you either have to not finish or cheat. 
+But this emphasis on homework as practice also means that you should start the homework *early*. If you start early, and get stuck, you have the opportunity to get yourself unstuck, either by banging your head against the problem or by talking to others, and that's how you learn. If you start late and get stuck, you either have to not finish (not great) or cheat (unacceptable under any circumstances). 
 
 
 ## Homework Logistics
@@ -43,7 +43,7 @@ Here are some tips for how to make the grader (the TA or Prof. Srikrishnan) unde
 - **Write carefully and completely**. We can only grade what you write; nobody can read your mind, and we will not try. The solution that you submit must stand on its own. If your answer is ambiguous, the TA has been instructed to interpret it the wrong way. Regrade requests also cannot be used to add more information to a solution.
 - **Don't submit your first draft**. For most people, first drafts are terrible. They are often poorly organized, unclear, and contain gaps or jumps in reasoning. You will likely need to revise, possibly several times, for your answer to be clear, careful, and complete. This is another reason to start the assignment early --- if you start late, you may be stuck with your first draft, and your grade is likely to suffer for it.
 - **State your assumptions**. If you think a problem statement is ambiguous and your solution depends on a particular interpretation, or you need to make some assumptions to solve the problem, make it explicit (though do also ask for clarification in class or on Ed Discussion).
-- **Don't rely on your code**. The TA will not try to scrutinize your code, which is a waste of time (again, the code is a means to an end --- it works or it doesn't). If you make it clear what your code is supposed to do, then the TA can tell if this logic is correct and any mistake must be something minor in the code. If you just provide code (even if commented), the TA can't do this without running your code and debugging, which is not a valuable use of time. We want to focus on your ideas.
+- **Don't rely on your code**. The TA will not try to scrutinize your code, which is a waste of time (again, the code is a means to an end --- it works or it doesn't). If you make it clear what your code is supposed to do with a description, then the TA can tell if this logic is correct and any mistake must be something minor in the code. If you just provide code (even if commented), the TA can't do this without running your code and debugging, which is not a valuable use of time. We want to focus on your ideas.
 
 ## Be Concise
 

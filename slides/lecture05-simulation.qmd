@@ -1,0 +1,471 @@
+---
+title: "Systems Simulation"
+subtitle: "Lecture 05"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "September 11, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: mathjax
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+engine: julia
+execute:
+    freeze: auto
+    daemon: 600
+---
+
+```{julia}
+#| output: false
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+using Random
+using Distributions
+using Plots
+using Measures
+using LaTeXStrings
+
+plot_font = "Computer Modern"
+default(
+    fontfamily=plot_font,
+    linewidth=3, 
+    framestyle=:box, 
+    label=nothing, 
+    grid=false,
+    guidefontsize=18,
+    legendfontsize=16,
+    tickfontsize=16,
+    titlefontsize=20,
+    bottom_margin=10mm,
+    left_margin=5mm
+)
+```
+
+# Review of Last Class
+
+## Lake Eutrophication Model
+
+![Schematic of processes resulting in lake eutrophication](figures/eutrophication-system-schematic.svg)
+
+## Modeling Information Needs
+
+1. What will happen to the waste in the environment (fate & transport)?
+2. What are potential impacts and acceptable levels or critical thresholds?
+3. *What are options to manage the waste?*
+
+## Mass-Balance and Fate & Transport
+
+- Used principles of mass-balance to derive a fate & transport model for the system dynamics.
+- Accounted for point and non-point source loading and environmental quality thresholds.
+- Use of model depends on **prescriptive** vs. **descriptive** purpose.
+
+## Questions?
+
+{{< include _poll-prompt.qmd >}}
+
+
+# Simulating Systems
+
+## What is Simulation?
+
+**Simulation**: evaluating a model to understand how a system might evolve under a particular set of conditions.
+
+Think of simulation as *data generation* (or **generative** modeling).
+
+The model represents a particular data-generating process.
+
+## Why Simulate Systems?
+
+::: {.incremental}
+1. System involves complex, nonlinear dynamics that may not be analytically tractable.
+2. Setting up and running a real-world experiment is not possible.
+3. State depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.
+4. Need to understand range of system performance across rarely-seen conditions.  
+:::
+
+## Types of Simulation Models
+
+- **Deterministic** vs. **Stochastic**
+- **Discrete** vs. **Continuous**
+
+## Simulation Model Architecture
+
+1. Dividing the domain into individual "boxes" (1-D, 2-D, or 3-D);
+2. Starting from initial box:
+    1. Simulate change to stock within box;
+    2. Obtain outflow as inflow into adjacent boxes;
+    3. Move onto next box;
+3. If needed (*e.g.* non-steady-state), repeat for each time step.
+
+## Simulation Model Applications
+
+- Water balance/hydrologic flow models;
+- Climate models (ocean heat/CO$_2$ uptake through "box" layers)
+- Airsheds
+- Epidemiology
+- Social science (agent-based models)
+
+# Example: Airsheds
+
+## What Is A Box Model?
+
+**Box models** are a common building block of simulation models. 
+
+:::: {.columns}
+::: {.column width=40%}
+Box models are all about mass-balance (mass $m$), assume well-mixed within box. 
+
+Can be steady-state $(\dot{m} = 0)$ or not.
+
+:::
+::: {.column width=60%}
+![Steady-State Box Example](images/airshed-box.svg)
+:::
+::::
+
+## Airshed Model
+
+Let's look at a simple steady-state model of an airshed.
+
+
+| Variable | Meaning | Units |
+|:--------:|:-------:|:------|
+| $m$ | mass of some air pollutant | g |
+| $C$ | concentration in box | g/m$^3$ |
+| $S, D$ | source, deposition rate within the box | g/s |
+| $u$  | wind speed | m/s |
+| $L, W, H$ | box dimensions | m |
+
+## Selecting Box Dimensions
+
+What is relevant for the box dimensions $L$, $W$, and $H$? Primarily the assumption(s) about mixing.
+
+- Mixing height: is there an atmospheric inversion which limits mixing height?
+- Homogeneity of input/output flows and emissions.
+
+## Steady-State Airshed Box Model
+
+Steady-state box &Rightarrow; $\dot{m} = 0$.
+
+\begin{align}
+0 &= m_\text{in} - m_\text{out} + S - D \\[0.5em]
+&\class{\fragment}{{} = (u WH) C_\text{in} - (u WH) C + S - D } \\[0.5em]
+\end{align}
+
+::: {.fragment .fade-in}
+Solving for $C$:
+$$C = C_{in} + \frac{S-D}{uWH}$$
+:::
+
+## Non-Steady State Model
+
+Now let's assume some process affecting $m$ depends on time.
+
+For example: let's say we care about an air pollutant which has a first-order decay rate $k$, so $L(t) = -km(t)$.
+
+$$
+\begin{align*}
+\Rightarrow \frac{dm}{dt} &= m_\text{in} - m + S - km \\[0.5em]
+\dot{m} &= \frac{d(CV)}{dt} = \overbrace{(u WH) C_\text{in}}^{\text{inflow}} - \overbrace{(u WH) C}^{\text{outflow}} + \overbrace{S - D}^{\text{net emissions}} - \overbrace{kCV}^{\text{mass decay}} 
+\end{align*}
+$$
+
+## Discretizing Continuous Models
+
+We could analytically solve this particular differential equation, but in general this may not be possible without strong assumptions.
+
+Instead, we can **discretize** these models using methods from CEE 3200!
+
+## Euler Discretization
+
+Recall that $$\frac{df}{dt} = \lim_{\Delta t \to 0} \frac{\Delta f(t)}{\Delta t}.$$
+
+So if we pick a sufficiently small step size $\Delta t$, can use this as an approximation.
+
+## Discretizing the Airshed Model
+
+$$
+\begin{align*}
+\frac{d(CV)}{dt} &= (u WH) C_\text{in}(t) - (u WH) C(t) + S - D- kC(t)V \\[0.5em]
+\frac{d(C)}{dt} &= \frac{u}{L} C_\text{in}(t) - \frac{u}{L} C(t) + S - D - kC(t) \\[0.5em]
+\frac{C(t+1) - C(t)}{\Delta t} &= \frac{u}{L} C_\text{in}(t) - \frac{u}{L} C(t) + S - D - kC(t)
+\end{align*}
+$$
+
+$$
+\bbox[5px, border: red 5px solid]{C(t+1) = C(t) + \Delta t \left(\frac{u}{L} \left(C_\text{in} - C(t)\right) + S - D - kC(t)\right)}
+$$
+
+
+## How To Simulate?
+
+1. Pick $\Delta t$;
+2. Starting at $t=1$, iterate equation until end-time $T$.
+
+## Simple Simulation Code
+
+```{julia}
+#| label: airshed-simulation-base
+#| echo: true
+#| output: false
+
+# this function computes the increment by which the concentration
+# is updated at each step
+function box_simulate_timestep(C, Ci, u, L, S, D, k)
+    return ((u / L) * (Ci - C) + S - D - (k * C))
+end
+
+# this function loops over the timesteps to simulate
+# the concentration series
+function airshed_simulate(C₀, Ci, u, L, S, D, k, T, Δt)
+    # initialize C storage
+    # for code simplicity we make the array length T+1 so
+    # index 1 is C₀
+    steps = Int64(T / Δt)
+    C = zeros(steps + 1)
+    C[1] = C₀
+    for t = 1:steps
+        C[t+1] = C[t] + 
+            Δt * box_simulate_timestep(C[t], Ci, u, L, S, D, k)
+    end
+    # the first element of C is the initial condition
+    return C
+end
+Δt = 1.0
+T = 10
+C₀ = 0.1
+k = 0.3
+u = 2
+L = 4
+Ci = 0.2
+S = 0.1
+D = 0.13
+C = airshed_simulate(C₀, Ci, u, L, S, D, k, T, Δt)
+```
+
+## Simulation Results
+
+```{julia}
+#| label: fig-simulation-base
+#| fig-cap: "Simulation results for airshed model."
+#| echo: true
+#| code-fold: true
+
+p = plot(; xlabel="Time", ylabel=L"Pollutant concentration (g/m$^3$)")
+
+# find exact solution and plot for comparison
+# need these substitutions for the exact solution; not critical otherwise
+V = 80
+P = (u / L) * Ci + S - D
+l = (u / L) + k
+# use steps of 0.01 to smooth the plotting
+C₁ = C₀ .* exp.(-l * (0:0.01:T))
+C₂ = (P / l) * (1 .- exp.(-l * (0:0.01:T)))
+C_exact = C₁ .+ C₂
+plot!(p, 0:0.01:T, C_exact, linewidth=3, color=:black, label="Exact Solution")
+
+# add simulated solution
+plot!(p, 0:Δt:T, C, linewidth=3, color=:blue, label="Simulated Solution (Δt = 1)")
+
+```
+
+## Impact of Time Step Size
+
+```{julia}
+#| label: fig-simulation-timestep
+#| fig-cap: "Simulation results for airshed model with varying timesteps."
+#| echo: true
+#| code-fold: true
+
+Csmall = airshed_simulate(C₀, Ci, u, L, S, D, k, T, 0.1)
+plot!(p, 0:0.1:T, Csmall, linewidth=3, color=:purple, label="Simulated Solution (Δt = 0.1)")
+Csmaller = airshed_simulate(C₀, Ci, u, L, S, D, k, T, 0.01)
+plot!(p, 0:0.1:T, Csmall, linewidth=3, color=:orange, label="Simulated Solution (Δt = 0.01)")
+```
+
+## Time-Varying (Dynamic) Simulation
+
+In our prior example, inflow conditions were *static*.
+
+The discretized simulation framework lets us make these time-varying:
+
+$$
+C(t+1) = C(t) + \Delta t \left(\frac{u(t)}{L} \left(C_\text{in}(t) - C(t)\right) + S - D - kC(t)\right)
+$$
+
+## Dynamic Simulation Code
+
+```{julia}
+#| echo: true
+#| output: false
+#| code-line-numbers: "1|9-10"
+
+function airshed_simulate_dynamic(C₀, Ci, u, L, S, D, k, T, Δt)
+    # initialize C storage
+    # for code simplicity we make the array length T+1 so
+    # index 1 is C₀
+    steps = Int64(T / Δt)
+    C = zeros(steps + 1)
+    C[1] = C₀
+    for t = 1:steps
+        C[t+1] = C[t] + Δt * box_simulate_timestep(C[t], Ci[t], u[t], L, S, D, k)
+    end
+    # the first element of C is the initial condition
+    return C
+end
+
+```
+
+## Dynamic Inputs
+
+```{julia}
+#| label: fig-sample-dynamic
+#| fig-cap: "Dynamic simulation results for airshed model."
+#| echo: true
+#| code-fold: true
+#| layout-ncol: 2
+
+Δt = 0.1
+steps = Int(T / Δt) + 1
+u = rand(LogNormal(log(2), 0.05), steps)
+Ci = rand(LogNormal(log(0.2), 0.1), steps)
+
+pwind = plot(0:Δt:T, u; title="Wind Speed", size=(550, 450), xlabel="Time", ylabel="m/s")
+pincoming = plot(0:Δt:T, Ci; title="Incoming Concentration", size=(550, 450), xlabel="Time", ylabel=L"$\mathrm{g/m}^3$")
+
+display(pwind)
+display(pincoming)
+```
+
+## Dynamic Simulation Results
+
+```{julia}
+#| label: fig-simulation-dynamic
+#| fig-cap: "Dynamic simulation results for airshed model."
+#| echo: true
+#| code-fold: true
+
+Cdynamic = airshed_simulate_dynamic(C₀, Ci, u, L, S, D, k, T, 0.1)
+p = plot(; xlabel="Time", ylabel=L"Pollutant Concentration ($\mathrm{g/m}^3$)")
+plot!(p, 0:0.1:T, Cdynamic, linewidth=3, color=:purple, label="Dynamic Simulated Solution")
+plot!(p, 0:0.1:T, Csmall, linewidth=3, color=:red, label="Static Simulated Solution")
+```
+
+# Multi-Box Simulation
+
+## More Complex Domains
+
+We can use the single box simulation as a building block for more complex domains, possibly with different dynamics.
+
+![Two box airshed model](figures/airshed-twobox.svg)
+
+## Multi-Box Simulation Approach
+
+**Tip**: Use smaller functions as a building block!
+
+## Multi-Box Simulation Approach
+
+```{julia}
+#| label: twobox-simulation-code
+#| echo: true
+#| output: false
+#| code-line-numbers: "|13-16|17"
+
+# here we use our timestep function on each box individually,
+# but update them "together"
+function airshed_twobox_simulate(C1₀, C2₀, Ci, u, L1, L2, S1, D1, S2, D2, k, T, Δt)
+    # initialize C storage
+    # for code simplicity we make the array length T+1 so
+    # index 1 is C₀
+    steps = Int64(T / Δt)
+    C1 = zeros(steps + 1)
+    C2 = zeros(steps + 1)
+    C1[1] = C1₀
+    C2[1] = C2₀
+    # for each time step, first we update box 1, then box 2
+    for t = 1:steps
+        C1[t+1] = C1[t] + Δt * box_simulate_timestep(C1[t], Ci, u, L1, S1, D1, k)
+        C2[t+1] = C2[t] + Δt * box_simulate_timestep(C2[t], C1[t+1], u, L2, S2, D2, k)
+    end
+    return (C1, C2)
+end
+```
+
+## Two-Box Simulation Results
+
+```{julia}
+#| label: fig-twobox-sim
+#| fig-cap: "Simulation results for two-box airshed model."
+#| echo: true
+#| code-fold: true
+#| layout-ncol: 2
+
+Δt = 0.1
+T = 10
+C1₀ = 0.05
+C2₀ = 0.1
+k = 0.3
+u = 2
+L1 = 6
+L2 = 4
+Ci = 0.01
+S1 = 0.3
+D1 = 0.2
+S2 = 0.1
+D2 = 0.13
+C = airshed_twobox_simulate(C1₀, C2₀, Ci, u, L1, L2, S1, D1, S2, D2, k, T, Δt)
+
+p1 = plot(0:0.1:T, C[1], linewidth=3, color=:purple, xlabel="Time", ylabel=L"Concentration ($\mathrm{g/m}^3$)", title="Box 1", size=(600, 500))
+p2 = plot(0:0.1:T, C[2], linewidth=3, color=:red, xlabel="Time", ylabel=L"Concentration ($\mathrm{g/m}^3$)", title="Box 2", size=(600, 500))
+display(p1)
+display(p2)
+```
+
+# Key Takeaways
+
+## Key Takeaways 
+
+- Simulation modeling involves **using a model to generate "data" under certain conditions**.
+- Simulations are the main approach to **descriptive modeling**.
+- Divide domain into spatial domains and/or temporal steps and iterate.
+- Discretize equations if needed.
+
+# Upcoming Schedule
+
+## Next Classes
+
+**Next Week**: Dissolved Oxygen
+
+## Assessments
+
+**Homework 2**: Due 9/19 at 9pm
+
+# References
+
+## References

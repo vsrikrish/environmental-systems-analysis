@@ -5,8 +5,13 @@
 
 @import 'https://kit.fontawesome.com/d16123e5b5.css';
 
+@font-face {
+    font-family: JuliaMono-Light;
+    src: url("https://cdn.jsdelivr.net/gh/cormullion/juliamono/webfonts/JuliaMono-Light.woff2");
+}
+
 $font-family-sans-serif: "IBM Plex Sans", sans-serif;
-$font-family-monospace: "Source Code Pro", "IBM Plex Mono", monospace;
+$font-family-monospace: "JuliaMono-Light", "IBM Plex Mono", monospace;
 $font-family-serif: "Source Serif Pro", "IBM Plex Serif", serif;
 
 $presentation-font-size-root: 45px;

@@ -137,6 +137,35 @@ The state gives you a "snapshot" of the system at a given point in time.
 - A **flow** is the way in which a stock changes: decay, diffusion, production, consumption, etc.
 :::
 
+## Residence Time
+
+We can use the notion of stocks and flows to formalize the idea of **residence time**: average time a quantity stays at a system component.
+
+$$
+\underbrace{\tau}_{\text{Residence} \\ \text{Time}} \times \overbrace{F}^{\text{Flow} \\ \text{In/Out}} = \underbrace{M}_{\text{Stock}}
+$$
+
+## Steady-State Residence Time
+
+Steady-state condition on flows $F_in$ and $F_out$:
+
+::: {.fragment .fade-in}
+$$\begin{gather*}
+F_\text{out} = F_\text{in}
+\Rightarrow \bbox[5pt, border: 5px solid red]{\tau = M/F}
+\end{gather*}
+$$
+:::
+
+## Simple Example
+
+A college has a constant undergraduate enrollment of 15,000 students. No students flunk out or transfer, so the residence time is four years.
+
+1. **How many students graduate every year?**
+2. **How many students enroll every year?**
+
+# Modeling Systems
+
 ## How Do We Develop Models?
 
 ::: {.incremental}
@@ -183,7 +212,6 @@ The state gives you a "snapshot" of the system at a given point in time.
 
 ![Illustration of a system, including notation.](figures/control-volume-base.svg){#fig-reservoir width=50%}
 
-# Modeling Systems
 
 ## What Is A Model?
 

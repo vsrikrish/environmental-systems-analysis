@@ -249,7 +249,12 @@ $$\begin{gather*}
 
 ## F&T Model Assumptions
 
-$$C = \frac{\sum_i \frac{P_i}{V}}{\frac{Q}{V} + \alpha}$$
+$$
+\begin{align*}
+C &= \frac{\sum_i \frac{P_i}{V}}{\frac{Q}{V} + \alpha} \\
+&= \frac{\sum_i \frac{P_i}{V}}{\underbrace{\tau_w^{-1} + \alpha}_{\tau_P}}
+\end{align*}
+$$
 
 ::: {.fragment .fade-in}
 **What does this model assume?**

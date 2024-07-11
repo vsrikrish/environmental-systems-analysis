@@ -2,7 +2,7 @@
 title: "Welcome to BEE 4750/5750!"
 subtitle: "Lecture 01"
 author: "Vivek Srikrishnan"
-course: "BEE 4850"
+course: "BEE 4750"
 institution: "Cornell University"
 date: "August 26, 2024"
 format:
@@ -406,28 +406,29 @@ Darren uses ChatGPT to debug an error in their homework code. They fix the error
 
 ## ChatGPT: The Stochastic Parrot
 
-Why is ChatGPT (and other ML/AI tools) singled out?
-
 ::: {.fragment .fade-in}
-- **Lack of Transparency**: Not clear what the training data is, so documentation is essential (ML is not great at extrapolation).
-- **Not Well-Suited to All Tasks**: Can be useful for getting a skeleton, starter code, or debugging. Really (and obviously) bad at interpretation and analysis.
-- **Hallucinations**: ChatGPT often just makes stuff up. Do you want to be credited for a ChatGPT hallucination?
+- **Think of ChatGPT as a ranting drunk**: It's stringing together words or code it heard in a way that sounds reasonable, but there's no sense of concept.
+- **ChatGPT debugging can be useful**: Think of it as an approximation of a Google search. But it  can also lead to new errors with no clear way to fix them, since you don't understand what you did.
+- **Hallucinations**: ChatGPT often just makes stuff up. Do you want your grade to involve a ChatGPT hallucination?
 :::
 
-## ChatGPT: The Stochastic Parrot
+## AI Policy
 
-- Think of ChatGPT as a ranting drunk
-- It's stringing together words or code it heard in a way that sounds reasonable, but there's no sense of concept.
-- ChatGPT debugging can be useful, but can also lead to new errors with no clear way to fix them, since you don't understand what you did.
+Using AI tools is not prohibited. **But**:
+
+- Use them **thoughtfully**;
+- Ask permission before using;
+- Carefully document your query and the output, or we can't distinguish LLM output from your own understanding.
+
 
 # Upcoming Schedule
 
 ## Next Classes
 
-**Wednesday**: Lab 1: Setting up Julia and GitHub
+**Wednesday**: Lab 1: Julia and GitHub basics.
 
 - Lab 1 link is available on Ed. Click it to accept the lab before class.
-- Come to class with downloaded lab and try to follow the setup instructions on the website.
+- Follow setup instructions on website: choose whether you'd like to try local or remote workflows (this isn't a permanent decision!).
 
 **Next Week**: Introduction to Systems Analysis
 

@@ -70,7 +70,6 @@ website:
             text: "Grading Policies"
           - href: policies/groups.qmd
             text: "Group Expectations"
-
           - href: policies/integrity.qmd
             text: "Academic Integrity"
       - section: hw.qmd
@@ -79,6 +78,17 @@ website:
             text: "HW 1"
       - labs.qmd
       - section: project.qmd
+        contents:
+          - href: project/proposal.qmd
+            text: Proposal
+          - href: project/presentation.qmd
+            text: Presentation
+          - href: project/peer-review.qmd
+            text: Peer Review
+          - href: project/report.qmd
+            text: Report
+          - href: project/evaluations.qmd
+            text: Team Evaluations
       - section: "Tutorials"
         contents:
           - href: tutorials/julia-basics.qmd
@@ -89,16 +99,7 @@ website:
             text: Math in Notebooks
           - href: tutorials/julia-jump.qmd
             text: Solving Linear Programs
-      - section: Resources
-        contents:
-          - href: resources/julia.qmd
-            text: Julia
-          - href: resources/github.qmd
-            text: GitHub
-          - href: resources/markdown.qmd
-            text: Markdown
-          - href: resources/optimization.qmd
-            text: Optimization and Decision-Making
+      - resources.qmd
 
 
 format:

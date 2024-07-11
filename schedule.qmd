@@ -10,10 +10,10 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 | Week | Date        | Topic | Slides | Lab | HW | Reading |
 :-----:|:------------|:------|:------:|:--:|:---:|:--:|:-------:|
 | | | ***Module 1: Introduction to Systems Analysis*** | | | | |
-| 1    | Mon, Aug 26 | Welcome to BEE 4750! | [{{< fa sharp presentation-screen >}}](slides/lecture01-intro.qmd)  | |  [{{< fa sharp pen-field >}}](hw/hw01/hw01.qmd) | |
-|      | Wed, Aug 28 | Lab: Setting up Julia and GitHub | |  [{{< fa sharp laptop-code >}}](labs/lab01/lab01.qmd) | | | 
+| 1    | Mon, Aug 26 | Welcome to BEE 4750! | [{{< fa sharp presentation-screen >}}](slides/lecture01-1-intro.qmd)  | |  [{{< fa sharp pen-field >}}](hw/hw01/hw01.qmd) | |
+|      | Wed, Aug 28 | Lab: Setting up Julia and GitHub | [{{< fa sharp presentation-screen >}}](slides/lecture01-2-lab-setup.qmd)  |  [{{< fa sharp laptop-code >}}](labs/lab01/lab01.qmd) | | | 
 | 2    | Mon, Sep 02 | **No Class: Labor Day** |  | | | |
-|      | Wed, Sep 04 | Introduction to Systems Analysis | [{{< fa sharp presentation-screen >}}](slides/lecture03-systems-intro.qmd) | | |  |
+|      | Wed, Sep 04 | Introduction to Systems Analysis | [{{< fa sharp presentation-screen >}}](slides/lecture02-2-systems-intro.qmd) | | |  |
 | 3    | Mon, Sep 09 | Modeling Example: Lake Eutrophication | | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
 |      | Wed, Sep 11 | System Dynamics | | | | |
 | | | ***Module 2: Systems Simulation and Risk*** | | | |

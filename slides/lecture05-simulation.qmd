@@ -1,5 +1,5 @@
 ---
-title: "Systems Simulation"
+title: "Simulation and Box Models"
 subtitle: "Lecture 05"
 author: "Vivek Srikrishnan"
 course: "BEE 4850"
@@ -183,7 +183,7 @@ Solving for $C$:
 $$C = C_{in} + \frac{S-D}{uWH}$$
 :::
 
-## Non-Steady State Model
+## Decay Processes
 
 Now let's assume some process affecting $m$ depends on time.
 

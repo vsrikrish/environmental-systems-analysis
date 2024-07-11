@@ -2,14 +2,38 @@
 title: "First Time: Tools Setup"
 ---
 
+There are two routes you can take to complete assignments in this class:
+
+1. Connect to the "virtual computing lab" (VCL) we've set up on [BioHPC](https://www.biotech.cornell.edu/), a high-performance computing cluster on campus. 
+2. Work on your local computer (laptop and/or desktop).
+
+Why might you choose either route?
+
+* The local route is much more convenient (all of the files and programs are on your local computer), but might require you to install a bunch of programs (git, Julia, and an editor of some kind [we recommend VS Code]) and possibly use the terminal. This will take a little more time up front, and in our experience some students are more comfortable doing this than others. Some computers are also a little more finicky to install new software on than others, depending on how they're configured.
+* The VCL route requires no setup on your part (other than going through the BioHPC onboarding and setting up your login), but you can only do work when connected to the Internet.^[In particular, BioHPC requires that you are connected to the Cornell network or using the [Cornell VPN](https://it.cornell.edu/cuvpn).]
+
+In either case, please make sure you can setup or access the appropriate tools using the relevant workflows below. In either case, you'll need to set up a GitHub account.
+
+## Setting Up GitHub Account
+
+::: {.callout-note}
+If you already have a GitHub account, you can use that for this course and do not need to create a new account.
+:::
+
+Create a [GitHub account](https://github.com/join). It doesn't have to be linked to your Cornell email or use your Cornell NetID.
+
+For labs and homework assignments (we will work on Lab 1 in class and Homework 1 is available), you should use the GitHub Classroom link to "accept" the assignment provided on Ed Discussion, which will give you your own GitHub repository for that assignment. The first time you click one of these links, you will need to link your place on the course roster with your GitHub account.
+
+## Connecting to the Virtual Computing Lab
+
+## Working On Your Local Machine
+
+
 Getting set up for this course requires the following steps, if you haven't done them for a previous course, club, or project:
 
 1. [Install `git`](https://git-scm.com/downloads) on your machine if necessary. 
 2. [Install Julia](#sec-install-julia) using the `juliaup` tool.
 3. [Install and set up VS Code](#sec-install-code) if you don't already have an editor you'd like to use. VS Code is an editor of choice for Julia, as it as a rich and well-supported Julia extension. If you have a different coding environment, please find instructions for how to set it up to edit Julia.
-4. [Set up a GitHub account](#sec-github).
-
-## Instructions
 
 ### Install Git
 
@@ -81,16 +105,6 @@ Otherwise, exporting to HTML and then using your browser to save the resulting p
 Follow the same instructions as above, but search for `jupyter` and install the Jupyter extension. Restart VS Code.
 
 
-### Set Up GitHub {#sec-github}
+#### Using GitHub with VS Code
 
-#### Create GitHub Account
-
-If you already have a GitHub account, you can use that for this course and do not need to create a new account.
-
-Otherwise, [create an account](https://github.com/join). It doesn't have to be linked to your Cornell email or use your Cornell NetID.
-
-For labs and homework assignments (we will work on Lab 1 in class and Homework 1 is available), you should use the GitHub Classroom link to "accept" the assignment provided on Ed Discussion, which will give you your own GitHub repository for that assignment. The first time you click one of these links, you will need to link your place on the course roster with your GitHub account.
-
-When application exercises require notebook use (which is the case here, but will not always be), you can follow the workflow in these next steps, and will be prompted to do so in the instructions for that exercise.
-
-You can do almost everything that you will need to do for this course with GitHub directly through VS Code, or you can use the GitHub UI or the Terminal. We will assume in these instructions that you will just work through VS Code.
+[This Youtube video](https://youtu.be/z5jZ9lrSpqk?t=115&si=PcpNxjmF1ByTUdJq) provides an overview of how to use GitHub within VS Code (with chapters for specific steps) and may be worth watching.

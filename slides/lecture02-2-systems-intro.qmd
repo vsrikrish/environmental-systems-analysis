@@ -147,11 +147,11 @@ $$
 
 ## Steady-State Residence Time
 
-Steady-state condition on flows $F_in$ and $F_out$:
+Steady-state condition on flows $F_\text{in}$ and $F_\text{out}$:
 
 ::: {.fragment .fade-in}
 $$\begin{gather*}
-F_\text{out} = F_\text{in}
+F_\text{out} = F_\text{in} = F \\
 \Rightarrow \bbox[5pt, border: 5px solid red]{\tau = M/F}
 \end{gather*}
 $$
@@ -231,7 +231,7 @@ Source: [Wikimedia](https://commons.wikimedia.org/wiki/File:Fallingwater_miniatu
 
 ### Mathematical Models
 
-![Mathematical Model Machine](images/math-model.png)
+![Mathematical Model Machine](figures/math-model.png)
 
 :::
 :::
@@ -239,13 +239,13 @@ Source: [Wikimedia](https://commons.wikimedia.org/wiki/File:Fallingwater_miniatu
 
 ## Mathematical Models of Systems
 
-![Conceptual Model of a System](images/system-conceptual.svg)
+![Conceptual Model of a System](figures/system-conceptual.svg)
 
 ## Environmental Systems
 
 :::: {.columns}
 ::: {.column width=60%}
-![Conceptual Model of an Environmental System](images/system-environmental.svg){width=100%}
+![Conceptual Model of an Environmental System](figures/system-environmental.svg){width=100%}
 :::
 
 ::: {.column width=40%}

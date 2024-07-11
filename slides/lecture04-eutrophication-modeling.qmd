@@ -89,13 +89,13 @@ using Measures
 
 ## Mathematical Models of Systems
 
-![Conceptual Model of a System](images/system-conceptual.svg)
+![Conceptual Model of a System](figures/system-conceptual.svg)
 
 ## Environmental Systems
 
 :::: {.columns}
 ::: {.column width=60%}
-![Conceptual Model of an Environmental System](images/system-environmental.svg){width=100%}
+![Conceptual Model of an Environmental System](figures/system-environmental.svg){width=100%}
 :::
 
 ::: {.column width=40%}
@@ -240,27 +240,30 @@ $$\begin{align*}
 
 ## Fate & Transport
 
-$$\begin{gather*}
+$$
+\begin{gather*}
 \sum_j PS_j + \sum_i NPS_i - CQ_\text{out} - \alpha CV = 0 \\
 \Rightarrow \qquad C(Q_\text{out} + \alpha V) = \sum_j PS_j + \sum_i NPS_i \\
 \Rightarrow \qquad \bbox[5pt, border: 5px solid red]{C = \frac{\sum_j PS_j + \sum_i NPS_i}{Q_\text{out} + \alpha V}}
-\end{gather*}$$
+\end{gather*}
+$$
 
 
-## F&T Model Assumptions
+## Other Ways To Write
 
 $$
 \begin{align*}
 C &= \frac{\sum_i \frac{P_i}{V}}{\frac{Q}{V} + \alpha} \\
-&= \frac{\sum_i \frac{P_i}{V}}{\underbrace{\tau_w^{-1} + \alpha}_{\tau_P}}
+&= \frac{\sum_i \frac{P_i}{V}}{\tau_w^{-1} + \alpha} \\
+&= \frac{\sum_i \frac{P_i}{V}}{\sum_j k_j}
 \end{align*}
 $$
+
+## F&T Model Assumptions
 
 ::: {.fragment .fade-in}
 **What does this model assume?**
 :::
-
-## F&T Model Assumptions
 
 - Steady-state ($\partial\text{Mass} / \partial t = 0$)
 - 1st order (linear) decay

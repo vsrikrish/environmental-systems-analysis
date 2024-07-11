@@ -5,7 +5,7 @@ anchor-sections: true
 
 This page includes some information on the homework assignments for BEE 4750/5750, including policies and logistics. The goal is to help you get as many points on your homework as possible and to return them as soon as possible.
 
-This document is long, but please do read the whole thing (particularly [What Homework Is For](#what-homework-is-for)and the [Logistics](#logistics)). Hopefully most of this is obvious, but some of it may not be.
+This document is long, but please do read the whole thing (particularly [What Homework Is For](#what-homework-is-for) and the [Logistics](#homework-logistics)). Hopefully most of this is obvious, but some of it may not be.
 
 ## What Homework Is For 
 
@@ -24,6 +24,50 @@ But this emphasis on homework as practice also means that you should start the h
 
 
 ## Homework Logistics
+
+### Accepting Assignments
+
+- Homework assignments will be distributed through GitHub Classroom. When an assignment is released, a link to accept the assignment will be posted on Ed Discussion. **You must click this link or subsequent steps will not work properly**. Clicking this link will create your own repository with the files for the assignment. The first time you do this, you will be prompted to connect your GitHub username with your entry in the class roster.
+- Clone your repository to your computer.
+
+  ::: {.callout-warning}
+  It is important that you clone the repository created in the previous step, not the "original" repository. Make sure that the URL looks like `https://www.github.com/BEE4750-FA24/<username>-hwxx.git`, **not** `https://www.github.com/BEE4750/hwxx.git`.
+  :::
+
+### Working On Assignments
+
+- Open the local repository **folder** you created when you cloned the remote repository. 
+  
+  ::: {.callout-tip}
+  Use `File -> Open Folder` rather than `File -> Open` to open the folder; this will make sure that all paths point to the right location and you can use the "Explorer" to see the different files.
+  :::
+
+- After the notebook loads, if prompted to, select the `julia-1.10` kernel.
+- Make sure that you run the initial notebook cell (starting with `Pkg.activate()`) to load the Julia environment and install any needed packages.
+- You don't need to work in the notebook, per se, but if you choose to write your own code files, make sure to add them to the repository with `git add`. Make sure that you copy the initial notebook cell into your new script(s) to use the appropriate environment.
+- As you work on assignments, make sure to save and frequently push and commit back to GitHub.
+- You can toggle line numbers in a notebook cell with the `L` key.
+
+### Asking for Assistance
+
+- If you need to share code to ask for help or to provide help, provide a link to the relevant file in your GitHub repository, along with an idea of the relevant cell and line number(s).
+- Minimal code snippets can also be copied and pasted into Ed, but these should be self-contained, not chunks copied from your homework. These snippets should illustrate what you think the correct concept and/or syntax should be with a self-contained example; it's unlikely you will receive useful help if the snippet can't be evaluated.
+- Make sure you document what you've tried (including any searches) so we can focus on new solutions, not repeating things that haven't already worked. If you haven't looked for help (*e.g.* searching for an error message), start there.
+
+### Submitting Assignments
+
+- Your final submission must be in a PDF. You can generate this in several ways:
+  - If you have set up LaTeX on your system, you can convert a notebook directly to PDF in VS Code or Jupyter Lab (this will automatically work on BioHPC without any additional setup);
+    
+    ::: {.callout-important}
+    If you are submitting a PDF from a notebook, make sure that you evaluate all cells in order with `Run Cells` before converting.
+    :::
+  
+  - If you have not set up LaTeX, you can export a notebook to HTML and save it from your browser as a PDF;
+  - If you have written a report outside of a notebook (*e.g.* in Word), save this to a PDF.
+- You **do not need** to include code in a written submission, but make sure your final notebook and/or scripts are on your GitHub repository in case there's an issue.
+- PDFs must be submitted by the due date and time to Gradescope **with pages tagged**. Failure to tag pages will receive a 10% deduction.
+- Late submissions are accepted within 24 hours with a 50% penalty unless an extension was arranged **ahead of the original deadline**.
 
 ## How To Write Assignments
 

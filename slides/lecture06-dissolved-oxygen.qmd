@@ -1,10 +1,10 @@
 ---
-title: "System Dynamics: Equilibria, Bifurcations, and Feedbacks"
-subtitle: "Lecture 05"
+title: "Simulation Example: Dissolved Oxygen"
+subtitle: "Lecture 06"
 author: "Vivek Srikrishnan"
 course: "BEE 4850"
 institution: "Cornell University"
-date: "September 11, 2024"
+date: "September 16, 2024"
 format:
     revealjs:
         slide-number: c/t
@@ -65,380 +65,360 @@ default(
 
 # Review of Last Class
 
-## Lake Eutrophication Model
+## Last Class
 
-![Schematic of processes resulting in lake eutrophication](figures/eutrophication-system-schematic.svg)
+- Model-based simulation as a way to understand system dynamics and response.
+- Box models: mass-balance in some region of the domain
+- Can generalize single box models by:
+    - Adding more complexity;
+    - combining multiple boxes.
 
-## Modeling Information Needs
+## Why Simulate?
 
-1. What will happen to the waste in the environment (fate & transport)?
-2. What are potential impacts and acceptable levels or critical thresholds?
-3. *What are options to manage the waste?*
+1. System involves complex, nonlinear dynamics that may not be analytically tractable.
+2. Setting up and running a real-world experiment is not possible.
+3. State depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.
+4. Need to understand range of system performance across rarely-seen conditions.  
 
-## Mass-Balance and Fate & Transport
-
-- Used principles of mass-balance to derive a fate & transport model for the system dynamics.
-- Accounted for point and non-point source loading and environmental quality thresholds.
-- Use of model depends on **prescriptive** vs. **descriptive** purpose.
-
-## Questions?
+## Questions
 
 {{< include _poll-prompt.qmd >}}
 
+# Dissolved Oxygen Overview
 
-# Shallow Lake Model
+## Fate & Transport Modeling
 
-## Limitations Of Our Prior Eutrophication Model
+**How do nutrients and other quantities move through environmental mediums?**
 
-- Steady-state
-- Assumed first-order (linear) decay for lake P
+What can make fate & transport modeling more complex?
 
-## Shallow Lake Model
+::: {.fragment .fade-in}
+- Multiple points of inflow;
+- More complex growth/decay dynamics.
+- Stochasticity/randomness.
+:::
+
+## Dissolved Oxygen
 
 :::: {.columns}
-::: {.column width=40%}
-- Model introduced by @Carpenter1999-wx.
-- This lecture builds off @Quinn2017-vn.
-- Tradeoff between economic benefits and the health of the lake.
+::: {.column width=50%}
+Dissolved oxygen (DO) is the free, non-compound oxygen present in water or other liquids.
+
+Freshwater can only hold small amounts, and this capacity is regulated by temperature.
 :::
-::: {.column width=60%}
-![Lake Eutrophication Example](figures/eutrophication-system-all.png)
+
+::: {.column width=50%}
+
+![Dissolved Oxygen by temperature](https://www.fondriest.com/environmental-measurements/wp-content/uploads/2013/11/dissolvedoxygen_river-levels.jpg){width=80%}
+
+::: {.caption}
+Source: [fondriest.com](https://www.fondriest.com/environmental-measurements/parameters/water-quality/dissolved-oxygen/)
+:::
 :::
 ::::
 
-## Shallow Lake Model: Variables
+## Temperature Impact on DO
 
-| Variable | Meaning | Units |
-|:--------:|:--------|:-----|
-| $X_t$ | P level in lake at time $t$ | dimensionless |
-| $a_t$ | Controllable (point-source) P release | dimensionless |
-| $y_t$ | Random (non-point-source) P runoff | dimensionless |
+![Dissolved Oxygen and Temperature Plot](https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/do_temp_0.png)
 
-## Shallow Lake Model: Runoff
+::: {.caption}
+Source: [usgs.gov](https://www.usgs.gov/special-topics/water-science-school/science/dissolved-oxygen-and-water)
+:::
 
-Random runoffs $y_t$ are sampled from a LogNormal distribution.
+## Dissolved Oxygen and Life
 
-```{julia}
-#| code-fold: true
-#| label: fig-lognorm
-#| fig-cap: "Lognormal Distributions"
-#| fig-alt: "Lognormal Distributions"
-#| fig-align: center
-#| echo: true
+:::: {.columns}
+::: {.column width=40%}
 
-# this uses StatsPlots.jl's recipe for plotting distributions directly; otherwise use something like plot(-5:0.01:5, pdf.(LogNormal(0.25, 1), -5:0.1:5))
-plot(LogNormal(0.25, 1), linewidth=3, label="LogNormal(0.25, 1)", guidefontsize=18, legendfontsize=16, tickfontsize=16)
-plot!(LogNormal(0.5, 1), linewidth=3, label="LogNormal(0.5, 2)")
-plot!(LogNormal(0.25, 2), linewidth=3, label="LogNormal(0.25, 2)")
-plot!(size=(1000, 400), grid=:false, left_margin=10mm, right_margin=10mm, bottom_margin=10mm)
-xlims!((0, 6))
-ylabel!("Density")
-xlabel!(L"y_t")
-```
+Dissolved oxygen is an important nutrient for aquatic life. 
 
-## Shallow Lake Model: P Dynamics
+**Hypoxia** occurs when DO levels are $< 2$ mg/L.
 
-- Lake loses P at a linear rate, $bX_t$.
-- Nutrient cycling reintroduces P from sediment: $$\frac{X_t^q}{1 + X_t^q}.$$
+:::
 
-## Shallow Lake Model
+::: {.column width=50%}
 
-So the P level (state) $X_{t+1}$ is given by:
-$$\begin{gather*}
-X_{t+1} = X_t + a_t + y_t + \frac{X_t^q}{1 + X_t^q} - bX_t, \\[0.5em]
-y_t \underset{\underset{\Large\text{\color{red}sample}}{\color{red}\uparrow}}{\sim} \text{LogNormal}(\mu, \sigma^2).
-\end{gather*}
+![Minimum DO requirements for freshwater fish](https://www.fondriest.com/environmental-measurements/wp-content/uploads/2013/11/dissolvedoxygen_levels-fresh.jpg){width=45%}
+:::
+
+:::{.column width=10%}
+
+::: {.caption}
+Source: [fondriest.com](https://www.fondriest.com/environmental-measurements/parameters/water-quality/dissolved-oxygen/)
+:::
+:::
+::::
+
+
+## Factors Influencing DO
+
+- Temperature, Pressure, Depth
+- Salinity
+- Mixing
+- Plant and Microbial Life
+- Organic Matter
+
+## Impact of Paris On Seine DO, 1874
+
+![Dissolved Oxygen Downstream of Paris, 1874](https://www.researchgate.net/publication/325721176/figure/fig10/AS:962439298445322@1606474818380/Longitudinal-profiles-x-axis-in-km-downstream-of-Paris-center-of-dissolved-oxygen_W640.jpg)
+
+::: {.caption}
+Source: Dmitrieva, T., et al. (2018). <https://doi.org/10.1007/s12685-018-0216-7>
+:::
+
+## DO Regulatory Standards
+
+**Objective**: Keep DO *above* the regulatory standard.
+
+In NY (via [Westlaw](https://govt.westlaw.com/nycrr/Document/I4ed90412cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default)&bhcp=1)): 
+
+- DO levels may not fall below 3 mg/L
+- DO may not be below 4.8 mg/L for an extended period
+
+# Modeling Dissolved Oxygen
+
+## Oxygen Balance in Rivers and Streams
+
+![Processes influencing oxygen balance in moving freshwater](images/do-processes.svg){height=100%}
+
+## Selecting a Metric for DO Fluxes
+
+Typically use **oxygen demand** (OD): 
+
+- measure of the concentration of oxidizable materials in a water sample
+- metric for organic waste contamination
+- reflects how oxygen will be depleted in a given segment
+
+But there are several different processes affecting total OD!
+
+## Biochemical Oxygen Demand (BOD)
+
+Oxygen used by microbes during aerobic decomposition of organic materials:
+$$\text{Organic Matter} + \text{O}_2 \rightarrow \text{CO}_2 +  \text{H}_2\text{O} + \text{NO}_3 + \text{SO}_2 + \text{Residuals}$$
+
+Broadly speaking, we care about two types of BOD: **Carbonaceous BOD** and **Nitrogenous BOD**.
+
+## Carbonaceous BOD (CBOD)
+
+Oxygen consumed during microbial decomposition of carbon compounds, *e.g.*:
+$$\text{C}_a\text{H}_b\text{O}_c + d\text{O}_2 \rightarrow e\text{H}_2\text{O} + f\text{CO}_2$$
+
+## Nitrogenous BOD (NBOD)
+
+Oxygen consumed during microbial decomposition of nitrogen compounds:
+$$2\text{NH}_2^+ + 4\text{O}_2 \rightarrow 2\text{H}_2\text{O} + 4\text{H}^+ + 2\text{NO}_3^-$$
+
+## BOD and Time
+
+Moreover, BOD is differentiated based on time frame, *e.g.*:
+
+- BOD<sub>5</sub>: oxygen demand over 5 days
+- BOD<sub>20</sub>: oxygen demand over 20 days
+
+## DO Modeling Needs
+
+Need a model that will predict DO as a function of CBOD, NBOD.
+
+Use a *fate and transport* modeling approach: how are relevant quantities moved downstream?
+
+**Note**: Can't assume homogeneous processes.
+
+## Modeling DO
+
+:::: {.columns}
+::: {.column width=30%}
+So what do we do?
+
+Start by assuming *steady-state* waste in each section (or box...).
+
+:::
+::: {.column width=70%}
+
+![Processes influencing oxygen balance in moving freshwater](figures/do-processes.svg)
+:::
+::::
+
+## Modeling DO
+
+:::: {.columns}
+::: {.column width=30%}
+
+We'll track the mass balance in terms of rates (not absolute mass).
+
+What happens to an element of water?
+:::
+::: {.column width=70%}
+
+![Processes influencing oxygen balance in moving freshwater](figures/do-processes.svg)
+:::
+::::
+
+## Steady-State Waste, DO Mass Balance
+
+Let $U$ be the river velocity (km/d), $x$ the distance downstream from a waste release site in km, and $C(x)$ the DO concentration at $x$ in mg/L. 
+
+\begin{align}
+U \frac{dC}{dx} &= \text{Change in DO} \\[0.5em]
+&= \text{Reaeration} + \text{Photosynthesis} - \text{Respiration}  \\[0.5em]
+& \qquad - \text{Benthal Uptake} - \text{CBOD} - \text{NBOD}
+
+\end{align}
+
+## BOD Oxygen Uptake
+
+Assume deoxygenation from waste decomposition is first-order (rate $k$):
+
+$$\begin{aligned}
+\frac{dM}{dt} &= -kM \\
+\Rightarrow M &= M_0 \exp(-kt)
+\end{aligned}$$
+
+
+::: {.fragment .fade-in}
+But our equations are formulated in terms of distance:
+
+$$M = M_0 \exp(-kx/U)$$
+
+:::
+
+
+## BOD Oxygen Uptake
+
+For biochemical organics, if $k_c$ is the deoxygenation rate (d$^{-1}$);
+
+$$B(x) = B_0 \exp(-k_c x / U);$$
+
+For nitrification, if $k_n$ is the deoxygenation rate (d$^{-1}$):
+
+$$N(x) = N_0 \exp(-k_n x / U).$$
+
+## Steady-State Waste, DO Mass Balance
+
+So the corresponding oxygen uptake rates are 
+$$k_c B(x) = k_c B_0 \exp(-k_c x / U)$$
+ and 
+
+ $$k_n N(x) = k_n N_0 \exp(-k_n x / U).$$
+
+
+## Steady-State Waste, DO Mass Balance
+
+Other processes:
+
+- Reaeration, assume a simple linear model based on difference from saturation level $C_s$: $k_a (C_s - C)$
+
+- Assume measured, constant values for photosynthesis ($P_s$), respiration ($R$), benthal uptake ($S_B$)
+
+## Steady-State Waste, DO Mass Balance
+
+Putting it all together:
+
+$$
+\begin{aligned}
+U \frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B \\
+&\quad - k_cB_0\exp\left(\frac{-k_cx}{U}\right) - k_n N_0\exp\left(\frac{-k_nx}{U}\right)
+\end{aligned}
 $$
 
-# Equilibria and Bifurcations
+## Discretization of Steady-State DO Equation
 
-## Lake Dynamics (Without Inflows)
+$$
+\begin{align*}
+U \frac{C(x+1) - C(x)}{\Delta x} &= k_a (C_s - C(x)) + P - R - S_B \\
+&\quad - k_c B(x) - k_n N(x) \\[0.5em]
+\frac{N(x+1) - N(x)}{\Delta x} &= 
+\end{align*}
+$$
 
-:::: {.columns}
-::: {.column width=50%}
-- $a_t = y_t = 0$, 
-- $q=2.5$
-- $b=0.4$
-:::
+## Discretization of Steady-State DO Equations
 
-::: {.column width=50%}
+$$
+\begin{align*}
+C(x+1) &= C(x) + \frac{\Delta x}{U}{\huge[}k_a (C_s - C(x)) + P - R - S_B \\
+&\quad - k_c B(x) - k_n N(x)\right){\huge]} \\[0.5em]
+N(x+1) &= N(x) + \frac{\Delta x}
+\end{align*}
+$$
 
-```{julia}
-#| label: fig-lake-noinput-ic
-#| fig-cap: "Dynamics of lake model with different initial conditions"
-#| fig-width: 100%
-#| echo: true
-#| code-fold: true
+::: {.fragment .fade-in}
+**Note**: Usually models ignore $P$, R$, and $S_B$. 
 
-# define functions for lake recycling and outflows
-lake_P_cycling(x, q) = x.^q ./ (1 .+ x.^q);
-lake_P_out(x, b) = b .* x;
+**Why do you think that might be?**
 
-T = 30
-X_vals = collect(0.0:0.1:2.5)
-function simulate_lake_P(X_ic, T, b, q, a, y)
-    X = zeros(T)
-    X[1] = X_ic
-    for t = 2:T
-        X[t] = X[t-1] .+ a[t] .+ y[t].+ lake_P_cycling(X[t-1], q) .- lake_P_out(X[t-1], b)
-    end
-    return X
+# Simulation Results
+
+## How To Simulate
+
+This is similar to the multi-box example from last time!
+
+Single equation, straightforward to evaluate across many values of $x$ with a loop.
+
+```julia
+x = 0:x_step:x_max # array from 0 to x_max in stepsize x_step
+
+C = zeroes(length(x)) # initialize storage
+for (i, y) in pairs(x)
+    C[i] = dissolved_oxygen(y, parameters)
 end
-X = map(x -> simulate_lake_P(x, T, 0.4, 2.5, zeros(T), zeros(T)), X_vals)
-p_noinflow = plot(X, label=false, ylabel=L"X_t", xlabel="Time", guidefontsize=18, tickfontsize=16, size=(600, 500), left_margin=5mm, bottom_margin=5mm)
 ```
-:::
-::::
 
-## Lake Dynamics (Without Inflows)
+## Julia Sidebar: Loop Alternatives
 
-:::: {.columns}
-::: {.column width=50%}
-- $a_t = y_t = 0$, 
-- $q=2.5$
-- $b=0.4$
-:::
+Loops in Julia are fast and should be used freely. 
 
-::: {.column width=50%}
-```{julia}
-#| label: fig-lake-noinput
-#| fig-cap: "Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter $b$). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake's P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
-#| fig-width: 100%
-#| code-fold: true
-#| echo: true
+But there are some more concise alternatives, which may be more readable in some cases.
 
-# define range of lake states X
-x = 0:0.05:2.5;
+## Julia Sidebar: Broadcasting
 
-# plot recycling and outflows for selected values of b and q
-p1 = plot(x, lake_P_cycling(x, 2.5), color=:black, linewidth=5,legend=:topleft, label="P Recycling", ylabel="P Flux", xlabel=L"$X_t$", tickfontsize=16, guidefontsize=18, legendfontsize=16, palette=:tol_muted, framestyle=:zerolines, grid=:false)
-plot!(x, lake_P_out(x, 0.4), linewidth=3, linestyle=:dash, label=L"$b=0.4$", color=:blue)
-quiver!([1], [0.35], quiver=([1], [0.4]), color=:red, linewidth=2)
-quiver!([0.4], [0.13], quiver=([-0.125], [-0.05]), color=:red, linewidth=2)
-quiver!([2.5], [0.97], quiver=([-0.125], [-0.05]), color=:red, linewidth=2)
-plot!(ylims=(-0.02, 1.1))
-plot!(size=(600, 500))
+But some more concise alternatives (which may be more readable) include **broadcasting**:
+
+```julia
+x = 0:x_step:x_max # array from 0 to x_max in stepsize x_step
+
+# evaluate DO function over every x with fixed parameters
+C = (y -> dissolved_oxygen(y, parameters)).(x) 
 ```
-:::
-::::
 
-## Where Are the Equilibria?
+Broadcasting gets finicky over multiple inputs.
 
-:::: {.columns}
-::: {.column width=50%}
-**Equilibria**: Fixed points of the dynamics (no state change).
+## Julia Sidebar: Comprehensions
 
-Equilibria occur where $$\Delta X = X_{t+1} - X_t = 0,$$ so the outflows and sediment recycling are in balance.
-:::
+...And **comprehensions** (in-line for loops, also in Python):
 
-::: {.column width=50%}
+```julia
+x = 0:x_step:x_max # array from 0 to x_max in stepsize x_step
+
+# evaluate DO function over every x with fixed parameters
+C = [dissolved_oxygen(y, parameters) for y in x]
+```
+
+Can "stack" the `for` loops in a comprehension to nest.
+
+## Julia Sidebar: When To Use Loops?
+
+Think about readability and ease of debugging!
+
+- If your code is complex and not wrapped in a function, or you have several nested loops, you should use a loop (*just be careful of scope...*)
+- If your code is complex, may be worth asking if you should write a function instead and use broadcasting or a comprehension.
+
+## Simulation Outputs
 
 ```{julia}
-#| label: fig-lake-noinput-eq
-#| fig-cap: "Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5$), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter $b$). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake's P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
-#| fig-width: 100%
-#| echo: true
-#| code-fold: true
+#| echo: false
 
-eq1 = [0.0, 0.67, 2.2]
-scatter!(p1, eq1, (y -> lake_P_cycling(y, 2.5)).(eq1), label="Equilibria", markersize=10, markercolor=:blue)
-```
-:::
-::::
+function do_simulate(Δx, D, C0, B0, N0, ka, kn, kc, Cs, U)
+    C = zeros()
+    return (C, B, N)
+end  
 
-## Implications of Unstable Equilibria
-
-:::: {.columns}
-::: {.column width=50%}
-```{julia}
-#| label: fig-lake-noinflow-dynamics
-#| fig-cap: "Dynamics of Lake Model With No Inflows"
-#| code-fold: true
-#| echo: true
-
-plot!(p_noinflow, title="Lake P Without Inflows", titlefontsize=20)
-```
-:::
-::: {.column width=50%}
-```{julia}
-#| label: fig-lake-inflow-dynamics
-#| fig-cap: "Dynamics of Lake Model With No Inflows"
-#| code-fold: true
-#| echo: true
-
-a = zeros(T)
-y = rand(LogNormal(log(0.08), 0.01), T)
-X = map(x -> simulate_lake_P(x, T, 0.4, 2.5, a, y), X_vals) 
-plot(X, label=false, ylabel=L"$X_t$", xlabel="Time", title="Lake P With Inflows", guidefontsize=18, tickfontsize=16, size=(600, 500), left_margin=5mm, bottom_margin=5mm, titlefontsize=20)
-```
-:::
-::::
-
-
-## How do Equilibria Change?
-
-:::: {.columns}
-::: {.column width=50%}
-How do the equilibria change as system parameters vary?
-:::
-
-::: {.column width=50%}
-
-```{julia}
-#| label: fig-lake-noinput-eq-3
-#| fig-cap: "Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5$), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter $b$). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake's P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
-#| fig-width: 100%
-#| echo: true
-#| code-fold: true
-
-eq_45 = [0.8, 1.8]
-eq_5 = [1.0, 1.4]
-plot!(x, lake_P_out(x, 0.45), linewidth=3, linestyle=:dash, label=L"$b=0.45$", color=:orange)
-plot!(x, lake_P_out(x, 0.5), linewidth=3, linestyle=:dash, label=L"$b=0.5$", color=:purple)
-plot!(x, lake_P_out(x, 0.6), linewidth=3, linestyle=:dash, label=L"$b=0.6$", color=:green)
-scatter!(p1, eq_45, (y -> lake_P_cycling(y, 2.5)).(eq_45), label=false, markersize=10, markercolor=:orange)
-scatter!(p1, eq_5, (y -> lake_P_cycling(y, 2.5)).(eq_5), label=false, markersize=10, markercolor=:purple)
 
 ```
-:::
-::::
 
-## Equilibria vs. $b$ Value
+# Key Points
 
-```{julia}
-#| label: fig-lake-noinput-bifurcation
-#| fig-cap: "Bifurcation diagram for the lake problem with no inputs."
-#| fig-width: 100%
-#| echo: true
-#| code-fold: true
+## Key Points
 
-function plot_P_flux(b_vals)
-    p = plot(; xlabel=L"b", ylabel=L"X", legend=:outerright, tickfontsize=16, legendfontsize=16, guidefontsize=18, left_margin=5mm, bottom_margin=10mm, size=(1200, 500))
-
-    flux_func(x, b) = lake_P_cycling(x, 2.5) - lake_P_out(x, b)
-    X_un = []
-    X_st = []
-    for b in b_vals
-        # try to find the unstable (oligotrophic) equilibrium
-        try
-            x_eq = Roots.find_zero(x -> flux_func(x, b), 0.5)
-            push!(X_un, (b, x_eq))
-        catch err
-            if isa(err, DomainError)
-            end
-        end
-        # try to find the stable (eutrophic) equilibrium
-        try
-            x_eq = Roots.find_zero(x -> flux_func(x, b), 2.0)
-            push!(X_st, (b, x_eq))
-        catch err
-            if isa(err, DomainError)
-            end
-        end
-    end
-    plot!(p, first.(X_un), last.(X_un), label="Unstable Equilibrium", linewidth=3, color=:red, linestyle=:dash)
-    plot!(p, first.(X_st), last.(X_st), label="Stable (Eutrophic) Equilibrium", linewidth=3, color=:red)
-    plot!(p, b_vals, repeat([0.0], length(b_vals)), label="Stable (Oligotrophic) Equilibrium", linewidth=3, color=:blue)
-
-    quiver!(p, [0.01], [0.15], quiver=([0.0], [5.85]), color=:black)
-    quiver!(p, [0.05], [0.2], quiver=([0.0], [5.8]), color=:black)
-    quiver!(p, [0.1], [0.4], quiver=([0.0], [5.6]), color=:black)
-    quiver!(p, [0.15], [0.5], quiver=([0.0], [5.5]), color=:black)
-    quiver!(p, [0.2], [0.5], quiver=([0.0], [4.0]), color=:black)
-    quiver!(p, [0.25], [0.6], quiver=([0.0], [3.0]), color=:black)
-    quiver!(p, [0.3], [0.6], quiver=([0.0], [2.4]), color=:black)
-    quiver!(p, [0.35], [0.7], quiver=([0.0], [1.7]), color=:black)
-    quiver!(p, [0.4], [0.8], quiver=([0.0], [1.3]), color=:black)
-    quiver!(p, [0.45], [0.9], quiver=([0.0], [0.75]), color=:black)
-    quiver!(p, [0.5], [1.1], quiver=([0.0], [0.25]), color=:black)
-
-    quiver!(p, [0.1], [0.15], quiver=([0.0], [-0.15]), color=:black)
-    quiver!(p, [0.15], [0.2], quiver=([0.0], [-0.15]), color=:black)
-    quiver!(p, [0.2], [0.25], quiver=([0.0], [-0.2]), color=:black)
-    quiver!(p, [0.25], [0.35], quiver=([0.0], [-0.3]), color=:black)
-    quiver!(p, [0.3], [0.4], quiver=([0.0], [-0.35]), color=:black)
-    quiver!(p, [0.35], [0.45], quiver=([0.0], [-0.4]), color=:black)
-    quiver!(p, [0.4], [0.55], quiver=([0.0], [-0.45]), color=:black)
-    quiver!(p, [0.45], [0.7], quiver=([0.0], [-0.6]), color=:black)
-    quiver!(p, [0.5], [0.9], quiver=([0.0], [-0.8]), color=:black)
-
-    quiver!(p, [0.2], [6.0], quiver=([0.0], [-0.9]), color=:black)
-    quiver!(p, [0.25], [6.0], quiver=([0.0], [-2.0]), color=:black)
-    quiver!(p, [0.3], [6.0], quiver=([0.0], [-2.7]), color=:black)
-    quiver!(p, [0.35], [6.0], quiver=([0.0], [-3.2]), color=:black)
-    quiver!(p, [0.4], [6.0], quiver=([0.0], [-3.8]), color=:black)
-    quiver!(p, [0.45], [6.0], quiver=([0.0], [-4.0]), color=:black)
-    quiver!(p, [0.5], [6.0], quiver=([0.0], [-4.5]), color=:black)
-    quiver!(p, [0.55], [6.0], quiver=([0.0], [-5.9]), color=:black)
-    quiver!(p, [0.6], [6.0], quiver=([0.0], [-5.9]), color=:black)
-
-    return p
-end
-b_vals = 0.01:0.01:0.6
-
-p = plot_P_flux(b_vals)
-display(p)
-```
-
-## Implications of Bifurcations
-
-Bifurcations have the following implications:
-
-- Uncertainty about system dynamics can dramatically change equilibria locations and behavior;
-- "Shocks" (in this case, sedimentation/recycling disturbances or massive non-point source inflows) can irreversibly alter system outcomes.
-
-# Feedbacks
-
-## Feedback Loops
-
-:::: {.columns}
-
-::: {.column width=60%}
-Unstable equilibria can result from **reinforcing (positive) feedback loops**, where a shock to the system state gets amplified.
-
-Feedback loops can also be **dampening (negative)**, where a shock is weakened (stable equilibria).
-:::
-
-::: {.column width=40%}
-![Ice-Albedo Feedback Loop](figures/ice-albedo.svg){width=100%}
-:::
-
-::::
-
-## Feedbacks for Lake Eutrophication
-
-![Eutrophication Feedback Loop](figures/eutrophication-feedbacks.svg)
-
-## Other Environmental Feedbacks
-
-**Can we think of other examples of environmental feedback loops?**
-
-**Are they reinforcing or dampening?**
-
-# Key Takeaways
-
-## Key Takeaways (Equilibria)
-
-- System equilibria states can be **stable** or **unstable**.
-- Unstable equilbria can be responsible for thresholds/tipping points.
-- **Bifurcations**: Changes to number/qualitative behavior of equilibria as system properties vary.
-
-## Key Takeaways (Feedbacks)
-
-- Feedback loops can be **reinforcing** or **dampening**.
-- Reinforcing feedbacks: changes to system state are amplified, resulting in instability and evolution away from equilibrium state.
-- Dampening feedbacks: changes to system state are dampened, system reverts to stable equilibrium state.
-
-# Upcoming Schedule
-
-## Next Classes
-
-**Next Week**: Simulation Models
-
-## Assessments
-
-**Homework 2**: Due 9/19 at 9pm
-
-# References
-
-## References
+- Dissolved oxygen (DO) is essential for water quality and aquatic life.
+- Commonly regulated to keep DO above a minimum threshold.
+- DO impacted by a number of factors, notably organic waste decomposition and nitrification.
+- We derived a first-order equation for DO using mass-balance and fate & transport principles.

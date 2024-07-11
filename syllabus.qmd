@@ -19,6 +19,7 @@ format:
     toc: true
     toc-depth: 2
     number-sections: false
+engine: julia
 ---
 
 ```{julia}

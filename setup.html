@@ -85,7 +85,7 @@ window.MathJax = {
 <meta property="og:site_name" content="BEE 4750 - Fall 2024">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -198,7 +198,13 @@ window.MathJax = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./policies/integrity.qmd" class="sidebar-item-text sidebar-link">
+  <a href="./policies/groups.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Group Expectations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./policies/integrity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Academic Integrity</span></a>
   </div>
 </li>
@@ -229,7 +235,7 @@ window.MathJax = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a href="./project.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Final Project</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -238,14 +244,32 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Project Materials</span></a>
+  <a href="./project/proposal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proposal</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./groups.qmd" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Group Expectations</span></a>
+  <a href="./project/presentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project/peer-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Peer Review</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project/report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Report</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project/evaluations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Team Evaluations</span></a>
   </div>
 </li>
       </ul>
@@ -285,41 +309,12 @@ window.MathJax = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Resources</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./resources/julia.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Julia</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./resources/github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./resources/markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Markdown</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./resources/optimization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optimization and Decision-Making</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -330,18 +325,19 @@ window.MathJax = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a>
+  <li><a href="#setting-up-github-account" id="toc-setting-up-github-account" class="nav-link active" data-scroll-target="#setting-up-github-account">Setting Up GitHub Account</a></li>
+  <li><a href="#connecting-to-the-virtual-computing-lab" id="toc-connecting-to-the-virtual-computing-lab" class="nav-link" data-scroll-target="#connecting-to-the-virtual-computing-lab">Connecting to the Virtual Computing Lab</a></li>
+  <li><a href="#working-on-your-local-machine" id="toc-working-on-your-local-machine" class="nav-link" data-scroll-target="#working-on-your-local-machine">Working On Your Local Machine</a>
   <ul class="collapse">
   <li><a href="#install-git" id="toc-install-git" class="nav-link" data-scroll-target="#install-git">Install Git</a></li>
   <li><a href="#sec-install-julia" id="toc-sec-install-julia" class="nav-link" data-scroll-target="#sec-install-julia">Install Julia</a></li>
   <li><a href="#sec-install-code" id="toc-sec-install-code" class="nav-link" data-scroll-target="#sec-install-code">Install and Set Up VS Code</a></li>
-  <li><a href="#sec-github" id="toc-sec-github" class="nav-link" data-scroll-target="#sec-github">Set Up GitHub</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Course Information</a></li><li class="breadcrumb-item"><a href="./setup.html">Setup</a></li></ol></nav>
 <div class="quarto-title">
@@ -362,15 +358,43 @@ window.MathJax = {
 </header>
 
 
+<p>There are two routes you can take to complete assignments in this class:</p>
+<ol type="1">
+<li>Connect to the “virtual computing lab” (VCL) we’ve set up on <a href="https://www.biotech.cornell.edu/">BioHPC</a>, a high-performance computing cluster on campus.</li>
+<li>Work on your local computer (laptop and/or desktop).</li>
+</ol>
+<p>Why might you choose either route?</p>
+<ul>
+<li>The local route is much more convenient (all of the files and programs are on your local computer), but might require you to install a bunch of programs (git, Julia, and an editor of some kind [we recommend VS Code]) and possibly use the terminal. This will take a little more time up front, and in our experience some students are more comfortable doing this than others. Some computers are also a little more finicky to install new software on than others, depending on how they’re configured.</li>
+<li>The VCL route requires no setup on your part (other than going through the BioHPC onboarding and setting up your login), but you can only do work when connected to the Internet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;In particular, BioHPC requires that you are connected to the Cornell network or using the <a href="https://it.cornell.edu/cuvpn">Cornell VPN</a>.</p></div></div><p>In either case, please make sure you can setup or access the appropriate tools using the relevant workflows below. In either case, you’ll need to set up a GitHub account.</p>
+<section id="setting-up-github-account" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-github-account">Setting Up GitHub Account</h2>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>If you already have a GitHub account, you can use that for this course and do not need to create a new account.</p>
+</div>
+</div>
+</div>
+<p>Create a <a href="https://github.com/join">GitHub account</a>. It doesn’t have to be linked to your Cornell email or use your Cornell NetID.</p>
+<p>For labs and homework assignments (we will work on Lab 1 in class and Homework 1 is available), you should use the GitHub Classroom link to “accept” the assignment provided on Ed Discussion, which will give you your own GitHub repository for that assignment. The first time you click one of these links, you will need to link your place on the course roster with your GitHub account.</p>
+</section>
+<section id="connecting-to-the-virtual-computing-lab" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-to-the-virtual-computing-lab">Connecting to the Virtual Computing Lab</h2>
+</section>
+<section id="working-on-your-local-machine" class="level2">
+<h2 class="anchored" data-anchor-id="working-on-your-local-machine">Working On Your Local Machine</h2>
 <p>Getting set up for this course requires the following steps, if you haven’t done them for a previous course, club, or project:</p>
 <ol type="1">
 <li><a href="https://git-scm.com/downloads">Install <code>git</code></a> on your machine if necessary.</li>
 <li><a href="#sec-install-julia">Install Julia</a> using the <code>juliaup</code> tool.</li>
 <li><a href="#sec-install-code">Install and set up VS Code</a> if you don’t already have an editor you’d like to use. VS Code is an editor of choice for Julia, as it as a rich and well-supported Julia extension. If you have a different coding environment, please find instructions for how to set it up to edit Julia.</li>
-<li><a href="#sec-github">Set up a GitHub account</a>.</li>
 </ol>
-<section id="instructions" class="level2">
-<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
 <section id="install-git" class="level3">
 <h3 class="anchored" data-anchor-id="install-git">Install Git</h3>
 <p>If you have already installed <code>git</code>, you don’t need to worry about this section. If you haven’t, <a href="https://git-scm.com/downloads">download</a> the appropriate version for your operating system.</p>
@@ -450,21 +474,15 @@ PDF Export for Gradescope
 </div>
 <p>Follow the same instructions as above, but search for <code>jupyter</code> and install the Jupyter extension. Restart VS Code.</p>
 </section>
-</section>
-<section id="sec-github" class="level3">
-<h3 class="anchored" data-anchor-id="sec-github">Set Up GitHub</h3>
-<section id="create-github-account" class="level4">
-<h4 class="anchored" data-anchor-id="create-github-account">Create GitHub Account</h4>
-<p>If you already have a GitHub account, you can use that for this course and do not need to create a new account.</p>
-<p>Otherwise, <a href="https://github.com/join">create an account</a>. It doesn’t have to be linked to your Cornell email or use your Cornell NetID.</p>
-<p>For labs and homework assignments (we will work on Lab 1 in class and Homework 1 is available), you should use the GitHub Classroom link to “accept” the assignment provided on Ed Discussion, which will give you your own GitHub repository for that assignment. The first time you click one of these links, you will need to link your place on the course roster with your GitHub account.</p>
-<p>When application exercises require notebook use (which is the case here, but will not always be), you can follow the workflow in these next steps, and will be prompted to do so in the instructions for that exercise.</p>
-<p>You can do almost everything that you will need to do for this course with GitHub directly through VS Code, or you can use the GitHub UI or the Terminal. We will assume in these instructions that you will just work through VS Code.</p>
+<section id="using-github-with-vs-code" class="level4">
+<h4 class="anchored" data-anchor-id="using-github-with-vs-code">Using GitHub with VS Code</h4>
+<p><a href="https://youtu.be/z5jZ9lrSpqk?t=115&amp;si=PcpNxjmF1ByTUdJq">This Youtube video</a> provides an overview of how to use GitHub within VS Code (with chapters for specific steps) and may be worth watching.</p>
 
 
 </section>
 </section>
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

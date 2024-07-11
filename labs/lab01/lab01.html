@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BEE 4750 - Fall 2024 – BEE 4750 Lab 1: Julia Basics</title>
+<title>BEE 4750 - Fall 2024 – BEE 4750 Lab 1: Julia and GitHub Basics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -141,7 +141,7 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content="BEE 4750 - Fall 2024 - BEE 4750 Lab 1: Julia Basics">
+<meta property="og:title" content="BEE 4750 - Fall 2024 - BEE 4750 Lab 1: Julia and GitHub Basics">
 <meta property="og:description" content="Homepage for BEE 4750/5750, Environmental Systems Analysis, at Cornell University, Fall 2024.">
 <meta property="og:site_name" content="BEE 4750 - Fall 2024">
 </head>
@@ -169,11 +169,11 @@ window.Quarto = {
   </ul></li>
   <li><a href="#exercises-10-points" id="toc-exercises-10-points" class="nav-link" data-scroll-target="#exercises-10-points">Exercises (10 points)</a>
   <ul class="collapse">
-  <li><a href="#exercise-1-3-points" id="toc-exercise-1-3-points" class="nav-link" data-scroll-target="#exercise-1-3-points">Exercise 1 (3 points)</a></li>
-  <li><a href="#exercise-2-3-points" id="toc-exercise-2-3-points" class="nav-link" data-scroll-target="#exercise-2-3-points">Exercise 2 (3 points)</a></li>
-  <li><a href="#exercise-3-making-a-plot-3-points" id="toc-exercise-3-making-a-plot-3-points" class="nav-link" data-scroll-target="#exercise-3-making-a-plot-3-points">Exercise 3: Making a Plot (3 points)</a></li>
+  <li><a href="#computing-a-dot-product" id="toc-computing-a-dot-product" class="nav-link" data-scroll-target="#computing-a-dot-product">Computing a Dot Product</a></li>
+  <li><a href="#making-a-plot" id="toc-making-a-plot" class="nav-link" data-scroll-target="#making-a-plot">Making a Plot</a></li>
   </ul></li>
-  <li><a href="#export-and-submit-the-notebook-1-point" id="toc-export-and-submit-the-notebook-1-point" class="nav-link" data-scroll-target="#export-and-submit-the-notebook-1-point">Export and Submit the Notebook (1 point)</a></li>
+  <li><a href="#commit-and-push-your-changes-to-github" id="toc-commit-and-push-your-changes-to-github" class="nav-link" data-scroll-target="#commit-and-push-your-changes-to-github">Commit and Push Your Changes to GitHub</a></li>
+  <li><a href="#submitting-pdf" id="toc-submitting-pdf" class="nav-link" data-scroll-target="#submitting-pdf">Submitting PDF</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/vsrikrish/environmental-systems-analysis/edit/main/labs/lab01/lab01.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/vsrikrish/environmental-systems-analysis/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lab01.ipynb" download="lab01.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
@@ -182,7 +182,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">BEE 4750 Lab 1: Julia Basics</h1>
+<h1 class="title">BEE 4750 Lab 1: Julia and GitHub Basics</h1>
 </div>
 
 
@@ -209,7 +209,7 @@ Due Date
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Friday, 9/1/23, 9:00pm</p>
+<p>Wednesday, 8/28/24, 9:00pm</p>
 </div>
 </div>
 <div class="callout callout-style-simple callout-caution">
@@ -226,13 +226,23 @@ Due Date
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>The following code should go at the top of most Julia scripts; it will load the local package environment and install any needed packages. You will see this often and shouldn’t need to touch it.</p>
-<div id="9bea54ce" class="cell" data-execution_count="1">
+<div id="2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="st">"."</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This next cell loads packages which are required for the rest of the code evaluation. In this case, we only need to load the <code>Plots.jl</code> plotting package, but you will see others over the course of the semester (and can add more if desired; just make sure that you’ve <a href="https://viveks.me/environmental-systems-analysis/tutorials/julia-basics.html#package-management">added the new packages to the environment</a>). Standard Julia practice is to load all of the needed packages at the top of the file.</p>
-<div id="9aab18e6" class="cell" data-execution_count="2">
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Loading packages can take a while, especially the first time! Julia tries to precompile all of the packages you’re using so repeat use is faster, but this can be quite slow at first.</p>
+</div>
+</div>
+</div>
+<div id="4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -269,28 +279,28 @@ Due Date
 <p>At this point you might be wondering how to turn this cell back into the fully formatted Markdown text instead of the raw Markdown you’re probably still looking at. You have a couple of options, depending on your platform, but the most consistent is to type <code>Shift + Enter</code> to <strong>execute</strong> the cell (this is also how to run code, but more on that later).</p>
 <p>Additionally, you will frequently need to create new cells in your Jupyter notebooks. How you do this will depend on how you interact with the notebook, but try to figure this out now.</p>
 <p>One tip is to think carefully about what bits of code should be in the same cell, as you typically only see output from the last command in a cell. For example, compare the following:</p>
-<div id="913ecd2c" class="cell" data-execution_count="3">
+<div id="6" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">5</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>-0.9589242746631385</code></pre>
 </div>
 </div>
 <p>with</p>
-<div id="6f4c7ba9" class="cell" data-execution_count="4">
+<div id="8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>5</code></pre>
 </div>
 </div>
-<div id="4f25f432" class="cell" data-execution_count="5">
+<div id="10" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>-0.9589242746631385</code></pre>
 </div>
 </div>
 <p>In Julia, you can also suppress the output of a command with a semi-colon:</p>
-<div id="719151a2" class="cell" data-execution_count="6">
+<div id="12" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(x);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>which can help if you want to split some code out for clarity or to insert some text prior to it, but don’t want to clutter the notebook with its output.</p>
@@ -318,16 +328,17 @@ Due Date
 </section>
 <section id="exercises-10-points" class="level2">
 <h2 class="anchored" data-anchor-id="exercises-10-points">Exercises (10 points)</h2>
-<p>Use your understanding of Julia syntax to complete the following (hopefully short) exercises. Convert your completed notebook to a PDF and submit it to the Gradescope Assignment “Lab 1”.</p>
+<p>Use your understanding of Julia syntax and the GitHub workflow to complete the following (hopefully short) exercises. Convert your completed lab assignment to a PDF and submit it to the Gradescope Assignment “Lab 1”.</p>
 <p><strong>Remember to</strong>:</p>
 <ul>
-<li>Evaluate all of your code cells, in order (using a <code>Run All</code> command). This will make sure all output is visible and that the code cells were evaluated in the correct order.</li>
+<li>Include a (succint but clear) writeup of the core idea underlying your code, through some combination of equations, text, and algorithms. As you are not required to submit your code, we will not be looking at it in detail, and instead will rely on those writeups to assess whether your approach is correct.</li>
+<li>If using the notebook, evaluate all of your code cells, in order (using a <code>Run All</code> command). This will make sure all output is visible and that the code cells were evaluated in the correct order.</li>
 <li>Tag each of the problems when you submit to Gradescope; a 10% penalty will be deducted if this is not done.</li>
 </ul>
-<section id="exercise-1-3-points" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1-3-points">Exercise 1 (3 points)</h3>
+<section id="computing-a-dot-product" class="level3">
+<h3 class="anchored" data-anchor-id="computing-a-dot-product">Computing a Dot Product</h3>
 <p>Given two numeric arrays <code>x</code> and <code>y</code>, write a function to compute their dot product if they have equal length, and return an error if not (this is useful for debugging!). Use the following code as a starting point.</p>
-<div id="fee8cf7f" class="cell" data-execution_count="7">
+<div id="14" class="cell" data-execution_count="0">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">dot_product</span>(x, y)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">...</span> <span class="co"># insert test condition for equal lengths</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="co"># compute and return dot product</span></span>
@@ -337,57 +348,71 @@ Due Date
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here are some tests to make sure your code works as intended. Tests like these are useful to make sure everything works as intended. One reason to split your code up into functions is that it makes it straightforward to write tests to make sure each piece of your code works, which makes it easier to identify where errors are occuring.</p>
-<div id="5ebb079f" class="cell" data-execution_count="8">
+<div id="16" class="cell" data-execution_count="0">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dot_product</span>([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>], [<span class="fl">4</span> <span class="fl">5</span> <span class="fl">6</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you know the value you should get, you can write a more formal test using the <code>@assert</code> macro, which is a good way to “automate” checking (since you get an obvious error if the code doesn’t work as desired):</p>
-<div id="c98aad3b" class="cell" data-execution_count="9">
+<div id="18" class="cell" data-execution_count="0">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">dot_product</span>([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>], [<span class="fl">4</span> <span class="fl">5</span> <span class="fl">6</span>]) <span class="op">==</span> <span class="fl">32</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s also make sure we get an error when the dimensions of the two vectors don’t match:</p>
-<div id="878af6fe" class="cell" data-execution_count="10">
+<div id="20" class="cell" data-execution_count="0">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dot_product</span>([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>], [<span class="fl">4</span> <span class="fl">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="exercise-2-3-points" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2-3-points">Exercise 2 (3 points)</h3>
-<p>This problem involves implementing Newton’s method for computing square roots; it was shamelessly copied from MIT’s <a href="https://computationalthinking.mit.edu/Spring21/hw0/">Introduction to Computational Thinking</a>. You will use a <code>while</code> loop instead of the <code>for</code> loop shown above.</p>
-<p>Implement the following algorithm in a function <code>newton_sqrt</code>:</p>
-<p>Given <span class="math inline">\(x &gt; 0\)</span>:</p>
-<ol type="1">
-<li>Take a guess <span class="math inline">\(a\)</span>.</li>
-<li>Divide <span class="math inline">\(x\)</span> by <span class="math inline">\(a\)</span>.<br>
-</li>
-<li>Update <span class="math inline">\(a\)</span> as the average of <span class="math inline">\(x/a\)</span> and <span class="math inline">\(a\)</span>.</li>
-<li>Repeat until <span class="math inline">\(x/a\)</span> is within a tolerance of <span class="math inline">\(\varepsilon\)</span> from <span class="math inline">\(a\)</span>.</li>
-<li>Return <span class="math inline">\(a \approx \sqrt{x}\)</span>.</li>
-</ol>
-<div id="d4b10513" class="cell" data-execution_count="11">
+<section id="making-a-plot" class="level3">
+<h3 class="anchored" data-anchor-id="making-a-plot">Making a Plot</h3>
+<p>Write a function to compute the square of an integer <code>x</code>. Evaluate this function for integers between <span class="math inline">\(x=-5\)</span> and <span class="math inline">\(x=5\)</span> and make a plot of the squared values (you can find a quick guide to making various types of plots <a href="https://viveks.me/environmental-systems-analysis/tutorials/julia-plots.html">here</a>). Make sure to label your axes.</p>
+<div id="22" class="cell" data-execution_count="0">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Use your <code>newton_sqrt</code> function to compute <span class="math inline">\(\sqrt{2}\)</span> to within a tolerance of <span class="math inline">\(\varepsilon = 0.01\)</span>.</p>
-<div id="1ebf6c5d" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="commit-and-push-your-changes-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="commit-and-push-your-changes-to-github">Commit and Push Your Changes to GitHub</h2>
+<p>After completing the previous two exercises, commit your solution file (notebook or otherwise) and push to GitHub. Use an informative commit message which makes it clear what changes you’ve made. The specific workflow for this will vary depending on how you’re writing up your solutions; please search for specifics and ask for help as needed!</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</section>
-<section id="exercise-3-making-a-plot-3-points" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-3-making-a-plot-3-points">Exercise 3: Making a Plot (3 points)</h3>
-<p>Write a function to compute the square of an integer <code>x</code>. Evaluate this function for integers between <span class="math inline">\(x=-5\)</span> and <span class="math inline">\(x=5\)</span> and make a plot of the squared values (you can find a quick guide to making various types of plots <a href="../tutorials/julia-plots.html">here</a>). Make sure to label your axes.</p>
-<div id="bb737a4c" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-title-container flex-fill">
+Useful Commit Sizes
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ideally, you’d commit whenever you make a “substantial” enough change that you want to lock in, such as writing the core code for a problem or completing a problem, if you’re preparing code to be used elsewhere (by yourself or others), or if you want to ask for help. <code>git</code> lets you revert changes back to a previous commit, so it’s easy to undo changes or updates which broke something that was previously working, so changing too many things at once can make it hard to keep track of what worked when.</p>
+<p>But in this case, go ahead and just commit after finishing the problems.</p>
+</div>
+</div>
+<p>Push the repository with these commits to GitHub and take a screenshot of the repository page (<code>https://github.com/BEE4750-FA24/&lt;username&gt;/lab01</code>) which shows the updated repository. Include that screenshot in your submission as the solution to this problem.</p>
 </section>
-</section>
-<section id="export-and-submit-the-notebook-1-point" class="level2">
-<h2 class="anchored" data-anchor-id="export-and-submit-the-notebook-1-point">Export and Submit the Notebook (1 point)</h2>
-<p>The last step is to export the notebook for submission to Gradescope (this section won’t be repeated going forward, but the steps are the same).</p>
-<p>You should see the following menu bar at the top of the VS Code window: <img src="figures/vs-code-top-bar.png" class="img-fluid" alt="Notebook Menu Bar"></p>
-<ol type="1">
-<li>Click “Run All” at the top to execute all of the cells in order. <strong>Please do not forget to do this before exporting and submitting or you may lose points because your code has not been executed or may have errors</strong>.</li>
-<li>Click the ellipsis (“…”) and select “Export”. If you have LaTeX installed, you can click “PDF”; otherwise, click “HTML.” Save the file, and then when prompted, open the file. This should open the page in your browser; go to the print interface and save as a PDF. ::: {.callout-tip} When printing to PDF, long lines will run off the edge of code cells, which may result in comments or code being hidden. If you see this, go back to the notebook and break up long lines into shorter onces (for example, see the comment in the above code cell) to ensure key parts of your results aren’t missing. :::</li>
-</ol>
-<p>Great! That’s the basic workflow for every assignment in this course.</p>
-<p>Now you have your PDF that you can submit to Gradescope. Make sure that you tag pages corresponding to relevant problems to avoid a 10% penalty.</p>
+<section id="submitting-pdf" class="level2">
+<h2 class="anchored" data-anchor-id="submitting-pdf">Submitting PDF</h2>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>These submission instructions will not be repeated on future assignments!</p>
+</div>
+</div>
+</div>
+<p>Export your writeup as a PDF and submit it to the “Lab 1” assignment on Gradescope. Make sure that you tag pages corresponding to relevant problems to avoid a 10% penalty.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Printing Code to PDF
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You are not required to submit your code when submitting assignments. However, when printing a notebook to PDF, long lines will run off the edge of code cells, which may result in comments or code being hidden. If you see this, go back to the notebook and break up long lines into shorter onces (for example, see the comment in the above code cell) to ensure key parts of your results aren’t missing.</p>
+</div>
+</div>
 
 
 </section>

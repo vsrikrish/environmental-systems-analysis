@@ -6,9 +6,7 @@
 	branch = Fall24
 	path = hw/hw02
 	url = https://github.com/BEE4750/hw02.git
-[submodule "labs/--force"]
-	path = labs/--force
-	url = https://github.com/BEE4750/lab01
 [submodule "labs/lab01"]
 	path = labs/lab01
 	url = https://github.com/BEE4750/lab01
+	branch = Fall24

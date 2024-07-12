@@ -74,9 +74,12 @@ website:
             text: "Academic Integrity"
       - section: hw.qmd
         contents:
-          - href: hw/hw01/hw01.html
+          - href: hw/hw01/hw01.qmd
             text: "HW 1"
-      - labs.qmd
+      - section: labs.qmd
+        contents:
+          - href: labs/lab01/lab01.qmd
+            text: "Lab 1"
       - section: project.qmd
         contents:
           - href: project/proposal.qmd

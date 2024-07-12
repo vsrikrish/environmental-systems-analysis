@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.32">
+<meta name="generator" content="quarto-1.5.54">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Vivek Srikrishnan">
 <meta name="dcterms.date" content="2023-03-22">
 
-<title>BEE 4750 - Fall 2024 – Economic Dispatch with JuMP</title>
+<title>Economic Dispatch with JuMP – BEE 4750 - Fall 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -146,7 +146,7 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content="BEE 4750 - Fall 2024 - Economic Dispatch with JuMP">
+<meta property="og:title" content="Economic Dispatch with JuMP – BEE 4750 - Fall 2024">
 <meta property="og:description" content="Homepage for BEE 4750/5750, Environmental Systems Analysis, at Cornell University, Fall 2024.">
 <meta property="og:site_name" content="BEE 4750 - Fall 2024">
 </head>
@@ -254,8 +254,7 @@ window.Quarto = {
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">pretty_table</span>(gen_data; backend <span class="op">=</span> <span class="fu">Val</span>(<span class="op">:</span>html), header<span class="op">=</span>header, allow_html_in_cells<span class="op">=</span><span class="cn">true</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="spgen-data" class="cell-output cell-output-display">
-<div>
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header headerLastRow">
 <th style="text-align: right;" data-quarto-table-cell-role="th">Plant</th>
@@ -297,7 +296,6 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 <p>Let’s also assume that demand in this period is 1800 MW.</p>
@@ -351,8 +349,7 @@ window.Quarto = {
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">pretty_table</span>(results; backend <span class="op">=</span> <span class="fu">Val</span>(<span class="op">:</span>html), header<span class="op">=</span>results_header, allow_html_in_cells<span class="op">=</span><span class="cn">true</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="spdispatch-results" class="cell-output cell-output-display">
-<div>
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header headerLastRow">
 <th style="text-align: right;" data-quarto-table-cell-role="th">Plant</th>
@@ -396,7 +393,6 @@ window.Quarto = {
 </table>
 </div>
 </div>
-</div>
 <section id="marginal-generators" class="level3">
 <h3 class="anchored" data-anchor-id="marginal-generators">Marginal Generators</h3>
 <p>Once we hit the minimum for each generator, we then “fill up” capacity from lowest-cost generators first, then move on.</p>
@@ -418,9 +414,8 @@ window.Quarto = {
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sort!</span>(supply_curve, [<span class="op">:</span>varcost, <span class="fu">order</span>(<span class="op">:</span>cap, rev<span class="op">=</span><span class="cn">true</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div>
 <div><div style="float: left;"><span>5×4 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
-<table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="data-frame caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
@@ -475,7 +470,6 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 </div>

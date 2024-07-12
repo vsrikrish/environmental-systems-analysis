@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.32">
+  <meta name="generator" content="quarto-1.5.54">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2024-09-18">
@@ -429,7 +429,7 @@
     }
   };
   </script>
-<meta property="og:title" content="BEE 4750 - Fall 2024 - System Dynamics: Equilibria, Bifurcations, and Feedbacks">
+<meta property="og:title" content="System Dynamics: Equilibria, Bifurcations, and Feedbacks – BEE 4750 - Fall 2024">
 <meta property="og:description" content="Lecture 07">
 <meta property="og:site_name" content="BEE 4750 - Fall 2024">
 </head>
@@ -493,8 +493,7 @@
 </div><div class="column" style="width:60%;">
 <p><strong>Text</strong>: VSRIKRISH to 22333</p>
 <p><strong>URL</strong>: <a href="https://pollev.com/vsrikrish">https://pollev.com/vsrikrish</a> <br><br> <a href="https://www.polleverywhere.com/multiple_choice_polls/qKeig0hHShZYHAOmvZtZm?preview=true&amp;controls=none" data-preview-link="true">See Results</a></p>
-</div>
-</div>
+</div></div>
 </section></section>
 <section>
 <section id="shallow-lake-model" class="title-slide slide level1 center">
@@ -524,12 +523,11 @@
 <figcaption>Lake Eutrophication Example</figcaption>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="shallow-lake-model-variables" class="slide level2">
 <h2>Shallow Lake Model: Variables</h2>
-<table>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Variable</th>
@@ -571,7 +569,7 @@
 <span id="cb1-7"><a></a><span class="fu">ylabel!</span>(<span class="st">"Density"</span>)</span>
 <span id="cb1-8"><a></a><span class="fu">xlabel!</span>(L<span class="st">"y_t"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-lognorm" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="1">
+<div id="fig-lognorm" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-lognorm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -688,7 +686,7 @@ y_t \underset{\underset{\Large\text{\color{red}sample}}{\color{red}\uparrow}}{\s
 <span id="cb2-15"><a></a>X <span class="op">=</span> <span class="fu">map</span>(x <span class="op">-&gt;</span> <span class="fu">simulate_lake_P</span>(x, T, <span class="fl">0.4</span>, <span class="fl">2.5</span>, <span class="fu">zeros</span>(T), <span class="fu">zeros</span>(T)), X_vals)</span>
 <span id="cb2-16"><a></a>p_noinflow <span class="op">=</span> <span class="fu">plot</span>(X, label<span class="op">=</span><span class="cn">false</span>, ylabel<span class="op">=</span>L<span class="st">"X_t"</span>, xlabel<span class="op">=</span><span class="st">"Time"</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">500</span>), left_margin<span class="op">=</span><span class="fl">5</span>mm, bottom_margin<span class="op">=</span><span class="fl">5</span>mm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-lake-noinput-ic" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="1">
+<div id="fig-lake-noinput-ic" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-lake-noinput-ic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -772,8 +770,7 @@ Figure&nbsp;2: Dynamics of lake model with different initial conditions
 </figure>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="lake-dynamics-without-inflows-1" class="slide level2">
 <h2>Lake Dynamics (Without Inflows)</h2>
@@ -800,7 +797,7 @@ Figure&nbsp;2: Dynamics of lake model with different initial conditions
 <span id="cb3-10"><a></a><span class="fu">plot!</span>(ylims<span class="op">=</span>(<span class="op">-</span><span class="fl">0.02</span>, <span class="fl">1.1</span>))</span>
 <span id="cb3-11"><a></a><span class="fu">plot!</span>(size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">500</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-lake-noinput" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="1">
+<div id="fig-lake-noinput" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-lake-noinput-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -858,8 +855,7 @@ Figure&nbsp;3: Lake eutrophication dynamics based on the shallow lake modelwitho
 </figure>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="where-are-the-equilibria" class="slide level2">
 <h2>Where Are the Equilibria?</h2>
@@ -874,7 +870,7 @@ Figure&nbsp;3: Lake eutrophication dynamics based on the shallow lake modelwitho
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a></a>eq1 <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">0.67</span>, <span class="fl">2.2</span>]</span>
 <span id="cb4-2"><a></a><span class="fu">scatter!</span>(p1, eq1, (y <span class="op">-&gt;</span> <span class="fu">lake_P_cycling</span>(y, <span class="fl">2.5</span>)).(eq1), label<span class="op">=</span><span class="st">"Equilibria"</span>, markersize<span class="op">=</span><span class="fl">10</span>, markercolor<span class="op">=:</span>blue)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-lake-noinput-eq" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="1">
+<div id="fig-lake-noinput-eq" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-lake-noinput-eq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -936,8 +932,7 @@ Figure&nbsp;4: Lake eutrophication dynamics based on the shallow lake modelwitho
 </figure>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="implications-of-unstable-equilibria" class="slide level2">
 <h2>Implications of Unstable Equilibria</h2>
@@ -948,7 +943,7 @@ Figure&nbsp;4: Lake eutrophication dynamics based on the shallow lake modelwitho
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a></a><span class="fu">plot!</span>(p_noinflow, title<span class="op">=</span><span class="st">"Lake P Without Inflows"</span>, titlefontsize<span class="op">=</span><span class="fl">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-lake-noinflow-dynamics" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="1">
+<div id="fig-lake-noinflow-dynamics" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-lake-noinflow-dynamics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -1041,7 +1036,7 @@ Figure&nbsp;5: Dynamics of Lake Model With No Inflows
 <span id="cb6-3"><a></a>X <span class="op">=</span> <span class="fu">map</span>(x <span class="op">-&gt;</span> <span class="fu">simulate_lake_P</span>(x, T, <span class="fl">0.4</span>, <span class="fl">2.5</span>, a, y), X_vals) </span>
 <span id="cb6-4"><a></a><span class="fu">plot</span>(X, label<span class="op">=</span><span class="cn">false</span>, ylabel<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>X_t<span class="sc">$</span><span class="st">", </span>xlabel<span class="st">="</span>Time<span class="st">", title="</span>Lake P With Inflows<span class="st">", guidefontsize=18, tickfontsize=16, size=(600, 500), left_margin=5mm, bottom_margin=5mm, titlefontsize=20)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-lake-inflow-dynamics" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="1">
+<div id="fig-lake-inflow-dynamics" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-lake-inflow-dynamics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -1125,8 +1120,7 @@ Figure&nbsp;6: Dynamics of Lake Model With No Inflows
 </figure>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="how-do-equilibria-change" class="slide level2">
 <h2>How do Equilibria Change?</h2>
@@ -1145,7 +1139,7 @@ Figure&nbsp;6: Dynamics of Lake Model With No Inflows
 <span id="cb7-6"><a></a><span class="fu">scatter!</span>(p1, eq_45, (y <span class="op">-&gt;</span> <span class="fu">lake_P_cycling</span>(y, <span class="fl">2.5</span>)).(eq_45), label<span class="op">=</span><span class="cn">false</span>, markersize<span class="op">=</span><span class="fl">10</span>, markercolor<span class="op">=:</span>orange)</span>
 <span id="cb7-7"><a></a><span class="fu">scatter!</span>(p1, eq_5, (y <span class="op">-&gt;</span> <span class="fu">lake_P_cycling</span>(y, <span class="fl">2.5</span>)).(eq_5), label<span class="op">=</span><span class="cn">false</span>, markersize<span class="op">=</span><span class="fl">10</span>, markercolor<span class="op">=:</span>purple)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-lake-noinput-eq-3" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="1">
+<div id="fig-lake-noinput-eq-3" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-lake-noinput-eq-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -1211,8 +1205,7 @@ Figure&nbsp;7: Lake eutrophication dynamics based on the shallow lake modelwitho
 </figure>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="equilibria-vs.-b-value" class="slide level2">
 <h2>Equilibria vs.&nbsp;<span class="math inline">\(b\)</span> Value</h2>
@@ -1286,7 +1279,7 @@ Figure&nbsp;7: Lake eutrophication dynamics based on the shallow lake modelwitho
 <span id="cb8-65"><a></a>p <span class="op">=</span> <span class="fu">plot_P_flux</span>(b_vals)</span>
 <span id="cb8-66"><a></a><span class="fu">display</span>(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-lake-noinput-bifurcation" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div id="fig-lake-noinput-bifurcation" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-lake-noinput-bifurcation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -1470,8 +1463,7 @@ Figure&nbsp;8: Bifurcation diagram for the lake problem with no inputs.
 <figcaption>Ice-Albedo Feedback Loop</figcaption>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="feedbacks-for-lake-eutrophication" class="slide level2">
 <h2>Feedbacks for Lake Eutrophication</h2>

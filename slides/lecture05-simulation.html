@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.32">
+  <meta name="generator" content="quarto-1.5.54">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2024-09-11">
@@ -409,7 +409,7 @@
     }
   };
   </script>
-<meta property="og:title" content="BEE 4750 - Fall 2024 - Simulation and Box Models">
+<meta property="og:title" content="Simulation and Box Models – BEE 4750 - Fall 2024">
 <meta property="og:description" content="Lecture 05">
 <meta property="og:site_name" content="BEE 4750 - Fall 2024">
 </head>
@@ -473,8 +473,7 @@
 </div><div class="column" style="width:60%;">
 <p><strong>Text</strong>: VSRIKRISH to 22333</p>
 <p><strong>URL</strong>: <a href="https://pollev.com/vsrikrish">https://pollev.com/vsrikrish</a> <br><br> <a href="https://www.polleverywhere.com/multiple_choice_polls/qKeig0hHShZYHAOmvZtZm?preview=true&amp;controls=none" data-preview-link="true">See Results</a></p>
-</div>
-</div>
+</div></div>
 </section></section>
 <section>
 <section id="simulating-systems" class="title-slide slide level1 center">
@@ -548,13 +547,12 @@
 <figcaption>Steady-State Box Example</figcaption>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="airshed-model" class="slide level2">
 <h2>Airshed Model</h2>
 <p>Let’s look at a simple steady-state model of an airshed.</p>
-<table>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Variable</th>
@@ -709,7 +707,7 @@
 <span id="cb2-14"><a></a><span class="co"># add simulated solution</span></span>
 <span id="cb2-15"><a></a><span class="fu">plot!</span>(p, <span class="fl">0</span><span class="op">:</span>Δt<span class="op">:</span>T, C, linewidth<span class="op">=</span><span class="fl">3</span>, color<span class="op">=:</span>blue, label<span class="op">=</span><span class="st">"Simulated Solution (Δt = 1)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-simulation-base" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="1">
+<div id="fig-simulation-base" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-simulation-base-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -778,7 +776,7 @@ Figure&nbsp;1: Simulation results for airshed model.
 <span id="cb3-3"><a></a>Csmaller <span class="op">=</span> <span class="fu">airshed_simulate</span>(C₀, Ci, u, L, S, D, k, T, <span class="fl">0.01</span>)</span>
 <span id="cb3-4"><a></a><span class="fu">plot!</span>(p, <span class="fl">0</span><span class="op">:</span><span class="fl">0.1</span><span class="op">:</span>T, Csmall, linewidth<span class="op">=</span><span class="fl">3</span>, color<span class="op">=:</span>orange, label<span class="op">=</span><span class="st">"Simulated Solution (Δt = 0.01)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-simulation-timestep" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="1">
+<div id="fig-simulation-timestep" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-simulation-timestep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -887,7 +885,7 @@ C(t+1) = C(t) + \Delta t \left(\frac{u(t)}{L} \left(C_\text{in}(t) - C(t)\right)
 <div aria-describedby="fig-sample-dynamic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sample-dynamic" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-sample-dynamic-1" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div id="fig-sample-dynamic-1" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-sample-dynamic-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -943,7 +941,7 @@ C(t+1) = C(t) + \Delta t \left(\frac{u(t)}{L} \left(C_\text{in}(t) - C(t)\right)
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sample-dynamic" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-sample-dynamic-2" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div id="fig-sample-dynamic-2" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-sample-dynamic-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -1016,7 +1014,7 @@ Figure&nbsp;3
 <span id="cb6-3"><a></a>plot<span class="st">!(p, 0:0.1:T, Cdynamic, linewidth=3, color=:purple, label="</span>Dynamic Simulated Solution<span class="st">")</span></span>
 <span id="cb6-4"><a></a><span class="fu">plot!</span>(p, <span class="fl">0</span><span class="op">:</span><span class="fl">0.1</span><span class="op">:</span>T, Csmall, linewidth<span class="op">=</span><span class="fl">3</span>, color<span class="op">=:</span>red, label<span class="op">=</span><span class="st">"Static Simulated Solution"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-simulation-dynamic" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="1">
+<div id="fig-simulation-dynamic" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center" data-execution_count="1">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-simulation-dynamic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -1141,7 +1139,7 @@ Figure&nbsp;4: Dynamic simulation results for airshed model.
 <div aria-describedby="fig-twobox-sim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-twobox-sim" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-twobox-sim-1" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div id="fig-twobox-sim-1" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-twobox-sim-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -1197,7 +1195,7 @@ Figure&nbsp;4: Dynamic simulation results for airshed model.
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-twobox-sim" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-twobox-sim-2" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div id="fig-twobox-sim-2" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-twobox-sim-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->

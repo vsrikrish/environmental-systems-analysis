@@ -20,7 +20,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          version: pre-release
           tinytex: true
       - name: Install Julia 1.10
         uses: julia-actions/setup-julia@v2

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 918.46 484.72">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-5, .cls-6, .cls-7, .cls-8 {
+        stroke-width: 3px;
+      }
+
+      .cls-1, .cls-2, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+        fill: none;
+      }
+
+      .cls-1, .cls-3, .cls-4 {
+        stroke: #231f20;
+      }
+
+      .cls-2 {
+        stroke: #2e3192;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        stroke-width: 5px;
+      }
+
+      .cls-5 {
+        stroke: #92278f;
+      }
+
+      .cls-9 {
+        font-size: 18px;
+      }
+
+      .cls-9, .cls-10 {
+        fill: #009444;
+      }
+
+      .cls-9, .cls-11, .cls-12, .cls-13, .cls-14 {
+        font-weight: 700;
+      }
+
+      .cls-9, .cls-13 {
+        font-family: ScalaSansPro-Bold, 'Scala Sans Pro';
+      }
+
+      .cls-6 {
+        stroke: #808285;
+      }
+
+      .cls-7 {
+        stroke: #009444;
+      }
+
+      .cls-8 {
+        stroke: #ed1c24;
+      }
+
+      .cls-15, .cls-16, .cls-17, .cls-10 {
+        stroke-width: 0px;
+      }
+
+      .cls-15, .cls-13 {
+        fill: #92278f;
+      }
+
+      .cls-16 {
+        fill: #ed1c24;
+      }
+
+      .cls-17, .cls-12 {
+        fill: #2e3192;
+      }
+
+      .cls-11, .cls-12, .cls-13 {
+        font-size: 21px;
+      }
+
+      .cls-11, .cls-12, .cls-14 {
+        font-family: ScalaSansPro-BoldIta, 'Scala Sans Pro';
+        font-style: italic;
+      }
+
+      .cls-11, .cls-14 {
+        fill: #231f20;
+      }
+
+      .cls-18 {
+        letter-spacing: 1.46em;
+      }
+
+      .cls-14 {
+        font-size: 14px;
+      }
+    </style>
+  </defs>
+  <text class="cls-11" transform="translate(255.6 134.05)"><tspan x="0" y="0">Subdivide Spatial Domain</tspan><tspan class="cls-18" x="43.09" y="25.2">	</tspan><tspan x="79.09" y="25.2">(If Relevant)</tspan></text>
+  <path class="cls-3" d="M0,290.31"/>
+  <line class="cls-1" x1="330.76" y1="227.41" x2="330.76" y2="190.43"/>
+  <line class="cls-1" x1="249.02" y1="190.43" x2="249.02" y2="227.41"/>
+  <text class="cls-13" transform="translate(273.91 439.47)"><tspan x="0" y="0">Resolve Bulk System</tspan><tspan x="-17.01" y="25.2">Dynamics In Each “Box”</tspan></text>
+  <line class="cls-4" x1="249.02" y1="208.92" x2="329.55" y2="208.92"/>
+  <path class="cls-4" d="M363.69,335.09"/>
+  <line class="cls-1" x1="412.29" y1="190.43" x2="412.29" y2="227.41"/>
+  <line class="cls-4" x1="330.55" y1="208.92" x2="411.08" y2="208.92"/>
+  <line class="cls-1" x1="495.24" y1="190.43" x2="495.24" y2="227.41"/>
+  <line class="cls-4" x1="413.5" y1="208.92" x2="494.03" y2="208.92"/>
+  <line class="cls-1" x1="440.87" y1="332.99" x2="440.87" y2="401.06"/>
+  <line class="cls-1" x1="286.51" y1="332.99" x2="286.51" y2="401.06"/>
+  <line class="cls-4" x1="286.51" y1="367.03" x2="438.58" y2="367.03"/>
+  <g>
+    <line class="cls-7" x1="218" y1="367.03" x2="263.39" y2="367.03"/>
+    <path class="cls-10" d="M276.06,367.03c-5.96,2.21-13.36,5.99-17.95,9.99l3.61-9.99-3.61-9.99c4.59,4,11.99,7.77,17.95,9.99Z"/>
+  </g>
+  <g>
+    <line class="cls-7" x1="455.89" y1="367.03" x2="501.28" y2="367.03"/>
+    <path class="cls-10" d="M513.95,367.03c-5.96,2.21-13.36,5.99-17.95,9.99l3.61-9.99-3.61-9.99c4.59,4,11.99,7.77,17.95,9.99Z"/>
+  </g>
+  <text class="cls-9" transform="translate(219.76 350.04)"><tspan x="0" y="0">Inflows</tspan></text>
+  <text class="cls-9" transform="translate(450.7 352.95)"><tspan x="0" y="0">Outflows</tspan></text>
+  <rect class="cls-6" x="130.48" y="93.01" width="480.68" height="164.72"/>
+  <text class="cls-14" transform="translate(149.05 350.28)"><tspan x="0" y="0">External</tspan><tspan x="2.12" y="16.8">or Prior</tspan><tspan x="-12.11" y="33.6">Box Outflow</tspan></text>
+  <text class="cls-14" transform="translate(537.37 353.19)"><tspan x="0" y="0">Inflow to</tspan><tspan x="-.46" y="16.8">Next Box</tspan><tspan x="-7.67" y="33.6">Or External</tspan></text>
+  <rect class="cls-6" x="130.48" y="287.63" width="480.68" height="195.59"/>
+  <g>
+    <polyline class="cls-5" points="249.02 235.52 249.02 266.62 96.27 266.62 96.27 397.72 110.42 397.72"/>
+    <polygon class="cls-15" points="127.36 397.72 103.49 407.48 109.15 397.72 103.49 387.97 127.36 397.72"/>
+  </g>
+  <g>
+    <polyline class="cls-5" points="615.65 397.72 661.87 397.72 661.67 268.3 330.76 268.3 330.76 245.35"/>
+    <polygon class="cls-15" points="330.76 228.4 340.52 252.28 330.76 246.62 321.01 252.28 330.76 228.4"/>
+  </g>
+  <g>
+    <line class="cls-7" x1="146" y1="208.92" x2="225.03" y2="208.92"/>
+    <path class="cls-10" d="M237.71,208.92c-5.96,2.21-13.36,5.99-17.95,9.99l3.61-9.99-3.61-9.99c4.59,4,11.99,7.77,17.95,9.99Z"/>
+  </g>
+  <text class="cls-14" transform="translate(171.2 181.32)"><tspan x="0" y="0">System</tspan><tspan x="-3.35" y="16.8">Forcings</tspan></text>
+  <g>
+    <line class="cls-7" x1="513.95" y1="208.31" x2="592.98" y2="208.31"/>
+    <path class="cls-10" d="M605.65,208.31c-5.96,2.21-13.36,5.99-17.95,9.99l3.61-9.99-3.61-9.99c4.59,4,11.99,7.77,17.95,9.99Z"/>
+  </g>
+  <text class="cls-14" transform="translate(539.14 180.71)"><tspan x="0" y="0">System</tspan><tspan x="-3.32" y="16.8">Outputs</tspan></text>
+  <text class="cls-12" transform="translate(678.34 118.59)"><tspan x="0" y="0">Repeat For Next Timestep</tspan><tspan x="59.58" y="25.2">(If Relevant)</tspan></text>
+  <g>
+    <path class="cls-8" d="M273.65,200.05c1.38-1.72,22.19-26.87,54.32-23.24,14.26,1.61,24.93,8.23,31.82,14.09"/>
+    <polygon class="cls-16" points="368.62 200.05 350.79 192.53 358.98 190.38 361.16 182.2 368.62 200.05"/>
+  </g>
+  <g>
+    <path class="cls-8" d="M381.57,200.05c1.38-1.72,22.19-26.87,54.32-23.24,14.26,1.61,24.93,8.23,31.82,14.09"/>
+    <polygon class="cls-16" points="476.54 200.05 458.71 192.53 466.9 190.38 469.08 182.2 476.54 200.05"/>
+  </g>
+  <g>
+    <path class="cls-2" d="M611.16,198.12c37.59-2.42,76.3-9.36,81.81-28.99C705.77,123.51,542.4-1.93,368.61,1.57,194.29,5.08,39.82,137.7,53.41,175.01c4.82,13.23,31.48,16.44,60.13,16.03"/>
+    <polygon class="cls-17" points="130.48 190.43 106.9 200.9 112.27 190.98 106.32 181.4 130.48 190.43"/>
+  </g>
+</svg>

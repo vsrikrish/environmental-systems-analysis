@@ -253,23 +253,24 @@ $$
 
 $$
 \begin{align*}
-C &= \frac{\sum_i \frac{P_i}{V}}{\frac{Q}{V} + \alpha} \\
-&= \frac{\sum_i \frac{P_i}{V}}{\tau_w^{-1} + \alpha} \\
-&= \frac{\sum_i \frac{P_i}{V}}{\sum_j k_j}
+C &= \frac{\sum_i P_i/V}{Q/V + \alpha} \\[0.75em]
+&= \frac{\sum_i P_i/V}{\tau_w^{-1} + \alpha} \\[0.75em]
+&= \frac{\sum_i P_i/V}{\sum_j k_j}
 \end{align*}
 $$
 
 ## F&T Model Assumptions
 
-::: {.fragment .fade-in}
 **What does this model assume?**
-:::
 
+
+::: {.fragment .fade-in}
 - Steady-state ($\partial\text{Mass} / \partial t = 0$)
 - 1st order (linear) decay
 - Lake is:
   - Well-mixed
   - Constant volume
+:::
 
 ## Environmental Impacts
 

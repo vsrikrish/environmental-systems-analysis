@@ -142,7 +142,7 @@ The state gives you a "snapshot" of the system at a given point in time.
 We can use the notion of stocks and flows to formalize the idea of **residence time**: average time a quantity stays at a system component.
 
 $$
-\underbrace{\tau}_{\text{Residence} \\ \text{Time}} \times \overbrace{F}^{\text{Flow} \\ \text{In/Out}} = \underbrace{M}_{\text{Stock}}
+\underbrace{\tau}_{\substack{\text{Residence} \\[0.5em] \text{Time}}} \times \overbrace{F}^{\substack{\text{Flow} \\[0.5em] \text{In/Out}}} = \underbrace{M}_{\text{Stock}}
 $$
 
 ## Steady-State Residence Time

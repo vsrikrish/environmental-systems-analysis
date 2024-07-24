@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.5.54">
 
   <meta name="author" content="Vivek Srikrishnan">
-  <meta name="dcterms.date" content="2024-09-04">
-  <title>BEE 4750 - Fall 2024 – Introduction to Systems Analysis</title>
+  <meta name="dcterms.date" content="2024-09-09">
+  <title>BEE 4750 - Fall 2024 – Modeling Example: Lake Eutrophication</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -364,11 +364,8 @@
     }
   };
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-  
-  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<meta property="og:title" content="Introduction to Systems Analysis – BEE 4750 - Fall 2024">
-<meta property="og:description" content="Lecture 03">
+<meta property="og:title" content="Modeling Example: Lake Eutrophication – BEE 4750 - Fall 2024">
+<meta property="og:description" content="Lecture 04">
 <meta property="og:site_name" content="BEE 4750 - Fall 2024">
 </head>
 <body class="quarto-light">
@@ -376,17 +373,17 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-    <h1 class="title">Introduction to Systems Analysis</h1>
+    <h1 class="title">Modeling Example: Lake Eutrophication</h1>
   <hr>
-<p class="subtitle">Lecture 03</p>
-<p class="date">September 4, 2024</p>
+<p class="subtitle">Lecture 04</p>
+<p class="date">September 9, 2024</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Overview</h2>
 <ul>
-<li><a href="#/review-of-last-week" id="/toc-review-of-last-week">Review of Last Week</a></li>
-<li><a href="#/systems-basics" id="/toc-systems-basics">Systems Basics</a></li>
-<li><a href="#/modeling-systems" id="/toc-modeling-systems">Modeling Systems</a></li>
+<li><a href="#/review-of-last-class" id="/toc-review-of-last-class">Review of Last Class</a></li>
+<li><a href="#/lake-eutrophication-overview" id="/toc-lake-eutrophication-overview">Lake Eutrophication Overview</a></li>
+<li><a href="#/eutrophication-modeling-example" id="/toc-eutrophication-modeling-example">Eutrophication Modeling Example</a></li>
 <li><a href="#/key-takeaways" id="/toc-key-takeaways">Key Takeaways</a></li>
 <li><a href="#/upcoming-schedule" id="/toc-upcoming-schedule">Upcoming Schedule</a></li>
 <li><a href="#/references" id="/toc-references">References</a></li>
@@ -394,148 +391,9 @@
 </nav>
 </section>
 <section>
-<section id="review-of-last-week" class="title-slide slide level1 center">
-<h1>Review of Last Week</h1>
+<section id="review-of-last-class" class="title-slide slide level1 center">
+<h1>Review of Last Class</h1>
 
-</section>
-<section id="course-policies" class="slide level2">
-<h2>Course Policies</h2>
-<p>If you missed last class, make sure you <a href="../syllabus.html">read the syllabus!</a>.</p>
-</section>
-<section id="tools-setup-lab" class="slide level2">
-<h2>Tools Setup Lab</h2>
-<p>If you missed last Wednesday:</p>
-<ul>
-<li>Go through the lab by Wednesday to make sure you’re set up for the semester.</li>
-<li>Email Prof.&nbsp;Srikrishnan to get an extension so you can submit.</li>
-<li>Come to office hours for help if something isn’t working.</li>
-</ul>
-</section>
-<section id="questions" class="slide level2">
-<h2>Questions?</h2>
-<div class="columns center">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/vsrikrish-poll.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
-</figure>
-</div>
-</div><div class="column" style="width:60%;">
-<p><strong>Text</strong>: VSRIKRISH to 22333</p>
-<p><strong>URL</strong>: <a href="https://pollev.com/vsrikrish">https://pollev.com/vsrikrish</a> <br><br> <a href="https://www.polleverywhere.com/multiple_choice_polls/qKeig0hHShZYHAOmvZtZm?preview=true&amp;controls=none" data-preview-link="true">See Results</a></p>
-</div></div>
-</section></section>
-<section>
-<section id="systems-basics" class="title-slide slide level1 center">
-<h1>Systems Basics</h1>
-
-</section>
-<section id="what-is-a-system" class="slide level2">
-<h2>What Is A System?</h2>
-<p>A system is:</p>
-<div class="quote">
-<blockquote>
-<p>“an interconnected set of elements that is coherently organized in a way that achieves something…</p>
-<p>A system must consist of three kinds of things: <em>elements</em>, <em>interconnections</em> and <em>a function or purpose</em>.”</p>
-</blockquote>
-<div class="cite">
-<p>— Donella Meadows, <em>Thinking in Systems: A Primer</em>, 2008</p>
-</div>
-</div>
-</section>
-<section id="why-are-systems-interesting" class="slide level2">
-<h2>Why Are Systems Interesting?</h2>
-<div>
-<ul>
-<li class="fragment">“<strong>Interconnected</strong> set of <strong>elements</strong>”</li>
-<li class="fragment">“<strong>Function</strong> or <strong>purpose</strong>”</li>
-</ul>
-</div>
-</section>
-<section id="example-climate-change" class="slide level2">
-<h2>Example: Climate Change</h2>
-<p>Changes to climate occur bassed on a variety of processes across scales, including:</p>
-<ul>
-<li>carbon sources/sinks;</li>
-<li>aerosol emissions;</li>
-<li>ocean heat uptake;</li>
-<li>surface albedo;</li>
-<li>El Niño/La Niña (ENSO)</li>
-</ul>
-</section>
-<section id="example-climate-change-1" class="slide level2">
-<h2>Example: Climate Change</h2>
-
-<img data-src="figures/climate-correlate.svg" class="r-stretch quarto-figure-center"><p class="caption">Correlations among Climate Parameters</p><div class="caption">
-<p>Source: <span class="citation" data-cites="Errickson2021-kr">Errickson et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2021</a>)</span></p>
-</div>
-</section>
-<section id="example-climate-change-2" class="slide level2">
-<h2>Example: Climate Change</h2>
-
-<img data-src="figures/temperature-projections.svg" class="r-stretch quarto-figure-center"><p class="caption">Correlations among Climate Parameters</p><div class="caption">
-<p>Source: <span class="citation" data-cites="Errickson2021-kr">Errickson et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2021</a>)</span></p>
-</div>
-</section>
-<section id="example-water-pollution" class="slide level2">
-<h2>Example: Water Pollution</h2>
-<p>Contaminant levels in a body of water also depend on a number of processes which may have different scales and rates.</p>
-<p><strong>Can we think of some?</strong></p>
-</section>
-<section id="system-state" class="slide level2">
-<h2>System State</h2>
-<p><strong>System State</strong>: quantities or variables which evolve over time based on external inputs and system dynamics.</p>
-<p>The state gives you a “snapshot” of the system at a given point in time.</p>
-</section>
-<section id="stocks-and-flows" class="slide level2">
-<h2>Stocks and Flows</h2>
-<div>
-<ul>
-<li class="fragment">A <strong>stock</strong> is the amount of a system property: concentrations of a pollutant, numbers of currency units, etc.</li>
-<li class="fragment">A <strong>flow</strong> is the way in which a stock changes: decay, diffusion, production, consumption, etc.</li>
-</ul>
-</div>
-</section>
-<section id="residence-time" class="slide level2">
-<h2>Residence Time</h2>
-<p>We can use the notion of stocks and flows to formalize the idea of <strong>residence time</strong>: average time a quantity stays at a system component.</p>
-<p><span class="math display">\[
-\underbrace{\tau}_{\substack{\text{Residence} \\[0.5em] \text{Time}}} \times \overbrace{F}^{\substack{\text{Flow} \\[0.5em] \text{In/Out}}} = \underbrace{M}_{\text{Stock}}
-\]</span></p>
-</section>
-<section id="steady-state-residence-time" class="slide level2">
-<h2>Steady-State Residence Time</h2>
-<p>Steady-state condition on flows <span class="math inline">\(F_\text{in}\)</span> and <span class="math inline">\(F_\text{out}\)</span>:</p>
-<div class="fragment fade-in">
-<p><span class="math display">\[\begin{gather*}
-F_\text{out} = F_\text{in} = F \\
-\Rightarrow \bbox[5pt, border: 5px solid red]{\tau = M/F}
-\end{gather*}
-\]</span></p>
-</div>
-</section>
-<section id="simple-example" class="slide level2">
-<h2>Simple Example</h2>
-<p>A college has a constant undergraduate enrollment of 15,000 students. No students flunk out or transfer, so the residence time is four years.</p>
-<ol type="1">
-<li><strong>How many students graduate every year?</strong></li>
-<li><strong>How many students enroll every year?</strong></li>
-</ol>
-</section></section>
-<section>
-<section id="modeling-systems" class="title-slide slide level1 center">
-<h1>Modeling Systems</h1>
-
-</section>
-<section id="how-do-we-develop-models" class="slide level2">
-<h2>How Do We Develop Models?</h2>
-<div>
-<ul>
-<li class="fragment">Mass balance equations let us track changes in stocks at particular points;</li>
-<li class="fragment">Equilibrium conditions are requirements that there is no net flow, and thus that stocks are preserved;</li>
-<li class="fragment">Fate and transport modeling involves quantifying how stocks change as they move through the system.</li>
-</ul>
-</div>
 </section>
 <section id="systems-analysis" class="slide level2">
 <h2>Systems Analysis</h2>
@@ -569,39 +427,6 @@ F_\text{out} = F_\text{in} = F \\
 </ul>
 </div>
 </section>
-<section id="example-river-system" class="slide level2">
-<h2>Example: River System</h2>
-
-<img data-src="figures/control-volume-base.svg" style="width:50.0%" class="r-stretch quarto-figure-center"><p class="caption">
-Figure&nbsp;1: Illustration of a system, including notation.
-</p></section>
-<section id="what-is-a-model" class="slide level2">
-<h2>What Is A Model?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="physical-models">Physical Models</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Fallingwater_miniature_model_at_MRRV%2C_Carnegie_Science_Center.JPG/640px-Fallingwater_miniature_model_at_MRRV%2C_Carnegie_Science_Center.JPG" style="width:75.0%"></p>
-<figcaption>Falling Water Miniature Model</figcaption>
-</figure>
-</div>
-<div class="caption">
-<p>Source: <a href="https://commons.wikimedia.org/wiki/File:Fallingwater_miniature_model_at_MRRV,_Carnegie_Science_Center.JPG">Wikimedia</a></p>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="fragment fade-in">
-<!-- -->
-<h3 id="mathematical-models">Mathematical Models</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/math-model.png"></p>
-<figcaption>Mathematical Model Machine</figcaption>
-</figure>
-</div>
-</div>
-</div></div>
-</section>
 <section id="mathematical-models-of-systems" class="slide level2">
 <h2>Mathematical Models of Systems</h2>
 
@@ -625,128 +450,13 @@ Figure&nbsp;1: Illustration of a system, including notation.
 </ul>
 </div></div>
 </section>
-<section id="deterministic-vs.-stochastic-models" class="slide level2">
-<h2>Deterministic vs.&nbsp;Stochastic Models</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="deterministic-models">Deterministic Models</h3>
-<div id="6" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="1">
-<!--?xml version="1.0" encoding="utf-8"?-->
-<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="960" height="480" viewbox="0 0 3840 1920">
-<defs>
-  <clippath id="clip070">
-    <rect x="0" y="0" width="3840" height="1920"></rect>
-  </clippath>
-</defs>
-<path clip-path="url(#clip070)" d="M0 1920 L3840 1920 L3840 0 L0 0  Z" fill="#ffffff" fill-rule="evenodd" fill-opacity="1"></path>
-<defs>
-  <clippath id="clip071">
-    <rect x="768" y="0" width="2689" height="1920"></rect>
-  </clippath>
-</defs>
-<path clip-path="url(#clip070)" d="M231.548 1570.17 L2391.18 1570.17 L2391.18 47.2441 L231.548 47.2441  Z" fill="#ffffff" fill-rule="evenodd" fill-opacity="1"></path>
-<defs>
-  <clippath id="clip072">
-    <rect x="231" y="47" width="2161" height="1524"></rect>
-  </clippath>
-</defs>
-<polyline clip-path="url(#clip072)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:2; stroke-opacity:1; fill:none" points="292.67,1570.17 292.67,47.2441 "></polyline>
-<polyline clip-path="url(#clip072)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:2; stroke-opacity:1; fill:none" points="2330.06,1570.17 2330.06,47.2441 "></polyline>
-<polyline clip-path="url(#clip070)" style="stroke:#ffffff; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="231.548,1570.17 2391.18,1570.17 "></polyline>
-<polyline clip-path="url(#clip070)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="292.67,1570.17 292.67,1551.27 "></polyline>
-<polyline clip-path="url(#clip070)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="2330.06,1570.17 2330.06,1551.27 "></polyline>
-<path clip-path="url(#clip070)" d="M291.304 1620.71 L291.304 1635.44 L308.85 1635.44 L308.85 1642.06 L291.304 1642.06 L291.304 1670.2 Q291.304 1676.55 293.017 1678.35 Q294.776 1680.16 300.101 1680.16 L308.85 1680.16 L308.85 1687.29 L300.101 1687.29 Q290.239 1687.29 286.49 1683.63 Q282.74 1679.93 282.74 1670.2 L282.74 1642.06 L276.49 1642.06 L276.49 1635.44 L282.74 1635.44 L282.74 1620.71 L291.304 1620.71 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip070)" d="M2262.05 1620.71 L2262.05 1635.44 L2279.6 1635.44 L2279.6 1642.06 L2262.05 1642.06 L2262.05 1670.2 Q2262.05 1676.55 2263.76 1678.35 Q2265.52 1680.16 2270.85 1680.16 L2279.6 1680.16 L2279.6 1687.29 L2270.85 1687.29 Q2260.99 1687.29 2257.24 1683.63 Q2253.49 1679.93 2253.49 1670.2 L2253.49 1642.06 L2247.24 1642.06 L2247.24 1635.44 L2253.49 1635.44 L2253.49 1620.71 L2262.05 1620.71 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip070)" d="M2325.48 1627.84 L2325.48 1653.63 L2351.26 1653.63 L2351.26 1661.5 L2325.48 1661.5 L2325.48 1687.29 L2317.7 1687.29 L2317.7 1661.5 L2291.91 1661.5 L2291.91 1653.63 L2317.7 1653.63 L2317.7 1627.84 L2325.48 1627.84 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip070)" d="M2373.07 1679.42 L2388.35 1679.42 L2388.35 1626.69 L2371.73 1630.02 L2371.73 1621.5 L2388.25 1618.17 L2397.61 1618.17 L2397.61 1679.42 L2412.88 1679.42 L2412.88 1687.29 L2373.07 1687.29 L2373.07 1679.42 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip070)" d="M1183.53 1747 L1249.31 1747 L1249.31 1755.85 L1221.7 1755.85 L1221.7 1824.76 L1211.13 1824.76 L1211.13 1755.85 L1183.53 1755.85 L1183.53 1747 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip070)" d="M1255.77 1766.43 L1265.35 1766.43 L1265.35 1824.76 L1255.77 1824.76 L1255.77 1766.43 M1255.77 1743.72 L1265.35 1743.72 L1265.35 1755.85 L1255.77 1755.85 L1255.77 1743.72 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip070)" d="M1330.82 1777.62 Q1334.41 1771.17 1339.41 1768.09 Q1344.41 1765.02 1351.18 1765.02 Q1360.3 1765.02 1365.24 1771.43 Q1370.19 1777.78 1370.19 1789.55 L1370.19 1824.76 L1360.56 1824.76 L1360.56 1789.86 Q1360.56 1781.48 1357.59 1777.42 Q1354.62 1773.35 1348.53 1773.35 Q1341.08 1773.35 1336.76 1778.3 Q1332.43 1783.25 1332.43 1791.79 L1332.43 1824.76 L1322.8 1824.76 L1322.8 1789.86 Q1322.8 1781.43 1319.83 1777.42 Q1316.86 1773.35 1310.66 1773.35 Q1303.32 1773.35 1298.99 1778.35 Q1294.67 1783.3 1294.67 1791.79 L1294.67 1824.76 L1285.04 1824.76 L1285.04 1766.43 L1294.67 1766.43 L1294.67 1775.49 Q1297.95 1770.12 1302.54 1767.57 Q1307.12 1765.02 1313.42 1765.02 Q1319.78 1765.02 1324.2 1768.25 Q1328.68 1771.48 1330.82 1777.62 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip070)" d="M1439.2 1793.2 L1439.2 1797.88 L1395.14 1797.88 Q1395.77 1807.78 1401.08 1812.99 Q1406.44 1818.15 1415.97 1818.15 Q1421.49 1818.15 1426.65 1816.79 Q1431.86 1815.44 1436.96 1812.73 L1436.96 1821.79 Q1431.81 1823.98 1426.39 1825.12 Q1420.97 1826.27 1415.4 1826.27 Q1401.44 1826.27 1393.27 1818.15 Q1385.14 1810.02 1385.14 1796.17 Q1385.14 1781.84 1392.85 1773.46 Q1400.61 1765.02 1413.73 1765.02 Q1425.5 1765.02 1432.33 1772.62 Q1439.2 1780.18 1439.2 1793.2 M1429.62 1790.38 Q1429.52 1782.52 1425.19 1777.83 Q1420.92 1773.15 1413.84 1773.15 Q1405.82 1773.15 1400.97 1777.68 Q1396.18 1782.21 1395.45 1790.44 L1429.62 1790.38 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip070)" d="M17.8124 893.471 L28.0728 893.471 Q25.2082 899.461 23.802 904.773 Q22.3957 910.085 22.3957 915.033 Q22.3957 923.627 25.729 928.315 Q29.0624 932.95 35.2082 932.95 Q40.3644 932.95 43.0206 929.877 Q45.6248 926.752 47.2393 918.106 L48.5414 911.752 Q50.781 899.981 56.458 894.408 Q62.083 888.784 71.5621 888.784 Q82.8642 888.784 88.6975 896.388 Q94.5308 903.94 94.5308 918.575 Q94.5308 924.096 93.2808 930.346 Q92.0308 936.544 89.5829 943.21 L78.7496 943.21 Q82.3433 936.804 84.1662 930.658 Q85.9891 924.512 85.9891 918.575 Q85.9891 909.565 82.4475 904.669 Q78.9058 899.773 72.3434 899.773 Q66.6142 899.773 63.3851 903.315 Q60.1559 906.804 58.5414 914.825 L57.2914 921.231 Q54.9476 933.002 49.9477 938.262 Q44.9477 943.523 36.0415 943.523 Q25.729 943.523 19.7916 936.283 Q13.8541 928.992 13.8541 916.231 Q13.8541 910.763 14.8437 905.086 Q15.8333 899.408 17.8124 893.471 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip070)" d="M18.1249 863.315 L34.6873 863.315 L34.6873 843.575 L42.1352 843.575 L42.1352 863.315 L73.8017 863.315 Q80.9371 863.315 82.9683 861.388 Q84.9996 859.409 84.9996 853.419 L84.9996 843.575 L93.0203 843.575 L93.0203 853.419 Q93.0203 864.513 88.9058 868.732 Q84.7391 872.95 73.8017 872.95 L42.1352 872.95 L42.1352 879.981 L34.6873 879.981 L34.6873 872.95 L18.1249 872.95 L18.1249 863.315 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip070)" d="M63.6976 804.461 Q63.6976 816.076 66.3538 820.555 Q69.0101 825.034 75.4163 825.034 Q80.5204 825.034 83.5412 821.701 Q86.51 818.315 86.51 812.534 Q86.51 804.565 80.885 799.774 Q75.2079 794.93 65.833 794.93 L63.6976 794.93 L63.6976 804.461 M59.7393 785.347 L93.0203 785.347 L93.0203 794.93 L84.1662 794.93 Q89.4787 798.211 92.0308 803.107 Q94.5308 808.003 94.5308 815.086 Q94.5308 824.044 89.5308 829.357 Q84.4787 834.617 76.0413 834.617 Q66.1976 834.617 61.1976 828.055 Q56.1976 821.44 56.1976 808.367 L56.1976 794.93 L55.2601 794.93 Q48.6456 794.93 45.0519 799.305 Q41.406 803.628 41.406 811.492 Q41.406 816.492 42.6039 821.232 Q43.8019 825.971 46.1977 830.346 L37.3436 830.346 Q35.3123 825.086 34.3227 820.138 Q33.2811 815.19 33.2811 810.503 Q33.2811 797.847 39.8435 791.597 Q46.406 785.347 59.7393 785.347 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip070)" d="M18.1249 756.128 L34.6873 756.128 L34.6873 736.389 L42.1352 736.389 L42.1352 756.128 L73.8017 756.128 Q80.9371 756.128 82.9683 754.201 Q84.9996 752.222 84.9996 746.232 L84.9996 736.389 L93.0203 736.389 L93.0203 746.232 Q93.0203 757.326 88.9058 761.545 Q84.7391 765.763 73.8017 765.763 L42.1352 765.763 L42.1352 772.795 L34.6873 772.795 L34.6873 765.763 L18.1249 765.763 L18.1249 756.128 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip070)" d="M61.458 673.889 L66.1455 673.889 L66.1455 717.951 Q76.0413 717.326 81.2496 712.014 Q86.4058 706.649 86.4058 697.118 Q86.4058 691.597 85.0516 686.441 Q83.6975 681.233 80.9892 676.128 L90.0516 676.128 Q92.2391 681.285 93.3849 686.701 Q94.5308 692.118 94.5308 697.691 Q94.5308 711.649 86.4058 719.826 Q78.2808 727.951 64.4267 727.951 Q50.1039 727.951 41.7185 720.243 Q33.2811 712.482 33.2811 699.357 Q33.2811 687.587 40.8852 680.764 Q48.4373 673.889 61.458 673.889 M58.6455 683.472 Q50.781 683.576 46.0935 687.899 Q41.406 692.17 41.406 699.253 Q41.406 707.274 45.9373 712.118 Q50.4685 716.909 58.6976 717.639 L58.6455 683.472 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><polyline clip-path="url(#clip072)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="292.67,1189.44 2330.06,427.975 "></polyline>
-<circle clip-path="url(#clip072)" cx="292.67" cy="1189.44" r="36" fill="#000000" fill-rule="evenodd" fill-opacity="1" stroke="none"></circle>
-<circle clip-path="url(#clip072)" cx="2330.06" cy="427.975" r="36" fill="#000000" fill-rule="evenodd" fill-opacity="1" stroke="none"></circle>
-</svg>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<h3 id="stochastic-models">Stochastic Models</h3>
-<div id="8" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="1">
-<!--?xml version="1.0" encoding="utf-8"?-->
-<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="960" height="480" viewbox="0 0 3840 1920">
-<defs>
-  <clippath id="clip130">
-    <rect x="0" y="0" width="3840" height="1920"></rect>
-  </clippath>
-</defs>
-<path clip-path="url(#clip130)" d="M0 1920 L3840 1920 L3840 0 L0 0  Z" fill="#ffffff" fill-rule="evenodd" fill-opacity="1"></path>
-<defs>
-  <clippath id="clip131">
-    <rect x="768" y="0" width="2689" height="1920"></rect>
-  </clippath>
-</defs>
-<path clip-path="url(#clip130)" d="M231.548 1570.17 L2391.18 1570.17 L2391.18 47.2441 L231.548 47.2441  Z" fill="#ffffff" fill-rule="evenodd" fill-opacity="1"></path>
-<defs>
-  <clippath id="clip132">
-    <rect x="231" y="47" width="2161" height="1524"></rect>
-  </clippath>
-</defs>
-<polyline clip-path="url(#clip132)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:2; stroke-opacity:1; fill:none" points="292.67,1570.17 292.67,47.2441 "></polyline>
-<polyline clip-path="url(#clip132)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:2; stroke-opacity:1; fill:none" points="2330.06,1570.17 2330.06,47.2441 "></polyline>
-<polyline clip-path="url(#clip130)" style="stroke:#ffffff; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="231.548,1570.17 2391.18,1570.17 "></polyline>
-<polyline clip-path="url(#clip130)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="292.67,1570.17 292.67,1551.27 "></polyline>
-<polyline clip-path="url(#clip130)" style="stroke:#000000; stroke-linecap:round; stroke-linejoin:round; stroke-width:4; stroke-opacity:1; fill:none" points="2330.06,1570.17 2330.06,1551.27 "></polyline>
-<path clip-path="url(#clip130)" d="M291.304 1620.71 L291.304 1635.44 L308.85 1635.44 L308.85 1642.06 L291.304 1642.06 L291.304 1670.2 Q291.304 1676.55 293.017 1678.35 Q294.776 1680.16 300.101 1680.16 L308.85 1680.16 L308.85 1687.29 L300.101 1687.29 Q290.239 1687.29 286.49 1683.63 Q282.74 1679.93 282.74 1670.2 L282.74 1642.06 L276.49 1642.06 L276.49 1635.44 L282.74 1635.44 L282.74 1620.71 L291.304 1620.71 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip130)" d="M2262.05 1620.71 L2262.05 1635.44 L2279.6 1635.44 L2279.6 1642.06 L2262.05 1642.06 L2262.05 1670.2 Q2262.05 1676.55 2263.76 1678.35 Q2265.52 1680.16 2270.85 1680.16 L2279.6 1680.16 L2279.6 1687.29 L2270.85 1687.29 Q2260.99 1687.29 2257.24 1683.63 Q2253.49 1679.93 2253.49 1670.2 L2253.49 1642.06 L2247.24 1642.06 L2247.24 1635.44 L2253.49 1635.44 L2253.49 1620.71 L2262.05 1620.71 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip130)" d="M2325.48 1627.84 L2325.48 1653.63 L2351.26 1653.63 L2351.26 1661.5 L2325.48 1661.5 L2325.48 1687.29 L2317.7 1687.29 L2317.7 1661.5 L2291.91 1661.5 L2291.91 1653.63 L2317.7 1653.63 L2317.7 1627.84 L2325.48 1627.84 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip130)" d="M2373.07 1679.42 L2388.35 1679.42 L2388.35 1626.69 L2371.73 1630.02 L2371.73 1621.5 L2388.25 1618.17 L2397.61 1618.17 L2397.61 1679.42 L2412.88 1679.42 L2412.88 1687.29 L2373.07 1687.29 L2373.07 1679.42 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip130)" d="M1183.53 1747 L1249.31 1747 L1249.31 1755.85 L1221.7 1755.85 L1221.7 1824.76 L1211.13 1824.76 L1211.13 1755.85 L1183.53 1755.85 L1183.53 1747 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip130)" d="M1255.77 1766.43 L1265.35 1766.43 L1265.35 1824.76 L1255.77 1824.76 L1255.77 1766.43 M1255.77 1743.72 L1265.35 1743.72 L1265.35 1755.85 L1255.77 1755.85 L1255.77 1743.72 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip130)" d="M1330.82 1777.62 Q1334.41 1771.17 1339.41 1768.09 Q1344.41 1765.02 1351.18 1765.02 Q1360.3 1765.02 1365.24 1771.43 Q1370.19 1777.78 1370.19 1789.55 L1370.19 1824.76 L1360.56 1824.76 L1360.56 1789.86 Q1360.56 1781.48 1357.59 1777.42 Q1354.62 1773.35 1348.53 1773.35 Q1341.08 1773.35 1336.76 1778.3 Q1332.43 1783.25 1332.43 1791.79 L1332.43 1824.76 L1322.8 1824.76 L1322.8 1789.86 Q1322.8 1781.43 1319.83 1777.42 Q1316.86 1773.35 1310.66 1773.35 Q1303.32 1773.35 1298.99 1778.35 Q1294.67 1783.3 1294.67 1791.79 L1294.67 1824.76 L1285.04 1824.76 L1285.04 1766.43 L1294.67 1766.43 L1294.67 1775.49 Q1297.95 1770.12 1302.54 1767.57 Q1307.12 1765.02 1313.42 1765.02 Q1319.78 1765.02 1324.2 1768.25 Q1328.68 1771.48 1330.82 1777.62 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip130)" d="M1439.2 1793.2 L1439.2 1797.88 L1395.14 1797.88 Q1395.77 1807.78 1401.08 1812.99 Q1406.44 1818.15 1415.97 1818.15 Q1421.49 1818.15 1426.65 1816.79 Q1431.86 1815.44 1436.96 1812.73 L1436.96 1821.79 Q1431.81 1823.98 1426.39 1825.12 Q1420.97 1826.27 1415.4 1826.27 Q1401.44 1826.27 1393.27 1818.15 Q1385.14 1810.02 1385.14 1796.17 Q1385.14 1781.84 1392.85 1773.46 Q1400.61 1765.02 1413.73 1765.02 Q1425.5 1765.02 1432.33 1772.62 Q1439.2 1780.18 1439.2 1793.2 M1429.62 1790.38 Q1429.52 1782.52 1425.19 1777.83 Q1420.92 1773.15 1413.84 1773.15 Q1405.82 1773.15 1400.97 1777.68 Q1396.18 1782.21 1395.45 1790.44 L1429.62 1790.38 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip130)" d="M17.8124 893.471 L28.0728 893.471 Q25.2082 899.461 23.802 904.773 Q22.3957 910.085 22.3957 915.033 Q22.3957 923.627 25.729 928.315 Q29.0624 932.95 35.2082 932.95 Q40.3644 932.95 43.0206 929.877 Q45.6248 926.752 47.2393 918.106 L48.5414 911.752 Q50.781 899.981 56.458 894.408 Q62.083 888.784 71.5621 888.784 Q82.8642 888.784 88.6975 896.388 Q94.5308 903.94 94.5308 918.575 Q94.5308 924.096 93.2808 930.346 Q92.0308 936.544 89.5829 943.21 L78.7496 943.21 Q82.3433 936.804 84.1662 930.658 Q85.9891 924.512 85.9891 918.575 Q85.9891 909.565 82.4475 904.669 Q78.9058 899.773 72.3434 899.773 Q66.6142 899.773 63.3851 903.315 Q60.1559 906.804 58.5414 914.825 L57.2914 921.231 Q54.9476 933.002 49.9477 938.262 Q44.9477 943.523 36.0415 943.523 Q25.729 943.523 19.7916 936.283 Q13.8541 928.992 13.8541 916.231 Q13.8541 910.763 14.8437 905.086 Q15.8333 899.408 17.8124 893.471 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip130)" d="M18.1249 863.315 L34.6873 863.315 L34.6873 843.575 L42.1352 843.575 L42.1352 863.315 L73.8017 863.315 Q80.9371 863.315 82.9683 861.388 Q84.9996 859.409 84.9996 853.419 L84.9996 843.575 L93.0203 843.575 L93.0203 853.419 Q93.0203 864.513 88.9058 868.732 Q84.7391 872.95 73.8017 872.95 L42.1352 872.95 L42.1352 879.981 L34.6873 879.981 L34.6873 872.95 L18.1249 872.95 L18.1249 863.315 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip130)" d="M63.6976 804.461 Q63.6976 816.076 66.3538 820.555 Q69.0101 825.034 75.4163 825.034 Q80.5204 825.034 83.5412 821.701 Q86.51 818.315 86.51 812.534 Q86.51 804.565 80.885 799.774 Q75.2079 794.93 65.833 794.93 L63.6976 794.93 L63.6976 804.461 M59.7393 785.347 L93.0203 785.347 L93.0203 794.93 L84.1662 794.93 Q89.4787 798.211 92.0308 803.107 Q94.5308 808.003 94.5308 815.086 Q94.5308 824.044 89.5308 829.357 Q84.4787 834.617 76.0413 834.617 Q66.1976 834.617 61.1976 828.055 Q56.1976 821.44 56.1976 808.367 L56.1976 794.93 L55.2601 794.93 Q48.6456 794.93 45.0519 799.305 Q41.406 803.628 41.406 811.492 Q41.406 816.492 42.6039 821.232 Q43.8019 825.971 46.1977 830.346 L37.3436 830.346 Q35.3123 825.086 34.3227 820.138 Q33.2811 815.19 33.2811 810.503 Q33.2811 797.847 39.8435 791.597 Q46.406 785.347 59.7393 785.347 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip130)" d="M18.1249 756.128 L34.6873 756.128 L34.6873 736.389 L42.1352 736.389 L42.1352 756.128 L73.8017 756.128 Q80.9371 756.128 82.9683 754.201 Q84.9996 752.222 84.9996 746.232 L84.9996 736.389 L93.0203 736.389 L93.0203 746.232 Q93.0203 757.326 88.9058 761.545 Q84.7391 765.763 73.8017 765.763 L42.1352 765.763 L42.1352 772.795 L34.6873 772.795 L34.6873 765.763 L18.1249 765.763 L18.1249 756.128 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><path clip-path="url(#clip130)" d="M61.458 673.889 L66.1455 673.889 L66.1455 717.951 Q76.0413 717.326 81.2496 712.014 Q86.4058 706.649 86.4058 697.118 Q86.4058 691.597 85.0516 686.441 Q83.6975 681.233 80.9892 676.128 L90.0516 676.128 Q92.2391 681.285 93.3849 686.701 Q94.5308 692.118 94.5308 697.691 Q94.5308 711.649 86.4058 719.826 Q78.2808 727.951 64.4267 727.951 Q50.1039 727.951 41.7185 720.243 Q33.2811 712.482 33.2811 699.357 Q33.2811 687.587 40.8852 680.764 Q48.4373 673.889 61.458 673.889 M58.6455 683.472 Q50.781 683.576 46.0935 687.899 Q41.406 692.17 41.406 699.253 Q41.406 707.274 45.9373 712.118 Q50.4685 716.909 58.6976 717.639 L58.6455 683.472 Z" fill="#000000" fill-rule="nonzero" fill-opacity="1"></path><polyline clip-path="url(#clip132)" style="stroke:#009af9; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="292.67,1189.44 2330.06,617.915 "></polyline>
-<circle clip-path="url(#clip132)" cx="292.67" cy="1189.44" r="36" fill="#009af9" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip132)" cx="2330.06" cy="617.915" r="36" fill="#009af9" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<polyline clip-path="url(#clip132)" style="stroke:#e26f46; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="292.67,1189.44 2330.06,275.209 "></polyline>
-<circle clip-path="url(#clip132)" cx="292.67" cy="1189.44" r="36" fill="#e26f46" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip132)" cx="2330.06" cy="275.209" r="36" fill="#e26f46" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<polyline clip-path="url(#clip132)" style="stroke:#3da44d; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="292.67,1189.44 2330.06,349.891 "></polyline>
-<circle clip-path="url(#clip132)" cx="292.67" cy="1189.44" r="36" fill="#3da44d" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip132)" cx="2330.06" cy="349.891" r="36" fill="#3da44d" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<polyline clip-path="url(#clip132)" style="stroke:#c271d2; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="292.67,1189.44 2330.06,1085.34 "></polyline>
-<circle clip-path="url(#clip132)" cx="292.67" cy="1189.44" r="36" fill="#c271d2" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip132)" cx="2330.06" cy="1085.34" r="36" fill="#c271d2" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<polyline clip-path="url(#clip132)" style="stroke:#ac8d18; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="292.67,1189.44 2330.06,744.022 "></polyline>
-<circle clip-path="url(#clip132)" cx="292.67" cy="1189.44" r="36" fill="#ac8d18" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip132)" cx="2330.06" cy="744.022" r="36" fill="#ac8d18" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<polyline clip-path="url(#clip132)" style="stroke:#00a9ad; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="292.67,1189.44 2330.06,188.096 "></polyline>
-<circle clip-path="url(#clip132)" cx="292.67" cy="1189.44" r="36" fill="#00a9ad" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip132)" cx="2330.06" cy="188.096" r="36" fill="#00a9ad" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<polyline clip-path="url(#clip132)" style="stroke:#ed5d92; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="292.67,1189.44 2330.06,846.088 "></polyline>
-<circle clip-path="url(#clip132)" cx="292.67" cy="1189.44" r="36" fill="#ed5d92" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip132)" cx="2330.06" cy="846.088" r="36" fill="#ed5d92" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<polyline clip-path="url(#clip132)" style="stroke:#c68125; stroke-linecap:round; stroke-linejoin:round; stroke-width:12; stroke-opacity:1; fill:none" points="292.67,1189.44 2330.06,1244.68 "></polyline>
-<circle clip-path="url(#clip132)" cx="292.67" cy="1189.44" r="36" fill="#c68125" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip132)" cx="2330.06" cy="1244.68" r="36" fill="#c68125" fill-rule="evenodd" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="3.84"></circle>
-<circle clip-path="url(#clip132)" cx="292.67" cy="1189.44" r="36" fill="#000000" fill-rule="evenodd" fill-opacity="1" stroke="none"></circle>
-</svg>
-</div>
-</div>
-</div></div>
-</section>
-<section id="descriptive-vs.-prescriptive-models" class="slide level2">
-<h2>Descriptive vs.&nbsp;Prescriptive Models</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="descriptive-models">Descriptive Models</h3>
+<section id="other-aspects-of-models" class="slide level2">
+<h2>Other Aspects of Models</h2>
 <ul>
-<li>Used primarily for describing or simulating dynamics.</li>
-<li>Intended for <em>simulations</em> and <em>exploratory</em> and/or <em>Monte Carlo analysis</em>.</li>
+<li>Deterministic vs.&nbsp;Stochastic</li>
+<li>Descriptive vs.&nbsp;Prescriptive</li>
+<li>Mechanistic vs.&nbsp;Statistical</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<div class="fragment fade-in">
-<!-- -->
-<h3 id="prescriptive-models">Prescriptive Models</h3>
-<ul>
-<li>Specify (prescribe) an action, decision, or policy.</li>
-<li>Intended for <em>optimization</em> or <em>decision analysis</em>.</li>
-</ul>
-</div>
-</div></div>
-</section>
-<section id="analytic-vs.-numerical-solutions" class="slide level2">
-<h2>Analytic vs.&nbsp;Numerical Solutions</h2>
-<p>Mathematical models can be solved:</p>
-<ol type="1">
-<li><strong>Analytically</strong>: can find the exact solution in closed form;</li>
-<li><strong>Numerically</strong>: can only find solutions (exact or approximate) using computational tools.</li>
-</ol>
 </section>
 <section id="all-models-are-wrong-but-some-are-useful" class="slide level2">
 <h2>“All Models Are Wrong, But Some Are Useful”</h2>
@@ -759,75 +469,317 @@ Figure&nbsp;1: Illustration of a system, including notation.
 </div>
 </div>
 </section>
-<section id="what-are-models-good-for" class="slide level2">
-<h2>What Are Models Good For?</h2>
-<div class="quote">
-<blockquote>
-<p>Models can corroborate a hypothesis by offering evidence to strengthen what may be already partly established through other means…</p>
-<p><strong>Thus, the primary value of models is heuristic: Models are representations, useful for guiding further study but not susceptible to proof.</strong></p>
-</blockquote>
-<div class="cite">
-<p>— Oreskes et al, <a href="https://www.science.org/doi/10.1126/science.263.5147.641">“Verification, Validation, and Confirmation of Numerical Models in the Earth Sciences”</a>, 1994</p>
+<section id="questions" class="slide level2">
+<h2>Questions?</h2>
+<div class="columns center">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/vsrikrish-poll.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<p><strong>Text</strong>: VSRIKRISH to 22333</p>
+<p><strong>URL</strong>: <a href="https://pollev.com/vsrikrish">https://pollev.com/vsrikrish</a> <br><br> <a href="https://www.polleverywhere.com/multiple_choice_polls/qKeig0hHShZYHAOmvZtZm?preview=true&amp;controls=none" data-preview-link="true">See Results</a></p>
+</div></div>
+</section></section>
+<section>
+<section id="lake-eutrophication-overview" class="title-slide slide level1 center">
+<h1>Lake Eutrophication Overview</h1>
+
+</section>
+<section id="what-is-eutrophication" class="slide level2">
+<h2>What is Eutrophication?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Eutrophication</strong>: common environmental problem in which plants and algae feed on excess nutrients and become overabundant.</p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://bloximages.chicago2.vip.townnews.com/ithaca.com/content/tncms/assets/v3/editorial/a/68/a68bf742-fabf-11eb-a12a-63bb6e876a8a/6113f82477bb7.image.jpg"></p>
+<figcaption>Algae Bloom in Cayuga Lake in July 2021</figcaption>
+</figure>
+</div>
+</div><div class="caption">
+<p><em>Source</em>: <a href="https://www.ithaca.com/news/ithaca/climate-change-shore-run-off-lead-to-increase-in-harmful-algal-blooms/article_2e3894a8-fabf-11eb-be74-bb1ee74a5f89.html">Ithaca Journal</a></p>
 </div>
 </div>
 </section>
-<section id="models-and-assumptions" class="slide level2">
-<h2>Models And Assumptions</h2>
+<section id="effects-of-lake-eutrophication" class="slide level2">
+<h2>Effects of Lake Eutrophication</h2>
+<ul>
+<li><strong>hypoxia</strong> (reduction in oxygen from the decomposition of organic matter), leading to “dead zones”;</li>
+<li><strong>acidification</strong>(from the CO<sub>2</sub> produced by decomposition);</li>
+<li><strong>reduced sunlight</strong> (from an accumulation of surface algae);</li>
+<li><strong>clogged water intakes</strong>; and</li>
+<li><strong>reduction in recreational value and drinking water quality</strong>.</li>
+</ul>
+</section>
+<section id="lake-eutrophication-dynamics" class="slide level2">
+<h2>Lake Eutrophication Dynamics</h2>
 
-<img data-src="https://imgs.xkcd.com/comics/university_covid_model_2x.png" class="r-stretch quarto-figure-center"><p class="caption">XKCD Comic 2355</p><div class="caption">
-<p>Source: <a href="https://xkcd.com/2355">XKCD 2355</a></p>
+<img data-src="figures/eutrophication-system-schematic.svg" class="r-stretch quarto-figure-center"><p class="caption">Schematic of processes resulting in lake eutrophication</p></section>
+<section id="lake-eutrophication-causes" class="slide level2">
+<h2>Lake Eutrophication Causes</h2>
+<p>Excess N and P can come from:</p>
+<ul>
+<li>point sources (such as industrial/sewage processes); and/or</li>
+<li><strong>non-point sources (such as agricultural runoff)</strong>.</li>
+</ul>
+<p>Excess nutrients are stored in sediment and recycled back into the lake, as well as transported by organisms/consumers.</p>
+</section>
+<section id="non-point-source-pollution" class="slide level2">
+<h2>Non-Point Source Pollution</h2>
+<p><strong>Non-Point Source (NPS) Pollution</strong>: Intermittent, distributed waste input to surface or groundwater</p>
+</section>
+<section id="types-of-nps-pollution" class="slide level2">
+<h2>Types of NPS Pollution</h2>
+<ul>
+<li><strong>Excess fertilizers, herbicides, insecticides</strong> (ag runoff)</li>
+<li><strong>Oil, grease, chemicals</strong> (urban runoff, energy production)</li>
+<li><strong>Sediment</strong> from constructions sites, crop/forest land, eroding streambanks</li>
+<li><strong>Salts</strong> from irrigation and acid drainage</li>
+<li><strong>Bacteria and nutrients</strong> (livestock, pet wastes, septic systems)</li>
+<li><strong>Atmospheric deposition</strong></li>
+</ul>
+</section>
+<section id="nps-pollution-flows" class="slide level2">
+<h2>NPS Pollution Flows</h2>
+
+<img data-src="https://amwater.com/wvaw/resources/images/examples%20of%20source%20water%20contamination.jpg?language_id=1" class="r-stretch quarto-figure-center"><p class="caption">Flows of Surface Water Contamination</p><div class="caption">
+<p><em>Source</em>: <a href="https://amwater.com/wvaw/water-wastewater-information/water-learning-center/source-water">American Water</a></p>
 </div>
+</section>
+<section id="management-of-eutrophication" class="slide level2">
+<h2>Management of Eutrophication</h2>
+<p>It can be difficult to restore to <em>oligotrophic</em> state:</p>
+<ul>
+<li>Reduce N and P going forward to reduce pressure;</li>
+<li>Remove and treat sediment/water;</li>
+<li>Biofiltration.</li>
+</ul>
+<p>Restoration takes a long time and is not guaranteed (<strong>hysteresis</strong>)!</p>
+</section></section>
+<section>
+<section id="eutrophication-modeling-example" class="title-slide slide level1 center">
+<h1>Eutrophication Modeling Example</h1>
+
+</section>
+<section id="watershed-as-environmental-system" class="slide level2">
+<h2>Watershed As Environmental System</h2>
+
+<img data-src="figures/system-environmental.svg" class="r-stretch quarto-figure-center"><p class="caption">Conceptual Model of an Environmental System</p></section>
+<section id="watershedlake-systems-diagram" class="slide level2">
+<h2>Watershed/Lake Systems Diagram</h2>
+
+<img data-src="figures/eutrophication-system-diagram.svg" class="r-stretch quarto-figure-center"><p class="caption">Conceptual Model of an Environmental System</p></section>
+<section id="watershedlake-systems-diagram-1" class="slide level2">
+<h2>Watershed/Lake Systems Diagram</h2>
+
+<img data-src="figures/eutrophication-system-diagram.svg" style="width:70.0%" class="r-stretch quarto-figure-center"><p class="caption">Conceptual Model of an Environmental System</p><ul>
+<li><span class="math inline">\(V = 600 \times 10^6\ m^3\)</span></li>
+<li><span class="math inline">\(A = 30 \times 10^6\ m^2\)</span></li>
+<li><span class="math inline">\(Q_\text{in} = Q_\text{out} = 400 \times 10^6\ m^3/yr\)</span></li>
+</ul>
+</section>
+<section id="information-needs" class="slide level2">
+<h2>Information Needs</h2>
+<ol type="1">
+<li>What will happen to the waste in the environment (fate &amp; transport)?</li>
+<li>What are potential impacts and acceptable levels or critical thresholds?</li>
+<li><em>What are options to manage the waste?</em></li>
+</ol>
+</section>
+<section id="fate-transport" class="slide level2">
+<h2>Fate &amp; Transport</h2>
+<p><strong>Common Approach</strong>: Mass-Balance</p>
+<p><span class="math display">\[\frac{\partial\text{Mass}}{\partial t} = \text{Inputs} - \text{Outputs} - \text{Decay}\]</span></p>
+</section>
+<section id="fate-transport-1" class="slide level2">
+<h2>Fate &amp; Transport</h2>
+<p>Assuming steady-state and decay is linear w.r.t mass:</p>
+<p><span class="math display">\[\begin{align*}
+\frac{\partial\text{Mass}}{\partial t} &amp;= \text{Inputs} - \text{Outputs} - \text{Decay} = 0 \\
+\frac{\partial(CV)}{\partial t} &amp;= \sum_j PS_j + \sum_i NPS_i - CQ_\text{out} - \alpha CV = 0
+\end{align*}\]</span></p>
+</section>
+<section id="fate-transport-2" class="slide level2">
+<h2>Fate &amp; Transport</h2>
+<p><span class="math display">\[
+\begin{gather*}
+\sum_j PS_j + \sum_i NPS_i - CQ_\text{out} - \alpha CV = 0 \\
+\Rightarrow \qquad C(Q_\text{out} + \alpha V) = \sum_j PS_j + \sum_i NPS_i \\
+\Rightarrow \qquad \bbox[5pt, border: 5px solid red]{C = \frac{\sum_j PS_j + \sum_i NPS_i}{Q_\text{out} + \alpha V}}
+\end{gather*}
+\]</span></p>
+</section>
+<section id="other-ways-to-write" class="slide level2">
+<h2>Other Ways To Write</h2>
+<p><span class="math display">\[
+\begin{align*}
+C &amp;= \frac{\sum_i \frac{P_i}{V}}{\frac{Q}{V} + \alpha} \\
+&amp;= \frac{\sum_i \frac{P_i}{V}}{\tau_w^{-1} + \alpha} \\
+&amp;= \frac{\sum_i \frac{P_i}{V}}{\sum_j k_j}
+\end{align*}
+\]</span></p>
+</section>
+<section id="ft-model-assumptions" class="slide level2">
+<h2>F&amp;T Model Assumptions</h2>
+<div class="fragment fade-in">
+<p><strong>What does this model assume?</strong></p>
+</div>
+<ul>
+<li>Steady-state (<span class="math inline">\(\partial\text{Mass} / \partial t = 0\)</span>)</li>
+<li>1st order (linear) decay</li>
+<li>Lake is:
+<ul>
+<li>Well-mixed</li>
+<li>Constant volume</li>
+</ul></li>
+</ul>
+</section>
+<section id="environmental-impacts" class="slide level2">
+<h2>Environmental Impacts</h2>
+<p><strong>What are potential impacts and acceptable levels or critical thresholds?</strong></p>
+<p>Generally need to limit average P concentrations to <span class="math inline">\(&lt; 0.01-0.02\)</span> mg/L.</p>
+</section>
+<section id="incorporating-threshold" class="slide level2">
+<h2>Incorporating Threshold</h2>
+<p><span class="math display">\[\begin{align*}
+C = \frac{\sum_j PS_j + \sum_i NPS_i}{Q_\text{out} + \alpha V} &amp;\leq \left(0.01\ \text{mg/L}\right)\left(\frac{1\ \text{mg/L}}{1000\ \text{kg/m}^3}\right) \\[0.5em]
+\Rightarrow \qquad \sum_j PS_j + \sum_i NPS_i &amp;\leq \left(1 \times 10^{-5}\right) \left(Q_\text{out} + \alpha V\right)
+\end{align*}\]</span></p>
+</section>
+<section id="what-is-the-decay-rate" class="slide level2">
+<h2>What Is The Decay Rate?</h2>
+<p>Vollenweider model for lake P sedimentation:</p>
+<p><span class="math display">\[\alpha = \frac{10}{\bar{H}} \approx \frac{10A}{V}\]</span></p>
+<div class="fragment fade-in">
+<p><span class="math display">\[\begin{gather*}
+\Rightarrow \qquad \sum_j PS_j + \sum_i NPS_i \leq \left(1 \times 10^{-5}\right) \left(Q_\text{out} + 10A\right)  \\
+\Rightarrow \qquad \sum_j PS_j + \sum_i NPS_i \leq 7000\ \text{kg/yr}  \\
+\end{gather*}\]</span></p>
+</div>
+</section>
+<section id="nps-from-watershed-land-use" class="slide level2">
+<h2>NPS from Watershed Land Use</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Type</th>
+<th style="text-align: right;">Area (ha)</th>
+<th style="text-align: right;">Unit P Load (kg/ha)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Forest</td>
+<td style="text-align: right;">20,000</td>
+<td style="text-align: right;">0.11</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Corn</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Pasture</td>
+<td style="text-align: right;">3,000</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Residential</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">1.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Business</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">3.0</td>
+</tr>
+</tbody>
+</table>
+<p>Unit loads taken from <span class="citation" data-cites="Osmond1997">Osmond et al. (<a href="#/references-1" role="doc-biblioref" onclick="">1997</a>)</span>.</p>
+</section>
+<section id="nps-from-watershed-land-use-1" class="slide level2">
+<h2>NPS from Watershed Land Use</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Type</th>
+<th style="text-align: right;">Area (ha)</th>
+<th style="text-align: right;">Unit P Load (kg/ha)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Forest</td>
+<td style="text-align: right;">20,000</td>
+<td style="text-align: right;">0.11</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Corn</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Pasture</td>
+<td style="text-align: right;">3,000</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Residential</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">1.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Business</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">3.0</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\sum_i NPS_i = 9000\ \text{kg}\]</span></p>
+</section>
+<section id="implications" class="slide level2">
+<h2>Implications…</h2>
+<p>In other words, the “typical” NPS load is</p>
+<p><span class="math display">\[\sum_i NPS_i = 9000\ \text{kg}.\]</span></p>
+<p>This is greater than the acceptable total P load for a target concentration of 0.01 mg/L!</p>
+<div class="fragment fade-in">
+<p><strong>What can we do?</strong></p>
+</div>
+</section>
+<section id="prescriptive-vs.-descriptive-modeling" class="slide level2">
+<h2>Prescriptive vs.&nbsp;Descriptive Modeling</h2>
+<p>What we do next depends on whether we’re taking a prescriptive or a descriptive approach.</p>
+<div>
+<ul>
+<li class="fragment"><strong>Prescriptive</strong>: How should we treat PS waste/control NPS load to ensure compliance?</li>
+<li class="fragment"><strong>Descriptive</strong>: How will the lake respond to different point and non-point source contributions?</li>
+</ul>
+</div>
+</section>
+<section id="what-about-non-steady-state" class="slide level2">
+<h2>What About Non-Steady State?</h2>
+<p><span class="math display">\[\sum_j PS_j(t) + \sum_i NPS_i(t) - C(t)Q(t) - \alpha C(t)V = F(t)\]</span></p>
+<ul>
+<li>More complex, may not be able to solve analytically!</li>
+<li>Need to use numerical <strong>simulation</strong> methods (next week!)</li>
+</ul>
 </section></section>
 <section>
 <section id="key-takeaways" class="title-slide slide level1 center">
 <h1>Key Takeaways</h1>
 
 </section>
-<section id="key-takeaways-systems" class="slide level2">
-<h2>Key Takeaways (Systems)</h2>
+<section id="key-takeaways-1" class="slide level2">
+<h2>Key Takeaways</h2>
 <ul>
-<li>A <strong>system</strong> is an interconnected set of components.</li>
-<li>Systems are interesting because interconnections can result in unexpected outcomes.</li>
-<li>Key terms:
-<ul>
-<li><strong>state</strong></li>
-<li><strong>stocks</strong></li>
-<li><strong>flows</strong></li>
-</ul></li>
-</ul>
-</section>
-<section id="key-takeaways-systems-definition" class="slide level2">
-<h2>Key Takeaways (Systems Definition)</h2>
-<ul>
-<li>To define a system, need to specify:
-<ul>
-<li>components</li>
-<li>interconnections</li>
-<li>control volume</li>
-<li>external inputs</li>
-<li>outputs of interest</li>
-</ul></li>
-</ul>
-</section>
-<section id="key-takeaways-models" class="slide level2">
-<h2>Key Takeaways (Models)</h2>
-<ul>
-<li>Mathematical models allow us to understand how external inputs combine with internal system dynamics to produce outputs.</li>
-<li>Models can be <strong>prescriptive</strong> or <strong>descriptive</strong> depending on goal of analysis.</li>
-<li>For most interesting problems, cannot solve analytically and need to use numerical methods.</li>
-</ul>
-</section>
-<section id="key-takeaways-models-1" class="slide level2">
-<h2>Key Takeaways (Models)</h2>
-<ul>
-<li><strong>Simulation</strong> models: Generate data by evaluating model to represent system dynamics.</li>
-<li><strong>Optimization</strong> model: Find parameters which maximize/minimize some criterion.</li>
-</ul>
-</section>
-<section id="key-takeaways-warning" class="slide level2">
-<h2>Key Takeaways (Warning!)</h2>
-<ul>
-<li><strong>All models are at best approximations</strong>: be conscious of what assumptions you’ve made and how they might change the modeled outcomes (you will be asked to do this on homeworks).</li>
+<li>Systems modeling lets us account for influence of multiple inputs, controls, and dynamics</li>
+<li>Mass (or equivalent) Balances as starting points for fate &amp; transport models</li>
+<li>Constraints and thresholds from environmental quality/regulatory standards</li>
+<li>Need to identify prescriptive vs.&nbsp;descriptive use for model</li>
 </ul>
 </section></section>
 <section>
@@ -837,12 +789,12 @@ Figure&nbsp;1: Illustration of a system, including notation.
 </section>
 <section id="next-classes" class="slide level2">
 <h2>Next Classes</h2>
-<p><strong>Monday</strong>: Examples of Formulating/Analyzing Models.</p>
-<p><strong>Wednesday</strong>: Overview of System Dynamics</p>
+<p><strong>Wednesday</strong>: System Dynamics (Feedbacks/Bifurcations)</p>
+<p><strong>Next Week</strong>: Simulation Models</p>
 </section>
 <section id="assessments" class="slide level2">
 <h2>Assessments</h2>
-<p><strong>Homework 2</strong>: Due Friday at 9pm.</p>
+<p><strong>Homework 2</strong>: Released, due 9/19 at 9pm</p>
 </section></section>
 <section>
 <section id="references" class="title-slide slide level1 center">
@@ -858,8 +810,8 @@ Figure&nbsp;1: Illustration of a system, including notation.
 </div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-Errickson2021-kr" class="csl-entry" role="listitem">
-Errickson, F. C., Keller, K., Collins, W. D., Srikrishnan, V., &amp; Anthoff, D. (2021). <span class="nocase">Equity is more important for the social cost of methane than climate uncertainty</span>. <em>Nature</em>, <em>592</em>, 564–570. <a href="https://doi.org/10.1038/s41586-021-03386-6">https://doi.org/10.1038/s41586-021-03386-6</a>
+<div id="ref-Osmond1997" class="csl-entry" role="listitem">
+Osmond, D. L., Gannon, R. W., Gale, J. A., Line, D. E., Knott, C. B., Phillips, K. A., et al. (1997). WATERSHEDSS: A decision support system for watershed-scale nonpoint source water quality problems. <em>Journal of the American Water Resources Association</em>, <em>33</em>(2), 327–341. <a href="https://doi.org/10.1111/j.1752-1688.1997.tb03513.x">https://doi.org/10.1111/j.1752-1688.1997.tb03513.x</a>
 </div>
 </div>
 </section></section>

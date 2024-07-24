@@ -4,7 +4,7 @@
     "href": "schedule.html",
     "title": "BEE 4750: Environmental Systems Analysis",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nReading\n\n\n\n\n\n\n\nModule 1: Introduction to Systems Analysis\n\n\n\n\n\n\n\n1\nMon, Aug 26\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 28\nLab: Setting up Julia and GitHub\n\n\n\n\n\n\n\n2\nMon, Sep 02\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 04\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n3\nMon, Sep 09\nModeling Example: Lake Eutrophication\n\n\n\n\n\n\n\n\nWed, Sep 11\nSimulation Modeling\n\n\n\n\n\n\n\n\n\nModule 2: Systems Simulation and Risk\n\n\n\n\n\n\n\n4\nMon, Sep 16\nDissolved Oxygen\n\n\n\n\n\n\n\n\nWed, Sep 18\nSystem Dynamics\n\n\n\n\n\n\n\n5\nMon, Sep 23\nUncertainty and Monte Carlo Simulation\n\n\n\n\n\n\n\n\nWed, Sep 25\nLab: Monte Carlo Simulation\n\n\n\n\n\n\n\n6\nMon, Sep 30\nMultiple Objectives and Tradeoffs\n\n\n\n\n\n\n\n\nWed, Oct 02\nModel Calibration and Validation\n\n\n\n\n\n\n\n\n\nModule 3: Systems Management and Optimization\n\n\n\n\n\n\n\n7\nMon, Oct 07\nLinear Programming\n\n\n\n\n\n\n\n\nWed, Oct 09\nPrelim 1\n\n\n\n\n\n\n\n8\nMon, Oct 14\nNo Class: Fall Break\n\n\n\n\n\n\n\n\nWed, Oct 16\nLab: Optimization with JuMP.jl\n\n\n\n\n\n\n\n9\nMon, Oct 21\nPower Systems and Economic Dispatch\n\n\n\n\n\n\n\n\nWed, Oct 23\nPrelim 1 Review\n\n\n\n\n\n\n\n10\nMon, Oct 28\nFixed Costs and Unit Commitment\n\n\n\n\n\n\n\n\nWed, Oct 30\nNetwork Models\n\n\n\n\n\n\n\n11\nMon, Nov 04\nSimulation-Optimization\n\n\n\n\n\n\n\n\nWed, Nov 06\nLab: Simulation-Optimization\n\n\n\n\n\n\n\n\n\nModule 4: Decision-Making Under Uncertainty\n\n\n\n\n\n\n\n12\nMon, Nov 11\nPrelim 2\n\n\n\n\n\n\n\n\nWed, Nov 13\nRobustness and Sensitivity Analysis\n\n\n\n\n\n\n\n13\nMon, Nov 18\nScenario Trees and Value of Uncertainty\n\n\n\n\n\n\n\n\nWed, Nov 20\nLab: Two-Stage Linear Programs\n\n\n\n\n\n\n\n14\nMon, Nov 25\nPrelim 2 Review\n\n\n\n\n\n\n\n\nWed, Nov 27\nNo Class: Thanksgiving Break\n\n\n\n\n\n\n\n15\nMon, Dec 02\nSequential Decision-Making\n\n\n\n\n\n\n\n\nWed, Dec 04\nClass Review\n\n\n\n\n\n\n\n16\nMon, Dec 09\nNo Class: Project Work",
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nLab\nHW\nReading\n\n\n\n\n\n\n\nModule 1: Introduction to Systems Analysis\n\n\n\n\n\n\n\n1\nMon, Aug 26\nWelcome to BEE 4750!\n\n\n\n\n\n\n\n\nWed, Aug 28\nLab: Setting up Julia and GitHub\n\n\n\n\n\n\n\n2\nMon, Sep 02\nNo Class: Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 04\nIntroduction to Systems Analysis\n\n\n\n\n\n\n\n3\nMon, Sep 09\nModeling Example: Lake Eutrophication\n\n\n\n\n\n\n\n\nWed, Sep 11\nSimulation Modeling\n\n\n\n\n\n\n\n\n\nModule 2: Systems Simulation and Risk\n\n\n\n\n\n\n\n4\nMon, Sep 16\nDissolved Oxygen\n\n\n\n\n\n\n\n\nWed, Sep 18\nSystem Dynamics\n\n\n\n\n\n\n\n5\nMon, Sep 23\nUncertainty and Monte Carlo Simulation\n\n\n\n\n\n\n\n\nWed, Sep 25\nLab: Monte Carlo Simulation\n\n\n\n\n\n\n\n6\nMon, Sep 30\nMonte Carlo: Why It Works\n\n\n\n\n\n\n\n\nWed, Oct 02\nMultiple Objectives and Tradeoffs\n\n\n\n\n\n\n\n\n\nModule 3: Systems Management and Optimization\n\n\n\n\n\n\n\n7\nMon, Oct 07\nLinear Programming\n\n\n\n\n\n\n\n\nWed, Oct 09\nPrelim 1\n\n\n\n\n\n\n\n8\nMon, Oct 14\nNo Class: Fall Break\n\n\n\n\n\n\n\n\nWed, Oct 16\nLab: Optimization with JuMP.jl\n\n\n\n\n\n\n\n9\nMon, Oct 21\nPower Systems and Economic Dispatch\n\n\n\n\n\n\n\n\nWed, Oct 23\nPrelim 1 Review\n\n\n\n\n\n\n\n10\nMon, Oct 28\nFixed Costs and Unit Commitment\n\n\n\n\n\n\n\n\nWed, Oct 30\nNetwork Models\n\n\n\n\n\n\n\n11\nMon, Nov 04\nSimulation-Optimization\n\n\n\n\n\n\n\n\nWed, Nov 06\nLab: Simulation-Optimization\n\n\n\n\n\n\n\n\n\nModule 4: Decision-Making Under Uncertainty\n\n\n\n\n\n\n\n12\nMon, Nov 11\nPrelim 2\n\n\n\n\n\n\n\n\nWed, Nov 13\nRobustness and Sensitivity Analysis\n\n\n\n\n\n\n\n13\nMon, Nov 18\nScenario Trees and Value of Uncertainty\n\n\n\n\n\n\n\n\nWed, Nov 20\nLab: Two-Stage Linear Programs\n\n\n\n\n\n\n\n14\nMon, Nov 25\nPrelim 2 Review\n\n\n\n\n\n\n\n\nWed, Nov 27\nNo Class: Thanksgiving Break\n\n\n\n\n\n\n\n15\nMon, Dec 02\nSequential Decision-Making\n\n\n\n\n\n\n\n\nWed, Dec 04\nClass Review\n\n\n\n\n\n\n\n16\nMon, Dec 09\nNo Class: Project Work",
     "crumbs": [
       "Course Information",
       "Schedule"
@@ -89,7 +89,7 @@
     "href": "hw.html#schedule",
     "title": "Homework",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nSolutions\nDue Date\n\n\n\n\nHW1\n\n\nSep 05, 2024\n\n\nHW2\n\n\nSep 20, 2024\n\n\nHW3\n\n\nOct 04, 2024\n\n\nHW4\n\n\nNov 08, 2024\n\n\nHW5\n\n\nDec 06, 2024",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nSolutions\nDue Date\n\n\n\n\nHW1\n\n\nSep 05, 2024\n\n\nHW2\n\n\nSep 19, 2024\n\n\nHW3\n\n\nOct 03, 2024\n\n\nHW4\n\n\nNov 07, 2024\n\n\nHW5\n\n\nDec 05, 2024",
     "crumbs": [
       "Homework"
     ]
@@ -770,7 +770,7 @@
     "href": "slides/lecture03-2-simulation.html#decay-processes",
     "title": "Simulation and Box Models",
     "section": "Decay Processes",
-    "text": "Decay Processes\nNow let’s assume some process affecting \\(m\\) depends on time.\nFor example: let’s say we care about an air pollutant which has a first-order decay rate \\(k\\), so \\(L(t) = -km(t)\\).\n\\[\n\\begin{align*}\n\\Rightarrow \\frac{dm}{dt} &= m_\\text{in} - m + S -D - km \\\\[0.5em]\n\\dot{m} &= \\frac{d(CV)}{dt} = \\overbrace{(u WH) C_\\text{in}}^{\\text{inflow}} - \\overbrace{(u WH) C}^{\\text{outflow}} + \\overbrace{S - D}^{\\text{net emissions}} - \\overbrace{kCV}^{\\text{mass decay}}\n\\end{align*}\n\\]"
+    "text": "Decay Processes\nNow let’s assume some process affecting \\(m\\) depends on time.\nFor example: let’s say we care about an air pollutant which has a first-order decay rate \\(k\\), so \\(D(t) = D_0 - km(t)\\).\n\\[\n\\Rightarrow \\frac{dm}{dt} = m_\\text{in} - m_\\text{out} + S - D_0 - km\n\\]\n\n\\[\n\\dot{m} = \\frac{d(CV)}{dt} = \\overbrace{(u WH) C_\\text{in}}^{\\text{inflow}} - \\overbrace{(u WH) C}^{\\text{outflow}} + \\overbrace{S - D_0}^{\\text{net emissions}} - \\overbrace{kCV}^{\\text{mass decay}}\n\\]"
   },
   {
     "objectID": "slides/lecture03-2-simulation.html#discretizing-continuous-models",
@@ -791,7 +791,7 @@
     "href": "slides/lecture03-2-simulation.html#discretizing-the-airshed-model",
     "title": "Simulation and Box Models",
     "section": "Discretizing the Airshed Model",
-    "text": "Discretizing the Airshed Model\n\\[\n\\begin{align*}\n\\frac{d(CV)}{dt} &= (u WH) C_\\text{in} - (u WH) C(t) + S - D- kC(t)V \\\\[0.5em]\n\\frac{d(C)}{dt} &= \\frac{u}{L} C_\\text{in} - \\frac{u}{L} C(t) + S - D - kC(t) \\\\\n\\end{align*}\n\\]\n\n\\[\n\\frac{C(t+1) - C(t)}{\\Delta t} = \\frac{u}{L} C_\\text{in} - \\frac{u}{L} C(t) + S - D - kC(t)\n\\]\n\n\n\\[\n\\bbox[5px, border: red 5px solid]{C(t+1) = C(t) + \\Delta t \\left(\\frac{u}{L} \\left(C_\\text{in} - C(t)\\right) + S - D - kC(t)\\right)}\n\\]"
+    "text": "Discretizing the Airshed Model\n\\[\n\\begin{align*}\n\\frac{d(CV)}{dt} &= (u WH) C_\\text{in} - (u WH) C(t) + S - D_0 - kC(t)V \\\\[0.5em]\n\\frac{d(C)}{dt} &= \\frac{u}{L} C_\\text{in} - \\frac{u}{L} C(t) + S - D_0 - kC(t) \\\\\n\\end{align*}\n\\]\n\n\\[\n\\frac{C(t+1) - C(t)}{\\Delta t} = \\frac{u}{L} C_\\text{in} - \\frac{u}{L} C(t) + S - D_0 - kC(t)\n\\]\n\n\n\\[\n\\bbox[5px, border: red 5px solid]{C(t+1) = C(t) + \\Delta t \\left(\\frac{u}{L} \\left(C_\\text{in} - C(t)\\right) + S - D_0 - kC(t)\\right)}\n\\]"
   },
   {
     "objectID": "slides/lecture03-2-simulation.html#how-to-simulate",
@@ -1081,6 +1081,216 @@
     "text": "References\n\n\n\n\n\n\n\n\nCarpenter, S. R., Ludwig, D., & Brock, W. A. (1999). Management of eutrophication for lakes subject to potentially irreversible change. Ecol. Appl., 9(3), 751–771. https://doi.org/10.2307/2641327\n\n\nQuinn, J. D., Reed, P. M., & Keller, K. (2017). Direct policy search for robust multi-objective management of deeply uncertain socio-ecological tipping points. Environmental Modelling & Software, 92, 125–141. https://doi.org/10.1016/j.envsoft.2017.02.017"
   },
   {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#dissolved-oxygen",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#dissolved-oxygen",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Dissolved Oxygen",
+    "text": "Dissolved Oxygen\n\nDissolved oxygen (DO) is essential for water quality and aquatic life.\nCommonly regulated to keep DO above a minimum threshold.\nDO impacted by a number of factors, notably organic waste decomposition and nitrification.\n“Sag Curve”: DO reduced near a discharge until waste decomposition reduces OD and re-aeration can occur."
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#questions",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#questions",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#systems-and-uncertainty",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#systems-and-uncertainty",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Systems and Uncertainty",
+    "text": "Systems and Uncertainty\n\n\nDeterministic systems models can be subject to uncertainties due to the separation between the “internals” of the system and the “external” environment.\n\n\n\n\nConceptual Schematic of a Systems Model"
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#what-is-uncertainty",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#what-is-uncertainty",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "What is Uncertainty?",
+    "text": "What is Uncertainty?\nGlib Answer: A lack of certainty!\n\nMore Seriously: Uncertainty refers to an inability to exactly describe current or future values or states."
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#types-of-uncertainty",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#types-of-uncertainty",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Types of Uncertainty",
+    "text": "Types of Uncertainty\nTwo (broad) types of uncertainties:\n\nAleatory uncertainty, or uncertainties resulting from randomness;\nEpistemic uncertainty, or uncertainties resulting from lack of knowledge."
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#systems-and-risk",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#systems-and-risk",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Systems and Risk",
+    "text": "Systems and Risk\nDesigning and managing environmental systems is often about minimizing or managing risk:\n\nMaintaining clean air/water;\nPower grid reliabiliy standards;\nFlooding/other hazards;\nClimate change mitigation/adaptation."
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#what-is-risk",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#what-is-risk",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "What is Risk?",
+    "text": "What is Risk?\nThe Society for Risk Analysis definition:\n\n\n“risk” involves uncertainty about the effects/implications of an activity with respect to something that humans value (such as health, well-being, wealth, property or the environment), often focusing on negative, undesirable consequences."
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#so-what-is-risk",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#so-what-is-risk",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "So What is Risk?",
+    "text": "So What is Risk?\nImportant: “Risk” is not just another words for probability, but:\n\nInvolves uncertainty;\nUndesireable outcomes;\nEffects matter, not just the events themselves."
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#components-of-risk",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#components-of-risk",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Components of Risk",
+    "text": "Components of Risk\n\n\nMultiple components which contribute to risk:\n\nProbability of a hazard;\nExposure to that hazard;\nVulnerability to outcomes;\nSocioeconomic responses.\n\n\n\n\n\nOverview of the Components of Risk\n\n\n\nSource: Simpson et al (2021)"
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#systems-and-risk-management",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#systems-and-risk-management",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Systems and Risk Management",
+    "text": "Systems and Risk Management\nRisk management is often a key consideration in systems analysis. For example, consider regulatory standards.\n\nOften a tradeoff between strictness of a regulation and costs of compliance.\nSystems modeling is a key way to understand\n\nthe impacts of changing a regulation\nthe probability of failure to meet standards."
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#two-definitions-of-probability",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#two-definitions-of-probability",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Two Definitions of Probability",
+    "text": "Two Definitions of Probability\nWe often represent uncertainties with probabilities. What is a probability?\n\nLong-run frequency of an event (frequentist)\nDegree of belief that a proposition is true (Bayesian)"
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#conditional-probabilities",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#conditional-probabilities",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Conditional Probabilities",
+    "text": "Conditional Probabilities\nWe often don’t want to just know if a particular event \\(A\\) has a certain probability, but also how other events (call them \\(B\\)) might depend on that outcome.\nIn other words:\nWe want the conditional probability of \\(B\\) given \\(A\\), denoted \\(\\mathbb{P}(B|A)\\)."
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#conditional-probabilities-1",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#conditional-probabilities-1",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Conditional Probabilities",
+    "text": "Conditional Probabilities\nWe can write conditional probabilities in terms of unconditional probabilities:\n\\[\\mathbb{P}(B|A) = \\frac{\\mathbb{P}(BA)}{\\mathbb{P}(A)}.\\]"
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#bayes-theorem",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#bayes-theorem",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Bayes’ Theorem",
+    "text": "Bayes’ Theorem\nConditional probabilities can be inverted according to Bayes’ Theorem:\n\\[\\mathbb{P}(A|B) = \\frac{\\mathbb{P}(B|A) \\times \\mathbb{P}(A)}{\\mathbb{B}}.\\]"
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#probability-distributions",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#probability-distributions",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Probability Distributions",
+    "text": "Probability Distributions\nThe probability of possible values of an unknown quantity are often represented as a probability distribution.\nProbability distributions associate a probability to every event under consideration (the event space) and have to follow certain rules (for example, total probability = 1)."
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#selecting-a-distribution",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#selecting-a-distribution",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Selecting a Distribution",
+    "text": "Selecting a Distribution\n\n\nThe specification of distributions can strongly influence the analysis.\n\n\n\n\nProbabilistic interactions between sea-levels and exposure"
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#selecting-a-distribution-1",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#selecting-a-distribution-1",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Selecting a Distribution",
+    "text": "Selecting a Distribution\nA distribution implicitly answers questions like:\n\nWhat is the most probable event? How much more likely is it than the others?\nAre larger or smaller events more, less, or equally probable?\nHow probable are extreme events?\nAre different events correlated, or are they independent?"
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#key-features-of-probability-distributions",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#key-features-of-probability-distributions",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Key Features of Probability Distributions",
+    "text": "Key Features of Probability Distributions\n\nMean/Mode (what events are “typical”)\nSkew (are larger or smaller events more or equally probable)\nVariance (how spread out is the distribution around the mode)\nTail Probabilities (how probable are extreme events)"
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#common-distributions",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#common-distributions",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Common Distributions",
+    "text": "Common Distributions\n\nGaussian / Normal\nLognormal\nBinomial\nUniform / Discrete Uniform"
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#probability-distribution-tails",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#probability-distribution-tails",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Probability Distribution Tails",
+    "text": "Probability Distribution Tails\n\n\nThe tails of distributions represent the probability of high-impact outcomes.\nKey consideration: Small changes to these (low) probabilities can greatly influence risk."
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#stochastic-simulation",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#stochastic-simulation",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Stochastic Simulation",
+    "text": "Stochastic Simulation\nMonte Carlo simulation: Propagating random samples through a model to estimate a value (usually an expectation or a quantile).\n\n\n\n\n\n\n\nG\n\n\n\na\n\nProbability\n Distribution\n\n\n\nb\n\nRandom\n Samples\n\n\n\na-&gt;b\n\n\nSample\n\n\n\nc\n\nModel\n\n\n\nb-&gt;c\n\n\nInput\n\n\n\nd\n\nOutputs\n\n\n\nc-&gt;d\n\n\nSimulate"
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#goals-of-monte-carlo",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#goals-of-monte-carlo",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Goals of Monte Carlo",
+    "text": "Goals of Monte Carlo\nMonte Carlo is a broad method, which can be used to:\n\nObtain probability distributions of outputs;\nEstimate deterministic quantities (Monte Carlo estimation)."
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#monte-carlo-estimation",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#monte-carlo-estimation",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Monte Carlo Estimation",
+    "text": "Monte Carlo Estimation\nMonte Carlo estimation involves framing the quantity of interest as a summary statistic (such as an expected value)."
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#mc-example-finding-pi",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#mc-example-finding-pi",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "MC Example: Finding \\(\\pi\\)",
+    "text": "MC Example: Finding \\(\\pi\\)\n\n\n\nFinding \\(\\pi\\) by sampling random values from the unit square and computing the fraction in the unit circle. This is an example of Monte Carlo integration.\n\\[\\frac{\\text{Area of Circle}}{\\text{Area of Square}} = \\frac{\\pi}{4}\\]\n\n\n\n\n\n\n\n\n\n\nFigure 1: Monte Carlo simualtion for Estimating pi"
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#mc-example-dice",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#mc-example-dice",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "MC Example: Dice",
+    "text": "MC Example: Dice\n\n\nWhat is the probability of rolling 4 dice for a total of 19?\n\nCan simulate dice rolls and find the frequency of 19s among the samples.\n\n\n\n\n\n\n\n\n\n\nFigure 2: Monte Carlo simualtion for Dice Rolls"
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#monte-carlo-estimation-1",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#monte-carlo-estimation-1",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Monte Carlo Estimation",
+    "text": "Monte Carlo Estimation\nThis type of estimation can be repeated with any simulation model that has a stochastic component.\nFor example, consider our dissolved oxygen model. Suppose that we have a probability distribution for the inflow DO.\nHow could we compute the probability of DO falling below the regulatory standard somewhere downstream?"
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#monte-carlo-and-uncertainty-propagation",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#monte-carlo-and-uncertainty-propagation",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Monte Carlo and Uncertainty Propagation",
+    "text": "Monte Carlo and Uncertainty Propagation\nThis is an example of uncertainty propagation: draw samples from some distribution, and run them through one or more models to find the (conditional) probability of outcomes of interest (for good or bad)."
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#key-takeaways-1",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#key-takeaways-1",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nSystems analysis features many uncertainties, which may be neglected with certain methods/model setups.\nChoice of probability distribution can have large impacts on uncertainty and risk estimates: try not to use distributions just because they’re convenient.\nMonte Carlo: Estimate expected values of outcomes using simulation."
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#next-classes",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#next-classes",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: Monte Carlo Lab (clone before class, maybe instantiate environment too)\nMonday: Why Does Monte Carlo Work?"
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#assessments",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#assessments",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "Assessments",
+    "text": "Assessments\nHW3: Released today, due 10/03 at 9pm."
+  },
+  {
     "objectID": "policies/integrity.html",
     "href": "policies/integrity.html",
     "title": "Academic Integrity",
@@ -1283,30 +1493,90 @@
   {
     "objectID": "hw/hw02/hw02.html",
     "href": "hw/hw02/hw02.html",
-    "title": "BEE 4750 Homework 2: Simulation Models",
+    "title": "BEE 4750 Homework 2: Systems Modeling and Simulation",
     "section": "",
-    "text": "Due Date\n\n\n\nThursday, 09/19/24, 9:00pm"
+    "text": "Due Date\n\n\n\nThursday, 09/19/24, 9:00pm",
+    "crumbs": [
+      "Homework",
+      "HW 2"
+    ]
   },
   {
     "objectID": "hw/hw02/hw02.html#overview",
     "href": "hw/hw02/hw02.html#overview",
-    "title": "BEE 4750 Homework 2: Simulation Models",
+    "title": "BEE 4750 Homework 2: Systems Modeling and Simulation",
     "section": "Overview",
-    "text": "Overview\n\nInstructions\n\nProblem 1 asks you to derive a model for water quality in a river system and use this model to check for regulatory compliance.\nProblem 2 asks you to discretize a simple climate model and use it to simulate global mean temperatures under a future emissions scenario.\nProblem 3 (5750 only) asks you to modify the lake eutrophication example from Lecture 04 to account for atmospheric deposition.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nusing Plots\nusing LaTeXStrings\nusing CSV\nusing DataFrames"
+    "text": "Overview\n\nInstructions\n\nProblem 1 asks you to derive a model for water quality in a river system and use this model to check for regulatory compliance.\nProblem 2 asks you to discretize a simple climate model and use it to simulate global mean temperatures under a future emissions scenario.\nProblem 3 (5750 only) asks you to modify the lake eutrophication example from Lecture 04 to account for atmospheric deposition.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nusing Plots\nusing LaTeXStrings\nusing CSV\nusing DataFrames",
+    "crumbs": [
+      "Homework",
+      "HW 2"
+    ]
   },
   {
     "objectID": "hw/hw02/hw02.html#problems-total-5060-points",
     "href": "hw/hw02/hw02.html#problems-total-5060-points",
-    "title": "BEE 4750 Homework 2: Simulation Models",
+    "title": "BEE 4750 Homework 2: Systems Modeling and Simulation",
     "section": "Problems (Total: 50/60 Points)",
-    "text": "Problems (Total: 50/60 Points)\n\nProblem 1 (25 points)\nA river which flows at 10 km/d is receiving discharges of wastewater contaminated with CRUD from two sources which are 15 km apart, as shown in the Figure below. CRUD decays in the river at a rate of 0.36 \\(\\mathrm{d}^{-1}\\).\n\n\n\n\nIn this problem:\n\nAssuming steady-state conditions, derive a model for the concentration of CRUD downriver.\nDetermine if the system in compliance with a regulatory limit of 2.5 kg/(1000 m\\(^3\\)).\n\n\n\n\n\n\n\n\nUse your model to simulate the CRUD concentrations downriver.\n\n\n\n\nProblem 2 (25 points)\nThe simplest climate model involves capturing changes to the Earth’s energy budget (it is commonly called the energy balance model, or EBM). These changes are also called radiative forcings (RF), and can result from several causes, including greenhouse gas emissions, volcanic eruptions, and changes to the solar cycle. The EBM treats the Earth as a 0-dimensional sphere covered with water, which absorbs heat in response to radiative forcings. Chanwith global temperature changes resulting from imbalances in the average (over the entire surface area) heat flux.\nThe EBM equations are:\n\\[\n\\begin{align*}\n\\overbrace{\\frac{dH}{dt}}^{\\text{change in heat}} &= \\overbrace{F}^{\\substack{\\text{radiative} \\\\ \\text{forcing}}} - \\overbrace{\\lambda T}^{\\substack{\\text{change in} \\\\ \\text{temperature}}} \\\\\n\\underbrace{C}_{\\substack{\\text{ocean heat} \\\\ \\text{capacity}}} \\frac{dT}{dt} &= F - \\lambda T \\\\\nc\\underbrace{d}_{\\substack{\\text{ocean} \\\\ \\text{mixing depth}}} \\frac{dT}{dt} &= F - \\lambda T,\n\\end{align*}\n\\]\nwhere \\(c = 4.184\\times 10^6 \\mathrm{J/K/m}^2\\) is the specific heat of water per area, \\(d\\) is the depth of the ocean mixed layer (we’ll assume \\(d = 86 \\mathrm{m}\\)), and \\(\\lambda\\) is the climate feedback factor and controls how much the Earth warms in response to increased radiative forcing (assume \\(\\lambda = 2.1\\)). The total radiative forcing \\(F = F_\\text{non-aerosol} + \\alpha F_\\text{aerosol}\\), where \\(\\alpha\\) is an uncertain scaling factor reflecting aerosol-cloud feedbacks (we’ll assume \\(\\alpha = 0.8\\)).\nThe code below loads historical and projected radiative forcings (under the SSP5-8.5 future emissions scenario, which is the most extreme of the scenarios used to project climate change impacts) from data/ERF_ssp585_1750-2500.csv into a DataFrame object and calculates the non-aerosol and aerosol components of those forcings.\n\n\n\n\n\n\n\nLook closely at and experiment with the code below: DataFrames are a common Julia datatype for tabular data, and you may work more with them later in the semester or beyond! They are broadly similar to DataFrames from pandas in Python.\n\n\n\n\n# Dataset from https://zenodo.org/record/3973015\n# The CSV is read into a DataFrame object, and we specify that it is comma delimited\nforcings_all = CSV.read(\"data/ERF_ssp585_1750-2500.csv\", DataFrame, delim=\",\")\n\n# Separate out the individual components\n# Get total aerosol forcings\nforcing_aerosol_rad = forcings_all[!,\"aerosol-radiation_interactions\"]\nforcing_aerosol_cloud = forcings_all[!,\"aerosol-cloud_interactions\"]\nforcing_aerosol = forcing_aerosol_rad + forcing_aerosol_cloud\n# Calculate non-aerosol forcings from the total.\nforcing_total = forcings_all[!,\"total\"]\nforcing_non_aerosol = forcing_total - forcing_aerosol\n\nWe can plot the aerosol and non-aerosol forcings below.\n\nt = Int64.(forcings_all[!,\"year\"]) # Ensure that years are interpreted as integers\np_forcing = plot(; xlabel=\"Year\", ylabel=\"Radiative Forcing (W/m²)\")\nplot!(p_forcing, t, forcing_aerosol, label=\"Aerosol Forcing\", color=:blue, linewidth=2)\nplot!(p_forcing, t, forcing_non_aerosol, label=\"Non-Aerosol Forcing\", color=:red, linewidth=2)\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIn this problem:\n\nDiscretize the EBM to produce a simulation model of global mean temperatures \\(T\\) over time as a result of total radiative forcings \\(F\\).\nSimulate global mean temperature anomalies (in \\(^\\circ C\\) relative to 1750) from your model using the historical and SSP5-8.5 radiative forcing data. Use an annual time step for the simulation (in seconds: \\(\\Delta t = 31,558,152 \\mathrm{s}\\)). You can assume \\(T(0) = 0^\\circ C\\).\nPlot your simulated global mean temperature anomalies from 1750 through 2100.\n\n\n\nProblem 3 (10 points)\nThis problem is only required for students in BEE 5750.\nConsider the lake eutrophication example from Lecture 04. Suppose that phosphorous is also atmospherically deposited onto the lake surface at a rate of \\(2.4 \\times 10^{-5} \\mathrm{kg/(yr} \\cdot \\mathrm{m)}^2\\), which is then instantly mixed into the lake. Derive a model for the lake phosphorous concentration and find the maximum allowable point source phosphorous loading if the goal is to keep lake concentrations below 0.02 mg/L."
+    "text": "Problems (Total: 50/60 Points)\n\nProblem 1 (25 points)\nA river which flows at 10 km/d is receiving discharges of wastewater contaminated with CRUD from two sources which are 15 km apart, as shown in the Figure below. CRUD decays exponentially in the river at a rate of 0.36 \\(\\mathrm{d}^{-1}\\).\n\n\n\n\nSchematic of the river system in Problem 1\n\n\n\nIn this problem:\n\nAssuming steady-state conditions, derive a model for the concentration of CRUD downriver by solving the appropriate differential equation(s) analytically.\nDetermine if the system in compliance with a regulatory limit of 2.5 kg/(1000 m\\(^3\\)).\n\n\n\n\n\n\n\n\nYour solution will need to be in terms of distance downriver.\n\n\n\n\nProblem 2 (25 points)\nThe simplest climate model involves capturing changes to the Earth’s energy budget (it is commonly called the energy balance model, or EBM). These changes are also called radiative forcings (RF), and can result from several causes, including greenhouse gas emissions, volcanic eruptions, and changes to the solar cycle. The EBM treats the Earth as a 0-dimensional sphere covered with water, which absorbs heat in response to radiative forcings. Chanwith global temperature changes resulting from imbalances in the average (over the entire surface area) heat flux.\nThe EBM equations are:\n\\[\n\\begin{align*}\n\\overbrace{\\frac{dH}{dt}}^{\\text{change in heat}} &= \\overbrace{F}^{\\substack{\\text{radiative} \\\\ \\text{forcing}}} - \\overbrace{\\lambda T}^{\\substack{\\text{change in} \\\\ \\text{temperature}}} \\\\\n\\underbrace{C}_{\\substack{\\text{ocean heat} \\\\ \\text{capacity}}} \\frac{dT}{dt} &= F - \\lambda T \\\\\nc\\underbrace{d}_{\\substack{\\text{ocean} \\\\ \\text{mixing depth}}} \\frac{dT}{dt} &= F - \\lambda T,\n\\end{align*}\n\\]\nwhere \\(c = 4.184\\times 10^6 \\mathrm{J/K/m}^2\\) is the specific heat of water per area, \\(d\\) is the depth of the ocean mixed layer (we’ll assume \\(d = 86 \\mathrm{m}\\)), and \\(\\lambda\\) is the climate feedback factor and controls how much the Earth warms in response to increased radiative forcing (assume \\(\\lambda = 2.1\\)). The total radiative forcing \\(F = F_\\text{non-aerosol} + \\alpha F_\\text{aerosol}\\), where \\(\\alpha\\) is an uncertain scaling factor reflecting aerosol-cloud feedbacks (we’ll assume \\(\\alpha = 0.8\\)).\nThe code below loads historical and projected radiative forcings (under the SSP5-8.5 future emissions scenario, which is the most extreme of the scenarios used to project climate change impacts) from data/ERF_ssp585_1750-2500.csv into a DataFrame object and calculates the non-aerosol and aerosol components of those forcings.\n\n\n\n\n\n\n\nLook closely at and experiment with the code below: DataFrames are a common Julia datatype for tabular data, and you may work more with them later in the semester or beyond! They are broadly similar to DataFrames from pandas in Python.\n\n\n\n\n# Dataset from https://zenodo.org/record/3973015\n# The CSV is read into a DataFrame object, and we specify that it is comma delimited\nforcings_all = CSV.read(\"data/ERF_ssp585_1750-2500.csv\", DataFrame, delim=\",\")\n\n# Separate out the individual components\n# Get total aerosol forcings\nforcing_aerosol_rad = forcings_all[!,\"aerosol-radiation_interactions\"]\nforcing_aerosol_cloud = forcings_all[!,\"aerosol-cloud_interactions\"]\nforcing_aerosol = forcing_aerosol_rad + forcing_aerosol_cloud\n# Calculate non-aerosol forcings from the total.\nforcing_total = forcings_all[!,\"total\"]\nforcing_non_aerosol = forcing_total - forcing_aerosol\n\nWe can plot the aerosol and non-aerosol forcings below.\n\nt = Int64.(forcings_all[!,\"year\"]) # Ensure that years are interpreted as integers\np_forcing = plot(; xlabel=\"Year\", ylabel=\"Radiative Forcing (W/m²)\")\nplot!(p_forcing, t, forcing_aerosol, label=\"Aerosol Forcing\", color=:blue, linewidth=2)\nplot!(p_forcing, t, forcing_non_aerosol, label=\"Non-Aerosol Forcing\", color=:red, linewidth=2)\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIn this problem:\n\nDiscretize the EBM to produce a simulation model of global mean temperatures \\(T\\) over time as a result of total radiative forcings \\(F\\).\nSimulate global mean temperature anomalies (in \\(^\\circ C\\) relative to 1750) from your model using the historical and SSP5-8.5 radiative forcing data. Use an annual time step for the simulation (in seconds: \\(\\Delta t = 31,558,152 \\mathrm{s}\\)). You can assume \\(T(0) = 0^\\circ C\\).\nPlot your simulated global mean temperature anomalies from 1750 through 2100.\n\n\n\nProblem 3 (10 points)\nThis problem is only required for students in BEE 5750.\nConsider the lake eutrophication example from Lecture 04. Suppose that phosphorous is also atmospherically deposited onto the lake surface at a rate of \\(1.6 \\times 10^{-4} \\mathrm{kg/(yr} \\cdot \\mathrm{m}^2)\\), which is then instantly mixed into the lake. Derive a model for the lake phosphorous concentration and find the maximum allowable point source phosphorous loading if the goal is to keep lake concentrations below 0.02 mg/L.",
+    "crumbs": [
+      "Homework",
+      "HW 2"
+    ]
   },
   {
     "objectID": "hw/hw02/hw02.html#references",
     "href": "hw/hw02/hw02.html#references",
-    "title": "BEE 4750 Homework 2: Simulation Models",
+    "title": "BEE 4750 Homework 2: Systems Modeling and Simulation",
     "section": "References",
-    "text": "References\nList any external references consulted, including classmates."
+    "text": "References\nList any external references consulted, including classmates.",
+    "crumbs": [
+      "Homework",
+      "HW 2"
+    ]
+  },
+  {
+    "objectID": "hw/hw01/hw01.html",
+    "href": "hw/hw01/hw01.html",
+    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "section": "",
+    "text": "Due Date\n\n\n\nThursday, 9/5/24, 9:00pm",
+    "crumbs": [
+      "Homework",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw01/hw01.html#overview",
+    "href": "hw/hw01/hw01.html#overview",
+    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "section": "Overview",
+    "text": "Overview\n\nInstructions\n\nProblem 1 consist of a series of code snippets for you to interpret and debug. You will be asked to identify relevant error(s) and fix the code.\nProblem 2 gives you some code that works as intended; your goal is to identify the code’s purpose by following its logic.\nProblem 3 asks you to write code to generate a random vector and subtract off its mean, using a Julia syntax called broadcasting.\nProblem 4 asks you to convert a verbal description of a wastewater treatment system into a Julia function, and then to use that function to explore the impact of different wastewater allocation strategies.\nProblem 5 (5750 only) asks you to use more advanced Julia techniques.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\nStandard Julia practice is to load all needed packages at the top of a file. If you need to load any additional packages in any assignments beyond those which are loaded by default, feel free to add a using statement, though you may need to install the package.\n\nusing Random\nusing Plots\nusing GraphRecipes\nusing LaTeXStrings\n\n\n# this sets a random seed, which ensures reproducibility of random number generation. You should always set a seed when working with random numbers.\nRandom.seed!(1)\n\nTaskLocalRNG()",
+    "crumbs": [
+      "Homework",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw01/hw01.html#problems-total-5060-points",
+    "href": "hw/hw01/hw01.html#problems-total-5060-points",
+    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "section": "Problems (Total: 50/60 Points)",
+    "text": "Problems (Total: 50/60 Points)\n\nProblem 1 (15 points)\nThe following subproblems all involve code snippets that require debugging.\nFor each of them:\n\nidentify and describe the logic and/or syntax error;\nwrite a fixed version of the function;\nuse your fixed function to solve the problem.\n\n\nProblem 1.1\nYou’ve been tasked with writing code to identify the minimum value in an array. You cannot use a predefined function. Your colleague suggested the function below, but it does not return the minimum value.\n\nfunction minimum(array)\n    min_value = 0\n    for i in 1:length(array)\n        if array[i] &lt; min_value\n            min_value = array[i]\n        end\n    end\n    return min_value\nend\n\narray_values = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\n@show minimum(array_values);\n\nminimum(array_values) = 0\n\n\n\n\nProblem 1.2\nYour team is trying to compute the average grade for your class, but the following code produces an error.\n\nstudent_grades = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\nfunction class_average(grades)\n  average_grade = mean(student_grades)\n  return average_grade\nend\n\n@show average_grade;\n\nUndefVarError: \nUndefVarError: `average_grade` not defined\nStacktrace:\n [1] macro expansion\n   @ show.jl:1181 [inlined]\n [2] top-level scope\n   @ ~/Teaching/BEE4750/website/hw/hw01/hw01.qmd:160\n\n\n\n\nProblem 1.3\nYour team wants to know the expected payout of an old Italian dice game called passadieci (which was analyzed by Galileo as one of the first examples of a rigorous study of probability). The goal of passadieci is to get at least an 11 from rolling three fair, six-sided dice. Your strategy is to compute the average wins from 1,000 trials, but the code you’ve written below produces an error.\n\nfunction passadieci()\n    # this rand() call samples 3 values from the vector [1, 6]\n    roll = rand(1:6, 3) \n    return roll\nend\nn_trials = 1_000\noutcomes = zero(n_trials)\nfor i = 1:n_trials\n    outcomes[i] = (sum(passadieci()) &gt; 11)\nend\nwin_prob = sum(outcomes) / n_trials # compute average number of wins\n@show win_prob;\n\nMethodError: \nMethodError: no method matching setindex!(::Int64, ::Bool, ::Int64)\nStacktrace:\n [1] top-level scope\n   @ ~/Teaching/BEE4750/website/hw/hw01/hw01.qmd:187\n\n\n\n\n\nProblem 2 (5 points)\nYou’ve been handed some code to analyze. The original coder was not very considerate of other potential users: the function is called mystery_function and there are no comments explaining the purpose of the code. It appears to take in an array and return some numbers, and you’ve been assured that the code works as intended.\n\nfunction mystery_function(values)\n    y = []\n    for v in values\n        if !(v in y)\n            append!(y, v)\n        end\n    end\n    return y\nend\n\nlist_of_values = [1, 2, 3, 4, 3, 4, 2, 1]\n@show mystery_function(list_of_values);\n\nmystery_function(list_of_values) = Any[1, 2, 3, 4]\n\n\nIn this problem:\n\nExplain the purpose of mystery_function.\nAdd comments to the code, explaining why and how it works. Refer to “Best Practices for Writing Code Comments”, and remember that bad comments can be just as bad as no comments at all. You do not need to add comments to every line (in fact, this is very bad practice), but you should note the purpose of every “section” of code, and add comments explaining any code sequences that you don’t immediately understand.\nIs there a built-in Julia function that does the same thing as mystery_function? If so, what is it? Use it to do the same thing as the code above.\n\n\n\nProblem 3 (10 points)\nYou’re interested in writing some code to remove the mean of a vector.\nIn this problem:\n\nWrite a function compute_mean(v) which sums all of the elements of a vector v using a for loop and computes the mean.\nMake a random vector random_vect of length 10 using Julia’s rand() function. Use your compute_mean() function to calculate its mean and subtract it from random_vect without a loop (using a Julia technique called broadcasting; feel free to consult the Julia documentation and search as necessary). Check that the new vector has mean zero.\n\n\n\nProblem 4 (20 points)\nCheap Plastic Products, Inc. is operating a plant that produces \\(100 \\text{m}^3\\text{/day}\\) of wastewater that is discharged into Pristine Brook. The wastewater contains \\(1 \\text{kg/m}^3\\) of YUK, a toxic substance. The US Environmental Protection Agency has imposed an effluent standard on the plant prohibiting discharge of more than \\(20 \\text{kg/day}\\) of YUK into Pristine Brook.\nCheap Plastic Products has analyzed two methods for reducing its discharges of YUK. Method 1 is land disposal, which costs \\(X_1^2/20\\) dollars per day, where \\(X_1\\) is the amount of wastewater disposed of on the land (\\(\\text{m}^3\\text{/day}\\)). With this method, 20% of the YUK applied to the land will eventually drain into the stream (i.e., 80% of the YUK is removed by the soil).\nMethod 2 is a chemical treatment procedure which costs $1.50 per \\(\\text{m}^3\\) of wastewater treated. The chemical treatment has an efficiency of \\(e= 1 - 0.005X_2\\), where \\(X_2\\) is the quantity of wastewater (\\(\\text{m}^3\\text{/day}\\)) treated. For example, if \\(X_2 = 50 \\text{m}^3\\text{/day}\\), then \\(e = 1 - 0.005(50) = 0.75\\), so that 75% of the YUK is removed.\nCheap Plastic Products is wondering how to allocate their wastewater between these three disposal and treatment methods (land disposal, and chemical treatment, and land disposal) to meet the effluent standard while keeping costs manageable.\nThe flow of wastewater through this treatment system is shown in Figure 1. Modify the edge labels (by editing the edge_labels dictionary in the code producing Figure 1) to show how the wastewater allocations result in the final YUK discharge into Pristine Brook. For the edge_label dictionary, the tuple \\((i, j)\\) corresponds to the arrow going from node \\(i\\) to node \\(j\\). The syntax for any entry is (i, j) =&gt; \"label text\", and the label text can include mathematical notation if the string is prefaced with an L, as in L\"x_1\" will produce \\(x_1\\).\n\nA = [0 1 1 1;\n    0 0 0 1;\n    0 0 0 1;\n    0 0 0 0]\n\nnames = [\"Plant\", \"Land Treatment\", \"Chem Treatment\", \"Pristine Brook\"]\n# modify this dictionary to add labels\nedge_labels = Dict((1, 2) =&gt; \"\", (1,3) =&gt; \"\", (1, 4) =&gt; \"\",(2, 4) =&gt; \"\",(3, 4) =&gt; \"\")\nshapes=[:hexagon, :rect, :rect, :hexagon]\nxpos = [0, -1.5, -0.25, 1]\nypos = [1, 0, 0, -1]\n\np = graphplot(A, names=names,edgelabel=edge_labels, markersize=0.15, markershapes=shapes, markercolor=:white, x=xpos, y=ypos)\ndisplay(p)\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: System diagram of the wastewater treatment options in Problem 4.\n\n\n\n\nIn this problem:\n\nFormulate a mathematical model for the treatment cost and the amount of YUK that will be discharged into Pristine Brook based on the wastewater allocations. This is best done with some equations and supporting text explaining the derivation. Make sure you include, as additional equations in the model, any needed constraints on relevant values. You can find some basics on writing mathematical equations using the LaTeX typesetting syntax here, and a cheatsheet with LaTeX commands can be found on the course website’s Resources page.\nImplement your systems model as a Julia function which computes the resulting YUK concentration and cost for a particular treatment plan. You can return multiple values from a function with a tuple, as in:\nfunction multiple_return_values(x, y)\n    return (x+y, x*y)\nend\n\na, b = multiple_return_values(2, 5)\n@show a;\n@show b;\nTo evalute the function over vectors of inputs, you can broadcast the function by adding a decimal . before the function arguments and accessing the resulting values by writing a comprehension to loop over the individual outputs in the vector:\nx = [1, 2, 3, 4, 5]\ny = [6, 7, 8, 9, 10]\n\noutput = multiple_return_values.(x, y)\na = [out[1] for out in output]\nb = [out[2] for out in output]\n@show a;\n@show b;\nMake sure you comment your code appropriately to make it clear what is going on and why.\nUse your function to experiment with some different combinations of wastewater discharge and treatment and plot the results of these experiments. Can you find one that satisfies the YUK effluent standard (plot this as well as a dashed red line)? What was the cost? What can you say about the tradeoff between treatment cost and YUK concentration? You don’t have to find an “optimal” solution to this problem, but what do you think would be needed to find a better solution?\n\n\n\nProblem 5 (10 points)\nThis problem is only required for students in BEE 5750.\n\nProblem 5.1\nUsing a comprehension, count the number of odd numbers between 0 and 149.\n\n\n\n\n\n\n\nHint\n\n\n\niseven() returns true for even numbers and false for odd numbers.\n\n\n\nProblem 5.2\nWrite a function polynomial(x, a) which calculates the polynomial \\[p(x) = \\sum_{i=1}^n a_i x^i\\]\nbased on a point x and a coefficient vector a of length n using a loop. Test your function by computing \\[p(x) = 2x^3 - x^2 + 1\\] at \\(x=2\\).",
+    "crumbs": [
+      "Homework",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw01/hw01.html#references",
+    "href": "hw/hw01/hw01.html#references",
+    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "section": "References",
+    "text": "References\nList any external references consulted, including classmates.",
+    "crumbs": [
+      "Homework",
+      "HW 1"
+    ]
   },
   {
     "objectID": "labs/lab01/lab01.html",
@@ -1375,47 +1645,47 @@
     ]
   },
   {
-    "objectID": "hw/hw01/hw01.html",
-    "href": "hw/hw01/hw01.html",
-    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "objectID": "hw/hw03/hw03.html",
+    "href": "hw/hw03/hw03.html",
+    "title": "BEE 4750 Homework 3: Dissolved Oxygen and Monte Carlo",
     "section": "",
-    "text": "Due Date\n\n\n\nThursday, 9/5/23, 9:00pm",
+    "text": "Due Date\n\n\n\nThursday, 10/03/23, 9:00pm",
     "crumbs": [
       "Homework",
-      "HW 1"
+      "HW 3"
     ]
   },
   {
-    "objectID": "hw/hw01/hw01.html#overview",
-    "href": "hw/hw01/hw01.html#overview",
-    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "objectID": "hw/hw03/hw03.html#overview",
+    "href": "hw/hw03/hw03.html#overview",
+    "title": "BEE 4750 Homework 3: Dissolved Oxygen and Monte Carlo",
     "section": "Overview",
-    "text": "Overview\n\nInstructions\n\nProblem 1 consist of a series of code snippets for you to interpret and debug. You will be asked to identify relevant error(s) and fix the code.\nProblem 2 gives you some code that works as intended; your goal is to identify the code’s purpose by following its logic.\nProblem 3 asks you to write code to generate a random vector and subtract off its mean, using a Julia syntax called broadcasting.\nProblem 4 asks you to convert a verbal description of a wastewater treatment system into a Julia function, and then to use that function to explore the impact of different wastewater allocation strategies.\nProblem 5 (5750 only) asks you to use more advanced Julia techniques.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\nStandard Julia practice is to load all needed packages at the top of a file. If you need to load any additional packages in any assignments beyond those which are loaded by default, feel free to add a using statement, though you may need to install the package.\n\nusing Random\nusing Plots\nusing GraphRecipes\nusing LaTeXStrings\n\n\n# this sets a random seed, which ensures reproducibility of random number generation. You should always set a seed when working with random numbers.\nRandom.seed!(1)\n\nTaskLocalRNG()",
+    "text": "Overview\n\nInstructions\n\nProblem 1 asks you to implement a model for dissolved oxygen in a river with multiple waste releases and use this to develop a strategy to ensure regulatory compliance.\nProblem 2 asks you to use Monte Carlo simulation to assess how well your strategy from Problem 1 performs under uncertainty.\nProblem 3 (5750 only) asks you to identify where a third discharge should be placed to maintain regulatory compliance.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nusing Random\nusing Plots\nusing LaTeXStrings\nusing Distributions",
     "crumbs": [
       "Homework",
-      "HW 1"
+      "HW 3"
     ]
   },
   {
-    "objectID": "hw/hw01/hw01.html#problems-total-5060-points",
-    "href": "hw/hw01/hw01.html#problems-total-5060-points",
-    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "objectID": "hw/hw03/hw03.html#problems-total-5060-points",
+    "href": "hw/hw03/hw03.html#problems-total-5060-points",
+    "title": "BEE 4750 Homework 3: Dissolved Oxygen and Monte Carlo",
     "section": "Problems (Total: 50/60 Points)",
-    "text": "Problems (Total: 50/60 Points)\n\nProblem 1 (15 points)\nThe following subproblems all involve code snippets that require debugging.\nFor each of them:\n\nidentify and describe the logic and/or syntax error;\nwrite a fixed version of the function;\nuse your fixed function to solve the problem.\n\n\nProblem 1.1\nYou’ve been tasked with writing code to identify the minimum value in an array. You cannot use a predefined function. Your colleague suggested the function below, but it does not return the minimum value.\n\nfunction minimum(array)\n    min_value = 0\n    for i in 1:length(array)\n        if array[i] &lt; min_value\n            min_value = array[i]\n        end\n    end\n    return min_value\nend\n\narray_values = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\n@show minimum(array_values);\n\nminimum(array_values) = 0\n\n\n\n\nProblem 1.2\nYour team is trying to compute the average grade for your class, but the following code produces an error.\n\nstudent_grades = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\nfunction class_average(grades)\n  average_grade = mean(student_grades)\n  return average_grade\nend\n\n@show average_grade;\n\n\nUndefVarError: `average_grade` not defined\nStacktrace:\n [1] macro expansion\n   @ show.jl:1181 [inlined]\n [2] top-level scope\n   @ ~/Teaching/environmental-systems-analysis/website/hw/hw01/hw01.qmd:120\n\n\n\n\n\nProblem 1.3\nYour team wants to know the expected payout of an old Italian dice game called passadieci (which was analyzed by Galileo as one of the first examples of a rigorous study of probability). The goal of passadieci is to get at least an 11 from rolling three fair, six-sided dice. Your strategy is to compute the average wins from 1,000 trials, but the code you’ve written below produces an error.\n\nfunction passadieci()\n    # this rand() call samples 3 values from the vector [1, 6]\n    roll = rand(1:6, 3) \n    return roll\nend\nn_trials = 1_000\noutcomes = zero(n_trials)\nfor i = 1:n_trials\n    outcomes[i] = (sum(passadieci()) &gt; 11)\nend\nwin_prob = sum(outcomes) / n_trials # compute average number of wins\n@show win_prob;\n\n\nMethodError: no method matching setindex!(::Int64, ::Bool, ::Int64)\nStacktrace:\n [1] top-level scope\n   @ ~/Teaching/environmental-systems-analysis/website/hw/hw01/hw01.qmd:137\n\n\n\n\n\n\nProblem 2 (5 points)\nYou’ve been handed some code to analyze. The original coder was not very considerate of other potential users: the function is called mystery_function and there are no comments explaining the purpose of the code. It appears to take in an array and return some numbers, and you’ve been assured that the code works as intended.\n\nfunction mystery_function(values)\n    y = []\n    for v in values\n        if !(v in y)\n            append!(y, v)\n        end\n    end\n    return y\nend\n\nlist_of_values = [1, 2, 3, 4, 3, 4, 2, 1]\n@show mystery_function(list_of_values);\n\nmystery_function(list_of_values) = Any[1, 2, 3, 4]\n\n\nIn this problem:\n\nExplain the purpose of mystery_function.\nAdd comments to the code, explaining why and how it works. Refer to “Best Practices for Writing Code Comments”, and remember that bad comments can be just as bad as no comments at all. You do not need to add comments to every line (in fact, this is very bad practice), but you should note the purpose of every “section” of code, and add comments explaining any code sequences that you don’t immediately understand.\nIs there a built-in Julia function that does the same thing as mystery_function? If so, what is it? Use it to do the same thing as the code above.\n\n\n\nProblem 3 (10 points)\nYou’re interested in writing some code to remove the mean of a vector.\nIn this problem:\n\nWrite a function compute_mean(v) which sums all of the elements of a vector v using a for loop and computes the mean.\nMake a random vector random_vect of length 10 using Julia’s rand() function. Use your compute_mean() function to calculate its mean and subtract it from random_vect without a loop (using a Julia technique called broadcasting; feel free to consult the Julia documentation and search as necessary). Check that the new vector has mean zero.\n\n\n\nProblem 4 (20 points)\nCheap Plastic Products, Inc. is operating a plant that produces \\(100 \\text{m}^3\\text{/day}\\) of wastewater that is discharged into Pristine Brook. The wastewater contains \\(1 \\text{kg/m}^3\\) of YUK, a toxic substance. The US Environmental Protection Agency has imposed an effluent standard on the plant prohibiting discharge of more than \\(20 \\text{kg/day}\\) of YUK into Pristine Brook.\nCheap Plastic Products has analyzed two methods for reducing its discharges of YUK. Method 1 is land disposal, which costs \\(X_1^2/20\\) dollars per day, where \\(X_1\\) is the amount of wastewater disposed of on the land (\\(\\text{m}^3\\text{/day}\\)). With this method, 20% of the YUK applied to the land will eventually drain into the stream (i.e., 80% of the YUK is removed by the soil).\nMethod 2 is a chemical treatment procedure which costs $1.50 per \\(\\text{m}^3\\) of wastewater treated. The chemical treatment has an efficiency of \\(e= 1 - 0.005X_2\\), where \\(X_2\\) is the quantity of wastewater (\\(\\text{m}^3\\text{/day}\\)) treated. For example, if \\(X_2 = 50 \\text{m}^3\\text{/day}\\), then \\(e = 1 - 0.005(50) = 0.75\\), so that 75% of the YUK is removed.\nCheap Plastic Products is wondering how to allocate their wastewater between these three disposal and treatment methods (land disposal, and chemical treatment, and land disposal) to meet the effluent standard while keeping costs manageable.\nThe flow of wastewater through this treatment system is shown in Figure 1. Modify the edge labels (by editing the edge_labels dictionary in the code producing Figure 1) to show how the wastewater allocations result in the final YUK discharge into Pristine Brook. For the edge_label dictionary, the tuple \\((i, j)\\) corresponds to the arrow going from node \\(i\\) to node \\(j\\). The syntax for any entry is (i, j) =&gt; \"label text\", and the label text can include mathematical notation if the string is prefaced with an L, as in L\"x_1\" will produce \\(x_1\\).\n\nA = [0 1 1 1;\n    0 0 0 1;\n    0 0 0 1;\n    0 0 0 0]\n\nnames = [\"Plant\", \"Land Treatment\", \"Chem Treatment\", \"Pristine Brook\"]\n# modify this dictionary to add labels\nedge_labels = Dict((1, 2) =&gt; \"\", (1,3) =&gt; \"\", (1, 4) =&gt; \"\",(2, 4) =&gt; \"\",(3, 4) =&gt; \"\")\nshapes=[:hexagon, :rect, :rect, :hexagon]\nxpos = [0, -1.5, -0.25, 1]\nypos = [1, 0, 0, -1]\n\np = graphplot(A, names=names,edgelabel=edge_labels, markersize=0.15, markershapes=shapes, markercolor=:white, x=xpos, y=ypos)\ndisplay(p)\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: System diagram of the wastewater treatment options in Problem 4.\n\n\n\n\nIn this problem:\n\nFormulate a mathematical model for the treatment cost and the amount of YUK that will be discharged into Pristine Brook based on the wastewater allocations. This is best done with some equations and supporting text explaining the derivation. Make sure you include, as additional equations in the model, any needed constraints on relevant values. You can find some basics on writing mathematical equations using the LaTeX typesetting syntax here, and a cheatsheet with LaTeX commands can be found on the course website’s Resources page.\nImplement your systems model as a Julia function which computes the resulting YUK concentration and cost for a particular treatment plan. You can return multiple values from a function with a tuple, as in:\nfunction multiple_return_values(x, y)\n    return (x+y, x*y)\nend\n\na, b = multiple_return_values(2, 5)\n@show a;\n@show b;\nTo evalute the function over vectors of inputs, you can broadcast the function by adding a decimal . before the function arguments and accessing the resulting values by writing a comprehension to loop over the individual outputs in the vector:\nx = [1, 2, 3, 4, 5]\ny = [6, 7, 8, 9, 10]\n\noutput = multiple_return_values.(x, y)\na = [out[1] for out in output]\nb = [out[2] for out in output]\n@show a;\n@show b;\nMake sure you comment your code appropriately to make it clear what is going on and why.\nUse your function to experiment with some different combinations of wastewater discharge and treatment and plot the results of these experiments. Can you find one that satisfies the YUK effluent standard (plot this as well as a dashed red line)? What was the cost? What can you say about the tradeoff between treatment cost and YUK concentration? You don’t have to find an “optimal” solution to this problem, but what do you think would be needed to find a better solution?\n\n\n\nProblem 5 (10 points)\n\nProblem 5.1\nUsing a comprehension, count the number of odd numbers between 0 and 149.\n\n\n\n\n\n\n\nHint\n\n\n\niseven() returns true for even numbers and false for odd numbers.\n\n\n\nProblem 5.2\nWrite a function polynomial(x, a) which calculates the polynomial \\[p(x) = \\sum_{i=1}^n a_i x^i\\]\nbased on a point x and a coefficient vector a of length n using enumerate() in a loop. Test your function by computing \\[p(x) = 2x^3 - x^2 + 1\\] at \\(x=2\\).",
+    "text": "Problems (Total: 50/60 Points)\n\nProblem 1 (30 points)\nA river which flows at 6 km/d is receiving waste discharges from two sources which are 15 km apart. The oxygen reaeration rate is 0.55 day-1, and the decay rates of CBOD and NBOD are are 0.35 and 0.25 day-1, respectively. The river’s saturated dissolved oxygen concentration is 10m g/L.\nIf the characteristics of the river inflow and waste discharges are given in Table 1, write a Julia model to compute the dissolved oxygen concentration from the first wastewater discharge to an arbitrary distance d km downstream. Use your model to compute the maximum dissolved oxygen concentration up to 50km downstream and how far downriver this maximum occurs.\n\n\n\nTable 1: River inflow and waste stream characteristics for Problem 1.\n\n\n\n\n\nParameter\nRiver Inflow\nWaste Stream 1\nWaste Stream 2\n\n\n\n\nInflow\n100,000 m3/d\n10,000 m3/d\n15,000 m3/d\n\n\nDO Concentration\n7.5 mg/L\n5 mg/L\n5 mg/L\n\n\nCBOD\n5 mg/L\n50 mg/L\n45 mg/L\n\n\nNBOD\n5 mg/L\n35 mg/L\n35 mg/L\n\n\n\n\n\n\nIn this problem:\n\nPlot the dissolved oxygen concentration from the first waste stream to 50m downriver. What is the minimum value in mg/L?\nWhat is the minimum level of treatment (% removal of organic waste) for waste stream 1 that will ensure that the dissolved oxygen concentration never drops below 4 mg/L, assuming that waste stream 2 remains untreated? How about if only waste stream 2 is treated?\nSuppose you are responsible for designing a waste treatment plan for discharges into the river, with a regulatory mandate to keep the dissolved oxygen concentration above 4 mg/L. Discuss whether you’d opt to treat waste stream 2 alone or both waste streams equally. What other information might you need to make a conclusion, if any?\n\n\n\nProblem 2 (20 points)\nA coastal community has a 3.0m tall levee (relative to present-day mean sea level). From analyzing tide gauge records, you determine that the annual maximum water levels (in m) follow a Generalized Extreme Value distribution with parameters \\(\\text{GEV}(1.5, 0.2, 0.1)\\). The target levee reliability standard is a 1% probability of overtopping (extreme water levels exceeding the levee height).\nIn this problem:\n\nUse Monte Carlo simulation to estimate the present-day reliability of the levee along with a 95% confidence interval for the reliability estimate. Does it comply with the reliability standard? How many samples did you need to determine that?\nOver the lifetime of the levee, mean local sea levels are anticipated to rise by \\(0.3\\mathrm{m}\\) with a standard deviation of \\(0.2\\mathrm{m}\\). How does this impact the future reliability of the levee? Discuss how the sea-level uncertainty impacts the uncertainty of your Monte Carlo estimate.\n\n\n\nProblem 3 (10 points)\nThis problem is only required for students in BEE 5750.\nA factory is planning a third wastewater discharge into the river downstream of the second plant. This discharge would consist of 5 m3/day of wastewater with a dissolved oxygen content of 4.5 mg/L and CBOD and NBOD levels of 50 and 45 mg/L, respectively.\nIn this problem:\n\nAssume that the treatment plan you identified in Problem 1 is still in place for the existing discharges. If the third discharge will not be treated, under the original inflow conditions (7.5 mg/L DO), how far downstream from the second discharge does this third discharge need to be placed to keep the river concentration from dropping below 4 mg/L?",
     "crumbs": [
       "Homework",
-      "HW 1"
+      "HW 3"
     ]
   },
   {
-    "objectID": "hw/hw01/hw01.html#references",
-    "href": "hw/hw01/hw01.html#references",
-    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "objectID": "hw/hw03/hw03.html#references",
+    "href": "hw/hw03/hw03.html#references",
+    "title": "BEE 4750 Homework 3: Dissolved Oxygen and Monte Carlo",
     "section": "References",
     "text": "References\nList any external references consulted, including classmates.",
     "crumbs": [
       "Homework",
-      "HW 1"
+      "HW 3"
     ]
   },
   {
@@ -1573,6 +1843,202 @@
       "Policies",
       "Group Expectations"
     ]
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#uncertainty-and-systems",
+    "href": "slides/lecture06-1-monte-carlo.html#uncertainty-and-systems",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Uncertainty and Systems",
+    "text": "Uncertainty and Systems\n\nSystems models always neglect aspects of the “real” system, resulting in uncertainties\nMay be external forcings that are unknown.\nRisk: What are the possible impacts of environmental conditions and how probable are they?"
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#monte-carlo-simulation",
+    "href": "slides/lecture06-1-monte-carlo.html#monte-carlo-simulation",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Monte Carlo Simulation",
+    "text": "Monte Carlo Simulation\nMonte Carlo is stochastic simulation.\n\n\n\n\n\n\n\nG\n\n\n\na\n\nProbability\n Distribution\n\n\n\nb\n\nRandom\n Samples\n\n\n\na-&gt;b\n\n\nSample\n\n\n\nc\n\nModel\n\n\n\nb-&gt;c\n\n\nInput\n\n\n\nd\n\nOutputs\n\n\n\nc-&gt;d\n\n\nSimulate"
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#goals-of-monte-carlo",
+    "href": "slides/lecture06-1-monte-carlo.html#goals-of-monte-carlo",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Goals of Monte Carlo",
+    "text": "Goals of Monte Carlo\nMonte Carlo is a broad method, which can be used to:\n\nObtain probability distributions of outputs (uncertainty propagation);\nEstimate deterministic quantities (Monte Carlo estimation)."
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#monte-carlo-estimation",
+    "href": "slides/lecture06-1-monte-carlo.html#monte-carlo-estimation",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Monte Carlo Estimation",
+    "text": "Monte Carlo Estimation\nMonte Carlo estimation involves framing the (deterministic) quantity of interest as a summary statistic of a random process."
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#questions",
+    "href": "slides/lecture06-1-monte-carlo.html#questions",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#why-monte-carlo-works",
+    "href": "slides/lecture06-1-monte-carlo.html#why-monte-carlo-works",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Why Monte Carlo Works",
+    "text": "Why Monte Carlo Works\nWe can formalize Monte Carlo estimation as the computation of the expected value of a random quantity \\(Y\\), \\(\\mu = \\mathbb{E}[Y]\\).\nTo do this, generate \\(n\\) independent and identically distributed values \\(Y_1, \\ldots, Y_n\\). Then the sample estimate is\n\\[\\tilde{\\mu}_n = \\frac{1}{n}\\sum_{i=1}^n Y_i\\]"
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#monte-carlo-formally",
+    "href": "slides/lecture06-1-monte-carlo.html#monte-carlo-formally",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Monte Carlo (Formally)",
+    "text": "Monte Carlo (Formally)\nMore generally, we want to compute some quantity \\(Y=f(X)\\), where \\(X\\) is distributed according to some probability distribution \\(p(x)\\) and \\(f(x)\\) is a real-valued function over a domain \\(D\\).\nThen \\[\\mu = \\mathbb{E}(Y) = \\int_D f(x)p(x)dx.\\]"
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#the-law-of-large-numbers",
+    "href": "slides/lecture06-1-monte-carlo.html#the-law-of-large-numbers",
+    "title": "Monte Carlo: Why It Works",
+    "section": "The Law of Large Numbers",
+    "text": "The Law of Large Numbers\nIf\n\n\\(Y\\) is a random variable and its expectation exists and\n\\(Y_1, \\ldots, Y_n\\) are independently and identically distributed\n\nThen by the weak law of large numbers:\n\\[\\lim_{n \\to \\infty} \\mathbb{P}\\left(\\left|\\tilde{\\mu}_n - \\mu\\right| \\leq \\varepsilon \\right) = 1\\]"
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#the-law-of-large-numbers-1",
+    "href": "slides/lecture06-1-monte-carlo.html#the-law-of-large-numbers-1",
+    "title": "Monte Carlo: Why It Works",
+    "section": "The Law of Large Numbers",
+    "text": "The Law of Large Numbers\nIn other words, eventually Monte Carlo estimates will get within an arbitrary error of the true expectation. But how large is large enough?\nNote that the law of large numbers applies to vector-valued functions as well. The key is that \\(f(x) = Y\\) just needs to be sufficiently well-behaved."
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#monte-carlo-sample-mean",
+    "href": "slides/lecture06-1-monte-carlo.html#monte-carlo-sample-mean",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Monte Carlo Sample Mean",
+    "text": "Monte Carlo Sample Mean\nThe sample mean \\(\\tilde{\\mu}_n = \\frac{1}{n}\\sum_{i=1}^n Y_i\\) is itself a random variable.\n\nWith some assumptions (the mean of \\(Y\\) exists and \\(Y\\) has finite variance), the expected Monte Carlo sample mean \\(\\mathbb{E}[\\tilde{\\mu}_n]\\) is\n\\[\\frac{1}{n}\\sum_{i=1}^n \\mathbb{E}[Y_i] = \\frac{1}{n} n \\mu = \\mu\\]\nSo the Monte Carlo estimate is an unbiased estimate of the mean."
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#monte-carlo-error",
+    "href": "slides/lecture06-1-monte-carlo.html#monte-carlo-error",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Monte Carlo Error",
+    "text": "Monte Carlo Error\nWe’d like to know more about the error of this estimate for a given sample size. The variance of this estimator is\n\\[\\tilde{\\sigma}_n^2 = \\text{Var}\\left(\\tilde{\\mu}_n\\right) = \\mathbb{E}\\left((\\tilde{\\mu}_n - \\mu)^2\\right) = \\frac{\\sigma_Y^2}{n}\\]\n\nSo as \\(n\\) increases, the standard error decreases:\n\\[\\tilde{\\sigma}_n = \\frac{\\sigma_Y}{\\sqrt{n}}\\]"
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#monte-carlo-error-1",
+    "href": "slides/lecture06-1-monte-carlo.html#monte-carlo-error-1",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Monte Carlo Error",
+    "text": "Monte Carlo Error\nIn other words, if we want to decrease the Monte Carlo error by 10x, we need 100x additional samples. This is not an ideal method for high levels of accuracy.\n\n\n\nMonte Carlo is an extremely bad method. It should only be used when all alternative methods are worse.\n\n\n— Sokal, Monte Carlo Methods in Statistical Mechanics, 1996\n\n\n\n\nBut…often most alternatives are worse!"
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#when-might-we-want-to-use-monte-carlo",
+    "href": "slides/lecture06-1-monte-carlo.html#when-might-we-want-to-use-monte-carlo",
+    "title": "Monte Carlo: Why It Works",
+    "section": "When Might We Want to Use Monte Carlo?",
+    "text": "When Might We Want to Use Monte Carlo?\n\n\nAll models are wrong, and so there always exists some irreducible model error. Can we reduce the Monte Carlo error enough so it’s less than the model error and other uncertainties?\nWe often need a lot of simulations. Do we have enough computational power?"
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#when-might-we-want-to-use-monte-carlo-1",
+    "href": "slides/lecture06-1-monte-carlo.html#when-might-we-want-to-use-monte-carlo-1",
+    "title": "Monte Carlo: Why It Works",
+    "section": "When Might We Want to Use Monte Carlo?",
+    "text": "When Might We Want to Use Monte Carlo?\nIf you can compute your answers analytically, you probably should.\nBut for many systems problems, this is either\n\nNot possible;\nRequires a lot of stylization and simplification."
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#monte-carlo-confidence-intervals",
+    "href": "slides/lecture06-1-monte-carlo.html#monte-carlo-confidence-intervals",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Monte Carlo Confidence Intervals",
+    "text": "Monte Carlo Confidence Intervals\nThis error estimate lets us compute confidence intervals for the MC estimate."
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#what-is-a-confidence-interval",
+    "href": "slides/lecture06-1-monte-carlo.html#what-is-a-confidence-interval",
+    "title": "Monte Carlo: Why It Works",
+    "section": "What is a Confidence Interval?",
+    "text": "What is a Confidence Interval?\nRemember: an \\(\\alpha\\)-confidence interval is an interval such that \\(\\alpha \\%\\) of intervals constructed after a given experiment will contain the true value.\n\nIt is not an interval which contains the true value \\(\\alpha \\%\\) of the time. This concept does not exist within frequentist statistics, and this mistake is often made."
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#how-to-interpret-confidence-intervals",
+    "href": "slides/lecture06-1-monte-carlo.html#how-to-interpret-confidence-intervals",
+    "title": "Monte Carlo: Why It Works",
+    "section": "How To Interpret Confidence Intervals",
+    "text": "How To Interpret Confidence Intervals\n\n\nTo understand confidence intervals, think of horseshoes!\nThe post is a fixed target, and my accuracy informs how confident I am that I will hit the target with any given toss.\n\n\n\n\nCartoon of horseshoes\n\n\n\nSource: https://www.wikihow.com/Throw-a-Horseshoe"
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#how-to-interpret-confidence-intervals-1",
+    "href": "slides/lecture06-1-monte-carlo.html#how-to-interpret-confidence-intervals-1",
+    "title": "Monte Carlo: Why It Works",
+    "section": "How To Interpret Confidence Intervals",
+    "text": "How To Interpret Confidence Intervals\nBut once I make the throw, I’ve either hit or missed.\nThe confidence level \\(\\alpha\\%\\) expresses the pre-experimental frequency by which a confidence interval will contain the true value. So for a 95% confidence interval, there is a 5% chance that a given sample was an outlier and the interval is inaccurate."
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#monte-carlo-confidence-intervals-1",
+    "href": "slides/lecture06-1-monte-carlo.html#monte-carlo-confidence-intervals-1",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Monte Carlo Confidence Intervals",
+    "text": "Monte Carlo Confidence Intervals\nOK, back to Monte Carlo…\nBasic Idea: The Central Limit Theorem says that with enough samples, the errors are normally distributed:\n\\[\\left\\|\\tilde{\\mu}_n - \\mu\\right\\| \\to \\mathcal{N}\\left(0, \\frac{\\sigma_Y^2}{n}\\right)\\]"
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#monte-carlo-confidence-intervals-2",
+    "href": "slides/lecture06-1-monte-carlo.html#monte-carlo-confidence-intervals-2",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Monte Carlo Confidence Intervals",
+    "text": "Monte Carlo Confidence Intervals\nThe \\(\\alpha\\)-confidence interval is: \\[\\tilde{\\mu}_n \\pm \\Phi^{-1}\\left(1 - \\frac{\\alpha}{2}\\right) \\frac{\\sigma_Y}{\\sqrt{n}}\\]\nFor example, the 95% confidence interval is \\[\\tilde{\\mu}_n \\pm 1.96 \\frac{\\sigma_Y}{\\sqrt{n}}.\\]"
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#implications-of-monte-carlo-error",
+    "href": "slides/lecture06-1-monte-carlo.html#implications-of-monte-carlo-error",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Implications of Monte Carlo Error",
+    "text": "Implications of Monte Carlo Error\nConverging at a rate of \\(1/\\sqrt{n}\\) is not great. But:\n\nAll models are wrong, and so there always exists some irreducible model error.\nWe often need a lot of simulations. Do we have enough computational power?"
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#implications-of-monte-carlo-error-1",
+    "href": "slides/lecture06-1-monte-carlo.html#implications-of-monte-carlo-error-1",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Implications of Monte Carlo Error",
+    "text": "Implications of Monte Carlo Error\nIf you can compute your answer analytically, you probably should.\nBut often this is difficult if not impossible without many simplifying assumptions."
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#more-advanced-monte-carlo-methods",
+    "href": "slides/lecture06-1-monte-carlo.html#more-advanced-monte-carlo-methods",
+    "title": "Monte Carlo: Why It Works",
+    "section": "More Advanced Monte Carlo Methods",
+    "text": "More Advanced Monte Carlo Methods\nThis type of “simple” Monte Carlo analysis assumes that we can readily sample independent and identically-distributed random variables. There are other methods for when distributions are hard to sample from or uncertainties aren’t independent."
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#on-random-number-generators",
+    "href": "slides/lecture06-1-monte-carlo.html#on-random-number-generators",
+    "title": "Monte Carlo: Why It Works",
+    "section": "On Random Number Generators",
+    "text": "On Random Number Generators\n\n\nRandom number generators are not really random, only pseudorandom.\nThis is why setting a seed is important. But even that can go wrong…\n\n\n\n\nXKCD Cartoon 221: Random Number\n\n\n\nSource: XKCD #221"
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#key-takeaways-1",
+    "href": "slides/lecture06-1-monte-carlo.html#key-takeaways-1",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nChoice of probability distribution can have large impacts on uncertainty and risk estimates: try not to use distributions just because they’re convenient.\nMonte Carlo: Estimate expected values of functions using simulation.\nMonte Carlo error is on the order \\(1/\\sqrt{n}\\), so not great if more direct approaches are available and tractable."
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#key-takeaways-3",
+    "href": "slides/lecture06-1-monte-carlo.html#key-takeaways-3",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nSystems analysis features many uncertainties, which may be neglected with certain methods/model setups.\nChoice of probability distribution can have large impacts on uncertainty and risk estimates: try not to use distributions just because they’re convenient.\nMonte Carlo: Estimate expected values of outcomes using simulation."
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#next-classes",
+    "href": "slides/lecture06-1-monte-carlo.html#next-classes",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: Multiple Objectives and Tradeoffs\nNext Week: Intro to Optimization (Monday)"
+  },
+  {
+    "objectID": "slides/lecture06-1-monte-carlo.html#assessments",
+    "href": "slides/lecture06-1-monte-carlo.html#assessments",
+    "title": "Monte Carlo: Why It Works",
+    "section": "Assessments",
+    "text": "Assessments\nHW3: Due Thursday (10/3) at 9pm\nPrelim 1: Next Wednesday (10/9) in class, includes material through Wednesday’s lecture."
   },
   {
     "objectID": "slides/lecture01-1-intro.html#about-me",
@@ -1936,7 +2402,7 @@
     "href": "slides/lecture04-1-dissolved-oxygen.html#temperature-impact-on-do",
     "title": "Simulation Example: Dissolved Oxygen",
     "section": "Temperature Impact on DO",
-    "text": "Temperature Impact on DO\n\nDissolved Oxygen and Temperature Plot\nSource: usgs.gov"
+    "text": "Temperature Impact on DO\n\n\n\nDissolved Oxygen and Temperature Plot\n\n\n\nSource: usgs.gov"
   },
   {
     "objectID": "slides/lecture04-1-dissolved-oxygen.html#dissolved-oxygen-and-life",
@@ -1957,7 +2423,7 @@
     "href": "slides/lecture04-1-dissolved-oxygen.html#impact-of-paris-on-seine-do-1874",
     "title": "Simulation Example: Dissolved Oxygen",
     "section": "Impact of Paris On Seine DO, 1874",
-    "text": "Impact of Paris On Seine DO, 1874\n\nDissolved Oxygen Downstream of Paris, 1874\nSource: Dmitrieva, T., et al. (2018). https://doi.org/10.1007/s12685-018-0216-7"
+    "text": "Impact of Paris On Seine DO, 1874\n\n\n\nDissolved Oxygen Downstream of Paris, 1874\n\n\n\nSource: Dmitrieva, T., et al. (2018). https://doi.org/10.1007/s12685-018-0216-7"
   },
   {
     "objectID": "slides/lecture04-1-dissolved-oxygen.html#do-regulatory-standards",
@@ -2027,7 +2493,7 @@
     "href": "slides/lecture04-1-dissolved-oxygen.html#modeling-do-1",
     "title": "Simulation Example: Dissolved Oxygen",
     "section": "Modeling DO",
-    "text": "Modeling DO\n\n\nWe’ll track the mass balance in terms of rates (not absolute mass).\nWhat happens to an element of water?\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+    "text": "Modeling DO\n\n\nWe’ll track the mass balance in terms of rates (not absolute mass).\nWhat happens to an element of water as it moves downstream?\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
   },
   {
     "objectID": "slides/lecture04-1-dissolved-oxygen.html#steady-state-waste-do-mass-balance",
@@ -2069,70 +2535,126 @@
     "href": "slides/lecture04-1-dissolved-oxygen.html#steady-state-waste-do-mass-balance-3",
     "title": "Simulation Example: Dissolved Oxygen",
     "section": "Steady-State Waste, DO Mass Balance",
-    "text": "Steady-State Waste, DO Mass Balance\nPutting it all together:\n\\[\n\\begin{aligned}\nU \\frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B \\\\\n&\\quad - k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right) - k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)\n\\end{aligned}\n\\]"
+    "text": "Steady-State Waste, DO Mass Balance\nPutting it all together:\n\\[\n\\begin{aligned}\nU \\frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B \\\\\n&\\quad - k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right) - k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)\n\\end{aligned}\n\\]\n\nNote: Usually models ignore \\(P\\), \\(R\\), and \\(S_B\\).\nWhy do you think that might be?"
   },
   {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#discretization-of-steady-state-do-equation",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#discretization-of-steady-state-do-equation",
+    "objectID": "slides/lecture04-1-dissolved-oxygen.html#steady-state-solution-streeter-phelps",
+    "href": "slides/lecture04-1-dissolved-oxygen.html#steady-state-solution-streeter-phelps",
     "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Discretization of Steady-State DO Equation",
-    "text": "Discretization of Steady-State DO Equation\n\\[\n\\begin{align*}\nU \\frac{C(x+1) - C(x)}{\\Delta x} &= k_a (C_s - C(x)) + P - R - S_B \\\\\n&\\quad - k_c B(x) - k_n N(x) \\\\[0.5em]\n\\frac{N(x+1) - N(x)}{\\Delta x} &=\n\\end{align*}\n\\]"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#discretization-of-steady-state-do-equations",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#discretization-of-steady-state-do-equations",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Discretization of Steady-State DO Equations",
-    "text": "Discretization of Steady-State DO Equations\n\\[\n\\begin{align*}\nC(x+1) &= C(x) + \\frac{\\Delta x}{U}{\\huge[}k_a (C_s - C(x)) + P - R - S_B \\\\\n&\\quad - k_c B(x) - k_n N(x)\\right){\\huge]} \\\\[0.5em]\nN(x+1) &= N(x) + \\frac{\\Delta x}\n\\end{align*}\n\\]\n\nNote: Usually models ignore \\(P\\), R$, and \\(S_B\\).\nWhy do you think that might be?\n\nSimulation Results\n\n\n\nHow To Simulate\nThis is similar to the multi-box example from last time!\nSingle equation, straightforward to evaluate across many values of \\(x\\) with a loop.\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\nC = zeroes(length(x)) # initialize storage\nfor (i, y) in pairs(x)\n    C[i] = dissolved_oxygen(y, parameters)\nend\n\n\nJulia Sidebar: Loop Alternatives\nLoops in Julia are fast and should be used freely.\nBut there are some more concise alternatives, which may be more readable in some cases.\n\n\nJulia Sidebar: Broadcasting\nBut some more concise alternatives (which may be more readable) include broadcasting:\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = (y -&gt; dissolved_oxygen(y, parameters)).(x) \nBroadcasting gets finicky over multiple inputs.\n\n\nJulia Sidebar: Comprehensions\n…And comprehensions (in-line for loops, also in Python):\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = [dissolved_oxygen(y, parameters) for y in x]\nCan “stack” the for loops in a comprehension to nest.\n\n\nJulia Sidebar: When To Use Loops?\nThink about readability and ease of debugging!\n\nIf your code is complex and not wrapped in a function, or you have several nested loops, you should use a loop (just be careful of scope…)\nIf your code is complex, may be worth asking if you should write a function instead and use broadcasting or a comprehension.\n\n\n\nSimulation Outputs\n\n\ndo_simulate (generic function with 1 method)\n\n\n\n\n\nKey Points\n\n\n\nKey Points\n\nDissolved oxygen (DO) is essential for water quality and aquatic life.\nCommonly regulated to keep DO above a minimum threshold.\nDO impacted by a number of factors, notably organic waste decomposition and nitrification.\nWe derived a first-order equation for DO using mass-balance and fate & transport principles."
+    "section": "Steady-State Solution (Streeter-Phelps)",
+    "text": "Steady-State Solution (Streeter-Phelps)\n\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1), \\\\[1em]\n\n\\alpha_1 &= \\exp\\left(-\\frac{k_a x}{U}\\right) \\\\[0.25em]\n\\alpha_2 &= \\left(\\frac{k_c}{k_a-k_c}\\right)\\left[\\exp\\left(\\frac{-k_c x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right] \\\\[0.25em]\n\\alpha_3 &= \\left(\\frac{k_n}{k_a-k_n}\\right)\\left[\\exp\\left(\\frac{-k_n x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right]\n\\end{align}\\]"
   },
   {
     "objectID": "slides/lecture04-1-dissolved-oxygen.html#how-to-simulate",
     "href": "slides/lecture04-1-dissolved-oxygen.html#how-to-simulate",
     "title": "Simulation Example: Dissolved Oxygen",
     "section": "How To Simulate",
-    "text": "How To Simulate\nThis is similar to the multi-box example from last time!\nSingle equation, straightforward to evaluate across many values of \\(x\\) with a loop.\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\nC = zeroes(length(x)) # initialize storage\nfor (i, y) in pairs(x)\n    C[i] = dissolved_oxygen(y, parameters)\nend"
+    "text": "How To Simulate\nSingle equation, straightforward to evaluate across many values of \\(x\\) with a loop.\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\nC = zeroes(length(x)) # initialize storage\nfor (i, y) in pairs(x)\n    C[i] = dissolved_oxygen(y, parameters)\nend"
   },
   {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#julia-sidebar-loop-alternatives",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#julia-sidebar-loop-alternatives",
+    "objectID": "slides/lecture04-1-dissolved-oxygen.html#loop-alternatives",
+    "href": "slides/lecture04-1-dissolved-oxygen.html#loop-alternatives",
     "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Julia Sidebar: Loop Alternatives",
-    "text": "Julia Sidebar: Loop Alternatives\nLoops in Julia are fast and should be used freely.\nBut there are some more concise alternatives, which may be more readable in some cases."
+    "section": "Loop Alternatives",
+    "text": "Loop Alternatives\nLoops in Julia are fast and should be used freely.\nBut there are some more concise alternatives, which may be more readable in some cases."
   },
   {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#julia-sidebar-broadcasting",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#julia-sidebar-broadcasting",
+    "objectID": "slides/lecture04-1-dissolved-oxygen.html#broadcasting",
+    "href": "slides/lecture04-1-dissolved-oxygen.html#broadcasting",
     "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Julia Sidebar: Broadcasting",
-    "text": "Julia Sidebar: Broadcasting\nBut some more concise alternatives (which may be more readable) include broadcasting:\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = (y -&gt; dissolved_oxygen(y, parameters)).(x) \nBroadcasting gets finicky over multiple inputs."
+    "section": "Broadcasting",
+    "text": "Broadcasting\nBut some more concise alternatives (which may be more readable) include broadcasting:\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = (y -&gt; dissolved_oxygen(y, parameters)).(x) \nBroadcasting gets finicky over multiple inputs."
   },
   {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#julia-sidebar-comprehensions",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#julia-sidebar-comprehensions",
+    "objectID": "slides/lecture04-1-dissolved-oxygen.html#comprehensions",
+    "href": "slides/lecture04-1-dissolved-oxygen.html#comprehensions",
     "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Julia Sidebar: Comprehensions",
-    "text": "Julia Sidebar: Comprehensions\n…And comprehensions (in-line for loops, also in Python):\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = [dissolved_oxygen(y, parameters) for y in x]\nCan “stack” the for loops in a comprehension to nest."
+    "section": "Comprehensions",
+    "text": "Comprehensions\n…And comprehensions (in-line for loops, also in Python):\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = [dissolved_oxygen(y, parameters) for y in x]\nCan “stack” the for loops in a comprehension to nest."
   },
   {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#julia-sidebar-when-to-use-loops",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#julia-sidebar-when-to-use-loops",
+    "objectID": "slides/lecture04-1-dissolved-oxygen.html#when-to-use-loops",
+    "href": "slides/lecture04-1-dissolved-oxygen.html#when-to-use-loops",
     "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Julia Sidebar: When To Use Loops?",
-    "text": "Julia Sidebar: When To Use Loops?\nThink about readability and ease of debugging!\n\nIf your code is complex and not wrapped in a function, or you have several nested loops, you should use a loop (just be careful of scope…)\nIf your code is complex, may be worth asking if you should write a function instead and use broadcasting or a comprehension."
+    "section": "When To Use Loops?",
+    "text": "When To Use Loops?\nThink about readability and ease of debugging!\n\nIf your code is complex and not wrapped in a function, or you have several nested loops, you should use a loop (just be careful of scope…)\nIf your code is complex, may be worth asking if you should write a function instead and use broadcasting or a comprehension."
   },
   {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#simulation-outputs",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#simulation-outputs",
+    "objectID": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example",
+    "href": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example",
     "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Simulation Outputs",
-    "text": "Simulation Outputs\n\n\ndo_simulate (generic function with 1 method)"
+    "section": "Single-Discharge Example",
+    "text": "Single-Discharge Example\nConsider a single waste release along a river:\n\n\n\nSingle-Discharge DO Setup"
+  },
+  {
+    "objectID": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example-1",
+    "href": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example-1",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Single-Discharge Example",
+    "text": "Single-Discharge Example\n\n\n\n\n\n\n\n\n\nParameter\nRiver\nWaste\nGeneral\n\n\n\n\nVolume (m3/d)\n100,000\n10,000\n—\n\n\nDO (mg/L)\n6.4\n4.2\n—\n\n\nCBOD (mg/L)\n5\n49\n—\n\n\nNBOD (mg/L)\n5\n27\n—\n\n\n\\(C_s\\) (mg/L)\n—\n—\n7\n\n\n\\(k_a\\), \\(k_c\\), \\(k_n\\)\n—\n—\n0.6, 0.4, 0.25"
+  },
+  {
+    "objectID": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example-initial-condition",
+    "href": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example-initial-condition",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Single-Discharge Example: Initial Condition",
+    "text": "Single-Discharge Example: Initial Condition\nHow do we find the initial state (\\(x=0\\))?\n\nNeed to compute the mixed concentrations of DO, CBOD, and NBOD (\\(Q\\) is the flow volume):\n\\[C_0 = C_\\text{mixed} = \\frac{C_\\text{river} \\times Q_\\text{river} + C_\\text{waste} \\times Q_\\text{waste}}{Q_\\text{river} + Q_\\text{waste}}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example-initial-condition-1",
+    "href": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example-initial-condition-1",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Single-Discharge Example: Initial Condition",
+    "text": "Single-Discharge Example: Initial Condition\nSo the initial values:\n\\[C_0 = 6.2 \\ \\text{mg/L}\\]\n\\[B_0 = 9 \\ \\text{mg/L}\\]\n\\[N_0 = 7 \\ \\text{mg/L}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-1-dissolved-oxygen.html#simulation-outputs-sag-curve",
+    "href": "slides/lecture04-1-dissolved-oxygen.html#simulation-outputs-sag-curve",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Simulation Outputs (“Sag Curve”)",
+    "text": "Simulation Outputs (“Sag Curve”)\n\n\nCode\nfunction do_simulate(x, C0, B0, N0, ka, kn, kc, Cs, U)\n    B = B0 * exp(-kc * x / U)\n    N = N0 * exp(-kn * x / U)\n    α1 = exp(-ka * x / U)\n    α2 = (kc/(ka-kc)) * (exp.(-kc * x / U) - exp(-ka * x / U))\n    α3 = (kn/(ka-kn)) * (exp(-kn * x / U) - exp(-ka * x / U))\n    C = Cs * (1 - α1) + (C0 * α1) - (B0 * α2) - (N0 * α3)\n    return (C, B, N)\nend  \n\n# set river properties\nka = 0.6\nkc = 0.4\nkn = 0.25\n\nC0 = 6.2\nB0 = 9\nN0 = 7\n\nCs = 7\nU = 5\n\nx = 0:40\n\n# evaluate model over all x's\n# this uses broadcasting\ndo_out = (y -&gt; do_simulate(y, C0, B0, N0, ka, kc, kn, Cs, U)).(x)\n# unpack outputs into individual arrays for C, B, and N\n# this uses comprehensions to pull out the relevant components \n#of the tuples that our function outputs\nC = [d[1] for d in do_out]\nB = [d[2] for d in do_out]\nN = [d[3] for d in do_out]\n\n# plot outputs\np1 = plot(; ylabel=\"DO/OD (mg/l)\", xlabel=\"Distance (km)\", left_margin=8mm, top_margin=10mm, guidefontsize=18, legendfontsize=16, tickfontsize=16, legend=:outerright, bottom_margin=10mm)\nplot!(p1, x, C, color=:black, linewidth=4, label=\"DO\")\nplot!(p1, x, B, color=:green, label=\"CBOD\", linestyle=:dash, linewidth=3)\nplot!(p1, x, N, color=:blue, label=\"NBOD\", linestyle=:dash, linewidth=3)\n# plot Cs, which is a constant value \nplot!(p1, x, Cs * ones(length(x)), color=:purple, label=L\"C_s\", linestyle=:dot, linewidth=2)\n\nhline!([3], color=:red, linewidth=2, label=\"Regulatory Standard\")\nplot!(size=(1200, 450))\nxaxis!((0, 40))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Sag curve for dissolved oxygen"
+  },
+  {
+    "objectID": "slides/lecture04-1-dissolved-oxygen.html#multiple-discharges",
+    "href": "slides/lecture04-1-dissolved-oxygen.html#multiple-discharges",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Multiple Discharges",
+    "text": "Multiple Discharges\nWhat happens if we have multiple discharge sites?\n\n\n\nSchematic for Multiple Discharge Example"
+  },
+  {
+    "objectID": "slides/lecture04-1-dissolved-oxygen.html#simulating-multiple-discharges",
+    "href": "slides/lecture04-1-dissolved-oxygen.html#simulating-multiple-discharges",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Simulating Multiple Discharges",
+    "text": "Simulating Multiple Discharges\n\n\nThink of this as a multi-box system.\n\nFlow from waste release 1 to waste release 2.\nFlow from waste release 2 on.\n\n\n\n\n\nSchematic for Multiple Discharge Example\n\n\n\nHow do we compute the initial conditions at release 2?"
+  },
+  {
+    "objectID": "slides/lecture04-1-dissolved-oxygen.html#who-is-responsible-for-non-compliance",
+    "href": "slides/lecture04-1-dissolved-oxygen.html#who-is-responsible-for-non-compliance",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Who is Responsible for Non-Compliance?",
+    "text": "Who is Responsible for Non-Compliance?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Multi-Release Dissolved Oxygen Example"
   },
   {
     "objectID": "slides/lecture04-1-dissolved-oxygen.html#key-points-1",
     "href": "slides/lecture04-1-dissolved-oxygen.html#key-points-1",
     "title": "Simulation Example: Dissolved Oxygen",
     "section": "Key Points",
-    "text": "Key Points\n\nDissolved oxygen (DO) is essential for water quality and aquatic life.\nCommonly regulated to keep DO above a minimum threshold.\nDO impacted by a number of factors, notably organic waste decomposition and nitrification.\nWe derived a first-order equation for DO using mass-balance and fate & transport principles."
+    "text": "Key Points\n\nDissolved oxygen (DO) is essential for water quality and aquatic life.\nCommonly regulated to keep DO above a minimum threshold.\nDO impacted by a number of factors, notably organic waste decomposition and nitrification.\n“Sag Curve”: DO reduced near a discharge until waste decomposition reduces OD and re-aeration can occur."
+  },
+  {
+    "objectID": "slides/lecture04-1-dissolved-oxygen.html#next-classes",
+    "href": "slides/lecture04-1-dissolved-oxygen.html#next-classes",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: Why Are Systems Complicated?\nNext Week: Uncertainty and Monte Carlo"
+  },
+  {
+    "objectID": "slides/lecture04-1-dissolved-oxygen.html#assessments",
+    "href": "slides/lecture04-1-dissolved-oxygen.html#assessments",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Assessments",
+    "text": "Assessments\nHW2: Due Thursday at 9pm."
   },
   {
     "objectID": "slides/notebooks/shallow-lake.html",

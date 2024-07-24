@@ -2,7 +2,7 @@
 title: "Simulation and Box Models"
 subtitle: "Lecture 05"
 author: "Vivek Srikrishnan"
-course: "BEE 4850"
+course: "BEE 4750"
 institution: "Cornell University"
 date: "September 11, 2024"
 format:
@@ -50,6 +50,8 @@ using Distributions
 using Plots
 using Measures
 using LaTeXStrings
+
+Random.seed!(1)
 
 plot_font = "Computer Modern"
 default(
@@ -185,14 +187,17 @@ $$C = C_{in} + \frac{S-D}{uWH}$$
 
 Now let's assume some process affecting $m$ depends on time.
 
-For example: let's say we care about an air pollutant which has a first-order decay rate $k$, so $L(t) = -km(t)$.
+For example: let's say we care about an air pollutant which has a first-order decay rate $k$, so $D(t) = D_0 - km(t)$.
 
 $$
-\begin{align*}
-\Rightarrow \frac{dm}{dt} &= m_\text{in} - m + S -D - km \\[0.5em]
-\dot{m} &= \frac{d(CV)}{dt} = \overbrace{(u WH) C_\text{in}}^{\text{inflow}} - \overbrace{(u WH) C}^{\text{outflow}} + \overbrace{S - D}^{\text{net emissions}} - \overbrace{kCV}^{\text{mass decay}} 
-\end{align*}
+\Rightarrow \frac{dm}{dt} = m_\text{in} - m_\text{out} + S - D_0 - km 
 $$
+
+::: {.fragment .fade-in}
+$$
+\dot{m} = \frac{d(CV)}{dt} = \overbrace{(u WH) C_\text{in}}^{\text{inflow}} - \overbrace{(u WH) C}^{\text{outflow}} + \overbrace{S - D_0}^{\text{net emissions}} - \overbrace{kCV}^{\text{mass decay}} 
+$$
+:::
 
 ## Discretizing Continuous Models
 
@@ -212,19 +217,19 @@ $$\frac{df}{dt} \approx \frac{\Delta f(t)}{\Delta t}$$
 
 $$
 \begin{align*}
-\frac{d(CV)}{dt} &= (u WH) C_\text{in} - (u WH) C(t) + S - D- kC(t)V \\[0.5em]
-\frac{d(C)}{dt} &= \frac{u}{L} C_\text{in} - \frac{u}{L} C(t) + S - D - kC(t) \\
+\frac{d(CV)}{dt} &= (u WH) C_\text{in} - (u WH) C(t) + S - D_0 - kC(t)V \\[0.5em]
+\frac{d(C)}{dt} &= \frac{u}{L} C_\text{in} - \frac{u}{L} C(t) + S - D_0 - kC(t) \\
 \end{align*}
 $$
 
 ::: {.fragment .fade-in}
 $$
-\frac{C(t+1) - C(t)}{\Delta t} = \frac{u}{L} C_\text{in} - \frac{u}{L} C(t) + S - D - kC(t)
+\frac{C(t+1) - C(t)}{\Delta t} = \frac{u}{L} C_\text{in} - \frac{u}{L} C(t) + S - D_0 - kC(t)
 $$
 :::
 ::: {.fragment .fade-in}
 $$
-\bbox[5px, border: red 5px solid]{C(t+1) = C(t) + \Delta t \left(\frac{u}{L} \left(C_\text{in} - C(t)\right) + S - D - kC(t)\right)}
+\bbox[5px, border: red 5px solid]{C(t+1) = C(t) + \Delta t \left(\frac{u}{L} \left(C_\text{in} - C(t)\right) + S - D_0 - kC(t)\right)}
 $$
 :::
 

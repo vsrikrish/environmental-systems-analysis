@@ -2,7 +2,7 @@
 title: "Modeling Example: Lake Eutrophication"
 subtitle: "Lecture 04"
 author: "Vivek Srikrishnan"
-course: "BEE 4850"
+course: "BEE 4750"
 institution: "Cornell University"
 date: "September 09, 2024"
 format:

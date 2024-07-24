@@ -2,7 +2,7 @@
 title: "Simulation Example: Dissolved Oxygen"
 subtitle: "Lecture 06"
 author: "Vivek Srikrishnan"
-course: "BEE 4850"
+course: "BEE 4750"
 institution: "Cornell University"
 date: "September 16, 2024"
 format:
@@ -30,6 +30,7 @@ format:
         chalkboard:
             theme: whiteboard
             buttons: true
+        auto-stretch: false
 engine: julia
 execute:
     freeze: auto
@@ -119,7 +120,7 @@ Source: [fondriest.com](https://www.fondriest.com/environmental-measurements/par
 
 ## Temperature Impact on DO
 
-![Dissolved Oxygen and Temperature Plot](https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/do_temp_0.png)
+![Dissolved Oxygen and Temperature Plot](https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/do_temp_0.png){width=60%}
 
 ::: {.caption}
 Source: [usgs.gov](https://www.usgs.gov/special-topics/water-science-school/science/dissolved-oxygen-and-water)
@@ -179,7 +180,7 @@ In NY (via [Westlaw](https://govt.westlaw.com/nycrr/Document/I4ed90412cd1711dda4
 
 ## Oxygen Balance in Rivers and Streams
 
-![Processes influencing oxygen balance in moving freshwater](images/do-processes.svg){height=100%}
+![Processes influencing oxygen balance in moving freshwater](figures/do-processes.svg){height=100%}
 
 ## Selecting a Metric for DO Fluxes
 
@@ -226,13 +227,13 @@ Use a *fate and transport* modeling approach: how are relevant quantities moved 
 ## Modeling DO
 
 :::: {.columns}
-::: {.column width=30%}
+::: {.column width=40%}
 So what do we do?
 
 Start by assuming *steady-state* waste in each section (or box...).
 
 :::
-::: {.column width=70%}
+::: {.column width=60%}
 
 ![Processes influencing oxygen balance in moving freshwater](figures/do-processes.svg)
 :::
@@ -241,13 +242,13 @@ Start by assuming *steady-state* waste in each section (or box...).
 ## Modeling DO
 
 :::: {.columns}
-::: {.column width=30%}
+::: {.column width=40%}
 
 We'll track the mass balance in terms of rates (not absolute mass).
 
-What happens to an element of water?
+What happens to an element of water as it moves downstream?
 :::
-::: {.column width=70%}
+::: {.column width=60%}
 
 ![Processes influencing oxygen balance in moving freshwater](figures/do-processes.svg)
 :::
@@ -320,36 +321,27 @@ U \frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B \\
 \end{aligned}
 $$
 
-## Discretization of Steady-State DO Equation
-
-$$
-\begin{align*}
-U \frac{C(x+1) - C(x)}{\Delta x} &= k_a (C_s - C(x)) + P - R - S_B \\
-&\quad - k_c B(x) - k_n N(x) \\[0.5em]
-\frac{N(x+1) - N(x)}{\Delta x} &= 
-\end{align*}
-$$
-
-## Discretization of Steady-State DO Equations
-
-$$
-\begin{align*}
-C(x+1) &= C(x) + \frac{\Delta x}{U}{\huge[}k_a (C_s - C(x)) + P - R - S_B \\
-&\quad - k_c B(x) - k_n N(x)\right){\huge]} \\[0.5em]
-N(x+1) &= N(x) + \frac{\Delta x}
-\end{align*}
-$$
-
 ::: {.fragment .fade-in}
-**Note**: Usually models ignore $P$, R$, and $S_B$. 
+**Note**: Usually models ignore $P$, $R$, and $S_B$. 
 
 **Why do you think that might be?**
+:::
 
-# Simulation Results
+## Steady-State Solution (Streeter-Phelps)
+
+::: {.small-math}
+\begin{align}
+C(x) &= C_s(1 - \alpha_1) + C_0 \alpha_1 - B_0 \alpha_2 - N_0 \alpha_3 + \left(\frac{P-R-S_B}{k_a}\right) (1-\alpha_1), \\[1em]
+
+\alpha_1 &= \exp\left(-\frac{k_a x}{U}\right) \\[0.25em] 
+\alpha_2 &= \left(\frac{k_c}{k_a-k_c}\right)\left[\exp\left(\frac{-k_c x}{U}\right) - \exp\left(\frac{-k_ax}{U}\right)\right] \\[0.25em]
+\alpha_3 &= \left(\frac{k_n}{k_a-k_n}\right)\left[\exp\left(\frac{-k_n x}{U}\right) - \exp\left(\frac{-k_ax}{U}\right)\right]
+\end{align}
+:::
+
+# Julia Sidebar: Loops and Broadcasting
 
 ## How To Simulate
-
-This is similar to the multi-box example from last time!
 
 Single equation, straightforward to evaluate across many values of $x$ with a loop.
 
@@ -362,13 +354,13 @@ for (i, y) in pairs(x)
 end
 ```
 
-## Julia Sidebar: Loop Alternatives
+## Loop Alternatives
 
 Loops in Julia are fast and should be used freely. 
 
 But there are some more concise alternatives, which may be more readable in some cases.
 
-## Julia Sidebar: Broadcasting
+## Broadcasting
 
 But some more concise alternatives (which may be more readable) include **broadcasting**:
 
@@ -381,7 +373,7 @@ C = (y -> dissolved_oxygen(y, parameters)).(x)
 
 Broadcasting gets finicky over multiple inputs.
 
-## Julia Sidebar: Comprehensions
+## Comprehensions
 
 ...And **comprehensions** (in-line for loops, also in Python):
 
@@ -394,24 +386,187 @@ C = [dissolved_oxygen(y, parameters) for y in x]
 
 Can "stack" the `for` loops in a comprehension to nest.
 
-## Julia Sidebar: When To Use Loops?
+## When To Use Loops?
 
 Think about readability and ease of debugging!
 
 - If your code is complex and not wrapped in a function, or you have several nested loops, you should use a loop (*just be careful of scope...*)
 - If your code is complex, may be worth asking if you should write a function instead and use broadcasting or a comprehension.
 
-## Simulation Outputs
+# Simulation Example
+
+## Single-Discharge Example
+
+Consider a single waste release along a river:
+
+![Single-Discharge DO Setup](figures/do_setup.svg){width=75%}
+
+## Single-Discharge Example
+
+| Parameter | River | Waste | General |
+|:---------:|:-----:|:-----:|:-------:|
+| Volume (m^3^/d)	 		| 100,000 | 10,000  | --- |
+| DO (mg/L)           		 	| 6.4 	   | 4.2 	 | --- |
+| CBOD	(mg/L)	 		        | 5  		   | 49 	 | --- |
+| NBOD	(mg/L)	 		        | 5 	   | 27 | --- |
+| $C_s$ (mg/L)                    | ---              | ---         | 7 |
+| $k_a$, $k_c$, $k_n$       | ---              | ---         | 0.6, 0.4, 0.25 |   
+
+## Single-Discharge Example: Initial Condition
+
+How do we find the initial state ($x=0$)?
+
+::: {.fragment .fade-in}
+Need to compute the mixed concentrations of DO, CBOD, and NBOD ($Q$ is the flow volume):
+
+$$C_0 = C_\text{mixed} = \frac{C_\text{river} \times Q_\text{river} + C_\text{waste} \times Q_\text{waste}}{Q_\text{river} + Q_\text{waste}}$$
+:::
+
+## Single-Discharge Example: Initial Condition
+
+So the initial values:
+
+$$C_0 = 6.2 \ \text{mg/L}$$
+
+$$B_0 = 9 \ \text{mg/L}$$
+
+$$N_0 = 7 \ \text{mg/L}$$
+
+
+## Simulation Outputs ("Sag Curve")
 
 ```{julia}
-#| echo: false
+#| code-fold: true
+#| echo: true
+#| label: fig-do-sim
+#| fig-cap: "Sag curve for dissolved oxygen"
 
-function do_simulate(Δx, D, C0, B0, N0, ka, kn, kc, Cs, U)
-    C = zeros()
+function do_simulate(x, C0, B0, N0, ka, kn, kc, Cs, U)
+    B = B0 * exp(-kc * x / U)
+    N = N0 * exp(-kn * x / U)
+    α1 = exp(-ka * x / U)
+    α2 = (kc/(ka-kc)) * (exp.(-kc * x / U) - exp(-ka * x / U))
+    α3 = (kn/(ka-kn)) * (exp(-kn * x / U) - exp(-ka * x / U))
+    C = Cs * (1 - α1) + (C0 * α1) - (B0 * α2) - (N0 * α3)
     return (C, B, N)
 end  
 
+# set river properties
+ka = 0.6
+kc = 0.4
+kn = 0.25
 
+C0 = 6.2
+B0 = 9
+N0 = 7
+
+Cs = 7
+U = 5
+
+x = 0:40
+
+# evaluate model over all x's
+# this uses broadcasting
+do_out = (y -> do_simulate(y, C0, B0, N0, ka, kc, kn, Cs, U)).(x)
+# unpack outputs into individual arrays for C, B, and N
+# this uses comprehensions to pull out the relevant components 
+#of the tuples that our function outputs
+C = [d[1] for d in do_out]
+B = [d[2] for d in do_out]
+N = [d[3] for d in do_out]
+
+# plot outputs
+p1 = plot(; ylabel="DO/OD (mg/l)", xlabel="Distance (km)", left_margin=8mm, top_margin=10mm, guidefontsize=18, legendfontsize=16, tickfontsize=16, legend=:outerright, bottom_margin=10mm)
+plot!(p1, x, C, color=:black, linewidth=4, label="DO")
+plot!(p1, x, B, color=:green, label="CBOD", linestyle=:dash, linewidth=3)
+plot!(p1, x, N, color=:blue, label="NBOD", linestyle=:dash, linewidth=3)
+# plot Cs, which is a constant value 
+plot!(p1, x, Cs * ones(length(x)), color=:purple, label=L"C_s", linestyle=:dot, linewidth=2)
+
+hline!([3], color=:red, linewidth=2, label="Regulatory Standard")
+plot!(size=(1200, 450))
+xaxis!((0, 40))
+```
+
+
+## Multiple Discharges
+
+What happens if we have multiple discharge sites?
+
+![Schematic for Multiple Discharge Example](figures/do-multi-release.svg){width=75%}
+
+## Simulating Multiple Discharges
+
+:::: {.columns}
+::: {.column width=40%}
+Think of this as a multi-box system.
+
+1. Flow from waste release 1 to waste release 2.
+2. Flow from waste release 2 on.
+:::
+
+::: {.column width=60%}
+![Schematic for Multiple Discharge Example](figures/do-multi-release.svg)
+
+::: {.fragment .fade-in}
+**How do we compute the initial conditions at release 2?**
+:::
+:::
+::::
+
+## Who is Responsible for Non-Compliance?
+
+```{julia}
+#| label: fig-do-multi
+#| fig-cap: "Multi-Release Dissolved Oxygen Example"
+#| fig-width: 100%
+
+Q1 = 100000
+Q2 = 20000
+Q3 = 25000
+
+x0 = 0
+x1 = 18
+x2 = 30
+x3 = 45
+
+C01 = 6
+B01 = 5
+N01 = 4.5
+
+do_out1 = (y -> do_simulate.(y, C01, B01, N01, ka, kc, kn, 9, 6))(x0:x1)
+
+C1 = [d[1] for d in do_out1]
+B1 = [d[2] for d in do_out1]
+N1 = [d[3] for d in do_out1]
+
+C02 = (C1[length(C1)] * Q1 + 3 * Q2) / (Q1 + Q2)
+B02 = (B1[length(B1)] * Q1 + 50 * Q2) / (Q1 + Q2)
+N02 = (N1[length(N1)] * Q1 + 45 * Q2) / (Q1 + Q2)
+
+do_out2 = (y -> do_simulate.(y, C02, B02, N02, ka, kc, kn, 9, 6))(x0:(x2-x1))
+
+C2 = [d[1] for d in do_out2]
+B2 = [d[2] for d in do_out2]
+N2 = [d[3] for d in do_out2]
+
+C03 = (C2[length(C2)] * (Q1 + Q2) + 4 * Q3) / (Q1 + Q2 + Q3)
+B03 = (B2[length(B2)] * (Q1 + Q2) + 40 * Q3) / (Q1 + Q2 + Q3)
+N03 = (N2[length(N2)] * (Q1 + Q2) + 30 * Q3) / (Q1 + Q2 + Q3)
+
+do_out3 = (y -> do_simulate.(y, C03, B03, N03, ka, kc, kn, 9, 6))(x0:(x3-x2))
+
+C3 = [d[1] for d in do_out3]
+B3 = [d[2] for d in do_out3]
+N3 = [d[3] for d in do_out3]
+
+plot(x0:x1, C1, grid=false, color=:black, ylabel="DO (mg/L)", xlabel="Distance (km)", label="DO", linewidth=4, left_margin=12mm, top_margin=10mm, bottom_margin=20mm, guidefontsize=18, tickfontsize=16, legendfontsize=16)
+plot!(x1:x2, C2, color=:black, label=false, linewidth=4)
+plot!(x2:x3, C3, color=:black, label=false, linewidth=4)
+plot!(size=(1200, 500))
+
+vline!([x0, x1, x2], color=:green, linewidth=3, label="Discharge")
+hline!([3], color=:red, linewidth=3, label="Regulation", linestyle=:dash)
 ```
 
 # Key Points
@@ -421,4 +576,17 @@ end
 - Dissolved oxygen (DO) is essential for water quality and aquatic life.
 - Commonly regulated to keep DO above a minimum threshold.
 - DO impacted by a number of factors, notably organic waste decomposition and nitrification.
-- We derived a first-order equation for DO using mass-balance and fate & transport principles.
+- "Sag Curve": DO reduced near a discharge until waste decomposition reduces OD and re-aeration can occur.
+
+# Upcoming Schedule
+
+## Next Classes
+
+**Wednesday**: Why Are Systems Complicated?
+
+**Next Week**: Uncertainty and Monte Carlo
+
+## Assessments
+
+**HW2**: Due Thursday at 9pm.
+

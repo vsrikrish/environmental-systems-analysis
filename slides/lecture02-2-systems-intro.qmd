@@ -2,7 +2,7 @@
 title: "Introduction to Systems Analysis"
 subtitle: "Lecture 03"
 author: "Vivek Srikrishnan"
-course: "BEE 4850"
+course: "BEE 4750"
 institution: "Cornell University"
 date: "September 04, 2024"
 format:

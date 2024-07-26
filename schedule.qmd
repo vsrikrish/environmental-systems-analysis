@@ -22,7 +22,7 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 |  5    | Mon, Sep 23 | Uncertainty and Monte Carlo Simulation | | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
 |   | Wed, Sep 25 | Lab: Monte Carlo Simulation |  | [{{< fa sharp laptop-code >}}]{style="color:grey"} | | |
 |  6  | Mon, Sep 30 | Monte Carlo: Why It Works | | |  | |
-|    | Wed, Oct 02 | Multiple Objectives and Tradeoffs  |  |  | | |
+|    | Wed, Oct 02 | Prescriptive Modeling  |  |  | | |
 | | | ***Module 3: Systems Management and Optimization*** | | | |
 |  7   | Mon, Oct 07 | Linear Programming |  | |   | |
 |      | Wed, Oct 09 |  **Prelim 1** | | | |

@@ -76,6 +76,10 @@ website:
         contents:
           - href: hw/hw01/hw01.qmd
             text: "HW 1"
+          - href: hw/hw02/hw02.qmd
+            text: "HW 2"
+          - href: hw/hw03/hw03.qmd
+            text: "HW 3"
       - section: labs.qmd
         contents:
           - href: labs/lab01/lab01.qmd

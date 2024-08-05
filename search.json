@@ -1312,256 +1312,165 @@
     "text": "Assessments\nHW3: Released today, due 10/03 at 9pm."
   },
   {
-    "objectID": "slides/lecture07-1-linear-programming.html#prescriptive-modeling",
-    "href": "slides/lecture07-1-linear-programming.html#prescriptive-modeling",
-    "title": "Prescriptive Modeling",
-    "section": "Prescriptive Modeling",
-    "text": "Prescriptive Modeling\n\n“What Should I Do?”\nInvolves some type of decision-making."
-  },
-  {
-    "objectID": "slides/lecture07-1-linear-programming.html#decision-problems",
-    "href": "slides/lecture07-1-linear-programming.html#decision-problems",
-    "title": "Prescriptive Modeling",
-    "section": "Decision Problems",
-    "text": "Decision Problems\nDecision problems involve:\n\nDecision variables;\nObjectives;\nConstraints."
+    "objectID": "slides/lecture07-1-linear-programming.html#last-class",
+    "href": "slides/lecture07-1-linear-programming.html#last-class",
+    "title": "Linear Programming",
+    "section": "Last Class",
+    "text": "Last Class\n\nOptimization for solving decision problems.\nDiscussed trial and error and search algorithms.\nFor unconstrained problems, gradient-based methods can get “stuck” at local optima.\nEvolutionary algorithms can require many iterations and evaluations.\nReviewed Lagrange multipliers for constrained optimization."
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#questions",
     "href": "slides/lecture07-1-linear-programming.html#questions",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Questions?",
     "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture07-1-linear-programming.html#components-of-an-optimization-model",
-    "href": "slides/lecture07-1-linear-programming.html#components-of-an-optimization-model",
-    "title": "Prescriptive Modeling",
-    "section": "Components of an Optimization Model",
-    "text": "Components of an Optimization Model\n\nObjective Function: The “target” function to be optimized.\nDecision Variables: Variables which can be changed to affect objective.\nConstraints: Limits on decision variable values.\nFeasible Solution: Decision variable values satisfying constraints.\nOptimal Solution: The “best” feasible solution or solutions (with respect to the objective)"
-  },
-  {
-    "objectID": "slides/lecture07-1-linear-programming.html#how-do-we-solve-optimization-problems",
-    "href": "slides/lecture07-1-linear-programming.html#how-do-we-solve-optimization-problems",
-    "title": "Prescriptive Modeling",
-    "section": "How Do We Solve Optimization Problems?",
-    "text": "How Do We Solve Optimization Problems?"
-  },
-  {
-    "objectID": "slides/lecture07-1-linear-programming.html#solution-approach-1-trial-and-error",
-    "href": "slides/lecture07-1-linear-programming.html#solution-approach-1-trial-and-error",
-    "title": "Prescriptive Modeling",
-    "section": "Solution Approach 1: Trial and Error",
-    "text": "Solution Approach 1: Trial and Error\nWhat are some challenges to trial and error?\n\n\nMany possible solutions (infinitely many when a problem is continuous)\nFeasible region may not be intuitive\nHow do we know when we’ve found an optimal solution?"
-  },
-  {
-    "objectID": "slides/lecture07-1-linear-programming.html#solution-approach-2-generalized-search-algorithms",
-    "href": "slides/lecture07-1-linear-programming.html#solution-approach-2-generalized-search-algorithms",
-    "title": "Prescriptive Modeling",
-    "section": "Solution Approach 2: Generalized Search Algorithms",
-    "text": "Solution Approach 2: Generalized Search Algorithms\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nMost search algorithms look for critical points to find candidate optima. Then the “best” of the critical points is the global optimum."
-  },
-  {
-    "objectID": "slides/lecture07-1-linear-programming.html#unconstrained-optimization",
-    "href": "slides/lecture07-1-linear-programming.html#unconstrained-optimization",
-    "title": "Prescriptive Modeling",
-    "section": "Unconstrained Optimization",
-    "text": "Unconstrained Optimization\n\n\n\n\n\nFunction with Multiple Minima\n\n\n\nWithout constraints, our goal is to find extrema of the function.\nCan do this using the structure of the objective (gradient) or through stochastic search (Monte Carlo)."
-  },
-  {
-    "objectID": "slides/lecture07-1-linear-programming.html#constrained-optimization",
-    "href": "slides/lecture07-1-linear-programming.html#constrained-optimization",
-    "title": "Prescriptive Modeling",
-    "section": "Constrained Optimization",
-    "text": "Constrained Optimization\n\n\n\n\n\nFunction with Multiple Minima and a Constraint\n\n\n\nNow, notice the effect of a constraint!\nFor a constrained problem, we also have to look along the constraint to see if that creates a solution."
-  },
-  {
-    "objectID": "slides/lecture07-1-linear-programming.html#lagrange-multipliers",
-    "href": "slides/lecture07-1-linear-programming.html#lagrange-multipliers",
-    "title": "Prescriptive Modeling",
-    "section": "Lagrange Multipliers",
-    "text": "Lagrange Multipliers\nWe can solve some constrained problems using Lagrange Multipliers!\nRecall (maybe) that the Lagrange Multipliers method requires equality constraints. But we can easily create those with “dummy” variables."
-  },
-  {
-    "objectID": "slides/lecture07-1-linear-programming.html#using-equality-constraints",
-    "href": "slides/lecture07-1-linear-programming.html#using-equality-constraints",
-    "title": "Prescriptive Modeling",
-    "section": "Using Equality Constraints",
-    "text": "Using Equality Constraints\n\n\nOriginal Problem\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 \\geq A \\notag \\\\\n& && x_2 \\leq B \\notag\n\\end{aligned}\n\\]\n\nWith Dummy Variables\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 - S_1^2 = A \\notag \\\\\n& && x_2 + S_2^2 = B \\notag\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/lecture07-1-linear-programming.html#using-lagrange-multipliers",
-    "href": "slides/lecture07-1-linear-programming.html#using-lagrange-multipliers",
-    "title": "Prescriptive Modeling",
-    "section": "Using Lagrange Multipliers",
-    "text": "Using Lagrange Multipliers\nThen the Lagrangian function becomes:\n\\[\nH(\\mathbf{x}, S_1, S_2, \\lambda_1, \\lambda_2) = f(\\mathbf{x}) - \\lambda_1(x_1 - S_1^2 - A) - \\lambda_2(x_2 + S_2^2 - B)\n\\]\nwhere \\(\\lambda_1\\), \\(\\lambda_2\\) are penalties for violating the constraints.\nThe \\(\\lambda_i\\) are the eponymous Lagrange multipliers."
-  },
-  {
-    "objectID": "slides/lecture07-1-linear-programming.html#using-lagrange-multipliers-1",
-    "href": "slides/lecture07-1-linear-programming.html#using-lagrange-multipliers-1",
-    "title": "Prescriptive Modeling",
-    "section": "Using Lagrange Multipliers",
-    "text": "Using Lagrange Multipliers\nNext step: locate possible optima where the partial derivatives of the Lagrangian are zero.\n\\[\\frac{\\partial H(\\cdot)}{\\partial \\cdot} = 0\\]\nThis is actually many equations, even though our original problem was low-dimensional, and can be slow to solve."
-  },
-  {
-    "objectID": "slides/lecture07-1-linear-programming.html#using-lagrange-multiplers",
-    "href": "slides/lecture07-1-linear-programming.html#using-lagrange-multiplers",
-    "title": "Prescriptive Modeling",
-    "section": "Using Lagrange Multiplers",
-    "text": "Using Lagrange Multiplers\nDespite these challenges, Lagrange Multiplers are at the core of many advanced search algorithms."
-  },
-  {
     "objectID": "slides/lecture07-1-linear-programming.html#what-is-linear-programming",
     "href": "slides/lecture07-1-linear-programming.html#what-is-linear-programming",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "What is Linear Programming?",
     "text": "What is Linear Programming?\nLinear programming refers to optimization for linear models.\nAs we will see over the next few weeks, linear models are:\n\nrelatively simple (which lets us solve and analyze them “easily”);\nsurprisingly applicable to many contexts!"
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#sidebar-why-programming",
     "href": "slides/lecture07-1-linear-programming.html#sidebar-why-programming",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Sidebar: Why “Programming”?",
-    "text": "Sidebar: Why “Programming”?\n“Program” used to refer to military logistics, which is the origin of this field of research.\nFor this historical reason, “mathematical programming” is often used instead of “mathematical optimization.”\n\nWe typically restrict “program” for optimization problems which are formulated completely mathematically, versus those which use a computer model to simulate the relationship between decision variables and outputs."
+    "text": "Sidebar: Why “Programming”?\n“Program” used to refer to military logistics, which is the origin of this field of research. For this historical reason, “mathematical programming” is often used instead of “mathematical optimization.”\n\nWe typically restrict “program” for optimization problems which are formulated completely mathematically, versus we use a computer model to simulate the relationship between decision variables and outputs."
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#linear-functions",
     "href": "slides/lecture07-1-linear-programming.html#linear-functions",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Linear Functions",
     "text": "Linear Functions\nRecall that a function \\(f(x_1, \\ldots, x_n)\\) is linear if \\[f(x_1, \\ldots, x_n) = a_1x_1 + a_2x_2 + \\ldots + a_n x_n.\\]\n\nThe key is that linear models are very simple geometrically:\n\nDefine hyperplanes;\nConstant derivatives/gradients."
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#linear-programs",
     "href": "slides/lecture07-1-linear-programming.html#linear-programs",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Linear Programs",
     "text": "Linear Programs\nA linear program (LP), or a linear optimization model, has the following characteristics:\n\nLinearity: The objective function and constraints are all linear;\nDivisibility: The decision variables are continuous (they can be fractional levels);\nCertainty: The problem is deterministic."
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#linearization",
     "href": "slides/lecture07-1-linear-programming.html#linearization",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Linearization",
     "text": "Linearization\n\n\nLinear models come up frequently because we can linearize nonlinear functions.\nWhen we linearize components of an mathematical program, this is called the linear relaxation of the original problem."
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#linearization-1",
     "href": "slides/lecture07-1-linear-programming.html#linearization-1",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Linearization",
     "text": "Linearization\n\n\nNote that the linearization is often quite sensitive to the points that are used to find the slope.\nSo this is best done when you have a rough idea of the variable range of interest."
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#why-is-solving-lps-straightforward",
     "href": "slides/lecture07-1-linear-programming.html#why-is-solving-lps-straightforward",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Why Is Solving LPs Straightforward?",
-    "text": "Why Is Solving LPs Straightforward?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll solutions must exist on the boundary of the feasible region (which must be a polytope)."
+    "text": "Why Is Solving LPs Straightforward?\n\n\nx = 2:0.1:11\nf1(x) = 4.5 .* x\nf2(x) = -x .+ 16\nf3(x) = -1.5 .* x .+ 12\nf4(x) = 0.5 .* x\n\np = plot(x, max.(f3(x), f4(x)), fillrange=min.(f1(x), f2(x)), color=:lightblue, grid=true, legend=false, xlabel=L\"x\", ylabel=L\"y\", xlims=(-2, 20), framestyle=:origin, ylims=(-2, 20), minorticks=5, tickfontsize=16, guidefontsize=16, right_margin=5mm)\nplot!(-2:0.1:20, f1.(-2:0.1:20), color=:green, linewidth=3)\nplot!(-2:0.1:20, f2.(-2:0.1:20), color=:red, linewidth=3)\nplot!(-2:0.1:20, f3.(-2:0.1:20), color=:brown, linewidth=3)\nplot!(-2:0.1:20, f4.(-2:0.1:20), color=:purple, linewidth=3)\nplot!(size=(600, 600))\n\nAll solutions must exist on the boundary of the feasible region (which must be a polytope)."
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#why-is-solving-lps-straightforward-1",
     "href": "slides/lecture07-1-linear-programming.html#why-is-solving-lps-straightforward-1",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Why Is Solving LPs Straightforward?",
-    "text": "Why Is Solving LPs Straightforward?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMore specifically:\n\n\nan optimum solution must occur at the intersection of constraints;\ncan focus on finding and analyzing the corners."
+    "text": "Why Is Solving LPs Straightforward?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMore specifically:\n\n\nan optimum solution must occur at the intersection of constraints;\ncan focus on finding and analyzing the corners."
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#why-is-solving-lps-straightforward-2",
     "href": "slides/lecture07-1-linear-programming.html#why-is-solving-lps-straightforward-2",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Why Is Solving LPs Straightforward?",
-    "text": "Why Is Solving LPs Straightforward?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is the basis of all simplex methods for solving LPs.\nThese methods go back to George Dantzig in the 1940s and are still widely used today."
+    "text": "Why Is Solving LPs Straightforward?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is the basis of all simplex methods for solving LPs.\nThese methods go back to George Dantzig in the 1940s and are still widely used today."
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#why-do-lps-have-a-corner-solution",
     "href": "slides/lecture07-1-linear-programming.html#why-do-lps-have-a-corner-solution",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Why Do LPs Have A Corner Solution?",
     "text": "Why Do LPs Have A Corner Solution?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCan a solution be in the interior?"
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#why-do-lps-have-a-corner-solution-1",
     "href": "slides/lecture07-1-linear-programming.html#why-do-lps-have-a-corner-solution-1",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Why Do LPs Have A Corner Solution?",
     "text": "Why Do LPs Have A Corner Solution?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat about along an edge but not a corner?"
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#example-solving-an-lp",
     "href": "slides/lecture07-1-linear-programming.html#example-solving-an-lp",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Example: Solving an LP",
     "text": "Example: Solving an LP\n\n\n\\[\\begin{alignedat}{3}\n& \\max_{x_1, x_2} &  230x_1 + 120x_2 &  \\\\\\\\\n& \\text{subject to:} & &\\\\\n& & 0.9x_1 + 0.5x_2 &\\leq 600 \\\\\n& & x_1 + x_2 &\\leq 1000 \\\\\n& & x_1, x_2 &\\geq 0\n\\end{alignedat}\\]"
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#example-solving-an-lp-1",
     "href": "slides/lecture07-1-linear-programming.html#example-solving-an-lp-1",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Example: Solving an LP",
     "text": "Example: Solving an LP\n\n\n\\[\\begin{alignedat}{3}\n& \\max_{x_1, x_2} &  230x_1 + 120x_2 &  \\\\\\\\\n& \\text{subject to:} & &\\\\\n& & 0.9x_1 + 0.5x_2 &\\leq 600 \\\\\n& & x_1 + x_2 &\\leq 1000 \\\\\n& & x_1, x_2 &\\geq 0\n\\end{alignedat}\\]"
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#examining-corner-points",
     "href": "slides/lecture07-1-linear-programming.html#examining-corner-points",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Examining Corner Points",
     "text": "Examining Corner Points\n\n\n\n\n\nCorner \\((x_1, x_2)\\)\nObjective\n\n\n\n\n\\((0,0)\\)\n\\(0\\)\n\n\n\\((0, 1000)\\)\n\\(12000\\)\n\n\n\\((667, 0)\\)\n\\(153410\\)\n\n\n\\((250, 750)\\)\n\\(147500\\)"
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#solving-an-lp",
     "href": "slides/lecture07-1-linear-programming.html#solving-an-lp",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Solving an LP",
     "text": "Solving an LP\nManually checking the corner points is all well and good for this simple example, but does it scale well?\n\nLP solvers (often based off the simplex method) automate this process."
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#binding-constraints",
     "href": "slides/lecture07-1-linear-programming.html#binding-constraints",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Binding Constraints",
     "text": "Binding Constraints\nA solution will be found at one of the corner points of the feasible polytope.\nThis means that at this solution, one or more constraints are binding: if we relaxed the constraint by weakening it, we could improve the solution."
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#binding-constraints-1",
     "href": "slides/lecture07-1-linear-programming.html#binding-constraints-1",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Binding Constraints",
     "text": "Binding Constraints\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe binding constraints are\n\n\\(x_1 \\geq 0\\)\n\\(0.9 x_1 + 0.5 x_2 \\leq 600\\),\n\nbut not\n\n\\(x_1 + x_2 \\leq 1000\\)."
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#shadow-prices-1",
     "href": "slides/lecture07-1-linear-programming.html#shadow-prices-1",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Shadow Prices",
     "text": "Shadow Prices\nThe marginal cost of a constraint is the amount by which the solution would improve if the constraint capacity was relaxed by one unit.\nThis is also referred to as the shadow price (these are also called the dual variables of the constraint).\nNon-zero shadow prices tell us that the constraint is binding, and their values rank which constraints are most influential."
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#shadow-prices-are-lagrange-multipliers",
     "href": "slides/lecture07-1-linear-programming.html#shadow-prices-are-lagrange-multipliers",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Shadow Prices are Lagrange Multipliers",
     "text": "Shadow Prices are Lagrange Multipliers\nThe shadow prices are the Lagrange Multipliers of the optimization problem.\nIf our inequality constraints \\(X \\geq A\\) and \\(X \\leq B\\) are written as \\(X - S_1^2 = A\\) and \\(X + S_2^2 = B\\):\n\\[H(X, S_1 S_2, \\lambda_1, \\lambda_2) = Z(X) - \\lambda_1(X - S_1^2 - A) - \\lambda_2(X + S_2^2 - B),\\]\n\\[\\Rightarrow \\qquad \\frac{\\partial H}{\\partial A} = \\lambda_1, \\qquad \\frac{\\partial H}{\\partial B} = \\lambda_2.\\]"
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#key-takeaways-1",
     "href": "slides/lecture07-1-linear-programming.html#key-takeaways-1",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Key Takeaways",
     "text": "Key Takeaways\n\nLinear Programs: straightforward to solve!\nFor an LP, an optimum must occur at a corner of the feasible polytope.\nShadow prices (dual variables) of the constraints are the rate by which the solution would improve if the constraints were relaxed."
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#next-classes",
     "href": "slides/lecture07-1-linear-programming.html#next-classes",
-    "title": "Prescriptive Modeling",
+    "title": "Linear Programming",
     "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Prelim 1!\nMonday: No class, Fall Break\nNext Wednesday: Lab on using Julia to solve optimization problems"
-  },
-  {
-    "objectID": "slides/lecture07-1-linear-programming.html#assessments",
-    "href": "slides/lecture07-1-linear-programming.html#assessments",
-    "title": "Prescriptive Modeling",
-    "section": "Assessments",
-    "text": "Assessments\nPrelim 1: Next Wednesday (10/9) in class, includes material through Monte Carlo lecture.\nHW4: Not released until 10/28."
+    "text": "Next Classes\nMonday: Project proposal peer review\nWednesday: Guest lecture by Diana Hackett (Mann librarian) on regulations research.\nFriday: Lab on linear programming in Julia."
   },
   {
     "objectID": "policies/groups.html",
@@ -1764,6 +1673,50 @@
     ]
   },
   {
+    "objectID": "hw/hw01/hw01.html",
+    "href": "hw/hw01/hw01.html",
+    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "section": "",
+    "text": "Due Date\n\n\n\nThursday, 9/5/24, 9:00pm",
+    "crumbs": [
+      "Homework",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw01/hw01.html#overview",
+    "href": "hw/hw01/hw01.html#overview",
+    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "section": "Overview",
+    "text": "Overview\n\nInstructions\n\nProblem 1 consist of a series of code snippets for you to interpret and debug. You will be asked to identify relevant error(s) and fix the code.\nProblem 2 gives you some code that works as intended; your goal is to identify the code’s purpose by following its logic.\nProblem 3 asks you to write code to generate a random vector and subtract off its mean, using a Julia syntax called broadcasting.\nProblem 4 asks you to convert a verbal description of a wastewater treatment system into a Julia function, and then to use that function to explore the impact of different wastewater allocation strategies.\nProblem 5 (5750 only) asks you to use more advanced Julia techniques.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\nStandard Julia practice is to load all needed packages at the top of a file. If you need to load any additional packages in any assignments beyond those which are loaded by default, feel free to add a using statement, though you may need to install the package.\n\nusing Random\nusing Plots\nusing GraphRecipes\nusing LaTeXStrings\n\n\n# this sets a random seed, which ensures reproducibility of random number generation. You should always set a seed when working with random numbers.\nRandom.seed!(1)\n\nTaskLocalRNG()",
+    "crumbs": [
+      "Homework",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw01/hw01.html#problems-total-5060-points",
+    "href": "hw/hw01/hw01.html#problems-total-5060-points",
+    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "section": "Problems (Total: 50/60 Points)",
+    "text": "Problems (Total: 50/60 Points)\n\nProblem 1 (15 points)\nThe following subproblems all involve code snippets that require debugging.\nFor each of them:\n\nidentify and describe the logic and/or syntax error;\nwrite a fixed version of the function;\nuse your fixed function to solve the problem.\n\n\nProblem 1.1\nYou’ve been tasked with writing code to identify the minimum value in an array. You cannot use a predefined function. Your colleague suggested the function below, but it does not return the minimum value.\n\nfunction minimum(array)\n    min_value = 0\n    for i in 1:length(array)\n        if array[i] &lt; min_value\n            min_value = array[i]\n        end\n    end\n    return min_value\nend\n\narray_values = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\n@show minimum(array_values);\n\nminimum(array_values) = 0\n\n\n\n\nProblem 1.2\nYour team is trying to compute the average grade for your class, but the following code produces an error.\n\nstudent_grades = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\nfunction class_average(grades)\n  average_grade = mean(student_grades)\n  return average_grade\nend\n\n@show average_grade;\n\nUndefVarError: \nUndefVarError: `average_grade` not defined\nStacktrace:\n [1] macro expansion\n   @ show.jl:1181 [inlined]\n [2] top-level scope\n   @ ~/Teaching/BEE4750/website/hw/hw01/hw01.qmd:184\n\n\n\n\nProblem 1.3\nYour team wants to know the expected payout of an old Italian dice game called passadieci (which was analyzed by Galileo as one of the first examples of a rigorous study of probability). The goal of passadieci is to get at least an 11 from rolling three fair, six-sided dice. Your strategy is to compute the average wins from 1,000 trials, but the code you’ve written below produces an error.\n\nfunction passadieci()\n    # this rand() call samples 3 values from the vector [1, 6]\n    roll = rand(1:6, 3) \n    return roll\nend\nn_trials = 1_000\noutcomes = zero(n_trials)\nfor i = 1:n_trials\n    outcomes[i] = (sum(passadieci()) &gt; 11)\nend\nwin_prob = sum(outcomes) / n_trials # compute average number of wins\n@show win_prob;\n\nMethodError: \nMethodError: no method matching setindex!(::Int64, ::Bool, ::Int64)\nStacktrace:\n [1] top-level scope\n   @ ~/Teaching/BEE4750/website/hw/hw01/hw01.qmd:215\n\n\n\n\n\nProblem 2 (5 points)\nYou’ve been handed some code to analyze. The original coder was not very considerate of other potential users: the function is called mystery_function and there are no comments explaining the purpose of the code. It appears to take in an array and return some numbers, and you’ve been assured that the code works as intended.\n\nfunction mystery_function(values)\n    y = []\n    for v in values\n        if !(v in y)\n            append!(y, v)\n        end\n    end\n    return y\nend\n\nlist_of_values = [1, 2, 3, 4, 3, 4, 2, 1]\n@show mystery_function(list_of_values);\n\nmystery_function(list_of_values) = Any[1, 2, 3, 4]\n\n\nIn this problem:\n\nExplain the purpose of mystery_function.\nAdd comments to the code, explaining why and how it works. Refer to “Best Practices for Writing Code Comments”, and remember that bad comments can be just as bad as no comments at all. You do not need to add comments to every line (in fact, this is very bad practice), but you should note the purpose of every “section” of code, and add comments explaining any code sequences that you don’t immediately understand.\nIs there a built-in Julia function that does the same thing as mystery_function? If so, what is it? Use it to do the same thing as the code above.\n\n\n\nProblem 3 (10 points)\nYou’re interested in writing some code to remove the mean of a vector.\nIn this problem:\n\nWrite a function compute_mean(v) which sums all of the elements of a vector v using a for loop and computes the mean.\nMake a random vector random_vect of length 10 using Julia’s rand() function. Use your compute_mean() function to calculate its mean and subtract it from random_vect without a loop (using a Julia technique called broadcasting; feel free to consult the Julia documentation and search as necessary). Check that the new vector has mean zero.\n\n\n\nProblem 4 (20 points)\nCheap Plastic Products, Inc. is operating a plant that produces \\(100 \\text{m}^3\\text{/day}\\) of wastewater that is discharged into Pristine Brook. The wastewater contains \\(1 \\text{kg/m}^3\\) of YUK, a toxic substance. The US Environmental Protection Agency has imposed an effluent standard on the plant prohibiting discharge of more than \\(20 \\text{kg/day}\\) of YUK into Pristine Brook.\nCheap Plastic Products has analyzed two methods for reducing its discharges of YUK. Method 1 is land disposal, which costs \\(X_1^2/20\\) dollars per day, where \\(X_1\\) is the amount of wastewater disposed of on the land (\\(\\text{m}^3\\text{/day}\\)). With this method, 20% of the YUK applied to the land will eventually drain into the stream (i.e., 80% of the YUK is removed by the soil).\nMethod 2 is a chemical treatment procedure which costs $1.50 per \\(\\text{m}^3\\) of wastewater treated. The chemical treatment has an efficiency of \\(e= 1 - 0.005X_2\\), where \\(X_2\\) is the quantity of wastewater (\\(\\text{m}^3\\text{/day}\\)) treated. For example, if \\(X_2 = 50 \\text{m}^3\\text{/day}\\), then \\(e = 1 - 0.005(50) = 0.75\\), so that 75% of the YUK is removed.\nCheap Plastic Products is wondering how to allocate their wastewater between these three disposal and treatment methods (land disposal, and chemical treatment, and land disposal) to meet the effluent standard while keeping costs manageable.\nThe flow of wastewater through this treatment system is shown in Figure 1. Modify the edge labels (by editing the edge_labels dictionary in the code producing Figure 1) to show how the wastewater allocations result in the final YUK discharge into Pristine Brook. For the edge_label dictionary, the tuple \\((i, j)\\) corresponds to the arrow going from node \\(i\\) to node \\(j\\). The syntax for any entry is (i, j) =&gt; \"label text\", and the label text can include mathematical notation if the string is prefaced with an L, as in L\"x_1\" will produce \\(x_1\\).\n\nA = [0 1 1 1;\n    0 0 0 1;\n    0 0 0 1;\n    0 0 0 0]\n\nnames = [\"Plant\", \"Land Treatment\", \"Chem Treatment\", \"Pristine Brook\"]\n# modify this dictionary to add labels\nedge_labels = Dict((1, 2) =&gt; \"\", (1,3) =&gt; \"\", (1, 4) =&gt; \"\",(2, 4) =&gt; \"\",(3, 4) =&gt; \"\")\nshapes=[:hexagon, :rect, :rect, :hexagon]\nxpos = [0, -1.5, -0.25, 1]\nypos = [1, 0, 0, -1]\n\np = graphplot(A, names=names,edgelabel=edge_labels, markersize=0.15, markershapes=shapes, markercolor=:white, x=xpos, y=ypos)\ndisplay(p)\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: System diagram of the wastewater treatment options in Problem 4.\n\n\n\n\nIn this problem:\n\nFormulate a mathematical model for the treatment cost and the amount of YUK that will be discharged into Pristine Brook based on the wastewater allocations. This is best done with some equations and supporting text explaining the derivation. Make sure you include, as additional equations in the model, any needed constraints on relevant values. You can find some basics on writing mathematical equations using the LaTeX typesetting syntax here, and a cheatsheet with LaTeX commands can be found on the course website’s Resources page.\nImplement your systems model as a Julia function which computes the resulting YUK concentration and cost for a particular treatment plan. You can return multiple values from a function with a tuple, as in:\nfunction multiple_return_values(x, y)\n    return (x+y, x*y)\nend\n\na, b = multiple_return_values(2, 5)\n@show a;\n@show b;\nTo evalute the function over vectors of inputs, you can broadcast the function by adding a decimal . before the function arguments and accessing the resulting values by writing a comprehension to loop over the individual outputs in the vector:\nx = [1, 2, 3, 4, 5]\ny = [6, 7, 8, 9, 10]\n\noutput = multiple_return_values.(x, y)\na = [out[1] for out in output]\nb = [out[2] for out in output]\n@show a;\n@show b;\nMake sure you comment your code appropriately to make it clear what is going on and why.\nUse your function to experiment with some different combinations of wastewater discharge and treatment and plot the results of these experiments. Can you find one that satisfies the YUK effluent standard (plot this as well as a dashed red line)? What was the cost? What can you say about the tradeoff between treatment cost and YUK concentration? You don’t have to find an “optimal” solution to this problem, but what do you think would be needed to find a better solution?\n\n\n\nProblem 5 (10 points)\nThis problem is only required for students in BEE 5750.\n\nProblem 5.1\nUsing a comprehension, count the number of odd numbers between 0 and 149.\n\n\n\n\n\n\n\nHint\n\n\n\niseven() returns true for even numbers and false for odd numbers.\n\n\n\nProblem 5.2\nWrite a function polynomial(x, a) which calculates the polynomial \\[p(x) = \\sum_{i=1}^n a_i x^i\\]\nbased on a point x and a coefficient vector a of length n using a loop. Test your function by computing \\[p(x) = 2x^3 - x^2 + 1\\] at \\(x=2\\).",
+    "crumbs": [
+      "Homework",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw01/hw01.html#references",
+    "href": "hw/hw01/hw01.html#references",
+    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "section": "References",
+    "text": "References\nList any external references consulted, including classmates.",
+    "crumbs": [
+      "Homework",
+      "HW 1"
+    ]
+  },
+  {
     "objectID": "labs/lab01/lab01.html",
     "href": "labs/lab01/lab01.html",
     "title": "BEE 4750 Lab 1: Julia and GitHub Basics",
@@ -1830,47 +1783,47 @@
     ]
   },
   {
-    "objectID": "hw/hw01/hw01.html",
-    "href": "hw/hw01/hw01.html",
-    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "objectID": "hw/hw04/hw04.html",
+    "href": "hw/hw04/hw04.html",
+    "title": "BEE 4750 Homework 4: Linear Programming and Capacity Expansion",
     "section": "",
-    "text": "Due Date\n\n\n\nThursday, 9/5/24, 9:00pm",
+    "text": "Due Date\n\n\n\nThursday, 11/07/23, 9:00pm",
     "crumbs": [
       "Homework",
-      "HW 1"
+      "HW 4"
     ]
   },
   {
-    "objectID": "hw/hw01/hw01.html#overview",
-    "href": "hw/hw01/hw01.html#overview",
-    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "objectID": "hw/hw04/hw04.html#overview",
+    "href": "hw/hw04/hw04.html#overview",
+    "title": "BEE 4750 Homework 4: Linear Programming and Capacity Expansion",
     "section": "Overview",
-    "text": "Overview\n\nInstructions\n\nProblem 1 consist of a series of code snippets for you to interpret and debug. You will be asked to identify relevant error(s) and fix the code.\nProblem 2 gives you some code that works as intended; your goal is to identify the code’s purpose by following its logic.\nProblem 3 asks you to write code to generate a random vector and subtract off its mean, using a Julia syntax called broadcasting.\nProblem 4 asks you to convert a verbal description of a wastewater treatment system into a Julia function, and then to use that function to explore the impact of different wastewater allocation strategies.\nProblem 5 (5750 only) asks you to use more advanced Julia techniques.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\nStandard Julia practice is to load all needed packages at the top of a file. If you need to load any additional packages in any assignments beyond those which are loaded by default, feel free to add a using statement, though you may need to install the package.\n\nusing Random\nusing Plots\nusing GraphRecipes\nusing LaTeXStrings\n\n\n# this sets a random seed, which ensures reproducibility of random number generation. You should always set a seed when working with random numbers.\nRandom.seed!(1)\n\nTaskLocalRNG()",
+    "text": "Overview\n\nInstructions\n\nProblem 1 asks you to formulate and solve a resource allocation problem using linear programming.\nProblem 2 asks you to formulate, solve, and analyze a standard generating capacity expansion problem.\nProblem 3 (5750 only) asks you to add a CO2 constraint to the capacity expansion problem and identify changes in the resulting solution.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nusing JuMP\nusing HiGHS\nusing DataFrames\nusing Plots\nusing Measures\nusing CSV\nusing MarkdownTables",
     "crumbs": [
       "Homework",
-      "HW 1"
+      "HW 4"
     ]
   },
   {
-    "objectID": "hw/hw01/hw01.html#problems-total-5060-points",
-    "href": "hw/hw01/hw01.html#problems-total-5060-points",
-    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "objectID": "hw/hw04/hw04.html#problems-total-5060-points",
+    "href": "hw/hw04/hw04.html#problems-total-5060-points",
+    "title": "BEE 4750 Homework 4: Linear Programming and Capacity Expansion",
     "section": "Problems (Total: 50/60 Points)",
-    "text": "Problems (Total: 50/60 Points)\n\nProblem 1 (15 points)\nThe following subproblems all involve code snippets that require debugging.\nFor each of them:\n\nidentify and describe the logic and/or syntax error;\nwrite a fixed version of the function;\nuse your fixed function to solve the problem.\n\n\nProblem 1.1\nYou’ve been tasked with writing code to identify the minimum value in an array. You cannot use a predefined function. Your colleague suggested the function below, but it does not return the minimum value.\n\nfunction minimum(array)\n    min_value = 0\n    for i in 1:length(array)\n        if array[i] &lt; min_value\n            min_value = array[i]\n        end\n    end\n    return min_value\nend\n\narray_values = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\n@show minimum(array_values);\n\nminimum(array_values) = 0\n\n\n\n\nProblem 1.2\nYour team is trying to compute the average grade for your class, but the following code produces an error.\n\nstudent_grades = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\nfunction class_average(grades)\n  average_grade = mean(student_grades)\n  return average_grade\nend\n\n@show average_grade;\n\nUndefVarError: \nUndefVarError: `average_grade` not defined\nStacktrace:\n [1] macro expansion\n   @ show.jl:1181 [inlined]\n [2] top-level scope\n   @ ~/Teaching/BEE4750/website/hw/hw01/hw01.qmd:184\n\n\n\n\nProblem 1.3\nYour team wants to know the expected payout of an old Italian dice game called passadieci (which was analyzed by Galileo as one of the first examples of a rigorous study of probability). The goal of passadieci is to get at least an 11 from rolling three fair, six-sided dice. Your strategy is to compute the average wins from 1,000 trials, but the code you’ve written below produces an error.\n\nfunction passadieci()\n    # this rand() call samples 3 values from the vector [1, 6]\n    roll = rand(1:6, 3) \n    return roll\nend\nn_trials = 1_000\noutcomes = zero(n_trials)\nfor i = 1:n_trials\n    outcomes[i] = (sum(passadieci()) &gt; 11)\nend\nwin_prob = sum(outcomes) / n_trials # compute average number of wins\n@show win_prob;\n\nMethodError: \nMethodError: no method matching setindex!(::Int64, ::Bool, ::Int64)\nStacktrace:\n [1] top-level scope\n   @ ~/Teaching/BEE4750/website/hw/hw01/hw01.qmd:215\n\n\n\n\n\nProblem 2 (5 points)\nYou’ve been handed some code to analyze. The original coder was not very considerate of other potential users: the function is called mystery_function and there are no comments explaining the purpose of the code. It appears to take in an array and return some numbers, and you’ve been assured that the code works as intended.\n\nfunction mystery_function(values)\n    y = []\n    for v in values\n        if !(v in y)\n            append!(y, v)\n        end\n    end\n    return y\nend\n\nlist_of_values = [1, 2, 3, 4, 3, 4, 2, 1]\n@show mystery_function(list_of_values);\n\nmystery_function(list_of_values) = Any[1, 2, 3, 4]\n\n\nIn this problem:\n\nExplain the purpose of mystery_function.\nAdd comments to the code, explaining why and how it works. Refer to “Best Practices for Writing Code Comments”, and remember that bad comments can be just as bad as no comments at all. You do not need to add comments to every line (in fact, this is very bad practice), but you should note the purpose of every “section” of code, and add comments explaining any code sequences that you don’t immediately understand.\nIs there a built-in Julia function that does the same thing as mystery_function? If so, what is it? Use it to do the same thing as the code above.\n\n\n\nProblem 3 (10 points)\nYou’re interested in writing some code to remove the mean of a vector.\nIn this problem:\n\nWrite a function compute_mean(v) which sums all of the elements of a vector v using a for loop and computes the mean.\nMake a random vector random_vect of length 10 using Julia’s rand() function. Use your compute_mean() function to calculate its mean and subtract it from random_vect without a loop (using a Julia technique called broadcasting; feel free to consult the Julia documentation and search as necessary). Check that the new vector has mean zero.\n\n\n\nProblem 4 (20 points)\nCheap Plastic Products, Inc. is operating a plant that produces \\(100 \\text{m}^3\\text{/day}\\) of wastewater that is discharged into Pristine Brook. The wastewater contains \\(1 \\text{kg/m}^3\\) of YUK, a toxic substance. The US Environmental Protection Agency has imposed an effluent standard on the plant prohibiting discharge of more than \\(20 \\text{kg/day}\\) of YUK into Pristine Brook.\nCheap Plastic Products has analyzed two methods for reducing its discharges of YUK. Method 1 is land disposal, which costs \\(X_1^2/20\\) dollars per day, where \\(X_1\\) is the amount of wastewater disposed of on the land (\\(\\text{m}^3\\text{/day}\\)). With this method, 20% of the YUK applied to the land will eventually drain into the stream (i.e., 80% of the YUK is removed by the soil).\nMethod 2 is a chemical treatment procedure which costs $1.50 per \\(\\text{m}^3\\) of wastewater treated. The chemical treatment has an efficiency of \\(e= 1 - 0.005X_2\\), where \\(X_2\\) is the quantity of wastewater (\\(\\text{m}^3\\text{/day}\\)) treated. For example, if \\(X_2 = 50 \\text{m}^3\\text{/day}\\), then \\(e = 1 - 0.005(50) = 0.75\\), so that 75% of the YUK is removed.\nCheap Plastic Products is wondering how to allocate their wastewater between these three disposal and treatment methods (land disposal, and chemical treatment, and land disposal) to meet the effluent standard while keeping costs manageable.\nThe flow of wastewater through this treatment system is shown in Figure 1. Modify the edge labels (by editing the edge_labels dictionary in the code producing Figure 1) to show how the wastewater allocations result in the final YUK discharge into Pristine Brook. For the edge_label dictionary, the tuple \\((i, j)\\) corresponds to the arrow going from node \\(i\\) to node \\(j\\). The syntax for any entry is (i, j) =&gt; \"label text\", and the label text can include mathematical notation if the string is prefaced with an L, as in L\"x_1\" will produce \\(x_1\\).\n\nA = [0 1 1 1;\n    0 0 0 1;\n    0 0 0 1;\n    0 0 0 0]\n\nnames = [\"Plant\", \"Land Treatment\", \"Chem Treatment\", \"Pristine Brook\"]\n# modify this dictionary to add labels\nedge_labels = Dict((1, 2) =&gt; \"\", (1,3) =&gt; \"\", (1, 4) =&gt; \"\",(2, 4) =&gt; \"\",(3, 4) =&gt; \"\")\nshapes=[:hexagon, :rect, :rect, :hexagon]\nxpos = [0, -1.5, -0.25, 1]\nypos = [1, 0, 0, -1]\n\np = graphplot(A, names=names,edgelabel=edge_labels, markersize=0.15, markershapes=shapes, markercolor=:white, x=xpos, y=ypos)\ndisplay(p)\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: System diagram of the wastewater treatment options in Problem 4.\n\n\n\n\nIn this problem:\n\nFormulate a mathematical model for the treatment cost and the amount of YUK that will be discharged into Pristine Brook based on the wastewater allocations. This is best done with some equations and supporting text explaining the derivation. Make sure you include, as additional equations in the model, any needed constraints on relevant values. You can find some basics on writing mathematical equations using the LaTeX typesetting syntax here, and a cheatsheet with LaTeX commands can be found on the course website’s Resources page.\nImplement your systems model as a Julia function which computes the resulting YUK concentration and cost for a particular treatment plan. You can return multiple values from a function with a tuple, as in:\nfunction multiple_return_values(x, y)\n    return (x+y, x*y)\nend\n\na, b = multiple_return_values(2, 5)\n@show a;\n@show b;\nTo evalute the function over vectors of inputs, you can broadcast the function by adding a decimal . before the function arguments and accessing the resulting values by writing a comprehension to loop over the individual outputs in the vector:\nx = [1, 2, 3, 4, 5]\ny = [6, 7, 8, 9, 10]\n\noutput = multiple_return_values.(x, y)\na = [out[1] for out in output]\nb = [out[2] for out in output]\n@show a;\n@show b;\nMake sure you comment your code appropriately to make it clear what is going on and why.\nUse your function to experiment with some different combinations of wastewater discharge and treatment and plot the results of these experiments. Can you find one that satisfies the YUK effluent standard (plot this as well as a dashed red line)? What was the cost? What can you say about the tradeoff between treatment cost and YUK concentration? You don’t have to find an “optimal” solution to this problem, but what do you think would be needed to find a better solution?\n\n\n\nProblem 5 (10 points)\nThis problem is only required for students in BEE 5750.\n\nProblem 5.1\nUsing a comprehension, count the number of odd numbers between 0 and 149.\n\n\n\n\n\n\n\nHint\n\n\n\niseven() returns true for even numbers and false for odd numbers.\n\n\n\nProblem 5.2\nWrite a function polynomial(x, a) which calculates the polynomial \\[p(x) = \\sum_{i=1}^n a_i x^i\\]\nbased on a point x and a coefficient vector a of length n using a loop. Test your function by computing \\[p(x) = 2x^3 - x^2 + 1\\] at \\(x=2\\).",
+    "text": "Problems (Total: 50/60 Points)\n\nProblem 1 (20 points)\nA farmer has access to a pesticide which can be used on corn, soybeans, and wheat fields, and costs $70/ha-yr to apply. The crop yields the farmer can obtain following crop yields by applying varying rates of pesticides to the field are shown in Table 1.\n\n\n\nTable 1: Crop yields from applying varying pesticide rates for Problem 1.\n\n\n\n\n\n\n\n\n\n\n\nApplication Rate (kg/ha)\nSoybean (kg/ha)\nWheat (kg/ha)\nCorn (kg/ha)\n\n\n\n\n0\n2900\n3500\n5900\n\n\n1\n3800\n4100\n6700\n\n\n2\n4400\n4200\n7900\n\n\n\n\n\n\nThe costs of production , excluding pesticide, for each crop, and selling prices, are shown in Table 2.\n\n\n\nTable 2: Costs of crop production, excluding pesticides, and selling prices for each crop.\n\n\n\n\n\nCrop\nProduction Cost ($/ha-yr)\nSelling Price ($/kg)\n\n\n\n\nSoybeans\n350\n0.36\n\n\nWheat\n280\n0.27\n\n\nCorn\n390\n0.22\n\n\n\n\n\n\nRecently, environmental authorities have declared that farms cannot have an average application rate on soybeans, wheat, and corn which exceeds 0.8, 0.7, and 0.6 kg/ha, respectively. The farmer has asked you for advice on how they should plant crops and apply pesticides to maximize profits over 130 total ha while remaining in regulatory compliance if demand for each crop (which is the maximum the market would buy) this year is 250,000 kg?\nIn this problem:\n\nFormulate a linear program for this resource allocation problem, including clear definitions of decision variable(s) (including units), objective function(s), and constraint(s) (make sure to explain functions and constraints with any needed derivations and explanations). Tip: Make sure that all of your constraints are linear.\nImplement the program in JuMP.jl and find the solution. How many ha should the farmer dedicate to each crop and with what pesticide application rate(s)? How much profit will the farmer expect to make?\nThe farmer has an opportunity to buy an extra 10 ha of land. How much extra profit would this land be worth to the farmer? Discuss why this value makes sense and whether you would recommend the farmer should make the purchase.\n\n\n\nProblem 2 (30 points)\nFor this problem, we will use hourly load (demand) data from 2013 in New York’s Zone C (which includes Ithaca). The load data is loaded and plotted below in Figure 1.\n\n# load the data, pull Zone C, and reformat the DataFrame\nNY_demand = DataFrame(CSV.File(\"data/2013_hourly_load_NY.csv\"))\nrename!(NY_demand, :\"Time Stamp\" =&gt; :Date)\ndemand = NY_demand[:, [:Date, :C]]\nrename!(demand, :C =&gt; :Demand)\ndemand[:, :Hour] = 1:nrow(demand)\n\n# plot demand\nplot(demand.Hour, demand.Demand, xlabel=\"Hour of Year\", ylabel=\"Demand (MWh)\", label=:false)\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Hourly load data for New York’s Zone C in 2013.\n\n\n\n\nNext, we load the generator data. This data includes fixed costs ($/MW installed), variable costs ($/MWh generated), and CO2 emissions intensity (tCO2/MWh generated).\n\ngens = DataFrame(CSV.File(\"data/generators.csv\"))\n\n\n\nTable 3: Generator type data, including fixed costs (\\(/MW installed), variable costs (\\)/MWh generated), and CO2 emissions intensity (tCO2/MWh generated).\n\n\n\n6×4 DataFrame\n\n\n\nRow\nPlant\nFixedCost\nVarCost\nEmissions\n\n\n\nString15\nInt64\nInt64\nFloat64\n\n\n\n\n1\nGeothermal\n450000\n0\n0.0\n\n\n2\nCoal\n220000\n24\n1.0\n\n\n3\nNG CCGT\n82000\n30\n0.43\n\n\n4\nNG CT\n65000\n40\n0.55\n\n\n5\nWind\n91000\n0\n0.0\n\n\n6\nSolar\n70000\n0\n0.0\n\n\n\n\n\n\n\n\n\nFinally, we load the hourly solar and wind capacity factors, which are plotted in Figure 2. These tell us the fraction of installed capacity which is expected to be available in a given hour for generation (typically based on the average meteorology).\n\n# load capacify factors into a DataFrame\ncap_factor = DataFrame(CSV.File(\"data/wind_solar_capacity_factors.csv\"))\n\n# plot January capacity factors\np1 = plot(cap_factor.Wind[1:(24*31)], label=\"Wind\")\nplot!(cap_factor.Solar[1:(24*31)], label=\"Solar\")\nxaxis!(\"Hour of the Month\")\nyaxis!(\"Capacity Factor\")\n\np2 = plot(cap_factor.Wind[4344:4344+(24*31)], label=\"Wind\")\nplot!(cap_factor.Solar[4344:4344+(24*31)], label=\"Solar\")\nxaxis!(\"Hour of the Month\")\nyaxis!(\"Capacity Factor\")\n\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) January\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) July\n\n\n\n\n\n\n\nFigure 2: Hourly solar and wind capacity factors.\n\n\n\n\nYou have been asked to develop a generating capacity expansion plan for the utility in Riley County, NY, which currently has no existing electrical generation infrastructure. The utility can build any of the following plant types: geothermal, coal, natural gas combined cycle gas turbine (CCGT), natural gas combustion turbine (CT), solar, and wind.\nWhile coal, CCGT, and CT plants can generate at their full installed capacity, geothermal plants operate at maximum 85% capacity, and solar and wind available capacities vary by the hour depend on the expected meteorology. The utility will also penalize any non-served demand at a rate of $5,000/MWh.\nIn this problem:\n\nFormulate a linear program for this capacity expansion problem, including clear definitions of decision variable(s) (including units), objective function(s), and constraint(s) (make sure to explain functions and constraints with any needed derivations and explanations).\nImplement your linear program in JuMP.jl. Find the optimal solution. How much should the utility build of each type of generating plant? What will the total cost be? How much energy will be non-served?\nWhat fraction of annual generation does each plant type produce? How does this compare to the breakdown of built capacity that you found in Problem 1.5? Do these results make sense given the generator data?\nMake a plot of the electricity price in each hour. Discuss any trends that you see.\n\n\n\n\n\n\n\nSignificant Digits\n\n\n\nUse round(x; digits=n) to report values to the appropriate precision!\n\n\n\n\n\n\n\n\nGetting Variable Output Values\n\n\n\nvalue.(x) will report the values of a JuMP variable x, but it will return a special container which holds other information about x that is useful for JuMP. This means that you can’t use this output directly for further calculations. To just extract the values, use value.(x).data.\n\n\n\n\n\n\n\n\nSuppressing Model Command Output\n\n\n\nThe output of specifying model components (variable or constraints) can be quite large for this problem because of the number of time periods. If you end a cell with an @variable or @constraint command, I highly recommend suppressing output by adding a semi-colon after the last command, or you might find that your notebook crashes.\n\n\n\n\nProblem 3 (10 points)\nThe NY state legislature is considering enacting an annual CO2 limit, which for the utility would limit the emissions in its footprint to 1.5 MtCO2/yr.\nIn this problem:\n\nReformulate your linear program from Problem 2 with any necessary changes to capture the CO2 limit.\nImplement the new optimization problem and find the optimal solution. How much should the utility build of each type of generating plant? What is different from your plan from Problem 1? Do these changes make sense?\nWhat would the value to the utility be of allowing it to emit an additional 1000 tCO2/yr? An additional 5000?",
     "crumbs": [
       "Homework",
-      "HW 1"
+      "HW 4"
     ]
   },
   {
-    "objectID": "hw/hw01/hw01.html#references",
-    "href": "hw/hw01/hw01.html#references",
-    "title": "BEE 4750 Homework 1: Introduction to Using Julia",
+    "objectID": "hw/hw04/hw04.html#references",
+    "href": "hw/hw04/hw04.html#references",
+    "title": "BEE 4750 Homework 4: Linear Programming and Capacity Expansion",
     "section": "References",
     "text": "References\nList any external references consulted, including classmates.",
     "crumbs": [
       "Homework",
-      "HW 1"
+      "HW 4"
     ]
   },
   {
@@ -3497,21 +3450,33 @@
     "href": "rubrics/standard.html",
     "title": "Standard Rubrics",
     "section": "",
-    "text": "These rubrics are intended as a description for students and a guide to the TA for how to assign partial credit."
+    "text": "These rubrics are intended as a description for students and a guide to the TA for how to assign partial credit.",
+    "crumbs": [
+      "Policies",
+      "Standard Rubric"
+    ]
   },
   {
     "objectID": "rubrics/standard.html#meta-rubric",
     "href": "rubrics/standard.html#meta-rubric",
     "title": "Standard Rubrics",
     "section": "Meta-Rubric",
-    "text": "Meta-Rubric\n\nIndividual problems may vary from these standard rubrics based on the assessed learning outcomes for the problem, but they should provide an overview of what features students ought to be included in a given solution.\nEach bullet point should appear as a separate rubric item in Gradescope. We will use positive grading (points awarded for each component).\nEach standard rubric describes partial credit for a problem with 10 points. Partial credit for (sub)problems worth less than 10 points should be scaled appropriately. Full problems usually combine one of the modeling methods with some interpretation questions, so the rubric will be a combination of the individual components.\nGenerally, rubrics for 10 point “entire problems” can be summarized with the following:\n\n+4 points for an answer with a correct implementation (including model setup).\n+2 points for the correct solution (including details such as labels, units, etc.).\n+4 points for the interpretation. These points may be broken up across subproblems, but the general assignment of points should follow this summary.\n\nNote that the points may not scale with the distribution of work for a given problem. That’s life! It may take more work to derive and implement your model than it does to intrepret your results, but in this class we care a lot about your ability to critically evaluate and interpret modeling results.\nSometimes problems will be broken up into\nThe graders cannot read your mind and will not try to. Submissions that are unclear for any reason, including but not limited to unclear syntax (English or code), uncommented code, lack of reasoning or derivation, too much detail or writing, will not be given credit. The TA has complete discretion here. If something in your solution is ambiguous, the TA has been instructed to interpret it the “wrong” way. Clear responses are a sign of understanding, which is part of what we’re assessing.\nYou will not be doubly penalized for getting the “right” solution to the “wrong” setup (you would have been penalized above), but this requires the TA to be able to easily identify that your implementation is correct given the wrong model. If your implementation is unclear, you are likely to lose points here because we have no way of knowing that your answer is “right” without re-coding your problem.\nYou will not be given credit for your code (this isn’t a programming class); the code is a means to solving the problem, and we’re more interested in how you set up the problem and interpret the solution. This does mean that code that is sloppy but works is perfectly acceptable. However, your code may get you partial credit if the TA can easily find where you made a mistake, so make sure your submitted code is well commented. It’s important to write down the mathematics of what your code is trying to implement, because the TA will only take a cursory look at your code.\nSome rubrics include “deadly sins” which will cause an immediate zero to be given for the problem. Do not do these!\nRegardless of the problem type, the following penalties will be applied per incident:\n\n-1 for missing units."
+    "text": "Meta-Rubric\n\nIndividual problems may vary from these standard rubrics based on the assessed learning outcomes for the problem, but they should provide an overview of what features students ought to be included in a given solution.\nEach bullet point should appear as a separate rubric item in Gradescope. We will use positive grading (points awarded for each component).\nEach standard rubric describes partial credit for a problem with 10 points. Partial credit for (sub)problems worth less than 10 points should be scaled appropriately. Full problems usually combine one of the modeling methods with some interpretation questions, so the rubric will be a combination of the individual components.\nGenerally, rubrics for 10 point “entire problems” can be summarized with the following:\n\n+4 points for an answer with a correct implementation (including model setup).\n+2 points for the correct solution (including details such as labels, units, etc.).\n+4 points for the interpretation. These points may be broken up across subproblems, but the general assignment of points should follow this summary.\n\nNote that the points may not scale with the distribution of work for a given problem. That’s life! It may take more work to derive and implement your model than it does to intrepret your results, but in this class we care a lot about your ability to critically evaluate and interpret modeling results.\nSometimes problems will be broken up into\nThe graders cannot read your mind and will not try to. Submissions that are unclear for any reason, including but not limited to unclear syntax (English or code), uncommented code, lack of reasoning or derivation, too much detail or writing, will not be given credit. The TA has complete discretion here. If something in your solution is ambiguous, the TA has been instructed to interpret it the “wrong” way. Clear responses are a sign of understanding, which is part of what we’re assessing.\nYou will not be doubly penalized for getting the “right” solution to the “wrong” setup (you would have been penalized above), but this requires the TA to be able to easily identify that your implementation is correct given the wrong model. If your implementation is unclear, you are likely to lose points here because we have no way of knowing that your answer is “right” without re-coding your problem.\nYou will not be given credit for your code (this isn’t a programming class); the code is a means to solving the problem, and we’re more interested in how you set up the problem and interpret the solution. This does mean that code that is sloppy but works is perfectly acceptable. However, your code may get you partial credit if the TA can easily find where you made a mistake, so make sure your submitted code is well commented. It’s important to write down the mathematics of what your code is trying to implement, because the TA will only take a cursory look at your code.\nSome rubrics include “deadly sins” which will cause an immediate zero to be given for the problem. Do not do these!\nRegardless of the problem type, the following penalties will be applied per incident:\n\n-1 for missing units.",
+    "crumbs": [
+      "Policies",
+      "Standard Rubric"
+    ]
   },
   {
     "objectID": "rubrics/standard.html#standard-rubrics",
     "href": "rubrics/standard.html#standard-rubrics",
     "title": "Standard Rubrics",
     "section": "Standard Rubrics",
-    "text": "Standard Rubrics\n\nOptimization Rubric\n10 points =\n\n+3 for clear specification of decision variables;\n\nThis includes units and meaning for each variable used.\n\n+2 for the correct objective;\n\nYou must write down the derivation for the objective, starting with the quantity being optimized and breaking it into decision-relevant components. Don’t treat any part of this as though it’s obvious; part of technical communication is communicating to people who aren’t as clever as you.\n\n+3 for the correct constraints;\n\nMake sure you include derivations for all constraints, starting with the meaning and explanation in intuitive terms for the constraint. Don’t treat any constraints as though they’re obvious.\n-2/-3 for an incomplete set of constraints, even if the constraints that are presented are correct.\n\n+2 for the correct solution.\n\n\n\nSimulation Rubric\n10 points =\n\n+4 for the model derivation.\n\nThis includes any relevant reasoning from mass-balance or other principles.\n\n+4 for discretizing the model correctly.\n\n-1 if no justification is provided for the chosen step-size(s).\n\n+2 points for obtaining the correct solution.\n\n-1 if the error is from a minor bug. I recommend providing an explicit sketch of your code’s procedure, so if that is correct any differences are likely to be the result of a minor bug, such as a misentered number (not ideal, but you understand what you’re doing!). Otherwise you are relying on the TA to interpret your code.\n\n\n\n\nMonte Carlo Rubric\n10 points =\n\n+4 for a clear English explanation of the sampling plan\n\nYou must justify each distribution used, including your choice of mean and standard deviation.\n\n+2 for justification of Monte Carlo sample size.\n\nDeadly Sin: No points will be given for a Monte Carlo solution with an arbitrary sample size.\n\n+2 for an estimate of the Monte Carlo standard error.\n+1 for setting a seed for reproducibility.\n+2 for correct estimate.\n\nDeviations from the posted solution are ok if they’re within the Monte Carlo standard error.\n\n\n\n\nFigure Rubrics\n10 points =\n\n+2 for appropriate choice of axes.\n\nDeadly Sin!: No points will be given for the figure if the axes are not labelled.\n\n+4 for the correct data series.\n+2 for a descriptive legend.\n+2 for a succinct description or caption.\n\n-1 for a description which is too wordy but contains the relevant information.\n\n\n\n\nInterpretation Rubrics\n10 points =\n\n+4 for specific reference to the modeling results;\n\n-2 if the results are not specifically referenced and the reader has to refer to the previous problems to understand the interpretation.\n\n+6 for thoughtfulness of the interpretation;\n\n-4 for not specifically referencing relevant model assumptions;\nDeadly Sin: Do not neglect fundamental engineering principles in any of your interpretations. You will be given a zero if you make a recommendation which e.g. violates an engineering code or standard.\nDeadly Sin: Completely generic interpretations will result in zero points."
+    "text": "Standard Rubrics\n\nOptimization Rubric\n10 points =\n\n+3 for clear specification of decision variables;\n\nThis includes units and meaning for each variable used.\n\n+2 for the correct objective;\n\nYou must write down the derivation for the objective, starting with the quantity being optimized and breaking it into decision-relevant components. Don’t treat any part of this as though it’s obvious; part of technical communication is communicating to people who aren’t as clever as you.\n\n+3 for the correct constraints;\n\nMake sure you include derivations for all constraints, starting with the meaning and explanation in intuitive terms for the constraint. Don’t treat any constraints as though they’re obvious.\n-2/-3 for an incomplete set of constraints, even if the constraints that are presented are correct.\n\n+2 for the correct solution.\n\n\n\nSimulation Rubric\n10 points =\n\n+4 for the model derivation.\n\nThis includes any relevant reasoning from mass-balance or other principles.\n\n+4 for discretizing the model correctly.\n\n-1 if no justification is provided for the chosen step-size(s).\n\n+2 points for obtaining the correct solution.\n\n-1 if the error is from a minor bug. I recommend providing an explicit sketch of your code’s procedure, so if that is correct any differences are likely to be the result of a minor bug, such as a misentered number (not ideal, but you understand what you’re doing!). Otherwise you are relying on the TA to interpret your code.\n\n\n\n\nMonte Carlo Rubric\n10 points =\n\n+4 for a clear English explanation of the sampling plan\n\nYou must justify each distribution used, including your choice of mean and standard deviation.\n\n+2 for justification of Monte Carlo sample size.\n\nDeadly Sin: No points will be given for a Monte Carlo solution with an arbitrary sample size.\n\n+2 for an estimate of the Monte Carlo standard error.\n+1 for setting a seed for reproducibility.\n+2 for correct estimate.\n\nDeviations from the posted solution are ok if they’re within the Monte Carlo standard error.\n\n\n\n\nFigure Rubrics\n10 points =\n\n+2 for appropriate choice of axes.\n\nDeadly Sin!: No points will be given for the figure if the axes are not labelled.\n\n+4 for the correct data series.\n+2 for a descriptive legend.\n+2 for a succinct description or caption.\n\n-1 for a description which is too wordy but contains the relevant information.\n\n\n\n\nInterpretation Rubrics\n10 points =\n\n+4 for specific reference to the modeling results;\n\n-2 if the results are not specifically referenced and the reader has to refer to the previous problems to understand the interpretation.\n\n+6 for thoughtfulness of the interpretation;\n\n-4 for not specifically referencing relevant model assumptions;\nDeadly Sin: Do not neglect fundamental engineering principles in any of your interpretations. You will be given a zero if you make a recommendation which e.g. violates an engineering code or standard.\nDeadly Sin: Completely generic interpretations will result in zero points.",
+    "crumbs": [
+      "Policies",
+      "Standard Rubric"
+    ]
   },
   {
     "objectID": "tutorials/julia-basics.html",

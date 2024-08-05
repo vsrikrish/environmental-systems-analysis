@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/schedule.html</loc>
-    <lastmod>2024-07-26T23:30:18.141Z</lastmod>
+    <lastmod>2024-07-30T22:13:36.444Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/setup.html</loc>
@@ -53,16 +53,20 @@
     <lastmod>2024-07-18T13:22:35.018Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture06-2-prescriptive-modeling.html</loc>
-    <lastmod>2024-07-26T23:31:26.672Z</lastmod>
+    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture01-2-lab-setup.html</loc>
+    <lastmod>2024-07-17T00:08:30.768Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture01-1-intro.html</loc>
-    <lastmod>2024-07-16T17:16:11.110Z</lastmod>
+    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture04-2-dynamics-feedbacks.html</loc>
+    <lastmod>2024-08-05T00:47:01.649Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture06-1-monte-carlo.html</loc>
-    <lastmod>2024-07-22T14:28:12.702Z</lastmod>
+    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture05-1-uncertainty-monte-carlo.html</loc>
+    <lastmod>2024-07-18T15:37:10.884Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture07-1-linear-programming.html</loc>
+    <lastmod>2024-07-27T00:38:58.429Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/policies/groups.html</loc>
@@ -90,7 +94,7 @@
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/hw/hw03/hw03.html</loc>
-    <lastmod>2024-07-24T22:47:37.811Z</lastmod>
+    <lastmod>2024-08-05T00:58:34.153Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/labs/lab01/lab01.html</loc>
@@ -102,7 +106,7 @@
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/hw/hw02/hw02.html</loc>
-    <lastmod>2024-07-24T22:55:03.400Z</lastmod>
+    <lastmod>2024-08-05T00:58:33.815Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/resources/github.html</loc>
@@ -133,16 +137,20 @@
     <lastmod>2024-07-16T17:16:11.062Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture05-1-uncertainty-monte-carlo.html</loc>
-    <lastmod>2024-07-18T15:37:10.884Z</lastmod>
+    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture06-1-monte-carlo.html</loc>
+    <lastmod>2024-07-22T14:28:12.702Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture04-2-dynamics-feedbacks.html</loc>
-    <lastmod>2024-07-18T13:22:40.979Z</lastmod>
+    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture01-1-intro.html</loc>
+    <lastmod>2024-07-16T17:16:11.110Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture01-2-lab-setup.html</loc>
-    <lastmod>2024-07-17T00:08:30.768Z</lastmod>
+    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture06-2-prescriptive-modeling.html</loc>
+    <lastmod>2024-07-26T23:31:26.672Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture05-2-monte-carlo-lab.html</loc>
+    <lastmod>2024-07-28T20:11:52.134Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture04-1-dissolved-oxygen.html</loc>

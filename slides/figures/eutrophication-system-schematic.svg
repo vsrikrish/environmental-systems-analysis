@@ -1,724 +1,233 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" viewBox="0 0 1167.7 713">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: red;
+      }
 
-<svg
-   width="411.94431mm"
-   height="251.52792mm"
-   viewBox="0 0 411.94431 251.52792"
-   version="1.1"
-   id="svg1"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
-   sodipodi:docname="eutrophication-system-schematic.svg"
-   inkscape:export-filename="eutrophication-system-schematic.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview1"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm"
-     inkscape:zoom="0.38583845"
-     inkscape:cx="918.77831"
-     inkscape:cy="435.41539"
-     inkscape:window-width="1440"
-     inkscape:window-height="749"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="layer1" />
-  <defs
-     id="defs1">
-    <marker
-       style="overflow:visible"
-       id="ArrowWide"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Wide arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
-         d="M 3,-3 0,0 3,3"
-         transform="rotate(180,0.125,0)"
-         sodipodi:nodetypes="ccc"
-         id="path1" />
-    </marker>
-    <inkscape:path-effect
-       effect="bspline"
-       id="path-effect10"
-       is_visible="true"
-       lpeversion="1.3"
-       weight="33.333333"
-       steps="2"
-       helper_size="0"
-       apply_no_weight="true"
-       apply_with_weight="true"
-       only_selected="false"
-       uniform="false" />
-    <marker
-       style="overflow:visible"
-       id="ArrowWide-1"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Wide arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
-         d="M 3,-3 0,0 3,3"
-         transform="rotate(180,0.125,0)"
-         sodipodi:nodetypes="ccc"
-         id="path1-8" />
-    </marker>
-    <inkscape:path-effect
-       effect="bspline"
-       id="path-effect10-4"
-       is_visible="true"
-       lpeversion="1.3"
-       weight="33.333333"
-       steps="2"
-       helper_size="0"
-       apply_no_weight="true"
-       apply_with_weight="true"
-       only_selected="false"
-       uniform="false" />
-    <marker
-       style="overflow:visible"
-       id="ArrowWide-1-5"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Wide arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
-         d="M 3,-3 0,0 3,3"
-         transform="rotate(180,0.125,0)"
-         sodipodi:nodetypes="ccc"
-         id="path1-8-3" />
-    </marker>
-    <inkscape:path-effect
-       effect="bspline"
-       id="path-effect10-4-3"
-       is_visible="true"
-       lpeversion="1.3"
-       weight="33.333333"
-       steps="2"
-       helper_size="0"
-       apply_no_weight="true"
-       apply_with_weight="true"
-       only_selected="false"
-       uniform="false" />
-    <marker
-       style="overflow:visible"
-       id="ArrowWide-1-5-7"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Wide arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
-         d="M 3,-3 0,0 3,3"
-         transform="rotate(180,0.125,0)"
-         sodipodi:nodetypes="ccc"
-         id="path1-8-3-4" />
-    </marker>
-    <inkscape:path-effect
-       effect="bspline"
-       id="path-effect10-4-3-5"
-       is_visible="true"
-       lpeversion="1.3"
-       weight="33.333333"
-       steps="2"
-       helper_size="0"
-       apply_no_weight="true"
-       apply_with_weight="true"
-       only_selected="false"
-       uniform="false" />
-    <marker
-       style="overflow:visible"
-       id="ArrowWide-1-5-4"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Wide arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
-         d="M 3,-3 0,0 3,3"
-         transform="rotate(180,0.125,0)"
-         sodipodi:nodetypes="ccc"
-         id="path1-8-3-5" />
-    </marker>
-    <inkscape:path-effect
-       effect="bspline"
-       id="path-effect10-4-3-8"
-       is_visible="true"
-       lpeversion="1.3"
-       weight="33.333333"
-       steps="2"
-       helper_size="0"
-       apply_no_weight="true"
-       apply_with_weight="true"
-       only_selected="false"
-       uniform="false" />
-    <marker
-       style="overflow:visible"
-       id="ArrowWide-1-5-6"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Wide arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
-         d="M 3,-3 0,0 3,3"
-         transform="rotate(180,0.125,0)"
-         sodipodi:nodetypes="ccc"
-         id="path1-8-3-6" />
-    </marker>
-    <inkscape:path-effect
-       effect="bspline"
-       id="path-effect10-4-3-85"
-       is_visible="true"
-       lpeversion="1.3"
-       weight="33.333333"
-       steps="2"
-       helper_size="0"
-       apply_no_weight="true"
-       apply_with_weight="true"
-       only_selected="false"
-       uniform="false" />
-    <marker
-       style="overflow:visible"
-       id="ArrowWide-1-5-3"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Wide arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
-         d="M 3,-3 0,0 3,3"
-         transform="rotate(180,0.125,0)"
-         sodipodi:nodetypes="ccc"
-         id="path1-8-3-3" />
-    </marker>
-    <inkscape:path-effect
-       effect="bspline"
-       id="path-effect10-4-3-3"
-       is_visible="true"
-       lpeversion="1.3"
-       weight="33.333333"
-       steps="2"
-       helper_size="0"
-       apply_no_weight="true"
-       apply_with_weight="true"
-       only_selected="false"
-       uniform="false" />
-    <marker
-       style="overflow:visible"
-       id="ArrowWide-1-5-5"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Wide arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
-         d="M 3,-3 0,0 3,3"
-         transform="rotate(180,0.125,0)"
-         sodipodi:nodetypes="ccc"
-         id="path1-8-3-2" />
-    </marker>
-    <inkscape:path-effect
-       effect="bspline"
-       id="path-effect10-4-3-6"
-       is_visible="true"
-       lpeversion="1.3"
-       weight="33.333333"
-       steps="2"
-       helper_size="0"
-       apply_no_weight="true"
-       apply_with_weight="true"
-       only_selected="false"
-       uniform="false" />
-    <marker
-       style="overflow:visible"
-       id="ArrowWide-1-5-0"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Wide arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
-         d="M 3,-3 0,0 3,3"
-         transform="rotate(180,0.125,0)"
-         sodipodi:nodetypes="ccc"
-         id="path1-8-3-28" />
-    </marker>
-    <inkscape:path-effect
-       effect="bspline"
-       id="path-effect10-4-3-31"
-       is_visible="true"
-       lpeversion="1.3"
-       weight="33.333333"
-       steps="2"
-       helper_size="0"
-       apply_no_weight="true"
-       apply_with_weight="true"
-       only_selected="false"
-       uniform="false" />
-    <marker
-       style="overflow:visible"
-       id="ArrowWide-1-5-5-8"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Wide arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
-         d="M 3,-3 0,0 3,3"
-         transform="rotate(180,0.125,0)"
-         sodipodi:nodetypes="ccc"
-         id="path1-8-3-2-7" />
-    </marker>
-    <inkscape:path-effect
-       effect="bspline"
-       id="path-effect10-4-3-6-6"
-       is_visible="true"
-       lpeversion="1.3"
-       weight="33.333333"
-       steps="2"
-       helper_size="0"
-       apply_no_weight="true"
-       apply_with_weight="true"
-       only_selected="false"
-       uniform="false" />
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+        fill: none;
+      }
+
+      .cls-1, .cls-3, .cls-4, .cls-5, .cls-6, .cls-8 {
+        stroke-miterlimit: 11.3;
+      }
+
+      .cls-1, .cls-4 {
+        stroke-width: 5.4px;
+      }
+
+      .cls-2, .cls-9, .cls-10 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        stroke-width: 5.7px;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+        stroke: #000;
+      }
+
+      .cls-5 {
+        stroke-width: 5.7px;
+      }
+
+      .cls-9 {
+        fill-rule: evenodd;
+      }
+
+      .cls-9, .cls-11 {
+        fill: blue;
+      }
+
+      .cls-11 {
+        font-size: 64px;
+      }
+
+      .cls-11, .cls-12, .cls-13, .cls-14 {
+        isolation: isolate;
+      }
+
+      .cls-11, .cls-12, .cls-14 {
+        font-family: Arial-BoldMT, Arial;
+        font-weight: 700;
+      }
+
+      .cls-10, .cls-14 {
+        fill: #000;
+      }
+
+      .cls-12 {
+        fill: red;
+      }
+
+      .cls-12, .cls-14 {
+        font-size: 40px;
+      }
+
+      .cls-6 {
+        stroke-width: 7.1px;
+      }
+
+      .cls-7 {
+        stroke-miterlimit: 10;
+        stroke-width: 6px;
+      }
+
+      .cls-8 {
+        stroke-width: 7px;
+      }
+    </style>
   </defs>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(134.62308,-6.8562312)">
-    <rect
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       id="rect1"
-       width="87.774208"
-       height="44.572845"
-       x="35.285675"
-       y="7.8562312"
-       ry="10"
-       rx="10" />
-    <text
-       xml:space="preserve"
-       style="font-weight:100;font-size:37.8735px;font-family:'Font Awesome 6 Sharp';-inkscape-font-specification:'Font Awesome 6 Sharp, Thin';text-align:center;text-anchor:middle;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="78.859642"
-       y="32.915329"
-       id="text1"><tspan
-         sodipodi:role="line"
-         id="tspan1"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:2"
-         x="78.859642"
-         y="32.915329">P/N Loading</tspan></text>
-    <rect
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.45253;stroke-dasharray:none"
-       id="rect1-0"
-       width="101.72214"
-       height="57.835033"
-       x="26.309204"
-       y="95.09491"
-       ry="12.975397"
-       rx="11.589068" />
-    <text
-       xml:space="preserve"
-       style="font-weight:100;font-size:37.8735px;line-height:0.3;font-family:'Font Awesome 6 Sharp';-inkscape-font-specification:'Font Awesome 6 Sharp, Thin';text-align:center;text-anchor:middle;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="76.514259"
-       y="111.01318"
-       id="text1-8"><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:2"
-         x="76.514259"
-         y="111.01318"
-         id="tspan3">Algae/</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:2"
-         x="76.514259"
-         y="129.06233"
-         id="tspan4">Cyanobacteria</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:2"
-         x="76.514259"
-         y="147.11148"
-         id="tspan5">Growth</tspan></text>
-    <rect
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.51869;stroke-dasharray:none"
-       id="rect1-0-5"
-       width="138.68573"
-       height="44.739891"
-       x="8.7639065"
-       y="209.71231"
-       ry="10.037477"
-       rx="15.800282" />
-    <text
-       xml:space="preserve"
-       style="font-weight:100;font-size:37.8735px;line-height:0.3;font-family:'Font Awesome 6 Sharp';-inkscape-font-specification:'Font Awesome 6 Sharp, Thin';text-align:center;text-anchor:middle;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="76.765015"
-       y="228.34045"
-       id="text1-8-1"><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:2"
-         x="76.765015"
-         y="228.34045"
-         id="tspan5-4">Decomposition and</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:2"
-         x="76.765015"
-         y="246.3896"
-         id="tspan9">Sedimentation</tspan></text>
-    <rect
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.01137;stroke-dasharray:none"
-       id="rect1-0-3"
-       width="83.64843"
-       height="47.30442"
-       x="191.69788"
-       y="210.07405"
-       ry="10.612835"
-       rx="9.5299549" />
-    <text
-       xml:space="preserve"
-       style="font-weight:100;font-size:37.8735px;line-height:0.3;font-family:'Font Awesome 6 Sharp';-inkscape-font-specification:'Font Awesome 6 Sharp, Thin';text-align:center;text-anchor:middle;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="234.42383"
-       y="229.32841"
-       id="text1-8-0"><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:2"
-         x="234.42383"
-         y="229.32841"
-         id="tspan5-2">Nutrient</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:2"
-         x="234.42383"
-         y="247.37756"
-         id="tspan8">Recycling</tspan></text>
-    <rect
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.01137;stroke-dasharray:none"
-       id="rect1-0-3-7"
-       width="83.64843"
-       height="47.30442"
-       x="192.6671"
-       y="101.43543"
-       ry="10.612835"
-       rx="9.5299549" />
-    <text
-       xml:space="preserve"
-       style="font-weight:100;font-size:37.8735px;line-height:0.3;font-family:'Font Awesome 6 Sharp';-inkscape-font-specification:'Font Awesome 6 Sharp, Thin';text-align:center;text-anchor:middle;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="234.08101"
-       y="119.47491"
-       id="text1-8-0-5"><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:2"
-         x="234.08101"
-         y="119.47491"
-         id="tspan5-2-8">Nutrient</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:2"
-         x="234.08101"
-         y="137.52405"
-         id="tspan8-7">Outflow</tspan></text>
-    <rect
-       style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:1.90662;stroke-dasharray:none"
-       id="rect1-0-3-7-2"
-       width="94.039223"
-       height="37.808868"
-       x="-133.66977"
-       y="211.54375"
-       ry="8.4824896"
-       rx="10.713764" />
-    <text
-       xml:space="preserve"
-       style="font-weight:100;font-size:37.8735px;line-height:0.3;font-family:'Font Awesome 6 Sharp';-inkscape-font-specification:'Font Awesome 6 Sharp, Thin';text-align:center;text-anchor:middle;fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="-85.9347"
-       y="235.27806"
-       id="text1-8-0-5-7"><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ff0000;stroke:none;stroke-width:2"
-         x="-85.9347"
-         y="235.27806"
-         id="tspan8-7-7">Oxygenation</tspan></text>
-    <rect
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.90662;stroke-dasharray:none"
-       id="rect1-0-3-7-2-1"
-       width="94.039223"
-       height="37.808868"
-       x="-132.65924"
-       y="104.45599"
-       ry="8.4824896"
-       rx="10.713764" />
-    <text
-       xml:space="preserve"
-       style="font-weight:100;font-size:37.8735px;line-height:0.3;font-family:'Font Awesome 6 Sharp';-inkscape-font-specification:'Font Awesome 6 Sharp, Thin';text-align:center;text-anchor:middle;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-       x="-84.924171"
-       y="126.81882"
-       id="text1-8-0-5-7-6"><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.1111px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:2"
-         x="-84.924171"
-         y="126.81882"
-         id="tspan8-7-7-2">Stratification</tspan></text>
-    <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none;marker-end:url(#ArrowWide)"
-       d="m 77.488173,53.487412 c 0,12.571828 0,25.143655 0,37.715483"
-       id="path10"
-       inkscape:path-effect="#path-effect10"
-       inkscape:original-d="m 77.488173,53.487412 c 0,12.571828 0,25.143655 0,37.715483"
-       transform="translate(1.5875)" />
-    <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none;marker-end:url(#ArrowWide-1)"
-       d="m 77.488173,53.487412 c 0,16.457666 0,32.91533 0,49.372998"
-       id="path10-1"
-       inkscape:path-effect="#path-effect10-4"
-       inkscape:original-d="m 77.488173,53.487412 c 0,16.457666 0,32.91533 0,49.372998"
-       transform="translate(0.58810625,101.63663)"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none;marker-end:url(#ArrowWide-1-5)"
-       d="m 34.286802,120.00381 c 11.657513,-0.22858 23.315024,-0.45715 34.972538,-0.68573"
-       id="path10-1-0"
-       inkscape:path-effect="#path-effect10-4-3"
-       inkscape:original-d="m 34.286802,120.00381 c 11.657513,-0.22858 23.315024,-0.45716 34.972538,-0.68573"
-       transform="translate(117.86685,112.93551)"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none;marker-end:url(#ArrowWide-1-5-7)"
-       d="m 13.71472,244.80777 c 0,-17.60056 0,-35.20111 0,-52.80167"
-       id="path10-1-0-7"
-       inkscape:path-effect="#path-effect10-4-3-5"
-       inkscape:original-d="m 13.71472,244.80777 c 0,-17.60056 0,-35.20111 0,-52.80167"
-       transform="translate(218.93905,-38.6229)"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none;marker-end:url(#ArrowWide-1-5-4)"
-       d="m 132.34706,120.00381 c -18.2863,0.22858 -36.572591,0.45716 -54.858887,0.68574"
-       id="path10-1-0-9"
-       inkscape:path-effect="#path-effect10-4-3-8"
-       inkscape:original-d="m 132.34706,120.00381 c -18.2863,0.22858 -36.572591,0.45716 -54.858887,0.68574"
-       transform="translate(55.955717,2.6521)"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none;marker-end:url(#ArrowWide-1-5-6)"
-       d="M 245.49351,353.15407 C 224.46427,333.26772 203.43503,313.38138 182.40579,293.49504"
-       id="path10-1-0-8"
-       inkscape:path-effect="#path-effect10-4-3-85"
-       inkscape:original-d="M 245.49351,353.15407 C 224.46427,333.26772 203.43503,313.38138 182.40579,293.49504"
-       transform="translate(-51.46512,-143.3979)"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none;marker-end:url(#ArrowWide-1-5-3)"
-       d="m 103.54614,293.49503 c -13.028982,0.22858 -26.057966,0.45716 -39.086952,0.68574"
-       id="path10-1-0-1"
-       inkscape:path-effect="#path-effect10-4-3-3"
-       inkscape:original-d="m 103.54614,293.49503 c -13.028982,0.22858 -26.057966,0.45716 -39.086952,0.68574"
-       transform="translate(-99.3547,-61.11248)"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none;marker-end:url(#ArrowWide-1-5-5)"
-       d="M 40.458426,118.63234 C 40.687005,98.745994 40.915583,78.859653 41.144162,58.973307"
-       id="path10-1-0-5"
-       inkscape:path-effect="#path-effect10-4-3-6"
-       inkscape:original-d="M 40.458426,118.63234 C 40.687005,98.745994 40.915583,78.859653 41.144162,58.973307"
-       transform="translate(-142.05971,88.323461)"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none;marker-end:url(#ArrowWide-1-5-5-8)"
-       d="m 15.771928,50.058735 c 0,19.429191 0,38.858377 0,58.287565"
-       id="path10-1-0-5-6"
-       inkscape:path-effect="#path-effect10-4-3-6-6"
-       inkscape:original-d="m 15.771928,50.058735 c 0,19.429191 0,38.858377 0,58.287565"
-       transform="translate(-85.711577,97.986614)"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none;marker-end:url(#ArrowWide-1-5-0)"
-       d="M 119.31807,165.26239 C 102.63183,143.54742 85.945588,121.83245 69.25934,100.11747"
-       id="path10-1-0-86"
-       inkscape:path-effect="#path-effect10-4-3-31"
-       inkscape:original-d="M 119.31807,165.26239 C 102.63183,143.54742 85.945586,121.83245 69.25934,100.11747"
-       transform="translate(-109.67345,45.25002)"
-       sodipodi:nodetypes="cc" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.1737px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:3.4262;stroke-dasharray:none"
-       x="83.459137"
-       y="84.273781"
-       id="text10"
-       transform="scale(1.0707244,0.93394714)"><tspan
-         sodipodi:role="line"
-         id="tspan10"
-         style="fill:#0000ff;stroke:none;stroke-width:3.4262"
-         x="83.459137"
-         y="84.273781">+</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.1737px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:3.4262;stroke-dasharray:none"
-       x="-105.68293"
-       y="194.6814"
-       id="text10-8"
-       transform="scale(1.0707244,0.93394714)"><tspan
-         sodipodi:role="line"
-         id="tspan10-2"
-         style="fill:#0000ff;stroke:none;stroke-width:3.4262"
-         x="-105.68293"
-         y="194.6814">+</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.1737px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:3.4262;stroke-dasharray:none"
-       x="-9.6066856"
-       y="184.99113"
-       id="text10-4"
-       transform="scale(1.0707244,0.93394714)"><tspan
-         sodipodi:role="line"
-         id="tspan10-3"
-         style="fill:#0000ff;stroke:none;stroke-width:3.4262"
-         x="-9.6066856"
-         y="184.99113">+</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.1737px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:3.4262;stroke-dasharray:none"
-       x="82.696419"
-       y="197.66518"
-       id="text10-7"
-       transform="scale(1.0707244,0.93394714)"><tspan
-         sodipodi:role="line"
-         id="tspan10-9"
-         style="fill:#0000ff;stroke:none;stroke-width:3.4262"
-         x="82.696419"
-         y="197.66518">+</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.1737px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:3.4262;stroke-dasharray:none"
-       x="155.10062"
-       y="268.00742"
-       id="text10-3"
-       transform="scale(1.0707244,0.93394714)"><tspan
-         sodipodi:role="line"
-         id="tspan10-90"
-         style="fill:#0000ff;stroke:none;stroke-width:3.4262"
-         x="155.10062"
-         y="268.00742">+</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.1737px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:3.4262;stroke-dasharray:none"
-       x="164.66747"
-       y="195.26091"
-       id="text10-1"
-       transform="scale(1.0707244,0.93394714)"><tspan
-         sodipodi:role="line"
-         id="tspan10-8"
-         style="fill:#0000ff;stroke:none;stroke-width:3.4262"
-         x="164.66747"
-         y="195.26091">+</tspan></text>
-    <path
-       d="m 244.42274,183.89099 v -4.15416 h -4.37429 v -2.66409 h 4.37429 v -4.15415 h 3.31307 v 4.15415 h 4.3743 v 2.66409 h -4.3743 v 4.15416 z"
-       id="text10-17"
-       style="font-weight:bold;font-size:24.1737px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';text-align:center;text-anchor:middle;fill:#0000ff;fill-rule:evenodd;stroke-width:3.4262"
-       aria-label="+" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.1737px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:3.4262;stroke-dasharray:none"
-       x="150.59268"
-       y="127.15847"
-       id="text10-39"
-       transform="scale(1.0707244,0.93394714)"><tspan
-         sodipodi:role="line"
-         id="tspan10-4"
-         style="fill:#0000ff;stroke:none;stroke-width:3.4262"
-         x="150.59268"
-         y="127.15847">-</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.1737px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:3.4262;stroke-dasharray:none"
-       x="-54.351479"
-       y="196.13745"
-       id="text10-39-5"
-       transform="scale(1.0707244,0.93394714)"><tspan
-         sodipodi:role="line"
-         id="tspan10-4-1"
-         style="fill:#0000ff;stroke:none;stroke-width:3.4262"
-         x="-54.351479"
-         y="196.13745">-</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.1737px;line-height:0.3;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:3.4262;stroke-dasharray:none"
-       x="-14.844927"
-       y="265.07376"
-       id="text10-39-0"
-       transform="scale(1.0707244,0.93394714)"><tspan
-         sodipodi:role="line"
-         id="tspan10-4-6"
-         style="fill:#0000ff;stroke:none;stroke-width:3.4262"
-         x="-14.844927"
-         y="265.07376">-</tspan></text>
+  <sodipodi:namedview id="namedview1" bordercolor="#000000" borderopacity="0.25" inkscape:current-layer="layer1" inkscape:cx="918.77831" inkscape:cy="435.41539" inkscape:deskcolor="#d1d1d1" inkscape:document-units="mm" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:showpageshadow="2" inkscape:window-height="749" inkscape:window-maximized="0" inkscape:window-width="1440" inkscape:window-x="0" inkscape:window-y="25" inkscape:zoom="0.38583845" pagecolor="#ffffff"/>
+  <g id="_defs" data-name="&amp;lt;defs">
+    <inkscape:path-effect id="path-effect10" apply_no_weight="true" apply_with_weight="true" effect="bspline" helper_size="0" is_visible="true" lpeversion="1.3" only_selected="false" steps="2" uniform="false" weight="33.333333"/>
+    <inkscape:path-effect id="path-effect10-4" apply_no_weight="true" apply_with_weight="true" effect="bspline" helper_size="0" is_visible="true" lpeversion="1.3" only_selected="false" steps="2" uniform="false" weight="33.333333"/>
+    <inkscape:path-effect id="path-effect10-4-3" apply_no_weight="true" apply_with_weight="true" effect="bspline" helper_size="0" is_visible="true" lpeversion="1.3" only_selected="false" steps="2" uniform="false" weight="33.333333"/>
+    <inkscape:path-effect id="path-effect10-4-3-5" apply_no_weight="true" apply_with_weight="true" effect="bspline" helper_size="0" is_visible="true" lpeversion="1.3" only_selected="false" steps="2" uniform="false" weight="33.333333"/>
+    <inkscape:path-effect id="path-effect10-4-3-8" apply_no_weight="true" apply_with_weight="true" effect="bspline" helper_size="0" is_visible="true" lpeversion="1.3" only_selected="false" steps="2" uniform="false" weight="33.333333"/>
+    <inkscape:path-effect id="path-effect10-4-3-85" apply_no_weight="true" apply_with_weight="true" effect="bspline" helper_size="0" is_visible="true" lpeversion="1.3" only_selected="false" steps="2" uniform="false" weight="33.333333"/>
+    <inkscape:path-effect id="path-effect10-4-3-3" apply_no_weight="true" apply_with_weight="true" effect="bspline" helper_size="0" is_visible="true" lpeversion="1.3" only_selected="false" steps="2" uniform="false" weight="33.333333"/>
+    <inkscape:path-effect id="path-effect10-4-3-6" apply_no_weight="true" apply_with_weight="true" effect="bspline" helper_size="0" is_visible="true" lpeversion="1.3" only_selected="false" steps="2" uniform="false" weight="33.333333"/>
+    <inkscape:path-effect id="path-effect10-4-3-31" apply_no_weight="true" apply_with_weight="true" effect="bspline" helper_size="0" is_visible="true" lpeversion="1.3" only_selected="false" steps="2" uniform="false" weight="33.333333"/>
+    <inkscape:path-effect id="path-effect10-4-3-6-6" apply_no_weight="true" apply_with_weight="true" effect="bspline" helper_size="0" is_visible="true" lpeversion="1.3" only_selected="false" steps="2" uniform="false" weight="33.333333"/>
+  </g>
+  <g id="layer1" inkscape:groupmode="layer" inkscape:label="Layer 1">
+    <rect id="rect1" class="cls-5" x="481.6" y="2.8" width="248.8" height="126.3" rx="28.3" ry="28.3"/>
+    <g id="text1" class="cls-13">
+      <text class="cls-14" transform="translate(488.5 73.9)"><tspan x="0" y="0">P/N Loading</tspan></text>
+    </g>
+    <path id="rect1-0" class="cls-8" d="M489,250.1h222.6c18.1,0,32.9,16.5,32.9,36.8v90.4c0,20.3-14.7,36.8-32.9,36.8h-222.6c-18.1,0-32.9-16.5-32.9-36.8v-90.4c0-20.3,14.7-36.8,32.9-36.8Z"/>
+    <g id="text1-8" class="cls-13">
+      <text class="cls-14" transform="translate(538.5 295.2)"><tspan x="0" y="0">Algae/</tspan></text>
+      <text class="cls-14" transform="translate(460.7 346.4)"><tspan x="0" y="0">Cyanobacteria</tspan></text>
+      <text class="cls-14" transform="translate(528.5 397.6)"><tspan x="0" y="0">Growth</tspan></text>
+    </g>
+    <path id="rect1-0-5" class="cls-6" d="M451.2,575h303.5c24.7,0,44.8,12.7,44.8,28.5v69.9c0,15.7-20.1,28.5-44.8,28.5h-303.5c-24.7,0-44.8-12.7-44.8-28.5v-69.9c0-15.7,20.1-28.5,44.8-28.5Z"/>
+    <g id="text1-8-1" class="cls-13">
+      <text class="cls-14" transform="translate(413.6 627.8)"><tspan x="0" y="0">Decomposition and</tspan></text>
+      <text class="cls-14" transform="translate(461.4 679)"><tspan x="0" y="0">Sedimentation</tspan></text>
+    </g>
+    <path id="rect1-0-3" class="cls-3" d="M952,576.1h183.1c14.9,0,27,13.5,27,30.1v73.9c0,16.6-12.1,30.1-27,30.1h-183.1c-14.9,0-27-13.5-27-30.1v-73.9c0-16.6,12.1-30.1,27-30.1Z"/>
+    <g id="text1-8-0" class="cls-13">
+      <text class="cls-14" transform="translate(969.5 630.6)"><tspan x="0" y="0">Nutrient</tspan></text>
+      <text class="cls-14" transform="translate(951.6 681.8)"><tspan x="0" y="0">Recycling</tspan></text>
+    </g>
+    <path id="rect1-0-3-7" class="cls-3" d="M954.8,268.1h183.1c14.9,0,27,13.5,27,30.1v73.9c0,16.6-12.1,30.1-27,30.1h-183.1c-14.9,0-27-13.5-27-30.1v-73.9c0-16.6,12.1-30.1,27-30.1Z"/>
+    <g id="text1-8-0-5" class="cls-13">
+      <text class="cls-14" transform="translate(968.5 319.2)"><tspan x="0" y="0">Nutrient</tspan></text>
+      <text class="cls-14" transform="translate(970.7 370.4)"><tspan x="0" y="0">Outflow</tspan></text>
+    </g>
+    <path id="rect1-0-3-7-2" class="cls-1" d="M33.1,580.2h205.8c16.8,0,30.4,10.8,30.4,24v59.1c0,13.3-13.6,24-30.4,24H33.1c-16.8,0-30.4-10.8-30.4-24v-59.1c0-13.3,13.6-24,30.4-24Z"/>
+    <g id="text1-8-0-5-7" class="cls-13">
+      <text class="cls-12" transform="translate(16.9 647.5)"><tspan x="0" y="0">Oxygenation</tspan></text>
+    </g>
+    <path id="rect1-0-3-7-2-1" class="cls-4" d="M35.9,276.7h205.8c16.8,0,30.4,10.8,30.4,24v59.1c0,13.3-13.6,24-30.4,24H35.9c-16.8,0-30.4-10.8-30.4-24v-59.1c0-13.3,13.6-24,30.4-24Z"/>
+    <g id="text1-8-0-5-7-6" class="cls-13">
+      <text class="cls-14" transform="translate(18.6 340.1)"><tspan x="0" y="0">Stratification</tspan></text>
+    </g>
+    <path class="cls-2" d=""/>
+    <path id="path1" class="cls-2" d="M590.2,256.1l17-17-17-17" sodipodi:nodetypes="ccc"/>
+    <path id="path10" class="cls-2" d="M2103.2,1689.3" inkscape:original-d="m 77.488173,53.487412 c 0,12.571828 0,25.143655 0,37.715483" inkscape:path-effect="#path-effect10"/>
+    <path class="cls-2" d=""/>
+    <path id="path1-8" class="cls-2" d="M587.3,577.2l17-17-17-17" sodipodi:nodetypes="ccc"/>
+    <path id="path10-1" class="cls-2" d="M2092.4,1067" inkscape:original-d="m 77.488173,53.487412 c 0,16.457666 0,32.91533 0,49.372998" inkscape:path-effect="#path-effect10-4" sodipodi:nodetypes="cc"/>
+    <path class="cls-2" d=""/>
+    <path id="path1-8-3" class="cls-2" d="M896.5,655.9l17-26-17-8" sodipodi:nodetypes="ccc"/>
+    <path id="path10-1-0" class="cls-2" d="M3301,876" inkscape:original-d="m 34.286802,120.00381 c 11.657513,-0.22858 23.315024,-0.45716 34.972538,-0.68573" inkscape:path-effect="#path-effect10-4-3" sodipodi:nodetypes="cc"/>
+    <path class="cls-2" d=""/>
+    <path id="path1-8-3-4" class="cls-2" d="M1025.5,432.4l17-17-17-17" sodipodi:nodetypes="ccc"/>
+    <path id="path10-1-0-7" class="cls-2" d="M3953.4,1080.2" inkscape:original-d="m 13.71472,244.80777 c 0,-17.60056 0,-35.20111 0,-52.80167" inkscape:path-effect="#path-effect10-4-3-5" sodipodi:nodetypes="cc"/>
+    <path class="cls-2" d=""/>
+    <path id="path1-8-3-5" class="cls-2" d="M744.3,347.2l17-17-17-17" sodipodi:nodetypes="ccc"/>
+    <path id="path10-1-0-9" class="cls-2" d="M2694.2,1438.6" inkscape:original-d="m 132.34706,120.00381 c -18.2863,0.22858 -36.572591,0.45716 -54.858887,0.68574" inkscape:path-effect="#path-effect10-4-3-8" sodipodi:nodetypes="cc"/>
+    <path class="cls-2" d=""/>
+    <path id="path1-8-3-6" class="cls-2" d="M737.2,423l17-17-17-17" sodipodi:nodetypes="ccc"/>
+    <path id="path10-1-0-8" class="cls-2" d="M2369.6,809.6" inkscape:original-d="M 245.49351,353.15407 C 224.46427,333.26772 203.43503,313.38138 182.40579,293.49504" inkscape:path-effect="#path-effect10-4-3-85" sodipodi:nodetypes="cc"/>
+    <path class="cls-2" d=""/>
+    <path id="path1-8-3-3" class="cls-2" d="M267.1,658.2l17-17-17-17" sodipodi:nodetypes="ccc"/>
+    <path id="path10-1-0-1" class="cls-2" d="M901.3,376.1" inkscape:original-d="m 103.54614,293.49503 c -13.028982,0.22858 -26.057966,0.45716 -39.086952,0.68574" inkscape:path-effect="#path-effect10-4-3-3" sodipodi:nodetypes="cc"/>
+    <path class="cls-2" d=""/>
+    <path id="path10-1-0-5" class="cls-2" d="M249.8,1488.9" inkscape:original-d="M 40.458426,118.63234 C 40.687005,98.745994 40.915583,78.859653 41.144162,58.973307" inkscape:path-effect="#path-effect10-4-3-6" sodipodi:nodetypes="cc"/>
+    <path class="cls-2" d=""/>
+    <path id="path1-8-3-2-7" class="cls-2" d="M167.8,582.5l17-17-17-17" sodipodi:nodetypes="ccc"/>
+    <path id="path10-1-0-5-6" class="cls-2" d="M658.4,1041.9" inkscape:original-d="m 15.771928,50.058735 c 0,19.429191 0,38.858377 0,58.287565" inkscape:path-effect="#path-effect10-4-3-6-6" sodipodi:nodetypes="cc"/>
+    <path class="cls-2" d=""/>
+    <path id="path1-8-3-28" class="cls-2" d="M251.5,409.6l17-17-17-17" sodipodi:nodetypes="ccc"/>
+    <path id="path10-1-0-86" class="cls-2" d="M827.7,1382.3" inkscape:original-d="M 119.31807,165.26239 C 102.63183,143.54742 85.945586,121.83245 69.25934,100.11747" inkscape:path-effect="#path-effect10-4-3-31" sodipodi:nodetypes="cc"/>
+    <g id="text10" class="cls-13">
+      <text class="cls-11" transform="translate(607.2 203.7) scale(1.1 1)"><tspan x="0" y="0">+</tspan></text>
+    </g>
+    <g id="text10-4" class="cls-13">
+      <text class="cls-11" transform="translate(331 470.3) scale(1.1 1)"><tspan x="0" y="0">+</tspan></text>
+    </g>
+    <g id="text10-7" class="cls-13">
+      <text class="cls-11" transform="translate(611.2 503.9) scale(1.1 1)"><tspan x="0" y="0">+</tspan></text>
+    </g>
+    <g id="text10-3" class="cls-13">
+      <text class="cls-11" transform="translate(830.9 690.1) scale(1.1 1)"><tspan x="0" y="0">+</tspan></text>
+    </g>
+    <g id="text10-1" class="cls-13">
+      <text class="cls-11" transform="translate(860 497.5) scale(1.1 1)"><tspan x="0" y="0">+</tspan></text>
+    </g>
+    <path id="text10-17" class="cls-9" d="M1074.5,501.8v-11.8h-12.4v-7.6h12.4v-11.8h9.4v11.8h12.4v7.6h-12.4v11.8h-9.4Z"/>
+    <g id="text10-39" class="cls-13">
+      <text class="cls-11" transform="translate(826.5 317.2) scale(1.1 1)"><tspan x="0" y="0">-</tspan></text>
+    </g>
+    <g id="text10-39-5" class="cls-13">
+      <text class="cls-11" transform="translate(146.2 497.3) scale(1.1 1)"><tspan x="0" y="0">-</tspan></text>
+    </g>
+    <g id="text10-39-0" class="cls-13">
+      <text class="cls-11" transform="translate(324.3 682.3) scale(1.1 1)"><tspan x="0" y="0">-</tspan></text>
+    </g>
+    <path id="rect1-0-3-7-2-1-2" data-name="rect1-0-3-7-2-1" class="cls-4" d="M35.9,44.7h205.8c16.8,0,30.4,10.8,30.4,24v59.1c0,13.3-13.6,24-30.4,24H35.9c-16.8,0-30.4-10.8-30.4-24v-59.1c0-13.3,13.6-24,30.4-24Z"/>
+    <g id="text10-4-2" data-name="text10-4" class="cls-13">
+      <text class="cls-11" transform="translate(150.3 232.5) scale(1.1 1)"><tspan x="0" y="0">+</tspan></text>
+    </g>
+  </g>
+  <g>
+    <line class="cls-7" x1="398" y1="638.1" x2="296.8" y2="638.6"/>
+    <polygon class="cls-10" points="275.6 638.7 305.4 626.4 298.4 638.6 305.5 650.8 275.6 638.7"/>
+  </g>
+  <g>
+    <line class="cls-7" x1="416.6" y1="576.9" x2="280.1" y2="400.6"/>
+    <polygon class="cls-10" points="267.1 383.8 295 400 281 401.8 275.7 414.9 267.1 383.8"/>
+  </g>
+  <g>
+    <line class="cls-7" x1="138.9" y1="388.7" x2="138.9" y2="554.9"/>
+    <polygon class="cls-10" points="138.9 576.1 126.7 546.2 138.9 553.3 151 546.2 138.9 576.1"/>
+  </g>
+  <g>
+    <line class="cls-7" x1="599.3" y1="415.4" x2="602.5" y2="548.7"/>
+    <polygon class="cls-10" points="603 569.9 590.1 540.3 602.5 547.1 614.5 539.8 603 569.9"/>
+  </g>
+  <g>
+    <line class="cls-7" x1="594" y1="129.2" x2="596.2" y2="221.7"/>
+    <polygon class="cls-10" points="596.7 242.9 583.8 213.4 596.2 220.2 608.2 212.8 596.7 242.9"/>
+  </g>
+  <g>
+    <line class="cls-7" x1="808.2" y1="631.8" x2="893.3" y2="634.3"/>
+    <polygon class="cls-10" points="914.5 634.9 884.3 646.2 891.7 634.3 885 621.9 914.5 634.9"/>
+  </g>
+  <g id="text1-8-0-5-7-6-2" data-name="text1-8-0-5-7-6" class="cls-13">
+    <text class="cls-14" transform="translate(20 106.2)"><tspan x="0" y="0">Temperature</tspan></text>
+  </g>
+  <g>
+    <line class="cls-7" x1="137.5" y1="159.3" x2="139.7" y2="251.8"/>
+    <polygon class="cls-10" points="140.2 273 127.3 243.5 139.7 250.3 151.7 242.9 140.2 273"/>
+  </g>
+  <g>
+    <line class="cls-7" x1="948" y1="573.1" x2="766.3" y2="416.8"/>
+    <polygon class="cls-10" points="750.2 403 780.8 413.2 767.5 417.9 764.9 431.7 750.2 403"/>
+  </g>
+  <g>
+    <line class="cls-7" x1="919.1" y1="335.1" x2="769.5" y2="332.6"/>
+    <polygon class="cls-10" points="748.3 332.2 778.3 320.6 771 332.6 777.9 344.9 748.3 332.2"/>
+  </g>
+  <g>
+    <line class="cls-7" x1="1049.5" y1="568.1" x2="1046" y2="429.5"/>
+    <polygon class="cls-10" points="1045.5 408.4 1058.4 437.9 1046.1 431.1 1034.1 438.5 1045.5 408.4"/>
   </g>
 </svg>

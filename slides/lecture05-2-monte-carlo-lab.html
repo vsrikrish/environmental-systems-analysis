@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.5.54">
 
   <meta name="author" content="Vivek Srikrishnan">
-  <meta name="dcterms.date" content="2024-09-16">
-  <title>BEE 4750 - Fall 2024 – Simulation Example: Dissolved Oxygen</title>
+  <meta name="dcterms.date" content="2024-08-28">
+  <title>BEE 4750 - Fall 2024 – Monte Carlo Simulation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,71 +30,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -409,8 +344,8 @@
     }
   };
   </script>
-<meta property="og:title" content="Simulation Example: Dissolved Oxygen – BEE 4750 - Fall 2024">
-<meta property="og:description" content="Lecture 06">
+<meta property="og:title" content="Monte Carlo Simulation – BEE 4750 - Fall 2024">
+<meta property="og:description" content="Lab 02">
 <meta property="og:site_name" content="BEE 4750 - Fall 2024">
 </head>
 <body class="quarto-light">
@@ -418,377 +353,46 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-    <h1 class="title">Simulation Example: Dissolved Oxygen</h1>
+    <h1 class="title">Monte Carlo Simulation</h1>
   <hr>
-<p class="subtitle">Lecture 06</p>
-<p class="date">September 16, 2024</p>
+<p class="subtitle">Lab 02</p>
+<p class="date">August 28, 2024</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Overview</h2>
 <ul>
-<li><a href="#/review-of-last-class" id="/toc-review-of-last-class">Review of Last Class</a></li>
-<li><a href="#/dissolved-oxygen-overview" id="/toc-dissolved-oxygen-overview">Dissolved Oxygen Overview</a></li>
-<li><a href="#/modeling-dissolved-oxygen" id="/toc-modeling-dissolved-oxygen">Modeling Dissolved Oxygen</a></li>
+<li><a href="#/upcoming-schedule" id="/toc-upcoming-schedule">Upcoming Schedule</a></li>
 </ul>
 </nav>
 </section>
+<section id="lab-instructions" class="slide level2">
+<h2>Lab Instructions</h2>
+<ul>
+<li>Try to finish by the end of class, ok if it takes a little longer.</li>
+<li>Submit PDF <strong>tonight</strong> by 9pm: ok if it isn’t 100% complete, but we want to see evidence of effort.</li>
+</ul>
+</section>
 <section>
-<section id="review-of-last-class" class="title-slide slide level1 center">
-<h1>Review of Last Class</h1>
+<section id="upcoming-schedule" class="title-slide slide level1 center">
+<h1>Upcoming Schedule</h1>
 
 </section>
-<section id="last-class" class="slide level2">
-<h2>Last Class</h2>
+<section id="next-classes" class="slide level2">
+<h2>Next Classes</h2>
+<p><strong>Monday</strong>: <strong>Labor Day!</strong></p>
+<p><strong>Wednesday</strong>: Intro to Systems Analysis</p>
+</section>
+<section id="assessments" class="slide level2">
+<h2>Assessments</h2>
 <ul>
-<li>Model-based simulation as a way to understand system dynamics and response.</li>
-<li>Box models: mass-balance in some region of the domain</li>
-<li>Can generalize single box models by:
-<ul>
-<li>Adding more complexity;</li>
-<li>combining multiple boxes.</li>
-</ul></li>
-</ul>
-</section>
-<section id="why-simulate" class="slide level2">
-<h2>Why Simulate?</h2>
-<ol type="1">
-<li>System involves complex, nonlinear dynamics that may not be analytically tractable.</li>
-<li>Setting up and running a real-world experiment is not possible.</li>
-<li>State depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.</li>
-<li>Need to understand range of system performance across rarely-seen conditions.</li>
-</ol>
-</section>
-<section id="questions" class="slide level2">
-<h2>Questions</h2>
-<div class="columns center">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/vsrikrish-poll.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
-</figure>
-</div>
-</div><div class="column" style="width:60%;">
-<p><strong>Text</strong>: VSRIKRISH to 22333</p>
-<p><strong>URL</strong>: <a href="https://pollev.com/vsrikrish">https://pollev.com/vsrikrish</a> <br><br> <a href="https://www.polleverywhere.com/multiple_choice_polls/qKeig0hHShZYHAOmvZtZm?preview=true&amp;controls=none" data-preview-link="true">See Results</a></p>
-</div></div>
-</section></section>
-<section>
-<section id="dissolved-oxygen-overview" class="title-slide slide level1 center">
-<h1>Dissolved Oxygen Overview</h1>
-
-</section>
-<section id="fate-transport-modeling" class="slide level2">
-<h2>Fate &amp; Transport Modeling</h2>
-<p><strong>How do nutrients and other quantities move through environmental mediums?</strong></p>
-<p>What can make fate &amp; transport modeling more complex?</p>
-<div class="fragment fade-in">
-<ul>
-<li>Multiple points of inflow;</li>
-<li>More complex growth/decay dynamics.</li>
-<li>Stochasticity/randomness.</li>
-</ul>
-</div>
-</section>
-<section id="dissolved-oxygen" class="slide level2">
-<h2>Dissolved Oxygen</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Dissolved oxygen (DO) is the free, non-compound oxygen present in water or other liquids.</p>
-<p>Freshwater can only hold small amounts, and this capacity is regulated by temperature.</p>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://www.fondriest.com/environmental-measurements/wp-content/uploads/2013/11/dissolvedoxygen_river-levels.jpg" style="width:80.0%"></p>
-<figcaption>Dissolved Oxygen by temperature</figcaption>
-</figure>
-</div>
-<div class="caption">
-<p>Source: <a href="https://www.fondriest.com/environmental-measurements/parameters/water-quality/dissolved-oxygen/">fondriest.com</a></p>
-</div>
-</div></div>
-</section>
-<section id="temperature-impact-on-do" class="slide level2">
-<h2>Temperature Impact on DO</h2>
-
-<img data-src="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/do_temp_0.png" class="r-stretch quarto-figure-center"><p class="caption">Dissolved Oxygen and Temperature Plot</p><div class="caption">
-<p>Source: <a href="https://www.usgs.gov/special-topics/water-science-school/science/dissolved-oxygen-and-water">usgs.gov</a></p>
-</div>
-</section>
-<section id="dissolved-oxygen-and-life" class="slide level2">
-<h2>Dissolved Oxygen and Life</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p>Dissolved oxygen is an important nutrient for aquatic life.</p>
-<p><strong>Hypoxia</strong> occurs when DO levels are <span class="math inline">\(&lt; 2\)</span> mg/L.</p>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://www.fondriest.com/environmental-measurements/wp-content/uploads/2013/11/dissolvedoxygen_levels-fresh.jpg" style="width:45.0%"></p>
-<figcaption>Minimum DO requirements for freshwater fish</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:10%;">
-<div class="caption">
-<p>Source: <a href="https://www.fondriest.com/environmental-measurements/parameters/water-quality/dissolved-oxygen/">fondriest.com</a></p>
-</div>
-</div></div>
-</section>
-<section id="factors-influencing-do" class="slide level2">
-<h2>Factors Influencing DO</h2>
-<ul>
-<li>Temperature, Pressure, Depth</li>
-<li>Salinity</li>
-<li>Mixing</li>
-<li>Plant and Microbial Life</li>
-<li>Organic Matter</li>
-</ul>
-</section>
-<section id="impact-of-paris-on-seine-do-1874" class="slide level2">
-<h2>Impact of Paris On Seine DO, 1874</h2>
-
-<img data-src="https://www.researchgate.net/publication/325721176/figure/fig10/AS:962439298445322@1606474818380/Longitudinal-profiles-x-axis-in-km-downstream-of-Paris-center-of-dissolved-oxygen_W640.jpg" class="r-stretch quarto-figure-center"><p class="caption">Dissolved Oxygen Downstream of Paris, 1874</p><div class="caption">
-<p>Source: Dmitrieva, T., et al.&nbsp;(2018). <a href="https://doi.org/10.1007/s12685-018-0216-7" class="uri">https://doi.org/10.1007/s12685-018-0216-7</a></p>
-</div>
-</section>
-<section id="do-regulatory-standards" class="slide level2">
-<h2>DO Regulatory Standards</h2>
-<p><strong>Objective</strong>: Keep DO <em>above</em> the regulatory standard.</p>
-<p>In NY (via <a href="https://govt.westlaw.com/nycrr/Document/I4ed90412cd1711dda432a117e6e0f345?viewType=FullText&amp;originationContext=documenttoc&amp;transitionType=CategoryPageItem&amp;contextData=(sc.Default)&amp;bhcp=1">Westlaw</a>):</p>
-<ul>
-<li>DO levels may not fall below 3 mg/L</li>
-<li>DO may not be below 4.8 mg/L for an extended period</li>
-</ul>
-</section></section>
-<section>
-<section id="modeling-dissolved-oxygen" class="title-slide slide level1 center">
-<h1>Modeling Dissolved Oxygen</h1>
-
-</section>
-<section id="oxygen-balance-in-rivers-and-streams" class="slide level2">
-<h2>Oxygen Balance in Rivers and Streams</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/do-processes.svg" style="height:100.0%"></p>
-<figcaption>Processes influencing oxygen balance in moving freshwater</figcaption>
-</figure>
-</div>
-</section>
-<section id="selecting-a-metric-for-do-fluxes" class="slide level2">
-<h2>Selecting a Metric for DO Fluxes</h2>
-<p>Typically use <strong>oxygen demand</strong> (OD):</p>
-<ul>
-<li>measure of the concentration of oxidizable materials in a water sample</li>
-<li>metric for organic waste contamination</li>
-<li>reflects how oxygen will be depleted in a given segment</li>
-</ul>
-<p>But there are several different processes affecting total OD!</p>
-</section>
-<section id="biochemical-oxygen-demand-bod" class="slide level2">
-<h2>Biochemical Oxygen Demand (BOD)</h2>
-<p>Oxygen used by microbes during aerobic decomposition of organic materials: <span class="math display">\[\text{Organic Matter} + \text{O}_2 \rightarrow \text{CO}_2 +  \text{H}_2\text{O} + \text{NO}_3 + \text{SO}_2 + \text{Residuals}\]</span></p>
-<p>Broadly speaking, we care about two types of BOD: <strong>Carbonaceous BOD</strong> and <strong>Nitrogenous BOD</strong>.</p>
-</section>
-<section id="carbonaceous-bod-cbod" class="slide level2">
-<h2>Carbonaceous BOD (CBOD)</h2>
-<p>Oxygen consumed during microbial decomposition of carbon compounds, <em>e.g.</em>: <span class="math display">\[\text{C}_a\text{H}_b\text{O}_c + d\text{O}_2 \rightarrow e\text{H}_2\text{O} + f\text{CO}_2\]</span></p>
-</section>
-<section id="nitrogenous-bod-nbod" class="slide level2">
-<h2>Nitrogenous BOD (NBOD)</h2>
-<p>Oxygen consumed during microbial decomposition of nitrogen compounds: <span class="math display">\[2\text{NH}_2^+ + 4\text{O}_2 \rightarrow 2\text{H}_2\text{O} + 4\text{H}^+ + 2\text{NO}_3^-\]</span></p>
-</section>
-<section id="bod-and-time" class="slide level2">
-<h2>BOD and Time</h2>
-<p>Moreover, BOD is differentiated based on time frame, <em>e.g.</em>:</p>
-<ul>
-<li>BOD<sub>5</sub>: oxygen demand over 5 days</li>
-<li>BOD<sub>20</sub>: oxygen demand over 20 days</li>
-</ul>
-</section>
-<section id="do-modeling-needs" class="slide level2">
-<h2>DO Modeling Needs</h2>
-<p>Need a model that will predict DO as a function of CBOD, NBOD.</p>
-<p>Use a <em>fate and transport</em> modeling approach: how are relevant quantities moved downstream?</p>
-<p><strong>Note</strong>: Can’t assume homogeneous processes.</p>
-</section>
-<section id="modeling-do" class="slide level2">
-<h2>Modeling DO</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p>So what do we do?</p>
-<p>Start by assuming <em>steady-state</em> waste in each section (or box…).</p>
-</div><div class="column" style="width:70%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/do-processes.svg"></p>
-<figcaption>Processes influencing oxygen balance in moving freshwater</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="modeling-do-1" class="slide level2">
-<h2>Modeling DO</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p>We’ll track the mass balance in terms of rates (not absolute mass).</p>
-<p>What happens to an element of water?</p>
-</div><div class="column" style="width:70%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/do-processes.svg"></p>
-<figcaption>Processes influencing oxygen balance in moving freshwater</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="steady-state-waste-do-mass-balance" class="slide level2">
-<h2>Steady-State Waste, DO Mass Balance</h2>
-<p>Let <span class="math inline">\(U\)</span> be the river velocity (km/d), <span class="math inline">\(x\)</span> the distance downstream from a waste release site in km, and <span class="math inline">\(C(x)\)</span> the DO concentration at <span class="math inline">\(x\)</span> in mg/L.</p>
-<p><span class="math display">\[\begin{align}
-U \frac{dC}{dx} &amp;= \text{Change in DO} \\[0.5em]
-&amp;= \text{Reaeration} + \text{Photosynthesis} - \text{Respiration}  \\[0.5em]
-&amp; \qquad - \text{Benthal Uptake} - \text{CBOD} - \text{NBOD}
-
-\end{align}\]</span></p>
-</section>
-<section id="bod-oxygen-uptake" class="slide level2">
-<h2>BOD Oxygen Uptake</h2>
-<p>Assume deoxygenation from waste decomposition is first-order (rate <span class="math inline">\(k\)</span>):</p>
-<p><span class="math display">\[\begin{aligned}
-\frac{dM}{dt} &amp;= -kM \\
-\Rightarrow M &amp;= M_0 \exp(-kt)
-\end{aligned}\]</span></p>
-<div class="fragment fade-in">
-<p>But our equations are formulated in terms of distance:</p>
-<p><span class="math display">\[M = M_0 \exp(-kx/U)\]</span></p>
-</div>
-</section>
-<section id="bod-oxygen-uptake-1" class="slide level2">
-<h2>BOD Oxygen Uptake</h2>
-<p>For biochemical organics, if <span class="math inline">\(k_c\)</span> is the deoxygenation rate (d<span class="math inline">\(^{-1}\)</span>);</p>
-<p><span class="math display">\[B(x) = B_0 \exp(-k_c x / U);\]</span></p>
-<p>For nitrification, if <span class="math inline">\(k_n\)</span> is the deoxygenation rate (d<span class="math inline">\(^{-1}\)</span>):</p>
-<p><span class="math display">\[N(x) = N_0 \exp(-k_n x / U).\]</span></p>
-</section>
-<section id="steady-state-waste-do-mass-balance-1" class="slide level2">
-<h2>Steady-State Waste, DO Mass Balance</h2>
-<p>So the corresponding oxygen uptake rates are <span class="math display">\[k_c B(x) = k_c B_0 \exp(-k_c x / U)\]</span> and</p>
-<p><span class="math display">\[k_n N(x) = k_n N_0 \exp(-k_n x / U).\]</span></p>
-</section>
-<section id="steady-state-waste-do-mass-balance-2" class="slide level2">
-<h2>Steady-State Waste, DO Mass Balance</h2>
-<p>Other processes:</p>
-<ul>
-<li><p>Reaeration, assume a simple linear model based on difference from saturation level <span class="math inline">\(C_s\)</span>: <span class="math inline">\(k_a (C_s - C)\)</span></p></li>
-<li><p>Assume measured, constant values for photosynthesis (<span class="math inline">\(P_s\)</span>), respiration (<span class="math inline">\(R\)</span>), benthal uptake (<span class="math inline">\(S_B\)</span>)</p></li>
-</ul>
-</section>
-<section id="steady-state-waste-do-mass-balance-3" class="slide level2">
-<h2>Steady-State Waste, DO Mass Balance</h2>
-<p>Putting it all together:</p>
-<p><span class="math display">\[
-\begin{aligned}
-U \frac{dC}{dx} &amp;= k_a (C_s - C) + P - R - S_B \\
-&amp;\quad - k_cB_0\exp\left(\frac{-k_cx}{U}\right) - k_n N_0\exp\left(\frac{-k_nx}{U}\right)
-\end{aligned}
-\]</span></p>
-</section>
-<section id="discretization-of-steady-state-do-equation" class="slide level2">
-<h2>Discretization of Steady-State DO Equation</h2>
-<p><span class="math display">\[
-\begin{align*}
-U \frac{C(x+1) - C(x)}{\Delta x} &amp;= k_a (C_s - C(x)) + P - R - S_B \\
-&amp;\quad - k_c B(x) - k_n N(x) \\[0.5em]
-\frac{N(x+1) - N(x)}{\Delta x} &amp;=
-\end{align*}
-\]</span></p>
-</section>
-<section id="discretization-of-steady-state-do-equations" class="slide level2">
-<h2>Discretization of Steady-State DO Equations</h2>
-<p><span class="math display">\[
-\begin{align*}
-C(x+1) &amp;= C(x) + \frac{\Delta x}{U}{\huge[}k_a (C_s - C(x)) + P - R - S_B \\
-&amp;\quad - k_c B(x) - k_n N(x)\right){\huge]} \\[0.5em]
-N(x+1) &amp;= N(x) + \frac{\Delta x}
-\end{align*}
-\]</span></p>
-<div class="fragment fade-in">
-<p><strong>Note</strong>: Usually models ignore <span class="math inline">\(P\)</span>, R$, and <span class="math inline">\(S_B\)</span>.</p>
-<p><strong>Why do you think that might be?</strong></p>
-<section id="simulation-results" class="title-slide slide level1 center">
-<h1>Simulation Results</h1>
-
-</section>
-<section id="how-to-simulate" class="slide level2">
-<h2>How To Simulate</h2>
-<p>This is similar to the multi-box example from last time!</p>
-<p>Single equation, straightforward to evaluate across many values of <span class="math inline">\(x\)</span> with a loop.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a></a>x <span class="op">=</span> <span class="fl">0</span><span class="op">:</span>x_step<span class="op">:</span>x_max <span class="co"># array from 0 to x_max in stepsize x_step</span></span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a>C <span class="op">=</span> <span class="fu">zeroes</span>(<span class="fu">length</span>(x)) <span class="co"># initialize storage</span></span>
-<span id="cb1-4"><a></a><span class="cf">for</span> (i, y) <span class="kw">in</span> <span class="fu">pairs</span>(x)</span>
-<span id="cb1-5"><a></a>    C[i] <span class="op">=</span> <span class="fu">dissolved_oxygen</span>(y, parameters)</span>
-<span id="cb1-6"><a></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="julia-sidebar-loop-alternatives" class="slide level2">
-<h2>Julia Sidebar: Loop Alternatives</h2>
-<p>Loops in Julia are fast and should be used freely.</p>
-<p>But there are some more concise alternatives, which may be more readable in some cases.</p>
-</section>
-<section id="julia-sidebar-broadcasting" class="slide level2">
-<h2>Julia Sidebar: Broadcasting</h2>
-<p>But some more concise alternatives (which may be more readable) include <strong>broadcasting</strong>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a></a>x <span class="op">=</span> <span class="fl">0</span><span class="op">:</span>x_step<span class="op">:</span>x_max <span class="co"># array from 0 to x_max in stepsize x_step</span></span>
-<span id="cb2-2"><a></a></span>
-<span id="cb2-3"><a></a><span class="co"># evaluate DO function over every x with fixed parameters</span></span>
-<span id="cb2-4"><a></a>C <span class="op">=</span> (y <span class="op">-&gt;</span> <span class="fu">dissolved_oxygen</span>(y, parameters)).(x) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Broadcasting gets finicky over multiple inputs.</p>
-</section>
-<section id="julia-sidebar-comprehensions" class="slide level2">
-<h2>Julia Sidebar: Comprehensions</h2>
-<p>…And <strong>comprehensions</strong> (in-line for loops, also in Python):</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a></a>x <span class="op">=</span> <span class="fl">0</span><span class="op">:</span>x_step<span class="op">:</span>x_max <span class="co"># array from 0 to x_max in stepsize x_step</span></span>
-<span id="cb3-2"><a></a></span>
-<span id="cb3-3"><a></a><span class="co"># evaluate DO function over every x with fixed parameters</span></span>
-<span id="cb3-4"><a></a>C <span class="op">=</span> [<span class="fu">dissolved_oxygen</span>(y, parameters) for y <span class="kw">in</span> x]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Can “stack” the <code>for</code> loops in a comprehension to nest.</p>
-</section>
-<section id="julia-sidebar-when-to-use-loops" class="slide level2">
-<h2>Julia Sidebar: When To Use Loops?</h2>
-<p>Think about readability and ease of debugging!</p>
-<ul>
-<li>If your code is complex and not wrapped in a function, or you have several nested loops, you should use a loop (<em>just be careful of scope…</em>)</li>
-<li>If your code is complex, may be worth asking if you should write a function instead and use broadcasting or a comprehension.</li>
-</ul>
-</section>
-<section id="simulation-outputs" class="slide level2">
-<h2>Simulation Outputs</h2>
-<div id="6" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>do_simulate (generic function with 1 method)</code></pre>
-</div>
-</div>
-</section>
-
-<section id="key-points" class="title-slide slide level1 center">
-<h1>Key Points</h1>
-
-</section>
-<section id="key-points-1" class="slide level2">
-<h2>Key Points</h2>
-<ul>
-<li>Dissolved oxygen (DO) is essential for water quality and aquatic life.</li>
-<li>Commonly regulated to keep DO above a minimum threshold.</li>
-<li>DO impacted by a number of factors, notably organic waste decomposition and nitrification.</li>
-<li>We derived a first-order equation for DO using mass-balance and fate &amp; transport principles.</li>
+<li>Weekly Exercises: Basically a syllabus quiz.</li>
+<li>HW 1: Available, due 9/6.</li>
 </ul>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
-</div>
-</section>
-
 </div>
 </section></section>
     </div>

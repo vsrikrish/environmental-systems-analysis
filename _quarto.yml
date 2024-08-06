@@ -72,6 +72,8 @@ website:
             text: "Group Expectations"
           - href: policies/integrity.qmd
             text: "Academic Integrity"
+          - href: rubrics/standard.qmd
+            text: "Standard Rubric"
       - section: hw.qmd
         contents:
           - href: hw/hw01/hw01.qmd
@@ -80,10 +82,16 @@ website:
             text: "HW 2"
           - href: hw/hw03/hw03.qmd
             text: "HW 3"
+          - href: hw/hw04/hw04.qmd
+            text: "HW 4"
       - section: labs.qmd
         contents:
           - href: labs/lab01/lab01.qmd
             text: "Lab 1"
+          - href: labs/lab02/lab02.qmd
+            text: "Lab 2"
+          - href: labs/lab03/lab03.qmd
+            text: "Lab 3"
       - section: project.qmd
         contents:
           - href: project/proposal.qmd

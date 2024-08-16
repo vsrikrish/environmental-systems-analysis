@@ -456,7 +456,7 @@ mc_anim = @animate for i = 1:nsamp
     push!(plt, 1, i, avg_freq[i])
 end every 100
 
-gif(mc_anim, "figures/mc_dice.gif", fps=2)
+gif(mc_anim, "figures/mc_dice.gif", fps=3)
 ```
 :::
 :::

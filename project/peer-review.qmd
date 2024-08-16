@@ -20,11 +20,11 @@ The goal of this peer review is for you to evaluate the efficacy of the communic
 
 ## Instructions
 
-You should be prompted to review two videos in Canvas starting on 12/10. Submit your reviews there.
+You should be prompted to review two videos in Canvas starting on 12/10. Submit your reviews there (they will appear as anonymous comments to the reviewed group). 
 
 ***Note***: If you do not see the prompt or the instructions are not clear, reach out to Prof. Srikrishnan ASAP. You **will not** be able to submit reviews after the due date.
 
-Your review should, in no more than 1 page, answer the following questions:
+Your review should, in the equivalent of no more than 1 page, answer the following questions:
 
 - How well did you understand the key question of the project? Can you restate it?
 - What were the key results (be specific; do not just repeat the video!)?

@@ -61,7 +61,10 @@ default(
     linewidth=2, 
     framestyle=:box, 
     label=nothing, 
-    grid=false
+    grid=false,
+    tickfontsize=16,
+    guidefontsize=18,
+    legendfontsize=16
 )
 ```
 
@@ -118,55 +121,19 @@ A **linear program** (**LP**), or a *linear optimization model*, has the followi
 - **Divisibility**: The decision variables are continuous (they can be fractional levels);
 - **Certainty**: The problem is deterministic.
 
-## Linearization
-
-:::: {.columns}
-::: {.column width=50%}
-Linear models come up frequently because we can *linearize* nonlinear functions.
-
-When we linearize components of an mathematical program, this is called the *linear relaxation* of the original problem.
-:::
-::: {.column width=50%}
-```{julia}
-E = 0:0.01:1
-p = plot(E, E.^2, legend=false, grid=false, xlabel="Efficiency", ylabel="Cost", color=:black, yticks=false, xlims=(0, 1), ylims=(0, 1), left_margin=8mm, linewidth=3, tickfontsize=16, guidefontsize=16)
-xticks!([0.65, 0.95])
-xlims!((0, 1.05))
-scatter!([0.65, 0.95], [0.65, 0.95].^2, markersize=10, color=:blue)
-plot!(E, 1.6 .* E  .- 0.6175, color=:blue, linestyle=:dash, linewidth=3)
-plot!(size=(600, 600))
-```
-:::
-::::
-
-## Linearization
-
-:::: {.columns}
-::: {.column width=50%}
-Note that the linearization is often quite sensitive to the points that are used to find the slope.
-
-So this is best done when you have a rough idea of the variable range of interest.
-:::
-::: {.column width=50%}
-```{julia}
-scatter!([0.32, 0.98], [0.32, 0.98].^2, markersize=10, color=:red)
-plot!(p, E, 1.3 .* E  .- 0.31, color=:red, linestyle=:dot, linewidth=3)
-```
-:::
-::::
 
 ## Why Is Solving LPs Straightforward?
 
 :::: {.columns}
 ::: {.column width=50%}
-```{julia, lp-sketch}
+```{julia}
 x = 2:0.1:11
 f1(x) = 4.5 .* x
 f2(x) = -x .+ 16
 f3(x) = -1.5 .* x .+ 12
 f4(x) = 0.5 .* x
 
-p = plot(x, max.(f3(x), f4(x)), fillrange=min.(f1(x), f2(x)), color=:lightblue, grid=true, legend=false, xlabel=L"x", ylabel=L"y", xlims=(-2, 20), framestyle=:origin, ylims=(-2, 20), minorticks=5, tickfontsize=16, guidefontsize=16, right_margin=5mm)
+p = plot(x, max.(f3(x), f4(x)), fillrange=min.(f1(x), f2(x)), color=:lightblue, grid=true, legend=false, xlabel=L"x", ylabel=L"y", xlims=(-2, 20), framestyle=:origin, ylims=(-2, 20), minorticks=5, right_margin=5mm)
 plot!(-2:0.1:20, f1.(-2:0.1:20), color=:green, linewidth=3)
 plot!(-2:0.1:20, f2.(-2:0.1:20), color=:red, linewidth=3)
 plot!(-2:0.1:20, f3.(-2:0.1:20), color=:brown, linewidth=3)
@@ -227,7 +194,7 @@ f4(x) = 0.5 .* x
 g(y1, y2) = 5 * y1 + 2 * y2
 z = @. g((1:.01:12)', 1:.01:15)
 
-p2 = contour(1:.01:12, 1:.01:15, z, c=:YlOrRd, grid=true, legend=false, xlabel=L"x", ylabel=L"y", xlims=(-2, 20), framestyle=:origin, ylims=(-2, 20), minorticks=5, tickfontsize=16, guidefontsize=16, right_margin=5mm)
+p2 = contour(1:.01:12, 1:.01:15, z, c=:YlOrRd, grid=true, legend=false, xlabel=L"x", ylabel=L"y", xlims=(-2, 20), framestyle=:origin, ylims=(-2, 20), minorticks=5, right_margin=5mm)
 plot!(-2:0.1:20, f1.(-2:0.1:20), color=:green, linewidth=3)
 plot!(-2:0.1:20, f2.(-2:0.1:20), color=:red, linewidth=3)
 plot!(-2:0.1:20, f3.(-2:0.1:20), color=:brown, linewidth=3)
@@ -271,17 +238,20 @@ $$\begin{alignedat}{3}
 :::
 ::: {.column width=50%}
 ```{julia}
+#| echo: true
+#| code-fold: true
+
 x1 = 0:1200
 x2 = 0:1400
 f1(x) = (600 .- 0.9 .* x) ./ 0.5
 f2(x) = 1000 .- x
 
-p = plot(0:667, min.(f1(0:667), f2(0:667)), fillrange=0, color=:lightblue, grid=true, label="Feasible Region", xlabel=L"x_1", ylabel=L"x_2", xlims=(-50, 1200), ylims=(-50, 1400), framestyle=:origin, minorticks=4, right_margin=4mm, left_margin=4mm, legendfontsize=14, tickfontsize=16, guidefontsize=16)
+p = plot(0:667, min.(f1(0:667), f2(0:667)), fillrange=0, color=:lightblue, grid=true, label="Feasible Region", xlabel=L"x_1", ylabel=L"x_2", xlims=(-50, 1200), ylims=(-50, 1400), framestyle=:origin, minorticks=4, right_margin=4mm, left_margin=4mm)
 plot!(0:667, f1.(0:667), color=:brown, linewidth=3, label=false)
 plot!(0:1000, f2.(0:1000), color=:red, linewidth=3, label=false)
 annotate!(400, 1100, text(L"0.9x_1 + 0.5x_2 = 600", color=:purple, pointsize=18))
 annotate!(1000, 300, text(L"x_1 + x_2 = 1000", color=:red, pointsize=18))
-plot!(size=(600, 600))
+plot!(size=(600, 500))
 ```
 :::
 ::::
@@ -300,6 +270,9 @@ $$\begin{alignedat}{3}
 :::
 ::: {.column width=50%}
 ```{julia}
+#| echo: true
+#| code-fold: true
+
 Z(x1,x2) = 230 * x1 + 120 * x2
 contour!(0:660,0:1000,(x1,x2)->Z(x1,x2), levels=5, c=:devon, linewidth=2, colorbar = false, clabels = true) 
 ```
@@ -320,6 +293,9 @@ $(250, 750)$ | $147500$
 ::: {.column width=50%}
 
 ```{julia}
+#| echo: true
+#| code-fold: true
+
 scatter!(p, [0, 0, 667, 250], [0, 1000, 0, 750], markersize=10, z=2, label="Corner Point", markercolor=:orange)
 ```
 :::
@@ -332,6 +308,46 @@ Manually checking the corner points is all well and good for this simple example
 ::: {.fragment .fade-in}
 LP solvers (often based off the simplex method) automate this process.
 :::
+
+## Linearization
+
+:::: {.columns}
+::: {.column width=50%}
+Linear models come up frequently because we can *linearize* nonlinear functions.
+
+When we linearize components of an mathematical program, this is called the *linear relaxation* of the original problem.
+:::
+::: {.column width=50%}
+```{julia}
+#| echo: true
+#| code-fold: true
+E = 0:0.01:1
+plot(E, E.^2, legend=false, grid=false, xlabel="Efficiency", ylabel="Cost", color=:black, yticks=false, xlims=(0, 1), ylims=(0, 1), left_margin=8mm, linewidth=3)
+xticks!([0.65, 0.95])
+xlims!((0, 1.05))
+scatter!([0.65, 0.95], [0.65, 0.95].^2, markersize=10, color=:blue)
+plot!(E, 1.6 .* E  .- 0.6175, color=:blue, linestyle=:dash, linewidth=3)
+plot!(size=(600, 500))
+```
+:::
+::::
+
+## Sensitivity of Linearization
+
+:::: {.columns}
+::: {.column width=50%}
+The quality of linear approximations can depend on the range of values used and the curvature of the original objective/constraint.
+:::
+::: {.column width=50%}
+```{julia}
+#| echo: true
+#| code-fold: true
+scatter!([0.32, 0.98], [0.32, 0.98].^2, markersize=10, color=:red)
+plot!(E, 1.3 .* E  .- 0.31, color=:red, linestyle=:dot, linewidth=3)
+```
+:::
+::::
+
 
 # Shadow Prices
 
@@ -346,6 +362,9 @@ This means that at this solution, one or more constraints are **binding**: if we
 :::: {.columns}
 ::: {.column width=50%}
 ```{julia}
+#| echo: true
+#| code-fold: true
+
 p
 ```
 :::
@@ -393,8 +412,8 @@ $$\Rightarrow \qquad \frac{\partial H}{\partial A} = \lambda_1, \qquad \frac{\pa
 
 ## Next Classes
 
-**Monday**: Project proposal peer review
+**Wednesday**: **Prelim 1**!
 
-**Wednesday**: Guest lecture by Diana Hackett (Mann librarian) on regulations research.
+**Next Monday**: Fall Break, no class
 
-**Friday**: Lab on linear programming in Julia.
+**Next Wednesday**: Optimization Lab (come prepared, link will be posted on Ed)

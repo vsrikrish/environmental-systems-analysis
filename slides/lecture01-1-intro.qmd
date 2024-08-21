@@ -44,7 +44,7 @@ Prof. Vivek Srikrishnan, [viveks@cornell.edu](mailto:viveks@cornell.edu), 318 Ri
 - From Wappingers Falls, NY (via Champaign-Urbana, IL and State College, PA);
 - Non-academic highlight: Was on Jeopardy! in 2016;
 - Researches climate risk management;
-- Particular interested in unintended consequences which result from neglecting uncertainty or system dynamics.
+- Particular interest in unintended consequences which result from neglecting uncertainty or system dynamics.
 
 ## Meet My Supervisors
 
@@ -55,7 +55,7 @@ Prof. Vivek Srikrishnan, [viveks@cornell.edu](mailto:viveks@cornell.edu), 318 Ri
 ## About the TA
 Gabriela Ackermann Logan, M.S./Ph.D. student, [ga345@cornell.edu](mailto:ga345@cornell.edu), 319 Riley-Robb
 
-- From (via Medford, MA)
+- From New Bedford, NY (via Medford, MA)
 - Interested in energy system transitions and supply chain/logistical needs.
 
 # What Are We Discussing This Semester?
@@ -146,7 +146,8 @@ Not required, but students tend to do better when they're actively engaged in cl
 
 ## Office Hours
 
-- Time TBD (will send out poll)
+- Prof. Srikrishnan: T 10-11am, W 1:30-2:30 in 318 Riley-Robb
+- TA: M 1-2:30 in 319 Riley-Robb
 - Almost impossible to find a time that works for all (or even most); please feel free to email to make appointments as/if needed.
 - Can be busy, will triage based on urgency (e.g. if you want code help but have not done basic debugging steps, you will be asked to wait until others are helped).
 
@@ -190,7 +191,7 @@ We will use Jupyter Notebooks for most computing tasks (including assignments).
 
 - Allow for interactive evaluation of code and integration with text (including nicely typeset mathematics)
 - Can export to PDF (or HTML -> PDF) for submission to Gradescope.
-- **Be careful before submitting**: Evaluate all cells *in order*
+- **Be careful before submitting**: Evaluate all cells *in order*.
 
 ## GitHub Classroom
 
@@ -215,8 +216,7 @@ Homework assignments and labs will be distributed using GitHub Classroom.
 
 | Category | Weight |
 |:--------|:------:|
-| Participation | 10% (5% for 5750) |
-| Readings (5750 only) | 5% |
+| Participation | 10% |
 | Exercises | 10% |
 | Labs | 10% |
 | Homework | 20% |
@@ -260,10 +260,10 @@ Homework assignments and labs will be distributed using GitHub Classroom.
 
 ## Exercises
 
-- Auto-graded "quizzes" on Canvas, auto-graded
+- Auto-graded "quizzes" on Canvas.
 - Focus on conceptual questions or quick setups/calculations (no coding)
 - Can submit as many times as you like.
-- Due by **9:00pm** by the end of the week (Friday).
+- Due before Monday class the next week.
 - Will drop one.
 
 ## Homework Assignments
@@ -271,14 +271,14 @@ Homework assignments and labs will be distributed using GitHub Classroom.
 - 5 in total, due two weeks after assignment.
 - Focus on new or extended applications
 - Managed with GitHub Classroom
-- Due by **9:00pm** on the due date (usually Friday)
+- Due by **9:00pm** on the due date (usually Thursday)
 - No drops.
 - Graded on correctness.
 
 ## Term Project 
 
 - Analyze a system of interest, including the regulatory environment, going beyond class examples/methods.
-- Work in groups of 3--4.
+- Work in groups of 3--4, 5750 students *can* work alone.
 - Submit proposal on 11/1/24.
 - Record presentation by end of semester for peer review by classmates.
 - Submit report, peer reviews, group/self evaluations by end of finals week.
@@ -295,18 +295,9 @@ Homework assignments and labs will be distributed using GitHub Classroom.
 ## Prelims
 
 - Two in-class prelims (10/09, 11/11);
-- Will resemble exercises/labs more than homework.
 - Focus on concepts, problem formulations, interpretation.
-- Not trying to make these long or particularly difficult!
 - Exams will be scanned and put on Gradescope for grades/feedback.
-- Will discuss two weeks after the exams after grades are returned.
-
-## Readings
-
-- Students in 5750 will be assigned one-two readings per module.
-- Option to peer annotate on Canvas.
-- Will need to submit a written summary/synthesis.
-- Students in 4750 should feel free to do the reading to go more deeply, but optional.
+- Will discuss ~two weeks after the exams after grades are returned.
 
 # Academic Integrity
 

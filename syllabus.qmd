@@ -48,16 +48,16 @@ This is a 3 credit course which is required for the Environmental Engineering ma
 - {{< fa sharp user title="Name" >}} [[{{< var instructor.name_no_title >}}]({{< var instructor.url >}})]{.ms-1}
 - {{< fa sharp envelope title="Email" >}} [[{{< var instructor.email >}}](mailto:{{< var instructor.email >}})]{.ms-1}
 - {{< fa sharp building title="Office" >}} [{{< var instructor.office >}}]{.ms-2}
-- {{< fa sharp door-open title="Office Hours" >}}[TBD]{.ms-1}
+- {{< fa sharp door-open title="Office Hours" >}}[T 10-11am, W 1:30-2:30pm]{.ms-1}
 :::
 
 ::: {.column width="30%"}
 ### TA
 
-- {{< fa sharp user title="Name" >}} [TBD]{.ms-1}
-- {{< fa sharp envelope title="Email" >}} [TBD]{.ms-1}
-- {{< fa sharp building title="Office" >}} [TBD]{.ms-2}
-- {{< fa sharp door-open title="Office Hours" >}}[TBD]{.ms-1}
+- {{< fa sharp user title="Name" >}} [Gabriela Ackermann Logan]{.ms-1}
+- {{< fa sharp envelope title="Email" >}} [ga345@cornell.edu]{.ms-1}
+- {{< fa sharp building title="Office" >}} [319 Riley-Robb Hall]{.ms-2}
+- {{< fa sharp door-open title="Office Hours" >}}[M 1:00-2:30pm]{.ms-1}
 ::::
 
 ::: {.column width="30%"}
@@ -233,7 +233,7 @@ Please stay home if you're feeling sick! This is beneficial for both for your ow
 
 ### Mask Policies
 
-**Masks are encouraged but not required in the classroom**, per [university policy](https://covid.cornell.edu/updates/20220727-students-fall-semester.cfm). However, the University *strongly encourages* compliance with requests to mask from students, faculty, and staff who are concerned about the risk of infection. Please be respectful of these concerns and requests if you cannot wear a mask. This policy may change if there is another outbreak of COVID-19 (or other illness), but will be kept consistent with broader Cornell mask policies.
+Please stay home and rest if you have symptoms of COVID-19 or any other respiratory illness. No masking will be required, but please be respectful of others who may wear masks or take other precautions to avoid illness. This policy may change if there is another outbreak of COVID-19 (or other illness), but will be kept consistent with broader Cornell mask policies.
 
 ### Academic Integrity
 
@@ -308,7 +308,7 @@ While you should submit regrade requests for legitimate errors, using them for f
 
 ### Office Hours
 
-Office hours with both Prof. Srikrishnan and the TA will be available each week at times TBA. Changes to the office hour schedule (cancellations/rescheduling) will be announced in class and on Ed Discussion. 
+Office hours with both Prof. Srikrishnan and the TA will be available each week at times specified at the top of this syllabus. Changes to the office hour schedule (cancellations/rescheduling) will be announced in class and on Ed Discussion. 
 
 Office hours are intended to help all students who attend. This time is limited, and is best spent on issues that are relevant to as many students as possible. While we will do our best to answer individual questions, students asking us to verify or debug homework solutions or help with syntax will have the lowest priority (**but please do ask about how to verify or debug your own solutions!**). However, we are happy to discuss conceptual approaches to solving homework problems, which may help to reveal bugs.
 
@@ -353,7 +353,7 @@ Note that just passively attending class will not yield full participation point
 
 ### Exercises
 
-Most weeks will involve a problem set aimed at assessing key concepts or getting practice with new workflows and packages. We will use Canvas for these exercises, but starter code will be made available on GitHub Classroom for code-based exercises. These will be released Monday at the start of class and are due before class (2:55PM) the following Monday. The exercises will be multiple choice or similar (categorization, multiple answer, etc), automatically graded, and you can submit them as often as you like. It is highly recommended that you do these promptly and take them seriously, as concepts and simple code practice will be useful for the homeworks and midterm exams. We will automaticaly drop one exercise set, but no late exercises will be accepted.
+Most weeks will involve a short problem set aimed at assessing key concepts. We will use Canvas for these exercises. These will be released Monday at the start of class and are due before class (2:55PM) the following Monday. The exercises will be multiple choice or similar (categorization, multiple answer, etc), automatically graded, and you can submit them as often as you like. It is highly recommended that you do these promptly and take them seriously, as concepts and simple code practice will be useful for the homeworks and midterm exams. We will automatically drop one exercise set, but no late exercises will be accepted.
 
 ### Labs
 
@@ -363,14 +363,14 @@ Approximately 5 class periods will be dedicated to working through simple exampl
 
 Approximately 5 homework assignments will be assigned throughout the semester, one per course module (plus an initial homework to build or refresh programming and debugging skills). The homework assignments are more in-depth problem sets involving the modeling (derivation and implementation) and analysis of one or more environmental systems problems.
 
-You will generally have approximately two class weeks to work on an assignment. This is intended to provide you enough time to work on the problem and debug and evaluate your code (including troubleshooting any technical problems); these are not excuses for late submission. Each homework assignment will build on material from the prior classes and possibly from the day the homework is assigned, but no later.
+You will generally have two class weeks to work on an assignment. This is intended to provide you enough time to work on the problem and debug and evaluate your code (including troubleshooting any technical problems); these are not reasons for late submission. Each homework assignment will build on material from the prior classes and possibly from the day the homework is assigned.
 
 Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but plagiarism is a violation of academic integrity. Graduate students in BEE 5750 can expect one additional problem for each homework assignment aimed at developing greater depth or familiarity with the material.
 
 Some notes on assignment and grading logistics:
 
   * Homework assignments will be distributed using GitHub Classroom. While GitHub use is not required for the class aside from accepting and cloning assignments, students are encouraged to update their GitHub repositories as they work on the assignments; this helps with answering questions and gives you a backstop in case something goes wrong and you can't submit your assignment on time. 
-  * Homeworks are due by 9:00pm Eastern Time on the designed due date (usually a Thursday). Your assignment notebook (which include your writeup and codes) should be submitted to Gradescope as a PDF with the answers to each question tagged (a failure to do this will result in deductions). 
+  * Homeworks are due by 9:00pm Eastern Time on the designed due date (usually a Thursday). Your assignment writeup should be submitted to Gradescope as a PDF with the answers to each question tagged (a failure to do this will result in a non-negotiable 10% point deduction). 
   * A meta-rubric is provided on the website, under the Homework page. These are not customized for each assignment but the principles will apply generally.
   * No homework assignments will be dropped, but you can turn in assignments within 24 hours of the due date with a 50% penalty. If you need a further accomodation for a particular assignment, talk to Prof. Srikrishnan ***before the due date.*** Requests for extensions made after the due date will only be considered under extraordinary and unexpected circumstances. Technical challenges submitting assignments are not acceptable reasons for extensions to be granted, and late penalties will apply.
   * **Your submitted homework must stand on its own***! We cannot grade you on the basis of information which was not included in the submitted assignment. While regrade requests should include a justification for why your grade is incorrect, we will not consider explanations or additional reasoning outside of the submission.
@@ -379,21 +379,21 @@ Some notes on assignment and grading logistics:
 
 Two in-class prelims will be given as an opportunity to review relevant material. The dates for the exams are **Wednesday, 10/09** and **Monday, 11/11**. The exams are closed-book and closed-note. As a result, the exams will emphasize conceptual material such as model derivations and interpretation of results; any calculations can be done with a pen(cil) and paper. Conflict and extended-time exams will be handled through SDS. Exams will be scanned into Gradescope for grading and feedback.
 
-Solutions will not be posted for the midterms, but Prof. Srikrishnan will review and discuss midterm problems in class. The review will occur approximately two weeks after the exam to provide time for conflict exams.
+Solutions will not be posted for the midterms, but Prof. Srikrishnan will review and discuss midterm problems in class. The review will occur approximately two weeks after the exam to provide time for conflict exams and grading.
 
 ### Final Term Project
 
 This course will culminate with a term project. The goal of this project is to apply and extend the tools and approaches we will learn in class to an application of your choosing. While we encourage drawing on other classes or interests when developing and working on your project, **submitting work from another course or work which was completed prior to the course is not permitted**.
 
-The term project will be completed in groups (3-4 students). The final deliverable for this project will be a report summarizing the project and results, including a section detailing research you have conducted on relevant regulations and how they were incorporated into your project. Ahead of that, you will submit the following a proposal for feedback on the scope of your project as well as a description of task coordination.
+The term project will be completed in groups (3-4 students). Graduate students enrolled in BEE 5750 may work on individual projects, but are not required to do so. The final deliverable for this project will be a report summarizing the project and results, including a section detailing research you have conducted on relevant regulations and how they were incorporated into your project. Ahead of that, you will submit the following a proposal for feedback on the scope of your project as well as a description of task coordination.
 
 The project will be assessed on the basis of both group and individual components:
 
 1. ***Group*** (80 points):
    1. (10 points) **Proposal**: Groups will develop a proposal for their final project, which will include two main components. The first is a research plan, which should (succinctly) describe the background for the problem and articulate the key question (system overview, model specification) as well as providing a brief overview of proposed methods (data sources, planned analytic approach). The second is a work plan, which will include task assignments across group members, deadlines for interim tasks, and a plan for coordination (meeting frequency, materials sharing, etc). 
    2. (20 points) **Presentation**: Groups will present their projects to the class at the end of the semester. Due to time restrictions, these may be recorded and uploaded to Canvas if there are too many projects for the time available. Presentations should be no more than 10 minutes long and should be aimed at a general audience. 
-   3. (10 points) **Peer Review**: Each group will be asked to provide a peer review on two of their classmates' presentations. The format for the review will be made available on the class website included all expected components, but all members of the group(s) should provide their reviews as part of the overall synthesis. =
-   4. (40 points) **Final Report**: Each group will submit a final report aimed at an engineering audience. A rubric will be provided with detailed expectations. 
+   3. (10 points) **Peer Review**: Each group will be asked to provide a peer review on two of their classmates' presentations. The format for the review will be made available on the class website.
+   4. (40 points) **Final Report**: Each group will submit a 3-5 page final report aimed at an engineering audience. Instructions will be provided with detailed expectations. 
 2. **Individual** (20 points):
    1. (5 points) **Self-Assessment**: Each individual in a group will submit a short self-assessment of their project, including a description of the work they contributed to the project (< 1/2 page) and reflections on what worked well or less well (< 1/2 page). 
    2. (15 points) **Peer Evaluation**: Each individual in a group will submit an evaluation of their teammates' contributions to the final project and the group dynamic, including assessments of participation, work quality, and inclusivity. Points will be awarded based on the evaluations from your group; different scales will be applied for undergraduate (4750) and graduate (5750) students. *No points will be given for any student who fails to submit evaluations for their groupmates*. 

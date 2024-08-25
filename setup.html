@@ -373,7 +373,12 @@ window.MathJax = {
    
   <ul>
   <li><a href="#setting-up-github-account" id="toc-setting-up-github-account" class="nav-link active" data-scroll-target="#setting-up-github-account">Setting Up GitHub Account</a></li>
-  <li><a href="#connecting-to-the-virtual-computing-lab" id="toc-connecting-to-the-virtual-computing-lab" class="nav-link" data-scroll-target="#connecting-to-the-virtual-computing-lab">Connecting to the Virtual Computing Lab</a></li>
+  <li><a href="#connecting-to-the-virtual-computing-lab" id="toc-connecting-to-the-virtual-computing-lab" class="nav-link" data-scroll-target="#connecting-to-the-virtual-computing-lab">Connecting to the Virtual Computing Lab</a>
+  <ul class="collapse">
+  <li><a href="#set-up-biohpc-account-and-connect" id="toc-set-up-biohpc-account-and-connect" class="nav-link" data-scroll-target="#set-up-biohpc-account-and-connect">Set Up BioHPC Account and Connect</a></li>
+  <li><a href="#using-biohpc-and-jupyter-lab" id="toc-using-biohpc-and-jupyter-lab" class="nav-link" data-scroll-target="#using-biohpc-and-jupyter-lab">Using BioHPC and Jupyter Lab</a></li>
+  <li><a href="#exporting-notebook-to-pdf" id="toc-exporting-notebook-to-pdf" class="nav-link" data-scroll-target="#exporting-notebook-to-pdf">Exporting Notebook to PDF</a></li>
+  </ul></li>
   <li><a href="#working-on-your-local-machine" id="toc-working-on-your-local-machine" class="nav-link" data-scroll-target="#working-on-your-local-machine">Working On Your Local Machine</a>
   <ul class="collapse">
   <li><a href="#install-git" id="toc-install-git" class="nav-link" data-scroll-target="#install-git">Install Git</a></li>
@@ -433,6 +438,31 @@ window.MathJax = {
 </section>
 <section id="connecting-to-the-virtual-computing-lab" class="level2">
 <h2 class="anchored" data-anchor-id="connecting-to-the-virtual-computing-lab">Connecting to the Virtual Computing Lab</h2>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>To use this option, you must either be connected to the Cornell network or use the <a href="https://it.cornell.edu/cuvpn">Cornell VPN</a> when connecting to BioHPC.</p>
+</div>
+</div>
+</div>
+<section id="set-up-biohpc-account-and-connect" class="level3">
+<h3 class="anchored" data-anchor-id="set-up-biohpc-account-and-connect">Set Up BioHPC Account and Connect</h3>
+<p>First, set up your BioHPC password; if you did not receive an email about an account being created and would like to use this option, let Vivek know.</p>
+<p>After setting up your password, you can use <a href="https://biohpc.cornell.edu/lab/CALS_BEE4750.aspx" class="uri">https://biohpc.cornell.edu/lab/CALS_BEE4750.aspx</a> to log in and access Jupyter Lab. You may need to copy the token (the numbers on the displayed url after <code>...token=</code>) and paste that into the subsequent form.</p>
+</section>
+<section id="using-biohpc-and-jupyter-lab" class="level3">
+<h3 class="anchored" data-anchor-id="using-biohpc-and-jupyter-lab">Using BioHPC and Jupyter Lab</h3>
+<p>Once the connection starts, it should put you on a terminal. You can then clone repositories with <code>git clone &lt;repository url&gt;</code> and open the notebooks and files (Julia 1.10.4 is already installed by default). Note that the first time you run a notebook’s first cell, it might take a while to install the relevant packages.</p>
+<p>The version of Jupyter Lab installed on your account has a git interface, so if you would prefer to not use the command line to interact with git, you can clone, push, and pull using the <code>Git</code> menu.</p>
+<p>If you want to work with a standalone script (to write up your answers separately), rather than the notebook, you can create a new Julia script with a <code>*.jl</code> extension within the Jupyter Lab interface.</p>
+</section>
+<section id="exporting-notebook-to-pdf" class="level3">
+<h3 class="anchored" data-anchor-id="exporting-notebook-to-pdf">Exporting Notebook to PDF</h3>
+<p>We’re working on figuring out why there are some errors in direct exporting to PDF, but you can export a notebook to HTML with <code>File -&gt; Save and Export Notebook As -&gt; HTML</code>, open the saved HTML file in your browser, and save page as a PDF. <strong>Make sure that you run all of the cells in your notebook in order before doing this!</strong></p>
+</section>
 </section>
 <section id="working-on-your-local-machine" class="level2">
 <h2 class="anchored" data-anchor-id="working-on-your-local-machine">Working On Your Local Machine</h2>

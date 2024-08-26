@@ -30,6 +30,7 @@ format:
         chalkboard:
             theme: whiteboard
             buttons: true
+        controls: true
 engine: julia
 execute:
     freeze: auto

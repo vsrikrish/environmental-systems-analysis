@@ -31,6 +31,7 @@ format:
             theme: whiteboard
             buttons: true
         auto-stretch: false
+        controls: true
 engine: julia
 execute:
     freeze: auto

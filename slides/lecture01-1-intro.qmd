@@ -227,7 +227,6 @@ Homework assignments and labs will be distributed using GitHub Classroom.
 
 - Collaboration *highly* encouraged, but **all work must reflect your own understanding**
 - Submit PDFs on Gradescope
-- 24 hour late submissions, 10% penalty
 - "Standard" rubric available for HW/exams
 - **Always cite external references**
 - Curve unlikely (not worth asking about...)
@@ -298,6 +297,7 @@ Homework assignments and labs will be distributed using GitHub Classroom.
 - Focus on concepts, problem formulations, interpretation.
 - Exams will be scanned and put on Gradescope for grades/feedback.
 - Will discuss ~two weeks after the exams after grades are returned.
+- Accomodations/makeups handled through ATP.
 
 # Academic Integrity
 

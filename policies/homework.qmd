@@ -67,6 +67,7 @@ But this emphasis on homework as practice also means that you should start the h
   - If you have written a report outside of a notebook (*e.g.* in Word), save this to a PDF.
 - You **do not need** to include code in a written submission, but make sure your final notebook and/or scripts are on your GitHub repository in case there's an issue.
 - PDFs must be submitted by the due date and time to Gradescope **with pages tagged**. Failure to tag pages will receive a 10% deduction.
+- If you did not receive credit for your group's submission, please have someone in your group use a regrade request to bring this to our attention, and we will use the list of names at the top of the page to confirm that you contributed to the assignment.
 - Late submissions are accepted within 24 hours with a 50% penalty unless an extension was arranged **ahead of the original deadline**.
 
 ## How To Write Assignments

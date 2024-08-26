@@ -26,6 +26,28 @@ For labs and homework assignments (we will work on Lab 1 in class and Homework 1
 
 ## Connecting to the Virtual Computing Lab
 
+::: {.callout-important}
+To use this option, you must either be connected to the Cornell network or use the [Cornell VPN](https://it.cornell.edu/cuvpn) when connecting to BioHPC.
+:::
+
+### Set Up BioHPC Account and Connect
+
+First, set up your BioHPC password; if you did not receive an email about an account being created and would like to use this option, let Vivek know.
+
+After setting up your password, you can use <https://biohpc.cornell.edu/lab/CALS_BEE4750.aspx> to log in and access Jupyter Lab. You may need to copy the token (the numbers on the displayed url after `...token=`) and paste that into the subsequent form. 
+
+### Using BioHPC and Jupyter Lab
+
+Once the connection starts, it should put you on a terminal. You can then clone repositories with `git clone <repository url>` and open the notebooks and files (Julia 1.10.4 is already installed by default). Note that the first time you run a notebook's first cell, it might take a while to install the relevant packages.
+
+The version of Jupyter Lab installed on your account has a git interface, so if you would prefer to not use the command line to interact with git, you can clone, push, and pull using the `Git` menu.
+
+If you want to work with a standalone script (to write up your answers separately), rather than the notebook, you can create a new Julia script with a `*.jl` extension within the Jupyter Lab interface.
+
+### Exporting Notebook to PDF
+
+We're working on figuring out why there are some errors in direct exporting to PDF, but you can export a notebook to HTML with `File -> Save and Export Notebook As -> HTML`, open the saved HTML file in your browser, and save page as a PDF. **Make sure that you run all of the cells in your notebook in order before doing this!**
+
 ## Working On Your Local Machine
 
 

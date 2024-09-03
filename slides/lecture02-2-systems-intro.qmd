@@ -399,13 +399,15 @@ Source: [XKCD 2355](https://xkcd.com/2355)
 
 ## Next Classes
 
-**Monday**: Examples of Formulating/Analyzing Models.
+**Monday**: Example of Formulating/Analyzing Models.
 
 **Wednesday**: Overview of System Dynamics
 
 ## Assessments
 
-**Homework 2**: Due Friday at 9pm.
+**Homework 1**: Due Thursday at 9pm.
+
+**Weekly Exercises**: Due Monday before class.
 
 # References
 

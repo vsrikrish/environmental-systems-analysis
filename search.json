@@ -563,11 +563,11 @@
     "text": "Course Policies\nIf you missed last class, make sure you read the syllabus!."
   },
   {
-    "objectID": "slides/lecture02-2-systems-intro.html#tools-setup-lab",
-    "href": "slides/lecture02-2-systems-intro.html#tools-setup-lab",
+    "objectID": "slides/lecture02-2-systems-intro.html#recap-of-grading-policies",
+    "href": "slides/lecture02-2-systems-intro.html#recap-of-grading-policies",
     "title": "Introduction to Systems Analysis",
-    "section": "Tools Setup Lab",
-    "text": "Tools Setup Lab\nIf you missed last Wednesday:\n\nGo through the lab by Wednesday to make sure you’re set up for the semester.\nEmail Prof. Srikrishnan to get an extension so you can submit.\nCome to office hours for help if something isn’t working."
+    "section": "Recap of Grading Policies",
+    "text": "Recap of Grading Policies\n\nTag pages on Gradescope which are relevant for a given problem (labs this is the whole thing sans the intro/setup).\nExplain what your code is trying to accomplish outside of the code block.\n\nFor example: here are the equations you’re implementing or this is how you’re iterating through a problem.\n\nWhen in doubt, ask!\nRegrade requests should be made on Gradescope."
   },
   {
     "objectID": "slides/lecture02-2-systems-intro.html#questions",
@@ -595,7 +595,7 @@
     "href": "slides/lecture02-2-systems-intro.html#example-climate-change",
     "title": "Introduction to Systems Analysis",
     "section": "Example: Climate Change",
-    "text": "Example: Climate Change\nChanges to climate occur bassed on a variety of processes across scales, including:\n\ncarbon sources/sinks;\naerosol emissions;\nocean heat uptake;\nsurface albedo;\nEl Niño/La Niña (ENSO)"
+    "text": "Example: Climate Change\nChanges to climate occur based on a variety of processes across scales, including:\n\ncarbon sources/sinks;\naerosol emissions;\nocean heat uptake;\nsurface albedo;\nEl Niño/La Niña (ENSO)"
   },
   {
     "objectID": "slides/lecture02-2-systems-intro.html#example-climate-change-1",
@@ -675,11 +675,11 @@
     "text": "What Do We Need To Define A System?\n\n\nComponents: relevant processes, agents, etc\nInterconnections: relationships between system components\nControl volume: unit of the system we are trying to model and/or manage\nInputs: control policies and/or external forcings\nOutputs: measured quantities of interest"
   },
   {
-    "objectID": "slides/lecture02-2-systems-intro.html#example-river-system",
-    "href": "slides/lecture02-2-systems-intro.html#example-river-system",
+    "objectID": "slides/lecture02-2-systems-intro.html#example-reservoir-system",
+    "href": "slides/lecture02-2-systems-intro.html#example-reservoir-system",
     "title": "Introduction to Systems Analysis",
-    "section": "Example: River System",
-    "text": "Example: River System\n\n\nFigure 1: Illustration of a system, including notation."
+    "section": "Example: Reservoir System",
+    "text": "Example: Reservoir System\n\n\nFigure 1: Illustration of a system, including notation."
   },
   {
     "objectID": "slides/lecture02-2-systems-intro.html#what-is-a-model",

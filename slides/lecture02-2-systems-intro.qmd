@@ -57,13 +57,13 @@ using Measures
 
 If you missed last class, make sure you [read the syllabus!](../syllabus.qmd).
 
-## Tools Setup Lab
+## Recap of Grading Policies
 
-If you missed last Wednesday:
-
-- Go through the lab by Wednesday to make sure you're set up for the semester.
-- Email Prof. Srikrishnan to get an extension so you can submit.
-- Come to office hours for help if something isn't working.
+- Tag pages on Gradescope **which are relevant for a given problem** (labs this is the whole thing sans the intro/setup).
+- Explain what your code is trying to accomplish **outside of the code block**.
+  - For example: here are the equations you're implementing or this is how you're iterating through a problem.
+- **When in doubt, ask!**
+- Regrade requests should be made on Gradescope.
 
 ## Questions?
 
@@ -94,7 +94,7 @@ A system is:
 
 ## Example: Climate Change
 
-Changes to climate occur bassed on a variety of processes across scales, including:
+Changes to climate occur based on a variety of processes across scales, including:
 
 - carbon sources/sinks;
 - aerosol emissions;
@@ -209,9 +209,9 @@ A college has a constant undergraduate enrollment of 15,000 students. No student
 - **Outputs**: measured quantities of interest
 :::
 
-## Example: River System
+## Example: Reservoir System
 
-![Illustration of a system, including notation.](figures/control-volume-base.svg){#fig-reservoir width=50%}
+![Illustration of a system, including notation.](figures/reservoir-system.png){#fig-reservoir width=50%}
 
 
 ## What Is A Model?

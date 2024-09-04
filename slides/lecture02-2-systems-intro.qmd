@@ -55,7 +55,7 @@ using Measures
 
 ## Course Policies
 
-If you missed last class, make sure you [read the syllabus!](../syllabus.qmd).
+If you missed class last week, make sure you [read the syllabus!](../syllabus.qmd).
 
 ## Recap of Grading Policies
 
@@ -140,7 +140,7 @@ The state gives you a "snapshot" of the system at a given point in time.
 
 ## Residence Time
 
-We can use the notion of stocks and flows to formalize the idea of **residence time**: average time a quantity stays at a system component.
+We can use the notion of stocks and flows to formalize the idea of **residence time**: average time a unit of a stock remains in the system (or a component of the system).
 
 $$
 \underbrace{\tau}_{\substack{\text{Residence} \\[0.5em] \text{Time}}} \times \overbrace{F}^{\substack{\text{Flow} \\[0.5em] \text{In/Out}}} = \underbrace{M}_{\text{Stock}}

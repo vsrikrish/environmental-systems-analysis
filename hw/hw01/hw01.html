@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-07-24">
+<meta name="dcterms.date" content="2024-09-04">
 
 <title>BEE 4750 Homework 1: Introduction to Using Julia – BEE 4750 - Fall 2024</title>
 <style>
@@ -472,7 +472,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 24, 2024</p>
+      <p class="date">September 4, 2024</p>
     </div>
   </div>
   
@@ -665,7 +665,7 @@ Stacktrace:
 <p>Cheap Plastic Products, Inc.&nbsp;is operating a plant that produces <span class="math inline">\(100 \text{m}^3\text{/day}\)</span> of wastewater that is discharged into Pristine Brook. The wastewater contains <span class="math inline">\(1 \text{kg/m}^3\)</span> of YUK, a toxic substance. The US Environmental Protection Agency has imposed an effluent standard on the plant prohibiting discharge of more than <span class="math inline">\(20 \text{kg/day}\)</span> of YUK into Pristine Brook.</p>
 <p>Cheap Plastic Products has analyzed two methods for reducing its discharges of YUK. Method 1 is land disposal, which costs <span class="math inline">\(X_1^2/20\)</span> dollars per day, where <span class="math inline">\(X_1\)</span> is the amount of wastewater disposed of on the land (<span class="math inline">\(\text{m}^3\text{/day}\)</span>). With this method, 20% of the YUK applied to the land will eventually drain into the stream (<em>i.e.</em>, 80% of the YUK is removed by the soil).</p>
 <p>Method 2 is a chemical treatment procedure which costs $1.50 per <span class="math inline">\(\text{m}^3\)</span> of wastewater treated. The chemical treatment has an efficiency of <span class="math inline">\(e= 1 - 0.005X_2\)</span>, where <span class="math inline">\(X_2\)</span> is the quantity of wastewater (<span class="math inline">\(\text{m}^3\text{/day}\)</span>) treated. For example, if <span class="math inline">\(X_2 = 50 \text{m}^3\text{/day}\)</span>, then <span class="math inline">\(e = 1 - 0.005(50) = 0.75\)</span>, so that 75% of the YUK is removed.</p>
-<p>Cheap Plastic Products is wondering how to allocate their wastewater between these three disposal and treatment methods (land disposal, and chemical treatment, and land disposal) to meet the effluent standard while keeping costs manageable.</p>
+<p>Cheap Plastic Products is wondering how to allocate their wastewater between these three disposal and treatment methods (land disposal, chemical treatment, and direct disposal) to meet the effluent standard while keeping costs manageable.</p>
 <p>The flow of wastewater through this treatment system is shown in <a href="#fig-wastewater" class="quarto-xref">Figure&nbsp;1</a>. Modify the edge labels (by editing the <code>edge_labels</code> dictionary in the code producing <a href="#fig-wastewater" class="quarto-xref">Figure&nbsp;1</a>) to show how the wastewater allocations result in the final YUK discharge into Pristine Brook. For the <code>edge_label</code> dictionary, the tuple <span class="math inline">\((i, j)\)</span> corresponds to the arrow going from node <span class="math inline">\(i\)</span> to node <span class="math inline">\(j\)</span>. The syntax for any entry is <code>(i, j) =&gt; "label text"</code>, and the label text can include mathematical notation if the string is prefaced with an <code>L</code>, as in <code>L"x_1"</code> will produce <span class="math inline">\(x_1\)</span>.</p>
 <div id="cell-fig-wastewater" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [<span class="fl">0</span> <span class="fl">1</span> <span class="fl">1</span> <span class="fl">1</span>;</span>

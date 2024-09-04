@@ -637,7 +637,7 @@
     "href": "slides/lecture02-2-systems-intro.html#residence-time",
     "title": "Introduction to Systems Analysis",
     "section": "Residence Time",
-    "text": "Residence Time\nWe can use the notion of stocks and flows to formalize the idea of residence time: average time a quantity stays at a system component.\n\\[\n\\underbrace{\\tau}_{\\substack{\\text{Residence} \\\\[0.5em] \\text{Time}}} \\times \\overbrace{F}^{\\substack{\\text{Flow} \\\\[0.5em] \\text{In/Out}}} = \\underbrace{M}_{\\text{Stock}}\n\\]"
+    "text": "Residence Time\nWe can use the notion of stocks and flows to formalize the idea of residence time: average time a unit of a stock remains in the system (or a component of the system).\n\\[\n\\underbrace{\\tau}_{\\substack{\\text{Residence} \\\\[0.5em] \\text{Time}}} \\times \\overbrace{F}^{\\substack{\\text{Flow} \\\\[0.5em] \\text{In/Out}}} = \\underbrace{M}_{\\text{Stock}}\n\\]"
   },
   {
     "objectID": "slides/lecture02-2-systems-intro.html#steady-state-residence-time",

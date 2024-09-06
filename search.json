@@ -1725,41 +1725,6 @@
     "text": "Steady-State Solution (Streeter-Phelps)\n\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1), \\\\[1em]\n\n\\alpha_1 &= \\exp\\left(-\\frac{k_a x}{U}\\right) \\\\[0.25em]\n\\alpha_2 &= \\left(\\frac{k_c}{k_a-k_c}\\right)\\left[\\exp\\left(\\frac{-k_c x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right] \\\\[0.25em]\n\\alpha_3 &= \\left(\\frac{k_n}{k_a-k_n}\\right)\\left[\\exp\\left(\\frac{-k_n x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right]\n\\end{align}\\]"
   },
   {
-    "objectID": "slides/lecture04-2-dissolved-oxygen.html#how-to-simulate",
-    "href": "slides/lecture04-2-dissolved-oxygen.html#how-to-simulate",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "How To Simulate",
-    "text": "How To Simulate\nSingle equation, straightforward to evaluate across many values of \\(x\\) with a loop.\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\nC = zeroes(length(x)) # initialize storage\nfor (i, y) in pairs(x)\n    C[i] = dissolved_oxygen(y, parameters)\nend"
-  },
-  {
-    "objectID": "slides/lecture04-2-dissolved-oxygen.html#loop-alternatives",
-    "href": "slides/lecture04-2-dissolved-oxygen.html#loop-alternatives",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Loop Alternatives",
-    "text": "Loop Alternatives\nLoops in Julia are fast and should be used freely.\nBut there are some more concise alternatives, which may be more readable in some cases."
-  },
-  {
-    "objectID": "slides/lecture04-2-dissolved-oxygen.html#broadcasting",
-    "href": "slides/lecture04-2-dissolved-oxygen.html#broadcasting",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Broadcasting",
-    "text": "Broadcasting\nBut some more concise alternatives (which may be more readable) include broadcasting:\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = (y -&gt; dissolved_oxygen(y, parameters)).(x) \nBroadcasting gets finicky over multiple inputs."
-  },
-  {
-    "objectID": "slides/lecture04-2-dissolved-oxygen.html#comprehensions",
-    "href": "slides/lecture04-2-dissolved-oxygen.html#comprehensions",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Comprehensions",
-    "text": "Comprehensions\n…And comprehensions (in-line for loops, also in Python):\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = [dissolved_oxygen(y, parameters) for y in x]\nCan “stack” the for loops in a comprehension to nest."
-  },
-  {
-    "objectID": "slides/lecture04-2-dissolved-oxygen.html#when-to-use-loops",
-    "href": "slides/lecture04-2-dissolved-oxygen.html#when-to-use-loops",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "When To Use Loops?",
-    "text": "When To Use Loops?\nThink about readability and ease of debugging!\n\nIf your code is complex and not wrapped in a function, or you have several nested loops, you should use a loop (just be careful of scope…)\nIf your code is complex, may be worth asking if you should write a function instead and use broadcasting or a comprehension."
-  },
-  {
     "objectID": "slides/lecture04-2-dissolved-oxygen.html#single-discharge-example",
     "href": "slides/lecture04-2-dissolved-oxygen.html#single-discharge-example",
     "title": "Simulation Example: Dissolved Oxygen",
@@ -1827,14 +1792,14 @@
     "href": "slides/lecture04-2-dissolved-oxygen.html#next-classes",
     "title": "Simulation Example: Dissolved Oxygen",
     "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Why Are Systems Complicated?\nNext Week: Uncertainty and Monte Carlo"
+    "text": "Next Classes\nNext Week: Uncertainty and Monte Carlo"
   },
   {
     "objectID": "slides/lecture04-2-dissolved-oxygen.html#assessments",
     "href": "slides/lecture04-2-dissolved-oxygen.html#assessments",
     "title": "Simulation Example: Dissolved Oxygen",
     "section": "Assessments",
-    "text": "Assessments\nHW2: Due Thursday at 9pm."
+    "text": "Assessments\nExercises: Due Monday before class."
   },
   {
     "objectID": "policies/integrity.html",
@@ -3232,7 +3197,7 @@
     "href": "slides/lecture04-1-simulation.html#time-varying-dynamic-simulation",
     "title": "Simulation and Box Models",
     "section": "Time-Varying (Dynamic) Simulation",
-    "text": "Time-Varying (Dynamic) Simulation\nIn our prior example, inflow conditions were static (often an assumption needed for analytic solutions).\nThe simulation framework lets us make these time-varying:\n\\[\nC(t+1) = C(t) + \\Delta t \\left(\\frac{{\\color{red}u(t)}}{L} \\left({\\color{red}C_\\text{in}(t)} - C(t)\\right) + {\\color{red}S(t)} - {\\color{red}D(t)} - kC(t)\\right)\n\\]"
+    "text": "Time-Varying (Dynamic) Simulation\nIn our prior example, inflow conditions were static (often an assumption needed for analytic solutions).\nThe simulation framework lets us make these time-varying:\n\\[\n\\begin{aligned}\nC(t+1) &= C(t) + \\\\\n& \\qquad \\Delta t \\left(\\frac{{\\color{red}u(t)}}{L} \\left({\\color{red}C_\\text{in}(t)} - C(t)\\right) + {\\color{red}S(t)} - {\\color{red}D(t)} - kC(t)\\right)\n\\end{aligned}\n\\]"
   },
   {
     "objectID": "slides/lecture04-1-simulation.html#dynamic-simulation-code",
@@ -3246,7 +3211,7 @@
     "href": "slides/lecture04-1-simulation.html#dynamic-inputs",
     "title": "Simulation and Box Models",
     "section": "Dynamic Inputs",
-    "text": "Dynamic Inputs\n\nCode\nΔt = 0.1\nsteps = Int(T / Δt) + 1\nu = rand(LogNormal(log(2), 0.05), steps)\nCi = rand(LogNormal(log(0.2), 0.1), steps)\n\npwind = plot(0:Δt:T, u; title=\"Wind Speed\", size=(550, 450), xlabel=\"Time\", ylabel=\"m/s\")\npincoming = plot(0:Δt:T, Ci; title=\"Incoming Concentration\", size=(550, 450), xlabel=\"Time\", ylabel=L\"$\\mathrm{g/m}^3$\")\n\ndisplay(pwind)\ndisplay(pincoming)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Dynamic simulation results for airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 3"
+    "text": "Dynamic Inputs\n\nCode\nΔt = 0.1\nsteps = Int(T / Δt) + 1\nu = rand(LogNormal(log(2), 0.05), steps)\nCi = rand(LogNormal(log(0.2), 0.1), steps)\n\npwind = plot(0:Δt:T, u; title=\"Wind Speed\", size=(550, 450), xlabel=\"Time\", ylabel=\"m/s\")\npincoming = plot(0:Δt:T, Ci; title=\"Incoming Concentration\", size=(550, 450), xlabel=\"Time\", ylabel=L\"$\\mathrm{g/m}^3$\")\n\ndisplay(pwind)\ndisplay(pincoming)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Dynamic simulation results for airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 3"
   },
   {
     "objectID": "slides/lecture04-1-simulation.html#dynamic-simulation-results",

@@ -49,10 +49,6 @@
     <lastmod>2024-07-16T17:16:11.118Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture04-1-dissolved-oxygen.html</loc>
-    <lastmod>2024-08-26T17:50:37.398Z</lastmod>
-  </url>
-  <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture05-2-monte-carlo-lab.html</loc>
     <lastmod>2024-08-26T17:50:58.786Z</lastmod>
   </url>
@@ -67,6 +63,10 @@
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture06-1-monte-carlo.html</loc>
     <lastmod>2024-08-26T17:51:08.351Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture04-2-dissolved-oxygen.html</loc>
+    <lastmod>2024-08-26T17:50:37.398Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/policies/integrity.html</loc>
@@ -149,20 +149,20 @@
     <lastmod>2024-08-26T17:51:18.157Z</lastmod>
   </url>
   <url>
+    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture03-2-dynamics-feedbacks.html</loc>
+    <lastmod>2024-08-26T17:50:43.906Z</lastmod>
+  </url>
+  <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture05-1-uncertainty-monte-carlo.html</loc>
     <lastmod>2024-08-26T17:50:51.445Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture04-2-dynamics-feedbacks.html</loc>
-    <lastmod>2024-08-26T17:50:43.906Z</lastmod>
+    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture04-1-simulation.html</loc>
+    <lastmod>2024-08-26T17:50:31.685Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/lecture01-2-lab-setup.html</loc>
     <lastmod>2024-08-26T17:49:55.328Z</lastmod>
-  </url>
-  <url>
-    <loc>https://viveks.me/environmental-systems-analysis/slides/lecture03-2-simulation.html</loc>
-    <lastmod>2024-08-26T17:50:31.685Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/environmental-systems-analysis/slides/notebooks/dissolved-oxygen.html</loc>

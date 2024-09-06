@@ -836,300 +836,6 @@
     "text": "Simulating The Model Under Constant Inflows\nLet’s simulate the model when we fix \\(a\\) as a constant. Other parameters:\n\n\n\nVariable\nValue\nUnits\n\n\n\n\n\\(X_0\\)\n\\(0\\)\ndimensionless\n\n\n\\(\\mu\\)\n\\(\\log(0.03)\\)\ndimensionless\n\n\n\\(\\sigma^2\\)\n\\(0.1\\)\ndimensionless\n\n\n\\(q\\)\n\\(2.5\\)\ndimensionless\n\n\n\\(b\\)\n\\(0.4\\)\ndimensionless\n\n\n\n\nRandom.seed!(1)\n\n# set parameters\n\nX₀ = 0\nμ = log(0.03)\nσ² = 0.1\nq = 2.5\nb = 0.4\nT = 50\n\n50\n\n\n\ny = rand(LogNormal(μ, σ²), T)\nplot(y; label=\"Non-Point Source Inflows\", color=:black, marker=(:x, 5), guidefontsize=18, tickfontsize=16, legendfontsize=14, linewidth=3, legend=:topright)\nxlabel!(L\"t\")\nylabel!(L\"y_t\")\nplot!(size=(600, 600))\nylims!((0.025, 0.042))\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Inflows \\(y_t\\) for this lake problem simulation.\n\n\n\n\n\nX₁ = zeros(T+1)\nX₂ = zeros(T+1)\n\nfor t = 1:T\n    X₁[t+1] = X₁[t] + y[t] + 0.025 + lake_P_cycling(X₁[t], q) - lake_P_out(X₁[t], b)\n    X₂[t+1] = X₂[t] + y[t] + 0.05 + lake_P_cycling(X₂[t], q) - lake_P_out(X₂[t], b)\nend\n\nplot((1:T+1) .- 1, X₁, color=:blue, label=L\"$a_t = 0.025$\", guidefontsize=18, tickfontsize=16, legendfontsize=16, linewidth=3)\nplot!((1:T+1) .- 1, X₂, color=:purple, label=L\"$a_t = 0.05$\", linewidth=3)\nxlabel!(L\"t\")\nylabel!(L\"X_t\")\nplot!(size=(600, 600))\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: State of the lake under two different constant release scenarios."
   },
   {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#last-class",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#last-class",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Last Class",
-    "text": "Last Class\n\nModel-based simulation as a way to understand system dynamics and response.\nBox models: mass-balance in some region of the domain\nCan generalize single box models by:\n\nAdding more complexity;\ncombining multiple boxes."
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#why-simulate",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#why-simulate",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Why Simulate?",
-    "text": "Why Simulate?\n\nSystem involves complex, nonlinear dynamics that may not be analytically tractable.\nSetting up and running a real-world experiment is not possible.\nState depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.\nNeed to understand range of system performance across rarely-seen conditions."
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#questions",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#questions",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Questions",
-    "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#fate-transport-modeling",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#fate-transport-modeling",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Fate & Transport Modeling",
-    "text": "Fate & Transport Modeling\nHow do nutrients and other quantities move through environmental mediums?\nWhat can make fate & transport modeling more complex?\n\n\nMultiple points of inflow;\nMore complex growth/decay dynamics.\nStochasticity/randomness."
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#dissolved-oxygen",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#dissolved-oxygen",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Dissolved Oxygen",
-    "text": "Dissolved Oxygen\n\n\nDissolved oxygen (DO) is the free, non-compound oxygen present in water or other liquids.\nFreshwater can only hold small amounts, and this capacity is regulated by temperature.\n\n\n\n\nDissolved Oxygen by temperature\n\n\n\nSource: fondriest.com"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#temperature-impact-on-do",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#temperature-impact-on-do",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Temperature Impact on DO",
-    "text": "Temperature Impact on DO\n\n\n\nDissolved Oxygen and Temperature Plot\n\n\n\nSource: usgs.gov"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#dissolved-oxygen-and-life",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#dissolved-oxygen-and-life",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Dissolved Oxygen and Life",
-    "text": "Dissolved Oxygen and Life\n\n\nDissolved oxygen is an important nutrient for aquatic life.\nHypoxia occurs when DO levels are \\(&lt; 2\\) mg/L.\n\n\n\n\nMinimum DO requirements for freshwater fish\n\n\n\n\nSource: fondriest.com"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#factors-influencing-do",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#factors-influencing-do",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Factors Influencing DO",
-    "text": "Factors Influencing DO\n\nTemperature, Pressure, Depth\nSalinity\nMixing\nPlant and Microbial Life\nOrganic Matter"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#impact-of-paris-on-seine-do-1874",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#impact-of-paris-on-seine-do-1874",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Impact of Paris On Seine DO, 1874",
-    "text": "Impact of Paris On Seine DO, 1874\n\n\n\nDissolved Oxygen Downstream of Paris, 1874\n\n\n\nSource: Dmitrieva, T., et al. (2018). https://doi.org/10.1007/s12685-018-0216-7"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#do-regulatory-standards",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#do-regulatory-standards",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "DO Regulatory Standards",
-    "text": "DO Regulatory Standards\nObjective: Keep DO above the regulatory standard.\nIn NY (via Westlaw):\n\nDO levels may not fall below 3 mg/L\nDO may not be below 4.8 mg/L for an extended period"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#oxygen-balance-in-rivers-and-streams",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#oxygen-balance-in-rivers-and-streams",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Oxygen Balance in Rivers and Streams",
-    "text": "Oxygen Balance in Rivers and Streams\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#selecting-a-metric-for-do-fluxes",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#selecting-a-metric-for-do-fluxes",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Selecting a Metric for DO Fluxes",
-    "text": "Selecting a Metric for DO Fluxes\nTypically use oxygen demand (OD):\n\nmeasure of the concentration of oxidizable materials in a water sample\nmetric for organic waste contamination\nreflects how oxygen will be depleted in a given segment\n\nBut there are several different processes affecting total OD!"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#biochemical-oxygen-demand-bod",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#biochemical-oxygen-demand-bod",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Biochemical Oxygen Demand (BOD)",
-    "text": "Biochemical Oxygen Demand (BOD)\nOxygen used by microbes during aerobic decomposition of organic materials: \\[\\text{Organic Matter} + \\text{O}_2 \\rightarrow \\text{CO}_2 +  \\text{H}_2\\text{O} + \\text{NO}_3 + \\text{SO}_2 + \\text{Residuals}\\]\nBroadly speaking, we care about two types of BOD: Carbonaceous BOD and Nitrogenous BOD."
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#carbonaceous-bod-cbod",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#carbonaceous-bod-cbod",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Carbonaceous BOD (CBOD)",
-    "text": "Carbonaceous BOD (CBOD)\nOxygen consumed during microbial decomposition of carbon compounds, e.g.: \\[\\text{C}_a\\text{H}_b\\text{O}_c + d\\text{O}_2 \\rightarrow e\\text{H}_2\\text{O} + f\\text{CO}_2\\]"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#nitrogenous-bod-nbod",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#nitrogenous-bod-nbod",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Nitrogenous BOD (NBOD)",
-    "text": "Nitrogenous BOD (NBOD)\nOxygen consumed during microbial decomposition of nitrogen compounds: \\[2\\text{NH}_2^+ + 4\\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O} + 4\\text{H}^+ + 2\\text{NO}_3^-\\]"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#bod-and-time",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#bod-and-time",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "BOD and Time",
-    "text": "BOD and Time\nMoreover, BOD is differentiated based on time frame, e.g.:\n\nBOD5: oxygen demand over 5 days\nBOD20: oxygen demand over 20 days"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#do-modeling-needs",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#do-modeling-needs",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "DO Modeling Needs",
-    "text": "DO Modeling Needs\nNeed a model that will predict DO as a function of CBOD, NBOD.\nUse a fate and transport modeling approach: how are relevant quantities moved downstream?\nNote: Can’t assume homogeneous processes."
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#modeling-do",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#modeling-do",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Modeling DO",
-    "text": "Modeling DO\n\n\nSo what do we do?\nStart by assuming steady-state waste in each section (or box…).\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#modeling-do-1",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#modeling-do-1",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Modeling DO",
-    "text": "Modeling DO\n\n\nWe’ll track the mass balance in terms of rates (not absolute mass).\nWhat happens to an element of water as it moves downstream?\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#steady-state-waste-do-mass-balance",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#steady-state-waste-do-mass-balance",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Steady-State Waste, DO Mass Balance",
-    "text": "Steady-State Waste, DO Mass Balance\nLet \\(U\\) be the river velocity (km/d), \\(x\\) the distance downstream from a waste release site in km, and \\(C(x)\\) the DO concentration at \\(x\\) in mg/L.\n\\[\\begin{align}\nU \\frac{dC}{dx} &= \\text{Change in DO} \\\\[0.5em]\n&= \\text{Reaeration} + \\text{Photosynthesis} - \\text{Respiration}  \\\\[0.5em]\n& \\qquad - \\text{Benthal Uptake} - \\text{CBOD} - \\text{NBOD}\n\n\\end{align}\\]"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#bod-oxygen-uptake",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#bod-oxygen-uptake",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "BOD Oxygen Uptake",
-    "text": "BOD Oxygen Uptake\nAssume deoxygenation from waste decomposition is first-order (rate \\(k\\)):\n\\[\\begin{aligned}\n\\frac{dM}{dt} &= -kM \\\\\n\\Rightarrow M &= M_0 \\exp(-kt)\n\\end{aligned}\\]\n\nBut our equations are formulated in terms of distance:\n\\[M = M_0 \\exp(-kx/U)\\]"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#bod-oxygen-uptake-1",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#bod-oxygen-uptake-1",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "BOD Oxygen Uptake",
-    "text": "BOD Oxygen Uptake\nFor biochemical organics, if \\(k_c\\) is the deoxygenation rate (d\\(^{-1}\\));\n\\[B(x) = B_0 \\exp(-k_c x / U);\\]\nFor nitrification, if \\(k_n\\) is the deoxygenation rate (d\\(^{-1}\\)):\n\\[N(x) = N_0 \\exp(-k_n x / U).\\]"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#steady-state-waste-do-mass-balance-1",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#steady-state-waste-do-mass-balance-1",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Steady-State Waste, DO Mass Balance",
-    "text": "Steady-State Waste, DO Mass Balance\nSo the corresponding oxygen uptake rates are \\[k_c B(x) = k_c B_0 \\exp(-k_c x / U)\\] and\n\\[k_n N(x) = k_n N_0 \\exp(-k_n x / U).\\]"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#steady-state-waste-do-mass-balance-2",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#steady-state-waste-do-mass-balance-2",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Steady-State Waste, DO Mass Balance",
-    "text": "Steady-State Waste, DO Mass Balance\nOther processes:\n\nReaeration, assume a simple linear model based on difference from saturation level \\(C_s\\): \\(k_a (C_s - C)\\)\nAssume measured, constant values for photosynthesis (\\(P_s\\)), respiration (\\(R\\)), benthal uptake (\\(S_B\\))"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#steady-state-waste-do-mass-balance-3",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#steady-state-waste-do-mass-balance-3",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Steady-State Waste, DO Mass Balance",
-    "text": "Steady-State Waste, DO Mass Balance\nPutting it all together:\n\\[\n\\begin{aligned}\nU \\frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B \\\\\n&\\quad - k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right) - k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)\n\\end{aligned}\n\\]\n\nNote: Usually models ignore \\(P\\), \\(R\\), and \\(S_B\\).\nWhy do you think that might be?"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#steady-state-solution-streeter-phelps",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#steady-state-solution-streeter-phelps",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Steady-State Solution (Streeter-Phelps)",
-    "text": "Steady-State Solution (Streeter-Phelps)\n\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1), \\\\[1em]\n\n\\alpha_1 &= \\exp\\left(-\\frac{k_a x}{U}\\right) \\\\[0.25em]\n\\alpha_2 &= \\left(\\frac{k_c}{k_a-k_c}\\right)\\left[\\exp\\left(\\frac{-k_c x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right] \\\\[0.25em]\n\\alpha_3 &= \\left(\\frac{k_n}{k_a-k_n}\\right)\\left[\\exp\\left(\\frac{-k_n x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right]\n\\end{align}\\]"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#how-to-simulate",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#how-to-simulate",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "How To Simulate",
-    "text": "How To Simulate\nSingle equation, straightforward to evaluate across many values of \\(x\\) with a loop.\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\nC = zeroes(length(x)) # initialize storage\nfor (i, y) in pairs(x)\n    C[i] = dissolved_oxygen(y, parameters)\nend"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#loop-alternatives",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#loop-alternatives",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Loop Alternatives",
-    "text": "Loop Alternatives\nLoops in Julia are fast and should be used freely.\nBut there are some more concise alternatives, which may be more readable in some cases."
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#broadcasting",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#broadcasting",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Broadcasting",
-    "text": "Broadcasting\nBut some more concise alternatives (which may be more readable) include broadcasting:\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = (y -&gt; dissolved_oxygen(y, parameters)).(x) \nBroadcasting gets finicky over multiple inputs."
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#comprehensions",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#comprehensions",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Comprehensions",
-    "text": "Comprehensions\n…And comprehensions (in-line for loops, also in Python):\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = [dissolved_oxygen(y, parameters) for y in x]\nCan “stack” the for loops in a comprehension to nest."
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#when-to-use-loops",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#when-to-use-loops",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "When To Use Loops?",
-    "text": "When To Use Loops?\nThink about readability and ease of debugging!\n\nIf your code is complex and not wrapped in a function, or you have several nested loops, you should use a loop (just be careful of scope…)\nIf your code is complex, may be worth asking if you should write a function instead and use broadcasting or a comprehension."
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Single-Discharge Example",
-    "text": "Single-Discharge Example\nConsider a single waste release along a river:\n\n\n\nSingle-Discharge DO Setup"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example-1",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example-1",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Single-Discharge Example",
-    "text": "Single-Discharge Example\n\n\n\n\n\n\n\n\n\nParameter\nRiver\nWaste\nGeneral\n\n\n\n\nVolume (m3/d)\n100,000\n10,000\n—\n\n\nDO (mg/L)\n6.4\n4.2\n—\n\n\nCBOD (mg/L)\n5\n49\n—\n\n\nNBOD (mg/L)\n5\n27\n—\n\n\n\\(C_s\\) (mg/L)\n—\n—\n7\n\n\n\\(k_a\\), \\(k_c\\), \\(k_n\\)\n—\n—\n0.6, 0.4, 0.25"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example-initial-condition",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example-initial-condition",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Single-Discharge Example: Initial Condition",
-    "text": "Single-Discharge Example: Initial Condition\nHow do we find the initial state (\\(x=0\\))?\n\nNeed to compute the mixed concentrations of DO, CBOD, and NBOD (\\(Q\\) is the flow volume):\n\\[C_0 = C_\\text{mixed} = \\frac{C_\\text{river} \\times Q_\\text{river} + C_\\text{waste} \\times Q_\\text{waste}}{Q_\\text{river} + Q_\\text{waste}}\\]"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example-initial-condition-1",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#single-discharge-example-initial-condition-1",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Single-Discharge Example: Initial Condition",
-    "text": "Single-Discharge Example: Initial Condition\nSo the initial values:\n\\[C_0 = 6.2 \\ \\text{mg/L}\\]\n\\[B_0 = 9 \\ \\text{mg/L}\\]\n\\[N_0 = 7 \\ \\text{mg/L}\\]"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#simulation-outputs-sag-curve",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#simulation-outputs-sag-curve",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Simulation Outputs (“Sag Curve”)",
-    "text": "Simulation Outputs (“Sag Curve”)\n\n\nCode\nfunction do_simulate(x, C0, B0, N0, ka, kn, kc, Cs, U)\n    B = B0 * exp(-kc * x / U)\n    N = N0 * exp(-kn * x / U)\n    α1 = exp(-ka * x / U)\n    α2 = (kc/(ka-kc)) * (exp.(-kc * x / U) - exp(-ka * x / U))\n    α3 = (kn/(ka-kn)) * (exp(-kn * x / U) - exp(-ka * x / U))\n    C = Cs * (1 - α1) + (C0 * α1) - (B0 * α2) - (N0 * α3)\n    return (C, B, N)\nend  \n\n# set river properties\nka = 0.6\nkc = 0.4\nkn = 0.25\n\nC0 = 6.2\nB0 = 9\nN0 = 7\n\nCs = 7\nU = 5\n\nx = 0:40\n\n# evaluate model over all x's\n# this uses broadcasting\ndo_out = (y -&gt; do_simulate(y, C0, B0, N0, ka, kc, kn, Cs, U)).(x)\n# unpack outputs into individual arrays for C, B, and N\n# this uses comprehensions to pull out the relevant components \n#of the tuples that our function outputs\nC = [d[1] for d in do_out]\nB = [d[2] for d in do_out]\nN = [d[3] for d in do_out]\n\n# plot outputs\np1 = plot(; ylabel=\"DO/OD (mg/l)\", xlabel=\"Distance (km)\", left_margin=8mm, top_margin=10mm, guidefontsize=18, legendfontsize=16, tickfontsize=16, legend=:outerright, bottom_margin=10mm)\nplot!(p1, x, C, color=:black, linewidth=4, label=\"DO\")\nplot!(p1, x, B, color=:green, label=\"CBOD\", linestyle=:dash, linewidth=3)\nplot!(p1, x, N, color=:blue, label=\"NBOD\", linestyle=:dash, linewidth=3)\n# plot Cs, which is a constant value \nplot!(p1, x, Cs * ones(length(x)), color=:purple, label=L\"C_s\", linestyle=:dot, linewidth=2)\n\nhline!([3], color=:red, linewidth=2, label=\"Regulatory Standard\")\nplot!(size=(1200, 450))\nxaxis!((0, 40))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Sag curve for dissolved oxygen"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#multiple-discharges",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#multiple-discharges",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Multiple Discharges",
-    "text": "Multiple Discharges\nWhat happens if we have multiple discharge sites?\n\n\n\nSchematic for Multiple Discharge Example"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#simulating-multiple-discharges",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#simulating-multiple-discharges",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Simulating Multiple Discharges",
-    "text": "Simulating Multiple Discharges\n\n\nThink of this as a multi-box system.\n\nFlow from waste release 1 to waste release 2.\nFlow from waste release 2 on.\n\n\n\n\n\nSchematic for Multiple Discharge Example\n\n\n\nHow do we compute the initial conditions at release 2?"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#who-is-responsible-for-non-compliance",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#who-is-responsible-for-non-compliance",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Who is Responsible for Non-Compliance?",
-    "text": "Who is Responsible for Non-Compliance?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Multi-Release Dissolved Oxygen Example"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#key-points-1",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#key-points-1",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Key Points",
-    "text": "Key Points\n\nDissolved oxygen (DO) is essential for water quality and aquatic life.\nCommonly regulated to keep DO above a minimum threshold.\nDO impacted by a number of factors, notably organic waste decomposition and nitrification.\n“Sag Curve”: DO reduced near a discharge until waste decomposition reduces OD and re-aeration can occur."
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#next-classes",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#next-classes",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Why Are Systems Complicated?\nNext Week: Uncertainty and Monte Carlo"
-  },
-  {
-    "objectID": "slides/lecture04-1-dissolved-oxygen.html#assessments",
-    "href": "slides/lecture04-1-dissolved-oxygen.html#assessments",
-    "title": "Simulation Example: Dissolved Oxygen",
-    "section": "Assessments",
-    "text": "Assessments\nHW2: Due Thursday at 9pm."
-  },
-  {
     "objectID": "slides/lecture05-2-monte-carlo-lab.html#lab-instructions",
     "href": "slides/lecture05-2-monte-carlo-lab.html#lab-instructions",
     "title": "Monte Carlo Simulation",
@@ -1835,6 +1541,300 @@
     "title": "Monte Carlo: Why It Works",
     "section": "Assessments",
     "text": "Assessments\nHW3: Due Thursday (10/3) at 9pm\nPrelim 1: Next Wednesday (10/9) in class, includes material through Wednesday’s lecture."
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#last-class",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#last-class",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Last Class",
+    "text": "Last Class\n\nModel-based simulation as a way to understand system dynamics and response.\nBox models: mass-balance in some region of the domain\nCan generalize single box models by:\n\nAdding more complexity;\ncombining multiple boxes."
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#why-simulate",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#why-simulate",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Why Simulate?",
+    "text": "Why Simulate?\n\nSystem involves complex, nonlinear dynamics that may not be analytically tractable.\nSetting up and running a real-world experiment is not possible.\nState depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.\nNeed to understand range of system performance across rarely-seen conditions."
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#questions",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#questions",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#fate-transport-modeling",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#fate-transport-modeling",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Fate & Transport Modeling",
+    "text": "Fate & Transport Modeling\nHow do nutrients and other quantities move through environmental mediums?\nWhat can make fate & transport modeling more complex?\n\n\nMultiple points of inflow;\nMore complex growth/decay dynamics.\nStochasticity/randomness."
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#dissolved-oxygen",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#dissolved-oxygen",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Dissolved Oxygen",
+    "text": "Dissolved Oxygen\n\n\nDissolved oxygen (DO) is the free, non-compound oxygen present in water or other liquids.\nFreshwater can only hold small amounts, and this capacity is regulated by temperature.\n\n\n\n\nDissolved Oxygen by temperature\n\n\n\nSource: fondriest.com"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#temperature-impact-on-do",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#temperature-impact-on-do",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Temperature Impact on DO",
+    "text": "Temperature Impact on DO\n\n\n\nDissolved Oxygen and Temperature Plot\n\n\n\nSource: usgs.gov"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#dissolved-oxygen-and-life",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#dissolved-oxygen-and-life",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Dissolved Oxygen and Life",
+    "text": "Dissolved Oxygen and Life\n\n\nDissolved oxygen is an important nutrient for aquatic life.\nHypoxia occurs when DO levels are \\(&lt; 2\\) mg/L.\n\n\n\n\nMinimum DO requirements for freshwater fish\n\n\n\n\nSource: fondriest.com"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#factors-influencing-do",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#factors-influencing-do",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Factors Influencing DO",
+    "text": "Factors Influencing DO\n\nTemperature, Pressure, Depth\nSalinity\nMixing\nPlant and Microbial Life\nOrganic Matter"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#impact-of-paris-on-seine-do-1874",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#impact-of-paris-on-seine-do-1874",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Impact of Paris On Seine DO, 1874",
+    "text": "Impact of Paris On Seine DO, 1874\n\n\n\nDissolved Oxygen Downstream of Paris, 1874\n\n\n\nSource: Dmitrieva, T., et al. (2018). https://doi.org/10.1007/s12685-018-0216-7"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#do-regulatory-standards",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#do-regulatory-standards",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "DO Regulatory Standards",
+    "text": "DO Regulatory Standards\nObjective: Keep DO above the regulatory standard.\nIn NY (via Westlaw):\n\nDO levels may not fall below 3 mg/L\nDO may not be below 4.8 mg/L for an extended period"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#oxygen-balance-in-rivers-and-streams",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#oxygen-balance-in-rivers-and-streams",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Oxygen Balance in Rivers and Streams",
+    "text": "Oxygen Balance in Rivers and Streams\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#selecting-a-metric-for-do-fluxes",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#selecting-a-metric-for-do-fluxes",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Selecting a Metric for DO Fluxes",
+    "text": "Selecting a Metric for DO Fluxes\nTypically use oxygen demand (OD):\n\nmeasure of the concentration of oxidizable materials in a water sample\nmetric for organic waste contamination\nreflects how oxygen will be depleted in a given segment\n\nBut there are several different processes affecting total OD!"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#biochemical-oxygen-demand-bod",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#biochemical-oxygen-demand-bod",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Biochemical Oxygen Demand (BOD)",
+    "text": "Biochemical Oxygen Demand (BOD)\nOxygen used by microbes during aerobic decomposition of organic materials: \\[\\text{Organic Matter} + \\text{O}_2 \\rightarrow \\text{CO}_2 +  \\text{H}_2\\text{O} + \\text{NO}_3 + \\text{SO}_2 + \\text{Residuals}\\]\nBroadly speaking, we care about two types of BOD: Carbonaceous BOD and Nitrogenous BOD."
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#carbonaceous-bod-cbod",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#carbonaceous-bod-cbod",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Carbonaceous BOD (CBOD)",
+    "text": "Carbonaceous BOD (CBOD)\nOxygen consumed during microbial decomposition of carbon compounds, e.g.: \\[\\text{C}_a\\text{H}_b\\text{O}_c + d\\text{O}_2 \\rightarrow e\\text{H}_2\\text{O} + f\\text{CO}_2\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#nitrogenous-bod-nbod",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#nitrogenous-bod-nbod",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Nitrogenous BOD (NBOD)",
+    "text": "Nitrogenous BOD (NBOD)\nOxygen consumed during microbial decomposition of nitrogen compounds: \\[2\\text{NH}_2^+ + 4\\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O} + 4\\text{H}^+ + 2\\text{NO}_3^-\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#bod-and-time",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#bod-and-time",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "BOD and Time",
+    "text": "BOD and Time\nMoreover, BOD is differentiated based on time frame, e.g.:\n\nBOD5: oxygen demand over 5 days\nBOD20: oxygen demand over 20 days"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#do-modeling-needs",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#do-modeling-needs",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "DO Modeling Needs",
+    "text": "DO Modeling Needs\nNeed a model that will predict DO as a function of CBOD, NBOD.\nUse a fate and transport modeling approach: how are relevant quantities moved downstream?\nNote: Can’t assume homogeneous processes."
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#modeling-do",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#modeling-do",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Modeling DO",
+    "text": "Modeling DO\n\n\nSo what do we do?\nStart by assuming steady-state waste in each section (or box…).\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#modeling-do-1",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#modeling-do-1",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Modeling DO",
+    "text": "Modeling DO\n\n\nWe’ll track the mass balance in terms of rates (not absolute mass).\nWhat happens to an element of water as it moves downstream?\n\n\n\n\nProcesses influencing oxygen balance in moving freshwater"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#steady-state-waste-do-mass-balance",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#steady-state-waste-do-mass-balance",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nLet \\(U\\) be the river velocity (km/d), \\(x\\) the distance downstream from a waste release site in km, and \\(C(x)\\) the DO concentration at \\(x\\) in mg/L.\n\\[\\begin{align}\nU \\frac{dC}{dx} &= \\text{Change in DO} \\\\[0.5em]\n&= \\text{Reaeration} + \\text{Photosynthesis} - \\text{Respiration}  \\\\[0.5em]\n& \\qquad - \\text{Benthal Uptake} - \\text{CBOD} - \\text{NBOD}\n\n\\end{align}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#bod-oxygen-uptake",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#bod-oxygen-uptake",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "BOD Oxygen Uptake",
+    "text": "BOD Oxygen Uptake\nAssume deoxygenation from waste decomposition is first-order (rate \\(k\\)):\n\\[\\begin{aligned}\n\\frac{dM}{dt} &= -kM \\\\\n\\Rightarrow M &= M_0 \\exp(-kt)\n\\end{aligned}\\]\n\nBut our equations are formulated in terms of distance:\n\\[M = M_0 \\exp(-kx/U)\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#bod-oxygen-uptake-1",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#bod-oxygen-uptake-1",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "BOD Oxygen Uptake",
+    "text": "BOD Oxygen Uptake\nFor biochemical organics, if \\(k_c\\) is the deoxygenation rate (d\\(^{-1}\\));\n\\[B(x) = B_0 \\exp(-k_c x / U);\\]\nFor nitrification, if \\(k_n\\) is the deoxygenation rate (d\\(^{-1}\\)):\n\\[N(x) = N_0 \\exp(-k_n x / U).\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#steady-state-waste-do-mass-balance-1",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#steady-state-waste-do-mass-balance-1",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nSo the corresponding oxygen uptake rates are \\[k_c B(x) = k_c B_0 \\exp(-k_c x / U)\\] and\n\\[k_n N(x) = k_n N_0 \\exp(-k_n x / U).\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#steady-state-waste-do-mass-balance-2",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#steady-state-waste-do-mass-balance-2",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nOther processes:\n\nReaeration, assume a simple linear model based on difference from saturation level \\(C_s\\): \\(k_a (C_s - C)\\)\nAssume measured, constant values for photosynthesis (\\(P_s\\)), respiration (\\(R\\)), benthal uptake (\\(S_B\\))"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#steady-state-waste-do-mass-balance-3",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#steady-state-waste-do-mass-balance-3",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Steady-State Waste, DO Mass Balance",
+    "text": "Steady-State Waste, DO Mass Balance\nPutting it all together:\n\\[\n\\begin{aligned}\nU \\frac{dC}{dx} &= k_a (C_s - C) + P - R - S_B \\\\\n&\\quad - k_cB_0\\exp\\left(\\frac{-k_cx}{U}\\right) - k_n N_0\\exp\\left(\\frac{-k_nx}{U}\\right)\n\\end{aligned}\n\\]\n\nNote: Usually models ignore \\(P\\), \\(R\\), and \\(S_B\\).\nWhy do you think that might be?"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#steady-state-solution-streeter-phelps",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#steady-state-solution-streeter-phelps",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Steady-State Solution (Streeter-Phelps)",
+    "text": "Steady-State Solution (Streeter-Phelps)\n\n\\[\\begin{align}\nC(x) &= C_s(1 - \\alpha_1) + C_0 \\alpha_1 - B_0 \\alpha_2 - N_0 \\alpha_3 + \\left(\\frac{P-R-S_B}{k_a}\\right) (1-\\alpha_1), \\\\[1em]\n\n\\alpha_1 &= \\exp\\left(-\\frac{k_a x}{U}\\right) \\\\[0.25em]\n\\alpha_2 &= \\left(\\frac{k_c}{k_a-k_c}\\right)\\left[\\exp\\left(\\frac{-k_c x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right] \\\\[0.25em]\n\\alpha_3 &= \\left(\\frac{k_n}{k_a-k_n}\\right)\\left[\\exp\\left(\\frac{-k_n x}{U}\\right) - \\exp\\left(\\frac{-k_ax}{U}\\right)\\right]\n\\end{align}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#how-to-simulate",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#how-to-simulate",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "How To Simulate",
+    "text": "How To Simulate\nSingle equation, straightforward to evaluate across many values of \\(x\\) with a loop.\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\nC = zeroes(length(x)) # initialize storage\nfor (i, y) in pairs(x)\n    C[i] = dissolved_oxygen(y, parameters)\nend"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#loop-alternatives",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#loop-alternatives",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Loop Alternatives",
+    "text": "Loop Alternatives\nLoops in Julia are fast and should be used freely.\nBut there are some more concise alternatives, which may be more readable in some cases."
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#broadcasting",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#broadcasting",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Broadcasting",
+    "text": "Broadcasting\nBut some more concise alternatives (which may be more readable) include broadcasting:\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = (y -&gt; dissolved_oxygen(y, parameters)).(x) \nBroadcasting gets finicky over multiple inputs."
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#comprehensions",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#comprehensions",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Comprehensions",
+    "text": "Comprehensions\n…And comprehensions (in-line for loops, also in Python):\nx = 0:x_step:x_max # array from 0 to x_max in stepsize x_step\n\n# evaluate DO function over every x with fixed parameters\nC = [dissolved_oxygen(y, parameters) for y in x]\nCan “stack” the for loops in a comprehension to nest."
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#when-to-use-loops",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#when-to-use-loops",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "When To Use Loops?",
+    "text": "When To Use Loops?\nThink about readability and ease of debugging!\n\nIf your code is complex and not wrapped in a function, or you have several nested loops, you should use a loop (just be careful of scope…)\nIf your code is complex, may be worth asking if you should write a function instead and use broadcasting or a comprehension."
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#single-discharge-example",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#single-discharge-example",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Single-Discharge Example",
+    "text": "Single-Discharge Example\nConsider a single waste release along a river:\n\n\n\nSingle-Discharge DO Setup"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#single-discharge-example-1",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#single-discharge-example-1",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Single-Discharge Example",
+    "text": "Single-Discharge Example\n\n\n\n\n\n\n\n\n\nParameter\nRiver\nWaste\nGeneral\n\n\n\n\nVolume (m3/d)\n100,000\n10,000\n—\n\n\nDO (mg/L)\n6.4\n4.2\n—\n\n\nCBOD (mg/L)\n5\n49\n—\n\n\nNBOD (mg/L)\n5\n27\n—\n\n\n\\(C_s\\) (mg/L)\n—\n—\n7\n\n\n\\(k_a\\), \\(k_c\\), \\(k_n\\)\n—\n—\n0.6, 0.4, 0.25"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#single-discharge-example-initial-condition",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#single-discharge-example-initial-condition",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Single-Discharge Example: Initial Condition",
+    "text": "Single-Discharge Example: Initial Condition\nHow do we find the initial state (\\(x=0\\))?\n\nNeed to compute the mixed concentrations of DO, CBOD, and NBOD (\\(Q\\) is the flow volume):\n\\[C_0 = C_\\text{mixed} = \\frac{C_\\text{river} \\times Q_\\text{river} + C_\\text{waste} \\times Q_\\text{waste}}{Q_\\text{river} + Q_\\text{waste}}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#single-discharge-example-initial-condition-1",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#single-discharge-example-initial-condition-1",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Single-Discharge Example: Initial Condition",
+    "text": "Single-Discharge Example: Initial Condition\nSo the initial values:\n\\[C_0 = 6.2 \\ \\text{mg/L}\\]\n\\[B_0 = 9 \\ \\text{mg/L}\\]\n\\[N_0 = 7 \\ \\text{mg/L}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#simulation-outputs-sag-curve",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#simulation-outputs-sag-curve",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Simulation Outputs (“Sag Curve”)",
+    "text": "Simulation Outputs (“Sag Curve”)\n\n\nCode\nfunction do_simulate(x, C0, B0, N0, ka, kn, kc, Cs, U)\n    B = B0 * exp(-kc * x / U)\n    N = N0 * exp(-kn * x / U)\n    α1 = exp(-ka * x / U)\n    α2 = (kc/(ka-kc)) * (exp.(-kc * x / U) - exp(-ka * x / U))\n    α3 = (kn/(ka-kn)) * (exp(-kn * x / U) - exp(-ka * x / U))\n    C = Cs * (1 - α1) + (C0 * α1) - (B0 * α2) - (N0 * α3)\n    return (C, B, N)\nend  \n\n# set river properties\nka = 0.6\nkc = 0.4\nkn = 0.25\n\nC0 = 6.2\nB0 = 9\nN0 = 7\n\nCs = 7\nU = 5\n\nx = 0:40\n\n# evaluate model over all x's\n# this uses broadcasting\ndo_out = (y -&gt; do_simulate(y, C0, B0, N0, ka, kc, kn, Cs, U)).(x)\n# unpack outputs into individual arrays for C, B, and N\n# this uses comprehensions to pull out the relevant components \n#of the tuples that our function outputs\nC = [d[1] for d in do_out]\nB = [d[2] for d in do_out]\nN = [d[3] for d in do_out]\n\n# plot outputs\np1 = plot(; ylabel=\"DO/OD (mg/l)\", xlabel=\"Distance (km)\", left_margin=8mm, top_margin=10mm, guidefontsize=18, legendfontsize=16, tickfontsize=16, legend=:outerright, bottom_margin=10mm)\nplot!(p1, x, C, color=:black, linewidth=4, label=\"DO\")\nplot!(p1, x, B, color=:green, label=\"CBOD\", linestyle=:dash, linewidth=3)\nplot!(p1, x, N, color=:blue, label=\"NBOD\", linestyle=:dash, linewidth=3)\n# plot Cs, which is a constant value \nplot!(p1, x, Cs * ones(length(x)), color=:purple, label=L\"C_s\", linestyle=:dot, linewidth=2)\n\nhline!([3], color=:red, linewidth=2, label=\"Regulatory Standard\")\nplot!(size=(1200, 450))\nxaxis!((0, 40))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Sag curve for dissolved oxygen"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#multiple-discharges",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#multiple-discharges",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Multiple Discharges",
+    "text": "Multiple Discharges\nWhat happens if we have multiple discharge sites?\n\n\n\nSchematic for Multiple Discharge Example"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#simulating-multiple-discharges",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#simulating-multiple-discharges",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Simulating Multiple Discharges",
+    "text": "Simulating Multiple Discharges\n\n\nThink of this as a multi-box system.\n\nFlow from waste release 1 to waste release 2.\nFlow from waste release 2 on.\n\n\n\n\n\nSchematic for Multiple Discharge Example\n\n\n\nHow do we compute the initial conditions at release 2?"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#who-is-responsible-for-non-compliance",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#who-is-responsible-for-non-compliance",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Who is Responsible for Non-Compliance?",
+    "text": "Who is Responsible for Non-Compliance?\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Multi-Release Dissolved Oxygen Example"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#key-points-1",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#key-points-1",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Key Points",
+    "text": "Key Points\n\nDissolved oxygen (DO) is essential for water quality and aquatic life.\nCommonly regulated to keep DO above a minimum threshold.\nDO impacted by a number of factors, notably organic waste decomposition and nitrification.\n“Sag Curve”: DO reduced near a discharge until waste decomposition reduces OD and re-aeration can occur."
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#next-classes",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#next-classes",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: Why Are Systems Complicated?\nNext Week: Uncertainty and Monte Carlo"
+  },
+  {
+    "objectID": "slides/lecture04-2-dissolved-oxygen.html#assessments",
+    "href": "slides/lecture04-2-dissolved-oxygen.html#assessments",
+    "title": "Simulation Example: Dissolved Oxygen",
+    "section": "Assessments",
+    "text": "Assessments\nHW2: Due Thursday at 9pm."
   },
   {
     "objectID": "policies/integrity.html",
@@ -2696,6 +2696,181 @@
     "text": "Next Classes\nWednesday: Prelim 1!\nNext Monday: Fall Break, no class\nNext Wednesday: Optimization Lab (come prepared, link will be posted on Ed)"
   },
   {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#lake-eutrophication-model",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#lake-eutrophication-model",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Lake Eutrophication Model",
+    "text": "Lake Eutrophication Model\n\nSchematic of processes resulting in lake eutrophication"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#modeling-information-needs",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#modeling-information-needs",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Modeling Information Needs",
+    "text": "Modeling Information Needs\n\nWhat will happen to the waste in the environment (fate & transport)?\nWhat are potential impacts and acceptable levels or critical thresholds?\nWhat are options to manage the waste?"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#mass-balance-and-fate-transport",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#mass-balance-and-fate-transport",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Mass-Balance and Fate & Transport",
+    "text": "Mass-Balance and Fate & Transport\n\nUsed principles of mass-balance to derive a fate & transport model for the system dynamics.\nAccounted for point and non-point source loading and environmental quality thresholds.\nUse of model depends on prescriptive vs. descriptive purpose."
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#questions",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#questions",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#limitations-of-our-prior-eutrophication-model",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#limitations-of-our-prior-eutrophication-model",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Limitations Of Our Prior Eutrophication Model",
+    "text": "Limitations Of Our Prior Eutrophication Model\n\nSteady-state\nAssumed first-order (linear) decay for lake P"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#shallow-lake-model-1",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#shallow-lake-model-1",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Shallow Lake Model",
+    "text": "Shallow Lake Model\n\n\n\nModel introduced by Carpenter et al. (1999).\nThis lecture builds off Quinn et al. (2017).\nTradeoff between economic benefits and the health of the lake.\n\n\n\n\n\nLake Eutrophication Example"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#shallow-lake-model-variables",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#shallow-lake-model-variables",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Shallow Lake Model: Variables",
+    "text": "Shallow Lake Model: Variables\n\n\n\nVariable\nMeaning\nUnits\n\n\n\n\n\\(X_t\\)\nP level in lake at time \\(t\\)\ndimensionless\n\n\n\\(a_t\\)\nControllable (point-source) P release\ndimensionless\n\n\n\\(y_t\\)\nRandom (non-point-source) P runoff\ndimensionless"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#shallow-lake-model-runoff",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#shallow-lake-model-runoff",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Shallow Lake Model: Runoff",
+    "text": "Shallow Lake Model: Runoff\nRandom runoffs \\(y_t\\) are sampled from a LogNormal distribution.\n\n\nCode\n# this uses StatsPlots.jl's recipe for plotting distributions directly; otherwise use something like plot(-5:0.01:5, pdf.(LogNormal(0.25, 1), -5:0.1:5))\nplot(LogNormal(0.25, 1), linewidth=3, label=\"LogNormal(0.25, 1)\", guidefontsize=18, legendfontsize=16, tickfontsize=16)\nplot!(LogNormal(0.5, 1), linewidth=3, label=\"LogNormal(0.5, 2)\")\nplot!(LogNormal(0.25, 2), linewidth=3, label=\"LogNormal(0.25, 2)\")\nplot!(size=(1000, 400), grid=:false, left_margin=10mm, right_margin=10mm, bottom_margin=10mm)\nxlims!((0, 6))\nylabel!(\"Density\")\nxlabel!(L\"y_t\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Lognormal Distributions"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#shallow-lake-model-p-dynamics",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#shallow-lake-model-p-dynamics",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Shallow Lake Model: P Dynamics",
+    "text": "Shallow Lake Model: P Dynamics\n\nLake loses P at a linear rate, \\(bX_t\\).\nNutrient cycling reintroduces P from sediment: \\[\\frac{X_t^q}{1 + X_t^q}.\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#shallow-lake-model-2",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#shallow-lake-model-2",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Shallow Lake Model",
+    "text": "Shallow Lake Model\nSo the P level (state) \\(X_{t+1}\\) is given by: \\[\\begin{gather*}\nX_{t+1} = X_t + a_t + y_t + \\frac{X_t^q}{1 + X_t^q} - bX_t, \\\\[0.5em]\ny_t \\underset{\\underset{\\Large\\text{\\color{red}sample}}{\\color{red}\\uparrow}}{\\sim} \\text{LogNormal}(\\mu, \\sigma^2).\n\\end{gather*}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#lake-dynamics-without-inflows",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#lake-dynamics-without-inflows",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Lake Dynamics (Without Inflows)",
+    "text": "Lake Dynamics (Without Inflows)\n\n\n\n\\(a_t = y_t = 0\\),\n\\(q=2.5\\)\n\\(b=0.4\\)\n\n\n\n\nCode\n# define functions for lake recycling and outflows\nlake_P_cycling(x, q) = x.^q ./ (1 .+ x.^q);\nlake_P_out(x, b) = b .* x;\n\nT = 30\nX_vals = collect(0.0:0.1:2.5)\nfunction simulate_lake_P(X_ic, T, b, q, a, y)\n    X = zeros(T)\n    X[1] = X_ic\n    for t = 2:T\n        X[t] = X[t-1] .+ a[t] .+ y[t].+ lake_P_cycling(X[t-1], q) .- lake_P_out(X[t-1], b)\n    end\n    return X\nend\nX = map(x -&gt; simulate_lake_P(x, T, 0.4, 2.5, zeros(T), zeros(T)), X_vals)\np_noinflow = plot(X, label=false, ylabel=L\"X_t\", xlabel=\"Time\", guidefontsize=18, tickfontsize=16, size=(600, 500), left_margin=5mm, bottom_margin=5mm)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Dynamics of lake model with different initial conditions"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#lake-dynamics-without-inflows-1",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#lake-dynamics-without-inflows-1",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Lake Dynamics (Without Inflows)",
+    "text": "Lake Dynamics (Without Inflows)\n\n\n\n\\(a_t = y_t = 0\\),\n\\(q=2.5\\)\n\\(b=0.4\\)\n\n\n\n\nCode\n# define range of lake states X\nx = 0:0.05:2.5;\n\n# plot recycling and outflows for selected values of b and q\np1 = plot(x, lake_P_cycling(x, 2.5), color=:black, linewidth=5,legend=:topleft, label=\"P Recycling\", ylabel=\"P Flux\", xlabel=L\"$X_t$\", tickfontsize=16, guidefontsize=18, legendfontsize=16, palette=:tol_muted, framestyle=:zerolines, grid=:false)\nplot!(x, lake_P_out(x, 0.4), linewidth=3, linestyle=:dash, label=L\"$b=0.4$\", color=:blue)\nquiver!([1], [0.35], quiver=([1], [0.4]), color=:red, linewidth=2)\nquiver!([0.4], [0.13], quiver=([-0.125], [-0.05]), color=:red, linewidth=2)\nquiver!([2.5], [0.97], quiver=([-0.125], [-0.05]), color=:red, linewidth=2)\nplot!(ylims=(-0.02, 1.1))\nplot!(size=(600, 500))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#where-are-the-equilibria",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#where-are-the-equilibria",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Where Are the Equilibria?",
+    "text": "Where Are the Equilibria?\n\n\nEquilibria: Fixed points of the dynamics (no state change).\nEquilibria occur where \\[\\Delta X = X_{t+1} - X_t = 0,\\] so the outflows and sediment recycling are in balance.\n\n\n\nCode\neq1 = [0.0, 0.67, 2.2]\nscatter!(p1, eq1, (y -&gt; lake_P_cycling(y, 2.5)).(eq1), label=\"Equilibria\", markersize=10, markercolor=:blue)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for \\(q=2.5\\)), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#implications-of-unstable-equilibria",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#implications-of-unstable-equilibria",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Implications of Unstable Equilibria",
+    "text": "Implications of Unstable Equilibria\n\n\n\n\nCode\nplot!(p_noinflow, title=\"Lake P Without Inflows\", titlefontsize=20)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Dynamics of Lake Model With No Inflows\n\n\n\n\n\n\n\nCode\na = zeros(T)\ny = rand(LogNormal(log(0.08), 0.01), T)\nX = map(x -&gt; simulate_lake_P(x, T, 0.4, 2.5, a, y), X_vals) \nplot(X, label=false, ylabel=L\"$X_t$\", xlabel=\"Time\", title=\"Lake P With Inflows\", guidefontsize=18, tickfontsize=16, size=(600, 500), left_margin=5mm, bottom_margin=5mm, titlefontsize=20)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Dynamics of Lake Model With No Inflows"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#how-do-equilibria-change",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#how-do-equilibria-change",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "How do Equilibria Change?",
+    "text": "How do Equilibria Change?\n\n\nHow do the equilibria change as system parameters vary?\n\n\n\nCode\neq_45 = [0.8, 1.8]\neq_5 = [1.0, 1.4]\nplot!(x, lake_P_out(x, 0.45), linewidth=3, linestyle=:dash, label=L\"$b=0.45$\", color=:orange)\nplot!(x, lake_P_out(x, 0.5), linewidth=3, linestyle=:dash, label=L\"$b=0.5$\", color=:purple)\nplot!(x, lake_P_out(x, 0.6), linewidth=3, linestyle=:dash, label=L\"$b=0.6$\", color=:green)\nscatter!(p1, eq_45, (y -&gt; lake_P_cycling(y, 2.5)).(eq_45), label=false, markersize=10, markercolor=:orange)\nscatter!(p1, eq_5, (y -&gt; lake_P_cycling(y, 2.5)).(eq_5), label=false, markersize=10, markercolor=:purple)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for \\(q=2.5\\)), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#equilibria-vs.-b-value",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#equilibria-vs.-b-value",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Equilibria vs. \\(b\\) Value",
+    "text": "Equilibria vs. \\(b\\) Value\n\n\nCode\nfunction plot_P_flux(b_vals)\n    p = plot(; xlabel=L\"b\", ylabel=L\"X\", legend=:outerright, tickfontsize=16, legendfontsize=16, guidefontsize=18, left_margin=5mm, bottom_margin=10mm, size=(1200, 500))\n\n    flux_func(x, b) = lake_P_cycling(x, 2.5) - lake_P_out(x, b)\n    X_un = []\n    X_st = []\n    for b in b_vals\n        # try to find the unstable (oligotrophic) equilibrium\n        try\n            x_eq = Roots.find_zero(x -&gt; flux_func(x, b), 0.5)\n            push!(X_un, (b, x_eq))\n        catch err\n            if isa(err, DomainError)\n            end\n        end\n        # try to find the stable (eutrophic) equilibrium\n        try\n            x_eq = Roots.find_zero(x -&gt; flux_func(x, b), 2.0)\n            push!(X_st, (b, x_eq))\n        catch err\n            if isa(err, DomainError)\n            end\n        end\n    end\n    plot!(p, first.(X_un), last.(X_un), label=\"Unstable Equilibrium\", linewidth=3, color=:red, linestyle=:dash)\n    plot!(p, first.(X_st), last.(X_st), label=\"Stable (Eutrophic) Equilibrium\", linewidth=3, color=:red)\n    plot!(p, b_vals, repeat([0.0], length(b_vals)), label=\"Stable (Oligotrophic) Equilibrium\", linewidth=3, color=:blue)\n\n    quiver!(p, [0.01], [0.15], quiver=([0.0], [5.85]), color=:black)\n    quiver!(p, [0.05], [0.2], quiver=([0.0], [5.8]), color=:black)\n    quiver!(p, [0.1], [0.4], quiver=([0.0], [5.6]), color=:black)\n    quiver!(p, [0.15], [0.5], quiver=([0.0], [5.5]), color=:black)\n    quiver!(p, [0.2], [0.5], quiver=([0.0], [4.0]), color=:black)\n    quiver!(p, [0.25], [0.6], quiver=([0.0], [3.0]), color=:black)\n    quiver!(p, [0.3], [0.6], quiver=([0.0], [2.4]), color=:black)\n    quiver!(p, [0.35], [0.7], quiver=([0.0], [1.7]), color=:black)\n    quiver!(p, [0.4], [0.8], quiver=([0.0], [1.3]), color=:black)\n    quiver!(p, [0.45], [0.9], quiver=([0.0], [0.75]), color=:black)\n    quiver!(p, [0.5], [1.1], quiver=([0.0], [0.25]), color=:black)\n\n    quiver!(p, [0.1], [0.15], quiver=([0.0], [-0.15]), color=:black)\n    quiver!(p, [0.15], [0.2], quiver=([0.0], [-0.15]), color=:black)\n    quiver!(p, [0.2], [0.25], quiver=([0.0], [-0.2]), color=:black)\n    quiver!(p, [0.25], [0.35], quiver=([0.0], [-0.3]), color=:black)\n    quiver!(p, [0.3], [0.4], quiver=([0.0], [-0.35]), color=:black)\n    quiver!(p, [0.35], [0.45], quiver=([0.0], [-0.4]), color=:black)\n    quiver!(p, [0.4], [0.55], quiver=([0.0], [-0.45]), color=:black)\n    quiver!(p, [0.45], [0.7], quiver=([0.0], [-0.6]), color=:black)\n    quiver!(p, [0.5], [0.9], quiver=([0.0], [-0.8]), color=:black)\n\n    quiver!(p, [0.2], [6.0], quiver=([0.0], [-0.9]), color=:black)\n    quiver!(p, [0.25], [6.0], quiver=([0.0], [-2.0]), color=:black)\n    quiver!(p, [0.3], [6.0], quiver=([0.0], [-2.7]), color=:black)\n    quiver!(p, [0.35], [6.0], quiver=([0.0], [-3.2]), color=:black)\n    quiver!(p, [0.4], [6.0], quiver=([0.0], [-3.8]), color=:black)\n    quiver!(p, [0.45], [6.0], quiver=([0.0], [-4.0]), color=:black)\n    quiver!(p, [0.5], [6.0], quiver=([0.0], [-4.5]), color=:black)\n    quiver!(p, [0.55], [6.0], quiver=([0.0], [-5.9]), color=:black)\n    quiver!(p, [0.6], [6.0], quiver=([0.0], [-5.9]), color=:black)\n\n    return p\nend\nb_vals = 0.01:0.01:0.6\n\np = plot_P_flux(b_vals)\ndisplay(p)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 8: Bifurcation diagram for the lake problem with no inputs."
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#implications-of-bifurcations",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#implications-of-bifurcations",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Implications of Bifurcations",
+    "text": "Implications of Bifurcations\nBifurcations have the following implications:\n\nUncertainty about system dynamics can dramatically change equilibria locations and behavior;\n“Shocks” (in this case, sedimentation/recycling disturbances or massive non-point source inflows) can irreversibly alter system outcomes."
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#feedback-loops",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#feedback-loops",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Feedback Loops",
+    "text": "Feedback Loops\n\n\nUnstable equilibria can result from reinforcing (positive) feedback loops, where a shock to the system state gets amplified.\nFeedback loops can also be dampening (negative), where a shock is weakened (stable equilibria).\n\n\n\n\nIce-Albedo Feedback Loop"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#feedbacks-for-lake-eutrophication",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#feedbacks-for-lake-eutrophication",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Feedbacks for Lake Eutrophication",
+    "text": "Feedbacks for Lake Eutrophication\n\nEutrophication Feedback Loop"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#other-environmental-feedbacks",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#other-environmental-feedbacks",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Other Environmental Feedbacks",
+    "text": "Other Environmental Feedbacks\nCan we think of other examples of environmental feedback loops?\nAre they reinforcing or dampening?"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#key-takeaways-equilibria",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#key-takeaways-equilibria",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Key Takeaways (Equilibria)",
+    "text": "Key Takeaways (Equilibria)\n\nSystem equilibria states can be stable or unstable.\nUnstable equilbria can be responsible for thresholds/tipping points.\nBifurcations: Changes to number/qualitative behavior of equilibria as system properties vary."
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#key-takeaways-feedbacks",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#key-takeaways-feedbacks",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Key Takeaways (Feedbacks)",
+    "text": "Key Takeaways (Feedbacks)\n\nFeedback loops can be reinforcing or dampening.\nReinforcing feedbacks: changes to system state are amplified, resulting in instability and evolution away from equilibrium state.\nDampening feedbacks: changes to system state are dampened, system reverts to stable equilibrium state."
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#next-classes",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#next-classes",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Next Classes",
+    "text": "Next Classes\nNext Week: Simulation Models"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#assessments",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#assessments",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "Assessments",
+    "text": "Assessments\nHomework 2: Due 9/19 at 9pm"
+  },
+  {
+    "objectID": "slides/lecture03-2-dynamics-feedbacks.html#references-1",
+    "href": "slides/lecture03-2-dynamics-feedbacks.html#references-1",
+    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\n\n\nCarpenter, S. R., Ludwig, D., & Brock, W. A. (1999). Management of eutrophication for lakes subject to potentially irreversible change. Ecol. Appl., 9(3), 751–771. https://doi.org/10.2307/2641327\n\n\nQuinn, J. D., Reed, P. M., & Keller, K. (2017). Direct policy search for robust multi-objective management of deeply uncertain socio-ecological tipping points. Environmental Modelling & Software, 92, 125–141. https://doi.org/10.1016/j.envsoft.2017.02.017"
+  },
+  {
     "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#dissolved-oxygen",
     "href": "slides/lecture05-1-uncertainty-monte-carlo.html#dissolved-oxygen",
     "title": "Uncertainty and Monte Carlo",
@@ -2906,179 +3081,235 @@
     "text": "Assessments\nHW3: Released today, due 10/03 at 9pm."
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#lake-eutrophication-model",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#lake-eutrophication-model",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "objectID": "slides/lecture04-1-simulation.html#lake-eutrophication-model",
+    "href": "slides/lecture04-1-simulation.html#lake-eutrophication-model",
+    "title": "Simulation and Box Models",
     "section": "Lake Eutrophication Model",
     "text": "Lake Eutrophication Model\n\nSchematic of processes resulting in lake eutrophication"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#modeling-information-needs",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#modeling-information-needs",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "objectID": "slides/lecture04-1-simulation.html#modeling-information-needs",
+    "href": "slides/lecture04-1-simulation.html#modeling-information-needs",
+    "title": "Simulation and Box Models",
     "section": "Modeling Information Needs",
     "text": "Modeling Information Needs\n\nWhat will happen to the waste in the environment (fate & transport)?\nWhat are potential impacts and acceptable levels or critical thresholds?\nWhat are options to manage the waste?"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#mass-balance-and-fate-transport",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#mass-balance-and-fate-transport",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "objectID": "slides/lecture04-1-simulation.html#mass-balance-and-fate-transport",
+    "href": "slides/lecture04-1-simulation.html#mass-balance-and-fate-transport",
+    "title": "Simulation and Box Models",
     "section": "Mass-Balance and Fate & Transport",
     "text": "Mass-Balance and Fate & Transport\n\nUsed principles of mass-balance to derive a fate & transport model for the system dynamics.\nAccounted for point and non-point source loading and environmental quality thresholds.\nUse of model depends on prescriptive vs. descriptive purpose."
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#questions",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#questions",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "objectID": "slides/lecture04-1-simulation.html#questions",
+    "href": "slides/lecture04-1-simulation.html#questions",
+    "title": "Simulation and Box Models",
     "section": "Questions?",
     "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#limitations-of-our-prior-eutrophication-model",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#limitations-of-our-prior-eutrophication-model",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Limitations Of Our Prior Eutrophication Model",
-    "text": "Limitations Of Our Prior Eutrophication Model\n\nSteady-state\nAssumed first-order (linear) decay for lake P"
+    "objectID": "slides/lecture04-1-simulation.html#what-is-simulation",
+    "href": "slides/lecture04-1-simulation.html#what-is-simulation",
+    "title": "Simulation and Box Models",
+    "section": "What is Simulation?",
+    "text": "What is Simulation?\nSimulation: evaluating a model to understand how a system might evolve under a particular set of conditions.\n\nThink of simulation as data generation (or generative modeling).\nThe model represents a particular data-generating process."
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#shallow-lake-model-1",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#shallow-lake-model-1",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Shallow Lake Model",
-    "text": "Shallow Lake Model\n\n\n\nModel introduced by Carpenter et al. (1999).\nThis lecture builds off Quinn et al. (2017).\nTradeoff between economic benefits and the health of the lake.\n\n\n\n\n\nLake Eutrophication Example"
+    "objectID": "slides/lecture04-1-simulation.html#why-simulate-systems",
+    "href": "slides/lecture04-1-simulation.html#why-simulate-systems",
+    "title": "Simulation and Box Models",
+    "section": "Why Simulate Systems?",
+    "text": "Why Simulate Systems?\n\n\nSystem involves complex, nonlinear dynamics that may not be analytically tractable.\nSetting up and running a real-world experiment is not possible.\nState depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.\nNeed to understand range of system performance across rarely-seen conditions."
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#shallow-lake-model-variables",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#shallow-lake-model-variables",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Shallow Lake Model: Variables",
-    "text": "Shallow Lake Model: Variables\n\n\n\nVariable\nMeaning\nUnits\n\n\n\n\n\\(X_t\\)\nP level in lake at time \\(t\\)\ndimensionless\n\n\n\\(a_t\\)\nControllable (point-source) P release\ndimensionless\n\n\n\\(y_t\\)\nRandom (non-point-source) P runoff\ndimensionless"
+    "objectID": "slides/lecture04-1-simulation.html#types-of-simulation-models",
+    "href": "slides/lecture04-1-simulation.html#types-of-simulation-models",
+    "title": "Simulation and Box Models",
+    "section": "Types of Simulation Models",
+    "text": "Types of Simulation Models\n\nDeterministic vs. Stochastic\nDiscrete vs. Continuous"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#shallow-lake-model-runoff",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#shallow-lake-model-runoff",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Shallow Lake Model: Runoff",
-    "text": "Shallow Lake Model: Runoff\nRandom runoffs \\(y_t\\) are sampled from a LogNormal distribution.\n\n\nCode\n# this uses StatsPlots.jl's recipe for plotting distributions directly; otherwise use something like plot(-5:0.01:5, pdf.(LogNormal(0.25, 1), -5:0.1:5))\nplot(LogNormal(0.25, 1), linewidth=3, label=\"LogNormal(0.25, 1)\", guidefontsize=18, legendfontsize=16, tickfontsize=16)\nplot!(LogNormal(0.5, 1), linewidth=3, label=\"LogNormal(0.5, 2)\")\nplot!(LogNormal(0.25, 2), linewidth=3, label=\"LogNormal(0.25, 2)\")\nplot!(size=(1000, 400), grid=:false, left_margin=10mm, right_margin=10mm, bottom_margin=10mm)\nxlims!((0, 6))\nylabel!(\"Density\")\nxlabel!(L\"y_t\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Lognormal Distributions"
+    "objectID": "slides/lecture04-1-simulation.html#simulation-model-workflow",
+    "href": "slides/lecture04-1-simulation.html#simulation-model-workflow",
+    "title": "Simulation and Box Models",
+    "section": "Simulation Model Workflow",
+    "text": "Simulation Model Workflow\n\nSimulation Workflow"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#shallow-lake-model-p-dynamics",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#shallow-lake-model-p-dynamics",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Shallow Lake Model: P Dynamics",
-    "text": "Shallow Lake Model: P Dynamics\n\nLake loses P at a linear rate, \\(bX_t\\).\nNutrient cycling reintroduces P from sediment: \\[\\frac{X_t^q}{1 + X_t^q}.\\]"
+    "objectID": "slides/lecture04-1-simulation.html#simulation-model-applications",
+    "href": "slides/lecture04-1-simulation.html#simulation-model-applications",
+    "title": "Simulation and Box Models",
+    "section": "Simulation Model Applications",
+    "text": "Simulation Model Applications\n\nWater balance/hydrologic flow models;\nClimate models (ocean heat/CO\\(_2\\) uptake through “box” layers)\nAirsheds\nEpidemiology\nSocial science (agent-based models)"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#shallow-lake-model-2",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#shallow-lake-model-2",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Shallow Lake Model",
-    "text": "Shallow Lake Model\nSo the P level (state) \\(X_{t+1}\\) is given by: \\[\\begin{gather*}\nX_{t+1} = X_t + a_t + y_t + \\frac{X_t^q}{1 + X_t^q} - bX_t, \\\\[0.5em]\ny_t \\underset{\\underset{\\Large\\text{\\color{red}sample}}{\\color{red}\\uparrow}}{\\sim} \\text{LogNormal}(\\mu, \\sigma^2).\n\\end{gather*}\n\\]"
+    "objectID": "slides/lecture04-1-simulation.html#what-is-a-box-model",
+    "href": "slides/lecture04-1-simulation.html#what-is-a-box-model",
+    "title": "Simulation and Box Models",
+    "section": "What Is A Box Model?",
+    "text": "What Is A Box Model?\nBox models are a common building block of simulation models.\n\n\nBox models are all about mass-balance (mass \\(m\\)), assume well-mixed within box.\nCan be steady-state \\((\\dot{m} = 0)\\) or not.\n\n\n\n\nSteady-State Box Example"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#lake-dynamics-without-inflows",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#lake-dynamics-without-inflows",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Lake Dynamics (Without Inflows)",
-    "text": "Lake Dynamics (Without Inflows)\n\n\n\n\\(a_t = y_t = 0\\),\n\\(q=2.5\\)\n\\(b=0.4\\)\n\n\n\n\nCode\n# define functions for lake recycling and outflows\nlake_P_cycling(x, q) = x.^q ./ (1 .+ x.^q);\nlake_P_out(x, b) = b .* x;\n\nT = 30\nX_vals = collect(0.0:0.1:2.5)\nfunction simulate_lake_P(X_ic, T, b, q, a, y)\n    X = zeros(T)\n    X[1] = X_ic\n    for t = 2:T\n        X[t] = X[t-1] .+ a[t] .+ y[t].+ lake_P_cycling(X[t-1], q) .- lake_P_out(X[t-1], b)\n    end\n    return X\nend\nX = map(x -&gt; simulate_lake_P(x, T, 0.4, 2.5, zeros(T), zeros(T)), X_vals)\np_noinflow = plot(X, label=false, ylabel=L\"X_t\", xlabel=\"Time\", guidefontsize=18, tickfontsize=16, size=(600, 500), left_margin=5mm, bottom_margin=5mm)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Dynamics of lake model with different initial conditions"
+    "objectID": "slides/lecture04-1-simulation.html#airshed-model",
+    "href": "slides/lecture04-1-simulation.html#airshed-model",
+    "title": "Simulation and Box Models",
+    "section": "Airshed Model",
+    "text": "Airshed Model\nLet’s look at a simple steady-state model of an airshed.\n\n\n\nVariable\nMeaning\nUnits\n\n\n\n\n\\(m\\)\nmass of some air pollutant\ng\n\n\n\\(C\\)\nconcentration in box\ng/m\\(^3\\)\n\n\n\\(S, D\\)\nsource, deposition rate within the box\ng/s\n\n\n\\(u\\)\nwind speed\nm/s\n\n\n\\(L, W, H\\)\nbox dimensions\nm"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#lake-dynamics-without-inflows-1",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#lake-dynamics-without-inflows-1",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Lake Dynamics (Without Inflows)",
-    "text": "Lake Dynamics (Without Inflows)\n\n\n\n\\(a_t = y_t = 0\\),\n\\(q=2.5\\)\n\\(b=0.4\\)\n\n\n\n\nCode\n# define range of lake states X\nx = 0:0.05:2.5;\n\n# plot recycling and outflows for selected values of b and q\np1 = plot(x, lake_P_cycling(x, 2.5), color=:black, linewidth=5,legend=:topleft, label=\"P Recycling\", ylabel=\"P Flux\", xlabel=L\"$X_t$\", tickfontsize=16, guidefontsize=18, legendfontsize=16, palette=:tol_muted, framestyle=:zerolines, grid=:false)\nplot!(x, lake_P_out(x, 0.4), linewidth=3, linestyle=:dash, label=L\"$b=0.4$\", color=:blue)\nquiver!([1], [0.35], quiver=([1], [0.4]), color=:red, linewidth=2)\nquiver!([0.4], [0.13], quiver=([-0.125], [-0.05]), color=:red, linewidth=2)\nquiver!([2.5], [0.97], quiver=([-0.125], [-0.05]), color=:red, linewidth=2)\nplot!(ylims=(-0.02, 1.1))\nplot!(size=(600, 500))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for $q=2.5), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "objectID": "slides/lecture04-1-simulation.html#selecting-box-dimensions",
+    "href": "slides/lecture04-1-simulation.html#selecting-box-dimensions",
+    "title": "Simulation and Box Models",
+    "section": "Selecting Box Dimensions",
+    "text": "Selecting Box Dimensions\nWhat is relevant for the box dimensions \\(L\\), \\(W\\), and \\(H\\)?\nPrimarily the assumption(s) about mixing:\n\nMixing height: is there an atmospheric inversion which limits mixing height?\nHomogeneity of input/output flows and emissions."
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#where-are-the-equilibria",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#where-are-the-equilibria",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Where Are the Equilibria?",
-    "text": "Where Are the Equilibria?\n\n\nEquilibria: Fixed points of the dynamics (no state change).\nEquilibria occur where \\[\\Delta X = X_{t+1} - X_t = 0,\\] so the outflows and sediment recycling are in balance.\n\n\n\nCode\neq1 = [0.0, 0.67, 2.2]\nscatter!(p1, eq1, (y -&gt; lake_P_cycling(y, 2.5)).(eq1), label=\"Equilibria\", markersize=10, markercolor=:blue)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for \\(q=2.5\\)), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "objectID": "slides/lecture04-1-simulation.html#steady-state-airshed-box-model",
+    "href": "slides/lecture04-1-simulation.html#steady-state-airshed-box-model",
+    "title": "Simulation and Box Models",
+    "section": "Steady-State Airshed Box Model",
+    "text": "Steady-State Airshed Box Model\nSteady-state box ⇒ \\(\\dot{m} = 0\\).\n\n\\[\\begin{align}\n0 &= m_\\text{in} - m_\\text{out} + S - D \\\\[0.5em]\n&\\class{\\fragment}{{} = (u WH) C_\\text{in} - (u WH) C + S - D } \\\\[0.5em]\n\\end{align}\\]\n\n\nSolving for \\(C\\): \\[C = C_{in} + \\frac{S-D}{uWH}\\]"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#implications-of-unstable-equilibria",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#implications-of-unstable-equilibria",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Implications of Unstable Equilibria",
-    "text": "Implications of Unstable Equilibria\n\n\n\n\nCode\nplot!(p_noinflow, title=\"Lake P Without Inflows\", titlefontsize=20)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Dynamics of Lake Model With No Inflows\n\n\n\n\n\n\n\nCode\na = zeros(T)\ny = rand(LogNormal(log(0.08), 0.01), T)\nX = map(x -&gt; simulate_lake_P(x, T, 0.4, 2.5, a, y), X_vals) \nplot(X, label=false, ylabel=L\"$X_t$\", xlabel=\"Time\", title=\"Lake P With Inflows\", guidefontsize=18, tickfontsize=16, size=(600, 500), left_margin=5mm, bottom_margin=5mm, titlefontsize=20)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Dynamics of Lake Model With No Inflows"
+    "objectID": "slides/lecture04-1-simulation.html#decay-processes",
+    "href": "slides/lecture04-1-simulation.html#decay-processes",
+    "title": "Simulation and Box Models",
+    "section": "Decay Processes",
+    "text": "Decay Processes\nNow let’s assume some process affecting \\(m\\) depends on time.\nFor example: let’s say we care about an air pollutant which has a first-order decay rate \\(k\\), so \\(D(t) = D_0 - km(t)\\).\n\\[\n\\Rightarrow \\frac{dm}{dt} = m_\\text{in} - m_\\text{out} + S - D_0 - km\n\\]\n\n\\[\n\\dot{m} = \\frac{d(CV)}{dt} = \\overbrace{(u WH) C_\\text{in}}^{\\text{inflow}} - \\overbrace{(u WH) C}^{\\text{outflow}} + \\overbrace{S - D_0}^{\\text{net emissions}} - \\overbrace{kCV}^{\\text{mass decay}}\n\\]"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#how-do-equilibria-change",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#how-do-equilibria-change",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "How do Equilibria Change?",
-    "text": "How do Equilibria Change?\n\n\nHow do the equilibria change as system parameters vary?\n\n\n\nCode\neq_45 = [0.8, 1.8]\neq_5 = [1.0, 1.4]\nplot!(x, lake_P_out(x, 0.45), linewidth=3, linestyle=:dash, label=L\"$b=0.45$\", color=:orange)\nplot!(x, lake_P_out(x, 0.5), linewidth=3, linestyle=:dash, label=L\"$b=0.5$\", color=:purple)\nplot!(x, lake_P_out(x, 0.6), linewidth=3, linestyle=:dash, label=L\"$b=0.6$\", color=:green)\nscatter!(p1, eq_45, (y -&gt; lake_P_cycling(y, 2.5)).(eq_45), label=false, markersize=10, markercolor=:orange)\nscatter!(p1, eq_5, (y -&gt; lake_P_cycling(y, 2.5)).(eq_5), label=false, markersize=10, markercolor=:purple)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7: Lake eutrophication dynamics based on the shallow lake modelwithout additional inputs. The black line is the P recycling level (for \\(q=2.5\\)), which adds P back into the lake, and the dashed lines correspond to differerent rates of P outflow (based on the linear parameter \\(b\\)). The lake P level is in equilibrium when the recycling rate equals the outflows. When the outflow is greater than the recycling flux, the lake’s P level decreases, and when the recycling flux is greater than the outflow, the P level naturally increases. The red lines show the direction of this net flux."
+    "objectID": "slides/lecture04-1-simulation.html#discretizing-continuous-models",
+    "href": "slides/lecture04-1-simulation.html#discretizing-continuous-models",
+    "title": "Simulation and Box Models",
+    "section": "Discretizing Continuous Models",
+    "text": "Discretizing Continuous Models\nWe could analytically solve this particular differential equation, but in general this may not be possible without strong assumptions.\nInstead, we can discretize these models using methods from CEE 3200!"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#equilibria-vs.-b-value",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#equilibria-vs.-b-value",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Equilibria vs. \\(b\\) Value",
-    "text": "Equilibria vs. \\(b\\) Value\n\n\nCode\nfunction plot_P_flux(b_vals)\n    p = plot(; xlabel=L\"b\", ylabel=L\"X\", legend=:outerright, tickfontsize=16, legendfontsize=16, guidefontsize=18, left_margin=5mm, bottom_margin=10mm, size=(1200, 500))\n\n    flux_func(x, b) = lake_P_cycling(x, 2.5) - lake_P_out(x, b)\n    X_un = []\n    X_st = []\n    for b in b_vals\n        # try to find the unstable (oligotrophic) equilibrium\n        try\n            x_eq = Roots.find_zero(x -&gt; flux_func(x, b), 0.5)\n            push!(X_un, (b, x_eq))\n        catch err\n            if isa(err, DomainError)\n            end\n        end\n        # try to find the stable (eutrophic) equilibrium\n        try\n            x_eq = Roots.find_zero(x -&gt; flux_func(x, b), 2.0)\n            push!(X_st, (b, x_eq))\n        catch err\n            if isa(err, DomainError)\n            end\n        end\n    end\n    plot!(p, first.(X_un), last.(X_un), label=\"Unstable Equilibrium\", linewidth=3, color=:red, linestyle=:dash)\n    plot!(p, first.(X_st), last.(X_st), label=\"Stable (Eutrophic) Equilibrium\", linewidth=3, color=:red)\n    plot!(p, b_vals, repeat([0.0], length(b_vals)), label=\"Stable (Oligotrophic) Equilibrium\", linewidth=3, color=:blue)\n\n    quiver!(p, [0.01], [0.15], quiver=([0.0], [5.85]), color=:black)\n    quiver!(p, [0.05], [0.2], quiver=([0.0], [5.8]), color=:black)\n    quiver!(p, [0.1], [0.4], quiver=([0.0], [5.6]), color=:black)\n    quiver!(p, [0.15], [0.5], quiver=([0.0], [5.5]), color=:black)\n    quiver!(p, [0.2], [0.5], quiver=([0.0], [4.0]), color=:black)\n    quiver!(p, [0.25], [0.6], quiver=([0.0], [3.0]), color=:black)\n    quiver!(p, [0.3], [0.6], quiver=([0.0], [2.4]), color=:black)\n    quiver!(p, [0.35], [0.7], quiver=([0.0], [1.7]), color=:black)\n    quiver!(p, [0.4], [0.8], quiver=([0.0], [1.3]), color=:black)\n    quiver!(p, [0.45], [0.9], quiver=([0.0], [0.75]), color=:black)\n    quiver!(p, [0.5], [1.1], quiver=([0.0], [0.25]), color=:black)\n\n    quiver!(p, [0.1], [0.15], quiver=([0.0], [-0.15]), color=:black)\n    quiver!(p, [0.15], [0.2], quiver=([0.0], [-0.15]), color=:black)\n    quiver!(p, [0.2], [0.25], quiver=([0.0], [-0.2]), color=:black)\n    quiver!(p, [0.25], [0.35], quiver=([0.0], [-0.3]), color=:black)\n    quiver!(p, [0.3], [0.4], quiver=([0.0], [-0.35]), color=:black)\n    quiver!(p, [0.35], [0.45], quiver=([0.0], [-0.4]), color=:black)\n    quiver!(p, [0.4], [0.55], quiver=([0.0], [-0.45]), color=:black)\n    quiver!(p, [0.45], [0.7], quiver=([0.0], [-0.6]), color=:black)\n    quiver!(p, [0.5], [0.9], quiver=([0.0], [-0.8]), color=:black)\n\n    quiver!(p, [0.2], [6.0], quiver=([0.0], [-0.9]), color=:black)\n    quiver!(p, [0.25], [6.0], quiver=([0.0], [-2.0]), color=:black)\n    quiver!(p, [0.3], [6.0], quiver=([0.0], [-2.7]), color=:black)\n    quiver!(p, [0.35], [6.0], quiver=([0.0], [-3.2]), color=:black)\n    quiver!(p, [0.4], [6.0], quiver=([0.0], [-3.8]), color=:black)\n    quiver!(p, [0.45], [6.0], quiver=([0.0], [-4.0]), color=:black)\n    quiver!(p, [0.5], [6.0], quiver=([0.0], [-4.5]), color=:black)\n    quiver!(p, [0.55], [6.0], quiver=([0.0], [-5.9]), color=:black)\n    quiver!(p, [0.6], [6.0], quiver=([0.0], [-5.9]), color=:black)\n\n    return p\nend\nb_vals = 0.01:0.01:0.6\n\np = plot_P_flux(b_vals)\ndisplay(p)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 8: Bifurcation diagram for the lake problem with no inputs."
+    "objectID": "slides/lecture04-1-simulation.html#euler-discretization",
+    "href": "slides/lecture04-1-simulation.html#euler-discretization",
+    "title": "Simulation and Box Models",
+    "section": "Euler Discretization",
+    "text": "Euler Discretization\nRecall that \\[\\frac{df}{dt} = \\lim_{\\Delta t \\to 0} \\frac{\\Delta f(t)}{\\Delta t}.\\]\nSo if we pick a sufficiently small step size \\(\\Delta t\\), can use this as an approximation:\n\\[\\frac{df}{dt} \\approx \\frac{\\Delta f(t)}{\\Delta t}\\]"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#implications-of-bifurcations",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#implications-of-bifurcations",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Implications of Bifurcations",
-    "text": "Implications of Bifurcations\nBifurcations have the following implications:\n\nUncertainty about system dynamics can dramatically change equilibria locations and behavior;\n“Shocks” (in this case, sedimentation/recycling disturbances or massive non-point source inflows) can irreversibly alter system outcomes."
+    "objectID": "slides/lecture04-1-simulation.html#discretizing-the-airshed-model",
+    "href": "slides/lecture04-1-simulation.html#discretizing-the-airshed-model",
+    "title": "Simulation and Box Models",
+    "section": "Discretizing the Airshed Model",
+    "text": "Discretizing the Airshed Model\n\\[\n\\begin{align*}\n\\frac{d(CV)}{dt} &= (u WH) C_\\text{in} - (u WH) C(t) + S - D_0 - kC(t)V \\\\[0.5em]\n\\frac{d(C)}{dt} &= \\frac{u}{L} C_\\text{in} - \\frac{u}{L} C(t) + S - D_0 - kC(t) \\\\\n\\end{align*}\n\\]\n\n\\[\n\\frac{C(t+1) - C(t)}{\\Delta t} = \\frac{u}{L} C_\\text{in} - \\frac{u}{L} C(t) + S - D_0 - kC(t)\n\\]\n\n\n\\[\n\\bbox[5px, border: red 5px solid]{C(t+1) = C(t) + \\Delta t \\left(\\frac{u}{L} \\left(C_\\text{in} - C(t)\\right) + S - D_0 - kC(t)\\right)}\n\\]"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#feedback-loops",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#feedback-loops",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Feedback Loops",
-    "text": "Feedback Loops\n\n\nUnstable equilibria can result from reinforcing (positive) feedback loops, where a shock to the system state gets amplified.\nFeedback loops can also be dampening (negative), where a shock is weakened (stable equilibria).\n\n\n\n\nIce-Albedo Feedback Loop"
+    "objectID": "slides/lecture04-1-simulation.html#how-to-simulate",
+    "href": "slides/lecture04-1-simulation.html#how-to-simulate",
+    "title": "Simulation and Box Models",
+    "section": "How To Simulate?",
+    "text": "How To Simulate?\n\nPick \\(\\Delta t\\);\nStarting at \\(t=1\\), iterate equation until end-time \\(T\\)."
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#feedbacks-for-lake-eutrophication",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#feedbacks-for-lake-eutrophication",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Feedbacks for Lake Eutrophication",
-    "text": "Feedbacks for Lake Eutrophication\n\nEutrophication Feedback Loop"
+    "objectID": "slides/lecture04-1-simulation.html#simple-simulation-code",
+    "href": "slides/lecture04-1-simulation.html#simple-simulation-code",
+    "title": "Simulation and Box Models",
+    "section": "Simple Simulation Code",
+    "text": "Simple Simulation Code\n\n# this function computes the increment by which the concentration\n# is updated at each step\nfunction box_simulate_timestep(C, Ci, u, L, S, D, k)\n    return ((u / L) * (Ci - C) + S - D - (k * C))\nend\n\n# this function loops over the timesteps to simulate\n# the concentration series\nfunction airshed_simulate(C₀, Ci, u, L, S, D, k, T, Δt)\n    # initialize C storage\n    # for code simplicity we make the array length T+1 so\n    # index 1 is C₀\n    steps = Int64(T / Δt)\n    C = zeros(steps + 1)\n    C[1] = C₀\n    for t = 1:steps\n        C[t+1] = C[t] + \n            Δt * box_simulate_timestep(C[t], Ci, u, L, S, D, k)\n    end\n    # the first element of C is the initial condition\n    return C\nend\nΔt = 1.0\nT = 10\nC₀ = 0.1\nk = 0.3\nu = 2\nL = 4\nCi = 0.2\nS = 0.1\nD = 0.13\nC = airshed_simulate(C₀, Ci, u, L, S, D, k, T, Δt)"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#other-environmental-feedbacks",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#other-environmental-feedbacks",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Other Environmental Feedbacks",
-    "text": "Other Environmental Feedbacks\nCan we think of other examples of environmental feedback loops?\nAre they reinforcing or dampening?"
+    "objectID": "slides/lecture04-1-simulation.html#simulation-results",
+    "href": "slides/lecture04-1-simulation.html#simulation-results",
+    "title": "Simulation and Box Models",
+    "section": "Simulation Results",
+    "text": "Simulation Results\n\n\nCode\np = plot(; xlabel=\"Time\", ylabel=L\"Pollutant concentration (g/m$^3$)\")\n\n# find exact solution and plot for comparison\n# need these substitutions for the exact solution; not critical otherwise\nV = 80\nP = (u / L) * Ci + S - D\nl = (u / L) + k\n# use steps of 0.01 to smooth the plotting\nC₁ = C₀ .* exp.(-l * (0:0.01:T))\nC₂ = (P / l) * (1 .- exp.(-l * (0:0.01:T)))\nC_exact = C₁ .+ C₂\nplot!(p, 0:0.01:T, C_exact, linewidth=3, color=:black, label=\"Exact Solution\")\n\n# add simulated solution\nplot!(p, 0:Δt:T, C, linewidth=3, color=:blue, label=\"Simulated Solution (Δt = 1)\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Simulation results for airshed model."
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#key-takeaways-equilibria",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#key-takeaways-equilibria",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Key Takeaways (Equilibria)",
-    "text": "Key Takeaways (Equilibria)\n\nSystem equilibria states can be stable or unstable.\nUnstable equilbria can be responsible for thresholds/tipping points.\nBifurcations: Changes to number/qualitative behavior of equilibria as system properties vary."
+    "objectID": "slides/lecture04-1-simulation.html#impact-of-time-step-size",
+    "href": "slides/lecture04-1-simulation.html#impact-of-time-step-size",
+    "title": "Simulation and Box Models",
+    "section": "Impact of Time Step Size",
+    "text": "Impact of Time Step Size\n\n\nCode\nCsmall = airshed_simulate(C₀, Ci, u, L, S, D, k, T, 0.1)\nplot!(p, 0:0.1:T, Csmall, linewidth=3, color=:purple, label=\"Simulated Solution (Δt = 0.1)\")\nCsmaller = airshed_simulate(C₀, Ci, u, L, S, D, k, T, 0.01)\nplot!(p, 0:0.1:T, Csmall, linewidth=3, color=:orange, label=\"Simulated Solution (Δt = 0.01)\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Simulation results for airshed model with varying timesteps."
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#key-takeaways-feedbacks",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#key-takeaways-feedbacks",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
-    "section": "Key Takeaways (Feedbacks)",
-    "text": "Key Takeaways (Feedbacks)\n\nFeedback loops can be reinforcing or dampening.\nReinforcing feedbacks: changes to system state are amplified, resulting in instability and evolution away from equilibrium state.\nDampening feedbacks: changes to system state are dampened, system reverts to stable equilibrium state."
+    "objectID": "slides/lecture04-1-simulation.html#time-varying-dynamic-simulation",
+    "href": "slides/lecture04-1-simulation.html#time-varying-dynamic-simulation",
+    "title": "Simulation and Box Models",
+    "section": "Time-Varying (Dynamic) Simulation",
+    "text": "Time-Varying (Dynamic) Simulation\nIn our prior example, inflow conditions were static (often an assumption needed for analytic solutions).\nThe simulation framework lets us make these time-varying:\n\\[\nC(t+1) = C(t) + \\Delta t \\left(\\frac{{\\color{red}u(t)}}{L} \\left({\\color{red}C_\\text{in}(t)} - C(t)\\right) + {\\color{red}S(t)} - {\\color{red}D(t)} - kC(t)\\right)\n\\]"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#next-classes",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#next-classes",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "objectID": "slides/lecture04-1-simulation.html#dynamic-simulation-code",
+    "href": "slides/lecture04-1-simulation.html#dynamic-simulation-code",
+    "title": "Simulation and Box Models",
+    "section": "Dynamic Simulation Code",
+    "text": "Dynamic Simulation Code\n\nfunction airshed_simulate_dynamic(C₀, Ci, u, L, S, D, k, T, Δt)\n    # initialize C storage\n    # for code simplicity we make the array length T+1 so\n    # index 1 is C₀\n    steps = Int64(T / Δt)\n    C = zeros(steps + 1)\n    C[1] = C₀\n    for t = 1:steps\n        C[t+1] = C[t] + Δt * box_simulate_timestep(C[t], Ci[t], u[t], L, S, D, k)\n    end\n    # the first element of C is the initial condition\n    return C\nend"
+  },
+  {
+    "objectID": "slides/lecture04-1-simulation.html#dynamic-inputs",
+    "href": "slides/lecture04-1-simulation.html#dynamic-inputs",
+    "title": "Simulation and Box Models",
+    "section": "Dynamic Inputs",
+    "text": "Dynamic Inputs\n\nCode\nΔt = 0.1\nsteps = Int(T / Δt) + 1\nu = rand(LogNormal(log(2), 0.05), steps)\nCi = rand(LogNormal(log(0.2), 0.1), steps)\n\npwind = plot(0:Δt:T, u; title=\"Wind Speed\", size=(550, 450), xlabel=\"Time\", ylabel=\"m/s\")\npincoming = plot(0:Δt:T, Ci; title=\"Incoming Concentration\", size=(550, 450), xlabel=\"Time\", ylabel=L\"$\\mathrm{g/m}^3$\")\n\ndisplay(pwind)\ndisplay(pincoming)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Dynamic simulation results for airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 3"
+  },
+  {
+    "objectID": "slides/lecture04-1-simulation.html#dynamic-simulation-results",
+    "href": "slides/lecture04-1-simulation.html#dynamic-simulation-results",
+    "title": "Simulation and Box Models",
+    "section": "Dynamic Simulation Results",
+    "text": "Dynamic Simulation Results\n\n\nCode\nCdynamic = airshed_simulate_dynamic(C₀, Ci, u, L, S, D, k, T, 0.1)\np = plot(; xlabel=\"Time\", ylabel=L\"Pollutant Concentration ($\\mathrm{g/m}^3$)\")\nplot!(p, 0:0.1:T, Cdynamic, linewidth=3, color=:purple, label=\"Dynamic Simulated Solution\")\nplot!(p, 0:0.1:T, Csmall, linewidth=3, color=:red, label=\"Static Simulated Solution\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Dynamic simulation results for airshed model."
+  },
+  {
+    "objectID": "slides/lecture04-1-simulation.html#more-complex-domains",
+    "href": "slides/lecture04-1-simulation.html#more-complex-domains",
+    "title": "Simulation and Box Models",
+    "section": "More Complex Domains",
+    "text": "More Complex Domains\nWe can use the single box simulation as a building block for more complex domains, possibly with different dynamics.\n\nTwo box airshed model"
+  },
+  {
+    "objectID": "slides/lecture04-1-simulation.html#multi-box-simulation-approach",
+    "href": "slides/lecture04-1-simulation.html#multi-box-simulation-approach",
+    "title": "Simulation and Box Models",
+    "section": "Multi-Box Simulation Approach",
+    "text": "Multi-Box Simulation Approach\nTip: Use smaller functions as a building block!"
+  },
+  {
+    "objectID": "slides/lecture04-1-simulation.html#multi-box-simulation-approach-1",
+    "href": "slides/lecture04-1-simulation.html#multi-box-simulation-approach-1",
+    "title": "Simulation and Box Models",
+    "section": "Multi-Box Simulation Approach",
+    "text": "Multi-Box Simulation Approach\n\n# here we use our timestep function on each box individually,\n# but update them \"together\"\nfunction airshed_twobox_simulate(C1₀, C2₀, Ci, u, L1, L2, S1, D1, S2, D2, k, T, Δt)\n    # initialize C storage\n    # for code simplicity we make the array length T+1 so\n    # index 1 is C₀\n    steps = Int64(T / Δt)\n    C1 = zeros(steps + 1)\n    C2 = zeros(steps + 1)\n    C1[1] = C1₀\n    C2[1] = C2₀\n    # for each time step, first we update box 1, then box 2\n    for t = 1:steps\n        C1[t+1] = C1[t] + Δt * box_simulate_timestep(C1[t], Ci, u, L1, S1, D1, k)\n        C2[t+1] = C2[t] + Δt * box_simulate_timestep(C2[t], C1[t+1], u, L2, S2, D2, k)\n    end\n    return (C1, C2)\nend"
+  },
+  {
+    "objectID": "slides/lecture04-1-simulation.html#two-box-simulation-results",
+    "href": "slides/lecture04-1-simulation.html#two-box-simulation-results",
+    "title": "Simulation and Box Models",
+    "section": "Two-Box Simulation Results",
+    "text": "Two-Box Simulation Results\n\nCode\nΔt = 0.1\nT = 10\nC1₀ = 0.05\nC2₀ = 0.1\nk = 0.3\nu = 2\nL1 = 6\nL2 = 4\nCi = 0.01\nS1 = 0.3\nD1 = 0.2\nS2 = 0.1\nD2 = 0.13\nC = airshed_twobox_simulate(C1₀, C2₀, Ci, u, L1, L2, S1, D1, S2, D2, k, T, Δt)\n\np1 = plot(0:0.1:T, C[1], linewidth=3, color=:purple, xlabel=\"Time\", ylabel=L\"Concentration ($\\mathrm{g/m}^3$)\", title=\"Box 1\", size=(600, 500))\np2 = plot(0:0.1:T, C[2], linewidth=3, color=:red, xlabel=\"Time\", ylabel=L\"Concentration ($\\mathrm{g/m}^3$)\", title=\"Box 2\", size=(600, 500))\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Simulation results for two-box airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 5"
+  },
+  {
+    "objectID": "slides/lecture04-1-simulation.html#key-takeaways-1",
+    "href": "slides/lecture04-1-simulation.html#key-takeaways-1",
+    "title": "Simulation and Box Models",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nSimulation modeling involves using a model to generate “data” under certain conditions.\nSimulations are the main approach to descriptive modeling.\nDivide domain into spatial domains and/or temporal steps and iterate.\nDiscretize equations if needed."
+  },
+  {
+    "objectID": "slides/lecture04-1-simulation.html#next-classes",
+    "href": "slides/lecture04-1-simulation.html#next-classes",
+    "title": "Simulation and Box Models",
     "section": "Next Classes",
-    "text": "Next Classes\nNext Week: Simulation Models"
+    "text": "Next Classes\nNext Week: Dissolved Oxygen"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#assessments",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#assessments",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "objectID": "slides/lecture04-1-simulation.html#assessments",
+    "href": "slides/lecture04-1-simulation.html#assessments",
+    "title": "Simulation and Box Models",
     "section": "Assessments",
     "text": "Assessments\nHomework 2: Due 9/19 at 9pm"
   },
   {
-    "objectID": "slides/lecture04-2-dynamics-feedbacks.html#references-1",
-    "href": "slides/lecture04-2-dynamics-feedbacks.html#references-1",
-    "title": "System Dynamics: Equilibria, Bifurcations, and Feedbacks",
+    "objectID": "slides/lecture04-1-simulation.html#references-1",
+    "href": "slides/lecture04-1-simulation.html#references-1",
+    "title": "Simulation and Box Models",
     "section": "References",
-    "text": "References\n\n\n\n\n\n\n\n\nCarpenter, S. R., Ludwig, D., & Brock, W. A. (1999). Management of eutrophication for lakes subject to potentially irreversible change. Ecol. Appl., 9(3), 751–771. https://doi.org/10.2307/2641327\n\n\nQuinn, J. D., Reed, P. M., & Keller, K. (2017). Direct policy search for robust multi-objective management of deeply uncertain socio-ecological tipping points. Environmental Modelling & Software, 92, 125–141. https://doi.org/10.1016/j.envsoft.2017.02.017"
+    "text": "References"
   },
   {
     "objectID": "slides/lecture01-2-lab-setup.html#lab-instructions",
@@ -3100,237 +3331,6 @@
     "title": "Julia and GitHub Basics",
     "section": "Assessments",
     "text": "Assessments\n\nWeekly Exercises: Basically a syllabus quiz.\nHW 1: Available, due 9/6."
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#lake-eutrophication-model",
-    "href": "slides/lecture03-2-simulation.html#lake-eutrophication-model",
-    "title": "Simulation and Box Models",
-    "section": "Lake Eutrophication Model",
-    "text": "Lake Eutrophication Model\n\nSchematic of processes resulting in lake eutrophication"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#modeling-information-needs",
-    "href": "slides/lecture03-2-simulation.html#modeling-information-needs",
-    "title": "Simulation and Box Models",
-    "section": "Modeling Information Needs",
-    "text": "Modeling Information Needs\n\nWhat will happen to the waste in the environment (fate & transport)?\nWhat are potential impacts and acceptable levels or critical thresholds?\nWhat are options to manage the waste?"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#mass-balance-and-fate-transport",
-    "href": "slides/lecture03-2-simulation.html#mass-balance-and-fate-transport",
-    "title": "Simulation and Box Models",
-    "section": "Mass-Balance and Fate & Transport",
-    "text": "Mass-Balance and Fate & Transport\n\nUsed principles of mass-balance to derive a fate & transport model for the system dynamics.\nAccounted for point and non-point source loading and environmental quality thresholds.\nUse of model depends on prescriptive vs. descriptive purpose."
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#questions",
-    "href": "slides/lecture03-2-simulation.html#questions",
-    "title": "Simulation and Box Models",
-    "section": "Questions?",
-    "text": "Questions?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#what-is-simulation",
-    "href": "slides/lecture03-2-simulation.html#what-is-simulation",
-    "title": "Simulation and Box Models",
-    "section": "What is Simulation?",
-    "text": "What is Simulation?\nSimulation: evaluating a model to understand how a system might evolve under a particular set of conditions.\n\nThink of simulation as data generation (or generative modeling).\nThe model represents a particular data-generating process."
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#why-simulate-systems",
-    "href": "slides/lecture03-2-simulation.html#why-simulate-systems",
-    "title": "Simulation and Box Models",
-    "section": "Why Simulate Systems?",
-    "text": "Why Simulate Systems?\n\n\nSystem involves complex, nonlinear dynamics that may not be analytically tractable.\nSetting up and running a real-world experiment is not possible.\nState depends on prior states or states of nearby locations, so need to iterate over multiple spatial or temporal steps.\nNeed to understand range of system performance across rarely-seen conditions."
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#types-of-simulation-models",
-    "href": "slides/lecture03-2-simulation.html#types-of-simulation-models",
-    "title": "Simulation and Box Models",
-    "section": "Types of Simulation Models",
-    "text": "Types of Simulation Models\n\nDeterministic vs. Stochastic\nDiscrete vs. Continuous"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#simulation-model-workflow",
-    "href": "slides/lecture03-2-simulation.html#simulation-model-workflow",
-    "title": "Simulation and Box Models",
-    "section": "Simulation Model Workflow",
-    "text": "Simulation Model Workflow\n\nSimulation Workflow"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#simulation-model-applications",
-    "href": "slides/lecture03-2-simulation.html#simulation-model-applications",
-    "title": "Simulation and Box Models",
-    "section": "Simulation Model Applications",
-    "text": "Simulation Model Applications\n\nWater balance/hydrologic flow models;\nClimate models (ocean heat/CO\\(_2\\) uptake through “box” layers)\nAirsheds\nEpidemiology\nSocial science (agent-based models)"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#what-is-a-box-model",
-    "href": "slides/lecture03-2-simulation.html#what-is-a-box-model",
-    "title": "Simulation and Box Models",
-    "section": "What Is A Box Model?",
-    "text": "What Is A Box Model?\nBox models are a common building block of simulation models.\n\n\nBox models are all about mass-balance (mass \\(m\\)), assume well-mixed within box.\nCan be steady-state \\((\\dot{m} = 0)\\) or not.\n\n\n\n\nSteady-State Box Example"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#airshed-model",
-    "href": "slides/lecture03-2-simulation.html#airshed-model",
-    "title": "Simulation and Box Models",
-    "section": "Airshed Model",
-    "text": "Airshed Model\nLet’s look at a simple steady-state model of an airshed.\n\n\n\nVariable\nMeaning\nUnits\n\n\n\n\n\\(m\\)\nmass of some air pollutant\ng\n\n\n\\(C\\)\nconcentration in box\ng/m\\(^3\\)\n\n\n\\(S, D\\)\nsource, deposition rate within the box\ng/s\n\n\n\\(u\\)\nwind speed\nm/s\n\n\n\\(L, W, H\\)\nbox dimensions\nm"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#selecting-box-dimensions",
-    "href": "slides/lecture03-2-simulation.html#selecting-box-dimensions",
-    "title": "Simulation and Box Models",
-    "section": "Selecting Box Dimensions",
-    "text": "Selecting Box Dimensions\nWhat is relevant for the box dimensions \\(L\\), \\(W\\), and \\(H\\)?\nPrimarily the assumption(s) about mixing:\n\nMixing height: is there an atmospheric inversion which limits mixing height?\nHomogeneity of input/output flows and emissions."
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#steady-state-airshed-box-model",
-    "href": "slides/lecture03-2-simulation.html#steady-state-airshed-box-model",
-    "title": "Simulation and Box Models",
-    "section": "Steady-State Airshed Box Model",
-    "text": "Steady-State Airshed Box Model\nSteady-state box ⇒ \\(\\dot{m} = 0\\).\n\n\\[\\begin{align}\n0 &= m_\\text{in} - m_\\text{out} + S - D \\\\[0.5em]\n&\\class{\\fragment}{{} = (u WH) C_\\text{in} - (u WH) C + S - D } \\\\[0.5em]\n\\end{align}\\]\n\n\nSolving for \\(C\\): \\[C = C_{in} + \\frac{S-D}{uWH}\\]"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#decay-processes",
-    "href": "slides/lecture03-2-simulation.html#decay-processes",
-    "title": "Simulation and Box Models",
-    "section": "Decay Processes",
-    "text": "Decay Processes\nNow let’s assume some process affecting \\(m\\) depends on time.\nFor example: let’s say we care about an air pollutant which has a first-order decay rate \\(k\\), so \\(D(t) = D_0 - km(t)\\).\n\\[\n\\Rightarrow \\frac{dm}{dt} = m_\\text{in} - m_\\text{out} + S - D_0 - km\n\\]\n\n\\[\n\\dot{m} = \\frac{d(CV)}{dt} = \\overbrace{(u WH) C_\\text{in}}^{\\text{inflow}} - \\overbrace{(u WH) C}^{\\text{outflow}} + \\overbrace{S - D_0}^{\\text{net emissions}} - \\overbrace{kCV}^{\\text{mass decay}}\n\\]"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#discretizing-continuous-models",
-    "href": "slides/lecture03-2-simulation.html#discretizing-continuous-models",
-    "title": "Simulation and Box Models",
-    "section": "Discretizing Continuous Models",
-    "text": "Discretizing Continuous Models\nWe could analytically solve this particular differential equation, but in general this may not be possible without strong assumptions.\nInstead, we can discretize these models using methods from CEE 3200!"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#euler-discretization",
-    "href": "slides/lecture03-2-simulation.html#euler-discretization",
-    "title": "Simulation and Box Models",
-    "section": "Euler Discretization",
-    "text": "Euler Discretization\nRecall that \\[\\frac{df}{dt} = \\lim_{\\Delta t \\to 0} \\frac{\\Delta f(t)}{\\Delta t}.\\]\nSo if we pick a sufficiently small step size \\(\\Delta t\\), can use this as an approximation:\n\\[\\frac{df}{dt} \\approx \\frac{\\Delta f(t)}{\\Delta t}\\]"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#discretizing-the-airshed-model",
-    "href": "slides/lecture03-2-simulation.html#discretizing-the-airshed-model",
-    "title": "Simulation and Box Models",
-    "section": "Discretizing the Airshed Model",
-    "text": "Discretizing the Airshed Model\n\\[\n\\begin{align*}\n\\frac{d(CV)}{dt} &= (u WH) C_\\text{in} - (u WH) C(t) + S - D_0 - kC(t)V \\\\[0.5em]\n\\frac{d(C)}{dt} &= \\frac{u}{L} C_\\text{in} - \\frac{u}{L} C(t) + S - D_0 - kC(t) \\\\\n\\end{align*}\n\\]\n\n\\[\n\\frac{C(t+1) - C(t)}{\\Delta t} = \\frac{u}{L} C_\\text{in} - \\frac{u}{L} C(t) + S - D_0 - kC(t)\n\\]\n\n\n\\[\n\\bbox[5px, border: red 5px solid]{C(t+1) = C(t) + \\Delta t \\left(\\frac{u}{L} \\left(C_\\text{in} - C(t)\\right) + S - D_0 - kC(t)\\right)}\n\\]"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#how-to-simulate",
-    "href": "slides/lecture03-2-simulation.html#how-to-simulate",
-    "title": "Simulation and Box Models",
-    "section": "How To Simulate?",
-    "text": "How To Simulate?\n\nPick \\(\\Delta t\\);\nStarting at \\(t=1\\), iterate equation until end-time \\(T\\)."
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#simple-simulation-code",
-    "href": "slides/lecture03-2-simulation.html#simple-simulation-code",
-    "title": "Simulation and Box Models",
-    "section": "Simple Simulation Code",
-    "text": "Simple Simulation Code\n\n# this function computes the increment by which the concentration\n# is updated at each step\nfunction box_simulate_timestep(C, Ci, u, L, S, D, k)\n    return ((u / L) * (Ci - C) + S - D - (k * C))\nend\n\n# this function loops over the timesteps to simulate\n# the concentration series\nfunction airshed_simulate(C₀, Ci, u, L, S, D, k, T, Δt)\n    # initialize C storage\n    # for code simplicity we make the array length T+1 so\n    # index 1 is C₀\n    steps = Int64(T / Δt)\n    C = zeros(steps + 1)\n    C[1] = C₀\n    for t = 1:steps\n        C[t+1] = C[t] + \n            Δt * box_simulate_timestep(C[t], Ci, u, L, S, D, k)\n    end\n    # the first element of C is the initial condition\n    return C\nend\nΔt = 1.0\nT = 10\nC₀ = 0.1\nk = 0.3\nu = 2\nL = 4\nCi = 0.2\nS = 0.1\nD = 0.13\nC = airshed_simulate(C₀, Ci, u, L, S, D, k, T, Δt)"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#simulation-results",
-    "href": "slides/lecture03-2-simulation.html#simulation-results",
-    "title": "Simulation and Box Models",
-    "section": "Simulation Results",
-    "text": "Simulation Results\n\n\nCode\np = plot(; xlabel=\"Time\", ylabel=L\"Pollutant concentration (g/m$^3$)\")\n\n# find exact solution and plot for comparison\n# need these substitutions for the exact solution; not critical otherwise\nV = 80\nP = (u / L) * Ci + S - D\nl = (u / L) + k\n# use steps of 0.01 to smooth the plotting\nC₁ = C₀ .* exp.(-l * (0:0.01:T))\nC₂ = (P / l) * (1 .- exp.(-l * (0:0.01:T)))\nC_exact = C₁ .+ C₂\nplot!(p, 0:0.01:T, C_exact, linewidth=3, color=:black, label=\"Exact Solution\")\n\n# add simulated solution\nplot!(p, 0:Δt:T, C, linewidth=3, color=:blue, label=\"Simulated Solution (Δt = 1)\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Simulation results for airshed model."
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#impact-of-time-step-size",
-    "href": "slides/lecture03-2-simulation.html#impact-of-time-step-size",
-    "title": "Simulation and Box Models",
-    "section": "Impact of Time Step Size",
-    "text": "Impact of Time Step Size\n\n\nCode\nCsmall = airshed_simulate(C₀, Ci, u, L, S, D, k, T, 0.1)\nplot!(p, 0:0.1:T, Csmall, linewidth=3, color=:purple, label=\"Simulated Solution (Δt = 0.1)\")\nCsmaller = airshed_simulate(C₀, Ci, u, L, S, D, k, T, 0.01)\nplot!(p, 0:0.1:T, Csmall, linewidth=3, color=:orange, label=\"Simulated Solution (Δt = 0.01)\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Simulation results for airshed model with varying timesteps."
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#time-varying-dynamic-simulation",
-    "href": "slides/lecture03-2-simulation.html#time-varying-dynamic-simulation",
-    "title": "Simulation and Box Models",
-    "section": "Time-Varying (Dynamic) Simulation",
-    "text": "Time-Varying (Dynamic) Simulation\nIn our prior example, inflow conditions were static (often an assumption needed for analytic solutions).\nThe simulation framework lets us make these time-varying:\n\\[\nC(t+1) = C(t) + \\Delta t \\left(\\frac{{\\color{red}u(t)}}{L} \\left({\\color{red}C_\\text{in}(t)} - C(t)\\right) + {\\color{red}S(t)} - {\\color{red}D(t)} - kC(t)\\right)\n\\]"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#dynamic-simulation-code",
-    "href": "slides/lecture03-2-simulation.html#dynamic-simulation-code",
-    "title": "Simulation and Box Models",
-    "section": "Dynamic Simulation Code",
-    "text": "Dynamic Simulation Code\n\nfunction airshed_simulate_dynamic(C₀, Ci, u, L, S, D, k, T, Δt)\n    # initialize C storage\n    # for code simplicity we make the array length T+1 so\n    # index 1 is C₀\n    steps = Int64(T / Δt)\n    C = zeros(steps + 1)\n    C[1] = C₀\n    for t = 1:steps\n        C[t+1] = C[t] + Δt * box_simulate_timestep(C[t], Ci[t], u[t], L, S, D, k)\n    end\n    # the first element of C is the initial condition\n    return C\nend"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#dynamic-inputs",
-    "href": "slides/lecture03-2-simulation.html#dynamic-inputs",
-    "title": "Simulation and Box Models",
-    "section": "Dynamic Inputs",
-    "text": "Dynamic Inputs\n\nCode\nΔt = 0.1\nsteps = Int(T / Δt) + 1\nu = rand(LogNormal(log(2), 0.05), steps)\nCi = rand(LogNormal(log(0.2), 0.1), steps)\n\npwind = plot(0:Δt:T, u; title=\"Wind Speed\", size=(550, 450), xlabel=\"Time\", ylabel=\"m/s\")\npincoming = plot(0:Δt:T, Ci; title=\"Incoming Concentration\", size=(550, 450), xlabel=\"Time\", ylabel=L\"$\\mathrm{g/m}^3$\")\n\ndisplay(pwind)\ndisplay(pincoming)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Dynamic simulation results for airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 3"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#dynamic-simulation-results",
-    "href": "slides/lecture03-2-simulation.html#dynamic-simulation-results",
-    "title": "Simulation and Box Models",
-    "section": "Dynamic Simulation Results",
-    "text": "Dynamic Simulation Results\n\n\nCode\nCdynamic = airshed_simulate_dynamic(C₀, Ci, u, L, S, D, k, T, 0.1)\np = plot(; xlabel=\"Time\", ylabel=L\"Pollutant Concentration ($\\mathrm{g/m}^3$)\")\nplot!(p, 0:0.1:T, Cdynamic, linewidth=3, color=:purple, label=\"Dynamic Simulated Solution\")\nplot!(p, 0:0.1:T, Csmall, linewidth=3, color=:red, label=\"Static Simulated Solution\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Dynamic simulation results for airshed model."
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#more-complex-domains",
-    "href": "slides/lecture03-2-simulation.html#more-complex-domains",
-    "title": "Simulation and Box Models",
-    "section": "More Complex Domains",
-    "text": "More Complex Domains\nWe can use the single box simulation as a building block for more complex domains, possibly with different dynamics.\n\nTwo box airshed model"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#multi-box-simulation-approach",
-    "href": "slides/lecture03-2-simulation.html#multi-box-simulation-approach",
-    "title": "Simulation and Box Models",
-    "section": "Multi-Box Simulation Approach",
-    "text": "Multi-Box Simulation Approach\nTip: Use smaller functions as a building block!"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#multi-box-simulation-approach-1",
-    "href": "slides/lecture03-2-simulation.html#multi-box-simulation-approach-1",
-    "title": "Simulation and Box Models",
-    "section": "Multi-Box Simulation Approach",
-    "text": "Multi-Box Simulation Approach\n\n# here we use our timestep function on each box individually,\n# but update them \"together\"\nfunction airshed_twobox_simulate(C1₀, C2₀, Ci, u, L1, L2, S1, D1, S2, D2, k, T, Δt)\n    # initialize C storage\n    # for code simplicity we make the array length T+1 so\n    # index 1 is C₀\n    steps = Int64(T / Δt)\n    C1 = zeros(steps + 1)\n    C2 = zeros(steps + 1)\n    C1[1] = C1₀\n    C2[1] = C2₀\n    # for each time step, first we update box 1, then box 2\n    for t = 1:steps\n        C1[t+1] = C1[t] + Δt * box_simulate_timestep(C1[t], Ci, u, L1, S1, D1, k)\n        C2[t+1] = C2[t] + Δt * box_simulate_timestep(C2[t], C1[t+1], u, L2, S2, D2, k)\n    end\n    return (C1, C2)\nend"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#two-box-simulation-results",
-    "href": "slides/lecture03-2-simulation.html#two-box-simulation-results",
-    "title": "Simulation and Box Models",
-    "section": "Two-Box Simulation Results",
-    "text": "Two-Box Simulation Results\n\nCode\nΔt = 0.1\nT = 10\nC1₀ = 0.05\nC2₀ = 0.1\nk = 0.3\nu = 2\nL1 = 6\nL2 = 4\nCi = 0.01\nS1 = 0.3\nD1 = 0.2\nS2 = 0.1\nD2 = 0.13\nC = airshed_twobox_simulate(C1₀, C2₀, Ci, u, L1, L2, S1, D1, S2, D2, k, T, Δt)\n\np1 = plot(0:0.1:T, C[1], linewidth=3, color=:purple, xlabel=\"Time\", ylabel=L\"Concentration ($\\mathrm{g/m}^3$)\", title=\"Box 1\", size=(600, 500))\np2 = plot(0:0.1:T, C[2], linewidth=3, color=:red, xlabel=\"Time\", ylabel=L\"Concentration ($\\mathrm{g/m}^3$)\", title=\"Box 2\", size=(600, 500))\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Simulation results for two-box airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 5"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#key-takeaways-1",
-    "href": "slides/lecture03-2-simulation.html#key-takeaways-1",
-    "title": "Simulation and Box Models",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nSimulation modeling involves using a model to generate “data” under certain conditions.\nSimulations are the main approach to descriptive modeling.\nDivide domain into spatial domains and/or temporal steps and iterate.\nDiscretize equations if needed."
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#next-classes",
-    "href": "slides/lecture03-2-simulation.html#next-classes",
-    "title": "Simulation and Box Models",
-    "section": "Next Classes",
-    "text": "Next Classes\nNext Week: Dissolved Oxygen"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#assessments",
-    "href": "slides/lecture03-2-simulation.html#assessments",
-    "title": "Simulation and Box Models",
-    "section": "Assessments",
-    "text": "Assessments\nHomework 2: Due 9/19 at 9pm"
-  },
-  {
-    "objectID": "slides/lecture03-2-simulation.html#references-1",
-    "href": "slides/lecture03-2-simulation.html#references-1",
-    "title": "Simulation and Box Models",
-    "section": "References",
-    "text": "References"
   },
   {
     "objectID": "slides/notebooks/dissolved-oxygen.html",

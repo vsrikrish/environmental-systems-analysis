@@ -1,10 +1,10 @@
 ---
 title: "Simulation and Box Models"
-subtitle: "Lecture 05"
+subtitle: "Lecture 06"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"
-date: "September 11, 2024"
+date: "September 16, 2024"
 format:
     revealjs:
         slide-number: c/t
@@ -327,7 +327,10 @@ In our prior example, inflow conditions were *static* (**often an assumption nee
 The simulation framework lets us make these time-varying:
 
 $$
-C(t+1) = C(t) + \Delta t \left(\frac{{\color{red}u(t)}}{L} \left({\color{red}C_\text{in}(t)} - C(t)\right) + {\color{red}S(t)} - {\color{red}D(t)} - kC(t)\right)
+\begin{aligned}
+C(t+1) &= C(t) + \\
+& \qquad \Delta t \left(\frac{{\color{red}u(t)}}{L} \left({\color{red}C_\text{in}(t)} - C(t)\right) + {\color{red}S(t)} - {\color{red}D(t)} - kC(t)\right)
+\end{aligned}
 $$
 
 ## Dynamic Simulation Code

@@ -1,10 +1,10 @@
 ---
 title: "Simulation Example: Dissolved Oxygen"
-subtitle: "Lecture 06"
+subtitle: "Lecture 07"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"
-date: "September 16, 2024"
+date: "September 18, 2024"
 format:
     revealjs:
         slide-number: c/t
@@ -340,60 +340,6 @@ C(x) &= C_s(1 - \alpha_1) + C_0 \alpha_1 - B_0 \alpha_2 - N_0 \alpha_3 + \left(\
 \end{align}
 :::
 
-# Julia Sidebar: Loops and Broadcasting
-
-## How To Simulate
-
-Single equation, straightforward to evaluate across many values of $x$ with a loop.
-
-```julia
-x = 0:x_step:x_max # array from 0 to x_max in stepsize x_step
-
-C = zeroes(length(x)) # initialize storage
-for (i, y) in pairs(x)
-    C[i] = dissolved_oxygen(y, parameters)
-end
-```
-
-## Loop Alternatives
-
-Loops in Julia are fast and should be used freely. 
-
-But there are some more concise alternatives, which may be more readable in some cases.
-
-## Broadcasting
-
-But some more concise alternatives (which may be more readable) include **broadcasting**:
-
-```julia
-x = 0:x_step:x_max # array from 0 to x_max in stepsize x_step
-
-# evaluate DO function over every x with fixed parameters
-C = (y -> dissolved_oxygen(y, parameters)).(x) 
-```
-
-Broadcasting gets finicky over multiple inputs.
-
-## Comprehensions
-
-...And **comprehensions** (in-line for loops, also in Python):
-
-```julia
-x = 0:x_step:x_max # array from 0 to x_max in stepsize x_step
-
-# evaluate DO function over every x with fixed parameters
-C = [dissolved_oxygen(y, parameters) for y in x]
-```
-
-Can "stack" the `for` loops in a comprehension to nest.
-
-## When To Use Loops?
-
-Think about readability and ease of debugging!
-
-- If your code is complex and not wrapped in a function, or you have several nested loops, you should use a loop (*just be careful of scope...*)
-- If your code is complex, may be worth asking if you should write a function instead and use broadcasting or a comprehension.
-
 # Simulation Example
 
 ## Single-Discharge Example
@@ -583,11 +529,9 @@ hline!([3], color=:red, linewidth=3, label="Regulation", linestyle=:dash)
 
 ## Next Classes
 
-**Wednesday**: Why Are Systems Complicated?
-
 **Next Week**: Uncertainty and Monte Carlo
 
 ## Assessments
 
-**HW2**: Due Thursday at 9pm.
+**Exercises**: Due Monday before class.
 

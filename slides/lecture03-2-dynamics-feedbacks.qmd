@@ -1,10 +1,10 @@
 ---
 title: "System Dynamics: Equilibria, Bifurcations, and Feedbacks"
-subtitle: "Lecture 07"
+subtitle: "Lecture 05"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"
-date: "September 18, 2024"
+date: "September 11, 2024"
 format:
     revealjs:
         slide-number: c/t

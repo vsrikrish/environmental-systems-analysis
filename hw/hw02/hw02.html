@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-08-05">
+<meta name="dcterms.date" content="2024-09-08">
 
 <title>BEE 4750 Homework 2: Systems Modeling and Simulation – BEE 4750 - Fall 2024</title>
 <style>
@@ -467,7 +467,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 5, 2024</p>
+      <p class="date">September 8, 2024</p>
     </div>
   </div>
   
@@ -509,7 +509,7 @@ Due Date
 <h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
 <ul>
 <li>Problem 1 asks you to derive a model for water quality in a river system and use this model to check for regulatory compliance.</li>
-<li>Problem 2 asks you to discretize a simple climate model and use it to simulate global mean temperatures under a future emissions scenario.</li>
+<li>Problem 2 asks you to explore the dynamics and equilibrium stability of the shallow lake model under a particular set of parameter values.</li>
 <li>Problem 3 (5750 only) asks you to modify the lake eutrophication example from Lecture 04 to account for atmospheric deposition.</li>
 </ul>
 </section>
@@ -555,7 +555,7 @@ Due Date
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Your solution will need to be in terms of distance downriver.</p>
+<p>Formulate your model in terms of distance downriver, rather than leaving it in terms of time from discharge.</p>
 </div>
 </div>
 </div>
@@ -578,7 +578,7 @@ y_t &amp;\sim \text{LogNormal}(\mu, \sigma^2),
 </ul>
 <p><strong>In this problem</strong>:</p>
 <ul>
-<li><p>Make an initial conditions plot for the model dynamics for <span class="math inline">\(b=0.4\)</span>, <span class="math inline">\(q=2.5\)</span>, <span class="math inline">\(y_t=0\)</span>, and <span class="math inline">\(a_t=0\)</span> for <span class="math inline">\(t=0, \ldots, 30\)</span>. What are the equilibria? What can you say about the resilience of the system?</p>
+<li><p>Make an initial conditions plot for the model dynamics for <span class="math inline">\(b=0.5\)</span>, <span class="math inline">\(q=1.5\)</span>, <span class="math inline">\(y_t=0\)</span>, and <span class="math inline">\(a_t=0\)</span> for <span class="math inline">\(t=0, \ldots, 30\)</span>. What are the equilibria? What can you say about the resilience of the system?</p>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -592,13 +592,13 @@ Finding equilibria
 <p>Use <a href="https://juliamath.github.io/Roots.jl/stable/"><code>Roots.jl</code></a> to find the equilibria by solving for values where <span class="math inline">\(X_{t+1} = X_t\)</span>. For example, if you have functions <code>X_outflow(X,b)</code> and <code>X_recycling(X,q)</code>, you could create a function <code>X_delta(x, a) = a + X_recycling(x) - X_outflow(x)</code> and call <code>Roots.find_zero(x -&gt; X_delta(x, a), x₀)</code>, where <code>x₀</code> is an initial value for the search (you might need to use your plot to find values for <code>x₀</code> near each of the “true” equilibria).</p>
 </div>
 </div></li>
-<li><p>Repeat the analysis with <span class="math inline">\(a_t=0.05\)</span> for all <span class="math inline">\(t\)</span>. What are the new equilibria? How have the dynamics and resilience of the system changed?</p></li>
+<li><p>Repeat the analysis with <span class="math inline">\(a_t=0.02\)</span> for all <span class="math inline">\(t\)</span>. What are the new equilibria? How have the dynamics and resilience of the system changed?</p></li>
 </ul>
 </section>
 <section id="problem-3-10-points" class="level3 cell markdown">
 <h3 class="anchored" data-anchor-id="problem-3-10-points">Problem 3 (10 points)</h3>
 <p><strong>This problem is only required for students in BEE 5750</strong>.</p>
-<p>Consider the lake eutrophication example from <a href="https://viveks.me/environmental-systems-analysis/slides/lecture04-eutrophication-modeling.html#/title-slide">Lecture 04</a>. Suppose that phosphorous is also atmospherically deposited onto the lake surface at a rate of <span class="math inline">\(1.6 \times 10^{-4} \mathrm{kg/(yr} \cdot \mathrm{m}^2)\)</span>, which is then instantly mixed into the lake. Derive a model for the lake phosphorous concentration and find the maximum allowable point source phosphorous loading if the goal is to keep lake concentrations below 0.02 mg/L.</p>
+<p>Consider the lake eutrophication example from <a href="https://viveks.me/environmental-systems-analysis/slides/lecture03-1-eutrophication-modeling.html#/title-slide">Lecture 04</a>. Suppose that phosphorous is also atmospherically deposited onto the lake surface at a rate of <span class="math inline">\(1.6 \times 10^{-4} \mathrm{kg/(yr} \cdot \mathrm{m}^2)\)</span>, which is then instantly mixed into the lake. Derive a model for the lake phosphorous concentration and find the maximum allowable point source phosphorous loading if the goal is to keep lake concentrations below 0.02 mg/L.</p>
 </section>
 </section>
 <section id="references" class="level2 cell markdown">

@@ -72,21 +72,32 @@ default(
 
 # Review of Last Class
 
-## Lake Eutrophication Model
+## Shallow Lake Model
 
-![Schematic of processes resulting in lake eutrophication](figures/eutrophication-system-schematic.svg)
+- Model of phosphorous cycling
+- Features complex dynamics: multiple equilibria, feedbacks, bifurcations
 
-## Modeling Information Needs
+## Feedbacks
 
-1. What will happen to the waste in the environment (fate & transport)?
-2. What are potential impacts and acceptable levels or critical thresholds?
-3. *What are options to manage the waste?*
+:::: {.columns}
 
-## Mass-Balance and Fate & Transport
+::: {.column width=60%}
+Unstable equilibria can result from **reinforcing (positive) feedback loops**, where a shock to the system state gets amplified.
 
-- Used principles of mass-balance to derive a fate & transport model for the system dynamics.
-- Accounted for point and non-point source loading and environmental quality thresholds.
-- Use of model depends on **prescriptive** vs. **descriptive** purpose.
+Feedback loops can also be **dampening (negative)**, where a shock is weakened (stable equilibria).
+:::
+
+::: {.column width=40%}
+![Ice-Albedo Feedback Loop](figures/ice-albedo.svg){width=100%}
+:::
+
+::::
+
+## Tipping Points and Bifurcations
+
+- Uncertainty about system dynamics can dramatically change equilibria locations and behavior;
+- "Shocks" (in this case, sedimentation/recycling disturbances or massive non-point source inflows) can irreversibly alter system outcomes.
+
 
 ## Questions?
 

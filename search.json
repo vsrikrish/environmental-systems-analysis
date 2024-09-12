@@ -3067,25 +3067,25 @@
     "text": "Assessments\nHW3: Released today, due 10/03 at 9pm."
   },
   {
-    "objectID": "slides/lecture04-1-simulation.html#lake-eutrophication-model",
-    "href": "slides/lecture04-1-simulation.html#lake-eutrophication-model",
+    "objectID": "slides/lecture04-1-simulation.html#shallow-lake-model",
+    "href": "slides/lecture04-1-simulation.html#shallow-lake-model",
     "title": "Simulation and Box Models",
-    "section": "Lake Eutrophication Model",
-    "text": "Lake Eutrophication Model\n\nSchematic of processes resulting in lake eutrophication"
+    "section": "Shallow Lake Model",
+    "text": "Shallow Lake Model\n\nModel of phosphorous cycling\nFeatures complex dynamics: multiple equilibria, feedbacks, bifurcations"
   },
   {
-    "objectID": "slides/lecture04-1-simulation.html#modeling-information-needs",
-    "href": "slides/lecture04-1-simulation.html#modeling-information-needs",
+    "objectID": "slides/lecture04-1-simulation.html#feedbacks",
+    "href": "slides/lecture04-1-simulation.html#feedbacks",
     "title": "Simulation and Box Models",
-    "section": "Modeling Information Needs",
-    "text": "Modeling Information Needs\n\nWhat will happen to the waste in the environment (fate & transport)?\nWhat are potential impacts and acceptable levels or critical thresholds?\nWhat are options to manage the waste?"
+    "section": "Feedbacks",
+    "text": "Feedbacks\n\n\nUnstable equilibria can result from reinforcing (positive) feedback loops, where a shock to the system state gets amplified.\nFeedback loops can also be dampening (negative), where a shock is weakened (stable equilibria).\n\n\n\n\nIce-Albedo Feedback Loop"
   },
   {
-    "objectID": "slides/lecture04-1-simulation.html#mass-balance-and-fate-transport",
-    "href": "slides/lecture04-1-simulation.html#mass-balance-and-fate-transport",
+    "objectID": "slides/lecture04-1-simulation.html#tipping-points-and-bifurcations",
+    "href": "slides/lecture04-1-simulation.html#tipping-points-and-bifurcations",
     "title": "Simulation and Box Models",
-    "section": "Mass-Balance and Fate & Transport",
-    "text": "Mass-Balance and Fate & Transport\n\nUsed principles of mass-balance to derive a fate & transport model for the system dynamics.\nAccounted for point and non-point source loading and environmental quality thresholds.\nUse of model depends on prescriptive vs. descriptive purpose."
+    "section": "Tipping Points and Bifurcations",
+    "text": "Tipping Points and Bifurcations\n\nUncertainty about system dynamics can dramatically change equilibria locations and behavior;\n“Shocks” (in this case, sedimentation/recycling disturbances or massive non-point source inflows) can irreversibly alter system outcomes."
   },
   {
     "objectID": "slides/lecture04-1-simulation.html#questions",
@@ -3232,7 +3232,7 @@
     "href": "slides/lecture04-1-simulation.html#dynamic-inputs",
     "title": "Simulation and Box Models",
     "section": "Dynamic Inputs",
-    "text": "Dynamic Inputs\n\nCode\nΔt = 0.1\nsteps = Int(T / Δt) + 1\nu = rand(LogNormal(log(2), 0.05), steps)\nCi = rand(LogNormal(log(0.2), 0.1), steps)\n\npwind = plot(0:Δt:T, u; title=\"Wind Speed\", size=(550, 450), xlabel=\"Time\", ylabel=\"m/s\")\npincoming = plot(0:Δt:T, Ci; title=\"Incoming Concentration\", size=(550, 450), xlabel=\"Time\", ylabel=L\"$\\mathrm{g/m}^3$\")\n\ndisplay(pwind)\ndisplay(pincoming)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Dynamic simulation results for airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 3"
+    "text": "Dynamic Inputs\n\nCode\nΔt = 0.1\nsteps = Int(T / Δt) + 1\nu = rand(LogNormal(log(2), 0.05), steps)\nCi = rand(LogNormal(log(0.2), 0.1), steps)\n\npwind = plot(0:Δt:T, u; title=\"Wind Speed\", size=(550, 450), xlabel=\"Time\", ylabel=\"m/s\")\npincoming = plot(0:Δt:T, Ci; title=\"Incoming Concentration\", size=(550, 450), xlabel=\"Time\", ylabel=L\"$\\mathrm{g/m}^3$\")\n\ndisplay(pwind)\ndisplay(pincoming)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Dynamic simulation results for airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 3"
   },
   {
     "objectID": "slides/lecture04-1-simulation.html#dynamic-simulation-results",

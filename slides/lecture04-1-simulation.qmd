@@ -98,7 +98,6 @@ Feedback loops can also be **dampening (negative)**, where a shock is weakened (
 - Uncertainty about system dynamics can dramatically change equilibria locations and behavior;
 - "Shocks" (in this case, sedimentation/recycling disturbances or massive non-point source inflows) can irreversibly alter system outcomes.
 
-
 ## Questions?
 
 {{< include _poll-prompt.qmd >}}

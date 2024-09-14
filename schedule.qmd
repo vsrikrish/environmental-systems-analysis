@@ -17,8 +17,8 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 | 3    | Mon, Sep 09 | Modeling Example: Lake Eutrophication | [{{< fa sharp presentation-screen >}}](slides/lecture03-1-eutrophication-modeling.qmd) | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
 |      | Wed, Sep 11 | System Dynamics | [{{< fa sharp presentation-screen >}}](slides/lecture03-2-dynamics-feedbacks.qmd) | | | |
 | | | ***Module 2: Systems Simulation and Risk*** | | | |
-|  4   | Mon, Sep 16 | Simulation Modeling | | | | | 
-|      | Wed, Sep 18 | Example: Dissolved Oxygen | | | |
+|  4   | Mon, Sep 16 | Simulation Modeling | [{{< fa sharp presentation-screen >}}](slides/lecture04-1-simulation.qmd) | | | | 
+|      | Wed, Sep 18 | Example: Dissolved Oxygen | [{{< fa sharp presentation-screen >}}](slides/lecture04-2-dissolved-oxygen.qmd) | | |
 |  5    | Mon, Sep 23 | Uncertainty and Monte Carlo Simulation | | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
 |   | Wed, Sep 25 | Lab: Monte Carlo Simulation |  | [{{< fa sharp laptop-code >}}]{style="color:grey"} | | |
 |  6  | Mon, Sep 30 | Monte Carlo: Why It Works | | |  | |

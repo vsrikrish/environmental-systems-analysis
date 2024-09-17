@@ -3183,7 +3183,7 @@
     "href": "slides/lecture04-1-simulation.html#discretizing-the-airshed-model",
     "title": "Simulation and Box Models",
     "section": "Discretizing the Airshed Model",
-    "text": "Discretizing the Airshed Model\n\\[\n\\begin{align*}\n\\frac{d(CV)}{dt} &= (u WH) C_\\text{in} - (u WH) C(t) + S - D_0 - kC(t)V \\\\[0.5em]\n\\frac{d(C)}{dt} &= \\frac{u}{L} C_\\text{in} - \\frac{u}{L} C(t) + S - D_0 - kC(t) \\\\\n\\end{align*}\n\\]\n\n\\[\n\\frac{C(t+1) - C(t)}{\\Delta t} = \\frac{u}{L} C_\\text{in} - \\frac{u}{L} C(t) + S - D_0 - kC(t)\n\\]\n\n\n\\[\n\\bbox[5px, border: red 5px solid]{C(t+1) = C(t) + \\Delta t \\left(\\frac{u}{L} \\left(C_\\text{in} - C(t)\\right) + S - D_0 - kC(t)\\right)}\n\\]"
+    "text": "Discretizing the Airshed Model\n\\[\n\\begin{align*}\n\\frac{d(CV)}{dt} &= (u WH) C_\\text{in} - (u WH) C(t) + S - D_0 - kC(t)V \\\\[0.5em]\n\\frac{d(C)}{dt} &= \\frac{u}{L} C_\\text{in} - \\frac{u}{L} C(t) + \\frac{S - D_0}{V} - kC(t) \\\\\n\\end{align*}\n\\]\n\n\\[\n\\frac{C(t+1) - C(t)}{\\Delta t} = \\frac{u}{L} C_\\text{in} - \\frac{u}{L} C(t) + \\frac{S - D_0}{V} - kC(t)\n\\]\n\n\n\\[\n\\bbox[5px, border: red 5px solid]{C(t+1) = C(t) + \\Delta t \\left(\\frac{u}{L} \\left(C_\\text{in} - C(t)\\right) + \\frac{S - D_0}{V} - kC(t)\\right)}\n\\]"
   },
   {
     "objectID": "slides/lecture04-1-simulation.html#how-to-simulate",
@@ -3197,21 +3197,21 @@
     "href": "slides/lecture04-1-simulation.html#simple-simulation-code",
     "title": "Simulation and Box Models",
     "section": "Simple Simulation Code",
-    "text": "Simple Simulation Code\n\n# this function computes the increment by which the concentration\n# is updated at each step\nfunction box_simulate_timestep(C, Ci, u, L, S, D, k)\n    return ((u / L) * (Ci - C) + S - D - (k * C))\nend\n\n# this function loops over the timesteps to simulate\n# the concentration series\nfunction airshed_simulate(C₀, Ci, u, L, S, D, k, T, Δt)\n    # initialize C storage\n    # for code simplicity we make the array length T+1 so\n    # index 1 is C₀\n    steps = Int64(T / Δt)\n    C = zeros(steps + 1)\n    C[1] = C₀\n    for t = 1:steps\n        C[t+1] = C[t] + \n            Δt * box_simulate_timestep(C[t], Ci, u, L, S, D, k)\n    end\n    # the first element of C is the initial condition\n    return C\nend\nΔt = 1.0\nT = 10\nC₀ = 0.1\nk = 0.3\nu = 2\nL = 4\nCi = 0.2\nS = 0.1\nD = 0.13\nC = airshed_simulate(C₀, Ci, u, L, S, D, k, T, Δt)"
+    "text": "Simple Simulation Code\n\n# this function computes the increment by which the concentration\n# is updated at each step\nfunction box_simulate_timestep(C, Ci, u, W, H, L, S, D, k)\n    return ((u / L) * (Ci - C) + (S - D) / (W * H * L) - (k * C))\nend\n\n# this function loops over the timesteps to simulate\n# the concentration series\nfunction airshed_simulate(C₀, Ci, u, W, H, L, S, D, k, T, Δt)\n    # initialize C storage\n    # for code simplicity we make the array length T+1 so\n    # index 1 is C₀\n    steps = Int64(T / Δt)\n    C = zeros(steps + 1)\n    C[1] = C₀\n    for t = 1:steps\n        C[t+1] = C[t] + \n            Δt * box_simulate_timestep(C[t], Ci, u, W, H, L, S, D, k)\n    end\n    # the first element of C is the initial condition\n    return C\nend\nΔt = 1.0\nT = 10\nC₀ = 0.1\nk = 0.3\nu = 2\nL = 4\nW = 4\nH = 4\nCi = 0.2\nS = 10\nD = 13\nC = airshed_simulate(C₀, Ci, u, W, H, L, S, D, k, T, Δt)"
   },
   {
     "objectID": "slides/lecture04-1-simulation.html#simulation-results",
     "href": "slides/lecture04-1-simulation.html#simulation-results",
     "title": "Simulation and Box Models",
     "section": "Simulation Results",
-    "text": "Simulation Results\n\n\nCode\np = plot(; xlabel=\"Time\", ylabel=L\"Pollutant concentration (g/m$^3$)\")\n\n# find exact solution and plot for comparison\n# need these substitutions for the exact solution; not critical otherwise\nV = 80\nP = (u / L) * Ci + S - D\nl = (u / L) + k\n# use steps of 0.01 to smooth the plotting\nC₁ = C₀ .* exp.(-l * (0:0.01:T))\nC₂ = (P / l) * (1 .- exp.(-l * (0:0.01:T)))\nC_exact = C₁ .+ C₂\nplot!(p, 0:0.01:T, C_exact, linewidth=3, color=:black, label=\"Exact Solution\")\n\n# add simulated solution\nplot!(p, 0:Δt:T, C, linewidth=3, color=:blue, label=\"Simulated Solution (Δt = 1)\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Simulation results for airshed model."
+    "text": "Simulation Results\n\n\nCode\np = plot(; xlabel=\"Time\", ylabel=L\"Pollutant concentration (g/m$^3$)\")\n\n# find exact solution and plot for comparison\n# need these substitutions for the exact solution; not critical otherwise\nV = 4^3\nP = (u / L) * Ci + (S - D) / V\nl = (u / L) + k\n# use steps of 0.01 to smooth the plotting\nC₁ = C₀ .* exp.(-l * (0:0.01:T))\nC₂ = (P / l) * (1 .- exp.(-l * (0:0.01:T)))\nC_exact = C₁ .+ C₂\nplot!(p, 0:0.01:T, C_exact, linewidth=3, color=:black, label=\"Exact Solution\")\n\n# add simulated solution\nplot!(p, 0:Δt:T, C, linewidth=3, color=:blue, label=\"Simulated Solution (Δt = 1)\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Simulation results for airshed model."
   },
   {
     "objectID": "slides/lecture04-1-simulation.html#impact-of-time-step-size",
     "href": "slides/lecture04-1-simulation.html#impact-of-time-step-size",
     "title": "Simulation and Box Models",
     "section": "Impact of Time Step Size",
-    "text": "Impact of Time Step Size\n\n\nCode\nCsmall = airshed_simulate(C₀, Ci, u, L, S, D, k, T, 0.1)\nplot!(p, 0:0.1:T, Csmall, linewidth=3, color=:purple, label=\"Simulated Solution (Δt = 0.1)\")\nCsmaller = airshed_simulate(C₀, Ci, u, L, S, D, k, T, 0.01)\nplot!(p, 0:0.1:T, Csmall, linewidth=3, color=:orange, label=\"Simulated Solution (Δt = 0.01)\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Simulation results for airshed model with varying timesteps."
+    "text": "Impact of Time Step Size\n\n\nCode\nCsmall = airshed_simulate(C₀, Ci, u, W, H, L, S, D, k, T, 0.1)\nplot!(p, 0:0.1:T, Csmall, linewidth=3, color=:purple, label=\"Simulated Solution (Δt = 0.1)\")\nCsmaller = airshed_simulate(C₀, Ci, u, W, H, L, S, D, k, T, 0.01)\nplot!(p, 0:0.01:T, Csmaller, linewidth=3, color=:orange, label=\"Simulated Solution (Δt = 0.01)\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Simulation results for airshed model with varying timesteps."
   },
   {
     "objectID": "slides/lecture04-1-simulation.html#time-varying-dynamic-simulation",
@@ -3225,21 +3225,21 @@
     "href": "slides/lecture04-1-simulation.html#dynamic-simulation-code",
     "title": "Simulation and Box Models",
     "section": "Dynamic Simulation Code",
-    "text": "Dynamic Simulation Code\n\nfunction airshed_simulate_dynamic(C₀, Ci, u, L, S, D, k, T, Δt)\n    # initialize C storage\n    # for code simplicity we make the array length T+1 so\n    # index 1 is C₀\n    steps = Int64(T / Δt)\n    C = zeros(steps + 1)\n    C[1] = C₀\n    for t = 1:steps\n        C[t+1] = C[t] + Δt * box_simulate_timestep(C[t], Ci[t], u[t], L, S, D, k)\n    end\n    # the first element of C is the initial condition\n    return C\nend"
+    "text": "Dynamic Simulation Code\n\nfunction airshed_simulate_dynamic(C₀, Ci, u, W, H, L, S, D, k, T, Δt)\n    # initialize C storage\n    # for code simplicity we make the array length T+1 so\n    # index 1 is C₀\n    steps = Int64(T / Δt)\n    C = zeros(steps + 1)\n    C[1] = C₀\n    for t = 1:steps\n        C[t+1] = C[t] + Δt * box_simulate_timestep(C[t], Ci[t], u[t], W, H, L, S, D, k)\n    end\n    # the first element of C is the initial condition\n    return C\nend"
   },
   {
     "objectID": "slides/lecture04-1-simulation.html#dynamic-inputs",
     "href": "slides/lecture04-1-simulation.html#dynamic-inputs",
     "title": "Simulation and Box Models",
     "section": "Dynamic Inputs",
-    "text": "Dynamic Inputs\n\nCode\nΔt = 0.1\nsteps = Int(T / Δt) + 1\nu = rand(LogNormal(log(2), 0.05), steps)\nCi = rand(LogNormal(log(0.2), 0.1), steps)\n\npwind = plot(0:Δt:T, u; title=\"Wind Speed\", size=(550, 450), xlabel=\"Time\", ylabel=\"m/s\")\npincoming = plot(0:Δt:T, Ci; title=\"Incoming Concentration\", size=(550, 450), xlabel=\"Time\", ylabel=L\"$\\mathrm{g/m}^3$\")\n\ndisplay(pwind)\ndisplay(pincoming)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Dynamic simulation results for airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 3"
+    "text": "Dynamic Inputs\n\nCode\nΔt = 0.1\nsteps = Int(T / Δt) + 1\nu = rand(LogNormal(log(2), 0.05), steps)\nCi = rand(LogNormal(log(0.2), 0.1), steps)\n\npwind = plot(0:Δt:T, u; title=\"Wind Speed\", size=(550, 450), xlabel=\"Time\", ylabel=\"m/s\")\npincoming = plot(0:Δt:T, Ci; title=\"Incoming Concentration\", size=(550, 450), xlabel=\"Time\", ylabel=L\"$\\mathrm{g/m}^3$\")\n\ndisplay(pwind)\ndisplay(pincoming)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Dynamic simulation results for airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 3"
   },
   {
     "objectID": "slides/lecture04-1-simulation.html#dynamic-simulation-results",
     "href": "slides/lecture04-1-simulation.html#dynamic-simulation-results",
     "title": "Simulation and Box Models",
     "section": "Dynamic Simulation Results",
-    "text": "Dynamic Simulation Results\n\n\nCode\nCdynamic = airshed_simulate_dynamic(C₀, Ci, u, L, S, D, k, T, 0.1)\np = plot(; xlabel=\"Time\", ylabel=L\"Pollutant Concentration ($\\mathrm{g/m}^3$)\")\nplot!(p, 0:0.1:T, Cdynamic, linewidth=3, color=:purple, label=\"Dynamic Simulated Solution\")\nplot!(p, 0:0.1:T, Csmall, linewidth=3, color=:red, label=\"Static Simulated Solution\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Dynamic simulation results for airshed model."
+    "text": "Dynamic Simulation Results\n\n\nCode\nCdynamic = airshed_simulate_dynamic(C₀, Ci, u, W, H, L, S, D, k, T, 0.1)\np = plot(; xlabel=\"Time\", ylabel=L\"Pollutant Concentration ($\\mathrm{g/m}^3$)\")\nplot!(p, 0:0.1:T, Cdynamic, linewidth=3, color=:purple, label=\"Dynamic Simulated Solution\")\nplot!(p, 0:0.1:T, Csmall, linewidth=3, color=:red, label=\"Static Simulated Solution\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Dynamic simulation results for airshed model."
   },
   {
     "objectID": "slides/lecture04-1-simulation.html#more-complex-domains",
@@ -3260,14 +3260,14 @@
     "href": "slides/lecture04-1-simulation.html#multi-box-simulation-approach-1",
     "title": "Simulation and Box Models",
     "section": "Multi-Box Simulation Approach",
-    "text": "Multi-Box Simulation Approach\n\n# here we use our timestep function on each box individually,\n# but update them \"together\"\nfunction airshed_twobox_simulate(C1₀, C2₀, Ci, u, L1, L2, S1, D1, S2, D2, k, T, Δt)\n    # initialize C storage\n    # for code simplicity we make the array length T+1 so\n    # index 1 is C₀\n    steps = Int64(T / Δt)\n    C1 = zeros(steps + 1)\n    C2 = zeros(steps + 1)\n    C1[1] = C1₀\n    C2[1] = C2₀\n    # for each time step, first we update box 1, then box 2\n    for t = 1:steps\n        C1[t+1] = C1[t] + Δt * box_simulate_timestep(C1[t], Ci, u, L1, S1, D1, k)\n        C2[t+1] = C2[t] + Δt * box_simulate_timestep(C2[t], C1[t+1], u, L2, S2, D2, k)\n    end\n    return (C1, C2)\nend"
+    "text": "Multi-Box Simulation Approach\n\n# here we use our timestep function on each box individually,\n# but update them \"together\"\nfunction airshed_twobox_simulate(C1₀, C2₀, Ci, u, W1, W2, H1, H2, L1, L2, S1, D1, S2, D2, k, T, Δt)\n    # initialize C storage\n    # for code simplicity we make the array length T+1 so\n    # index 1 is C₀\n    steps = Int64(T / Δt)\n    C1 = zeros(steps + 1)\n    C2 = zeros(steps + 1)\n    C1[1] = C1₀\n    C2[1] = C2₀\n    # for each time step, first we update box 1, then box 2\n    for t = 1:steps\n        C1[t+1] = C1[t] + Δt * box_simulate_timestep(C1[t], Ci, u, W1, H1, L1, S1, D1, k)\n        C2[t+1] = C2[t] + Δt * box_simulate_timestep(C2[t], C1[t+1], u, W2, H2, L2, S2, D2, k)\n    end\n    return (C1, C2)\nend"
   },
   {
     "objectID": "slides/lecture04-1-simulation.html#two-box-simulation-results",
     "href": "slides/lecture04-1-simulation.html#two-box-simulation-results",
     "title": "Simulation and Box Models",
     "section": "Two-Box Simulation Results",
-    "text": "Two-Box Simulation Results\n\nCode\nΔt = 0.1\nT = 10\nC1₀ = 0.05\nC2₀ = 0.1\nk = 0.3\nu = 2\nL1 = 6\nL2 = 4\nCi = 0.01\nS1 = 0.3\nD1 = 0.2\nS2 = 0.1\nD2 = 0.13\nC = airshed_twobox_simulate(C1₀, C2₀, Ci, u, L1, L2, S1, D1, S2, D2, k, T, Δt)\n\np1 = plot(0:0.1:T, C[1], linewidth=3, color=:purple, xlabel=\"Time\", ylabel=L\"Concentration ($\\mathrm{g/m}^3$)\", title=\"Box 1\", size=(600, 500))\np2 = plot(0:0.1:T, C[2], linewidth=3, color=:red, xlabel=\"Time\", ylabel=L\"Concentration ($\\mathrm{g/m}^3$)\", title=\"Box 2\", size=(600, 500))\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Simulation results for two-box airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 5"
+    "text": "Two-Box Simulation Results\n\nCode\nΔt = 0.1\nT = 10\nC1₀ = 0.05\nC2₀ = 0.1\nk = 0.3\nu = 2\nW1 = 6\nH1 = 6\nL1 = 6\nW2 = 4\nH2 = 4\nL2 = 4\nCi = 0.01\nS1 = 30\nD1 = 20\nS2 = 10\nD2 = 13\nC = airshed_twobox_simulate(C1₀, C2₀, Ci, u, W1, W2, H1, H2, L1, L2, S1, D1, S2, D2, k, T, Δt)\n\np1 = plot(0:0.1:T, C[1], linewidth=3, color=:purple, xlabel=\"Time\", ylabel=L\"Concentration ($\\mathrm{g/m}^3$)\", title=\"Box 1\", size=(600, 500))\np2 = plot(0:0.1:T, C[2], linewidth=3, color=:red, xlabel=\"Time\", ylabel=L\"Concentration ($\\mathrm{g/m}^3$)\", title=\"Box 2\", size=(600, 500))\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Simulation results for two-box airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 5"
   },
   {
     "objectID": "slides/lecture04-1-simulation.html#key-takeaways-1",

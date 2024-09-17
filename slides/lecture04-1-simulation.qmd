@@ -229,18 +229,18 @@ $$\frac{df}{dt} \approx \frac{\Delta f(t)}{\Delta t}$$
 $$
 \begin{align*}
 \frac{d(CV)}{dt} &= (u WH) C_\text{in} - (u WH) C(t) + S - D_0 - kC(t)V \\[0.5em]
-\frac{d(C)}{dt} &= \frac{u}{L} C_\text{in} - \frac{u}{L} C(t) + S - D_0 - kC(t) \\
+\frac{d(C)}{dt} &= \frac{u}{L} C_\text{in} - \frac{u}{L} C(t) + \frac{S - D_0}{V} - kC(t) \\
 \end{align*}
 $$
 
 ::: {.fragment .fade-in}
 $$
-\frac{C(t+1) - C(t)}{\Delta t} = \frac{u}{L} C_\text{in} - \frac{u}{L} C(t) + S - D_0 - kC(t)
+\frac{C(t+1) - C(t)}{\Delta t} = \frac{u}{L} C_\text{in} - \frac{u}{L} C(t) + \frac{S - D_0}{V} - kC(t)
 $$
 :::
 ::: {.fragment .fade-in}
 $$
-\bbox[5px, border: red 5px solid]{C(t+1) = C(t) + \Delta t \left(\frac{u}{L} \left(C_\text{in} - C(t)\right) + S - D_0 - kC(t)\right)}
+\bbox[5px, border: red 5px solid]{C(t+1) = C(t) + \Delta t \left(\frac{u}{L} \left(C_\text{in} - C(t)\right) + \frac{S - D_0}{V} - kC(t)\right)}
 $$
 :::
 
@@ -258,13 +258,13 @@ $$
 
 # this function computes the increment by which the concentration
 # is updated at each step
-function box_simulate_timestep(C, Ci, u, L, S, D, k)
-    return ((u / L) * (Ci - C) + S - D - (k * C))
+function box_simulate_timestep(C, Ci, u, W, H, L, S, D, k)
+    return ((u / L) * (Ci - C) + (S - D) / (W * H * L) - (k * C))
 end
 
 # this function loops over the timesteps to simulate
 # the concentration series
-function airshed_simulate(C₀, Ci, u, L, S, D, k, T, Δt)
+function airshed_simulate(C₀, Ci, u, W, H, L, S, D, k, T, Δt)
     # initialize C storage
     # for code simplicity we make the array length T+1 so
     # index 1 is C₀
@@ -273,7 +273,7 @@ function airshed_simulate(C₀, Ci, u, L, S, D, k, T, Δt)
     C[1] = C₀
     for t = 1:steps
         C[t+1] = C[t] + 
-            Δt * box_simulate_timestep(C[t], Ci, u, L, S, D, k)
+            Δt * box_simulate_timestep(C[t], Ci, u, W, H, L, S, D, k)
     end
     # the first element of C is the initial condition
     return C
@@ -284,10 +284,12 @@ C₀ = 0.1
 k = 0.3
 u = 2
 L = 4
+W = 4
+H = 4
 Ci = 0.2
-S = 0.1
-D = 0.13
-C = airshed_simulate(C₀, Ci, u, L, S, D, k, T, Δt)
+S = 10
+D = 13
+C = airshed_simulate(C₀, Ci, u, W, H, L, S, D, k, T, Δt)
 ```
 
 ## Simulation Results
@@ -302,8 +304,8 @@ p = plot(; xlabel="Time", ylabel=L"Pollutant concentration (g/m$^3$)")
 
 # find exact solution and plot for comparison
 # need these substitutions for the exact solution; not critical otherwise
-V = 80
-P = (u / L) * Ci + S - D
+V = 4^3
+P = (u / L) * Ci + (S - D) / V
 l = (u / L) + k
 # use steps of 0.01 to smooth the plotting
 C₁ = C₀ .* exp.(-l * (0:0.01:T))
@@ -324,10 +326,10 @@ plot!(p, 0:Δt:T, C, linewidth=3, color=:blue, label="Simulated Solution (Δt = 
 #| echo: true
 #| code-fold: true
 
-Csmall = airshed_simulate(C₀, Ci, u, L, S, D, k, T, 0.1)
+Csmall = airshed_simulate(C₀, Ci, u, W, H, L, S, D, k, T, 0.1)
 plot!(p, 0:0.1:T, Csmall, linewidth=3, color=:purple, label="Simulated Solution (Δt = 0.1)")
-Csmaller = airshed_simulate(C₀, Ci, u, L, S, D, k, T, 0.01)
-plot!(p, 0:0.1:T, Csmall, linewidth=3, color=:orange, label="Simulated Solution (Δt = 0.01)")
+Csmaller = airshed_simulate(C₀, Ci, u, W, H, L, S, D, k, T, 0.01)
+plot!(p, 0:0.01:T, Csmaller, linewidth=3, color=:orange, label="Simulated Solution (Δt = 0.01)")
 ```
 
 ## Time-Varying (Dynamic) Simulation
@@ -350,7 +352,7 @@ $$
 #| output: false
 #| code-line-numbers: "1|9-10"
 
-function airshed_simulate_dynamic(C₀, Ci, u, L, S, D, k, T, Δt)
+function airshed_simulate_dynamic(C₀, Ci, u, W, H, L, S, D, k, T, Δt)
     # initialize C storage
     # for code simplicity we make the array length T+1 so
     # index 1 is C₀
@@ -358,7 +360,7 @@ function airshed_simulate_dynamic(C₀, Ci, u, L, S, D, k, T, Δt)
     C = zeros(steps + 1)
     C[1] = C₀
     for t = 1:steps
-        C[t+1] = C[t] + Δt * box_simulate_timestep(C[t], Ci[t], u[t], L, S, D, k)
+        C[t+1] = C[t] + Δt * box_simulate_timestep(C[t], Ci[t], u[t], W, H, L, S, D, k)
     end
     # the first element of C is the initial condition
     return C
@@ -395,7 +397,7 @@ display(pincoming)
 #| echo: true
 #| code-fold: true
 
-Cdynamic = airshed_simulate_dynamic(C₀, Ci, u, L, S, D, k, T, 0.1)
+Cdynamic = airshed_simulate_dynamic(C₀, Ci, u, W, H, L, S, D, k, T, 0.1)
 p = plot(; xlabel="Time", ylabel=L"Pollutant Concentration ($\mathrm{g/m}^3$)")
 plot!(p, 0:0.1:T, Cdynamic, linewidth=3, color=:purple, label="Dynamic Simulated Solution")
 plot!(p, 0:0.1:T, Csmall, linewidth=3, color=:red, label="Static Simulated Solution")
@@ -423,7 +425,7 @@ We can use the single box simulation as a building block for more complex domain
 
 # here we use our timestep function on each box individually,
 # but update them "together"
-function airshed_twobox_simulate(C1₀, C2₀, Ci, u, L1, L2, S1, D1, S2, D2, k, T, Δt)
+function airshed_twobox_simulate(C1₀, C2₀, Ci, u, W1, W2, H1, H2, L1, L2, S1, D1, S2, D2, k, T, Δt)
     # initialize C storage
     # for code simplicity we make the array length T+1 so
     # index 1 is C₀
@@ -434,8 +436,8 @@ function airshed_twobox_simulate(C1₀, C2₀, Ci, u, L1, L2, S1, D1, S2, D2, k,
     C2[1] = C2₀
     # for each time step, first we update box 1, then box 2
     for t = 1:steps
-        C1[t+1] = C1[t] + Δt * box_simulate_timestep(C1[t], Ci, u, L1, S1, D1, k)
-        C2[t+1] = C2[t] + Δt * box_simulate_timestep(C2[t], C1[t+1], u, L2, S2, D2, k)
+        C1[t+1] = C1[t] + Δt * box_simulate_timestep(C1[t], Ci, u, W1, H1, L1, S1, D1, k)
+        C2[t+1] = C2[t] + Δt * box_simulate_timestep(C2[t], C1[t+1], u, W2, H2, L2, S2, D2, k)
     end
     return (C1, C2)
 end
@@ -456,14 +458,18 @@ C1₀ = 0.05
 C2₀ = 0.1
 k = 0.3
 u = 2
+W1 = 6
+H1 = 6
 L1 = 6
+W2 = 4
+H2 = 4
 L2 = 4
 Ci = 0.01
-S1 = 0.3
-D1 = 0.2
-S2 = 0.1
-D2 = 0.13
-C = airshed_twobox_simulate(C1₀, C2₀, Ci, u, L1, L2, S1, D1, S2, D2, k, T, Δt)
+S1 = 30
+D1 = 20
+S2 = 10
+D2 = 13
+C = airshed_twobox_simulate(C1₀, C2₀, Ci, u, W1, W2, H1, H2, L1, L2, S1, D1, S2, D2, k, T, Δt)
 
 p1 = plot(0:0.1:T, C[1], linewidth=3, color=:purple, xlabel="Time", ylabel=L"Concentration ($\mathrm{g/m}^3$)", title="Box 1", size=(600, 500))
 p2 = plot(0:0.1:T, C[2], linewidth=3, color=:red, xlabel="Time", ylabel=L"Concentration ($\mathrm{g/m}^3$)", title="Box 2", size=(600, 500))

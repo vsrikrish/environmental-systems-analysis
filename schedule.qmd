@@ -19,8 +19,8 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 | | | ***Module 2: Systems Simulation and Risk*** | | | |
 |  4   | Mon, Sep 16 | Simulation Modeling | [{{< fa sharp presentation-screen >}}](slides/lecture04-1-simulation.qmd) | | | | 
 |      | Wed, Sep 18 | Example: Dissolved Oxygen | [{{< fa sharp presentation-screen >}}](slides/lecture04-2-dissolved-oxygen.qmd) | | |
-|  5    | Mon, Sep 23 | Uncertainty and Monte Carlo Simulation | | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
-|   | Wed, Sep 25 | Lab: Monte Carlo Simulation |  | [{{< fa sharp laptop-code >}}]{style="color:grey"} | | |
+|  5    | Mon, Sep 23 | Uncertainty and Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture05-1-uncertainty-monte-carlo.qmd) | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
+|   | Wed, Sep 25 | Lab: Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture05-1-uncertainty-monte-carlo.qmd) | [{{< fa sharp laptop-code >}}](labs/lab02/lab02.qmd) | | |
 |  6  | Mon, Sep 30 | Monte Carlo: Why It Works | | |  | |
 | | | ***Module 3: Systems Management and Optimization*** | | | |
 |    | Wed, Oct 02 | Prescriptive Modeling  |  |  | | |

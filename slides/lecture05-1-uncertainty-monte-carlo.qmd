@@ -69,7 +69,21 @@ default(
 )
 ```
 
-# Review of Last Class
+# Review of Last Classes
+
+## Simulation
+
+- "Mimic" data generation given a certain model for the relevant processes;
+- Often requires some type of discretization (not always!)
+
+## Simulation Workflow
+
+![Simulation Workflow](figures/simulation_workflow.svg)
+
+## Simulation
+
+- "Mimic" data generation given a certain model for the relevant processes;
+- More complex approaches (*e.g.* discrete-event simulation) for specific use cases.
 
 ## Dissolved Oxygen
 
@@ -98,7 +112,9 @@ Deterministic systems models can be subject to uncertainties due to the separati
 
 ## What is Uncertainty?
 
+::: {.fragment .fade-in}
 **Glib Answer**: *A lack of certainty!*
+:::
 
 ::: {.fragment .fade-in}
 **More Seriously**: Uncertainty refers to an inability to exactly describe current or future values or states.

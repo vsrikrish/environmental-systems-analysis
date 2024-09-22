@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.54">
 
   <meta name="author" content="Vivek Srikrishnan">
-  <meta name="dcterms.date" content="2024-08-28">
+  <meta name="dcterms.date" content="2024-09-25">
   <title>BEE 4750 - Fall 2024 – Monte Carlo Simulation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -356,7 +356,7 @@
     <h1 class="title">Monte Carlo Simulation</h1>
   <hr>
 <p class="subtitle">Lab 02</p>
-<p class="date">August 28, 2024</p>
+<p class="date">September 25, 2024</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Overview</h2>
@@ -372,6 +372,15 @@
 <li>Submit PDF <strong>tonight</strong> by 9pm: ok if it isn’t 100% complete, but we want to see evidence of effort.</li>
 </ul>
 </section>
+<section id="showcase-simulation-logic" class="slide level2">
+<h2>Showcase Simulation Logic</h2>
+<p>Bid <span class="math inline">\(\$b\)</span>, true value <span class="math inline">\(\$v\)</span>:</p>
+<ul>
+<li>If <span class="math inline">\(b &gt; v\)</span>, overbid (win nothing);</li>
+<li>If <span class="math inline">\(v - b &lt; 250\)</span>, win <span class="math inline">\(2v\)</span>;</li>
+<li>Else win <span class="math inline">\(v\)</span> with probability linearly increasing between <span class="math inline">\(\mathbb{P}(0) = 0\)</span> and <span class="math inline">\(\mathbb{P}(v) = 1\)</span>.</li>
+</ul>
+</section>
 <section>
 <section id="upcoming-schedule" class="title-slide slide level1 center">
 <h1>Upcoming Schedule</h1>
@@ -379,14 +388,14 @@
 </section>
 <section id="next-classes" class="slide level2">
 <h2>Next Classes</h2>
-<p><strong>Monday</strong>: <strong>Labor Day!</strong></p>
-<p><strong>Wednesday</strong>: Intro to Systems Analysis</p>
+<p><strong>Monday</strong>: Why does Monte Carlo work?</p>
+<p><strong>Wednesday</strong>: Intro to Prescriptive Modeling</p>
 </section>
 <section id="assessments" class="slide level2">
 <h2>Assessments</h2>
 <ul>
-<li>Weekly Exercises: Basically a syllabus quiz.</li>
-<li>HW 1: Available, due 9/6.</li>
+<li>HW 3: Available, due 10/3.</li>
+<li><strong>Exam 1: 10/9</strong> (through Monte Carlo lectures)</li>
 </ul>
 
 <div class="quarto-auto-generated-content">

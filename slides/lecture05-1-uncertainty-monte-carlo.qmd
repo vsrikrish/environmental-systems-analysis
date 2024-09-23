@@ -78,12 +78,19 @@ default(
 
 ## Simulation Workflow
 
-![Simulation Workflow](figures/simulation_workflow.svg)
+![Simulation Workflow](figures/simulation_workflow.svg){width=90%}
 
 ## Simulation
 
 - "Mimic" data generation given a certain model for the relevant processes;
+- Often requires some type of discretization (not always!)
 - More complex approaches (*e.g.* discrete-event simulation) for specific use cases.
+
+## What We Haven't Discussed
+
+- **Calibration**: How do we select parameter values?
+- **Validation**: Does the model adequately reproduce the system dynamics?
+
 
 ## Dissolved Oxygen
 
@@ -102,7 +109,8 @@ default(
 
 :::: {.columns}
 ::: {.column width=50%}
-Deterministic systems models can be subject to uncertainties due to the separation between the "internals" of the system and the "external" environment.
+- *Deterministic models*: uncertainty due to the separation between the "internals" of the system and the "external" environment.
+- *Stochastic models*: additional uncertainty from internal stochasticity
 :::
 
 ::: {.column width=50%}
@@ -339,7 +347,9 @@ Monte Carlo estimation involves framing the quantity of interest as a summary st
 ::: {.fragment .fade-in}
 Finding $\pi$ by sampling random values from the unit square and computing the fraction in the unit circle. This is an example of **Monte Carlo integration**.
 
+::: {.fragment .fade-in}
 $$\frac{\text{Area of Circle}}{\text{Area of Square}} = \frac{\pi}{4}$$
+:::
 :::
 :::
 ::: {.column width=50%}
@@ -489,7 +499,9 @@ For example, consider our dissolved oxygen model. Suppose that we have a probabi
 
 ## Monte Carlo and Uncertainty Propagation
 
-This is an example of **uncertainty propagation**: draw samples from some distribution, and run them through one or more models to find the (conditional) probability of outcomes of interest (for good or bad).
+1. Draw samples from some distribution;
+2. Eun them through one or more models;
+3. Compute the (conditional) probability of outcomes of interest (for good or bad).
 
 
 # Key Takeaways

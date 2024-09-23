@@ -1106,7 +1106,14 @@
     "href": "slides/lecture05-1-uncertainty-monte-carlo.html#simulation-1",
     "title": "Uncertainty and Monte Carlo",
     "section": "Simulation",
-    "text": "Simulation\n\n“Mimic” data generation given a certain model for the relevant processes;\nMore complex approaches (e.g. discrete-event simulation) for specific use cases."
+    "text": "Simulation\n\n“Mimic” data generation given a certain model for the relevant processes;\nOften requires some type of discretization (not always!)\nMore complex approaches (e.g. discrete-event simulation) for specific use cases."
+  },
+  {
+    "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#what-we-havent-discussed",
+    "href": "slides/lecture05-1-uncertainty-monte-carlo.html#what-we-havent-discussed",
+    "title": "Uncertainty and Monte Carlo",
+    "section": "What We Haven’t Discussed",
+    "text": "What We Haven’t Discussed\n\nCalibration: How do we select parameter values?\nValidation: Does the model adequately reproduce the system dynamics?"
   },
   {
     "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#dissolved-oxygen",
@@ -1127,7 +1134,7 @@
     "href": "slides/lecture05-1-uncertainty-monte-carlo.html#systems-and-uncertainty",
     "title": "Uncertainty and Monte Carlo",
     "section": "Systems and Uncertainty",
-    "text": "Systems and Uncertainty\n\n\nDeterministic systems models can be subject to uncertainties due to the separation between the “internals” of the system and the “external” environment.\n\n\n\n\nConceptual Schematic of a Systems Model"
+    "text": "Systems and Uncertainty\n\n\n\nDeterministic models: uncertainty due to the separation between the “internals” of the system and the “external” environment.\nStochastic models: additional uncertainty from internal stochasticity\n\n\n\n\n\nConceptual Schematic of a Systems Model"
   },
   {
     "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#what-is-uncertainty",
@@ -1274,7 +1281,7 @@
     "href": "slides/lecture05-1-uncertainty-monte-carlo.html#mc-example-finding-pi",
     "title": "Uncertainty and Monte Carlo",
     "section": "MC Example: Finding \\(\\pi\\)",
-    "text": "MC Example: Finding \\(\\pi\\)\n\n\n\nFinding \\(\\pi\\) by sampling random values from the unit square and computing the fraction in the unit circle. This is an example of Monte Carlo integration.\n\\[\\frac{\\text{Area of Circle}}{\\text{Area of Square}} = \\frac{\\pi}{4}\\]\n\n\n\n\n\n\n\n\n\n\nFigure 1: Monte Carlo simualtion for Estimating pi"
+    "text": "MC Example: Finding \\(\\pi\\)\n\n\n\nFinding \\(\\pi\\) by sampling random values from the unit square and computing the fraction in the unit circle. This is an example of Monte Carlo integration.\n\n\\[\\frac{\\text{Area of Circle}}{\\text{Area of Square}} = \\frac{\\pi}{4}\\]\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Monte Carlo simualtion for Estimating pi"
   },
   {
     "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#mc-example-dice",
@@ -1295,7 +1302,7 @@
     "href": "slides/lecture05-1-uncertainty-monte-carlo.html#monte-carlo-and-uncertainty-propagation",
     "title": "Uncertainty and Monte Carlo",
     "section": "Monte Carlo and Uncertainty Propagation",
-    "text": "Monte Carlo and Uncertainty Propagation\nThis is an example of uncertainty propagation: draw samples from some distribution, and run them through one or more models to find the (conditional) probability of outcomes of interest (for good or bad)."
+    "text": "Monte Carlo and Uncertainty Propagation\n\nDraw samples from some distribution;\nEun them through one or more models;\nCompute the (conditional) probability of outcomes of interest (for good or bad)."
   },
   {
     "objectID": "slides/lecture05-1-uncertainty-monte-carlo.html#key-takeaways-1",

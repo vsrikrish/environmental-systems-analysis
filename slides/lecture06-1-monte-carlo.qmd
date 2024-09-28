@@ -57,14 +57,17 @@ using StatsPlots
 using LaTeXStrings
 
 
-Random.seed!(1)
+Random.seed!(100)
 plot_font = "Computer Modern"
 default(
     fontfamily=plot_font,
     linewidth=2, 
     framestyle=:box, 
     label=nothing, 
-    grid=false
+    grid=false,
+    tickfontsize=16,
+    guidefontsize=18,
+    legendfontsize=16
 )
 ```
 
@@ -151,6 +154,20 @@ More generally, we want to compute some quantity $Y=f(X)$, where $X$ is distribu
 Then
 $$\mu = \mathbb{E}(Y) = \int_D f(x)p(x)dx.$$
 
+The Monte Carlo sample mean $\tilde{\mu}_n = \frac{1}{n}\sum_{i=1}^n Y_i$ is itself a random variable.
+
+## What Do We Mean By "Works"?
+
+What properties would we like the Monte Carlo estimate $\mathbb{E}[\tilde{\mu}_n]$ to haveto have?
+
+## Monte Carlo Sample Mean
+
+With some assumptions (the mean of $Y$ exists and $Y$ has finite variance), the expected Monte Carlo sample mean $\mathbb{E}[\tilde{\mu}_n]$ is
+
+$$\frac{1}{n}\sum_{i=1}^n \mathbb{E}[Y_i] = \frac{1}{n} n \mu = \mu$$
+
+So the Monte Carlo estimate is an *unbiased* estimate of the mean.
+
 ## The Law of Large Numbers
 
 If 
@@ -168,18 +185,6 @@ $$\lim_{n \to \infty} \mathbb{P}\left(\left|\tilde{\mu}_n - \mu\right| \leq \var
 In other words, *eventually* Monte Carlo estimates will get within an arbitrary error of the true expectation. But how large is large enough?
 
 Note that the law of large numbers applies to vector-valued functions as well. The key is that $f(x) = Y$ just needs to be sufficiently well-behaved.
-
-## Monte Carlo Sample Mean
-
-The sample mean $\tilde{\mu}_n = \frac{1}{n}\sum_{i=1}^n Y_i$ is itself a random variable.
-
-::: {.fragment .fade-in}
-With some assumptions (the mean of $Y$ exists and $Y$ has finite variance), the expected Monte Carlo sample mean $\mathbb{E}[\tilde{\mu}_n]$ is
-
-$$\frac{1}{n}\sum_{i=1}^n \mathbb{E}[Y_i] = \frac{1}{n} n \mu = \mu$$
-
-So the Monte Carlo estimate is an *unbiased* estimate of the mean.
-:::
 
 ## Monte Carlo Error
 
@@ -297,9 +302,222 @@ If you can compute your answer analytically, you probably should.
 
 But often this is difficult if not impossible without many simplifying assumptions.
 
+# Examples
+
+## MC Example: Dice
+
+What is the probability of rolling 4 dice for a total of 19?
+
+```{julia}
+#| echo: true
+#| output: false
+#| code-line-numbers: "|14-17|18-20|22-25"
+
+function dice_roll_repeated(n_trials, n_dice)
+    dice_dist = DiscreteUniform(1, 6) 
+	roll_results = zeros(n_trials)
+	for i=1:n_trials
+		roll_results[i] = sum(rand(dice_dist, n_dice))
+	end
+	return roll_results
+end
+
+nsamp = 10_000
+# roll four dice 10,000 times
+rolls = dice_roll_repeated(nsamp, 4) 
+
+# initialize storage for frequencies by sample length
+avg_freq = zeros(length(rolls)) 
+# initialize storage for standard error of estimate
+std_freq = zeros(length(rolls))
+# compute average frequencies of 19
+avg_freq[1] = (rolls[1] == 19)
+std_freq[1] = 0 # no standard error for the first sample
+
+for i in 2:length(rolls)
+    avg_freq[i] = (avg_freq[i-1] * (i-1) + (rolls[i] == 19)) / i
+    std_freq[i] = std(rolls[1:i] .== 19) / sqrt(i)
+end
+```
+
+## MC Example: Dice
+
+```{julia}
+#| echo: true
+#| code-fold: true
+
+plt = plot(
+    avg_freq, ribbon=1.96 * std_freq,
+    xlim = (1, nsamp),
+    ylim = (0, 0.1),
+    legend = :false,
+    xlabel="Iteration",
+    ylabel="Estimate",
+    left_margin=10mm,
+    bottom_margin=10mm,
+    right_margin=10mm,
+    color=:black,
+    linewidth=3
+)
+plot!(size=(1200, 500))
+
+hline!(plt, [0.0432], color="red", 
+    linestyle=:dash) 
+
+```
+
+## MC Example: Dice
+
+After 10,000 iterations, the 95% confidence interval for the MC estimate is `{julia} round(100 * avg_freq[end]; digits=1)` $\pm$ `{julia} round(196 * std_freq[end]; digits=1)`%.
+
+**Is this good enough? Should we keep going?**
+
+## MC Example: Dissolved Oxygen
+
+Let's revisit our two-waste dissolved oxygen example with uncertain wastewater inflows.
+
+![Schematic for Multiple Discharge Example](figures/do-multi-release.svg){width=75%}
+
+## MC Example: Dissolved Oxygen
+
+:::: {.columns}
+::: {.column width=50%}
+At each inflow, the uncertainty about the amount of waste (which modifies the baseline CBOD/NBOD):
+:::
+::: {.column width=50%}
+```{julia}
+#| echo: true
+#| code-fold: true
+#| label: fig-waste-distribution
+#| fig-cap: "Distribution for the uncertainty in waste at each inflow"
+
+waste_dist = truncated(Normal(0, 5); lower=-10, upper=20)
+waste_samps = rand(waste_dist, (10_000, 2))
+histogram(waste_samps[:, 1], ylabel="Count", xlabel="OD Deviation from Baseline (mg/L)")
+plot!(size=(600, 500))
+```
+:::
+::::
+
+## MC Example: Dissolved Oxygen
+
+```{julia}
+#| label: fig-do-multi
+#| fig-cap: "Multi-Release Dissolved Oxygen Example"
+#| fig-width: 100%
+#| layout-ncol: 2
+
+function do_simulate(x, C0, B0, N0, ka, kn, kc, Cs, U)
+    B = B0 * exp(-kc * x / U)
+    N = N0 * exp(-kn * x / U)
+    α1 = exp(-ka * x / U)
+    α2 = (kc/(ka-kc)) * (exp.(-kc * x / U) - exp(-ka * x / U))
+    α3 = (kn/(ka-kn)) * (exp(-kn * x / U) - exp(-ka * x / U))
+    C = Cs * (1 - α1) + (C0 * α1) - (B0 * α2) - (N0 * α3)
+    return (C, B, N)
+end  
+
+ka = 0.6
+kc = 0.4
+kn = 0.25
+C0 = 8
+B0 = 4
+N0 = 3
+
+Cs = 7
+U = 5
+
+Q0 = 100000
+Q1 = 20000
+Q2 = 15000
+
+x0 = 0
+x1 = 18
+x2 = 30
+
+Cin1 = 6
+Bin1 = 10
+Nin1 = 5
+
+Cin2 = 4
+Bin2 = 20
+Nin2 = 15
+
+function do_mc(w1, w2, x1, x2, Q0, Q1, Q2, C0, B0, N0, Cin1, Bin1, Nin1, Cin2, Bin2, Nin2, ka, kc, kn, Cs, U)
+
+    C01 = (C0 * Q0 + Cin1 * Q1) / (Q0 + Q1)
+    B01 = (B0 * Q0 + (Bin1 + w1) * Q1) / (Q0 + Q1)
+    N01 = (N0 * Q0 + (Nin1 + w1) * Q1) / (Q0 + Q1)
+
+    do_out1 = (y -> do_simulate.(y, C01, B01, N01, ka, kc, kn, Cs, U))(0:x1)
+
+    C1 = [d[1] for d in do_out1]
+    B1 = [d[2] for d in do_out1]
+    N1 = [d[3] for d in do_out1]
+
+    C02 = (C1[length(C1)] * (Q0 + Q1) + Cin2 * Q2) / (Q0 + Q1 + Q2)
+    B02 = (B1[length(B1)] * (Q0 + Q1) + (Bin2 + w2) * Q2) / (Q0 + Q1 + Q2)
+    N02 = (N1[length(N1)] * (Q0 + Q1) + (Nin2 + w2) * Q2) / (Q0 + Q1 + Q2)
+
+    do_out2 = (y -> do_simulate.(y, C02, B02, N02, ka, kc, kn, Cs, U))(0:(x2-x1))
+
+    C2 = [d[1] for d in do_out2]
+    B2 = [d[2] for d in do_out2]
+    N2 = [d[3] for d in do_out2]
+
+    return [C1[1:end-1]; C2]
+
+end
+
+# find all the minima
+C = [minimum(do_mc(waste_samps[i, 1], waste_samps[i, 2], x1, x2, Q0, Q1, Q2, C0, B0, N0, Cin1, Bin1, Nin1, Cin2, Bin2, Nin2, ka, kc, kn, Cs, U)) for i in 1:10_000]
+
+# compute Monte Carlo estimates
+C_mc = zeros(length(C))
+C_se = zeros(length(C))
+C_mc[1] = C[1] .< 4
+C_se[1] = 0
+for i in 2:length(C)
+    C_mc[i] = (((i - 1) * C_mc[i-1]) + (C[i] < 4)) / i
+    C_se[i] = std(C[1:i] .< 4) / sqrt(i)
+end
+
+p1 = histogram(C, xlabel="Minimum DO Concentration (mg/L)", ylabel="Count", bottom_margin=10mm, left_margin=10mm)
+vline!(p1, [4], color=:red, linestyle=:dash, size=(650, 600))
+p2 = plot(C_mc, ribbon=1.96 * C_se, color=:black, linewidth=3, ylims=(0, 0.1), xlabel="Iteration", ylabel="Probability of Failing Standard", size=(650, 600), bottom_margin=10mm, left_margin=10mm, right_margin=5mm)
+display(p1)
+display(p2)
+```
+
+## MC Example: Dissolved Oxygen
+
+:::: {.columns}
+::: {.column width=50%}
+```{julia}
+#| label: fig-do-mc
+#| fig-cap: "Multi-Release Dissolved Oxygen Example"
+
+plot(p2, right_margin=10mm)
+```
+:::
+::: {.column width=50%}
+| Iterations | Estimate |
+|:----------:|:--------:|
+| 100 | `{julia} round(100 * C_mc[100]; digits=1)` $\pm$ `{julia} round(100 * C_se[100]; digits=1)`% |
+| 1000 | `{julia} round(100 * C_mc[1000]; digits=1)` $\pm$ `{julia} round(100 * C_se[1000]; digits=1)`% |
+| 5000 | `{julia} round(100 * C_mc[5000]; digits=1)` $\pm$ `{julia} round(100 * C_se[5000]; digits=1)`% |
+| 10000 | `{julia} round(100 * C_mc[10000]; digits=1)` $\pm$ `{julia} round(100 * C_se[10000]; digits=1)`% |
+:::
+::::
+
+
+# Further Notes
+
 ## More Advanced Monte Carlo Methods
 
-This type of "simple" Monte Carlo analysis assumes that we can readily sample independent and identically-distributed random variables. There are other methods for when distributions are hard to sample from or uncertainties aren't independent.
+"Simple" Monte Carlo analysis: assumes that we can readily sample independent and identically-distributed random variables. 
+
+There are other methods for when distributions are hard to sample from or uncertainties aren't independent.
 
 ## On Random Number Generators
 
@@ -323,32 +541,25 @@ Source: [XKCD #221](https://xkcd.com/221/)
 
 ## Key Takeaways
 
-- Choice of probability distribution can have large impacts on uncertainty and risk estimates: **try not to use distributions just because they're convenient.**
-- **Monte Carlo**: Estimate expected values of functions using simulation.
-- Monte Carlo error is on the order $1/\sqrt{n}$, so not great if more direct approaches are available and tractable.
+- Monte Carlo estimates are **unbiased**;
+- Monte Carlo standard error is on the order $1/\sqrt{n}$, so not great if more direct approaches are available and tractable.
+- Confidence intervals based on standard error.
+- Need to decide what level of uncertainty is needed/meaningful for a given analysis.
 
-
-# Key Takeaways
-
-## Key Takeaways
-
-- Systems analysis features many uncertainties, which may be neglected with certain methods/model setups.
-- Choice of probability distribution can have large impacts on uncertainty and risk estimates: **try not to use distributions just because they're convenient.**
-- **Monte Carlo**: Estimate expected values of outcomes using simulation.
 
 
 # Upcoming Schedule
 
 ## Next Classes
 
-**Wednesday**: Multiple Objectives and Tradeoffs
+**Wednesday**: Intro to Optimization
 
-**Next Week**: Intro to Optimization (Monday)
+**Next Week**: Linear Programming (Monday)
 
 ## Assessments
 
 **HW3**: Due Thursday (10/3) at 9pm
 
-**Prelim 1**: Next Wednesday (10/9) in class, **includes material through Wednesday's lecture**.
+**Prelim 1**: Next Wednesday (10/9) in class, **includes material through today's lecture**.
 
 

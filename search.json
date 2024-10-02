@@ -3253,14 +3253,14 @@
     "href": "slides/lecture06-2-prescriptive-modeling.html#monte-carlo",
     "title": "Prescriptive Modeling",
     "section": "Monte Carlo",
-    "text": "Monte Carlo\n\nStochastic simulation\nUseful to compute expected values of quantities (integrals) or propagate uncertainties"
+    "text": "Monte Carlo\n\nStochastic simulation of \\(Y = f(X)\\)\nUseful to compute expected values of quantities (integrals)\nMonte Carlo Estimate of \\(\\mu = \\mathbb{E}[Y]\\): \\[\\tilde{\\mu}_n = \\mathbb{E}[\\{Y_1, \\ldots, Y_n\\}]\\]"
   },
   {
     "objectID": "slides/lecture06-2-prescriptive-modeling.html#why-monte-carlo-works",
     "href": "slides/lecture06-2-prescriptive-modeling.html#why-monte-carlo-works",
     "title": "Prescriptive Modeling",
     "section": "Why Monte Carlo Works",
-    "text": "Why Monte Carlo Works\n\nLaw of Large Numbers / Central Limit Theorem\nConfidence Intervals:"
+    "text": "Why Monte Carlo Works\n\nUnbiased estimates (across multiple samples)\nConvergence of single sample:\n\nLaw of Large Numbers\n\nConfidence Intervals:\n\nStandard error: \\(\\sigma_Y / \\sqrt{n}\\)\nCentral Limit Theorem: \\[\\tilde{\\mu} \\sim \\mathcal{N}\\left(0, \\frac{\\sigma_Y^2}{n}\\right)\\]"
   },
   {
     "objectID": "slides/lecture06-2-prescriptive-modeling.html#questions",

@@ -70,13 +70,20 @@ default(
 
 ## Monte Carlo
 
-- Stochastic simulation
-- Useful to compute expected values of quantities (integrals) or propagate uncertainties
+- Stochastic simulation of $Y = f(X)$
+- Useful to compute expected values of quantities (integrals)
+- Monte Carlo Estimate of $\mu = \mathbb{E}[Y]$:
+$$\tilde{\mu}_n = \mathbb{E}[\{Y_1, \ldots, Y_n\}]$$
 
 ## Why Monte Carlo Works
 
-- Law of Large Numbers / Central Limit Theorem
+- Unbiased estimates (across multiple samples)
+- Convergence of single sample:
+  - Law of Large Numbers
 - Confidence Intervals: 
+  - Standard error: $\sigma_Y / \sqrt{n}$
+  - Central Limit Theorem: 
+    $$\tilde{\mu} \sim \mathcal{N}\left(0, \frac{\sigma_Y^2}{n}\right)$$
 
 ## Questions?
 

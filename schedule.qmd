@@ -19,18 +19,18 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 | | | ***Module 2: Systems Simulation and Risk*** | | | |
 |  4   | Mon, Sep 16 | Simulation Modeling | [{{< fa sharp presentation-screen >}}](slides/lecture04-1-simulation.qmd) | | | | 
 |      | Wed, Sep 18 | Example: Dissolved Oxygen | [{{< fa sharp presentation-screen >}}](slides/lecture04-2-dissolved-oxygen.qmd) | | |
-|  5    | Mon, Sep 23 | Uncertainty and Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture05-1-uncertainty-monte-carlo.qmd) | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
-|   | Wed, Sep 25 | Lab: Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture05-1-uncertainty-monte-carlo.qmd) | [{{< fa sharp laptop-code >}}](labs/lab02/lab02.qmd) | | |
-|  6  | Mon, Sep 30 | Monte Carlo: Why It Works | | |  | |
+|  5    | Mon, Sep 23 | Uncertainty and Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture05-1-uncertainty-monte-carlo.qmd) | | [{{< fa sharp pen-field >}}](hw/hw03/hw03.qmd) | |
+|   | Wed, Sep 25 | Lab: Monte Carlo Simulation | | [{{< fa sharp laptop-code >}}](labs/lab02/lab02.qmd) | | |
+|  6  | Mon, Sep 30 | Monte Carlo: Why It Works | [{{< fa sharp presentation-screen >}}](slides/lecture06-1-monte-carlo.qmd) | |  | |
 | | | ***Module 3: Systems Management and Optimization*** | | | |
-|    | Wed, Oct 02 | Prescriptive Modeling  |  |  | | |
+|    | Wed, Oct 02 | Prescriptive Modeling  | [{{< fa sharp presentation-screen >}}](slides/lecture06-2-prescriptive-modeling.qmd) |  | | |
 |  7   | Mon, Oct 07 | Linear Programming |  | |   | |
 |      | Wed, Oct 09 |  **Prelim 1** | | | |
 |  8  | Mon, Oct 14 | **No Class: Fall Break** |  | |  | |
 |   | Wed, Oct 16 | Lab: Optimization with JuMP.jl  | |  [{{< fa sharp laptop-code >}}]{style="color:grey"}  | | |
 |  9 | Mon, Oct 21 | Example: Power Systems and Economic Dispatch  | | | | |
-|    | Wed, Oct 23 | Prelim 1 Review | | |  |  |
-|  10  | Mon, Oct 28 |  Fixed Costs and Unit Commitment | |  | [{{< fa sharp pen-field >}}]{style="color:grey"} | | 
+|    | Wed, Oct 23 | Fixed Costs and Unit Commitment | | |  |  |
+|  10  | Mon, Oct 28 | Prelim 1 Review | |  | [{{< fa sharp pen-field >}}]{style="color:grey"} | | 
 |     | Wed, Oct 30 | Network Models and Solid Waste Management | | |  | | 
 |  11  | Mon, Nov 04 | Simulation-Optimization  |  |  |  | |
 |    | Wed, Nov 06 | Multiple Objectives and Tradeoffs |  |  |  | |

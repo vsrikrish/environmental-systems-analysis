@@ -26,7 +26,7 @@ Make sure to look over the [standard homework rubric](rubrics/standard.qmd) and 
 | Assignment | Instructions | Solutions | Due Date |
 |:----------:|:------------:|:---------:|:--------:|
 | HW1 | [{{< fa sharp pen-field >}}](hw/hw01/hw01.qmd) | [{{< fa sharp key-skeleton >}}](solutions/hw01/hw01.qmd) | Sep 05, 2024 |
-| HW2 | [{{< fa sharp pen-field >}}](hw/hw02/hw02.qmd) | [{{< fa sharp key-skeleton >}}]{style="color:grey"}  | Sep 19, 2024 |
+| HW2 | [{{< fa sharp pen-field >}}](hw/hw02/hw02.qmd) | [{{< fa sharp key-skeleton >}}](solutions/hw02/hw02.qmd)  | Sep 19, 2024 |
 | HW3 | [{{< fa sharp pen-field >}}](hw/hw03/hw03.qmd) | [{{< fa sharp key-skeleton >}}]{style="color:grey"}  | Oct 03, 2024 |
 | HW4 | [{{< fa sharp pen-field >}}](hw/hw04/hw04.qmd) | [{{< fa sharp key-skeleton >}}]{style="color:grey"}  | Nov 07, 2024 |
 | HW5 | [{{< fa sharp pen-field >}}]{style="color:grey"} | [{{< fa sharp key-skeleton >}}]{style="color:grey"} | Dec 05, 2024 |

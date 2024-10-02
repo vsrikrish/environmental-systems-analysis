@@ -57,7 +57,7 @@ using StatsPlots
 using LaTeXStrings
 
 
-Random.seed!(100)
+Random.seed!(1)
 plot_font = "Computer Modern"
 default(
     fontfamily=plot_font,
@@ -70,6 +70,13 @@ default(
     legendfontsize=16
 )
 ```
+
+# Announcements
+
+## Prelim: Alternative Testing Program
+
+- Conflict/accomodation exams will be handled through ATP.
+- **If you do not have an SDS accomodation letter for this class, you will not be enrolled in ATP**.
 
 # Review of Previous Classes
 
@@ -149,24 +156,25 @@ $$\tilde{\mu}_n = \frac{1}{n}\sum_{i=1}^n Y_i$$
 
 ## Monte Carlo (Formally)
 
-More generally, we want to compute some quantity $Y=f(X)$, where $X$ is distributed according to some probability distribution $p(x)$ and $f(x)$ is a real-valued function over a domain $D$.
-
-Then
-$$\mu = \mathbb{E}(Y) = \int_D f(x)p(x)dx.$$
-
-The Monte Carlo sample mean $\tilde{\mu}_n = \frac{1}{n}\sum_{i=1}^n Y_i$ is itself a random variable.
+**Important note**: The Monte Carlo sample mean $\tilde{\mu}_n = \frac{1}{n}\sum_{i=1}^n Y_i$ **is itself a random variable**.
 
 ## What Do We Mean By "Works"?
 
-What properties would we like the Monte Carlo estimate $\mathbb{E}[\tilde{\mu}_n]$ to haveto have?
+What properties would we like the Monte Carlo estimate $\mathbb{E}[\tilde{\mu}_n]$ to have?
 
-## Monte Carlo Sample Mean
+## Monte Carlo Estimate is Unbiased
 
 With some assumptions (the mean of $Y$ exists and $Y$ has finite variance), the expected Monte Carlo sample mean $\mathbb{E}[\tilde{\mu}_n]$ is
 
 $$\frac{1}{n}\sum_{i=1}^n \mathbb{E}[Y_i] = \frac{1}{n} n \mu = \mu$$
 
 So the Monte Carlo estimate is an *unbiased* estimate of the mean.
+
+## Monte Carlo Estimate Converges
+
+On average (across different samples), the MC estimate $\tilde{\mu}_n$ has the "right" value.
+
+Will a single sample trajectory converge to the true value?
 
 ## The Law of Large Numbers
 
@@ -180,13 +188,13 @@ Then by the **weak law of large numbers**:
 
 $$\lim_{n \to \infty} \mathbb{P}\left(\left|\tilde{\mu}_n - \mu\right| \leq \varepsilon \right) = 1$$
 
-## The Law of Large Numbers
+## Monte Carlo Estimate Converges
 
 In other words, *eventually* Monte Carlo estimates will get within an arbitrary error of the true expectation. But how large is large enough?
 
 Note that the law of large numbers applies to vector-valued functions as well. The key is that $f(x) = Y$ just needs to be sufficiently well-behaved.
 
-## Monte Carlo Error
+## Monte Carlo Error Can Be Estimated
 
 We'd like to know more about the error of this estimate for a given sample size. The variance of this estimator is
 

@@ -1652,14 +1652,14 @@
     "href": "slides/lecture07-1-linear-programming.html#reminder-constrained-optimization-and-lagrange-multipliers",
     "title": "Linear Programming",
     "section": "Reminder: Constrained Optimization and Lagrange Multipliers",
-    "text": "Reminder: Constrained Optimization and Lagrange Multipliers\nLagrange Multipliers are a way to incorporate constraints into an “unconstrained” form."
+    "text": "Reminder: Constrained Optimization and Lagrange Multipliers\nLagrange Multipliers are a way to incorporate equality constraints into an “unconstrained” form for an optimization problem.\n\n\\[\\begin{align*}\n\\max_{x,y} &f(x,y) \\\\\n\\text{subject to:} &g(x,y) = 0\n\\end{align*}\\]\n\n\nThen: \\[\\mathcal{L}(x, y, \\lambda) = f(x,y) - \\lambda g(x,y)\\]"
   },
   {
-    "objectID": "slides/lecture07-1-linear-programming.html#reminder-constrained-optimization-and-lagrange-multipliers-1",
-    "href": "slides/lecture07-1-linear-programming.html#reminder-constrained-optimization-and-lagrange-multipliers-1",
+    "objectID": "slides/lecture07-1-linear-programming.html#converting-inequality-constraints",
+    "href": "slides/lecture07-1-linear-programming.html#converting-inequality-constraints",
     "title": "Linear Programming",
-    "section": "Reminder: Constrained Optimization and Lagrange Multipliers",
-    "text": "Reminder: Constrained Optimization and Lagrange Multipliers\n\n\nOriginal Problem\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 \\geq A \\notag \\\\\n& && x_2 \\leq B \\notag\n\\end{aligned}\n\\]\n\nWith Dummy Variables\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 - S_1^2 = A \\notag \\\\\n& && x_2 + S_2^2 = B \\notag\n\\end{aligned}\n\\]"
+    "section": "Converting Inequality Constraints",
+    "text": "Converting Inequality Constraints\n\n\nOriginal Problem\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 \\geq A \\notag \\\\\n& && x_2 \\leq B \\notag\n\\end{aligned}\n\\]\n\nWith Dummy Variables\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 - S_1^2 = A \\notag \\\\\n& && x_2 + S_2^2 = B \\notag\n\\end{aligned}\n\\]"
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#using-lagrange-multipliers",

@@ -1505,7 +1505,14 @@
     "href": "slides/lecture07-1-linear-programming.html#last-class",
     "title": "Linear Programming",
     "section": "Last Class",
-    "text": "Last Class\n\nOptimization for solving decision problems.\nDiscussed trial and error and search algorithms.\nFor unconstrained problems, gradient-based methods can get “stuck” at local optima.\nEvolutionary algorithms can require many iterations and evaluations.\nReviewed Lagrange multipliers for constrained optimization."
+    "text": "Last Class\n\nOptimization for solving decision problems.\nDecision problems involve:\n\nDecision Variables;\nObjective(s);\nConstraints."
+  },
+  {
+    "objectID": "slides/lecture07-1-linear-programming.html#feasible-vs.-infeasible-solutions",
+    "href": "slides/lecture07-1-linear-programming.html#feasible-vs.-infeasible-solutions",
+    "title": "Linear Programming",
+    "section": "Feasible vs. Infeasible Solutions",
+    "text": "Feasible vs. Infeasible Solutions"
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#questions",
@@ -1641,11 +1648,39 @@
     "text": "Shadow Prices\nThe marginal cost of a constraint is the amount by which the solution would improve if the constraint capacity was relaxed by one unit.\nThis is also referred to as the shadow price (these are also called the dual variables of the constraint).\nNon-zero shadow prices tell us that the constraint is binding, and their values rank which constraints are most influential."
   },
   {
+    "objectID": "slides/lecture07-1-linear-programming.html#reminder-constrained-optimization-and-lagrange-multipliers",
+    "href": "slides/lecture07-1-linear-programming.html#reminder-constrained-optimization-and-lagrange-multipliers",
+    "title": "Linear Programming",
+    "section": "Reminder: Constrained Optimization and Lagrange Multipliers",
+    "text": "Reminder: Constrained Optimization and Lagrange Multipliers\nLagrange Multipliers are a way to incorporate constraints into an “unconstrained” form."
+  },
+  {
+    "objectID": "slides/lecture07-1-linear-programming.html#reminder-constrained-optimization-and-lagrange-multipliers-1",
+    "href": "slides/lecture07-1-linear-programming.html#reminder-constrained-optimization-and-lagrange-multipliers-1",
+    "title": "Linear Programming",
+    "section": "Reminder: Constrained Optimization and Lagrange Multipliers",
+    "text": "Reminder: Constrained Optimization and Lagrange Multipliers\n\n\nOriginal Problem\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 \\geq A \\notag \\\\\n& && x_2 \\leq B \\notag\n\\end{aligned}\n\\]\n\nWith Dummy Variables\n\\[\n\\begin{aligned}\n& \\min &&f(x_1, x_2) \\notag \\\\\\\\\n& \\text{subject to:} && x_1 - S_1^2 = A \\notag \\\\\n& && x_2 + S_2^2 = B \\notag\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture07-1-linear-programming.html#using-lagrange-multipliers",
+    "href": "slides/lecture07-1-linear-programming.html#using-lagrange-multipliers",
+    "title": "Linear Programming",
+    "section": "Using Lagrange Multipliers",
+    "text": "Using Lagrange Multipliers\nThen the Lagrangian function becomes:\n\\[\n\\mathcal{L}(\\mathbf{x}, S_1, S_2, \\lambda_1, \\lambda_2) = f(\\mathbf{x}) - \\lambda_1(x_1 - S_1^2 - A) - \\lambda_2(x_2 + S_2^2 - B)\n\\]\nwhere \\(\\lambda_1\\), \\(\\lambda_2\\) are penalties for violating the constraints.\nThe \\(\\lambda_i\\) are the eponymous Lagrange multipliers."
+  },
+  {
+    "objectID": "slides/lecture07-1-linear-programming.html#using-lagrange-multipliers-1",
+    "href": "slides/lecture07-1-linear-programming.html#using-lagrange-multipliers-1",
+    "title": "Linear Programming",
+    "section": "Using Lagrange Multipliers",
+    "text": "Using Lagrange Multipliers\nNext step: locate possible optima where the partial derivatives of the Lagrangian are zero.\n\\[\\frac{\\partial \\mathcal{L}(\\cdot)}{\\partial \\cdot} = 0\\]\nThis is actually many equations, even though our original problem was low-dimensional, and can be slow to solve."
+  },
+  {
     "objectID": "slides/lecture07-1-linear-programming.html#shadow-prices-are-lagrange-multipliers",
     "href": "slides/lecture07-1-linear-programming.html#shadow-prices-are-lagrange-multipliers",
     "title": "Linear Programming",
     "section": "Shadow Prices are Lagrange Multipliers",
-    "text": "Shadow Prices are Lagrange Multipliers\nThe shadow prices are the Lagrange Multipliers of the optimization problem.\nIf our inequality constraints \\(X \\geq A\\) and \\(X \\leq B\\) are written as \\(X - S_1^2 = A\\) and \\(X + S_2^2 = B\\):\n\\[H(X, S_1 S_2, \\lambda_1, \\lambda_2) = Z(X) - \\lambda_1(X - S_1^2 - A) - \\lambda_2(X + S_2^2 - B),\\]\n\\[\\Rightarrow \\qquad \\frac{\\partial H}{\\partial A} = \\lambda_1, \\qquad \\frac{\\partial H}{\\partial B} = \\lambda_2.\\]"
+    "text": "Shadow Prices are Lagrange Multipliers\nThe shadow prices are the Lagrange Multipliers of the optimization problem.\nIf our inequality constraints \\(X \\geq A\\) and \\(X \\leq B\\) are written as \\(X - S_1^2 = A\\) and \\(X + S_2^2 = B\\):\n\\[\\mathcal{L}(X, S_1 S_2, \\lambda_1, \\lambda_2) = Z(X) - \\lambda_1(X - S_1^2 - A) - \\lambda_2(X + S_2^2 - B),\\]\n\\[\\Rightarrow \\qquad \\frac{\\partial \\mathcal{L}}{\\partial A} = \\lambda_1, \\qquad \\frac{\\partial \\mathcal{L}}{\\partial B} = \\lambda_2.\\]"
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#key-takeaways-1",

@@ -24,7 +24,7 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 |  6  | Mon, Sep 30 | Monte Carlo: Why It Works | [{{< fa sharp presentation-screen >}}](slides/lecture06-1-monte-carlo.qmd) | |  | |
 | | | ***Module 3: Systems Management and Optimization*** | | | |
 |    | Wed, Oct 02 | Prescriptive Modeling  | [{{< fa sharp presentation-screen >}}](slides/lecture06-2-prescriptive-modeling.qmd) |  | | |
-|  7   | Mon, Oct 07 | Linear Programming |  | |   | |
+|  7   | Mon, Oct 07 | Linear Programming | [{{< fa sharp presentation-screen >}}](slides/lecture07-1-linear-programming.qmd) | |   | |
 |      | Wed, Oct 09 |  **Prelim 1** | | | |
 |  8  | Mon, Oct 14 | **No Class: Fall Break** |  | |  | |
 |   | Wed, Oct 16 | Lab: Optimization with JuMP.jl  | |  [{{< fa sharp laptop-code >}}]{style="color:grey"}  | | |

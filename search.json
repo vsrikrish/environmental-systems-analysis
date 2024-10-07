@@ -1652,7 +1652,14 @@
     "href": "slides/lecture07-1-linear-programming.html#reminder-constrained-optimization-and-lagrange-multipliers",
     "title": "Linear Programming",
     "section": "Reminder: Constrained Optimization and Lagrange Multipliers",
-    "text": "Reminder: Constrained Optimization and Lagrange Multipliers\nLagrange Multipliers are a way to incorporate equality constraints into an “unconstrained” form for an optimization problem.\n\n\\[\\begin{align*}\n\\max_{x,y} &f(x,y) \\\\\n\\text{subject to:} &g(x,y) = 0\n\\end{align*}\\]\n\n\nThen: \\[\\mathcal{L}(x, y, \\lambda) = f(x,y) - \\lambda g(x,y)\\]"
+    "text": "Reminder: Constrained Optimization and Lagrange Multipliers\nLagrange Multipliers are a way to incorporate equality constraints into an “unconstrained” form for an optimization problem."
+  },
+  {
+    "objectID": "slides/lecture07-1-linear-programming.html#reminder-constrained-optimization-and-lagrange-multipliers-1",
+    "href": "slides/lecture07-1-linear-programming.html#reminder-constrained-optimization-and-lagrange-multipliers-1",
+    "title": "Linear Programming",
+    "section": "Reminder: Constrained Optimization and Lagrange Multipliers",
+    "text": "Reminder: Constrained Optimization and Lagrange Multipliers\n\\[\\begin{align*}\n\\max_{x,y}\\qquad &f(x,y) \\\\\n\\text{subject to:}\\qquad &g(x,y) = 0\n\\end{align*}\\]\n\nThen: \\[\\mathcal{L}(x, y, \\lambda) = f(x,y) - \\lambda g(x,y)\\]"
   },
   {
     "objectID": "slides/lecture07-1-linear-programming.html#converting-inequality-constraints",

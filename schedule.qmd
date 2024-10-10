@@ -28,20 +28,20 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 |      | Wed, Oct 09 |  **Prelim 1** | | | |
 |  8  | Mon, Oct 14 | **No Class: Fall Break** |  | |  | |
 |   | Wed, Oct 16 | Lab: Optimization with JuMP.jl  | |  [{{< fa sharp laptop-code >}}]{style="color:grey"}  | | |
-|  9 | Mon, Oct 21 | Example: Power Systems and Economic Dispatch  | | | | |
-|    | Wed, Oct 23 | Fixed Costs and Unit Commitment | | |  |  |
-|  10  | Mon, Oct 28 | Prelim 1 Review | |  | [{{< fa sharp pen-field >}}]{style="color:grey"} | | 
-|     | Wed, Oct 30 | Network Models and Solid Waste Management | | |  | | 
-|  11  | Mon, Nov 04 | Simulation-Optimization  |  |  |  | |
-|    | Wed, Nov 06 | Multiple Objectives and Tradeoffs |  |  |  | |
-| 12    | Mon, Nov 11 | **Prelim 2**  |  |  | | |
-|    | Wed, Nov 13 | Lab: Simulation-Optimization |  | [{{< fa sharp laptop-code >}}]{style="color:grey"} |  | |
-| | | ***Module 4: Decision-Making Under Uncertainty*** | | | |
-| 13   | Mon, Nov 18 |  Scenario Trees and Value of Uncertainty  | | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
-|    | Wed, Nov 20 | Lab: Two-Stage Linear Programs |  | [{{< fa sharp laptop-code >}}]{style="color:grey"} | | |
-|  14  | Mon, Nov 25 |  Prelim 2 Review |   |  |  |  |
+|  9 | Mon, Oct 21 | Example: Power Systems and Capacity Expansion  | | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
+|    | Wed, Oct 23 | Economic Dispatch | | |  |  |
+|  10  | Mon, Oct 28 | Prelim 1 Review and Gaussian Plumes | |  |  | | 
+|     | Wed, Oct 30 | More Gaussian Plumes and Air Pollution Controls | | |  | | 
+|  11  | Mon, Nov 04 | Fixed Costs and Mixed-Integer Programs |  |  | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
+|    | Wed, Nov 06 |  Network Models and Solid Waste Management |  |  |  | |
+| 12    | Mon, Nov 11 |  Stochastic Optimization and Scenario Trees  |  |  | | |
+|    | Wed, Nov 13 | **Prelim 2** |  | |  | |
+| | | ***Module 4: Optimization Beyond Mathematical Programming*** | | | |
+| 13   | Mon, Nov 18 | Simulation-Optimization and Heuristics | | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
+|    | Wed, Nov 20 | Lab: Simulation-Optimization |  | [{{< fa sharp laptop-code >}}]{style="color:grey"}  | | |
+|  14  | Mon, Nov 25 | Prelim 2 Review    |   |  |    |  |
 |     | Wed, Nov 27 | **No Class: Thanksgiving Break** | | | | |
-| 15 | Mon, Dec 02 | Sequential Decision-Making  | | | | |
-|    | Wed, Dec 04 | Class Review  | | | | |
+| 15 | Mon, Dec 02 | Multiple Objectives and Tradeoffs | | | | |
+|    | Wed, Dec 04 | Robustness and Sensitivity Analyses | | | | |
 |  16 | Mon, Dec 09 | **No Class: Project Work** | | | |  |
 :::

@@ -27,12 +27,12 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 |  7   | Mon, Oct 07 | Linear Programming | [{{< fa sharp presentation-screen >}}](slides/lecture07-1-linear-programming.qmd) | |   | |
 |      | Wed, Oct 09 |  **Prelim 1** | | | |
 |  8  | Mon, Oct 14 | **No Class: Fall Break** |  | |  | |
-|   | Wed, Oct 16 | Lab: Optimization with JuMP.jl  | |  [{{< fa sharp laptop-code >}}]{style="color:grey"}  | | |
-|  9 | Mon, Oct 21 | Example: Power Systems and Capacity Expansion  | | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
-|    | Wed, Oct 23 | Economic Dispatch | | |  |  |
+|   | Wed, Oct 16 | Lab: Optimization with JuMP.jl  | [{{< fa sharp presentation-screen >}}](slides/lecture08-2-jump-lp.qmd) |  [{{< fa sharp laptop-code >}}](labs/lab03/lab03.qmd)  | | |
+|  9 | Mon, Oct 21 | Example: Power Systems and Capacity Expansion  | [{{< fa sharp presentation-screen >}}](slides/lecture09-1-capacity-expansion.qmd) | | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
+|    | Wed, Oct 23 | Economic Dispatch | [{{< fa sharp presentation-screen >}}](slides/lecture09-2-economic-dispatch.qmd) | |  |  |
 |  10  | Mon, Oct 28 | Prelim 1 Review and Gaussian Plumes | |  |  | | 
 |     | Wed, Oct 30 | More Gaussian Plumes and Air Pollution Controls | | |  | | 
-|  11  | Mon, Nov 04 | Fixed Costs and Mixed-Integer Programs |  |  | [{{< fa sharp pen-field >}}]{style="color:grey"} | |
+|  11  | Mon, Nov 04 | Fixed Costs and Mixed-Integer Programs |  |  |  | |
 |    | Wed, Nov 06 |  Network Models and Solid Waste Management |  |  |  | |
 | 12    | Mon, Nov 11 |  Stochastic Optimization and Scenario Trees  |  |  | | |
 |    | Wed, Nov 13 | **Prelim 2** |  | |  | |

@@ -1,0 +1,73 @@
+---
+title: "Linear Programming with `JuMP.jl`"
+subtitle: "Lab 03"
+author: "Vivek Srikrishnan"
+course: "BEE 4750"
+institution: "Cornell University"
+date: "October 16, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: mathjax
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+        controls: true
+execute:
+    freeze: auto
+---
+
+## Lab Instructions
+
+- Spend first 30 minutes working through the LP formulation;
+- Then implement LP in `JuMP`.
+
+## Problem Statement
+
+**Goal**: How much lumber to produce to maximize profit from wood sales?
+
+## Problem Statement
+
+- Forest consists of 320,000 bf of spruce, 720,000 bf of fir.
+- Spruce costs $\$0.12$ per bf to purchase and fir costs $\$0.08$ per bf.
+
+| Plywood Grade | Inputs (bf/bf plywood) | Revenue (\$/1000 bf) |
+|:-------------:|:----------------------:|:--------------------:|
+|       1       |   0.5 (S) + 1.5 (F)    |         400          |
+|       2       |   1.0 (S) + 2.0 (F)    |         520          |
+|       3       |   1.5 (S) + 2.0 (F)    |         700          |
+
+: Wood inputs and revenue by plywood grade. S refers to spruce inputs, F fir inputs. {#tbl-inputs}
+
+
+
+# Upcoming Schedule
+
+## Next Classes
+
+**Monday**: **Labor Day!**
+
+**Wednesday**: Intro to Systems Analysis
+
+## Assessments
+
+- Weekly Exercises: Basically a syllabus quiz.
+- HW 1: Available, due 9/6.

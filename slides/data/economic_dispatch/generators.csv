@@ -1,15 +1,16 @@
-Plant,Pmin,Pmax,VarCost,Ramp
-Biomass, 0, 50, 5, 50
-Hydroelectric, 0, 500, 0, 500
-NG CCGT1, 220, 620, 23, 240
-NG CCGT2, 25, 50, 30, 20
-NG CCGT3, 200, 570, 22, 228
-NG CCGT4, 150, 350, 36, 350
-NG CCGT5, 150, 350, 37, 350
-NG CT1, 73, 100, 38, 100
-NG CT2, 21, 48, 39, 48
-NG CT3, 21, 51, 39, 51
-NG CT4, 21, 51, 40, 51
-NG CT5, 0, 100, 45, 100
-NG CT6, 0, 100, 46, 100
-
+Plant,Resource,Pmin,Pmax,VarCost,Ramp
+Biomass,Biomass, 0, 50, 5, 50
+Hydroelectric,Hydroelectric, 0, 250, 0, 250
+NG CCGT1,NG CCGT, 220, 500, 23, 200
+NG CCGT2,NG CCGT, 25, 50, 30, 20
+NG CCGT3,NG CCGT, 200, 400, 22, 160
+NG CCGT4,NG CCGT, 100, 200, 36, 80
+NG CT1,NG CT, 73, 100, 38, 100
+NG CT2,NG CT, 21, 48, 39, 48
+NG CT3,NG CT, 21, 51, 39, 51
+NG CT4,NG CT, 21, 51, 40, 51
+NG CT5,NG CT, 0, 100, 45, 100
+NG CT6,NG CT, 0, 100, 46, 100
+NG CT7,NG CT, 0, 100, 46, 100
+Wind,Wind, 0, 300, 0, 300
+Solar,Solar, 0, 500, 0, 500

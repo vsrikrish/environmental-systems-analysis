@@ -1,10 +1,10 @@
 ---
-title: "Power Systems and Economic Dispatch"
-subtitle: "Lecture 14"
+title: "Economic Dispatch"
+subtitle: "Lecture 15"
 author: "Vivek Srikrishnan"
 course: "BEE 4750"
 institution: "Cornell University"
-date: "October 21, 2024"
+date: "October 22, 2024"
 format:
     revealjs:
         slide-number: c/t
@@ -67,15 +67,25 @@ default(
     framestyle=:box, 
     label=nothing, 
     grid=false,
-    tickfontsize=16,
+    tickfontsize=18,
     guidefontsize=18,
-    legendfontsize=18
+    legendfontsize=18,
+    bottom_margin=10mm,
+    left_margin=10mm
 )
 ```
 
-# Review of Previous Classes
+# Review and Questions
 
-## Last Week/Two Weeks Ago
+## Last Class
+
+- Overview of power systems decision problems
+- Many are LPs (at least classically...)
+- Generating capacity expansion
+
+## Questions?
+
+{{< include _poll-prompt.qmd >}}
 
 # Electric Power System Decision Problems
 
@@ -93,14 +103,6 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Electric_power_transmission)
 
 ::: {.caption}
 Adapted from Perez-Arriaga, Ignacio J., Hugh Rudnick, and Michel Rivier (2009)
-:::
-
-## Electricity Generation by Source
-
-![Electricity Generation in 2022 by Source](https://www.eia.gov/energyexplained/electricity/images/outlet-graph-large.jpg)
-
-::: {.caption}
-Source: U.S. Energy Information Administration
 :::
 
 # Single-Period Economic Dispatch
@@ -125,8 +127,8 @@ What are our variables?
 ::: {.fragment .fade-in}
 | Variable | Meaning |
 |:-----:|:---------------| 
-| $d$ | demand (MW) |
-| $y_g$ | generation (MW) by generator $g \in \mathcal{G}$ | 
+| $d$ | demand (MWh) |
+| $y_g$ | generation (MWh) by generator $g \in \mathcal{G}$ | 
 | $VarCost_g$ | variable generation cost (\$/MWh) for generator $g$ |
 | $P^{\text{min/max}}_g$ | generation limits (MW) for generator $g$ | 
 :::
@@ -181,48 +183,49 @@ gens = DataFrame(CSV.File("data/economic_dispatch/generators.csv"))
 ```
 
 - 1 biomass, 50 MW capacity, \$5/MWh
-- 1 hydroelectric, 500 MW capacity, \$0/MWh
-- 5 natural gas CCGT, 25-220 MW minimum, 50-620 MW capacity \$22-37/MWh
-- 6 natural gas CT, 0-73 MW minimum, 48-100 MW capacity, \$38-45/MWh
+- 1 hydroelectric, 250 MW capacity, \$0/MWh
+- 5 natural gas CCGT, 25-220 MW minimum, 50-500 MW capacity \$22-36/MWh
+- 7 natural gas CT, 0-73 MW minimum, 48-100 MW capacity, \$38-46/MWh
 
-Let's assume demand is 2400 MW.
+Let's assume demand is 1600 MWh.
 
 ## Single-Period Results
 
 ```{julia}
+#| echo: true
+#| code-fold: true
 
 # define sets
-G = 1:nrow(gens)
+# going to ignore renewables for this, so don't look at the last two generators
+G = 1:nrow(gens)-2
 NSECost = 9000
-d = 2400
+d = 1600
 
 single_ed = Model(HiGHS.Optimizer)
 @variable(single_ed, gens[g, :Pmin] <= y[g in G] <= gens[g, :Pmax])
-@objective(single_ed, Min, sum(gens[!, :VarCost] .* y))
+@objective(single_ed, Min, sum(gens[G, :VarCost] .* y))
 @constraint(single_ed, demand, sum(y) >= d)
 set_silent(single_ed)
 optimize!(single_ed)
 
-leg_gps = repeat(["Dispatched Generation", "Minimum Generation"], inner = nrow(gens))
-groupedbar(repeat(gens[!, :Plant], outer=2), Matrix(hcat(Vector(value.(y)), gens[!, :Pmin])), group=leg_gps, tickfontsize=14, guidefontsize=14, legendfontsize=14, xrotation=45, bottom_margin=20mm, left_margin=10mm, ylabel="Generation (MW)")
-plot!(size=(1300, 400))
+leg_gps = repeat(["Dispatched Generation", "Minimum Generation", "Maximum Generation"], inner = nrow(gens)-2)
+groupedbar(repeat(gens[G, :Plant], outer=3), Matrix(hcat(Vector(value.(y)), gens[G, :Pmin], gens[G, :Pmax])), group=leg_gps, xrotation=45, bottom_margin=25mm, top_margin=5mm, right_margin=5mm, ylabel="Generation (MWh)", legend=:outerbottom)
+plot!(size=(1300, 725))
 ```
-
-The cost of operating the system is \$51,016, and the shadow price of the demand constraint is -\$36.
 
 ## Cost of Marginal Generation
 
-How can we understand these results?
-
-::: {.fragment .fade-in}
 ```{julia}
-gens.cap = gens.Pmax .- gens.Pmin
-sort!(gens, [:VarCost, order(:cap, rev=true)])
+#| code-fold: true
+#| echo: true
+
+gens.cap = gens[:, :Pmax] .- gens[:, :Pmin]
+gens_nr = sort!(gens[G, :], [:VarCost, order(:cap, rev=true)])
 
 function plot_supply_curve(supply_curve, demand) 
     rectangle(w, h, x, y) = Shape(x .+ [0,w,w,0], y .+ [0,0,h,h]) 
 
-    p = plot(grid=:false, color_palette=:mk_15, size=(700, 400), left_margin=10mm, bottom_margin=10mm, legendfontsize=15, tickfontsize=14, guidefontsize=16) 
+    p = plot(grid=:false, color_palette=:mk_15, size=(700, 400), titlefontsize=20, top_margin=10mm, right_margin=5mm) 
     plot!(legend=:outerright, legendcolumns=1)
     marg_gen = 0 
     marg_price = 0 
@@ -243,20 +246,38 @@ function plot_supply_curve(supply_curve, demand)
         x = x + supply_curve[i,:cap] 
     end 
     vline!([demand],linecolor="black",linewidth=3, linestyle=:dash, label = "demand") 
-    hline!([marg_price],linecolor="blue", linestyle=:dot, linewidth=3, label = "Electricity Price") 
 
     title!("Dispatch Stack Supply Curve") 
     xlabel!("Capacity (MW)") 
     ylabel!("Marginal Cost (\$\$/MW)") 
 
-    return p 
+    return (p, marg_price) 
 end 
-d = 2400
-p = plot_supply_curve(gens, d)
-plot!(p, size=(1300, 450))
+p, marg_price = plot_supply_curve(gens_nr, d)
+plot!(p, size=(1300, 500))
 
 ```
-:::
+
+## Cost of Marginal Generation
+
+```{julia}
+#| echo: true
+#| code-fold: true
+
+hline!(p, [marg_price],linecolor="blue", linestyle=:dot, linewidth=3, label = "Electricity Price") 
+annotate!(p, (400, 20, ("Demand shadow price!", :red, 20)))
+quiver!([300], [22], quiver=([0], [15]), color=:red)
+```
+
+## Shadow Prices Signs
+
+Note that increasing demand by one MWh decreases cost (minimization problem).
+
+The convention in `JuMP` is that the shadow price is therefore negative, but this is not universal.
+
+So we can find the price with $$\text{Cost} = |\lambda_\text{demand}|.$$
+
+
 
 ## Dispatch Stack and Merit Order
 
@@ -287,10 +308,10 @@ Plants can only increase and decrease their output by so much from time to time,
 $$
 \begin{align}
 \min_{y_{g,t}} & \sum_g VarCost_g \times \sum_t y_{g,t} & \\
-\text{subject to:} \quad & \sum_g y_{g,t} = d_t & \\[0.5em]
-& y_{g,t} \leq P^{\text{max}}_g  & \forall t \in \mathcal{T}, g \in \mathcal{G} \\[0.5em]
-& y_{g,t} \geq P^{\text{min}}_g & \forall t \in \mathcal{T}, g \in \mathcal{G} \\[0.5em]
-& \color{red}y_{g,t+1} - y_{g, t} \leq R_g & \forall t \in \mathcal{T}, g \in \mathcal{G} \\[0.5em]
+\text{subject to:} \quad & \sum_g y_{g,t} \geq d_t & \\[0.3em]
+& y_{g,t} \leq P^{\text{max}}_g  & \forall t \in \mathcal{T}, g \in \mathcal{G} \\[0.3em]
+& y_{g,t} \geq P^{\text{min}}_g & \forall t \in \mathcal{T}, g \in \mathcal{G} \\[0.3em]
+& \color{red}y_{g,t+1} - y_{g, t} \leq R_g & \forall t \in \mathcal{T}, g \in \mathcal{G} \\[0.3em]
 & \color{red}y_{g,t} - y_{g, t+1} \leq R_g &  \forall t \in \mathcal{T}, g \in \mathcal{G}
 \end{align}
 $$
@@ -307,7 +328,8 @@ Ramping constraints can vary strongly by generator type, which, combined with co
 We'll make this simple for this problem:
 
 - Biomass, hydroelectric, CT can ramp from 0-100% each hour.
-- CCGT plants can ramp from 50-100% of maximum capacity.
+- CCGT plants can ramp around 40% of maximum capacity.
+- **Renewables**: wind (300 MW) and solar (500 MW) can ramp from 0-100% but are limited by their resources each hour, expressed as a **capacity factor**.
 
 ## Demand Curve
 
@@ -315,26 +337,61 @@ We'll make this simple for this problem:
 #| label: fig-demand
 #| fig-cap: Demand for 2020 in NYISO Zone C
 #| fig-align: center
+#| echo: true
+#| code-fold: true
 
-NY_demand = DataFrame(CSV.File("data/capacity_expansion/2020_hourly_load_NY.csv"))
+NY_demand = DataFrame(CSV.File("data/economic_dispatch/2020_hourly_load_NY.csv"))
 rename!(NY_demand, :"Time Stamp" => :Date)
 d = NY_demand[:, [:Date, :C]]
 rename!(d, :C => :Demand)
 n = 289 # pick day
 T_period = (n*24+1):((n+1)*24)
 d = d[T_period, :]
-@df d plot(:Date, :Demand, xlabel="Date", ylabel="Demand (MWh)", label=:false, tickfontsize=14, guidefontsize=14, xrot=45, bottommargin=20mm, leftmargin=7mm)
-plot!(size=(1200, 550))
+@df d plot(:Date, :Demand, xlabel="Date", ylabel="Demand (MWh)", label=:false,  xrot=45, bottommargin=24mm)
+plot!(size=(1200, 500))
 ```
+
+## Renewable Variability
+
+```{julia}
+#| label: fig-renewable
+#| fig-cap: Renewable capacity factors for the given day
+#| fig-align: center
+#| echo: true
+#| code-fold: true
+
+ren_var = DataFrame(CSV.File("data/economic_dispatch/gen_variability.csv"))
+p = plot(; xlabel="Hour", ylabel="Capacity Factor")
+plot!(p, ren_var[!, :Hour], ren_var[!, :Wind], label="Wind", color=:blue, linewidth=4)
+plot!(p, ren_var[!, :Hour], ren_var[!, :Solar], label="Solar", color=:orange, linewidth=4)
+ylims!((0, 1))
+plot!(size=(1300, 500))
+```
+
+## Multi-Period Formulation (Renewables)
+
+$$
+\begin{align}
+\min_{y_{g,t}} & \sum_g VarCost_g \times \sum_t y_{g,t} & \\
+\text{subject to:} \quad & \sum_g y_{g,t} = d_t & \\[0.3em]
+& \color{red}y_{g,t} \leq P^{\text{max}}_g \times CF_{g,t} & \forall t \in \mathcal{T}, g \in \mathcal{G} \\[0.3em]
+& y_{g,t} \geq P^{\text{min}}_g & \forall t \in \mathcal{T}, g \in \mathcal{G} \\[0.3em]
+& y_{g,t+1} - y_{g, t} \leq R_g & \forall t \in \mathcal{T}, g \in \mathcal{G} \\[0.3em]
+& y_{g,t} - y_{g, t+1} \leq R_g &  \forall t \in \mathcal{T}, g \in \mathcal{G}
+\end{align}
+$$
 
 ## Multi-Period Results
 
 ```{julia}
+#| echo: true
+#| code-fold: true
+
 G = 1:nrow(gens)
 T = 1:nrow(d)
 
 multi_ed = Model(HiGHS.Optimizer)
-@variable(multi_ed, gens[g, :Pmin] <= y[g in G, t in T] <= gens[g, :Pmax])
+@variable(multi_ed, gens[g, :Pmin] <= y[g in G, t in T] <= gens[g, :Pmax] * ren_var[t, g+1])
 @objective(multi_ed, Min, sum(gens[:, :VarCost] .* [sum(y[g, :]) for g in G]))
 @constraint(multi_ed, load[t in T], sum(y[:, t]) == d[t, :Demand])
 @constraint(multi_ed, rampup[g in G, t in 1:length(T)-1], y[g, t+1] - y[g, t] <= gens[g, :Ramp])
@@ -342,22 +399,97 @@ multi_ed = Model(HiGHS.Optimizer)
 set_silent(multi_ed)
 optimize!(multi_ed)
 
-gen = value.(y).data
+multi_ed_noramp = Model(HiGHS.Optimizer)
+@variable(multi_ed_noramp, gens[g, :Pmin] <= y2[g in G, t in T] <= gens[g, :Pmax] * ren_var[t, g+1])
+@objective(multi_ed_noramp, Min, sum(gens[:, :VarCost] .* [sum(y2[g, :]) for g in G]))
+@constraint(multi_ed_noramp, load[t in T], sum(y2[:, t]) == d[t, :Demand])
+set_silent(multi_ed_noramp)
+optimize!(multi_ed_noramp)
+
+
+gen = value.(y).data 
 p = areaplot(gen', 
     label=permutedims(gens[:, :Plant]), 
     xlabel = "Hour", 
     ylabel ="Generated Electricity (MW)", 
-    color_palette=:mk_15, 
-    left_margin=5mm, 
-    bottom_margin=5mm,
+    color_palette=:mk_15,
     grid=:false,
     ylim=(0, 1900),
-    legendfontsize=16, tickfontsize=13, 
-    guidefontsize=16
+    top_margin=10mm
 )
 plot!(legend=:outerright, legendcolumns=1)
-plot!(p, size=(1200, 550))
+plot!(p, size=(1200, 500))
 ```
+
+## Combining Generator Types
+
+```{julia}
+#| echo: true
+#| code-fold: true
+#| label: fig-summary-ed
+#| fig-cap: ED Results grouped by generator type
+
+
+gen_cbm = DataFrame(gen, :auto)
+gen_cbm[!, :Resource] = gens.Resource
+gen_cbm_sum = combine(groupby(gen_cbm, [:Resource]), Not([:Resource]) .=> sum)
+
+p = areaplot(Matrix(gen_cbm_sum[:, 2:end])', 
+           label=permutedims(gen_cbm_sum[:, :Resource]), 
+           xlabel = "Hour", 
+           ylabel ="Generated Electricity (MW)", 
+           color_palette=:mk_15,
+           grid=:false,
+           ylim=(0, 1900),
+           legend = :outerright
+       )
+plot!(p, size=(1200, 500))
+
+```
+
+## Impact of Ramping Constraints
+
+:::: {.columns}
+::: {.column width=30%}
+Ramping constraints increase the cost by \$`{julia} Int(round(objective_value(multi_ed) - objective_value(multi_ed_noramp); digits=0))`.
+:::
+::: {.column width=70%}
+```{julia}
+#| echo: true
+#| code-fold: true
+#| label: fig-rampimpact
+#| fig-cap: Impact of ramping constraints
+
+p = areaplot(Matrix(gen_cbm_sum[:, 2:end])', 
+           label=permutedims(gen_cbm_sum[:, :Resource]), 
+           xlabel = "Hour", 
+           ylabel ="Generated Electricity (MW)", 
+           color_palette=:mk_15,
+           grid=:false,
+           ylim=(0, 1900),
+           legend = :left
+       )
+
+gen2 = value.(y2).data
+gen2_cbm = DataFrame(gen2, :auto)
+gen2_cbm[!, :Resource] = gens.Resource
+gen2_cbm_sum = combine(groupby(gen2_cbm, [:Resource]), Not([:Resource]) .=> sum)
+
+p2= groupedbar(Matrix(gen_cbm_sum[:, 2:end] .- gen2_cbm_sum[:, 2:end])', 
+    bar_position = :stack,
+    label = permutedims(gen_cbm_sum[:, :Resource]),
+    xlabel = "Hour", 
+    ylabel ="Ramping Constraint\nGeneration Increase (MWh)", 
+    color_palette=:mk_15,
+    grid=:false,
+    legend = :outerright,
+    top_margin=10mm,
+    right_margin=10mm
+)
+plot!(p2, layout=(2,1), size=(900, 500))
+```
+:::
+::::
 
 ## The "Duck Curve"
 
@@ -380,24 +512,18 @@ Source: [Power Magazine](https://www.powermag.com/duck-hunting-california-indepe
 
 ## Key Takeaways
 
-- Capacity Expansion is a foundational power systems decision problem.
-- Is an LP with some basic assumptions.
-- We looked at a "greenfield" example: no existing plants.
-- Decision problem becomes more complex with renewables (HW4) or "brownfield" (expanding existing fleet, possibly with retirements).
+- Economic Dispatch: how to generate power from existing generators at least cost.
+- Engineering constraints (ramping, minimum generation) can weaken simple "merit ordering."
+- Renewables are limited by resource variability (capacity factor).
+- Ramping constraints play a role in "duck curve" behavior of high-renewable systems.
 
 # Upcoming Schedule
 
 ## Next Classes
 
-**Wednesday**: Fixed Costs and Unit Commitment
-
-**Monday**: Prelim 1 Review
+**Next Week**: Air Pollution
 
 ## Assessments
 
-- HW4 assigned next week
-
-## Questions?
-
-{{< include _poll-prompt.qmd >}}
-
+- Will start Monday by reviewing Prelim 1.
+- HW4 due 10/31.

@@ -428,9 +428,24 @@ Non-zero shadow prices tell us that the constraint is binding, and their values 
 
 ## Reminder: Constrained Optimization and Lagrange Multipliers
 
-**Lagrange Multipliers** are a way to incorporate constraints into an "unconstrained" form.
+**Lagrange Multipliers** are a way to incorporate equality constraints into an "unconstrained" form for an optimization problem.
 
 ## Reminder: Constrained Optimization and Lagrange Multipliers
+
+\begin{align*}
+\max_{x,y}\qquad &f(x,y) \\
+\text{subject to:}\qquad &g(x,y) = 0
+\end{align*}  
+
+::: {.fragment .fade-in}
+Then:
+$$\mathcal{L}(x, y, \lambda) = f(x,y) - \lambda g(x,y)$$
+:::
+
+
+
+
+## Converting Inequality Constraints
 
 :::: {.columns}
 ::: {.column width=50%}

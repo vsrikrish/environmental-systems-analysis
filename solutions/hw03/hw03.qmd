@@ -107,8 +107,8 @@ function dissolved_oxygen(x, C₀, B₀, N₀, U, Cₛ, ka, kc, kn)
 
     # loop over values in x to calculate B, N, and C
     for (i, d) in pairs(x) # <2>
-        B[i] = B₀ * exp(-kb * x[i] / U)
-        N[i] = N₀ * exp(-kc * x[i] / U)
+        B[i] = B₀ * exp(-kc * x[i] / U)
+        N[i] = N₀ * exp(-kn * x[i] / U)
         C[i] = Cₛ * (1 - α₁[i]) + (C₀ * α₁[i]) - (B₀ * α₂[i]) - (N₀ * α₃[i])
     end
 
@@ -135,7 +135,7 @@ I initially wrote this out as a script to debug, but then reformulated it as a f
 #   - U: velocity of river (km/d)
 #   - Cₛ = saturation oxygen concentration (mg/L)
 #   - ka, kc, kn: reaeration, CBOD decay, and NBOD decay rates, respectively (d^{-1})
-function do_simulate(inflow, waste1, waste2, U, Cₛ, ka, kb, kn)
+function do_simulate(inflow, waste1, waste2, U, Cₛ, ka, kc, kn)
     # set up ranges for each box/segment
     x₁ = 0:1:15 # <1>
     x₂ = (15:1:50) .- 15 # <2>
@@ -145,7 +145,7 @@ function do_simulate(inflow, waste1, waste2, U, Cₛ, ka, kb, kn)
     V_ws2, C_ws2, B_ws2, N_ws2 = waste2 # <3>
 
     # initialize storage for final C, B, and N
-    # need to store d=1 so the total length should be d+1
+    # need to store d=0 so the total length should be d+1
     C = zeros(51)
     B = zeros(51)
     N = zeros(51)
@@ -156,7 +156,7 @@ function do_simulate(inflow, waste1, waste2, U, Cₛ, ka, kb, kn)
     N₀ = mix_concentration(V_inflow, N_inflow, V_ws1, N_ws1)
 
     # conduct first segment simulation
-    (C₁, B₁, N₁) = dissolved_oxygen(x₁, C₀, B₀, N₀, U, Cₛ, ka, kb, kn)
+    (C₁, B₁, N₁) = dissolved_oxygen(x₁, C₀, B₀, N₀, U, Cₛ, ka, kc, kn)
     C[1:15] = C₁[1:end-1] # <4>
     B[1:15] = B₁[1:end-1]
     N[1:15] = N₁[1:end-1]
@@ -167,7 +167,7 @@ function do_simulate(inflow, waste1, waste2, U, Cₛ, ka, kb, kn)
     N₀₁ = mix_concentration(V_inflow + V_ws1, N₁[end], V_ws2, N_ws2)
 
     # conduct second segment simulation
-    (C₂, B₂, N₂) = dissolved_oxygen(x₂, C₀₁, B₀₁, N₀₁, U, Cₛ, ka, kb, kn)
+    (C₂, B₂, N₂) = dissolved_oxygen(x₂, C₀₁, B₀₁, N₀₁, U, Cₛ, ka, kc, kn)
     C[16:end] = C₂
     B[16:end] = B₂
     N[16:end] = N₂
@@ -179,36 +179,35 @@ end
 U = 6
 Cₛ = 10
 ka = 0.55
-kb = 0.35
+kc = 0.35
 kn = 0.25
 
 # set initial parameters
 C_inflow = 7.5 # DO concentration
 B_inflow = 5.0 # CBOD
 N_inflow = 5.0 # NBOD
-V_inflow = 100 * 1_000 # volume converted to L # <5>
+V_inflow = 100 * 1_000 # volume converted to L
 inflow = (V_inflow, C_inflow, B_inflow, N_inflow)
 
 # set waste stream parameters
 C_ws1 = 5.0
 B_ws1 = 50.0
 N_ws1 = 35.0
-V_ws1 = 10 * 1_000 # <5>
+V_ws1 = 10 * 1_000
 waste1 = (V_ws1, C_ws1, B_ws1, N_ws1)
 
 C_ws2 = 4.0
 B_ws2 = 45.0
 N_ws2 = 35.0
-V_ws2 = 15 * 1_000 # <5>
+V_ws2 = 15 * 1_000
 waste2 = (V_ws2, C_ws2, B_ws2, N_ws2)
 
-C, B, N = do_simulate(inflow, waste1, waste2, U, Cₛ, ka, kb, kn)
+C, B, N = do_simulate(inflow, waste1, waste2, U, Cₛ, ka, kc, kn)
 ```
 1. The colon syntax sets up the range using the syntax `initial_value:stepsize:end_value`. In general a stepsize of 1 is implicit, but I've made it explicit here for illustration.
 2. This starts at 0 because we care about the distance from the initial condition, not the "absolute" distance.
 3. Tuples (including multiple outputs from functions) can be unpacked into multiple variables this way to make the subsequent code more readable (versus just relying on indexing).
 4. We don't need to store the last value because that occurs at the point of mixing with the next waste stream. We will use it to compute the mixed concentration at that point.
-5. This was my mistake; I meant for the inflow/waste stream data to not include the last thousands digits, *e.g.* to be 100 m^3^/day. But this should wash out in this problem when you compute the mixed concentrations.
 
 Now we can plot the dissolved oxygen concentration, shown in @fig-do-untreated.
 
@@ -244,10 +243,10 @@ To determine the minimum treatment of the waste streams needed to maintain compl
 #   - U: velocity of river (km/d)
 #   - Cₛ = saturation oxygen concentration (mg/L)
 #   - ka, kc, kn: reaeration, CBOD decay, and NBOD decay rates, respectively (d^{-1})
-function waste_treat(eff1, eff2, inflow, waste1, waste2, U, Cₛ, ka, kb, kn)
+function waste_treat(eff1, eff2, inflow, waste1, waste2, U, Cₛ, ka, kc, kn)
     waste1_treated = (waste1[1], waste1[2], (1 - eff1) * waste1[3], (1 - eff1) * waste1[4])    
     waste2_treated = (waste2[1], waste2[2], (1 - eff2) * waste2[3], (1 - eff2) * waste2[4])    
-    C, B, N = do_simulate(inflow, waste1_treated, waste2_treated, U, Cₛ, ka, kb, kn)
+    C, B, N = do_simulate(inflow, waste1_treated, waste2_treated, U, Cₛ, ka, kc, kn)
     return minimum(C)
 end
 ```
@@ -256,8 +255,8 @@ Now we can evaluate this function over a range of treatment efficiencies. There 
 ```{julia}
 # evaluate treatment efficiencies between 0 and 1
 effs = 0:0.01:1
-treat1 = (e1 -> waste_treat(e1, 0, inflow, waste1, waste2, U, Cₛ, ka, kb, kn)).(effs)
-treat2 = (e2 -> waste_treat(0, e2, inflow, waste1, waste2, U, Cₛ, ka, kb, kn)).(effs)
+treat1 = (e1 -> waste_treat(e1, 0, inflow, waste1, waste2, U, Cₛ, ka, kc, kn)).(effs)
+treat2 = (e2 -> waste_treat(0, e2, inflow, waste1, waste2, U, Cₛ, ka, kc, kn)).(effs)
 ```
 
 To find the minimum treatment level which ensures compliance, we can now find the position of the first value where the minimum value is at least 4 mg/L, and look up the associated efficiency. Julia provides the `findfirst()` function which lets you find the index of the first value satisfying a Boolean condition.
@@ -430,7 +429,7 @@ We could have solved Problem 1 in a more modular way, which included multiple di
 #   - U: velocity of river (km/d)
 #   - Cₛ = saturation oxygen concentration (mg/L)
 #   - ka, kc, kn: reaeration, CBOD decay, and NBOD decay rates, respectively (d^{-1})
-function do_simulate2(d, inflow, waste1, waste2, waste3, U, Cₛ, ka, kb, kn)
+function do_simulate2(d, inflow, waste1, waste2, waste3, U, Cₛ, ka, kc, kn)
     # set up ranges for each box/segment
     x₁ = 0:1:15
     x₂ = (15:1:15+d) .- 15 
@@ -454,7 +453,7 @@ function do_simulate2(d, inflow, waste1, waste2, waste3, U, Cₛ, ka, kb, kn)
     N₀ = mix_concentration(V_inflow, N_inflow, V_ws1, N_ws1)
 
     # conduct first segment simulation
-    (C₁, B₁, N₁) = dissolved_oxygen(x₁, C₀, B₀, N₀, U, Cₛ, ka, kb, kn)
+    (C₁, B₁, N₁) = dissolved_oxygen(x₁, C₀, B₀, N₀, U, Cₛ, ka, kc, kn)
     C[1:15] = C₁[1:end-1] 
     B[1:15] = B₁[1:end-1]
     N[1:15] = N₁[1:end-1]
@@ -465,7 +464,7 @@ function do_simulate2(d, inflow, waste1, waste2, waste3, U, Cₛ, ka, kb, kn)
     N₀₁ = mix_concentration(V_inflow + V_ws1, N₁[end], V_ws2, N_ws2)
 
     # conduct second segment simulation
-    (C₂, B₂, N₂) = dissolved_oxygen(x₂, C₀₁, B₀₁, N₀₁, U, Cₛ, ka, kb, kn)
+    (C₂, B₂, N₂) = dissolved_oxygen(x₂, C₀₁, B₀₁, N₀₁, U, Cₛ, ka, kc, kn)
     C[16:16+d] = C₂ 
     B[16:16+d] = B₂
     N[16:16+d] = N₂
@@ -476,7 +475,7 @@ function do_simulate2(d, inflow, waste1, waste2, waste3, U, Cₛ, ka, kb, kn)
     N₀₂ = mix_concentration(V_inflow + V_ws1 + V_ws2, N₂[end], V_ws3, N_ws3)
 
     # conduct second segment simulation
-    (C₃, B₃, N₃) = dissolved_oxygen(x₃, C₀₂, B₀₂, N₀₂, U, Cₛ, ka, kb, kn)
+    (C₃, B₃, N₃) = dissolved_oxygen(x₃, C₀₂, B₀₂, N₀₂, U, Cₛ, ka, kc, kn)
     C[16+d:end] = C₃ 
     B[16+d:end] = B₃
     N[16+d:end] = N₃
@@ -486,18 +485,17 @@ function do_simulate2(d, inflow, waste1, waste2, waste3, U, Cₛ, ka, kb, kn)
 end
 
 # set up treatment level for waste stream 2 based on solution for Problem 1
-B_ws2 = (1 - 0.08) * 45.0
-N_ws2 = (1 - 0.08) * 35.0
+B_ws2 = (1 - 0.15) * 45.0
+N_ws2 = (1 - 0.15) * 35.0
 waste2 = (V_ws2, C_ws2, B_ws2, N_ws2)
 
 # set parameters for waste stream 3
 C_ws3 = 4.5
 B_ws3 = 50.0
 N_ws3 = 45.0
-V_ws3 = 5.0 * 1_000 # convert from m^3/day to L/day # <1>
+V_ws3 = 5.0 * 1_000 # convert from m^3/day to L/day
 waste3 = (V_ws3, C_ws3, B_ws3, N_ws3)
 ```
-1. This is related to the issue in Problem 1; if your answer is different because of this issue with scaling and units you should receive full credit so long as your approach was clear.
 
 Now we can evaluate `do_simulate2` over the different values of `d` to find the minimum value of `C`.
 
@@ -513,14 +511,14 @@ Now we can evaluate `do_simulate2` over the different values of `d` to find the 
 #   - U: velocity of river (km/d)
 #   - Cₛ = saturation oxygen concentration (mg/L)
 #   - ka, kc, kn: reaeration, CBOD decay, and NBOD decay rates, respectively (d^{-1})
-function three_discharge_minC(d, inflow, waste1, waste2, waste3, U, Cₛ, ka, kb, kn)
-    C, B, N = do_simulate2(d, inflow, waste1, waste2, waste3, U, Cₛ, ka, kb, kn)
+function three_discharge_minC(d, inflow, waste1, waste2, waste3, U, Cₛ, ka, kc, kn)
+    C, B, N = do_simulate2(d, inflow, waste1, waste2, waste3, U, Cₛ, ka, kc, kn)
     return minimum(C)
 end
 
 # evaluate over all distances from 1 to 35 m downstream using broadcasting and anonymous functions
 d = 1:1:35
-minC_d = (dist -> three_discharge_minC(dist, inflow, waste1, waste2, waste3, U, Cₛ, ka, kb, kn)).(d)
+minC_d = (dist -> three_discharge_minC(dist, inflow, waste1, waste2, waste3, U, Cₛ, ka, kc, kn)).(d)
 idx = findfirst(minC_d .>= 4.0)
 min_dist = d[idx]
 @show min_dist;

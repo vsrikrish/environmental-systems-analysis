@@ -1,0 +1,407 @@
+---
+title: "Power Systems and Capacity Expansion"
+subtitle: "Lecture 14"
+author: "Vivek Srikrishnan"
+course: "BEE 4750"
+institution: "Cornell University"
+date: "October 21, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: mathjax
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+        auto-stretch: false
+        controls: true
+engine: julia
+execute:
+    freeze: auto
+    daemon: 600
+---
+
+```{julia}
+#| output: false
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+using Random    
+using JuMP
+using HiGHS
+using Plots
+using StatsPlots
+using Measures
+using LaTeXStrings
+using DataFrames
+using CSV
+using MarkdownTables
+
+
+Random.seed!(1)
+plot_font = "Computer Modern"
+default(
+    fontfamily=plot_font,
+    linewidth=2, 
+    framestyle=:box, 
+    label=nothing, 
+    grid=false,
+    tickfontsize=18,
+    guidefontsize=18,
+    legendfontsize=18,
+    left_margin=10mm,
+    bottom_margin=10mm
+)
+```
+
+## Questions?
+
+{{< include _poll-prompt.qmd >}}
+
+# Electric Power System Decision Problems
+
+## Overview of Electric Power Systems
+
+![Power Systems Schematic](https://upload.wikimedia.org/wikipedia/commons/4/41/Electricity_grid_simple-_North_America.svg)
+
+::: {.caption}
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Electric_power_transmission)
+:::
+
+## Decisions Problems for Power Systems
+
+![Decision Problems for Power Systems by Time Scale](figures/elec-decision-problems.svg)
+
+::: {.caption}
+Adapted from Perez-Arriaga, Ignacio J., Hugh Rudnick, and Michel Rivier (2009)
+:::
+
+## Electricity Generation by Source
+
+![Electricity Generation in 2022 by Source](https://www.eia.gov/energyexplained/electricity/images/outlet-graph-large.jpg)
+
+::: {.caption}
+Source: U.S. Energy Information Administration
+:::
+
+# Generating Capacity Expansion
+
+## Capacity Expansion
+
+**Capacity expansion** involves adding resources to generate or transmit electricity to meet anticipated demand (*load*) in the future.
+
+Typical objective: Minimize cost
+
+But other constraints may apply, *e.g.* reducing CO~2~ emissions or increasing fuel diversity.
+
+
+# Simple Capacity Expansion Example
+
+## Plant Types
+
+In general, we have many fuel options:
+
+- Gas (combined cycle or simple cycle);
+- Coal;
+- Nuclear;
+- Renewables (wind, solar, hydro, geothermal)
+
+## Simplified Example: Generators 
+
+```{julia}
+#| echo: true
+#| code-fold: true
+
+gens = DataFrame(CSV.File("data/capacity_expansion/generators.csv"))
+gens_display = rename(gens, Symbol.([:Generator, :"Fixed Cost (\\\$)", :"Variable Cost (\\\$/MW)"]))
+markdown_table(gens_display[1:end-2, :])
+```
+
+## Simplified Example: Demand
+
+```{julia}
+#| label: fig-demand
+#| fig-cap: Demand for 2020 in NYISO Zone C
+#| fig-align: center
+#| echo: true
+#| code-fold: true
+
+
+NY_demand = DataFrame(CSV.File("data/capacity_expansion/2020_hourly_load_NY.csv"))
+rename!(NY_demand, :"Time Stamp" => :Date)
+demand = NY_demand[:, [:Date, :C]]
+rename!(demand, :C => :Demand)
+@df demand plot(:Date, :Demand, xlabel="Date", ylabel="Demand (MWh)", label=:false, xrot=45, bottom_margin=15mm)
+plot!(size=(1200, 500))
+```
+
+## Load Duration Curves
+
+The chronological demand curve makes it hard to understand what levels of load occur with lower or greater frequency. 
+
+Instead, we can sort demand from high to low, which creates a **load duration curve**.
+
+## Simplified Example: Load Duration Curve
+
+```{julia}
+#| echo: true
+#| code-fold: true
+#| label: fig-ldc
+#| fig-cap: Load Duration Curve for 2020 in NYISO Zone C
+#| fig-align: center
+
+plot(sort(demand.Demand, rev=true), linewidth=3, label=:false)
+xaxis!("Hours")
+yaxis!("Demand (MWh)")
+plot!(size=(1200, 450))
+```
+
+## Simplified Example: Load Duration Curve
+
+```{julia}
+#| echo: true
+#| code-fold: true
+#| label: fig-ldc-sections
+#| fig-cap: Load Duration Curve for 2020 in NYISO Zone C
+#| fig-align: center
+
+hline!([2400], color=:red, linewidth=3, label=false)
+annotate!(2000, 2500, text("Peak Load", :red, :right, 20))
+hline!([1500], color=:brown, linewidth=3, label=false)
+annotate!(4000, 2000, text("Shoulder Load", :brown, :left, 20))
+annotate!(2000, 1400, text("Base Load", :blue, :right, 20))
+
+```
+
+## Capacity Expansion: Goal
+
+We want to find the installed capacity of each technology that meets demand at all hours at minimal *total cost*.
+
+::: {.fragment .fade-in}
+*Although...*
+
+::: {.incremental}
+- For some hours with extreme load, is it necessarily worth it to build new generation to meet those peaks?
+- Instead, assign a *high* cost $NSECost$ to **non-served energy** (NSE). In this case, let's set $NSECost = \$9000$/MWh
+:::
+:::
+
+## Decision Variables 
+
+What are our variables?
+
+::: {.fragment .fade-in}
+| Variable | Meaning |
+|:--:|:-------------------:|
+| $x_g$ | installed capacity (MW) from each generator type $g \in \mathcal{G}$ |
+| $y_{g,t}$ | production (MWh) from each generator type $g$ in hour $t \in \mathcal{T}$ |
+| $NSE_t$ | non-served energy (MWh) in hour $t \in \mathcal{T}$ |
+:::
+
+## Capacity Expansion Objective
+
+$$
+\begin{align}
+\min_{x, y, NSE} Z &= {\color{red}\text{investment cost} } + {\color{blue}\text{operating cost} } \\
+&= {\color{red} \sum_{g \in \mathcal{G}} \times \text{FixedCost}_g x_g} + \\
+& \qquad{\color{blue} \sum_{t \in \mathcal{T}}  \sum_{g \in \mathcal{G}}  \text{VarCost}_g \times y_{g,t} + \sum_{t \in \mathcal{T}} \text{NSECost} \times NSE_t}
+\end{align}
+$$
+
+## What Are Our Constraints?
+
+
+## Capacity Expansion Constraints
+
+- **Demand**: Sum of generated energy and non-served energy must equal demand $d_t$.
+- **Capacity**: Generator types cannot produce more electricity than their installed capacity.
+- **Non-negativity**: All decision variables must be non-negative.
+
+## Problem Formulation
+
+$$
+\begin{align}
+\min_{x, y, NSE} \quad & \sum_{g \in \mathcal{G}} \text{FixedCost}_g \times x_g + \sum_{t \in \mathcal{T}} \sum_{g \in \mathcal{G}} \text{VarCost}_g \times y_{g,t} & \\
+& \quad + \sum_{t \in \mathcal{T}} \text{NSECost} \times NSE_t & \\[0.5em]
+\text {subject to:} \quad & \sum_{g \in \mathcal{G}} y_{g,t} + NSE_t \geq d_t \qquad \forall t \in \mathcal{T} \\[0.5em]
+& y_{g,t} \leq x_g \qquad \qquad \qquad\qquad  \forall g \in {G},  \forall t \in \mathcal{T} \\[0.5em]
+& x_g, y_{g,t}, NSE_t \geq 0 \qquad \qquad \forall g \in {G},  \forall t \in \mathcal{T}
+\end{align}
+$$
+
+## Capacity Expansion is an LP
+
+- **Linearity**: costs assumed to scale linearly;
+- **Divisible**: we model total installed capacity, not number of individual generator units
+- **Certainty**: no uncertainty about renewables.
+
+Real problems can get much more complex, particularly if we try to model making decisions under renewable or load uncertainty.
+
+
+
+## Capacity Expansion Example Solution
+
+```{julia}
+#| echo: true
+#| code-fold: true
+#| output: false
+
+# define sets
+G = 1:nrow(gens[1:end-2, :])
+T = 1:nrow(demand)
+NSECost = 9000
+
+gencap = Model(HiGHS.Optimizer)
+# define variables
+@variables(gencap, begin
+    x[g in G] >= 0
+    y[g in G, t in T] >= 0
+    NSE[t in T] >= 0
+end)
+@objective(gencap, Min, 
+    sum(gens[G, :FixedCost] .* x) + sum(gens[G, :VarCost] .* sum(y[:, t] for t in T)) + NSECost * sum(NSE)
+)
+@constraint(gencap, load[t in T], sum(y[:, t]) + NSE[t] >= demand.Demand[t])
+@constraint(gencap, availability[g in G, t in T], y[g, t] <= x[g])
+optimize!(gencap)
+```
+
+```{julia}
+generation = zeros(size(G,1))
+for i in 1:size(G,1) 
+    generation[i] = sum(value.(y)[G[i],:].data) 
+end
+MWh_share = generation./sum(demand.Demand).*100
+cap_share = value.(x).data ./ maximum(demand.Demand) .* 100
+results = DataFrame(
+    Resource = gens.Plant[G], 
+    Capacity = value.(x).data,
+    Percent_Cap = cap_share,
+    Generated = generation/1000,
+    Percent_Gen = MWh_share
+)
+rename!(results, 
+    [:Capacity => :"Installed (MW)", 
+    :Percent_Cap => :"Percent  (%)", 
+    :Generated => "Generation (GWh)",
+    :Percent_Gen => "Percent (%)"])
+results[:, 2:end] = round.(results[:, 2:end], digits=1)
+
+NSE_MW = maximum(value.(NSE).data) 
+NSE_MWh = sum(value.(NSE).data)
+push!(results, ["NSE" NSE_MW NSE_MW/maximum(demand.Demand)*100 NSE_MWh/1000 NSE_MWh/sum(demand.Demand)*100])
+
+results[:, 2:end] = round.(results[:, 2:end], digits=1)
+markdown_table(results)
+```
+
+## When Might Generators Operate?
+
+```{julia}
+#| label: fig-results
+#| fig-cap: Results of Generating Capacity Expansion Example
+#| echo: true
+#| code-fold: true
+
+p = areaplot(value.(y).data', 
+    label=permutedims(gens.Plant), 
+    xlabel = "Hour", 
+    ylabel ="Generated Electricity (MWh)", 
+    color_palette=:seaborn_colorblind,
+    grid=:false,
+    legend = :bottomleft)
+ylims!(p, (0, 3200))
+plot!(p, size=(1200, 500))
+```
+
+## How Often Is There Non-Served Energy?
+
+$\text{NSE}$ is non-zero for `{julia} sum(.!(iszero.(value.(NSE))))` hours and a total of `{julia} Int64(round(sum(value.(NSE)); digits=0))` MWh.
+
+**Why do we think there is any NSE given the high NSE Cost?**
+
+## What Does This Problem Neglect?
+
+::: {.incremental}
+1. **Discrete decisions**: is a plant on or off (this is called *unit commitment*)?
+2. **Intertemporal constraints**: Power plants can't just "ramp" from producing low levels of power to high levels of power; there are real engineering limits.
+3. **Transmission**: We can generate all the power we want, but what if we can't get it to where the demand is
+4. **Retirements**: We might have existing generators that we want to retire ("brownfield" scenarios).
+:::
+
+## What About Renewables?
+
+Renewables make this problem more complicated because their capacity is variable:
+
+- resource availability not constant across time;
+- need to consider a **capacity factor**.
+
+::: {.fragment .fade-in}
+How would this change our existing capacity expansion formulation?
+:::
+
+## Renewable Variability Impact
+
+This will change the **capacity** constraint from
+$$y_{g,t} \leq x_g \qquad \forall g \in {G},  \forall t \in \mathcal{T}$$
+to
+$$y_{g,t} \leq x_g \times c_{g,t} \qquad \forall g \in {G},  \forall t \in \mathcal{T}$$
+where $c_{g,t}$ is the capacity factor in time period $t$ for generator type $g$.
+
+## Implementing Constraints in JuMP
+
+I recommend using vector notation in `JuMP` to specify these constraints, *e.g.* for capacity:
+
+```julia
+# define sets
+G = 1:num_gen # num_gen is the number of generators
+T = 1:num_times # number of time periods
+
+c = ... # G x T matrix of capacity factors  
+@variable(..., x[g in G] >= 0) # installed capacity
+@variable(..., y[g in G, t in T] >= 0) # generated power
+@constraint(..., capacity[g in G, t in T], 
+    y[g,t] <= x[g] * c[g,t]) # capacity constraint
+```
+
+# Key Takeaways
+
+## Key Takeaways
+
+- Capacity Expansion is a foundational power systems decision problem.
+- Is an LP with some basic assumptions.
+- We looked at a "greenfield" example: no existing plants.
+- Decision problem becomes more complex with renewables (HW4) or "brownfield" (expanding existing fleet, possibly with retirements).
+
+# Upcoming Schedule
+
+## Next Classes
+
+**Wednesday**: Economic Dispatch
+
+**Next Week**: Managing Air Pollution
+
+## Assessments
+
+- HW4 assigned today (on LP/power systems), due on 10/31 at 9pm.
